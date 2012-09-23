@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Android UI/UX gripes"
+date: 2011-04-16 22:08
+comments: true
+external-url:
+categories: []
+published: true
+---
+The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">"Android Gripes."</a> The name is perhaps a bit misleading, as it's not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he's recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of... well, complaining about Android.<!--more-->
+
+That might be a little unfair.  Perhaps I should let the author speak for himself:
+<blockquote>I have constantly heard many gripes about Android. Recently I happened to have access to some Android phones and use them in a daily base. The more I use Android, the more I feel that Android is indeed a half-baked OS, its UX/UI is horrible and various hardwares are poorly designed. It’s true that those phones are working like smartphones, better than feature phones from old school, but they ignore a lot of the details. Just for Google’s own benefit, they helped handset manufactures brutally dumped a huge amount of unpolished devices to the market. They made people think this is how smartphones should work. This is so unfair to consumers. <strong>IMHO, it is no different from committing a crime.</strong> That’s why I made the cartoon of "Android Gripes" as a Monopoly "Go Directly To Jail" card showing an Android on it.
+
+As much as I believe in Apple, I think everybody deserves great user experience, especially when it comes to phones. I think it is my mission to let more people know that Android does not provide you that. Android only provides inferior user experience. You either admit it and bear with it, or go for better alternatives. That’s why I started writing this blog.</blockquote>
+
+
+(Emphasis added.)  English is not the author's native language, so you'll have to excuse the occasionally odd grammar.  It's immediately apparent that the author's stated opinion of Android is patently absurd; bad UI/UX can have many negative consequences, but it is certainly not criminal.  Redditors have also <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/">pointed out</a> that a number of comparisons the Android Gripes author makes are somewhat unfair.  For instance, he <a href="http://android-gripes.tumblr.com/post/4409289546/why-do-apps-from-the-same-company-look-worse-on-android">compares old, oudated Android apps</a> against apps which were recently updated on iOS, and misleadingly remarks on "extra" (meaning blank) space in the Facebook app.  The blank space in question <em>does</em> contain content when one is signed into a legitimate profile.
+
+With all of that said, I'm not writing this post to refute the Android Gripes author.  I actually agree with an unfortunate number of his points.  While there's a lot that can be said about where the iPhone's UI/UX fails (I've <a href="http://www.mlindgren.ca/archives/151">previously mentioned</a> their complete lack of a workable notification system), excuses and rationalizations won't do anything to improve the state of Android apps.  Even if you believe that Android's UI/UX is better than Apple's (and I do feel that that's a hard case to make), I think it's undeniable that there's room for improvement.  It's certainly worth mentioning that some of the Android Gripe's authors examples are misleading, but what's more important is that we—that is to say, Android developers—ask ourselves where we're failing users, why it's happening, and what we can do to improve the platform.  In a future post, I'll offer my perspective on where Android could be improved.

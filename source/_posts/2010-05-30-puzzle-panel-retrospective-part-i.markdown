@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Puzzle Panel Postmortem: Introduction"
+date: 2010-05-30 01:26
+comments: true
+external-url:
+categories: []
+published: true
+---
+Welcome, dear reader!
+
+Although this is the inaugural post for this website, I won't bother with any introduction here.  If that sort of thing interests you, I refer you to the <a title="About" href="http://www.mlindgren.ca/about" target="_self">"about" page.</a> For this entry, I'd like to dive right into the sort of content that this site is to be host to.  My iPhone developer program membership expires today, and I won't be renewing it—not immediately, at least.  That being the case, I think that this is a good time to reflect on my year as a so-called "iPhone developer."<!--more-->
+
+There's lots to be said about the iPhone, the app store, and Apple in general; I'm sure I'll write on those topics profusely.  For the time being, though, I'm going to limit myself to a discussion of the product of my labour: <a title="Puzzle Panel" href="http://www.mlindgren.ca/projects/puzzle-panel" target="_self">Puzzle Panel.</a> I've twice given a presentation on the development of Puzzle Panel as part of the University of Alberta <a title="University of Alberta Computers &amp; Games" href="http://www.cs.ualberta.ca/undergraduate-students/course-directory/computers-and-games" target="_blank">Computers &amp; Games course</a>, but while I was grateful for the opportunity to discuss my game, the format of the presentation was such that I was never quite able to express everything that I wanted to.  (I doubt that most of those in attendance would have been interested, anyway.)  It is my hope that this site will give me a platform to communicate with greater fidelity.
+
+If you're not familiar with Puzzle Panel, there's a trailer available <a title="Puzzle Panel trailer on YouTube" href="http://www.youtube.com/watch?v=obg-I9JnzFU" target="_blank">here</a>, or you can check out the <a title="Puzzle Panel project page" href="http://www.mlindgren.ca/projects/puzzle-panel">project page</a> or <a title="Puzzle Panel website" href="http://puzzlepanel.net">website</a> for more information.  Unfortunately, the expiry of my developer program membership means that Puzzle Panel will no longer be available on the iPhone app store for the time being.  I'd like to remedy this; I want the game to be available indefinitely and to as many people as possible.  However, for reasons I'll likely discuss at a later date, I'm hesitant to pay the $100 membership fee again, so at this point I'm... investigating my options, let's say.
+
+Anyway, returning to the topic at hand, I purchased my iPhone with the specific intent to develop an app.  The iPhone is often cited as a great gaming device, and I think that <em>would be</em> true if not for the lack of physical input options: the phone's hardware is powerful and its operating system is pleasantly efficient, but the touch screen just doesn't work for most games.  For puzzle games, though, it works pretty well; the tap-and-swipe paradigm of the iPhone lends itself naturally to puzzle-style gameplay.  (The good ol' D-pad is still faster and more accurate, though.)  Hence, Puzzle Panel.
+
+The game was developed over five months.  I don't have a good sense of how many hours it actually took, but if I'd estimate somewhere between 200 and 400.  I worked on it in the evenings after work and on my days off - sometimes obsessively, devoting all of my free time to it, sometimes barely touching it for weeks at a time.  Not including the frameworks and libraries I used, the game consists of roughly 8,500 lines of Objective C code across 40 or so classes.  The most time-consuming part of the project, though, was the artwork.  I'm anything but a practised artist, so creating the game backgrounds and other art assets took dozens and dozens of hours.  While I was impressed at what my Wacom tablet allowed me to accomplish, I was never entirely satisfied with the results.  Still, I think doing the artwork myself was a wise decision.
+
+That's the basic high-level project overview.  In the next post, I'll discuss the <a title="Cocos2D-iPhone" href="http://cocos2d-iphone.org/" target="_blank">Cocos2D-iPhone</a> framework and why I chose to use it, and then I'll go through a "postmortem" in subsequent posts.  I'll endeavour to include more technical information—code snippets and the like—in future posts.

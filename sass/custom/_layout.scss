@@ -1,0 +1,114 @@
+// Here you can easily change your sites's layout.
+// To give it a try, uncomment some of the lines below, make changes, rebuild your blog, and see how it works.
+
+//$header-font-size: 1em;
+//$header-padding-top: 1.5em;
+//$header-padding-bottom: 1.5em;
+
+//$max-width: 1350px;
+//$indented-lists: true;
+
+// Padding used for layout margins
+//$pad-min: 18px;
+//$pad-narrow: 25px;
+//$pad-medium: 35px;
+//$pad-wide: 55px;
+
+// Sidebar widths used in media queries
+//$sidebar-width-medium: 240px;
+//$sidebar-pad-medium: 15px;
+//$sidebar-pad-wide: 20px;
+//$sidebar-width-wide: 300px;
+
+$header-image-height: 1050px;
+
+@media only screen and (min-width: 1024px)
+{
+  body
+  {
+    max-width: 90% !important;
+  }
+}
+
+html
+{
+  height: 100%;
+}
+
+body
+{
+  height: 100%;
+}
+
+body > header
+{
+  position: relative;
+  padding: 0 !important;
+  max-height: 35%;
+
+  hgroup
+  {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -27px;
+  }
+}
+
+#main
+{
+  z-index: 1;
+  position: relative;
+}
+
+#header-outer-wrap
+{
+  position: relative;
+  overflow-y: hidden;
+}
+
+#header-wrap
+{
+  display: block;
+  position: relative;
+  top: 0;
+  margin: 0;
+
+  // Interesting CSS hackish thing. Setting height to 0 and
+  // padding-bottom to a percentage causes the height to be a
+  // percentage of the width, which allows me to maintain aspect
+  // ratio.
+  height: 0;
+  padding: 0;
+  padding-bottom: 40% !important;
+}
+
+body > nav
+{
+  display: none;
+}
+
+#header-background
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 0;
+}
+
+// Hack to try to get the header image to look nice regardless of screen
+// resolution
+@media only screen and (min-width: 1180px)
+{
+  #header-background
+  {
+    bottom: 25% !important;
+  }
+}
+
+.header-background-stretch
+{
+  width: 100%;
+  height: 100%;
+}
