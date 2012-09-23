@@ -4,7 +4,7 @@ title: "Where are all the Computer Scientists?"
 date: 2010-08-27 19:01
 comments: true
 external-url:
-categories: []
+categories: [Coding]
 published: true
 ---
 It's common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn't get complacent just yet.  There's still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.<!--more-->

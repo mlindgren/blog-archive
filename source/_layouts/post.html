@@ -3,8 +3,14 @@ layout: default
 single: true
 ---
 
-<div>
-<article class="hentry" role="article">
+{% capture page_class %}
+{% for category in page.categories %}
+{{ category | prepend:'category-' }}
+{% endfor %}
+{% endcapture %}
+
+<div class="{{ page_class | strip_newlines }}">
+<article class="hentry {{ category_class }}" role="article">
   {% include article.html %}
   <footer>
     <p class="meta">

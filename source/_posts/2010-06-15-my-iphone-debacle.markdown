@@ -4,7 +4,7 @@ title: "My iPhone debacle"
 date: 2010-06-15 23:07
 comments: true
 external-url:
-categories: []
+categories: [Technology]
 published: true
 ---
 ...or "Another Reason I'm Considering <em>Switching</em> to Android."

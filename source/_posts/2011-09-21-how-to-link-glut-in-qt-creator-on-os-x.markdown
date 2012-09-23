@@ -4,7 +4,7 @@ title: "How to link GLUT in Qt Creator on OS X"
 date: 2011-09-21 00:34
 comments: true
 external-url:
-categories: []
+categories: [Coding]
 published: true
 ---
 This tutorial is for an extremely specific and possibly unusual set of circumstances, but I'm hoping that it will prove useful to someone. For one of my courses this term, we're building OpenGL apps using Nokia's open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I've used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn't use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it's not always immediately obvious how instructions for Windows development translate into other environments.

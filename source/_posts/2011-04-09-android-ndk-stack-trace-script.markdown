@@ -4,7 +4,7 @@ title: "Android NDK Stack Trace Script"
 date: 2011-04-09 16:30
 comments: true
 external-url:
-categories: []
+categories: [Coding]
 published: true
 ---
 I've finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I've decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write "performance-critical" parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I've not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don't imagine it's too difficult, but I haven't spent much time on it—I've not needed to do much debugging yet.)<!--more-->
@@ -13,13 +13,14 @@ When your native code crashes due to a segmentation fault or some other similar 
 <ol>
 	<li>Create a folder in your project called "debug" (or whatever name you'd like)</li>
 	<li>Create a file called <code>debug.sh</code>, consisting of the following:
-<div style="overflow-x: scroll;">
-<code><pre>
+
+``` bash
 #!/usr/bin/env bash
-NDK_ROOT/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-objdump -S PATH_TO_SOLIB &gt; SOLIB_NAME.arm
-adb logcat -d &gt; logcat.txt
+NDK_ROOT/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-objdump -S PATH_TO_SOLIB > SOLIB_NAME.arm
+adb logcat -d > logcat.txt
 python parse_stack.py SOLIB_NAME.arm logcat.txt
-</code></pre></div></li>
+```
+
 	<li><code>chmod +x debug.sh</code> so that it's executable</li>
         <li>Run the script with <code>./debug.sh</code> each time you need to see a stack trace</li>
 </ol>

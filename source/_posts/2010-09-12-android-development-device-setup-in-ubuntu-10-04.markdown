@@ -4,7 +4,7 @@ title: "Android Development Device Setup in Ubuntu 10.04"
 date: 2010-09-12 17:02
 comments: true
 external-url:
-categories: []
+categories: [Coding]
 published: true
 ---
 I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn't work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I'm documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you've already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a><!--more-->

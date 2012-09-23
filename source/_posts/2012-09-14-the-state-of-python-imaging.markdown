@@ -4,17 +4,17 @@ title: "The state of Python imaging"
 date: 2012-09-14 03:36
 comments: true
 external-url:
-categories: []
+categories: [Coding]
 published: true
 ---
 (<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)
 
 So, I'm <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I'm using Python because, well, I love it.  I think it's the perfect language for web development; it's simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:<!--more-->
 
-[sourcecode language="python"]
+``` python
 db_tags = dict([(tag.name, tag) for tag in
                 db.session.query(db.MetadataTag).filter_by(source = 'exif')])
-[/sourcecode]
+```
 
 What I'm doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag's name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn't particularly <em>difficult</em> to do in any other language; as I said, it's a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn't have list comprehensions.  I don't even want to think about how many lines of code this would take in Java; additionally, while I'm unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup>
 
@@ -29,5 +29,6 @@ My project already has more dependencies than I'm entirely comfortable with; one
 <del>For now I have settled for exif-py.</del>  It only handles EXIF tags, not IPTC or XMP, which is disappointing because I really wanted to support multiple metadata formats.  It's a pure Python library in a single file, though, so I can just include with my distribution.  It's easy to use and gets the job done, so it will have to do for now.  I'm hoping that pyexiv2 will show up in pip (a Python package manager) at some point, though.  [<strong>Updated September 16, 2012: </strong>I've discovered that exif-py is broken in at least a couple significant ways, so I'm kind of back at square one for handling metadata.  exif-py seems to be unable to detect EXIF data in some files that have it.  Additionally, the strings that it translates orientation codes to are not consistent with each other, so they're basically wrong.  I've informed the maintainers of these issues, but I don't have time to fix them myself.]
 
 The process of trying to find a good imaging package for Python and ultimately settling for two separate libraries which still don't quite do everything I want has made it clear to me that third party library support for Python still has a way to go.  Hopefully the situation will improve as adoption of the language increases.  I'm happy to do my part, both through contributions to open source libraries such as Wand, and by building apps using Python to bolster the ecosystem.  I hope that by demonstrating what's possible with Python as a web application platform, I can help convince new web developers to build their applications using Python as well... which provides yet more reason for me to be diligent about finishing my photo album app!
-<div><sup>1</sup> <small>Okay, the <code>dict</code> function is perhaps not the most explicit. Check the docs once, though, and it's very easy to understand.</small>
-<sup>2</sup> <small>Ruby would doubtless be similarly concise, and it seems like a nice language in my limited experience, but I find its syntax and distinction between "symbols" and strings to not be to my taste.</small></div>
+
+<sup>1</sup> <small>Okay, the <code>dict</code> function is perhaps not the most explicit. Check the docs once, though, and it's very easy to understand.</small>  
+<sup>2</sup> <small>Ruby would doubtless be similarly concise, and it seems like a nice language in my limited experience, but I find its syntax and distinction between "symbols" and strings to not be to my taste.</small>

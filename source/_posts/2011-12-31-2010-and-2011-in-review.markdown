@@ -4,7 +4,7 @@ title: "2010 and 2011 in Review"
 date: 2011-12-31 15:59
 comments: true
 external-url:
-categories: []
+categories: [Personal]
 published: true
 ---
 If you'll forgive me for "metablogging," I've been ruminating lately on the purpose of this website.  Up until now, I've been trying to focus exclusively on technology, programming and game design, and to minimize the subjective aspects of my connection to those fields.  Put more simply, I've been avoiding writing about who I am and what I do in favour of producing a series of mostly impersonal tutorials and critiques of technology.  There are a number of reasons for this—the word "professionalism" comes to mind as chief among them.  I'd like this website to be my public face on the Internet, and as every saavy Internet denizen should know by now, there are certain risks associated with maintaining a public persona.  I greatly admire <a href="http://zedshaw.com/">Zed Shaw</a>, for his personality as well as his technical accomplishments, but I have no desire to make myself unemployable as he claims to have done (albeit temporarily).

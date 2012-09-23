@@ -4,7 +4,7 @@ title: "Drive: The Surprising Truth About What Motivates Us"
 date: 2010-06-15 23:19
 comments: true
 external-url:
-categories: []
+categories: [Links]
 published: true
 ---
 I'm a huge fan of TED Talks. This is a fascinating video in which Dan Pink summarizes some of his research into human motivation, which I found at <a title="Coding Horror" href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror.</a>

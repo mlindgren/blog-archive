@@ -4,7 +4,7 @@ title: "Puzzle Panel Postmortem: Framework"
 date: 2010-07-13 00:33
 comments: true
 external-url:
-categories: []
+categories: [Coding]
 published: true
 ---
 I'm currently reading <a title="Coders at Work" href="http://www.codersatwork.com/">Coders at Work</a> by Peter Seibel.  The book is a collection of interviews with respected and knowledgeable programmers.  While the interview format can be somewhat difficult to read at times, the book is excellent.  Seibel is himself an experienced programmer, and asks the sort of insightful questions no ordinary interviewer could, making for fascinating discussions.  One could mine the book for weeks for interesting quotes.  I'm going to try to resist that temptation, but because it relates to the topic at hand, I will permit myself to share with you one statement made by Joe Armstrong:
@@ -19,7 +19,8 @@ Luckily, another option presented itself to me in the form of <a title="Cocos2D 
 
 There are a multitude of excellent <a title="Cocos2D tutorials" href="http://www.cocos2d-iphone.org/wiki/doku.php/" target="_blank">Cocos2D tutorials</a> on the Internet, so I'm not (at this time) going to go into much detail about how it's used.  For illustrative purposes, though, I will provide a specific example of how a scene is organized in Puzzle Panel:
 
-<a href="http://www.mlindgren.ca/wp-content/uploads/2010/07/nodes.png"><img class="aligncenter size-medium wp-image-101" title="Node usage in Puzzle Panel" src="http://www.mlindgren.ca/wp-content/uploads/2010/07/nodes-300x271.png" alt="Node usage in Puzzle Panel" width="300" height="271" style="display: block; margin-left: auto; margin-right: auto;"/></a>
+<a href="/images/nodes.png"><img class="aligncenter size-medium wp-image-101"
+title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usage in Puzzle Panel" width="300" height="271" style="display: block; margin-left: auto; margin-right: auto;"/></a>
 
 The above is a side-view of a typical game scene in Puzzle Panel.  Rendered objects in Cocos2D are always subclasses of <span style="display: inline; font-family: Courier">CCNode</span>, labeled "Node" in the diagram above.  Each node (except for the top-level node, the Scene) has a parent and may have any number of children; Cocos2D uses a simple 2D scene graph in which nodes are rendered breadth-first.  <span style="display: inline; font-family: Courier">CCLayer</span>s, or "Layers" above, are simple Node subclasses which are typically used for scene organization: one might have a background layer and a foreground layer, and add sprites to each as necessary.
 

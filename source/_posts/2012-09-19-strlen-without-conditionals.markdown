@@ -4,7 +4,7 @@ title: "strlen without conditionals"
 date: 2012-09-19 00:21
 comments: true
 external-url:
-categories: []
+categories: [Coding]
 published: true
 ---
 I'm not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I'm not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.<!--more-->
@@ -27,8 +27,8 @@ My solution is below, but I'd recommend that you go give this a try yourself bef
 
 Alright, ready? Here's my solution:
 
-[sourcecode language="c"]
-#include &lt;stdio.h&gt;
+``` c
+#include <stdio.h>
 
 int mystrlen(char *str, int count);
 int mystrlenret(char *str, int count);
@@ -47,9 +47,9 @@ int mystrlenret(char *str, int count)
 
 int main(int argc, char *argv[])
 {
-  printf(&quot;%i\n&quot;, mystrlen(argv[argc - 1], 0));
+  printf("%i\n", mystrlen(argv[argc - 1], 0));
 }
-[/sourcecode]
+```
 
 As you can see, the solution is actually very simple, but there are a couple of tricks necessary to make it work.  First of all, you obviously can't use a loop to count the characters because a loop requires a conditional jump to either terminate or continue.  You could still use a loop-like construct such as <code>goto</code>, but that only reframes the problem; you still need to make a decision about when to jump out.
 
@@ -61,47 +61,36 @@ I'd recommend also checking out the solutions provided in the <a title="Reversin
 
 Since my solution isn't significantly different from those presented in the original post, I wanted to go a bit further and take a look at the performance implications of not using conditionals.  Yeah, yeah, premature optimization is the root of all evil and all that&mdash;I'm just doing this out of curiosity; regardless of the results, I would never go this far out of my way to avoid a conditional jump in a real program, nor would I recommend doing so to anyone else.    I decided to compare my solution above against a naïve implementation with a while loop; comparing it against <code>strlen()</code> from <code>string.h</code> would be pretty meaningless because it would be linked against a precompiled library which, for all I know, could be hand-optimized.  So here's the code I'm using instead:
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-[sourcecode language="c"]
-int mystrlen(char *c)                                                            
-{                                                                                
-  int len = 0;                                                                   
-  while(*c++ != 0) len++;                                                        
-  return len;                                                                    
-}                                                                      
-[/sourcecode]
+``` c
+int mystrlen(char *c)
+{
+  int len = 0;
+  while(*c++ != 0) len++;
+  return len;
+}
+```
 
 And here's how I'm timing the functions...
 
-[sourcecode language="c"]
-struct timeval start;                                                          
+``` c
+struct timeval start;
 struct timeval end;
-volatile int n;                                                            
-                                                                                 
-gettimeofday(&amp;start, NULL);                                                    
-for(int i = 0; i &lt; 100000; ++i)                                                
-  n = mystrlen(argv[argc - 1]);                                                    
-gettimeofday(&amp;end, NULL);                                                      
-                                                                                 
-printf(&quot;Elapsed: %ld sec %ld usec\n&quot;,                                                  
-       (long) end.tv_sec - start.tv_sec,                                       
-       (long) end.tv_usec - start.tv_usec); 
-[/sourcecode]
+volatile int n;
+
+gettimeofday(&amp;start, NULL);
+for(int i = 0; i &lt; 100000; ++i)
+  n = mystrlen(argv[argc - 1]);
+gettimeofday(&amp;end, NULL);
+
+printf(&quot;Elapsed: %ld sec %ld usec\n&quot;,
+       (long) end.tv_sec - start.tv_sec,
+       (long) end.tv_usec - start.tv_usec);
+```
 
 I'm assigning the result to a volatile int to ensure that even when the code is optimized, the compiler won't completely optimize out the function call.  So, first, predictions: anyone who has taken a computer architecture course will tell you that conditional jumps can be very expensive because of the recovery the CPU has to do if the branch is mispredicted.  However, branch predictors typically have very high accuracy, and there's also a significant overhead involved in putting the parameters and return address on the stack when a function is called.  Therefore, I predict that in that with no compiler optimization, the while loop will be faster.
 
-...And, it is.  Running each function in a loop 100,000 times on a 23-character string, the average over five trials was 28,699 µsec for the non-conditional version and 9,012 µsec for the while loop.  Using a fixed string will cause the branch predictor to have near-perfect accuracy in the while loop version, so there might be a slight difference if I used a large array of strings of randomized lengths, but I doubt it would be significant.  
+...And, it is.  Running each function in a loop 100,000 times on a 23-character string, the average over five trials was 28,699 µsec for the non-conditional version and 9,012 µsec for the while loop.  Using a fixed string will cause the branch predictor to have near-perfect accuracy in the while loop version, so there might be a slight difference if I used a large array of strings of randomized lengths, but I doubt it would be significant.
 
-But what if we let the compiler (llvm-gcc in this case) optimize it?  I don't know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don't know.  
+But what if we let the compiler (llvm-gcc in this case) optimize it?  I don't know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don't know.
 
 As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That's a significant improvement, but it's still slower than the unoptimized while loop, so it obviously won't beat that.  And indeed, the optimized while loop takes only 3,072 µsec.

@@ -10,9 +10,44 @@
 //$header-subtitle-font-family: "Futura", sans-serif;
 
 
-#main p
+@media screen and (min-width: 640px)
 {
-  font-size: 0.8em !important;
+  article p, article li, article blockquote
+  {
+    font-size: 0.8em !important;
+  }
+
+  li blockquote
+  {
+    font-size: 1.0em !important;
+  }
+}
+
+article blockquote
+{
+  font-size: 0.9em !important;
+}
+
+
+#main li
+{
+  margin-bottom: 1em;
+  line-height: 1.5em !important;
+}
+
+#tweets li
+{
+  font-size: 0.9em !important;
+}
+
+#main small
+{
+  font-size: 0.7em !important;
+}
+
+#content .blog-index article
+{
+  padding-top: 1em !important;
 }
 
 h1
@@ -36,4 +71,10 @@ body > header h1
 article p
 {
   line-height: 1.5em;
+}
+
+sup, sub
+{
+  font-size: 0.3em;
+  display: inline;
 }

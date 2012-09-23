@@ -4,7 +4,7 @@ title: "Some thoughts on used games and online passes"
 date: 2012-02-03 23:37
 comments: true
 external-url:
-categories: []
+categories: [Gaming]
 published: true
 ---
 Online passes are becoming more and more ubiquitous in the games industry.  For those who aren't familiar with the terminology, an online pass is essentially a form of digital rights management designed to discourage and devalue used game sales by tying some game content to unique, one-use codes packaged with new copies of games.  Online passes are a contentious issue.  Some feel that they're a perfectly legitimate way for developers and publishers to ensure that they get their cut of each sale, and to reward those who purchase games new.  Others see them as a violation of consumer rights or contend that they inconvenience customers who <em>do</em> buy new (by requiring them to type in long access codes on game controllers) while being of only dubious value to publishers and developers.
@@ -38,12 +38,28 @@ My arguments thus far have been based on assumptions and logic rather than empir
 Now, you might be thinking that because I'm not in the industry, my perspective is limited.  Maybe publishers <em>do</em> have data which support the conclusion that used game sales are a net loss.  It's possible; it certainly makes sense that entities which exist solely to maximize game sales would want to have that data.  That said, given the ineptitude displayed by media giants in fighting piracy, I am not convinced that it should be taken for granted that they take a scientific approach to <em>anything</em>.  Take this exchange between <a href="https://twitter.com/#!/kristen_">Kristen Bornemann</a> and I on Twitter:
 
 <blockquote>
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> When people pick up used games it reduces the chance of publishers investing more money into the game (sequel, etc).
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> Therefore it directly hurts us as devs… especially 3rd party devs.
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a href="https://twitter.com/#!/kristen_">@kristen_</a> Do you have statistics that demonstrate that, or are you just assuming so by the false equivalency of 1 used sale = 1 lost sale?
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> I worked in publishing. The fact is if a publisher hears that used sales are high = death for game. They don't care about stats.
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a href="https://twitter.com/#!/kristen_">@kristen_</a> Then perhaps the community should focus on fixing that, rather than limiting consumer choice?
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a href="https://twitter.com/#!/kristen_">@kristen_</a> Because if the publishers "don't care about stats," what are their business decisions based on? Vindictiveness?
+<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
+href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> When people pick up used
+games it reduces the chance of publishers investing more money into the game
+(sequel, etc).<br />
+<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
+href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> Therefore it directly
+hurts us as devs… especially 3rd party devs.<br />
+<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
+href="https://twitter.com/#!/kristen_">@kristen_</a> Do you have statistics that
+demonstrate that, or are you just assuming so by the false equivalency of 1 used
+sale = 1 lost sale?<br />
+<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
+href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> I worked in publishing.
+The fact is if a publisher hears that used sales are high = death for game. They
+don't care about stats.<br />
+<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
+href="https://twitter.com/#!/kristen_">@kristen_</a> Then perhaps the community
+should focus on fixing that, rather than limiting consumer choice? <br />
+<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
+href="https://twitter.com/#!/kristen_">@kristen_</a> Because if the publishers
+"don't care about stats," what are their business decisions based on?
+Vindictiveness? <br />
 <a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> hearsay and gut/instinct… why do you think I left? ;)
 </blockquote>
 

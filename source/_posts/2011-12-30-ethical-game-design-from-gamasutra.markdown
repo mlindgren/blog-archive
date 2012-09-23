@@ -4,7 +4,7 @@ title: "Ethical Game Design from Gamasutra"
 date: 2011-12-30 16:28
 comments: true
 external-url:
-categories: []
+categories: [Links]
 published: true
 ---
 I came across a couple excellent articles on Gamasutra which I want to share here. The first, "<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>" is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, "deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice." I'll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the "freemium" model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam's thoughts on the subject are certainly worth reading.

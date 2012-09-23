@@ -4,7 +4,7 @@ title: "In Defense of Clones"
 date: 2011-07-14 22:23
 comments: true
 external-url:
-categories: []
+categories: [Gaming]
 published: true
 ---
 <p>With the phenomenal and growing successes of the iPhone App Store, the Android Market, and the Xbox Live Indie Games marketplace, gamers have seen an unprecedented number of titles which could be described as "clones" of more successful games&mdash;or rip-offs, if you're feeling less kind.  Along with these titles has come a veritable tsunami of hatred for their developers, from game critics and anonymous Internet commenters alike.  The commercial success of some of these titles, such as <em>Angry Birds</em>,<sup>1</sup> has shown that average gamers are happy to patronize any developer who can provide a fun experience, regardless of originality.  However, any mention of a new clone on a gaming blog or podcast inevitably brings about a stunning amount of vitriol from gamers who, presumably, are upset that their favorite megacorporations aren't getting their due.<!--more--></p>
@@ -52,7 +52,7 @@ published: true
 
 <p>Now, please don't misunderstand me.  I am by no means saying that every developer should just go out and rip off the biggest franchise he can because there's nothing wrong with unoriginality.  On the contrary, innovation and creativity should be encouraged and rewarded, and while I think it's fine for hobbyist programmers to start out by mimicking their favorite titles, we should definitely turn a more critical eye to established studios who have the time, budget and experience to be original but are content with releasing an endless stream of sequels, clones and remakes.  But please, let's cut the indie developers some slack.  Cloning a popular game to make a quick buck is simply not a winning proposition.  Regardless of their originality, regardless of their financial success or failure, I can assure you that indies do it for the love.</p>
 
-<div>
-<sup>1</sup> <small>Although it has its own unique art style, I count <em>Angry Birds</em> among the clones for its striking similarities to Armor Games' <em>Crush the Castle</em>.</small><br />
+<sup>1</sup> <small>Although it has its own unique art style, I count <em>Angry
+Birds</em> among the clones for its striking similarities to Armor Games'
+<em>Crush the Castle</em>.</small>  
 <sup>2</sup> <small>Ironically, the "negative" publicity <em>Tobar</em> is generating will probably help its sales more than anything else could have.</small>
-</div>

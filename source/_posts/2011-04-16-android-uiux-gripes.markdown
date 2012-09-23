@@ -4,7 +4,7 @@ title: "Android UI/UX gripes"
 date: 2011-04-16 22:08
 comments: true
 external-url:
-categories: []
+categories: [Technology]
 published: true
 ---
 The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">"Android Gripes."</a> The name is perhaps a bit misleading, as it's not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he's recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of... well, complaining about Android.<!--more-->

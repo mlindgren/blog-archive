@@ -4,7 +4,7 @@ title: "I'm considering switching back to iOS. Here's why."
 date: 2011-06-12 22:13
 comments: true
 external-url:
-categories: []
+categories: [Technology]
 published: true
 ---
 <p><em>In September of last year I ditched my iPhone 3G and switched to the Android-powered HTC Desire (which I later sold in order to purchase a Desire Z, which sports a physical keyboard.)  I'm sad to report that I'm now considering switching back to iOS, after less than a year on the Android platform.  The following is an excerpt from an e-mail I wrote to a friend of mine whom I'd describe as a fervent Android evangelist, detailing some of the frustrations I have with the operating system and why I feel that I might be better served by iOS.  I've edited it slightly to make it more readable for anyone who might come across this blog.</em></p>
@@ -42,25 +42,38 @@ I hope that properly illustrates how much I hate Apple's policies, and I hope th
 
 Even if I buy an iPhone, I do still want to finish my game for Android.  The code is cross-platform, so if I could compile and test it using Xcode in the meantime... even just using the iPhone simulator, since it can actually run games at a reasonable framerate... it would save me a lot of headaches.  Either way I'll have to compile my app for Windows or iOS to do any marketing; taking screenshots of an Android app is difficult, and taking video is, as far as I can tell, impossible unless you have a phone with HDMI out and a capture card.  Ridiculous.</li>
 
-	<li>The behavior of the back button is inconsistent, and developers use it as a crutch rather than thinking about and carefully designing a proper workflow through their applications.  I was arguing about this behavior with someone on Reddit a while ago, and I found a good comment on Hacker News about it:<br /><br />
-<blockquote>I just got an Android with that great Virgin Mobile deal, and I was surprised at just how much the Back button is used in almost all contexts. It's severely overloaded: want to get out of an on-screen keyboard? Back. Want to move back a screen? Back, except when it's Google Reader that opened a Browser window, in which case it takes you back to the previous page that Browser had. Back through a menu? Back. Back to a previous page in Browser? Back.<br /><br />
-It's as if people just substituted the button for any instance in human language where "back" was used."</blockquote><br /><br />
+	<li>The behavior of the back button is inconsistent, and developers use it as
+	a crutch rather than thinking about and carefully designing a proper workflow
+	through their applications.  I was arguing about this behavior with someone on
+	Reddit a while ago, and I found a good comment on Hacker News about it:
+	<br/><br />
+
+<blockquote>I just got an Android with that great Virgin Mobile deal, and I was surprised
+at just how much the Back button is used in almost all contexts. It's severely
+overloaded: want to get out of an on-screen keyboard? Back. Want to move back
+a screen? Back, except when it's Google Reader that opened a Browser window,
+in which case it takes you back to the previous page that Browser had. Back
+through a menu? Back. Back to a previous page in Browser? Back.
+
+It's as if people just substituted the button for any instance in human language
+where "back" was used."</blockquote>
 
 ...(and another)...<br /><br />
 
-<blockquote>"Back" to some random place most of the time.
-1. receive email notification for two messages.
-2. click notification bar
-3. go to gmail app.
-4. open first message and click a link.
-5. you are now in the browser. (clicking back will close the window, but you want to read it later!)
-6. you long press HOME button (hoping to select gmail and read the other message)
-7. gmail is not in the open app list (WTH?!)\
-8. you curse, click home, find the gmail app, click it.
-9. now you are on the message with the link
-10. press BACK
-11. now you are on the message list (aha! not you home screen you came from!)
-12. click the 2nd message and read it</blockquote><br /><br />
+<blockquote>"Back" to some random place most of the time.<br />
+1. receive email notification for two messages.<br />
+2. click notification bar<br />
+3. go to gmail app.<br />
+4. open first message and click a link.<br />
+5. you are now in the browser. (clicking back will close the window, but you want to read it later!)<br />
+6. you long press HOME button (hoping to select gmail and read the other message)<br />
+7. gmail is not in the open app list (WTH?!)\<br />
+8. you curse, click home, find the gmail app, click it.<br />
+9. now you are on the message with the link<br />
+10. press BACK<br />
+11. now you are on the message list (aha! not you home screen you came from!)<br />
+12. click the 2nd message and read it
+</blockquote>
 
 In fairness, I'm of two minds about this because the back button does save a lot of screen real-estate by removing the necessity for on-screen navigation controls.  However, I'm not sure how much of an advantage that is in the face of the confusion it sometimes causes.</li>
 

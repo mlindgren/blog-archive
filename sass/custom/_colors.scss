@@ -16,7 +16,7 @@
 
 
 /* To use the light Solarized highlighting theme uncomment the following line */
-//$solarized: light;
+$solarized: light;
 
 /* If you want to tweak the Solarized colors you can do that here */
 //$base03:          #002b36; //darkest blue
@@ -41,3 +41,75 @@
 //$pre-bg: $base03;
 //$pre-border: darken($base02, 5);
 //$pre-color: $base1;
+
+.category-Coding a, .category-Coding a:visited
+{
+  color: #20bb20;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-property: color, background;
+  text-decoration: none;
+}
+
+.category-Coding a:hover
+{
+  color: #0A7A0A;
+  text-decoration: none;
+}
+
+.category-Gaming a, .category-Gaming a:visited
+{
+  color: #c00;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-property: color, background;
+  text-decoration: none;
+}
+
+.category-Gaming a:hover
+{
+  color: #850000;
+  text-decoration: none;
+}
+
+.category-Technology a, .category-Technology a:visited
+{
+  color: #e66f00;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-property: color, background;
+  text-decoration: none;
+}
+
+.category-Technology a:hover
+{
+  color: #964800;
+  text-decoration: none;
+}
+
+.category-Personal a, .category-Personal a:visited
+{
+  color: #004DFF;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-property: color, background;
+  text-decoration: none;
+}
+
+.category-Personal a:hover
+{
+  color: #0032A6;
+  text-decoration: none;
+}
+
+.category-Links a, .category-Links a:visited
+{
+  color: #a050bb;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-property: color, background;
+  text-decoration: none;
+}
+
+.category-Links a:hover
+{
+  color: #621A7A;
+  text-decoration: none;
+}
+
+

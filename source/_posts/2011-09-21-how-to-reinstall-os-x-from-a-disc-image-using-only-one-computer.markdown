@@ -4,7 +4,7 @@ title: "How to reinstall OS X from a disc image using only one computer"
 date: 2011-09-21 00:17
 comments: true
 external-url:
-categories: []
+categories: [Technology]
 published: true
 ---
 My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I'll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.

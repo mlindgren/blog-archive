@@ -1,9 +1,22 @@
+{% capture category_class %}
+{% if post %}
+{% for category in post.categories %}
+{{ category | prepend:'category-' }}
+{% endfor %}
+{% else %}
+{% for category in page.categories %}
+{{ category | prepend:'category-' }}
+{% endfor %}
+{% endif %}
+{% endcapture %}
+
+<div class="{{ category_class | strip_newlines }}">
 {% unless page.no_header %}
   <header>
     {% if index %}
-      <h3 class="entry-title"><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
+      <h3 class="entry-title"><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h3>
     {% else %}
-      <h3 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+      <h3 class="entry-title"><a href="#">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</a></h3>
     {% endif %}
     {% unless page.meta == false %}
       <p class="meta">
@@ -23,3 +36,4 @@
 {% else %}
 <div class="entry-content">{{ content }}</div>
 {% endif %}
+</div>

@@ -4,14 +4,15 @@ title: "Android First Impressions"
 date: 2010-09-06 20:19
 comments: true
 external-url:
-categories: []
+categories: [Technology]
 published: true
 ---
 Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple's app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they've claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.<!--more-->
 
 The phone I switched to is the HTC Desire on Telus:
 
-<img class="aligncenter size-full wp-image-152" style="display: block; margin-left: auto; margin-right: auto;" src="http://www.mlindgren.ca/wp-content/uploads/2010/09/htc-desire-press-198x300.png" alt="HTC Desire" width="198" height="300" />
+<img class="aligncenter size-full wp-image-152" style="display: block;
+margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC Desire" width="198" height="300" />
 
 With a 1Ghz CPU and 576MB of RAM, the Desire packs some powerful hardware.  So far, I've been quite impressed by the hardware, but that's all I'll say about it for now.  I'm more interested in relating my first impressions of the Android platform.  In no particular order:
 <ul>
@@ -25,5 +26,5 @@ With a 1Ghz CPU and 576MB of RAM, the Desire packs some powerful hardware.  So f
 </ul>
 I fully intend to do some serious Android development, so I'll surely write more about the platform as I become more familiar with it.  For now, though, the bottom line is this: I love Android.  Switching from iOS was an excellent decision and I doubt I'll ever look back.  I'd urge anyone thinking about a phone upgrade to consider Android as well.
 
-<sup>1</sup><span style="font-size: 0.8em;">A reader on <a href="http://www.reddit.com/r/Android/comments/dafec/android_first_impressions_from_an_exiphone/" target="_blank" title="Reddit">Reddit</a> brought to my attention the fact that the Android <a href="http://en.wikipedia.org/wiki/Dalvik_%28software%29" target="_blank" title="Dalvik">Dalvik</a> virtual machine and its bytecode are significantly different from their Java equivalents, so although Android apps are written in Java, compiled Android apps are not really Java.  (Apparently Oracle disagrees, mind you.)</span>
+<sup>1</sup><span style="font-size: 0.8em;">A reader on <a href="http://www.reddit.com/r/Android/comments/dafec/android_first_impressions_from_an_exiphone/" target="_blank" title="Reddit">Reddit</a> brought to my attention the fact that the Android <a href="http://en.wikipedia.org/wiki/Dalvik_%28software%29" target="_blank" title="Dalvik">Dalvik</a> virtual machine and its bytecode are significantly different from their Java equivalents, so although Android apps are written in Java, compiled Android apps are not really Java.  (Apparently Oracle disagrees, mind you.)</span>  
 <sup>2</sup><span style="font-size: 0.8em;">Another Redditor pointed out that the 700% figure may be something of an exaggeration.  I've heard varying figures - anywhere from 2x to 10x - but 700% was based on the specific video I linked to.  However, it's true that real-world performance will likely differ significantly from the results of synthetic benchmarks.</span>

@@ -4,7 +4,7 @@ title: "Puzzle Panel Postmortem: Introduction"
 date: 2010-05-30 01:26
 comments: true
 external-url:
-categories: []
+categories: [Coding]
 published: true
 ---
 Welcome, dear reader!

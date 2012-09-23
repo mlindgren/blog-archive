@@ -4,7 +4,7 @@ title: "Dark Souls is the best game I've ever played"
 date: 2012-01-09 13:44
 comments: true
 external-url:
-categories: []
+categories: [Gaming]
 published: false
 ---
 Due to school and other commitments, I'm a bit behind the curve on writing about <em>Dark Souls</em>.  I purchased it when it was first released, but I was too busy to commit much time to it, and the release of <em>Skyrim</em> in November relegated it to the back burner.  I've recently had some more time to play it, and although I'm only about 32 hours in and perhaps half finished, I'm ready to make proclamation: <span style="background-color: #ff0;"><strong><em>Dark Souls</em> is the best game I've ever played,</strong> and to whatever extent art can be judged objectively, I think there's a strong argument to be made that it's objectively one of the best games ever created from an artistic standpoint.</span>

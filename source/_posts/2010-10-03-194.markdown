@@ -4,7 +4,7 @@ title: "Making Samba shares accessible to Apache on OS X"
 date: 2010-10-03 19:29
 comments: true
 external-url:
-categories: []
+categories: [Technology]
 published: true
 ---
 As a small weekend project, I've been working on a simple Python HTTP "file server" of sorts.  The basic idea is that authorized users can log in to a web interface and browse files in specific locations on my home network.  The Python script is accessed through Apache on my Mac Mini, but some of the files I need access to are on Windows boxes.  Unfortunately this presented something of a problem, as the Apache user on OS X (<code>_www</code> as of Snow Leopard) doesn't have permission to access Windows shares mounted by users.
