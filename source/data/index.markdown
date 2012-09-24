@@ -7,4 +7,4 @@ footer: true
 ---
 This page lists all of the miscellaneous data I make publicly available.
 
-...This needs to be fixed.
+...This needs to be fixed before I can publish it.
