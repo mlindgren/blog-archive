@@ -4,7 +4,7 @@ title: "Switching to Octopress"
 date: 2012-09-23 23:22
 comments: true
 categories: [Technology]
-published: false
+published: true
 ---
 
 ## Backstory

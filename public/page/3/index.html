@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="With the phenomenal and growing successes of the iPhone App Store, the Android Market, and the Xbox Live Indie Games marketplace, gamers have seen an &hellip;">
+  <meta name="description" content="I don&#8217;t discuss politics on this site, but today warrants an exception. Canada has suffered a terrible loss with the death of Jack Layton, the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,6 +94,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Personal">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2011/08/22/rest-in-peace-jack-layton/">Rest in Peace, Jack Layton</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-22T20:36:00-07:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I don&#8217;t discuss politics on this site, but today warrants an exception. Canada has suffered a terrible loss with the death of Jack Layton, the leader of the federal New Democratic Party. He was an inspiring figure, hopeful and optimistic right to the end, and he devoted his life to the betterment of Canada and its citizens. He was taken from us far too soon, and will be sorely missed.</p>
+
+<p style="text-align: center;"><a title="Jack Layton.  Click to view full resoltuon." href="/images/jack_layout.jpg"><img src="/images/jack_layton.jpg" alt="" width="658" height="370" /></a></p>
+
+
+<p>Rest in peace.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2011/08/22/rest-in-peace-jack-layton/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
   
   
     <article>
@@ -508,72 +554,6 @@ As much as I believe in Apple, I think everybody deserves great user experience,
 
     </article>
   
-  
-    <article>
-      
-
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/04/09/android-ndk-stack-trace-script/">Android NDK Stack Trace Script</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-09T16:30:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&#8217;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&#8217;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &#8220;performance-critical&#8221; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&#8217;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&#8217;t imagine it&#8217;s too difficult, but I haven&#8217;t spent much time on it—I&#8217;ve not needed to do much debugging yet.)<!--more--></p>
-
-<p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it&#8217;s a bit of a pain to use.  To that end, I&#8217;ve put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you&#8217;d like to do something similar on Windows, I&#8217;m sure it won&#8217;t be hard, but you&#8217;re on your own.  Here&#8217;s how to use it:</p>
-
-<ol>
-    <li>Create a folder in your project called &#8220;debug&#8221; (or whatever name you&#8217;d like)</li>
-    <li>Create a file called <code>debug.sh</code>, consisting of the following:
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/usr/bin/env bash</span>
-</span><span class='line'>NDK_ROOT/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-objdump -S PATH_TO_SOLIB &gt; SOLIB_NAME.arm
-</span><span class='line'>adb logcat -d &gt; logcat.txt
-</span><span class='line'>python parse_stack.py SOLIB_NAME.arm logcat.txt
-</span></code></pre></td></tr></table></div></figure>
-
-    <li><code>chmod +x debug.sh</code> so that it&#8217;s executable</li>
-        <li>Run the script with <code>./debug.sh</code> each time you need to see a stack trace</li>
-</ol>
-
-
-<p>Obviously there are a few things you&#8217;ll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
-
-<p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don&#8217;t change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you&#8217;ll need to dump them again to get accurate results.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/04/09/android-ndk-stack-trace-script/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/4/">&larr; Older</a>
@@ -600,6 +580,11 @@ As much as I believe in Apple, I think everybody deserves great user experience,
   <ul id="recent_posts">
     
       
+      <li class="post             category-Technology            ">
+        <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
       </li>
@@ -617,11 +602,6 @@ As much as I believe in Apple, I think everybody deserves great user experience,
       
       <li class="post             category-Personal            ">
         <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
-      </li>
-    
-      
-      <li class="post             category-Gaming            ">
-        <a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a>
       </li>
     
   </ul>

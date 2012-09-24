@@ -9,7 +9,8 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I&#8217;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math &hellip;">
+  <meta name="description" content="Backstory I&#8217;ve been using Wordpress on various sites that I&#8217;ve maintained for probably the
+better part of a decade now. By most metrics, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,6 +95,210 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Technology">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-23T23:22:00-07:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Backstory</h2>
+
+<p>I&#8217;ve been using Wordpress on various sites that I&#8217;ve maintained for probably the
+better part of a decade now. By most metrics, it&#8217;s still very good blogging
+software; I&#8217;m not aware of any self-hostable alternative that can match
+Wordpress in terms of the union of ease of use, feature set and flexibility that
+it provides. That said, lately I&#8217;ve been feeling that perhaps Wordpress is no
+longer the right choice for my specific needs. These are my problems with it:</p>
+
+<ul>
+<li>It&#8217;s not very good for sharing source code. There are a multitude of plugins
+available for syntax highlighting; the best of them seems to be
+<a href="http://alexgorbatchev.com/SyntaxHighlighter/">Alex Gorbatchev&#8217;s Syntax Highlighter</a>,
+which is used by
+<a href="http://wordpress.com">Wordpress.com</a> and is also what I was using on my blog.
+But I&#8217;ve had problems with the Wordpress converting some of the characters in
+my code to HTML entities (e.g. <code>&amp;amp;</code> for &amp; ) which are then printed
+literally by the plugin.</li>
+<li>I find that more often than not Wordpress&#8217; visual editor is
+insufficient for the formatting I want in my posts. That forces me to use
+the raw HTML editor. That would be fine, except that Wordpress has a strange
+sort of off-spec way of storing post HTML. Paragraph and line break tags are
+omitted in the editor and the database, and are added when the page is
+actually rendered to the client. This is okay, I guess, and I <em>think</em>
+Wordpress is smart enough to not insert extra paragraph tags if you do wrap
+your own paragraphs with them. Still, it leads to some unpredictability with
+regard to how a post with hand-written HTML will actually be rendered.</li>
+<li>A similar but worse problem occurs when you try to insert extra line breaks.
+Even if you&#8217;re using the raw HTML editor to insert <code>&lt;br /&gt;</code> tags, Wordpress
+will just get rid of them unless you insert additional non-breaking spaces
+(<code>&amp;nbsp;</code>) so that it thinks the lines are non-empty. But! If you switch back
+to the visual editor for any reason, even your <code>&amp;nbsp;&lt;br /&gt;</code> lines will be
+wiped out. Even for &#8220;average&#8221; users I can&#8217;t think of any situation in which
+this &#8220;feature&#8221; would be desirable. If I put a bunch of extra newlines into
+something I&#8217;m writing, it is because <em>I want exactly that many newlines.</em> I
+tend to not have much patience for software that thinks it&#8217;s smarter than
+I am; that is why I still write most of my code in <a href="http://www.vim.org/">Vim</a>
+and use hand-written makefiles in an age of
+<acronym title="Integrated Development Environment">IDE</acronym>s.</li>
+<li>Never-ending updates. It seems like every time I log in there&#8217;s a new update
+to download. Wordpress has updates down to a one-click install process, so
+this wouldn&#8217;t be much of a problem except for the fact that
+every time I have to update Wordpress warns me that I should back up my
+database first. Why? Is there a significant possibility that the update might
+break everything? It&#8217;s probably just a
+<acronym title="Cover Our Asses">COA</acronym>, and I back up my database
+daily anyway, but this whole aspect of Wordpress makes me uneasy and I don&#8217;t
+want to have to deal with it any more. Even though I&#8217;m covered for backups,
+recovering from a botched update would undoubtedly be a nightmare.</li>
+<li><a href="http://en.wikipedia.org/wiki/WordPress#Vulnerabilities">Vulnerabilities.</a> One
+of the big reasons that Wordpress is updated so frequently is that it has a
+long history of security vulnerabilities, and more are still being discovered
+and patched. This also means that if I don&#8217;t log in frequently enough to
+download new security patches, I&#8217;m at risk of having my site compromised,
+loaded up with malware and blacklisted by Google.</li>
+<li><p>It&#8217;s written in PHP. <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP sucks.</a>
+(I can&#8217;t link to that enough.) I don&#8217;t want to be dogmatic about technology
+choices; good software is good software regardless of what language it&#8217;s
+written in, and my primary desire is always to use whatever is best for the
+task at hand. But lately I&#8217;ve been pretty vocal, both here and in person with
+friends and colleagues, about how bad PHP is. Continuing to rely on it
+undermines my credibility on the issue and makes me a bit of a hypocrite.</p>
+
+<p>And while this might seem trivial or pedantic, it&#8217;s
+actually one of the root causes of almost all of the issues above; the weird
+HTML handling, inappropriate entity conversion, and security issues are all
+due, at least in part, to bad design patterns popularized and perpetuated by
+PHP. Wordpress still uses raw non-parameterized SQL queries; blogging software
+built on a modern web framework with a proper
+<acronym title="Object-Relational Mapping">ORM</acronym>
+would not be plagued by SQL
+injection exploits as Wordpress has been historically and probably continues
+to be.</p></li>
+<li>Wordpress supports themes so that you can customize the apperance of your
+site, but editing them kind of sucks, because they&#8217;re all written in PHP
+instead of a proper templating language. Years ago I actually wrote a lot of
+PHP, but I still find Wordpress templates pretty ugly and difficult to
+understand; they seem more verbose than should really be necessary for what
+they accomplish, and have, on average, more <code>&lt;?php ?&gt;</code> sections than a
+keyboard has keys. (That analogy sucked. Sorry, it&#8217;s late. What I&#8217;m trying to
+say is that there are a lot of them.)</li>
+</ul>
+
+
+<h2>Octopress</h2>
+
+<p>So recently I got it into my head to switch over to
+<a href="http://octopress.org/">Octopress.</a> Octopress bills itself as &#8220;a blogging
+framework for hackers,&#8221; which is an attractive description given my
+<a href="/categories/coding">predilections.</a> It uses
+<a href="https://github.com/mojombo/jekyll">Jekyll</a> to generate static pages from a set
+of templates and content written in
+<a href="http://daringfireball.net/projects/markdown/">Markdown.</a><sup>1</sup> It is,
+without a doubt, harder to use than to Wordpress, but it has the following
+advantages:</p>
+
+<ul>
+<li>Rendering static pages once and serving dynamic content via AJAX is much more
+efficient than rendering entire pages dynamically for each visitor. This isn&#8217;t
+really a concern for me because this is a very low-traffic site, and I have an
+entire quad-core <acronym title="Virtual Private Server">VPS</acronym>
+doing basically nothing besides serving this site. That said, it&#8217;s nice to
+know that when I start doing other stuff on my VPS, I won&#8217;t be contending for
+cycles with PHP and MySQL, so the site will always be very responsive. Plus,
+wow does the site load fast now (once you have that huge header image cached,
+anyway. I&#8217;ll fix that soon.) Also not a huge concern for a blog, but I
+didn&#8217;t expect the difference to even be noticeable, and it definitely is.</li>
+<li>Static pages significantly decrease the attack surface of the site; there is
+no database, so no SQL injection to worry about, and no scripts are being
+executed, so <a href="http://www.kb.cert.org/vuls/id/520827">PHP vulnerabilities</a>
+aren&#8217;t a concern.</li>
+<li>Static pages means I get a nicely organized, easily navigable directory
+structure instead of God-awful rewrite rules.</li>
+<li>The default Octopress theme is very well designed and well-suited to
+customization.  I was able to modify it to make it look almost exactly like my
+old custom Wordpress theme did, while retaining the fully fluid layout of the
+Octopress theme&mdash;meaning that the layout will resize to look beautiful at
+any screen resolution, including on mobile devices.</li>
+<li>Octopress has pretty nice built in Github and Twitter widgets.</li>
+<li>Comments are handled by <a href="http://disqus.com/">Disqus</a>, which provides a nicer
+comment system than Wordpress&#8217; built in comments.  I was using Disqus anyway
+via a plugin, but now I don&#8217;t have to worry about keeping the Disqus comments
+synced with the Wordpress database. Incidentally, Disqus provides a very nice
+system to migrate comments to new URLs by uploading a
+<acronym title="Comma Separate Value">CSV</acronym> file mapping old URLs to
+new URLs. They&#8217;ve really thought of everything, so props to them for providing
+a great service.</li>
+<li>All of the blog content is stored on my local machine, which means I can write
+posts in a disconnected environment using Vim, version control them with Git,
+and then push them to my server when they&#8217;re finished. I have a nice
+deployment setup where everything is stored in a Git repository on the server
+and a post-commit hook copies the updated content to the web root for the blog
+subdomain. All I have to do is <code>git push</code> and the blog is instantly updated.</li>
+<li>Since Wordpress uses hand-written SQL queries, it is tightly coupled with
+MySQL and doesn&#8217;t support any other database. PHP is similarly tied to Apache;
+while it&#8217;s possible to run it with other servers, it&#8217;s not particularly easy.
+By ditching Wordpress, I can also get rid of Apache, PHP and MySQL. This is
+nice since I was planning to use nginx and Postgres for my
+<a href="/entry/2012/09/14/social-networks-and-content-ownership/">photo album project</a>
+anyway.</li>
+</ul>
+
+
+<p>Those are, give or take a few minor considerations, my reasons for switching
+blogging platforms. I&#8217;d be remiss to not mention that Octopress does have some
+noteworthy disadvantages even for &#8220;power users&#8221; to whom the above advantages
+might sound attractive.
+<a href="http://alblue.bandlem.com/2012/02/disadvantages-of-octopress.html" title="Disadvantages of Octopress - AlBlue's Blog">This post</a>
+does a good job cataloguing a few of them. On the balance, though, I feel like
+it&#8217;s a good choice for me, and although the switch took me considerably longer
+than I expected (the better part of an weekend where I&#8217;d expected an evening or
+so of work), I&#8217;m pretty happy that I did it.</p>
+
+<p>In an upcoming post, I&#8217;ll discuss the actual process of reconfiguring my server
+and importing all of my content (which is what I had planned to do before this
+turned into a 1,600 word diatribe against Wordpress.) For now, if I&#8217;ve inspired
+you and you&#8217;re thinking about switching your own Wordpress site to Octopress,
+you can take a look at the
+<a href="https://github.com/mlindgren/wp2octopress"><acronym title="Extract, Transform, Load">ETL</acronym> I wrote</a>
+to ease the import process.</p>
+
+<p><sup>1</sup> <small>Did you know that Markdown was created by John Gruber? Until very
+recently, I didn&#8217;t. And here I thought all he did was play apologist for
+Apple.</small></p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2012/09/23/switching-to-octopress/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
   
   
     <article>
@@ -424,121 +629,6 @@ title="Virtual Private Server">VPS</acronym>.  I&#8217;ve also moved WordPress o
 
     </article>
   
-  
-    <article>
-      
-
-<div class="category-Gaming">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-03T23:37:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Online passes are becoming more and more ubiquitous in the games industry.  For those who aren&#8217;t familiar with the terminology, an online pass is essentially a form of digital rights management designed to discourage and devalue used game sales by tying some game content to unique, one-use codes packaged with new copies of games.  Online passes are a contentious issue.  Some feel that they&#8217;re a perfectly legitimate way for developers and publishers to ensure that they get their cut of each sale, and to reward those who purchase games new.  Others see them as a violation of consumer rights or contend that they inconvenience customers who <em>do</em> buy new (by requiring them to type in long access codes on game controllers) while being of only dubious value to publishers and developers.</p>
-
-<p>Most recently, there&#8217;s been a bit of an uproar over the inclusion of an online pass in <em><a href="http://en.wikipedia.org/wiki/Kingdoms_of_Amalur:_Reckoning">Kingdoms of Amalur: Reckoning</a></em>, a single-player RPG with no online component.  The pass confers seven extra quests on those who purchase the game new, or deprives those who purchased used of them, depending on your perspective.<!--more-->  Before I lay my cards on the table, I&#8217;ll let Curt Schilling, the founder of the studio behind the game, explain what he sees the purpose of the online pass as:</p>
-
-<blockquote>That being said, this next part is likely to piss people off, but it&#8217;s a truth and it&#8217;s how I feel. You can argue the merits and effectiveness of it, but right now it&#8217;s how it&#8217;s done and as someone that&#8217;s as invested as I am in this company, I stand by what has happened.
-
-DAY 1 DLC, to be extremely and VIVIDLY clear, is FREE, 100% totally FREE, to anyone that buys a new copy of Reckoning, ANYONE. 
-
-If you don&#8217;t buy new games you buy them used, and in that case you will have to pay for the Day 1 free DLC content the new copy buyers got for free.
-
-It&#8217;s clear the intent right? To promote early adopters and MUCH MORE IMPORTANT TO ME, REWARD fans and gamers who commit to us with their time and money when it benefits the company.</blockquote>
-
-
-<p>You can read the rest of his post <a href="http://forums.reckoning.amalur.com/showthread.php?3063-Did-you-push-back-at-EA-at-all-over-this-Quest-content-gated-by-online-pass.&s=2ba8c3194088140ce6161b0c374691f5&p=52812&viewfull=1#post52812" title="Curt Schilling's post on the Kingdoms of Amalur online pass.">on the Kingdoms of Amalur forum.</a>  I think Curt&#8217;s position is reasonable and I am sympathetic to the frustration he&#8217;s clearly feeling; he believes that he&#8217;s trying to protect his business interests and in the process rewarding loyal fans with free bonus content, and receiving nothing but scorn in return.</p>
-
-<p>I don&#8217;t think <em>Kingdoms of Amalur</em>&#8217;s online pass is an egregious abuse by any means, but in general,  I do count myself among those who see online passes as an unsettling trend.  I think consumers have good reason to be suspicious of companies that choose to use online passes.  There are good arguments for and against online passes, but the most popular arguments in favor of online passes often seem to rely on strawmen and dubious assumptions with no supporting data.  Jerry Holkins (Tycho) of Penny Arcade <a href="http://penny-arcade.com/2012/01/30/plurality" title="Plurality - Penny Arcade">writes:</a></p>
-
-<blockquote>I&#8217;ve been reading a lot his weekend about Fat Cats and how fat they are and how they want your money, but the only choice you get in this matter (aside from the wholly valid &#8220;not buying it&#8221; choice, of course) is which supposed Fat Cat to enrich.  You can enrich the people who made the game you are enjoying, or you can enrich people who had nothing to do with the game.  Policies like this are designed to incentivize new purchases: that is to say, sales.  We call those sales.</blockquote>
-
-
-<p>In other words, you&#8217;re either supporting the developers who produce the games you love, or you&#8217;re supporting retailers like Gamestop.  Naturally most consumers would prefer the former, all else being equal; developers are creative entities, focused&mdash;or so we can hope&mdash;on artistic expression before profit.  Retailers, by contrast, are often viewed as greedy and incidental vestiges of the rapidly dying era of physical media.  Their services are at best unnecessary, and at worst <a href="http://www.joystiq.com/2011/08/24/gamestop-intentionally-removing-deus-ex-onlive-coupons-from-reta/" title="Gamestop intentionally removing Deus Ex OnLive coupons from retail PC copies - Joystiq">abusive of their customers to an extent that would make an ardent objectivist blush.</a></p>
-
-<p>This is a false dichotomy for two reasons.  First, traditional retailers are not the only avenues for the trading and selling of used games.  One could trade games directly with friends or colleagues, or buy and sell them at garage sales and flea markets.  There are even a number of online services that have been created for the explicit purpose of allowing consumers to trade and sell used games at reasonable prices.  (Of course, those services take a cut too, but I think it&#8217;s safe to assume that their margins are nothing like Gamestop&#8217;s, and they are much more consumer-centric in general.)</p>
-
-<p>More importantly, there is an implicit assumption in Holkins&#8217; argument that each used sale deprives the publisher of a new sale.  This is the same false equivalency that the <acronym title="Motion Picture Association of America">MPAA</acronym> and <acronym title="Recording Industry Association of America">RIAA</acronym> have been using for years to <a href="http://www.pcworld.com/article/223431/riaa_thinks_limewire_owes_75_trillion_in_damages.html" title="RIAA thinks Limewire owes $75 trillion in damages" target="_blank">overstate the negative effects of piracy</a>, and it is no less pernicious when applied to secondhand markets.  To the best of my knowledge there is absolutely no data to support this assertion, and it doesn&#8217;t really hold up to logical scrutiny.  Sure, a sale of a used game does not directly support the game&#8217;s publisher and developer, but there&#8217;s no guarantee that the buyer would otherwise have bought the game new.  More importantly, the person who traded in that game for store credit is likely to use that credit toward the purchase of a new game.</p>
-
-<p>&#8220;Triple-A&#8221; retail games cost $60 in the US and Canada these days, and in countries like Australia prices can reach AUS $100 and above.  That is, frankly, an absurd amount of money and out of the reach of a great many people.  Without a healthy used market to mitigate these prices, many consumers would simply be forced to purchase fewer games.  Others would likely turn to piracy.  Nobody wins in that scenario; not developers, not publishers, and certainly not gamers.</p>
-
-<p>My arguments thus far have been based on assumptions and logic rather than empirical data, just as the arguments I am attacking are.  What I am postulating is that my analysis is at least as plausible as the alternative (in my opinion, moreso), and that in the absence of actual scientific data the sane solution for publishers is to try to compete with used sales by offering better service and pricing incentives rather than trying to find technological solutions which, even when well-meaning, embitter those who can&#8217;t afford to buy every game they are interested in at $60 a pop.</p>
-
-<p>Now, you might be thinking that because I&#8217;m not in the industry, my perspective is limited.  Maybe publishers <em>do</em> have data which support the conclusion that used game sales are a net loss.  It&#8217;s possible; it certainly makes sense that entities which exist solely to maximize game sales would want to have that data.  That said, given the ineptitude displayed by media giants in fighting piracy, I am not convinced that it should be taken for granted that they take a scientific approach to <em>anything</em>.  Take this exchange between <a href="https://twitter.com/#!/kristen_">Kristen Bornemann</a> and I on Twitter:</p>
-
-<blockquote>
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
-href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> When people pick up used
-games it reduces the chance of publishers investing more money into the game
-(sequel, etc).<br />
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
-href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> Therefore it directly
-hurts us as devs… especially 3rd party devs.<br />
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
-href="https://twitter.com/#!/kristen_">@kristen_</a> Do you have statistics that
-demonstrate that, or are you just assuming so by the false equivalency of 1 used
-sale = 1 lost sale?<br />
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
-href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> I worked in publishing.
-The fact is if a publisher hears that used sales are high = death for game. They
-don&#8217;t care about stats.<br />
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
-href="https://twitter.com/#!/kristen_">@kristen_</a> Then perhaps the community
-should focus on fixing that, rather than limiting consumer choice? <br />
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
-href="https://twitter.com/#!/kristen_">@kristen_</a> Because if the publishers
-&#8220;don&#8217;t care about stats,&#8221; what are their business decisions based on?
-Vindictiveness? <br />
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> hearsay and gut/instinct… why do you think I left? ;)
-</blockquote>
-
-
-<p>I&#8217;m aware that this short Twitter exchange is by no means a definitive example of how every publisher everywhere conducts business.  Again, I&#8217;m simply saying that until I see data which actually show a net loss for publishers and developers from used sales, I see no reason to take as gospel the assertion that they <em>are</em> a net loss.  That said, even if conclusive data were available, I still don&#8217;t think I could support online passes at the conceptual level.  <em>Amalur</em> is innocuous, but it&#8217;s the exception rather than the rule; most online passes lock used buyers out of multiplayer until they&#8217;ve shelled out another ten to fifteen dollars.  That is blatantly vindictive anti-consumer behaviour on the part of publishers, and it epitomizes the troubling trend of media companies punishing legitimate consumers in a misguided attempt to artificially control the marketplace and perpetuate outdated business models.  For an example of exactly how far this thinking goes, consider <a href="http://altdevblogaday.com/2012/02/02/i-feel-used/" title="I Feel Used">this post</a> by Jameson Durall of Volition:</p>
-
-<blockquote>There’s another big rumor about the next Xbox console that could really start to shake things up…it won’t play used games at all!  Personally I think this would be a fantastic change for our business and even though the consumers would be up in arms about it at first…they will grow to understand why and that it won’t kill them.</blockquote>
-
-
-<p>To say that entirely removing the used market &#8220;won&#8217;t kill&#8221; consumers strikes me as extremely ironic.  Used games have existed for as long as games have existed, and have evidently not killed the industry, and yet that is exactly what developers and publishers are complaining will happen if we continue with the status quo.  Durall himself says that used game sales are &#8220;making it more and more difficult for us to continue making higher quality products.&#8221;  My feeling is that the rhetoric is a lot more emotionally charged on the part of online pass supporters; there is a strong insinuation that used buyers are costing people their jobs and are in some sense morally inferior to those who have the luxury of being able to buy only new games.</p>
-
-<p>But I digress.  I don&#8217;t give too much credence to the rumor Durall refers to, but the idea that anyone would consider it a good course of action is mind boggling to me.  It&#8217;s another step in the march towards the complete erosion of consumer rights, and along the way the products we purchase are further crippled and devalued.  It hurts consumers and it hurts content producers because <em>this devaluation of legitimate products is what drives growth in piracy.</em></p>
-
-<p>I must clarify exactly what I mean when I say that product devaluation drives growth in piracy.  It is a popular belief among technology writers on the Internet that services which compete on convenience, such as iTunes and Steam, can actually reduce piracy.  The data that I have seen do not support that conclusion.  However, history has demonstrated that a legislative or technical solution is likely impossible because pirates will always find ways to break digital locks and make enforcement of anti-piracy legislation effectively impossible.  Any legislative solution broad enough to admit the possibility of significantly decreasing piracy by inconveniencing would-be pirates <a href="http://en.wikipedia.org/wiki/Stop_Online_Piracy_Act" title="Wikipedia: Stop Online Piracy Act">would likely have negative repercussions outweighing the benefits</a>, and the assumption that a nuking-the-anthill style solution &agrave; la <acronym title="Stop Online Piracy Act">SOPA</acronym> would be effective for more than a few weeks is <a href="https://chrome.google.com/webstore/detail/hnifiobpjihmmjgiokkaalgomddebhng/details">extremely dubious anyway.</a></p>
-
-<p>So what are content producers to do?  Pandora&#8217;s Box has been opened and the clock cannot be turned back.  There will always be people with no compunction about downloading works without even attempting to compensate the artist, and dishearteningly, the research I have read indicates that once someone is turned on to piracy he is unlikely to stop&mdash;even if content producers then offer better incentives to compete with pirates.  It <a href="http://repository.cmu.edu/cgi/viewcontent.cgi?article=1056&context=heinzworks" title="Converting Pirates without Cannibalizing Purchasers:  The Impact of Digital Distribution on Physical Sales and Internet Piracy">has been demonstrated</a>, however, that removing options increases piracy.  Devaluing products and services with arbitrary restrictions and inconveniencing legitimate consumers will have the same effect.  <em>Copying is the fundamental operation on which the principle of computing is built.  It cannot be stopped.  The only thing content producers can do is to prevent people from turning to piracy in the first place by offering the best service possible.</em></p>
-
-<p>Returning to the topic at hand, online passes go hand in hand with the consumer-as-enemy mindset that plagues media giants.  They arise from the same attitude that justifies $30 BluRay movies with minutes and minutes of unskippable commercials, and <a href="http://www.destructoid.com/drm-fun-several-legit-ubisoft-games-will-break-next-week-220948.phtml" title="DRM Fun: Several legit Ubisoft games will break next week - Destructoid">always-on DRM which prevents legitimate purchasers from playing single-player games</a> when the publisher&#8217;s servers are down.  Through legislation and technology, these companies are trying to make ownership rights exclusive to corporations and prevent consumers from interacting with the media they purchase in any manner that is not explicitly pre-approved.  They are declaring a war on their customers, and it is a war they cannot win.  Make no mistake, though: as these behemoths run themselves into the ground because they are incapable of adapting, there will be casualties among the artists, musicians and developers who create the works of culture we love.</p>
-
-<p>That is why I cannot support online passes.  I truly believe that in the long run they are detrimental to all involved.  I truly believe that the best way for a company to protect its interests is to do its utmost to reward its fans and give them the best experience possible&mdash;all of them, even those who do not <em>directly</em> contribute to the bottom line.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/2/">&larr; Older</a>
@@ -563,6 +653,11 @@ Vindictiveness? <br />
   <ul id="recent_posts">
     
       
+      <li class="post             category-Technology            ">
+        <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
       </li>
@@ -580,11 +675,6 @@ Vindictiveness? <br />
       
       <li class="post             category-Personal            ">
         <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
-      </li>
-    
-      
-      <li class="post             category-Gaming            ">
-        <a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a>
       </li>
     
   </ul>

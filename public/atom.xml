@@ -4,7 +4,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2012-09-24T00:46:42-07:00</updated>
+  <updated>2012-09-24T00:49:26-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -12,6 +12,178 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Switching to Octopress]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress/"/>
+    <updated>2012-09-23T23:22:00-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress</id>
+    <content type="html"><![CDATA[<h2>Backstory</h2>
+
+<p>I&#8217;ve been using Wordpress on various sites that I&#8217;ve maintained for probably the
+better part of a decade now. By most metrics, it&#8217;s still very good blogging
+software; I&#8217;m not aware of any self-hostable alternative that can match
+Wordpress in terms of the union of ease of use, feature set and flexibility that
+it provides. That said, lately I&#8217;ve been feeling that perhaps Wordpress is no
+longer the right choice for my specific needs. These are my problems with it:</p>
+
+<ul>
+<li>It&#8217;s not very good for sharing source code. There are a multitude of plugins
+available for syntax highlighting; the best of them seems to be
+<a href="http://alexgorbatchev.com/SyntaxHighlighter/">Alex Gorbatchev&#8217;s Syntax Highlighter</a>,
+which is used by
+<a href="http://wordpress.com">Wordpress.com</a> and is also what I was using on my blog.
+But I&#8217;ve had problems with the Wordpress converting some of the characters in
+my code to HTML entities (e.g. <code>&amp;amp;</code> for &amp; ) which are then printed
+literally by the plugin.</li>
+<li>I find that more often than not Wordpress&#8217; visual editor is
+insufficient for the formatting I want in my posts. That forces me to use
+the raw HTML editor. That would be fine, except that Wordpress has a strange
+sort of off-spec way of storing post HTML. Paragraph and line break tags are
+omitted in the editor and the database, and are added when the page is
+actually rendered to the client. This is okay, I guess, and I <em>think</em>
+Wordpress is smart enough to not insert extra paragraph tags if you do wrap
+your own paragraphs with them. Still, it leads to some unpredictability with
+regard to how a post with hand-written HTML will actually be rendered.</li>
+<li>A similar but worse problem occurs when you try to insert extra line breaks.
+Even if you&#8217;re using the raw HTML editor to insert <code>&lt;br /&gt;</code> tags, Wordpress
+will just get rid of them unless you insert additional non-breaking spaces
+(<code>&amp;nbsp;</code>) so that it thinks the lines are non-empty. But! If you switch back
+to the visual editor for any reason, even your <code>&amp;nbsp;&lt;br /&gt;</code> lines will be
+wiped out. Even for &#8220;average&#8221; users I can&#8217;t think of any situation in which
+this &#8220;feature&#8221; would be desirable. If I put a bunch of extra newlines into
+something I&#8217;m writing, it is because <em>I want exactly that many newlines.</em> I
+tend to not have much patience for software that thinks it&#8217;s smarter than
+I am; that is why I still write most of my code in <a href="http://www.vim.org/">Vim</a>
+and use hand-written makefiles in an age of
+<acronym title="Integrated Development Environment">IDE</acronym>s.</li>
+<li>Never-ending updates. It seems like every time I log in there&#8217;s a new update
+to download. Wordpress has updates down to a one-click install process, so
+this wouldn&#8217;t be much of a problem except for the fact that
+every time I have to update Wordpress warns me that I should back up my
+database first. Why? Is there a significant possibility that the update might
+break everything? It&#8217;s probably just a
+<acronym title="Cover Our Asses">COA</acronym>, and I back up my database
+daily anyway, but this whole aspect of Wordpress makes me uneasy and I don&#8217;t
+want to have to deal with it any more. Even though I&#8217;m covered for backups,
+recovering from a botched update would undoubtedly be a nightmare.</li>
+<li><a href="http://en.wikipedia.org/wiki/WordPress#Vulnerabilities">Vulnerabilities.</a> One
+of the big reasons that Wordpress is updated so frequently is that it has a
+long history of security vulnerabilities, and more are still being discovered
+and patched. This also means that if I don&#8217;t log in frequently enough to
+download new security patches, I&#8217;m at risk of having my site compromised,
+loaded up with malware and blacklisted by Google.</li>
+<li><p>It&#8217;s written in PHP. <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP sucks.</a>
+(I can&#8217;t link to that enough.) I don&#8217;t want to be dogmatic about technology
+choices; good software is good software regardless of what language it&#8217;s
+written in, and my primary desire is always to use whatever is best for the
+task at hand. But lately I&#8217;ve been pretty vocal, both here and in person with
+friends and colleagues, about how bad PHP is. Continuing to rely on it
+undermines my credibility on the issue and makes me a bit of a hypocrite.</p>
+
+<p>And while this might seem trivial or pedantic, it&#8217;s
+actually one of the root causes of almost all of the issues above; the weird
+HTML handling, inappropriate entity conversion, and security issues are all
+due, at least in part, to bad design patterns popularized and perpetuated by
+PHP. Wordpress still uses raw non-parameterized SQL queries; blogging software
+built on a modern web framework with a proper
+<acronym title="Object-Relational Mapping">ORM</acronym>
+would not be plagued by SQL
+injection exploits as Wordpress has been historically and probably continues
+to be.</p></li>
+<li>Wordpress supports themes so that you can customize the apperance of your
+site, but editing them kind of sucks, because they&#8217;re all written in PHP
+instead of a proper templating language. Years ago I actually wrote a lot of
+PHP, but I still find Wordpress templates pretty ugly and difficult to
+understand; they seem more verbose than should really be necessary for what
+they accomplish, and have, on average, more <code>&lt;?php ?&gt;</code> sections than a
+keyboard has keys. (That analogy sucked. Sorry, it&#8217;s late. What I&#8217;m trying to
+say is that there are a lot of them.)</li>
+</ul>
+
+
+<h2>Octopress</h2>
+
+<p>So recently I got it into my head to switch over to
+<a href="http://octopress.org/">Octopress.</a> Octopress bills itself as &#8220;a blogging
+framework for hackers,&#8221; which is an attractive description given my
+<a href="http://blog.mlindgren.ca/categories/coding">predilections.</a> It uses
+<a href="https://github.com/mojombo/jekyll">Jekyll</a> to generate static pages from a set
+of templates and content written in
+<a href="http://daringfireball.net/projects/markdown/">Markdown.</a><sup>1</sup> It is,
+without a doubt, harder to use than to Wordpress, but it has the following
+advantages:</p>
+
+<ul>
+<li>Rendering static pages once and serving dynamic content via AJAX is much more
+efficient than rendering entire pages dynamically for each visitor. This isn&#8217;t
+really a concern for me because this is a very low-traffic site, and I have an
+entire quad-core <acronym title="Virtual Private Server">VPS</acronym>
+doing basically nothing besides serving this site. That said, it&#8217;s nice to
+know that when I start doing other stuff on my VPS, I won&#8217;t be contending for
+cycles with PHP and MySQL, so the site will always be very responsive. Plus,
+wow does the site load fast now (once you have that huge header image cached,
+anyway. I&#8217;ll fix that soon.) Also not a huge concern for a blog, but I
+didn&#8217;t expect the difference to even be noticeable, and it definitely is.</li>
+<li>Static pages significantly decrease the attack surface of the site; there is
+no database, so no SQL injection to worry about, and no scripts are being
+executed, so <a href="http://www.kb.cert.org/vuls/id/520827">PHP vulnerabilities</a>
+aren&#8217;t a concern.</li>
+<li>Static pages means I get a nicely organized, easily navigable directory
+structure instead of God-awful rewrite rules.</li>
+<li>The default Octopress theme is very well designed and well-suited to
+customization.  I was able to modify it to make it look almost exactly like my
+old custom Wordpress theme did, while retaining the fully fluid layout of the
+Octopress theme&mdash;meaning that the layout will resize to look beautiful at
+any screen resolution, including on mobile devices.</li>
+<li>Octopress has pretty nice built in Github and Twitter widgets.</li>
+<li>Comments are handled by <a href="http://disqus.com/">Disqus</a>, which provides a nicer
+comment system than Wordpress&#8217; built in comments.  I was using Disqus anyway
+via a plugin, but now I don&#8217;t have to worry about keeping the Disqus comments
+synced with the Wordpress database. Incidentally, Disqus provides a very nice
+system to migrate comments to new URLs by uploading a
+<acronym title="Comma Separate Value">CSV</acronym> file mapping old URLs to
+new URLs. They&#8217;ve really thought of everything, so props to them for providing
+a great service.</li>
+<li>All of the blog content is stored on my local machine, which means I can write
+posts in a disconnected environment using Vim, version control them with Git,
+and then push them to my server when they&#8217;re finished. I have a nice
+deployment setup where everything is stored in a Git repository on the server
+and a post-commit hook copies the updated content to the web root for the blog
+subdomain. All I have to do is <code>git push</code> and the blog is instantly updated.</li>
+<li>Since Wordpress uses hand-written SQL queries, it is tightly coupled with
+MySQL and doesn&#8217;t support any other database. PHP is similarly tied to Apache;
+while it&#8217;s possible to run it with other servers, it&#8217;s not particularly easy.
+By ditching Wordpress, I can also get rid of Apache, PHP and MySQL. This is
+nice since I was planning to use nginx and Postgres for my
+<a href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/">photo album project</a>
+anyway.</li>
+</ul>
+
+
+<p>Those are, give or take a few minor considerations, my reasons for switching
+blogging platforms. I&#8217;d be remiss to not mention that Octopress does have some
+noteworthy disadvantages even for &#8220;power users&#8221; to whom the above advantages
+might sound attractive.
+<a href="http://alblue.bandlem.com/2012/02/disadvantages-of-octopress.html" title="Disadvantages of Octopress - AlBlue's Blog">This post</a>
+does a good job cataloguing a few of them. On the balance, though, I feel like
+it&#8217;s a good choice for me, and although the switch took me considerably longer
+than I expected (the better part of an weekend where I&#8217;d expected an evening or
+so of work), I&#8217;m pretty happy that I did it.</p>
+
+<p>In an upcoming post, I&#8217;ll discuss the actual process of reconfiguring my server
+and importing all of my content (which is what I had planned to do before this
+turned into a 1,600 word diatribe against Wordpress.) For now, if I&#8217;ve inspired
+you and you&#8217;re thinking about switching your own Wordpress site to Octopress,
+you can take a look at the
+<a href="https://github.com/mlindgren/wp2octopress"><acronym title="Extract, Transform, Load">ETL</acronym> I wrote</a>
+to ease the import process.</p>
+
+<p><sup>1</sup> <small>Did you know that Markdown was created by John Gruber? Until very
+recently, I didn&#8217;t. And here I thought all he did was play apologist for
+Apple.</small></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[strlen without conditionals]]></title>
@@ -841,36 +1013,6 @@ margin-left: auto; margin-right: auto;" src="http://blog.mlindgren.ca/images/htc
 
 <p><sup>1</sup><span style="font-size: 0.8em;">A reader on <a href="http://www.reddit.com/r/Android/comments/dafec/android_first_impressions_from_an_exiphone/" target="_blank" title="Reddit">Reddit</a> brought to my attention the fact that the Android <a href="http://en.wikipedia.org/wiki/Dalvik_%28software%29" target="_blank" title="Dalvik">Dalvik</a> virtual machine and its bytecode are significantly different from their Java equivalents, so although Android apps are written in Java, compiled Android apps are not really Java.  (Apparently Oracle disagrees, mind you.)</span><br/>
 <sup>2</sup><span style="font-size: 0.8em;">Another Redditor pointed out that the 700% figure may be something of an exaggeration.  I&#8217;ve heard varying figures - anywhere from 2x to 10x - but 700% was based on the specific video I linked to.  However, it&#8217;s true that real-world performance will likely differ significantly from the results of synthetic benchmarks.</span></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Where are all the Computer Scientists?]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2010/08/27/misconceptions-about-computer-science/"/>
-    <updated>2010-08-27T19:01:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2010/08/27/misconceptions-about-computer-science</id>
-    <content type="html"><![CDATA[<p>It&#8217;s common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn&#8217;t get complacent just yet.  There&#8217;s still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.<!--more--></p>
-
-<p>I&#8217;ve always felt that a lack of exposure is one of the primary detriments to computer science enrollment.  While I don&#8217;t have any hard data, my own experience combined with an informal surveyal of friends and colleagues leads me to believe that a large percentage of North American high schools—possibly even a majority—offer little in the way of comprehensive computing classes.  While I don&#8217;t dispute the importance of math, English and science, I can&#8217;t help but wonder why computing isn&#8217;t given an equal footing in the educational sphere, given its ubiquity today.</p>
-
-<p>I&#8217;ve encountered a great number of intelligent and educated people who have <em>no idea whatsoever</em> about what the field of computer science is, or even how computers and software work.  I understand that most people don&#8217;t necessarily need that information.  However, it&#8217;s odd to me that basic computer literacy isn&#8217;t required of college graduates (let alone high school students) in the same way that basic writing and math skills are.  In the interest of meeting ever-increasing economic demand for technically skilled graduates, shouldn&#8217;t we do more to expose students to computing?</p>
-
-<p>To illustrate my point, here are a few examples:</p>
-
-<ul>
-    <li style="margin-bottom: 1em;">I used to work retail, and small-talk at the till would frequently turn to my university career.  Almost invariably when I told a customer that I was enrolled in a computer science program, he or she would reply &#8220;Oh, I always have so much trouble getting computers to work.  I think mine has a virus.&#8221;  This was usually followed by &#8220;But it&#8217;s good that you&#8217;re learning about them; we&#8217;ll always need people to fix them!&#8221;</li>
-    <li style="margin-bottom: 1em;">While discussing my current job with a friend of mine who is in the third year of her degree program, I described my workflow to her.  I told her that a bug report or feature request will come in from a customer, I&#8217;ll gather requirements and implement a solution, and then make adjustments as necessary until the customer is satisfied.  She asked, &#8220;How many do you get done in a day?&#8221;  I couldn&#8217;t help but laugh; there are very few tasks in client-focused software development which are both worth mentioning and completable in one day.  Perhaps I&#8217;m being unfair here, as that question probably seems reasonable to someone with little knowledge of software development.  However, no one would ask of a an architect, &#8220;How many buildings do you design in a day?&#8221;  Why is software different?  I&#8217;d argue that it&#8217;s because most people are never exposed to software development.</li>
-    <li style="margin-bottom: 1em;">In my third year of university I was required to take an English course to fulfill my breadth requirements.  While discussing one of my papers with her, the professor complimented me on my writing.  She said that I had a strong, persuasive style, and asked if I was a law student.  She was shocked when I told her that, as a matter of fact, I was in computer science.  She then told me that she was glad I&#8217;d taken her course (on Renaissance and early modern literature), as it would ensure that I was somewhat cultured and not simply a &#8220;computer nerd.&#8221;  I have a great deal of respect for that professor and I don&#8217;t believe that her comment had any ill intent, but it again illustrates the fact that computer science is frequently misunderstood and/or not taken seriously.</li>
-</ul>
-
-
-<p>I&#8217;m not entirely sure if these examples will properly communicate the point I&#8217;d hoped they would. I wouldn&#8217;t want anyone to misunderstand the purpose of this post, either; I don&#8217;t mean to complain about how computer science is perceived.  I don&#8217;t particularly care how people feel about my field of study.</p>
-
-<p>My point is this: it seems to me that a large percentage of people, no matter how well educated they may otherwise be, have no idea how computers work or how software is developed.  I feel that the primary reason for this is, in most cases, that they were never exposed to computing in a serious way.  Until this is remedied, computer science enrollment will continue to be mediocre and the field of computer science will not reach its full potential.  After all, who wants to go into a field he or she knows nothing about?</p>
-
-<p>I&#8217;ve mentioned that I&#8217;m surprised at the lack of computer literacy I see in some college graduates.  Colleges are not my primary concern, though.  If computer science enrollment is to be increased, exposure to computing needs to start much earlier.  At the very least, I&#8217;d like to see is comprehensive computing courses&mdash;which teach skills up to and including basic programming&mdash;made available in a majority of high schools.  Ideally, these classes should not simply be electives; one computing class should be a required part of any high school curriculum.  (I don&#8217;t mean a course in touch typing.)  Of course, given the real-world economic and temporal constraints that educators face, I don&#8217;t expect that any of these things will happen any time soon.  One can always hope, though!</p>
-
-<p><span style="font-size: 0.8em;">On a related note, you may be amused to find out <a href="http://www.youtube.com/watch?v=o4MwTvtyrUQ" title="what a browser is">what a browser is.</a></span></p>
 ]]></content>
   </entry>
   

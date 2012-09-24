@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="Whilst browsing Reddit today, I came across a short essay by Mordechai Ben-Ari titled &#8221;Non-Myths About Programming&#8221; (PDF warning).  It&# &hellip;">
+  <meta name="description" content="I&#8217;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&#8217;ve decided to use the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,6 +94,72 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2011/04/09/android-ndk-stack-trace-script/">Android NDK Stack Trace Script</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-09T16:30:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&#8217;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &#8220;performance-critical&#8221; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&#8217;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&#8217;t imagine it&#8217;s too difficult, but I haven&#8217;t spent much time on it—I&#8217;ve not needed to do much debugging yet.)<!--more--></p>
+
+<p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it&#8217;s a bit of a pain to use.  To that end, I&#8217;ve put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you&#8217;d like to do something similar on Windows, I&#8217;m sure it won&#8217;t be hard, but you&#8217;re on your own.  Here&#8217;s how to use it:</p>
+
+<ol>
+    <li>Create a folder in your project called &#8220;debug&#8221; (or whatever name you&#8217;d like)</li>
+    <li>Create a file called <code>debug.sh</code>, consisting of the following:
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/usr/bin/env bash</span>
+</span><span class='line'>NDK_ROOT/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-objdump -S PATH_TO_SOLIB &gt; SOLIB_NAME.arm
+</span><span class='line'>adb logcat -d &gt; logcat.txt
+</span><span class='line'>python parse_stack.py SOLIB_NAME.arm logcat.txt
+</span></code></pre></td></tr></table></div></figure>
+
+    <li><code>chmod +x debug.sh</code> so that it&#8217;s executable</li>
+        <li>Run the script with <code>./debug.sh</code> each time you need to see a stack trace</li>
+</ol>
+
+
+<p>Obviously there are a few things you&#8217;ll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
+
+<p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don&#8217;t change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you&#8217;ll need to dump them again to get accurate results.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2011/04/09/android-ndk-stack-trace-script/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
   
   
     <article>
@@ -338,68 +404,6 @@ margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC De
 
     </article>
   
-  
-    <article>
-      
-
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/08/27/misconceptions-about-computer-science/">Where are all the Computer Scientists?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-27T19:01:00-07:00" pubdate data-updated="true">Aug 27<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It&#8217;s common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn&#8217;t get complacent just yet.  There&#8217;s still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.<!--more--></p>
-
-<p>I&#8217;ve always felt that a lack of exposure is one of the primary detriments to computer science enrollment.  While I don&#8217;t have any hard data, my own experience combined with an informal surveyal of friends and colleagues leads me to believe that a large percentage of North American high schools—possibly even a majority—offer little in the way of comprehensive computing classes.  While I don&#8217;t dispute the importance of math, English and science, I can&#8217;t help but wonder why computing isn&#8217;t given an equal footing in the educational sphere, given its ubiquity today.</p>
-
-<p>I&#8217;ve encountered a great number of intelligent and educated people who have <em>no idea whatsoever</em> about what the field of computer science is, or even how computers and software work.  I understand that most people don&#8217;t necessarily need that information.  However, it&#8217;s odd to me that basic computer literacy isn&#8217;t required of college graduates (let alone high school students) in the same way that basic writing and math skills are.  In the interest of meeting ever-increasing economic demand for technically skilled graduates, shouldn&#8217;t we do more to expose students to computing?</p>
-
-<p>To illustrate my point, here are a few examples:</p>
-
-<ul>
-    <li style="margin-bottom: 1em;">I used to work retail, and small-talk at the till would frequently turn to my university career.  Almost invariably when I told a customer that I was enrolled in a computer science program, he or she would reply &#8220;Oh, I always have so much trouble getting computers to work.  I think mine has a virus.&#8221;  This was usually followed by &#8220;But it&#8217;s good that you&#8217;re learning about them; we&#8217;ll always need people to fix them!&#8221;</li>
-    <li style="margin-bottom: 1em;">While discussing my current job with a friend of mine who is in the third year of her degree program, I described my workflow to her.  I told her that a bug report or feature request will come in from a customer, I&#8217;ll gather requirements and implement a solution, and then make adjustments as necessary until the customer is satisfied.  She asked, &#8220;How many do you get done in a day?&#8221;  I couldn&#8217;t help but laugh; there are very few tasks in client-focused software development which are both worth mentioning and completable in one day.  Perhaps I&#8217;m being unfair here, as that question probably seems reasonable to someone with little knowledge of software development.  However, no one would ask of a an architect, &#8220;How many buildings do you design in a day?&#8221;  Why is software different?  I&#8217;d argue that it&#8217;s because most people are never exposed to software development.</li>
-    <li style="margin-bottom: 1em;">In my third year of university I was required to take an English course to fulfill my breadth requirements.  While discussing one of my papers with her, the professor complimented me on my writing.  She said that I had a strong, persuasive style, and asked if I was a law student.  She was shocked when I told her that, as a matter of fact, I was in computer science.  She then told me that she was glad I&#8217;d taken her course (on Renaissance and early modern literature), as it would ensure that I was somewhat cultured and not simply a &#8220;computer nerd.&#8221;  I have a great deal of respect for that professor and I don&#8217;t believe that her comment had any ill intent, but it again illustrates the fact that computer science is frequently misunderstood and/or not taken seriously.</li>
-</ul>
-
-
-<p>I&#8217;m not entirely sure if these examples will properly communicate the point I&#8217;d hoped they would. I wouldn&#8217;t want anyone to misunderstand the purpose of this post, either; I don&#8217;t mean to complain about how computer science is perceived.  I don&#8217;t particularly care how people feel about my field of study.</p>
-
-<p>My point is this: it seems to me that a large percentage of people, no matter how well educated they may otherwise be, have no idea how computers work or how software is developed.  I feel that the primary reason for this is, in most cases, that they were never exposed to computing in a serious way.  Until this is remedied, computer science enrollment will continue to be mediocre and the field of computer science will not reach its full potential.  After all, who wants to go into a field he or she knows nothing about?</p>
-
-<p>I&#8217;ve mentioned that I&#8217;m surprised at the lack of computer literacy I see in some college graduates.  Colleges are not my primary concern, though.  If computer science enrollment is to be increased, exposure to computing needs to start much earlier.  At the very least, I&#8217;d like to see is comprehensive computing courses&mdash;which teach skills up to and including basic programming&mdash;made available in a majority of high schools.  Ideally, these classes should not simply be electives; one computing class should be a required part of any high school curriculum.  (I don&#8217;t mean a course in touch typing.)  Of course, given the real-world economic and temporal constraints that educators face, I don&#8217;t expect that any of these things will happen any time soon.  One can always hope, though!</p>
-
-<p><span style="font-size: 0.8em;">On a related note, you may be amused to find out <a href="http://www.youtube.com/watch?v=o4MwTvtyrUQ" title="what a browser is">what a browser is.</a></span></p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2010/08/27/misconceptions-about-computer-science/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/5/">&larr; Older</a>
@@ -426,6 +430,11 @@ margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC De
   <ul id="recent_posts">
     
       
+      <li class="post             category-Technology            ">
+        <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
       </li>
@@ -443,11 +452,6 @@ margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC De
       
       <li class="post             category-Personal            ">
         <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
-      </li>
-    
-      
-      <li class="post             category-Gaming            ">
-        <a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a>
       </li>
     
   </ul>
