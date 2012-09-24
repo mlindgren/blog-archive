@@ -134,6 +134,19 @@ body > nav
   height: 100%;
 }
 
+
+.iPad .header-background-stretch,
+.iPhone .header-background-stretch
+{
+  height: auto;
+}
+
+.iPad #header-background,
+.iPhone #header-background
+{
+  bottom: auto;
+}
+
 #category-wrapper
 {
   padding: 0;
