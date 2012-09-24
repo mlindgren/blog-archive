@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Gaming | mlindgren.ca]]></title>
+  <link href="http://blog.mlindgren.ca/categories/gaming/atom.xml" rel="self"/>
+  <link href="http://blog.mlindgren.ca/"/>
+  <updated>2012-09-23T17:41:14-07:00</updated>
+  <id>http://blog.mlindgren.ca/</id>
+  <author>
+    <name><![CDATA[Mitch Lindgren]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Some thoughts on used games and online passes]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/"/>
+    <updated>2012-02-03T23:37:00-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes</id>
+    <content type="html"><![CDATA[<p>Online passes are becoming more and more ubiquitous in the games industry.  For those who aren't familiar with the terminology, an online pass is essentially a form of digital rights management designed to discourage and devalue used game sales by tying some game content to unique, one-use codes packaged with new copies of games.  Online passes are a contentious issue.  Some feel that they're a perfectly legitimate way for developers and publishers to ensure that they get their cut of each sale, and to reward those who purchase games new.  Others see them as a violation of consumer rights or contend that they inconvenience customers who <em>do</em> buy new (by requiring them to type in long access codes on game controllers) while being of only dubious value to publishers and developers.</p>
+
+<p>Most recently, there's been a bit of an uproar over the inclusion of an online pass in <em><a href="http://en.wikipedia.org/wiki/Kingdoms_of_Amalur:_Reckoning">Kingdoms of Amalur: Reckoning</a></em>, a single-player RPG with no online component.  The pass confers seven extra quests on those who purchase the game new, or deprives those who purchased used of them, depending on your perspective.<!--more-->  Before I lay my cards on the table, I'll let Curt Schilling, the founder of the studio behind the game, explain what he sees the purpose of the online pass as:</p>
+
+<blockquote>That being said, this next part is likely to piss people off, but it's a truth and it's how I feel. You can argue the merits and effectiveness of it, but right now it's how it's done and as someone that's as invested as I am in this company, I stand by what has happened.
+
+DAY 1 DLC, to be extremely and VIVIDLY clear, is FREE, 100% totally FREE, to anyone that buys a new copy of Reckoning, ANYONE. 
+
+If you don't buy new games you buy them used, and in that case you will have to pay for the Day 1 free DLC content the new copy buyers got for free.
+
+It's clear the intent right? To promote early adopters and MUCH MORE IMPORTANT TO ME, REWARD fans and gamers who commit to us with their time and money when it benefits the company.</blockquote>
+
+
+<p>You can read the rest of his post <a href="http://forums.reckoning.amalur.com/showthread.php?3063-Did-you-push-back-at-EA-at-all-over-this-Quest-content-gated-by-online-pass.&s=2ba8c3194088140ce6161b0c374691f5&p=52812&viewfull=1#post52812" title="Curt Schilling's post on the Kingdoms of Amalur online pass.">on the Kingdoms of Amalur forum.</a>  I think Curt's position is reasonable and I am sympathetic to the frustration he's clearly feeling; he believes that he's trying to protect his business interests and in the process rewarding loyal fans with free bonus content, and receiving nothing but scorn in return.</p>
+
+<p>I don't think <em>Kingdoms of Amalur</em>'s online pass is an egregious abuse by any means, but in general,  I do count myself among those who see online passes as an unsettling trend.  I think consumers have good reason to be suspicious of companies that choose to use online passes.  There are good arguments for and against online passes, but the most popular arguments in favor of online passes often seem to rely on strawmen and dubious assumptions with no supporting data.  Jerry Holkins (Tycho) of Penny Arcade <a href="http://penny-arcade.com/2012/01/30/plurality" title="Plurality - Penny Arcade">writes:</a></p>
+
+<blockquote>I've been reading a lot his weekend about Fat Cats and how fat they are and how they want your money, but the only choice you get in this matter (aside from the wholly valid "not buying it" choice, of course) is which supposed Fat Cat to enrich.  You can enrich the people who made the game you are enjoying, or you can enrich people who had nothing to do with the game.  Policies like this are designed to incentivize new purchases: that is to say, sales.  We call those sales.</blockquote>
+
+
+<p>In other words, you're either supporting the developers who produce the games you love, or you're supporting retailers like Gamestop.  Naturally most consumers would prefer the former, all else being equal; developers are creative entities, focused&mdash;or so we can hope&mdash;on artistic expression before profit.  Retailers, by contrast, are often viewed as greedy and incidental vestiges of the rapidly dying era of physical media.  Their services are at best unnecessary, and at worst <a href="http://www.joystiq.com/2011/08/24/gamestop-intentionally-removing-deus-ex-onlive-coupons-from-reta/" title="Gamestop intentionally removing Deus Ex OnLive coupons from retail PC copies - Joystiq">abusive of their customers to an extent that would make an ardent objectivist blush.</a></p>
+
+<p>This is a false dichotomy for two reasons.  First, traditional retailers are not the only avenues for the trading and selling of used games.  One could trade games directly with friends or colleagues, or buy and sell them at garage sales and flea markets.  There are even a number of online services that have been created for the explicit purpose of allowing consumers to trade and sell used games at reasonable prices.  (Of course, those services take a cut too, but I think it's safe to assume that their margins are nothing like Gamestop's, and they are much more consumer-centric in general.)</p>
+
+<p>More importantly, there is an implicit assumption in Holkins' argument that each used sale deprives the publisher of a new sale.  This is the same false equivalency that the <acronym title="Motion Picture Association of America">MPAA</acronym> and <acronym title="Recording Industry Association of America">RIAA</acronym> have been using for years to <a href="http://www.pcworld.com/article/223431/riaa_thinks_limewire_owes_75_trillion_in_damages.html" title="RIAA thinks Limewire owes $75 trillion in damages" target="_blank">overstate the negative effects of piracy</a>, and it is no less pernicious when applied to secondhand markets.  To the best of my knowledge there is absolutely no data to support this assertion, and it doesn't really hold up to logical scrutiny.  Sure, a sale of a used game does not directly support the game's publisher and developer, but there's no guarantee that the buyer would otherwise have bought the game new.  More importantly, the person who traded in that game for store credit is likely to use that credit toward the purchase of a new game.</p>
+
+<p>"Triple-A" retail games cost $60 in the US and Canada these days, and in countries like Australia prices can reach AUS $100 and above.  That is, frankly, an absurd amount of money and out of the reach of a great many people.  Without a healthy used market to mitigate these prices, many consumers would simply be forced to purchase fewer games.  Others would likely turn to piracy.  Nobody wins in that scenario; not developers, not publishers, and certainly not gamers.</p>
+
+<p>My arguments thus far have been based on assumptions and logic rather than empirical data, just as the arguments I am attacking are.  What I am postulating is that my analysis is at least as plausible as the alternative (in my opinion, moreso), and that in the absence of actual scientific data the sane solution for publishers is to try to compete with used sales by offering better service and pricing incentives rather than trying to find technological solutions which, even when well-meaning, embitter those who can't afford to buy every game they are interested in at $60 a pop.</p>
+
+<p>Now, you might be thinking that because I'm not in the industry, my perspective is limited.  Maybe publishers <em>do</em> have data which support the conclusion that used game sales are a net loss.  It's possible; it certainly makes sense that entities which exist solely to maximize game sales would want to have that data.  That said, given the ineptitude displayed by media giants in fighting piracy, I am not convinced that it should be taken for granted that they take a scientific approach to <em>anything</em>.  Take this exchange between <a href="https://twitter.com/#!/kristen_">Kristen Bornemann</a> and I on Twitter:</p>
+
+<blockquote>
+<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
+href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> When people pick up used
+games it reduces the chance of publishers investing more money into the game
+(sequel, etc).<br />
+<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
+href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> Therefore it directly
+hurts us as devs… especially 3rd party devs.<br />
+<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
+href="https://twitter.com/#!/kristen_">@kristen_</a> Do you have statistics that
+demonstrate that, or are you just assuming so by the false equivalency of 1 used
+sale = 1 lost sale?<br />
+<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
+href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> I worked in publishing.
+The fact is if a publisher hears that used sales are high = death for game. They
+don't care about stats.<br />
+<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
+href="https://twitter.com/#!/kristen_">@kristen_</a> Then perhaps the community
+should focus on fixing that, rather than limiting consumer choice? <br />
+<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
+href="https://twitter.com/#!/kristen_">@kristen_</a> Because if the publishers
+"don't care about stats," what are their business decisions based on?
+Vindictiveness? <br />
+<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> hearsay and gut/instinct… why do you think I left? ;)
+</blockquote>
+
+
+<p>I'm aware that this short Twitter exchange is by no means a definitive example of how every publisher everywhere conducts business.  Again, I'm simply saying that until I see data which actually show a net loss for publishers and developers from used sales, I see no reason to take as gospel the assertion that they <em>are</em> a net loss.  That said, even if conclusive data were available, I still don't think I could support online passes at the conceptual level.  <em>Amalur</em> is innocuous, but it's the exception rather than the rule; most online passes lock used buyers out of multiplayer until they've shelled out another ten to fifteen dollars.  That is blatantly vindictive anti-consumer behaviour on the part of publishers, and it epitomizes the troubling trend of media companies punishing legitimate consumers in a misguided attempt to artificially control the marketplace and perpetuate outdated business models.  For an example of exactly how far this thinking goes, consider <a href="http://altdevblogaday.com/2012/02/02/i-feel-used/" title="I Feel Used">this post</a> by Jameson Durall of Volition:</p>
+
+<blockquote>There’s another big rumor about the next Xbox console that could really start to shake things up…it won’t play used games at all!  Personally I think this would be a fantastic change for our business and even though the consumers would be up in arms about it at first…they will grow to understand why and that it won’t kill them.</blockquote>
+
+
+<p>To say that entirely removing the used market "won't kill" consumers strikes me as extremely ironic.  Used games have existed for as long as games have existed, and have evidently not killed the industry, and yet that is exactly what developers and publishers are complaining will happen if we continue with the status quo.  Durall himself says that used game sales are "making it more and more difficult for us to continue making higher quality products."  My feeling is that the rhetoric is a lot more emotionally charged on the part of online pass supporters; there is a strong insinuation that used buyers are costing people their jobs and are in some sense morally inferior to those who have the luxury of being able to buy only new games.</p>
+
+<p>But I digress.  I don't give too much credence to the rumor Durall refers to, but the idea that anyone would consider it a good course of action is mind boggling to me.  It's another step in the march towards the complete erosion of consumer rights, and along the way the products we purchase are further crippled and devalued.  It hurts consumers and it hurts content producers because <em>this devaluation of legitimate products is what drives growth in piracy.</em></p>
+
+<p>I must clarify exactly what I mean when I say that product devaluation drives growth in piracy.  It is a popular belief among technology writers on the Internet that services which compete on convenience, such as iTunes and Steam, can actually reduce piracy.  The data that I have seen do not support that conclusion.  However, history has demonstrated that a legislative or technical solution is likely impossible because pirates will always find ways to break digital locks and make enforcement of anti-piracy legislation effectively impossible.  Any legislative solution broad enough to admit the possibility of significantly decreasing piracy by inconveniencing would-be pirates <a href="http://en.wikipedia.org/wiki/Stop_Online_Piracy_Act" title="Wikipedia: Stop Online Piracy Act">would likely have negative repercussions outweighing the benefits</a>, and the assumption that a nuking-the-anthill style solution &agrave; la <acronym title="Stop Online Piracy Act">SOPA</acronym> would be effective for more than a few weeks is <a href="https://chrome.google.com/webstore/detail/hnifiobpjihmmjgiokkaalgomddebhng/details">extremely dubious anyway.</a></p>
+
+<p>So what are content producers to do?  Pandora's Box has been opened and the clock cannot be turned back.  There will always be people with no compunction about downloading works without even attempting to compensate the artist, and dishearteningly, the research I have read indicates that once someone is turned on to piracy he is unlikely to stop&mdash;even if content producers then offer better incentives to compete with pirates.  It <a href="http://repository.cmu.edu/cgi/viewcontent.cgi?article=1056&context=heinzworks" title="Converting Pirates without Cannibalizing Purchasers:  The Impact of Digital Distribution on Physical Sales and Internet Piracy">has been demonstrated</a>, however, that removing options increases piracy.  Devaluing products and services with arbitrary restrictions and inconveniencing legitimate consumers will have the same effect.  <em>Copying is the fundamental operation on which the principle of computing is built.  It cannot be stopped.  The only thing content producers can do is to prevent people from turning to piracy in the first place by offering the best service possible.</em></p>
+
+<p>Returning to the topic at hand, online passes go hand in hand with the consumer-as-enemy mindset that plagues media giants.  They arise from the same attitude that justifies $30 BluRay movies with minutes and minutes of unskippable commercials, and <a href="http://www.destructoid.com/drm-fun-several-legit-ubisoft-games-will-break-next-week-220948.phtml" title="DRM Fun: Several legit Ubisoft games will break next week - Destructoid">always-on DRM which prevents legitimate purchasers from playing single-player games</a> when the publisher's servers are down.  Through legislation and technology, these companies are trying to make ownership rights exclusive to corporations and prevent consumers from interacting with the media they purchase in any manner that is not explicitly pre-approved.  They are declaring a war on their customers, and it is a war they cannot win.  Make no mistake, though: as these behemoths run themselves into the ground because they are incapable of adapting, there will be casualties among the artists, musicians and developers who create the works of culture we love.</p>
+
+<p>That is why I cannot support online passes.  I truly believe that in the long run they are detrimental to all involved.  I truly believe that the best way for a company to protect its interests is to do its utmost to reward its fans and give them the best experience possible&mdash;all of them, even those who do not <em>directly</em> contribute to the bottom line.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[In Defense of Clones]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2011/07/14/in-defense-of-clones/"/>
+    <updated>2011-07-14T22:23:00-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2011/07/14/in-defense-of-clones</id>
+    <content type="html"><![CDATA[<p>With the phenomenal and growing successes of the iPhone App Store, the Android Market, and the Xbox Live Indie Games marketplace, gamers have seen an unprecedented number of titles which could be described as "clones" of more successful games&mdash;or rip-offs, if you're feeling less kind.  Along with these titles has come a veritable tsunami of hatred for their developers, from game critics and anonymous Internet commenters alike.  The commercial success of some of these titles, such as <em>Angry Birds</em>,<sup>1</sup> has shown that average gamers are happy to patronize any developer who can provide a fun experience, regardless of originality.  However, any mention of a new clone on a gaming blog or podcast inevitably brings about a stunning amount of vitriol from gamers who, presumably, are upset that their favorite megacorporations aren't getting their due.<!--more--></p>
+
+
+
+
+<p>I don't understand this, but my best guess it that it stems from a misunderstanding of the motivations of game developers, and of the development process itself.  I hope that by illuminating those things I can do something to stem the tide of rage and indignation.  First, though, I'd like to briefly discuss the legality of game clones.  The patentability and copyrightability of game mechanics and "look and feel" varies from country to country.  Notably, the <a href="http://www.epo.org/law-practice/legal-texts/html/epc/2010/e/ar52.html" target="_blank" title="European Patent Convention, Article 52">European Patent Convention explicitly states</a> that "schemes, rules and methods for performing mental acts, playing games or doing business, and programs for computers" are not patentable, whereas no such restriction exists in the United States.  There are <a href="http://www.gamasutra.com/view/feature/2315/its_just_a_game_right_top_.php" target="_blank" title="Gamasutra: It's Just a Game, Right? Top Mythconceptions on Patent Protection of Video Games">several notable examples</a> of game-related patents in the United States, but the industry is young and there are relatively few legal precedents on their enforceability.  I am not a lawyer, so it would be unwise of me to assert too much here, but I will state that throwing around terms like "copyright infringement" is neither productive nor terribly meaningful when discussing game clones.</p>
+
+
+
+
+<p>I'd also like to make clear that by "clone," I mean a legitimately developed game with similar gameplay mechanics and/or art style to an established title.  I am emphatically <em>not</em> referring to situations in which actual code or art assets have been used without permission; under no circumstances do I condone actual copyright infringement.  Finally, in the interest of full disclosure, I should also inform you that I have a dog in this race, so to speak: my game, <em><a href="http://www.mlindgren.ca/projects/puzzle-panel">Puzzle Panel</a></em>, borrows gameplay mechanics from <em><a href="http://en.wikipedia.org/wiki/Tetris_Attack" target="_blank">Tetris Attack</a></em> and takes artistic cues from <em><a href="http://en.wikipedia.org/wiki/World_of_Warcraft" target="_blank">World of Warcraft</a></em>.</p>
+
+
+
+
+<div style="margin-right: auto; margin-left: auto; text-align: center;">
+<a href="http://blog.mlindgren.ca/images/puzzlepanel_tetrisattack.jpg" title="Click to view full size."><img src="http://blog.mlindgren.ca/images/puzzlepanel_tetrisattack.jpg" alt="Comparison screenshot of Puzzle Panel and Tetris Attack" title="Comparison screenshot of Puzzle Panel and Tetris Attack.  Click to view full size." width="651px" height="320px" /></a><br />
+<span><small>A comparison between Puzzle Panel, left, and Tetris Attack.</small></span>
+</div>
+
+
+
+
+<p><em>Tobar</em> for iOS is a recent example of the kinds of titles I'm talking about.  The game is a fairly obvious mimicry of <em><a href="http://supermeatboy.com" target="_blank">Super Meat Boy</a></em>, and while <em>Meat Boy</em> co-creator Edmund McMillian is relatively unperturbed by it, many of his fans are less forgiving.  I'm going to pick on the <a href="http://destructoid.com">Destructoid</a> community here for no other reason than that Destructoid is one of my favorite gaming publications, but a quick Google search reveals no shortage of hatred for <em>Tobar</em>.<sup>2</sup>  <a href="http://www.destructoid.com/meat-boy-dev-has-mixed-feelings-about-ios-knock-offs-205886.phtml#comment" target="_blank" title="Meat Boy dev has mixed feelings about iOS knock-offs - Destructoid">Destructoid user Noir Trilby writes</a>:</p>
+
+
+
+
+<p><blockquote>What a shameless rip off. It's good that Ed is cool about it and all, but if I was him I'd be raging. Both Apple and Android need someone doing some quality control on their aming services to screen out blatant rip offs like this.</blockquote></p>
+
+
+
+
+<p>Even associate editor Jonathan Holmes goes so far as to say that the game "makes him frown," which&mdash;though it doesn't sound it&mdash;is fairly significant criticism coming from a man so kind and gentle as to have probably never said a genuinely hurtful thing is his life.</p>
+
+
+
+
+<p>As I've already mentioned, I don't think <em>Tobar</em>, nor other games like it, deserve the hate they receive.  There are a number of reasons why I feel this way.  First, all art is iterative, and video games are no exception.  Creativity is not binary, but is a matter of degree.  Second, when indie developers borrow from established properties, there's little evidence that it's detrimental to the owners of those properties, whereas it may be extremely beneficial to consumers.  Finally, I feel that there's a misconception that games like <em>Tobar</em> exist because lazy, greedy developers want to make a quick buck and can't be bothered to do the work to come up with an original title.  That perception is wrong on many levels, which I'll discuss in further detail in the following paragraphs.</p>
+
+
+
+
+<p>The apparent trend of smaller developers "ripping off" well known games is probably an illusion.  It's likely that these are simply the instances of liberal borrowing that we hear about, due to the popularity of the "borrowee."  Take <em>Angry Birds</em>, for example.  Most people would point to it as an example of a successful, original title by a studio that was relatively small at the time of its release.  The truth is that although its art style is unique, its gameplay mechanics are borrowed heavily from an older flash game called <em><a href="http://armorgames.com/play/3614/crush-the-castle" target="_blank">Crush the Castle</a></em>.  Or how about <em>Super Meat Boy</em>?  It surely owes some of its success to predecessors such as <em><a href="http://www.gamemakergames.com/archive/jumper-two" target="_blank">Jumper Two</a></em>, <em><a href="http://kayin.pyoko.org/iwbtg/" target="_blank">I Wanna Be The Guy</a></em>, and <em><a href="http://www.thewayoftheninja.org/" target="_blank">N+</a></em>.</p>
+
+
+
+
+<div style="margin-right: auto; margin-left: auto; text-align: center;">
+<a href="http://blog.mlindgren.ca/images/smb_nplus_j2_iwbtg.jpg" title="Click to view full size."><img src="http://blog.mlindgren.ca/images/smb_nplus_j2_iwbtg.jpg" alt="Comparison screenshot of Super Meat Boy, N+, Jumper Two, and I Wanna Be The Guy" title="Comparison screenshot of Super Meat Boy, N+, Jumper Two, and I Wanna Be The Guy.  Click to view full size." width="651px" height="320px" /></a><br />
+<span><small>A comparison between Super Meat Boy, N+, Jumper Two, and I Wanna Be The Guy.</small></span>
+</div>
+
+
+
+
+<p>Granted, each of these games have their own original elements, whereas <em>Tobar</em> at least appears to be a fairly direct attempt at reproducing <em>Super Meat Boy</em>.  But every great game stands on the shoulders of giants, and every developer has to start somewhere.  Games like <em>Tobar</em> should not be condemned as soulless exercises in profiteering, but recognized for what they are: a means for inexperienced developers to hone their skills while contributing to new markets, much as a musician might start out by covering popular songs in venues where the original artist would never perform.</p>
+
+
+
+
+<p>Words like <em>stealing</em> and <em>theft</em> are often thrown around in discussions of game clones.  But one of the defining characteristics of theft is that it deprives the owner of his or her property.  What harm is the existence of <em>Tobar</em> doing to Team Meat?  Given that Team Meat's Tommy Refenes has publicly stated that he has "no intentions on doing anything for iPhone or iPad ever...I hate the [iPhone and iPad] platforms and I hate the [app] stores," <em>Tobar</em> is in no sense a competitor to <em>Super Meat Boy</em>.  I don't know the developer of <em>Tobar</em>, but I'd wager that his intent was simply to bring gameplay he loves to a new platform that he's passionate about.</p>
+
+
+
+
+<p>Passion is exactly why I created <em>Puzzle Panel</em>; I wasn't looking to make quick money by ripping off someone else's creativity and putting it on a new platform.  Rather, I wanted to share a game that I loved with an audience who might have never seen it before, on a platform where it was unlikely to ever see the light of day otherwise.  I am not a veteran game critic who values unique mechanics above all else because he's seen most gameplay elements a thousand times before, nor am I a would-be <em>artiste</em> desperately attempting to create a legacy for himself.  For these reasons, I value fun over originality.  If people enjoy my game, that is enough for me.  If a nervous child at the doctor's office finds solace in something I've created, my work has paid off immeasurably.  If I can contribute just a little more happiness to someone's life, I am satisfied.</p>
+
+
+
+
+<p>"If the motivations of indie developers are purely in the interest of gamers," you might ask, "why charge money for these clones?"  Well, the reasons are simple.  First, we're human, and we need to eat; it's nice to get paid for one's work, even when said work is not completely novel.  Second, even discounting the dozens or hundreds of hours of effort required to make the simplest of games, there are significant up-front costs to developers in creating games.  Developer licenses, development software, test hardware, and licensed or commissioned music, sound effects and graphics add up very quickly.</p>
+
+
+
+
+<p>I did all of the programming and artwork myself for <em>Puzzle Panel</em>, as well as much of the sound, and it still cost me over $1,000 to make.  To a student, that is a great deal of money.  I charged a dollar for the game, but in the end I recouped <em>none</em> of the cost of creating it.  I don't regret a thing, but this illustrates the point that game development is anything but a quick and surefire way to get rich.  For every developer making money on their games, there are literally tens of thousands who sink in countless hours and significant money, only to receive nothing in return.  That being the case, I don't give much credence to the argument that developers such as <em>Tobar</em>'s are just in it for the money.</p>
+
+
+
+
+<div style="margin-right: auto; margin-left: auto; text-align: center;">
+<a href="http://www.mobileappleme.com/paid-applications-on-the-app-store-from-360idev" title="Click for more information on App Store economics." target="_blank"><img src="http://blog.mlindgren.ca/images/pinchmedia_appstore.png" alt="Graph of App Store download distribution for paid apps.  The top 10% of apps receive more than 80% of downloads.  Click for more information on App Store economics." title="Graph of App Store download distribution for paid apps.  The top 10% of apps receive more than 80% of downloads.  Click for more information on App Store economics." width="600px" height="450px" /></a><br />
+<span><small>PinchMedia's statistics show that the top 10% of paid apps receive more than 80% of all downloads; most developers are left in the cold.</small></span>
+</div>
+
+
+
+
+<p>Thus far I've been writing specifically about indie developers.  I'd be remiss to not mention that established, big-budget studios often clone each other's games, or worse, the games of indie developers.  I'm much less sympathetic to this; like Jonathan Holmes with <em>Tobar</em>, I certainly frowned when I read about <a href="http://www.destructoid.com/capcom-copies-splosion-man-with-maxplosion-191411.phtml">Capcom's obvious copy of indie hit <em>'Splosion Man</em></a>.  But although I personally find this distasteful, I still don't see a great need for alarm.  A well-made, original title which has found an audience has little to fear from pretenders.</p>
+
+
+
+
+<p>Now, please don't misunderstand me.  I am by no means saying that every developer should just go out and rip off the biggest franchise he can because there's nothing wrong with unoriginality.  On the contrary, innovation and creativity should be encouraged and rewarded, and while I think it's fine for hobbyist programmers to start out by mimicking their favorite titles, we should definitely turn a more critical eye to established studios who have the time, budget and experience to be original but are content with releasing an endless stream of sequels, clones and remakes.  But please, let's cut the indie developers some slack.  Cloning a popular game to make a quick buck is simply not a winning proposition.  Regardless of their originality, regardless of their financial success or failure, I can assure you that indies do it for the love.</p>
+
+
+<p><sup>1</sup> <small>Although it has its own unique art style, I count <em>Angry
+Birds</em> among the clones for its striking similarities to Armor Games'
+<em>Crush the Castle</em>.</small><br/>
+<sup>2</sup> <small>Ironically, the "negative" publicity <em>Tobar</em> is generating will probably help its sales more than anything else could have.</small></p>
+]]></content>
+  </entry>
+  
+</feed>

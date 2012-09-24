@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Puzzle Panel Postmortem: Introduction - mlindgren.ca</title>
+  <meta name="author" content="Mitch Lindgren">
+
+  
+  <meta name="description" content="Welcome, dear reader! Although this is the inaugural post for this website, I won&#8217;t bother with any introduction here.  If that sort of thing &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2010/05/30/puzzle-panel-retrospective-part-i/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+
+<!--
+/* @license
+* MyFonts Webfont Build ID 1737828, 2011-12-16T22:03:39-0500
+*
+* The fonts listed in this notice are subject to the End User License
+* Agreement(s) entered into by the website owner. All other parties are 
+* explicitly restricted from using the Licensed Webfonts(s).
+*
+* You may obtain a valid license at the URLs below.
+*
+* Webfont: Museo 700 by exljbris
+* URL: http://www.myfonts.com/fonts/exljbris/museo/700/
+* Copyright: Copyright (c) 2008 by Jos Buivenga/exljbris. All rights reserved.
+* Licensed pageviews: unlimited
+*
+*
+* License: http://www.myfonts.com/viewlicense?type=web&buildid=1737828
+*
+* © 2011 Bitstream Inc
+*/
+
+-->
+<link rel="stylesheet" type="text/css" href="/stylesheets/mlindgren_ca_museo700.css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">mlindgren.ca</a></h1>
+  
+</hgroup>
+<div id="header-outer-wrap">
+  <div id="header-wrap">
+    <div id="header-background">
+      <img src="/images/header.jpg" class="header-background-stretch" />
+    </div>
+  </div>
+</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.mlindgren.ca" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      
+
+<div id="category-wrapper" class="category-Coding">
+<article class="hentry " role="article">
+  
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h3 class="entry-title"><a href="#">Puzzle Panel Postmortem: Introduction</a></h3>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-30T01:26:00-07:00" pubdate data-updated="true">May 30<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Welcome, dear reader!</p>
+
+<p>Although this is the inaugural post for this website, I won&#8217;t bother with any introduction here.  If that sort of thing interests you, I refer you to the <a title="About" href="http://www.mlindgren.ca/about" target="_self">&#8220;about&#8221; page.</a> For this entry, I&#8217;d like to dive right into the sort of content that this site is to be host to.  My iPhone developer program membership expires today, and I won&#8217;t be renewing it—not immediately, at least.  That being the case, I think that this is a good time to reflect on my year as a so-called &#8220;iPhone developer.&#8221;<!--more--></p>
+
+<p>There&#8217;s lots to be said about the iPhone, the app store, and Apple in general; I&#8217;m sure I&#8217;ll write on those topics profusely.  For the time being, though, I&#8217;m going to limit myself to a discussion of the product of my labour: <a title="Puzzle Panel" href="http://www.mlindgren.ca/projects/puzzle-panel" target="_self">Puzzle Panel.</a> I&#8217;ve twice given a presentation on the development of Puzzle Panel as part of the University of Alberta <a title="University of Alberta Computers &amp; Games" href="http://www.cs.ualberta.ca/undergraduate-students/course-directory/computers-and-games" target="_blank">Computers &amp; Games course</a>, but while I was grateful for the opportunity to discuss my game, the format of the presentation was such that I was never quite able to express everything that I wanted to.  (I doubt that most of those in attendance would have been interested, anyway.)  It is my hope that this site will give me a platform to communicate with greater fidelity.</p>
+
+<p>If you&#8217;re not familiar with Puzzle Panel, there&#8217;s a trailer available <a title="Puzzle Panel trailer on YouTube" href="http://www.youtube.com/watch?v=obg-I9JnzFU" target="_blank">here</a>, or you can check out the <a title="Puzzle Panel project page" href="http://www.mlindgren.ca/projects/puzzle-panel">project page</a> or <a title="Puzzle Panel website" href="http://puzzlepanel.net">website</a> for more information.  Unfortunately, the expiry of my developer program membership means that Puzzle Panel will no longer be available on the iPhone app store for the time being.  I&#8217;d like to remedy this; I want the game to be available indefinitely and to as many people as possible.  However, for reasons I&#8217;ll likely discuss at a later date, I&#8217;m hesitant to pay the $100 membership fee again, so at this point I&#8217;m&#8230; investigating my options, let&#8217;s say.</p>
+
+<p>Anyway, returning to the topic at hand, I purchased my iPhone with the specific intent to develop an app.  The iPhone is often cited as a great gaming device, and I think that <em>would be</em> true if not for the lack of physical input options: the phone&#8217;s hardware is powerful and its operating system is pleasantly efficient, but the touch screen just doesn&#8217;t work for most games.  For puzzle games, though, it works pretty well; the tap-and-swipe paradigm of the iPhone lends itself naturally to puzzle-style gameplay.  (The good ol&#8217; D-pad is still faster and more accurate, though.)  Hence, Puzzle Panel.</p>
+
+<p>The game was developed over five months.  I don&#8217;t have a good sense of how many hours it actually took, but if I&#8217;d estimate somewhere between 200 and 400.  I worked on it in the evenings after work and on my days off - sometimes obsessively, devoting all of my free time to it, sometimes barely touching it for weeks at a time.  Not including the frameworks and libraries I used, the game consists of roughly 8,500 lines of Objective C code across 40 or so classes.  The most time-consuming part of the project, though, was the artwork.  I&#8217;m anything but a practised artist, so creating the game backgrounds and other art assets took dozens and dozens of hours.  While I was impressed at what my Wacom tablet allowed me to accomplish, I was never entirely satisfied with the results.  Still, I think doing the artwork myself was a wise decision.</p>
+
+<p>That&#8217;s the basic high-level project overview.  In the next post, I&#8217;ll discuss the <a title="Cocos2D-iPhone" href="http://cocos2d-iphone.org/" target="_blank">Cocos2D-iPhone</a> framework and why I chose to use it, and then I&#8217;ll go through a &#8220;postmortem&#8221; in subsequent posts.  I&#8217;ll endeavour to include more technical information—code snippets and the like—in future posts.</p>
+</div>
+
+</div>
+
+  <footer>
+    <p class="meta">
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-30T01:26:00-07:00" pubdate data-updated="true">May 30<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/coding/'>Coding</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/entry/2010/06/15/my-iphone-debacle/" title="Next Post: My iPhone debacle">My iPhone debacle &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1><a name="comments">Comments</a></h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<h1>Pages</h1>
+<ul id="pages-aside">
+<li><a href="/" title="Home">Home</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/projects" title="Projects">Projects</a></li>
+</ul>
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
+      </li>
+    
+      
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
+      </li>
+    
+      
+      <li class="post             category-Technology            ">
+        <a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a>
+      </li>
+    
+      
+      <li class="post             category-Personal            ">
+        <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
+      </li>
+    
+      
+      <li class="post             category-Gaming            ">
+        <a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section>
+<h1>Categories</h1>
+  <ul id="categories-aside">
+  
+  
+    
+  <li class="category-aside category-Coding">
+    <a href="/categories/coding">Coding</a>
+  </li>
+  
+    
+  <li class="category-aside category-Gaming">
+    <a href="/categories/gaming">Gaming</a>
+  </li>
+  
+    
+  <li class="category-aside category-Links">
+    <a href="/categories/links">Links</a>
+  </li>
+  
+    
+  <li class="category-aside category-Personal">
+    <a href="/categories/personal">Personal</a>
+  </li>
+  
+    
+  <li class="category-aside category-Technology">
+    <a href="/categories/technology">Technology</a>
+  </li>
+  
+  </ul>
+</section>
+<section>
+<h1>Social</h1>
+<ul id="social-aside">
+<li>
+<a rel="me" target="_blank" href="https://github.com/mlindgren"
+title="Visit my Github public repositories."><img src="/images/github.png"
+alt="Click to visit Github">&nbsp;Github</a></li>
+<li>
+<a rel="me" target="_blank"
+href="http://www.last.fm/user/lindgrenM" title="Visit my last.fm profile
+page."><img src="/images/last.fm.png" alt="Click to visit
+last.fm">&nbsp;last.fm</a>
+</li>
+<li>
+<a rel="me" target="_blank"
+href="http://stackoverflow.com/users/108340/mitch-lindgren" title="Visit my
+Stack Overflow profile."><img src="/images/stackoverflow.png" alt="Click to
+visit Stack Overflow">&nbsp;Stack Overflow</a>
+</li>
+<li>
+<a rel="me"
+target="_blank" href="https://twitter.com/lindgrenM" title="Follow @lindgrenM on
+Twitter"><img src="/images/twitter.png" alt="Click to visit
+Twitter">&nbsp;Twitter</a>
+</li>
+<li><a rel="me" target="_blank"
+href="http://mlindgren.yelp.ca/" title="Read my business reviews on Yelp."><img
+src="/images/yelp.png" alt="Click to visit Yelp">&nbsp;Yelp</a>
+</li>
+<li>
+<a
+rel="me" target="_blank" href="http://www.youtube.com/user/lindgrenMitch"
+title="Visit my YouTube channel."><img src="/images/yt.png"
+alt="Click to visit YouTube">&nbsp;YouTube</a>
+</li>
+</ul>
+
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mlindgren',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("lindgrenM", 5, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/lindgrenM">@lindgrenM</a></p>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><ul class="subscription" data-subscription="rss"
+style="float: right; display: inline-block;">
+<li style="display: inline-block;"><a href="/atom.xml" rel="subscribe-rss"
+title="subscribe via RSS"
+style="font-size: 18px; width: 22px; height: 22px; display: inline-block;
+overflow: hidden">
+RSS</a>
+</li>
+</ul>
+
+<p>
+  Copyright &copy; 2010 - 2012 - Mitch Lindgren -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mlindgrenca';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.mlindgren.ca/entry/2010/05/30/puzzle-panel-retrospective-part-i/';
+        var disqus_url = 'http://blog.mlindgren.ca/entry/2010/05/30/puzzle-panel-retrospective-part-i/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

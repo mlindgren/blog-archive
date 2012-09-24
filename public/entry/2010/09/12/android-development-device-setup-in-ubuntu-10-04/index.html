@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Android Development Device Setup in Ubuntu 10.04 - mlindgren.ca</title>
+  <meta name="author" content="Mitch Lindgren">
+
+  
+  <meta name="description" content="I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+
+<!--
+/* @license
+* MyFonts Webfont Build ID 1737828, 2011-12-16T22:03:39-0500
+*
+* The fonts listed in this notice are subject to the End User License
+* Agreement(s) entered into by the website owner. All other parties are 
+* explicitly restricted from using the Licensed Webfonts(s).
+*
+* You may obtain a valid license at the URLs below.
+*
+* Webfont: Museo 700 by exljbris
+* URL: http://www.myfonts.com/fonts/exljbris/museo/700/
+* Copyright: Copyright (c) 2008 by Jos Buivenga/exljbris. All rights reserved.
+* Licensed pageviews: unlimited
+*
+*
+* License: http://www.myfonts.com/viewlicense?type=web&buildid=1737828
+*
+* © 2011 Bitstream Inc
+*/
+
+-->
+<link rel="stylesheet" type="text/css" href="/stylesheets/mlindgren_ca_museo700.css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">mlindgren.ca</a></h1>
+  
+</hgroup>
+<div id="header-outer-wrap">
+  <div id="header-wrap">
+    <div id="header-background">
+      <img src="/images/header.jpg" class="header-background-stretch" />
+    </div>
+  </div>
+</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.mlindgren.ca" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      
+
+<div id="category-wrapper" class="category-Coding">
+<article class="hentry " role="article">
+  
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h3 class="entry-title"><a href="#">Android Development Device Setup in Ubuntu 10.04</a></h3>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-12T17:02:00-07:00" pubdate data-updated="true">Sep 12<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&#8217;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&#8217;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&#8217;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a><!--more--></p>
+
+<ol>
+    <li>Connect your phone to your computer and open a terminal window.  Run <code>adb devices</code> to confirm that adb can &#8220;see&#8221; your phone.  You should see something like this:
+<pre><code>$ adb devices
+List of devices attached
+???????????? no permissions</code></pre>
+    </li><li>Type <code>lsusb</code> to get a list of attached USB devices.  Look for an entry with your phone&#8217;s manufacturer; for instance, since I have an HTC device, I get:
+<pre><code>$ lsusb
+...
+Bus 002 Device 003: ID 0bb4:0c87 High Tech Computer Corp. 
+...</code></pre>
+
+Note the ID - in my case, <code>0bb4:0c87</code>.  The part before the colon is the vendor ID.  The part after it is the product ID.  Keep these in mind.
+</li><li>
+You&#8217;ll now need to create a udev rules file using your preferred text editor.  <a href="http://dimitar.me/how-to-connect-your-android-phone-to-ubuntu-to-do-developmenttestinginstallations-or-tethering/" title="How to connect your Android phone to Ubuntu">This guide</a> lists a number of different file names per-device, but based on my reading of the udev man page, I don&#8217;t believe the file name is actually important.  The official documentation recommends <code>51-android.rules</code>, which is what I went with.  You&#8217;ll need to use <code>sudo</code> to get permission to create the file:
+<pre><code>$ sudo vi /etc/udev/rules.d/51-android.rules</code></pre>
+</li>
+<li>
+The contents of the file should be as follows:
+<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="[Vendor ID]", ATTRS{idProduct}=="[Product ID]", MODE="0666"</code></pre>
+&#8230;where the bracketed bits are replaced with the IDs you got earlier from lsusb.  For my HTC Desire, I entered:
+<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bb4", ATTRS{idProduct}=="0c87", MODE="0666"</code></pre>
+</li>
+<li>
+Save the file.  Most of the documentation I&#8217;ve come across says that restarting adb and udev is sufficient to give adb access to your device, but <strong>in my case I had to completely restart my computer before adb properly recognized my phone.</strong>  Nevertheless, it&#8217;s probably best to adb and udev first:
+<pre><code>$ sudo restart udev
+$ adb kill-server
+$ adb start-server</code></pre>
+Run <code>adb devices</code> again to see if your phone is recognized.  If you still see <code>???????????? no permissions</code>, you&#8217;ll probably need to restart your computer.
+</li>
+<li>
+You should now have full access to your phone from adb and Eclipse.
+</li>
+</ol>
+
+
+<p>I hope this proves helpful.  If you have any corrections or if this method didn&#8217;t work for you, leave a comment.</p>
+</div>
+
+</div>
+
+  <footer>
+    <p class="meta">
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-12T17:02:00-07:00" pubdate data-updated="true">Sep 12<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/coding/'>Coding</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/entry/2010/09/06/android-first-impressions/" title="Previous Post: Android First Impressions">&laquo; Android First Impressions</a>
+      
+      
+        <a class="basic-alignment right" href="/entry/2010/10/03/194/" title="Next Post: Making Samba shares accessible to Apache on OS X">Making Samba shares accessible to Apache on OS X &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1><a name="comments">Comments</a></h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<h1>Pages</h1>
+<ul id="pages-aside">
+<li><a href="/" title="Home">Home</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/projects" title="Projects">Projects</a></li>
+</ul>
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
+      </li>
+    
+      
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
+      </li>
+    
+      
+      <li class="post             category-Technology            ">
+        <a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a>
+      </li>
+    
+      
+      <li class="post             category-Personal            ">
+        <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
+      </li>
+    
+      
+      <li class="post             category-Gaming            ">
+        <a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section>
+<h1>Categories</h1>
+  <ul id="categories-aside">
+  
+  
+    
+  <li class="category-aside category-Coding">
+    <a href="/categories/coding">Coding</a>
+  </li>
+  
+    
+  <li class="category-aside category-Gaming">
+    <a href="/categories/gaming">Gaming</a>
+  </li>
+  
+    
+  <li class="category-aside category-Links">
+    <a href="/categories/links">Links</a>
+  </li>
+  
+    
+  <li class="category-aside category-Personal">
+    <a href="/categories/personal">Personal</a>
+  </li>
+  
+    
+  <li class="category-aside category-Technology">
+    <a href="/categories/technology">Technology</a>
+  </li>
+  
+  </ul>
+</section>
+<section>
+<h1>Social</h1>
+<ul id="social-aside">
+<li>
+<a rel="me" target="_blank" href="https://github.com/mlindgren"
+title="Visit my Github public repositories."><img src="/images/github.png"
+alt="Click to visit Github">&nbsp;Github</a></li>
+<li>
+<a rel="me" target="_blank"
+href="http://www.last.fm/user/lindgrenM" title="Visit my last.fm profile
+page."><img src="/images/last.fm.png" alt="Click to visit
+last.fm">&nbsp;last.fm</a>
+</li>
+<li>
+<a rel="me" target="_blank"
+href="http://stackoverflow.com/users/108340/mitch-lindgren" title="Visit my
+Stack Overflow profile."><img src="/images/stackoverflow.png" alt="Click to
+visit Stack Overflow">&nbsp;Stack Overflow</a>
+</li>
+<li>
+<a rel="me"
+target="_blank" href="https://twitter.com/lindgrenM" title="Follow @lindgrenM on
+Twitter"><img src="/images/twitter.png" alt="Click to visit
+Twitter">&nbsp;Twitter</a>
+</li>
+<li><a rel="me" target="_blank"
+href="http://mlindgren.yelp.ca/" title="Read my business reviews on Yelp."><img
+src="/images/yelp.png" alt="Click to visit Yelp">&nbsp;Yelp</a>
+</li>
+<li>
+<a
+rel="me" target="_blank" href="http://www.youtube.com/user/lindgrenMitch"
+title="Visit my YouTube channel."><img src="/images/yt.png"
+alt="Click to visit YouTube">&nbsp;YouTube</a>
+</li>
+</ul>
+
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mlindgren',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("lindgrenM", 5, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/lindgrenM">@lindgrenM</a></p>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><ul class="subscription" data-subscription="rss"
+style="float: right; display: inline-block;">
+<li style="display: inline-block;"><a href="/atom.xml" rel="subscribe-rss"
+title="subscribe via RSS"
+style="font-size: 18px; width: 22px; height: 22px; display: inline-block;
+overflow: hidden">
+RSS</a>
+</li>
+</ul>
+
+<p>
+  Copyright &copy; 2010 - 2012 - Mitch Lindgren -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mlindgrenca';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.mlindgren.ca/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/';
+        var disqus_url = 'http://blog.mlindgren.ca/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

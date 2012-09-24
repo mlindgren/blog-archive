@@ -55,7 +55,8 @@ h1
   font-weight: bold !important;
 }
 
-body, .heading, body > #main h1, h2, h3, h4, h5, h6
+body, .heading, body > #main h1, h2, h3, h4, h5, h6,
+.blog-index a[rel="full-article"]
 {
   font-family: 'Open Sans', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica,
                Verdana, Arial, Sans-Serif !important;
@@ -77,4 +78,9 @@ sup, sub
 {
   font-size: 0.3em;
   display: inline;
+}
+
+#content a
+{
+  text-decoration: none;
 }

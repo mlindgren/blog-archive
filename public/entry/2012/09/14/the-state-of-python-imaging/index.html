@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The state of Python imaging - mlindgren.ca</title>
+  <meta name="author" content="Mitch Lindgren">
+
+  
+  <meta name="description" content="(With apologies to Eevee, of whom I am a great fan.) So, I&#8217;m working on a photo album app written in Python.  I&#8217;m using Python because, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+
+<!--
+/* @license
+* MyFonts Webfont Build ID 1737828, 2011-12-16T22:03:39-0500
+*
+* The fonts listed in this notice are subject to the End User License
+* Agreement(s) entered into by the website owner. All other parties are 
+* explicitly restricted from using the Licensed Webfonts(s).
+*
+* You may obtain a valid license at the URLs below.
+*
+* Webfont: Museo 700 by exljbris
+* URL: http://www.myfonts.com/fonts/exljbris/museo/700/
+* Copyright: Copyright (c) 2008 by Jos Buivenga/exljbris. All rights reserved.
+* Licensed pageviews: unlimited
+*
+*
+* License: http://www.myfonts.com/viewlicense?type=web&buildid=1737828
+*
+* © 2011 Bitstream Inc
+*/
+
+-->
+<link rel="stylesheet" type="text/css" href="/stylesheets/mlindgren_ca_museo700.css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">mlindgren.ca</a></h1>
+  
+</hgroup>
+<div id="header-outer-wrap">
+  <div id="header-wrap">
+    <div id="header-background">
+      <img src="/images/header.jpg" class="header-background-stretch" />
+    </div>
+  </div>
+</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.mlindgren.ca" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      
+
+<div id="category-wrapper" class="category-Coding">
+<article class="hentry " role="article">
+  
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h3 class="entry-title"><a href="#">The state of Python imaging</a></h3>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-14T03:36:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
+
+<p>So, I&#8217;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&#8217;m using Python because, well, I love it.  I think it&#8217;s the perfect language for web development; it&#8217;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:<!--more--></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">db_tags</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span>
+</span><span class='line'>                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">MetadataTag</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">source</span> <span class="o">=</span> <span class="s">&#39;exif&#39;</span><span class="p">)])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What I&#8217;m doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag&#8217;s name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn&#8217;t particularly <em>difficult</em> to do in any other language; as I said, it&#8217;s a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn&#8217;t have list comprehensions.  I don&#8217;t even want to think about how many lines of code this would take in Java; additionally, while I&#8217;m unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup></p>
+
+<p>So, Python&#8217;s pretty great. But like all languages, it does have a few problems. The one I have had the most difficulty with in my current project is that third party library support is somewhat lacking in some important areas; specifically, there aren&#8217;t many good options for reading and manipulating images. The most popular library seems to be the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>, PIL. It&#8217;s easy enough to install and provides a <em>passable</em> set of core features, but doesn&#8217;t go much beyond that.  For instance, none of the various camera raw formats seem to be supported, which I consider a fairly important feature for my photo album; I&#8217;d very much like be able to upload original raws and have the application automatically convert them to JPEGs for me.  Additionally, it doesn&#8217;t provide much in the way of convenience methods for cropping and resizing images.  <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank">ImageMagick</a> has <a title="ImageMagick geometry" href="http://www.imagemagick.org/script/command-line-processing.php#geometry" target="_blank">a very nice means of specifying cropping and resizing geometry</a> with various aspect ratio-preserving (or not) behaviour, and I wanted to be able to leverage something similar for my app so that I could quickly prototype with various size options.</p>
+
+<p>Given that ImageMagick provides most of the functionality I want that PIL lacks, it seemed like a good option, but it&#8217;s a C library and Python doesn&#8217;t yet have mature bindings for it.  It&#8217;s getting there, though!  I decided to go with <a title="Python Wand library" href="http://dahlia.kr/wand/index.html" target="_blank">Wand</a>, which is a fork of python-magickwand.  It has a nice high-level API, but also provides direct access to most of the low-level MagickWand APIs, making it fairly flexible.  When I first found it, it did not have support for the nice geometry specifications I wanted to use, but being an open source project I was able to patch that in.  <a title="Wand version 0.2.2" href="http://dahlia.kr/wand/changes.html#version-0-2-2" target="_blank">Version 0.2.2</a> will include my patch, which provides the <code>Image.transform</code> method for easy cropping and resizing.  Eevee is also <a title="Sanpera - Eevee's Github" href="https://github.com/eevee/sanpera" target="_blank">working on a Python imaging library</a>, which is promising, but it&#8217;s still a work in progress.</p>
+
+<p>Unfortunately Wand doesn&#8217;t yet support retrieving EXIF, <acronym title="International Press Telecommunications Council">IPTC</acronym> or <acronym title="Extensible Metadata Platform">XMP</acronym> metadata from images, which is another requirement for me.  ImageMagick does support EXIF at least, and that&#8217;s on the roadmap for Wand, but implementing a high-level interface for EXIF tags is a bigger task than I have time for at the moment.  That meant that I had to turn to another library to retrieve metadata.  <a title="pyexiv2 library" href="http://tilloy.net/dev/pyexiv2/" target="_blank">pyexiv2</a>, a Python binding for the exiv2 C++ library, initially looked promising.  Unfortunately I discovered that it&#8217;s not installable via any Python package manager; it must be built from source (via a build system I&#8217;ve never even heard of, and I&#8217;m familiar with more than a few build systems), unless a binary is provided for your platform by the project maintainers (i.e. you are on Debian, Ubuntu, Fedora or Windows).</p>
+
+<p>My project already has more dependencies than I&#8217;m entirely comfortable with; one of the reasons that Python only has modest adoption as a web application platform despite being a great language for the task is that it doesn&#8217;t have a kitchen sink-style standard library, and third-party libraries require separate installation.  In general I consider that a good thing; I&#8217;d rather have a well-designed standard library than a <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/#general" target="_blank">gigantic mishmash of inconsistently named global functions.</a>  However, it does make deployment a little more complex.  So far I&#8217;ve managed to stick to libraries which can be installed in one step using well-known package managers, so the setup procedure for my app should not be too arduous.  Adding pyexiv2 as a dependency and thereby including an entirely different build system in the process would likely have complicated the installation procedure to the point that no actual ordinary humans would ever use my application.  That&#8217;s something I want to avoid, if possible.</p>
+
+<p><del>For now I have settled for exif-py.</del>  It only handles EXIF tags, not IPTC or XMP, which is disappointing because I really wanted to support multiple metadata formats.  It&#8217;s a pure Python library in a single file, though, so I can just include with my distribution.  It&#8217;s easy to use and gets the job done, so it will have to do for now.  I&#8217;m hoping that pyexiv2 will show up in pip (a Python package manager) at some point, though.  [<strong>Updated September 16, 2012: </strong>I&#8217;ve discovered that exif-py is broken in at least a couple significant ways, so I&#8217;m kind of back at square one for handling metadata.  exif-py seems to be unable to detect EXIF data in some files that have it.  Additionally, the strings that it translates orientation codes to are not consistent with each other, so they&#8217;re basically wrong.  I&#8217;ve informed the maintainers of these issues, but I don&#8217;t have time to fix them myself.]</p>
+
+<p>The process of trying to find a good imaging package for Python and ultimately settling for two separate libraries which still don&#8217;t quite do everything I want has made it clear to me that third party library support for Python still has a way to go.  Hopefully the situation will improve as adoption of the language increases.  I&#8217;m happy to do my part, both through contributions to open source libraries such as Wand, and by building apps using Python to bolster the ecosystem.  I hope that by demonstrating what&#8217;s possible with Python as a web application platform, I can help convince new web developers to build their applications using Python as well&#8230; which provides yet more reason for me to be diligent about finishing my photo album app!</p>
+
+<p><sup>1</sup> <small>Okay, the <code>dict</code> function is perhaps not the most explicit. Check the docs once, though, and it&#8217;s very easy to understand.</small><br/>
+<sup>2</sup> <small>Ruby would doubtless be similarly concise, and it seems like a nice language in my limited experience, but I find its syntax and distinction between &#8220;symbols&#8221; and strings to not be to my taste.</small></p>
+</div>
+
+</div>
+
+  <footer>
+    <p class="meta">
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-14T03:36:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/coding/'>Coding</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/entry/2012/09/14/social-networks-and-content-ownership/" title="Previous Post: Social networks and content ownership">&laquo; Social networks and content ownership</a>
+      
+      
+        <a class="basic-alignment right" href="/entry/2012/09/19/strlen-without-conditionals/" title="Next Post: strlen without conditionals">strlen without conditionals &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1><a name="comments">Comments</a></h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<h1>Pages</h1>
+<ul id="pages-aside">
+<li><a href="/" title="Home">Home</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/projects" title="Projects">Projects</a></li>
+</ul>
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
+      </li>
+    
+      
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
+      </li>
+    
+      
+      <li class="post             category-Technology            ">
+        <a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a>
+      </li>
+    
+      
+      <li class="post             category-Personal            ">
+        <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
+      </li>
+    
+      
+      <li class="post             category-Gaming            ">
+        <a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section>
+<h1>Categories</h1>
+  <ul id="categories-aside">
+  
+  
+    
+  <li class="category-aside category-Coding">
+    <a href="/categories/coding">Coding</a>
+  </li>
+  
+    
+  <li class="category-aside category-Gaming">
+    <a href="/categories/gaming">Gaming</a>
+  </li>
+  
+    
+  <li class="category-aside category-Links">
+    <a href="/categories/links">Links</a>
+  </li>
+  
+    
+  <li class="category-aside category-Personal">
+    <a href="/categories/personal">Personal</a>
+  </li>
+  
+    
+  <li class="category-aside category-Technology">
+    <a href="/categories/technology">Technology</a>
+  </li>
+  
+  </ul>
+</section>
+<section>
+<h1>Social</h1>
+<ul id="social-aside">
+<li>
+<a rel="me" target="_blank" href="https://github.com/mlindgren"
+title="Visit my Github public repositories."><img src="/images/github.png"
+alt="Click to visit Github">&nbsp;Github</a></li>
+<li>
+<a rel="me" target="_blank"
+href="http://www.last.fm/user/lindgrenM" title="Visit my last.fm profile
+page."><img src="/images/last.fm.png" alt="Click to visit
+last.fm">&nbsp;last.fm</a>
+</li>
+<li>
+<a rel="me" target="_blank"
+href="http://stackoverflow.com/users/108340/mitch-lindgren" title="Visit my
+Stack Overflow profile."><img src="/images/stackoverflow.png" alt="Click to
+visit Stack Overflow">&nbsp;Stack Overflow</a>
+</li>
+<li>
+<a rel="me"
+target="_blank" href="https://twitter.com/lindgrenM" title="Follow @lindgrenM on
+Twitter"><img src="/images/twitter.png" alt="Click to visit
+Twitter">&nbsp;Twitter</a>
+</li>
+<li><a rel="me" target="_blank"
+href="http://mlindgren.yelp.ca/" title="Read my business reviews on Yelp."><img
+src="/images/yelp.png" alt="Click to visit Yelp">&nbsp;Yelp</a>
+</li>
+<li>
+<a
+rel="me" target="_blank" href="http://www.youtube.com/user/lindgrenMitch"
+title="Visit my YouTube channel."><img src="/images/yt.png"
+alt="Click to visit YouTube">&nbsp;YouTube</a>
+</li>
+</ul>
+
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mlindgren',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("lindgrenM", 5, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/lindgrenM">@lindgrenM</a></p>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><ul class="subscription" data-subscription="rss"
+style="float: right; display: inline-block;">
+<li style="display: inline-block;"><a href="/atom.xml" rel="subscribe-rss"
+title="subscribe via RSS"
+style="font-size: 18px; width: 22px; height: 22px; display: inline-block;
+overflow: hidden">
+RSS</a>
+</li>
+</ul>
+
+<p>
+  Copyright &copy; 2010 - 2012 - Mitch Lindgren -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mlindgrenca';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging/';
+        var disqus_url = 'http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

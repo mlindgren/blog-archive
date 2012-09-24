@@ -9,7 +9,7 @@ single: true
 {% endfor %}
 {% endcapture %}
 
-<div class="{{ page_class | strip_newlines }}">
+<div id="category-wrapper" class="{{ page_class | strip_newlines }}">
 <article class="hentry {{ category_class }}" role="article">
   {% include article.html %}
   <footer>

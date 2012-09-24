@@ -2,7 +2,12 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     {% for post in site.posts limit: site.recent_posts %}
-      <li class="post">
+      {% capture post_class %}
+      {% for category in post.categories %}
+      {{ category | prepend:'category-' }}
+      {% endfor %}
+      {% endcapture %}
+      <li class="post {{ post_class | strip_newlines }}">
         <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
       </li>
     {% endfor %}

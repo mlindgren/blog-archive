@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Links | mlindgren.ca]]></title>
+  <link href="http://blog.mlindgren.ca/categories/links/atom.xml" rel="self"/>
+  <link href="http://blog.mlindgren.ca/"/>
+  <updated>2012-09-23T17:41:14-07:00</updated>
+  <id>http://blog.mlindgren.ca/</id>
+  <author>
+    <name><![CDATA[Mitch Lindgren]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ethical Game Design from Gamasutra]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra/"/>
+    <updated>2011-12-30T16:28:00-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra</id>
+    <content type="html"><![CDATA[<p>I came across a couple excellent articles on Gamasutra which I want to share here. The first, "<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>" is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, "deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice." I'll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the "freemium" model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam's thoughts on the subject are certainly worth reading.</p>
+
+<p>"<a title="Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy" href="http://www.gamasutra.com/blogs/EvanJones/20110815/8195/Radical_Plagiarism_The_Ethical_Lessons_of_the_Gamenauts_Controversy.php" target="_blank">Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy</a>," by <a href="http://www.gamasutra.com/blogs/author/EvanJones/4235/">Evan Jones</a>, is equally thought-provoking. Evan recounts the cloning of the indie game <a href="http://www.bored.com/game/play/150995/Radical_Fishing.html"><em>Radical Fishing</em></a> by the more established indie studio <a href="http://gamenauts.com/">Gamenauts</a>, and adds his perspective on the cultural impact of the rampant cloning that takes place on mobile app stores. Returning readers may recall that I've previously <a title="In Defense of Clones" href="http://www.mlindgren.ca/archives/318">defended the practice of cloning games</a>. My defense excluded the cloning of smaller titles by established studios, which I've always viewed as morally questionable at best, but Evan's article nevertheless gave me pause. He provides a strong counterpoint to my own thinking on the matter, and while I'm not yet ready to reverse my position, his argument has undeniable weight. If you're at all interested in game development, both articles are well worth your time.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Non-Myths About Programming]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2011/02/03/non-myths-about-programming/"/>
+    <updated>2011-02-03T20:53:00-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2011/02/03/non-myths-about-programming</id>
+    <content type="html"><![CDATA[<p>Whilst browsing <a href="http://reddit.com" target="_blank">Reddit</a> today, I came across a short essay by <a href="http://stwww.weizmann.ac.il/g-cs/benari/" target="_blank">Mordechai Ben-Ari</a> titled "<a title="PDF: Non-Myths About Programming" href="http://stwww.weizmann.ac.il/G-CS/BENARI/articles/nonmyths.pdf" target="_blank">Non-Myths About Programming</a>" (PDF warning).  It's only six pages long, and I found it refreshingly realistic and insightful.  I would urge anyone considering a career in computer science to read it.  Given its brevity (and the fact the title is reasonably descriptive), I won't bother summarizing the article—instead, I'll merely say that you should click the link and check it out for yourself.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Drive: The Surprising Truth About What Motivates Us]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/"/>
+    <updated>2010-06-15T23:19:00-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us</id>
+    <content type="html"><![CDATA[<p>I'm a huge fan of TED Talks. This is a fascinating video in which Dan Pink summarizes some of his research into human motivation, which I found at <a title="Coding Horror" href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror.</a></p>
+
+<object width="640" height="385" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowfullscreen" value="true" /><embed width="640" height="385" type="application/x-shockwave-flash" src="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" allowFullScreen="true" allowscriptaccess="always" allowfullscreen="true" /></object>
+
+]]></content>
+  </entry>
+  
+</feed>

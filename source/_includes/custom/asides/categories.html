@@ -1,0 +1,25 @@
+{% capture get_items %}
+{% for category in site.categories %}
+{{ category | first }}
+{% endfor %}
+{% endcapture %}
+{% capture num_words %}
+{{ get_items | number_of_words }}
+{% endcapture %}
+
+<section>
+<h1>Categories</h1>
+  <ul id="categories-aside">
+  {% comment %}
+  Holy hacks, Batman! There's no easy way to sort hashes or make
+  arrays which can be sorted in Liquid templates, so instead we have this
+  monstrosity.
+  {% endcomment %}
+  {% for item in (1..num_words) %}
+    {% capture category %}{{ get_items | split:' ' |  sort | join:' ' | truncatewords:item | remove:'&hellip;' | split:' ' | last }}{% endcapture %}
+  <li class="category-aside {{ category | prepend:'category-' }}">
+    <a href="/categories/{{ category | downcase }}">{{ category }}</a>
+  </li>
+  {% endfor %}
+  </ul>
+</section>

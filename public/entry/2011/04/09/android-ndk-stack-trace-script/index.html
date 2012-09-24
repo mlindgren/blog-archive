@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Android NDK Stack Trace Script - mlindgren.ca</title>
+  <meta name="author" content="Mitch Lindgren">
+
+  
+  <meta name="description" content="I&#8217;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&#8217;ve decided to use the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2011/04/09/android-ndk-stack-trace-script/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+
+<!--
+/* @license
+* MyFonts Webfont Build ID 1737828, 2011-12-16T22:03:39-0500
+*
+* The fonts listed in this notice are subject to the End User License
+* Agreement(s) entered into by the website owner. All other parties are 
+* explicitly restricted from using the Licensed Webfonts(s).
+*
+* You may obtain a valid license at the URLs below.
+*
+* Webfont: Museo 700 by exljbris
+* URL: http://www.myfonts.com/fonts/exljbris/museo/700/
+* Copyright: Copyright (c) 2008 by Jos Buivenga/exljbris. All rights reserved.
+* Licensed pageviews: unlimited
+*
+*
+* License: http://www.myfonts.com/viewlicense?type=web&buildid=1737828
+*
+* © 2011 Bitstream Inc
+*/
+
+-->
+<link rel="stylesheet" type="text/css" href="/stylesheets/mlindgren_ca_museo700.css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">mlindgren.ca</a></h1>
+  
+</hgroup>
+<div id="header-outer-wrap">
+  <div id="header-wrap">
+    <div id="header-background">
+      <img src="/images/header.jpg" class="header-background-stretch" />
+    </div>
+  </div>
+</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.mlindgren.ca" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      
+
+<div id="category-wrapper" class="category-Coding">
+<article class="hentry " role="article">
+  
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h3 class="entry-title"><a href="#">Android NDK Stack Trace Script</a></h3>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-09T16:30:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&#8217;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&#8217;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &#8220;performance-critical&#8221; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&#8217;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&#8217;t imagine it&#8217;s too difficult, but I haven&#8217;t spent much time on it—I&#8217;ve not needed to do much debugging yet.)<!--more--></p>
+
+<p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it&#8217;s a bit of a pain to use.  To that end, I&#8217;ve put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you&#8217;d like to do something similar on Windows, I&#8217;m sure it won&#8217;t be hard, but you&#8217;re on your own.  Here&#8217;s how to use it:</p>
+
+<ol>
+    <li>Create a folder in your project called &#8220;debug&#8221; (or whatever name you&#8217;d like)</li>
+    <li>Create a file called <code>debug.sh</code>, consisting of the following:
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/usr/bin/env bash</span>
+</span><span class='line'>NDK_ROOT/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-objdump -S PATH_TO_SOLIB &gt; SOLIB_NAME.arm
+</span><span class='line'>adb logcat -d &gt; logcat.txt
+</span><span class='line'>python parse_stack.py SOLIB_NAME.arm logcat.txt
+</span></code></pre></td></tr></table></div></figure>
+
+    <li><code>chmod +x debug.sh</code> so that it&#8217;s executable</li>
+        <li>Run the script with <code>./debug.sh</code> each time you need to see a stack trace</li>
+</ol>
+
+
+<p>Obviously there are a few things you&#8217;ll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
+
+<p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don&#8217;t change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you&#8217;ll need to dump them again to get accurate results.</p>
+</div>
+
+</div>
+
+  <footer>
+    <p class="meta">
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-09T16:30:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/coding/'>Coding</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/entry/2011/02/03/non-myths-about-programming/" title="Previous Post: Non-Myths About Programming">&laquo; Non-Myths About Programming</a>
+      
+      
+        <a class="basic-alignment right" href="/entry/2011/04/16/android-uiux-gripes/" title="Next Post: Android UI/UX gripes">Android UI/UX gripes &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1><a name="comments">Comments</a></h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<h1>Pages</h1>
+<ul id="pages-aside">
+<li><a href="/" title="Home">Home</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/projects" title="Projects">Projects</a></li>
+</ul>
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
+      </li>
+    
+      
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
+      </li>
+    
+      
+      <li class="post             category-Technology            ">
+        <a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a>
+      </li>
+    
+      
+      <li class="post             category-Personal            ">
+        <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
+      </li>
+    
+      
+      <li class="post             category-Gaming            ">
+        <a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section>
+<h1>Categories</h1>
+  <ul id="categories-aside">
+  
+  
+    
+  <li class="category-aside category-Coding">
+    <a href="/categories/coding">Coding</a>
+  </li>
+  
+    
+  <li class="category-aside category-Gaming">
+    <a href="/categories/gaming">Gaming</a>
+  </li>
+  
+    
+  <li class="category-aside category-Links">
+    <a href="/categories/links">Links</a>
+  </li>
+  
+    
+  <li class="category-aside category-Personal">
+    <a href="/categories/personal">Personal</a>
+  </li>
+  
+    
+  <li class="category-aside category-Technology">
+    <a href="/categories/technology">Technology</a>
+  </li>
+  
+  </ul>
+</section>
+<section>
+<h1>Social</h1>
+<ul id="social-aside">
+<li>
+<a rel="me" target="_blank" href="https://github.com/mlindgren"
+title="Visit my Github public repositories."><img src="/images/github.png"
+alt="Click to visit Github">&nbsp;Github</a></li>
+<li>
+<a rel="me" target="_blank"
+href="http://www.last.fm/user/lindgrenM" title="Visit my last.fm profile
+page."><img src="/images/last.fm.png" alt="Click to visit
+last.fm">&nbsp;last.fm</a>
+</li>
+<li>
+<a rel="me" target="_blank"
+href="http://stackoverflow.com/users/108340/mitch-lindgren" title="Visit my
+Stack Overflow profile."><img src="/images/stackoverflow.png" alt="Click to
+visit Stack Overflow">&nbsp;Stack Overflow</a>
+</li>
+<li>
+<a rel="me"
+target="_blank" href="https://twitter.com/lindgrenM" title="Follow @lindgrenM on
+Twitter"><img src="/images/twitter.png" alt="Click to visit
+Twitter">&nbsp;Twitter</a>
+</li>
+<li><a rel="me" target="_blank"
+href="http://mlindgren.yelp.ca/" title="Read my business reviews on Yelp."><img
+src="/images/yelp.png" alt="Click to visit Yelp">&nbsp;Yelp</a>
+</li>
+<li>
+<a
+rel="me" target="_blank" href="http://www.youtube.com/user/lindgrenMitch"
+title="Visit my YouTube channel."><img src="/images/yt.png"
+alt="Click to visit YouTube">&nbsp;YouTube</a>
+</li>
+</ul>
+
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mlindgren',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("lindgrenM", 5, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/lindgrenM">@lindgrenM</a></p>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><ul class="subscription" data-subscription="rss"
+style="float: right; display: inline-block;">
+<li style="display: inline-block;"><a href="/atom.xml" rel="subscribe-rss"
+title="subscribe via RSS"
+style="font-size: 18px; width: 22px; height: 22px; display: inline-block;
+overflow: hidden">
+RSS</a>
+</li>
+</ul>
+
+<p>
+  Copyright &copy; 2010 - 2012 - Mitch Lindgren -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mlindgrenca';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.mlindgren.ca/entry/2011/04/09/android-ndk-stack-trace-script/';
+        var disqus_url = 'http://blog.mlindgren.ca/entry/2011/04/09/android-ndk-stack-trace-script/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
