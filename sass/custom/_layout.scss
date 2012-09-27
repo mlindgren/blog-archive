@@ -32,7 +32,7 @@ $header-image-height: 1050px;
 
 @media only screen and (min-width: 768px)
 {
-  article.hentry, .blog-index article, #content > div section
+  #content > div > article, #content > div section
   {
     padding-left: 35px !important;
     padding-right: 35px !important;
@@ -80,6 +80,37 @@ body.Win32 > header > hgroup > h1
 {
   z-index: 1;
   position: relative;
+}
+
+#main article
+{
+  padding-top: 0.2em;
+}
+
+#main article ul, article ol
+{
+  padding-left: 1em;
+}
+
+#main article > header
+{
+  padding-top: 0;
+}
+
+#main article > div > header
+{
+  padding-top: 1.5em;
+  margin-top: 0.2em;
+}
+
+#content article header
+{
+  margin-bottom: 0;
+}
+
+#content .blog-index article
+{
+  padding-top: 0.2em !important;
 }
 
 #header-outer-wrap
