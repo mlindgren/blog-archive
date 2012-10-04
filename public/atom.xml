@@ -4,7 +4,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2012-09-26T23:45:56-07:00</updated>
+  <updated>2012-10-03T22:27:53-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Why Mozilla Persona Is the Right Answer to the Question of Identity]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/"/>
+    <updated>2012-10-03T20:37:00-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity</id>
+    <content type="html"><![CDATA[<p>David Somers presents an excellent rundown of what
+<a href="http://www.mozilla.org/en-US/persona/">Mozilla Persona</a> is and why it&#8217;s
+currently the best option for identity and authentication for web services. I&#8217;ve
+implemented authentication using Persona in the
+<a href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/">photo album app</a>
+I&#8217;m working on, and I found it remarkably easy to integrate with my app. And, as
+David explains, Persona is also much easier for users to understand than
+competing platforms like OpenID. If you&#8217;re a web developer, I&#8217;d urge you to
+strongly consider adding Persona support to your application as soon as
+possible. It can be done in literally a matter of minutes, and if Persona takes
+off the benefit to identity management on the Internet could be huge.</p>
+
+<p>Perhaps my favourite thing about Persona is that it gives me the opportunity to
+<a href="https://developer.mozilla.org/en-US/docs/Persona/Implementing_a_Persona_IdP">implement my own identity provider</a>,
+which means I can have <em>complete</em> control over how I authenticate to any
+Persona-consuming service. I could have <em>n</em>-factor authentication, with no limit
+on the complexity or specificity of the factors besides my own imagination. For
+example, I could generate SSL client certificates for each of my machines and
+hardcode their thumbprints into my identity provider to ensure that it wouldn&#8217;t
+even service requests from machines I haven&#8217;t explicitly added.  Or if I wanted
+to get creative, I could have my identity provider generate a random temporary
+key which I would have to retrieve via SSH (but this is less convenient and
+probably also less secure than doing SSL client authentication.) The
+possibilities are endless.</p>
+
+<p>Perhaps an end to having dozens upon dozens of different accounts and passwords
+for various services,
+<a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/">each with its own uniquely nonsensical policy</a>,
+is finally in sight.  Everyone needs to implement Persona&mdash;preferably
+yesterday.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
@@ -466,6 +504,17 @@ Vindictiveness? <br />
 <p>Returning to the topic at hand, online passes go hand in hand with the consumer-as-enemy mindset that plagues media giants.  They arise from the same attitude that justifies $30 BluRay movies with minutes and minutes of unskippable commercials, and <a href="http://www.destructoid.com/drm-fun-several-legit-ubisoft-games-will-break-next-week-220948.phtml" title="DRM Fun: Several legit Ubisoft games will break next week - Destructoid">always-on DRM which prevents legitimate purchasers from playing single-player games</a> when the publisher&#8217;s servers are down.  Through legislation and technology, these companies are trying to make ownership rights exclusive to corporations and prevent consumers from interacting with the media they purchase in any manner that is not explicitly pre-approved.  They are declaring a war on their customers, and it is a war they cannot win.  Make no mistake, though: as these behemoths run themselves into the ground because they are incapable of adapting, there will be casualties among the artists, musicians and developers who create the works of culture we love.</p>
 
 <p>That is why I cannot support online passes.  I truly believe that in the long run they are detrimental to all involved.  I truly believe that the best way for a company to protect its interests is to do its utmost to reward its fans and give them the best experience possible&mdash;all of them, even those who do not <em>directly</em> contribute to the bottom line.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dark Souls is the best game I've ever played]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/"/>
+    <updated>2012-01-09T13:44:00-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played</id>
+    <content type="html"><![CDATA[<p>Due to school and other commitments, I&#8217;m a bit behind the curve on writing about <em>Dark Souls</em>.  I purchased it when it was first released, but I was too busy to commit much time to it, and the release of <em>Skyrim</em> in November relegated it to the back burner.  I&#8217;ve recently had some more time to play it, and although I&#8217;m only about 32 hours in and perhaps half finished, I&#8217;m ready to make proclamation: <span style="background-color: #ff0;"><strong><em>Dark Souls</em> is the best game I&#8217;ve ever played,</strong> and to whatever extent art can be judged objectively, I think there&#8217;s a strong argument to be made that it&#8217;s objectively one of the best games ever created from an artistic standpoint.</span></p>
+
+<p>Whether or not you&#8217;ve played it, if you&#8217;re a gamer you&#8217;ve likely heard of <em>Dark Souls</em>: besides the critical acclaim it has received, it&#8217;s lauded as being <a href="http://blogs.wsj.com/speakeasy/2011/10/05/is-dark-souls-the-hardest-videogame-ever/" title="Is Dark Souls the hardest videogame ever?">arguably one of the most difficult games ever made</a>.  Its difficulty sets Dark Souls apart and makes successfully completing it a badge of merit among &#8220;hardcore&#8221; gamers.  More importantly, though, Dark Souls&#8217; relentless challenge and stubborn defiance of the precepts of modern game design allow it to achieve a level of artistic purity that other games can&#8217;t even begin to approach.</p>
 ]]></content>
   </entry>
   
@@ -935,84 +984,6 @@ sudo chmod 755 /Volumes/Mount_Name
 
 
 <p>I doubt a great number of people will need this information as it&#8217;s a strange sort of setup, but it&#8217;s my hope that these instructions will save someone some time.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android Development Device Setup in Ubuntu 10.04]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/"/>
-    <updated>2010-09-12T17:02:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04</id>
-    <content type="html"><![CDATA[<p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&#8217;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&#8217;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&#8217;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a><!--more--></p>
-
-<ol>
-    <li>Connect your phone to your computer and open a terminal window.  Run <code>adb devices</code> to confirm that adb can &#8220;see&#8221; your phone.  You should see something like this:
-<pre><code>$ adb devices
-List of devices attached
-???????????? no permissions</code></pre>
-    </li><li>Type <code>lsusb</code> to get a list of attached USB devices.  Look for an entry with your phone&#8217;s manufacturer; for instance, since I have an HTC device, I get:
-<pre><code>$ lsusb
-...
-Bus 002 Device 003: ID 0bb4:0c87 High Tech Computer Corp. 
-...</code></pre>
-
-Note the ID - in my case, <code>0bb4:0c87</code>.  The part before the colon is the vendor ID.  The part after it is the product ID.  Keep these in mind.
-</li><li>
-You&#8217;ll now need to create a udev rules file using your preferred text editor.  <a href="http://dimitar.me/how-to-connect-your-android-phone-to-ubuntu-to-do-developmenttestinginstallations-or-tethering/" title="How to connect your Android phone to Ubuntu">This guide</a> lists a number of different file names per-device, but based on my reading of the udev man page, I don&#8217;t believe the file name is actually important.  The official documentation recommends <code>51-android.rules</code>, which is what I went with.  You&#8217;ll need to use <code>sudo</code> to get permission to create the file:
-<pre><code>$ sudo vi /etc/udev/rules.d/51-android.rules</code></pre>
-</li>
-<li>
-The contents of the file should be as follows:
-<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="[Vendor ID]", ATTRS{idProduct}=="[Product ID]", MODE="0666"</code></pre>
-&#8230;where the bracketed bits are replaced with the IDs you got earlier from lsusb.  For my HTC Desire, I entered:
-<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bb4", ATTRS{idProduct}=="0c87", MODE="0666"</code></pre>
-</li>
-<li>
-Save the file.  Most of the documentation I&#8217;ve come across says that restarting adb and udev is sufficient to give adb access to your device, but <strong>in my case I had to completely restart my computer before adb properly recognized my phone.</strong>  Nevertheless, it&#8217;s probably best to adb and udev first:
-<pre><code>$ sudo restart udev
-$ adb kill-server
-$ adb start-server</code></pre>
-Run <code>adb devices</code> again to see if your phone is recognized.  If you still see <code>???????????? no permissions</code>, you&#8217;ll probably need to restart your computer.
-</li>
-<li>
-You should now have full access to your phone from adb and Eclipse.
-</li>
-</ol>
-
-
-<p>I hope this proves helpful.  If you have any corrections or if this method didn&#8217;t work for you, leave a comment.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android First Impressions]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2010/09/06/android-first-impressions/"/>
-    <updated>2010-09-06T20:19:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2010/09/06/android-first-impressions</id>
-    <content type="html"><![CDATA[<p>Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple&#8217;s app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they&#8217;ve claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.<!--more--></p>
-
-<p>The phone I switched to is the HTC Desire on Telus:</p>
-
-<p><img class="aligncenter size-full wp-image-152" style="display: block;
-margin-left: auto; margin-right: auto;" src="http://blog.mlindgren.ca/images/htc-desire.png" alt="HTC Desire" width="198" height="300" /></p>
-
-<p>With a 1Ghz CPU and 576MB of RAM, the Desire packs some powerful hardware.  So far, I&#8217;ve been quite impressed by the hardware, but that&#8217;s all I&#8217;ll say about it for now.  I&#8217;m more interested in relating my first impressions of the Android platform.  In no particular order:</p>
-
-<ul>
-    <li>The openness of the Android market and of the platform itself is immediately apparent as an ex-iPhone user.  <em>I love it.</em> I love being able to download emulators directly from the app store.  I love being able to install interactive programming environments on my phone.  I love having a native Latitude app.  I love that Google Voice is available, even though it&#8217;s currently US-only.  Most of all, I love that neither Apple nor any other company can tell me what I can and cannot install on my phone.</li>
-    <li>Widgets provide an extremely convenient way to access information without having to switch between apps.  While there aren&#8217;t as many widgets available as I wish there were (or perhaps they&#8217;re just difficult to find - more on this later), the built-in widgets alone have made the switch worthwhile for me.  I frequently check my phone for Twitter updates, new e-mail from work, news, and what have you; with Android, I can do all of this without ever leaving the home screen.  It&#8217;s delightful.  Beyond widgets, Android offers supreme customizability with themes, home screen replacement apps, and even (if you&#8217;re adventurous) custom device ROMs.</li>
-    <li>Although openness and customizability are boons to the Android platform, they also result in serious <a href="http://www.zdnet.com/blog/hardware/android-fragmentation-is-real/8499">fragmentation</a> which could hurt the platform in the long run.  I&#8217;ve already encountered widgets and apps which don&#8217;t quite display properly on my device, presumably because of HTC&#8217;s custom Sense UI.  What&#8217;s worse is how sluggish <a href="http://www.sonyericsson.com/cws/cws/home?cc=ca&amp;lc=en">some manufacturers</a> are to release critical operating system updates for their devices.  I&#8217;m picking on Sony because they don&#8217;t have a single device running Android 2.x, but even among other manufacturers, it doesn&#8217;t seem unusual for ROM updates to lag behind Google releases by several months. Worse <em>still </em>is that carrier locks can prevent these updates from being pushed to devices.  Android 2.2 &#8220;Froyo&#8221; has been available for the HTC Desire since late July, but Telus customers (who haven&#8217;t unlocked their phones) still haven&#8217;t received the update.  Supporting custom UIs, old operating system versions <em>and </em>varied hardware will force Android developers to commit more resources to testing and fewer to innovation, and the platform as a whole will suffer for it.</li>
-    <li>Android is fast.  Remarkably fast.  I don&#8217;t presently have enough information to objectively compare it to iOS, but I can say that I&#8217;ve been very impressed.  Five years ago I would have doubted that such performance would ever be possible with Java running on a mobile device.  (<span style="text-decoration: line-through;">I&#8217;m aware that most of the core of Android is written in C, but the apps and UI are still Java.</span> See correction below.<sup>1</sup>)  Having just purchased my Desire three days ago, I haven&#8217;t had a chance to install Froyo, either, but <a href="http://www.youtube.com/watch?v=utnYpybdIKo" target="_blank">benchmarks show</a> that it increases performance by up to 700%.<sup>2</sup></li>
-    <li>Navigation and searching in the Android Market is absolutely terrible.  I find it hard to believe that the Market is Google&#8217;s doing, because searching the market never seems to bring up what I&#8217;d consider to be the &#8220;best&#8221; results, unless you type in the exact name of a specific app you&#8217;re looking for.  The aren&#8217;t nearly enough categories, either.</li>
-    <li>On a related note, Android does lack some of the polish that iOS offers.  There&#8217;s not as much consistency in terms of UI elements and general design patterns.  Customizing home screens and managing multiple apps which run simultaneously may not be something that typical phone users will care to do.  For power users, though, it&#8217;s not a problem.  (Some sort of built-in task manager would be nice, though.)</li>
-    <li>Android is just a much better communication platform than iOS ever has been, and perhaps ever will be.  Apple has finally grudgingly implemented something akin to multi-tasking (if you own an iPhone 3GS or better), but there&#8217;s <em>still </em>no good way for iPhone apps to notify users of important events.  When participating in a conversation using an instant messenger app (or any similar activity), it&#8217;s crucial that you&#8217;re notified of incoming messages, but notifications shouldn&#8217;t be obtrusive and interrupt whatever else you may be doing.  Android&#8217;s notification bar is perfect for this.  iOS doesn&#8217;t even have what I&#8217;d call a serious attempt at a solution.  And with <a href="http://www.google.com/talk/" target="_blank">Google Talk</a> a core platform feature, Android devices can actually compete with the ease and convenience of <a href="http://na.blackberry.com/devices/features/im/blackberry_messenger.jsp" target="_blank">BlackBerry Messenger.</a> Meanwhile, Apple&#8217;s just introduced&#8230; <a href="http://www.apple.com/itunes/ping/" target="_blank">Ping.</a> Snore.</li>
-</ul>
-
-
-<p>I fully intend to do some serious Android development, so I&#8217;ll surely write more about the platform as I become more familiar with it.  For now, though, the bottom line is this: I love Android.  Switching from iOS was an excellent decision and I doubt I&#8217;ll ever look back.  I&#8217;d urge anyone thinking about a phone upgrade to consider Android as well.</p>
-
-<p><sup>1</sup><span style="font-size: 0.8em;">A reader on <a href="http://www.reddit.com/r/Android/comments/dafec/android_first_impressions_from_an_exiphone/" target="_blank" title="Reddit">Reddit</a> brought to my attention the fact that the Android <a href="http://en.wikipedia.org/wiki/Dalvik_%28software%29" target="_blank" title="Dalvik">Dalvik</a> virtual machine and its bytecode are significantly different from their Java equivalents, so although Android apps are written in Java, compiled Android apps are not really Java.  (Apparently Oracle disagrees, mind you.)</span><br/>
-<sup>2</sup><span style="font-size: 0.8em;">Another Redditor pointed out that the 700% figure may be something of an exaggeration.  I&#8217;ve heard varying figures - anywhere from 2x to 10x - but 700% was based on the specific video I linked to.  However, it&#8217;s true that real-world performance will likely differ significantly from the results of synthetic benchmarks.</span></p>
 ]]></content>
   </entry>
   

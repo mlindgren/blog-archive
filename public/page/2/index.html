@@ -9,7 +9,8 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="Online passes are becoming more and more ubiquitous in the games industry. For those who aren&#8217;t familiar with the terminology, an online pass &hellip;">
+  <meta name="description" content="It feels like a bit of a cop out to post this after having not written anything
+for five months, but I&#8217;ve decided to switch from shared hosting &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,6 +95,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Personal">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-08T00:40:00-07:00" pubdate data-updated="true">Aug 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It feels like a bit of a cop out to post this after having not written anything
+for five months, but I&#8217;ve decided to switch from shared hosting to a <acronym
+title="Virtual Private Server">VPS</acronym>.  I&#8217;ve also moved WordPress out of the www root directory.  The transition was surprisingly easy, but it&#8217;s possible that some pages may contain dead links or missing images.  If you see any, please leave a comment and let me know!</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
   
   
     <article>
@@ -214,6 +258,49 @@ Vindictiveness? <br />
     <article>
       
 
+<div class="category-Gaming">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/">Dark Souls is the best game I&#8217;ve ever played</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-09T13:44:00-08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Due to school and other commitments, I&#8217;m a bit behind the curve on writing about <em>Dark Souls</em>.  I purchased it when it was first released, but I was too busy to commit much time to it, and the release of <em>Skyrim</em> in November relegated it to the back burner.  I&#8217;ve recently had some more time to play it, and although I&#8217;m only about 32 hours in and perhaps half finished, I&#8217;m ready to make proclamation: <span style="background-color: #ff0;"><strong><em>Dark Souls</em> is the best game I&#8217;ve ever played,</strong> and to whatever extent art can be judged objectively, I think there&#8217;s a strong argument to be made that it&#8217;s objectively one of the best games ever created from an artistic standpoint.</span></p>
+
+<p>Whether or not you&#8217;ve played it, if you&#8217;re a gamer you&#8217;ve likely heard of <em>Dark Souls</em>: besides the critical acclaim it has received, it&#8217;s lauded as being <a href="http://blogs.wsj.com/speakeasy/2011/10/05/is-dark-souls-the-hardest-videogame-ever/" title="Is Dark Souls the hardest videogame ever?">arguably one of the most difficult games ever made</a>.  Its difficulty sets Dark Souls apart and makes successfully completing it a badge of merit among &#8220;hardcore&#8221; gamers.  More importantly, though, Dark Souls&#8217; relentless challenge and stubborn defiance of the precepts of modern game design allow it to achieve a level of artistic purity that other games can&#8217;t even begin to approach.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
 <div class="category-Personal">
 
   <header>
@@ -317,126 +404,6 @@ Vindictiveness? <br />
 
     </article>
   
-  
-    <article>
-      
-
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">How to link GLUT in Qt Creator on OS X</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-21T00:34:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&#8217;m hoping that it will prove useful to someone. For one of my courses this term, we&#8217;re building OpenGL apps using Nokia&#8217;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&#8217;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&#8217;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&#8217;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
-
-<!--more-->
-
-
-<p>In particular, I found myself having difficulty linking the OpenGL Utility Toolkit (GLUT) with my project on Mac OS X. After much Googling and some frustration, I came up with the correct way to go about it, which is as follows:</p>
-
-<ol>
-    <li>In Qt Creator, open your project file (.pro) in the text editor.  Right click on the text editor pane and select &#8220;Add Library&#8230;&#8221;</li>
-    <li>Chose &#8220;System Library.&#8221;</li>
-    <li>Locate the GLUT framework.  On my Mac, running Lion, I used <code>/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/GLUT.framework</code>. However, it seems there are multiple different copies on the disk that you could use.  If that path doesn&#8217;t work for you, just search for <code>glut.h</code> in Finder and you&#8217;ll find a copy of the framework.  The path you enter into Qt Creator should point to a <code>.framework</code> directory.</li>
-    <li>Qt Creator will generate code in your project file which will link to the correct framework or library depending on which platform the code is being compiled on.</li>
-    <li>Finally, because Apple loves to be different, the glut.h header path is different on OS X.  <strong>You&#8217;ll need to <code>#include &lt;GLUT/glut.h&gt;</code></strong>, instead of <code>&lt;gl/glut.h&gt;</code> is usually the case.  You can use preprocessor conditional statements to make this inclusion cross-platform:
-<pre>#if defined(__APPLE__) || defined(MACOSX)
-  #include &lt;GLUT/glut.h&gt;
-#else
-  #include &lt;gl/glut.h&gt;
-#endif</pre>
-</li>
-</ol>
-
-
-<p>That&#8217;s it! If you have any trouble, leave a comment.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
-<div class="category-Technology">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">How to reinstall OS X from a disc image using only one computer</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-21T00:17:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&#8217;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
-
-<!--more-->
-
-
-<p>Unfortunately, however, the Snow Leopard disc image is large enough that it can only be burned to a dual-layer DVD. I don&#8217;t tend to keep writeable dual-layer DVDs lying around, so I needed a solution which required only the disc image itself. There are a number of methods available for installing OS X over the network, but none of them seemed to work for me—perhaps owing to the fact that I had only one Mac. Luckily, I discovered that you can install OS X from a separate partition on the same disk. Here&#8217;s how:</p>
-
-<ol>
-    <li>First, you&#8217;ll need to re-partition your disk. Open Disk Utility and select the disk you want to use. Be sure to select the disk itself, rather than one of its partitions, which are indented beneath the disk.</li>
-    <li>Click the + button to add a new partition, and drag the new partition&#8217;s section in the disk layout graph upwards until it&#8217;s large enough to store your operating system disc image. Apply the changes. It may take some time for the disk to be re-partitioned.</li>
-    <li>Now, select the new partition from the list on the left. Go to the Restore tab, and restore your operating system disc image to the new partition.</li>
-    <li>Once the restore is complete, restart your computer, holding Option (Alt) at start-up. This should bring up a list of available start-up disks. Choose your new partition.</li>
-    <li>You should now be at the installer, and you can re-install to your primary partition. Once the installation is complete, delete your installation disc partition to and resize the primary partition to reclaim the extra space.</li>
-</ol>
-
-
-<p>That&#8217;s it! In retrospect, it&#8217;s completely obvious, but I haven&#8217;t seen these instructions anywhere else on the web. This technique might be particularly useful for owners of Macs without disc drives.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/3/">&larr; Older</a>
@@ -465,6 +432,11 @@ Vindictiveness? <br />
     
       
       <li class="post             category-Technology            ">
+        <a href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a>
+      </li>
+    
+      
+      <li class="post             category-Technology            ">
         <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
       </li>
     
@@ -481,11 +453,6 @@ Vindictiveness? <br />
       
       <li class="post             category-Technology            ">
         <a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a>
-      </li>
-    
-      
-      <li class="post             category-Personal            ">
-        <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
       </li>
     
   </ul>

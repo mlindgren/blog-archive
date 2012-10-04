@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="It&#8217;s common knowledge that enrollment in computer science programs has declined significantly over the past decade. Although the trend seems to &hellip;">
+  <meta name="description" content="I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,6 +94,148 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">Android Development Device Setup in Ubuntu 10.04</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-12T17:02:00-07:00" pubdate data-updated="true">Sep 12<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&#8217;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&#8217;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&#8217;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a><!--more--></p>
+
+<ol>
+    <li>Connect your phone to your computer and open a terminal window.  Run <code>adb devices</code> to confirm that adb can &#8220;see&#8221; your phone.  You should see something like this:
+<pre><code>$ adb devices
+List of devices attached
+???????????? no permissions</code></pre>
+    </li><li>Type <code>lsusb</code> to get a list of attached USB devices.  Look for an entry with your phone&#8217;s manufacturer; for instance, since I have an HTC device, I get:
+<pre><code>$ lsusb
+...
+Bus 002 Device 003: ID 0bb4:0c87 High Tech Computer Corp. 
+...</code></pre>
+
+Note the ID - in my case, <code>0bb4:0c87</code>.  The part before the colon is the vendor ID.  The part after it is the product ID.  Keep these in mind.
+</li><li>
+You&#8217;ll now need to create a udev rules file using your preferred text editor.  <a href="http://dimitar.me/how-to-connect-your-android-phone-to-ubuntu-to-do-developmenttestinginstallations-or-tethering/" title="How to connect your Android phone to Ubuntu">This guide</a> lists a number of different file names per-device, but based on my reading of the udev man page, I don&#8217;t believe the file name is actually important.  The official documentation recommends <code>51-android.rules</code>, which is what I went with.  You&#8217;ll need to use <code>sudo</code> to get permission to create the file:
+<pre><code>$ sudo vi /etc/udev/rules.d/51-android.rules</code></pre>
+</li>
+<li>
+The contents of the file should be as follows:
+<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="[Vendor ID]", ATTRS{idProduct}=="[Product ID]", MODE="0666"</code></pre>
+&#8230;where the bracketed bits are replaced with the IDs you got earlier from lsusb.  For my HTC Desire, I entered:
+<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bb4", ATTRS{idProduct}=="0c87", MODE="0666"</code></pre>
+</li>
+<li>
+Save the file.  Most of the documentation I&#8217;ve come across says that restarting adb and udev is sufficient to give adb access to your device, but <strong>in my case I had to completely restart my computer before adb properly recognized my phone.</strong>  Nevertheless, it&#8217;s probably best to adb and udev first:
+<pre><code>$ sudo restart udev
+$ adb kill-server
+$ adb start-server</code></pre>
+Run <code>adb devices</code> again to see if your phone is recognized.  If you still see <code>???????????? no permissions</code>, you&#8217;ll probably need to restart your computer.
+</li>
+<li>
+You should now have full access to your phone from adb and Eclipse.
+</li>
+</ol>
+
+
+<p>I hope this proves helpful.  If you have any corrections or if this method didn&#8217;t work for you, leave a comment.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Technology">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/09/06/android-first-impressions/">Android First Impressions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-06T20:19:00-07:00" pubdate data-updated="true">Sep 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple&#8217;s app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they&#8217;ve claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.<!--more--></p>
+
+<p>The phone I switched to is the HTC Desire on Telus:</p>
+
+<p><img class="aligncenter size-full wp-image-152" style="display: block;
+margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC Desire" width="198" height="300" /></p>
+
+<p>With a 1Ghz CPU and 576MB of RAM, the Desire packs some powerful hardware.  So far, I&#8217;ve been quite impressed by the hardware, but that&#8217;s all I&#8217;ll say about it for now.  I&#8217;m more interested in relating my first impressions of the Android platform.  In no particular order:</p>
+
+<ul>
+    <li>The openness of the Android market and of the platform itself is immediately apparent as an ex-iPhone user.  <em>I love it.</em> I love being able to download emulators directly from the app store.  I love being able to install interactive programming environments on my phone.  I love having a native Latitude app.  I love that Google Voice is available, even though it&#8217;s currently US-only.  Most of all, I love that neither Apple nor any other company can tell me what I can and cannot install on my phone.</li>
+    <li>Widgets provide an extremely convenient way to access information without having to switch between apps.  While there aren&#8217;t as many widgets available as I wish there were (or perhaps they&#8217;re just difficult to find - more on this later), the built-in widgets alone have made the switch worthwhile for me.  I frequently check my phone for Twitter updates, new e-mail from work, news, and what have you; with Android, I can do all of this without ever leaving the home screen.  It&#8217;s delightful.  Beyond widgets, Android offers supreme customizability with themes, home screen replacement apps, and even (if you&#8217;re adventurous) custom device ROMs.</li>
+    <li>Although openness and customizability are boons to the Android platform, they also result in serious <a href="http://www.zdnet.com/blog/hardware/android-fragmentation-is-real/8499">fragmentation</a> which could hurt the platform in the long run.  I&#8217;ve already encountered widgets and apps which don&#8217;t quite display properly on my device, presumably because of HTC&#8217;s custom Sense UI.  What&#8217;s worse is how sluggish <a href="http://www.sonyericsson.com/cws/cws/home?cc=ca&amp;lc=en">some manufacturers</a> are to release critical operating system updates for their devices.  I&#8217;m picking on Sony because they don&#8217;t have a single device running Android 2.x, but even among other manufacturers, it doesn&#8217;t seem unusual for ROM updates to lag behind Google releases by several months. Worse <em>still </em>is that carrier locks can prevent these updates from being pushed to devices.  Android 2.2 &#8220;Froyo&#8221; has been available for the HTC Desire since late July, but Telus customers (who haven&#8217;t unlocked their phones) still haven&#8217;t received the update.  Supporting custom UIs, old operating system versions <em>and </em>varied hardware will force Android developers to commit more resources to testing and fewer to innovation, and the platform as a whole will suffer for it.</li>
+    <li>Android is fast.  Remarkably fast.  I don&#8217;t presently have enough information to objectively compare it to iOS, but I can say that I&#8217;ve been very impressed.  Five years ago I would have doubted that such performance would ever be possible with Java running on a mobile device.  (<span style="text-decoration: line-through;">I&#8217;m aware that most of the core of Android is written in C, but the apps and UI are still Java.</span> See correction below.<sup>1</sup>)  Having just purchased my Desire three days ago, I haven&#8217;t had a chance to install Froyo, either, but <a href="http://www.youtube.com/watch?v=utnYpybdIKo" target="_blank">benchmarks show</a> that it increases performance by up to 700%.<sup>2</sup></li>
+    <li>Navigation and searching in the Android Market is absolutely terrible.  I find it hard to believe that the Market is Google&#8217;s doing, because searching the market never seems to bring up what I&#8217;d consider to be the &#8220;best&#8221; results, unless you type in the exact name of a specific app you&#8217;re looking for.  The aren&#8217;t nearly enough categories, either.</li>
+    <li>On a related note, Android does lack some of the polish that iOS offers.  There&#8217;s not as much consistency in terms of UI elements and general design patterns.  Customizing home screens and managing multiple apps which run simultaneously may not be something that typical phone users will care to do.  For power users, though, it&#8217;s not a problem.  (Some sort of built-in task manager would be nice, though.)</li>
+    <li>Android is just a much better communication platform than iOS ever has been, and perhaps ever will be.  Apple has finally grudgingly implemented something akin to multi-tasking (if you own an iPhone 3GS or better), but there&#8217;s <em>still </em>no good way for iPhone apps to notify users of important events.  When participating in a conversation using an instant messenger app (or any similar activity), it&#8217;s crucial that you&#8217;re notified of incoming messages, but notifications shouldn&#8217;t be obtrusive and interrupt whatever else you may be doing.  Android&#8217;s notification bar is perfect for this.  iOS doesn&#8217;t even have what I&#8217;d call a serious attempt at a solution.  And with <a href="http://www.google.com/talk/" target="_blank">Google Talk</a> a core platform feature, Android devices can actually compete with the ease and convenience of <a href="http://na.blackberry.com/devices/features/im/blackberry_messenger.jsp" target="_blank">BlackBerry Messenger.</a> Meanwhile, Apple&#8217;s just introduced&#8230; <a href="http://www.apple.com/itunes/ping/" target="_blank">Ping.</a> Snore.</li>
+</ul>
+
+
+<p>I fully intend to do some serious Android development, so I&#8217;ll surely write more about the platform as I become more familiar with it.  For now, though, the bottom line is this: I love Android.  Switching from iOS was an excellent decision and I doubt I&#8217;ll ever look back.  I&#8217;d urge anyone thinking about a phone upgrade to consider Android as well.</p>
+
+<p><sup>1</sup><span style="font-size: 0.8em;">A reader on <a href="http://www.reddit.com/r/Android/comments/dafec/android_first_impressions_from_an_exiphone/" target="_blank" title="Reddit">Reddit</a> brought to my attention the fact that the Android <a href="http://en.wikipedia.org/wiki/Dalvik_%28software%29" target="_blank" title="Dalvik">Dalvik</a> virtual machine and its bytecode are significantly different from their Java equivalents, so although Android apps are written in Java, compiled Android apps are not really Java.  (Apparently Oracle disagrees, mind you.)</span><br/>
+<sup>2</sup><span style="font-size: 0.8em;">Another Redditor pointed out that the 700% figure may be something of an exaggeration.  I&#8217;ve heard varying figures - anywhere from 2x to 10x - but 700% was based on the specific video I linked to.  However, it&#8217;s true that real-world performance will likely differ significantly from the results of synthetic benchmarks.</span></p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2010/09/06/android-first-impressions/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
   
   
     <article>
@@ -266,115 +408,9 @@ title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usa
 
     </article>
   
-  
-    <article>
-      
-
-<div class="category-Technology">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/06/15/my-iphone-debacle/">My iPhone debacle</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-15T23:07:00-07:00" pubdate data-updated="true">Jun 15<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>&#8230;or &#8220;Another Reason I&#8217;m Considering <em>Switching</em> to Android.&#8221;</p>
-
-<p>Yesterday evening, as I was leaving work, I was carrying on a conversation via text message with a friend of mine.  Upon arriving home, I realized that she&#8217;d apparently stopped responding, so I pulled my phone out of my pocket to check if I&#8217;d missed a message.  Instead of my usual lock screen, though, I was met a very unwelcome &#8220;Connect to iTunes&#8221; prompt.  I&#8217;d been running the beta of OS 4, and it turns out that if your developer licence expires while you still have the beta installed, Apple will <em>remotely lock you out of your device without so much as a warning.</em> I guess I should have expected as much.<!--more--></p>
-
-<p>At this point I was mildly annoyed.  Because it&#8217;s such a slow an arduous process to sync an iPhone, I hadn&#8217;t backed mine up since&#8230; probably about two weeks ago, when my developer license actually expired.  &#8221;Go figure,&#8221; I thought; &#8220;if only they&#8217;d locked me out of my device <em>when </em>my licence expired, I might not have lost as much data.&#8221;  Still, I don&#8217;t keep much important information on my phone, so a two-week setback, while irksome, was not disastrous.</p>
-
-<p>&#8230;Or at least it wouldn&#8217;t have been if not for what happened next.  In their infinite wisdom, Apple decided not to provide an officially supported way to downgrade from a beta operating system release to a stable release, despite their aforementioned policy of locking &#8220;expired&#8221; installations.  Luckily, there exists <a title="iPhone OS 4 downgrade" href="http://www.maclife.com/article/howtos/downgrade_iphone_os_40" target="_blank">a workaround</a>, and if all goes well it&#8217;s relatively uncomplicated.  Unfortunately for me, all did <em>not </em>go well.  The workaround relies on the <a href="http://sourceforge.net/projects/libusb/" target="_self">libusb library</a> in order to communicate with the iPhone.  Its Windows port,<a href="http://sourceforge.net/apps/trac/libusb-win32/wiki" target="_self"> libusb-win32</a>, is ostensibly compatible with both 32 and 64-bit Windows Vista and Windows 7.  The only problem is that there&#8217;s a known issue which causes all of your USB drivers to stop working if the library isn&#8217;t installed in Windows XP compatbility mode under those operating systems, and it&#8217;s not mentioned anywhere in the installer or in any of the downgrade tutorials I saw.</p>
-
-<p>So, yes&#8230; in an attempt to downgrade my iPhone, I managed to completely disable my computer&#8217;s USB drivers. libusb breaks one&#8217;s computer in particularly pernicious way, too.  I&#8217;m anything but an expert on precisely how Windows handles drivers, so forgive me if the terminology here is incorrect, but I believe this is how it happens: since a number of USB devices are inevitably in use when it&#8217;s installed, libusb&#8217;s changes don&#8217;t affect those drivers until the system is restarted.  I didn&#8217;t have my iPhone plugged in when I installed libusb, though, so when I did plug it in afterwards it failed to connect.  My mouse and keyboard were still working at this point.  I figured that perhaps I needed to reboot my computer.  Upon rebooting, of course, I found that none of my USB devices worked at all.  I couldn&#8217;t so much as log in, let alone uninstall libusb.</p>
-
-<p>I don&#8217;t own any PS/2 devices, so switching to a different mouse and keyboard wasn&#8217;t an option.  I spent probably about an hour trying to find a way to restore my USB drivers from the Windows recovery console, but came up empty handed.  Deleting the libusb sys and dll files did nothing, despite forum posts to the contrary.  I couldn&#8217;t find any registry keys which obviously pertained to the library, nor could I find any system files which appeared to have been modified recently (excluding those I&#8217;d already deleted, of course.)  Ultimately I gave up, and since my operating system is installed on an SSD drive which is otherwise empty, I decided that reformatting would be the simplest solution.<em> I had to reformat my computer because Apple locked my phone.</em></p>
-
-<p>I did eventually manage to restore my iPhone, using my development Mac Mini.  I probably should have done so in the first place, but since my iPhone is synced to my Windows PC (which has much larger hard drives and is therefore better suited to storing my music collection), I figured that it would be more convenient to do the restore process using the PC.  Oh, how wrong I was!  That said, I don&#8217;t fault Windows for this; I&#8217;m sure that installing a bad device driver on a Mac would have much the same effect.</p>
-
-<p>This is what I see as a typical case of Apple&#8217;s &#8220;security&#8221; policies interfering with the usability of their products.  Granted, I wasn&#8217;t nearly as prudent as I should have been, so I can&#8217;t blame <em>all </em>of my troubles on them.  But really, if they&#8217;re going to put out operating systems which simply &#8220;expire&#8221; under certain circumstances, could they not at least provide an officially supported method to downgrade to an older version?</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2010/06/15/my-iphone-debacle/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/">Puzzle Panel Postmortem: Introduction</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-30T01:26:00-07:00" pubdate data-updated="true">May 30<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Welcome, dear reader!</p>
-
-<p>Although this is the inaugural post for this website, I won&#8217;t bother with any introduction here.  If that sort of thing interests you, I refer you to the <a title="About" href="http://www.mlindgren.ca/about" target="_self">&#8220;about&#8221; page.</a> For this entry, I&#8217;d like to dive right into the sort of content that this site is to be host to.  My iPhone developer program membership expires today, and I won&#8217;t be renewing it—not immediately, at least.  That being the case, I think that this is a good time to reflect on my year as a so-called &#8220;iPhone developer.&#8221;<!--more--></p>
-
-<p>There&#8217;s lots to be said about the iPhone, the app store, and Apple in general; I&#8217;m sure I&#8217;ll write on those topics profusely.  For the time being, though, I&#8217;m going to limit myself to a discussion of the product of my labour: <a title="Puzzle Panel" href="http://www.mlindgren.ca/projects/puzzle-panel" target="_self">Puzzle Panel.</a> I&#8217;ve twice given a presentation on the development of Puzzle Panel as part of the University of Alberta <a title="University of Alberta Computers &amp; Games" href="http://www.cs.ualberta.ca/undergraduate-students/course-directory/computers-and-games" target="_blank">Computers &amp; Games course</a>, but while I was grateful for the opportunity to discuss my game, the format of the presentation was such that I was never quite able to express everything that I wanted to.  (I doubt that most of those in attendance would have been interested, anyway.)  It is my hope that this site will give me a platform to communicate with greater fidelity.</p>
-
-<p>If you&#8217;re not familiar with Puzzle Panel, there&#8217;s a trailer available <a title="Puzzle Panel trailer on YouTube" href="http://www.youtube.com/watch?v=obg-I9JnzFU" target="_blank">here</a>, or you can check out the <a title="Puzzle Panel project page" href="http://www.mlindgren.ca/projects/puzzle-panel">project page</a> or <a title="Puzzle Panel website" href="http://puzzlepanel.net">website</a> for more information.  Unfortunately, the expiry of my developer program membership means that Puzzle Panel will no longer be available on the iPhone app store for the time being.  I&#8217;d like to remedy this; I want the game to be available indefinitely and to as many people as possible.  However, for reasons I&#8217;ll likely discuss at a later date, I&#8217;m hesitant to pay the $100 membership fee again, so at this point I&#8217;m&#8230; investigating my options, let&#8217;s say.</p>
-
-<p>Anyway, returning to the topic at hand, I purchased my iPhone with the specific intent to develop an app.  The iPhone is often cited as a great gaming device, and I think that <em>would be</em> true if not for the lack of physical input options: the phone&#8217;s hardware is powerful and its operating system is pleasantly efficient, but the touch screen just doesn&#8217;t work for most games.  For puzzle games, though, it works pretty well; the tap-and-swipe paradigm of the iPhone lends itself naturally to puzzle-style gameplay.  (The good ol&#8217; D-pad is still faster and more accurate, though.)  Hence, Puzzle Panel.</p>
-
-<p>The game was developed over five months.  I don&#8217;t have a good sense of how many hours it actually took, but if I&#8217;d estimate somewhere between 200 and 400.  I worked on it in the evenings after work and on my days off - sometimes obsessively, devoting all of my free time to it, sometimes barely touching it for weeks at a time.  Not including the frameworks and libraries I used, the game consists of roughly 8,500 lines of Objective C code across 40 or so classes.  The most time-consuming part of the project, though, was the artwork.  I&#8217;m anything but a practised artist, so creating the game backgrounds and other art assets took dozens and dozens of hours.  While I was impressed at what my Wacom tablet allowed me to accomplish, I was never entirely satisfied with the results.  Still, I think doing the artwork myself was a wise decision.</p>
-
-<p>That&#8217;s the basic high-level project overview.  In the next post, I&#8217;ll discuss the <a title="Cocos2D-iPhone" href="http://cocos2d-iphone.org/" target="_blank">Cocos2D-iPhone</a> framework and why I chose to use it, and then I&#8217;ll go through a &#8220;postmortem&#8221; in subsequent posts.  I&#8217;ll endeavour to include more technical information—code snippets and the like—in future posts.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/page/6/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -400,6 +436,11 @@ title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usa
     
       
       <li class="post             category-Technology            ">
+        <a href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a>
+      </li>
+    
+      
+      <li class="post             category-Technology            ">
         <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
       </li>
     
@@ -416,11 +457,6 @@ title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usa
       
       <li class="post             category-Technology            ">
         <a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a>
-      </li>
-    
-      
-      <li class="post             category-Personal            ">
-        <a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
       </li>
     
   </ul>
