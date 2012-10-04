@@ -4,7 +4,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2012-10-03T22:27:53-07:00</updated>
+  <updated>2012-10-03T22:53:26-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -18,15 +18,17 @@
     <link href="http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/"/>
     <updated>2012-10-03T20:37:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity</id>
-    <content type="html"><![CDATA[<p>David Somers presents an excellent rundown of what
+    <content type="html"><![CDATA[<p>David Somers presents an
+<a href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">excellent rundown</a>
+of what
 <a href="http://www.mozilla.org/en-US/persona/">Mozilla Persona</a> is and why it&#8217;s
 currently the best option for identity and authentication for web services. I&#8217;ve
 implemented authentication using Persona in the
 <a href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/">photo album app</a>
 I&#8217;m working on, and I found it remarkably easy to integrate with my app. And, as
 David explains, Persona is also much easier for users to understand than
-competing platforms like OpenID. If you&#8217;re a web developer, I&#8217;d urge you to
-strongly consider adding Persona support to your application as soon as
+competing platforms like OpenID. If you&#8217;re a web developer, you really need to
+add Persona support to your application as soon as
 possible. It can be done in literally a matter of minutes, and if Persona takes
 off the benefit to identity management on the Internet could be huge.</p>
 
@@ -43,11 +45,9 @@ key which I would have to retrieve via SSH (but this is less convenient and
 probably also less secure than doing SSL client authentication.) The
 possibilities are endless.</p>
 
-<p>Perhaps an end to having dozens upon dozens of different accounts and passwords
-for various services,
-<a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/">each with its own uniquely nonsensical policy</a>,
-is finally in sight.  Everyone needs to implement Persona&mdash;preferably
-yesterday.</p>
+<p>Perhaps an end is finally in sight to the frustration of having dozens upon
+dozens of different accounts and passwords for various services,
+<a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/">each with its own uniquely nonsensical password composition policy</a>.  Everyone needs to implement Persona&mdash;preferably yesterday.</p>
 ]]></content>
   </entry>
   
@@ -504,17 +504,6 @@ Vindictiveness? <br />
 <p>Returning to the topic at hand, online passes go hand in hand with the consumer-as-enemy mindset that plagues media giants.  They arise from the same attitude that justifies $30 BluRay movies with minutes and minutes of unskippable commercials, and <a href="http://www.destructoid.com/drm-fun-several-legit-ubisoft-games-will-break-next-week-220948.phtml" title="DRM Fun: Several legit Ubisoft games will break next week - Destructoid">always-on DRM which prevents legitimate purchasers from playing single-player games</a> when the publisher&#8217;s servers are down.  Through legislation and technology, these companies are trying to make ownership rights exclusive to corporations and prevent consumers from interacting with the media they purchase in any manner that is not explicitly pre-approved.  They are declaring a war on their customers, and it is a war they cannot win.  Make no mistake, though: as these behemoths run themselves into the ground because they are incapable of adapting, there will be casualties among the artists, musicians and developers who create the works of culture we love.</p>
 
 <p>That is why I cannot support online passes.  I truly believe that in the long run they are detrimental to all involved.  I truly believe that the best way for a company to protect its interests is to do its utmost to reward its fans and give them the best experience possible&mdash;all of them, even those who do not <em>directly</em> contribute to the bottom line.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dark Souls is the best game I've ever played]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/"/>
-    <updated>2012-01-09T13:44:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played</id>
-    <content type="html"><![CDATA[<p>Due to school and other commitments, I&#8217;m a bit behind the curve on writing about <em>Dark Souls</em>.  I purchased it when it was first released, but I was too busy to commit much time to it, and the release of <em>Skyrim</em> in November relegated it to the back burner.  I&#8217;ve recently had some more time to play it, and although I&#8217;m only about 32 hours in and perhaps half finished, I&#8217;m ready to make proclamation: <span style="background-color: #ff0;"><strong><em>Dark Souls</em> is the best game I&#8217;ve ever played,</strong> and to whatever extent art can be judged objectively, I think there&#8217;s a strong argument to be made that it&#8217;s objectively one of the best games ever created from an artistic standpoint.</span></p>
-
-<p>Whether or not you&#8217;ve played it, if you&#8217;re a gamer you&#8217;ve likely heard of <em>Dark Souls</em>: besides the critical acclaim it has received, it&#8217;s lauded as being <a href="http://blogs.wsj.com/speakeasy/2011/10/05/is-dark-souls-the-hardest-videogame-ever/" title="Is Dark Souls the hardest videogame ever?">arguably one of the most difficult games ever made</a>.  Its difficulty sets Dark Souls apart and makes successfully completing it a badge of merit among &#8220;hardcore&#8221; gamers.  More importantly, though, Dark Souls&#8217; relentless challenge and stubborn defiance of the precepts of modern game design allow it to achieve a level of artistic purity that other games can&#8217;t even begin to approach.</p>
 ]]></content>
   </entry>
   
@@ -984,6 +973,52 @@ sudo chmod 755 /Volumes/Mount_Name
 
 
 <p>I doubt a great number of people will need this information as it&#8217;s a strange sort of setup, but it&#8217;s my hope that these instructions will save someone some time.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android Development Device Setup in Ubuntu 10.04]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/"/>
+    <updated>2010-09-12T17:02:00-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04</id>
+    <content type="html"><![CDATA[<p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&#8217;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&#8217;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&#8217;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a><!--more--></p>
+
+<ol>
+    <li>Connect your phone to your computer and open a terminal window.  Run <code>adb devices</code> to confirm that adb can &#8220;see&#8221; your phone.  You should see something like this:
+<pre><code>$ adb devices
+List of devices attached
+???????????? no permissions</code></pre>
+    </li><li>Type <code>lsusb</code> to get a list of attached USB devices.  Look for an entry with your phone&#8217;s manufacturer; for instance, since I have an HTC device, I get:
+<pre><code>$ lsusb
+...
+Bus 002 Device 003: ID 0bb4:0c87 High Tech Computer Corp. 
+...</code></pre>
+
+Note the ID - in my case, <code>0bb4:0c87</code>.  The part before the colon is the vendor ID.  The part after it is the product ID.  Keep these in mind.
+</li><li>
+You&#8217;ll now need to create a udev rules file using your preferred text editor.  <a href="http://dimitar.me/how-to-connect-your-android-phone-to-ubuntu-to-do-developmenttestinginstallations-or-tethering/" title="How to connect your Android phone to Ubuntu">This guide</a> lists a number of different file names per-device, but based on my reading of the udev man page, I don&#8217;t believe the file name is actually important.  The official documentation recommends <code>51-android.rules</code>, which is what I went with.  You&#8217;ll need to use <code>sudo</code> to get permission to create the file:
+<pre><code>$ sudo vi /etc/udev/rules.d/51-android.rules</code></pre>
+</li>
+<li>
+The contents of the file should be as follows:
+<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="[Vendor ID]", ATTRS{idProduct}=="[Product ID]", MODE="0666"</code></pre>
+&#8230;where the bracketed bits are replaced with the IDs you got earlier from lsusb.  For my HTC Desire, I entered:
+<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bb4", ATTRS{idProduct}=="0c87", MODE="0666"</code></pre>
+</li>
+<li>
+Save the file.  Most of the documentation I&#8217;ve come across says that restarting adb and udev is sufficient to give adb access to your device, but <strong>in my case I had to completely restart my computer before adb properly recognized my phone.</strong>  Nevertheless, it&#8217;s probably best to adb and udev first:
+<pre><code>$ sudo restart udev
+$ adb kill-server
+$ adb start-server</code></pre>
+Run <code>adb devices</code> again to see if your phone is recognized.  If you still see <code>???????????? no permissions</code>, you&#8217;ll probably need to restart your computer.
+</li>
+<li>
+You should now have full access to your phone from adb and Eclipse.
+</li>
+</ol>
+
+
+<p>I hope this proves helpful.  If you have any corrections or if this method didn&#8217;t work for you, leave a comment.</p>
 ]]></content>
   </entry>
   

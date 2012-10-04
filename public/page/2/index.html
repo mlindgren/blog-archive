@@ -258,49 +258,6 @@ Vindictiveness? <br />
     <article>
       
 
-<div class="category-Gaming">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/">Dark Souls is the best game I&#8217;ve ever played</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-09T13:44:00-08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Due to school and other commitments, I&#8217;m a bit behind the curve on writing about <em>Dark Souls</em>.  I purchased it when it was first released, but I was too busy to commit much time to it, and the release of <em>Skyrim</em> in November relegated it to the back burner.  I&#8217;ve recently had some more time to play it, and although I&#8217;m only about 32 hours in and perhaps half finished, I&#8217;m ready to make proclamation: <span style="background-color: #ff0;"><strong><em>Dark Souls</em> is the best game I&#8217;ve ever played,</strong> and to whatever extent art can be judged objectively, I think there&#8217;s a strong argument to be made that it&#8217;s objectively one of the best games ever created from an artistic standpoint.</span></p>
-
-<p>Whether or not you&#8217;ve played it, if you&#8217;re a gamer you&#8217;ve likely heard of <em>Dark Souls</em>: besides the critical acclaim it has received, it&#8217;s lauded as being <a href="http://blogs.wsj.com/speakeasy/2011/10/05/is-dark-souls-the-hardest-videogame-ever/" title="Is Dark Souls the hardest videogame ever?">arguably one of the most difficult games ever made</a>.  Its difficulty sets Dark Souls apart and makes successfully completing it a badge of merit among &#8220;hardcore&#8221; gamers.  More importantly, though, Dark Souls&#8217; relentless challenge and stubborn defiance of the precepts of modern game design allow it to achieve a level of artistic purity that other games can&#8217;t even begin to approach.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
 <div class="category-Personal">
 
   <header>
@@ -404,6 +361,69 @@ Vindictiveness? <br />
 
     </article>
   
+  
+    <article>
+      
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">How to link GLUT in Qt Creator on OS X</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-21T00:34:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&#8217;m hoping that it will prove useful to someone. For one of my courses this term, we&#8217;re building OpenGL apps using Nokia&#8217;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&#8217;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&#8217;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&#8217;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
+
+<!--more-->
+
+
+<p>In particular, I found myself having difficulty linking the OpenGL Utility Toolkit (GLUT) with my project on Mac OS X. After much Googling and some frustration, I came up with the correct way to go about it, which is as follows:</p>
+
+<ol>
+    <li>In Qt Creator, open your project file (.pro) in the text editor.  Right click on the text editor pane and select &#8220;Add Library&#8230;&#8221;</li>
+    <li>Chose &#8220;System Library.&#8221;</li>
+    <li>Locate the GLUT framework.  On my Mac, running Lion, I used <code>/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/GLUT.framework</code>. However, it seems there are multiple different copies on the disk that you could use.  If that path doesn&#8217;t work for you, just search for <code>glut.h</code> in Finder and you&#8217;ll find a copy of the framework.  The path you enter into Qt Creator should point to a <code>.framework</code> directory.</li>
+    <li>Qt Creator will generate code in your project file which will link to the correct framework or library depending on which platform the code is being compiled on.</li>
+    <li>Finally, because Apple loves to be different, the glut.h header path is different on OS X.  <strong>You&#8217;ll need to <code>#include &lt;GLUT/glut.h&gt;</code></strong>, instead of <code>&lt;gl/glut.h&gt;</code> is usually the case.  You can use preprocessor conditional statements to make this inclusion cross-platform:
+<pre>#if defined(__APPLE__) || defined(MACOSX)
+  #include &lt;GLUT/glut.h&gt;
+#else
+  #include &lt;gl/glut.h&gt;
+#endif</pre>
+</li>
+</ol>
+
+
+<p>That&#8217;s it! If you have any trouble, leave a comment.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/page/3/">&larr; Older</a>
@@ -431,7 +451,7 @@ Vindictiveness? <br />
   <ul id="recent_posts">
     
       
-      <li class="post             category-Technology            ">
+      <li class="post             category-Links            ">
         <a href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a>
       </li>
     

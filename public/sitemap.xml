@@ -92,12 +92,6 @@
     </url>
     <url>
         <loc>
-            http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/
-        </loc>
-        <lastmod>2012-09-23T15:22:29-07:00</lastmod>
-    </url>
-    <url>
-        <loc>
             http://blog.mlindgren.ca/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/
         </loc>
         <lastmod>2012-09-23T15:22:29-07:00</lastmod>
@@ -130,7 +124,7 @@
         <loc>
             http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/
         </loc>
-        <lastmod>2012-10-03T22:27:47-07:00</lastmod>
+        <lastmod>2012-10-03T22:53:19-07:00</lastmod>
     </url>
     <url>
         <loc>http://blog.mlindgren.ca/about/</loc>
@@ -138,7 +132,7 @@
     </url>
     <url>
         <loc>http://blog.mlindgren.ca/blog/archives/</loc>
-        <lastmod>2012-10-03T22:27:47-07:00</lastmod>
+        <lastmod>2012-10-03T22:53:19-07:00</lastmod>
     </url>
     <url>
         <loc>
@@ -180,7 +174,7 @@
     </url>
     <url>
         <loc>http://blog.mlindgren.ca/</loc>
-        <lastmod>2012-10-03T22:27:47-07:00</lastmod>
+        <lastmod>2012-10-03T22:53:19-07:00</lastmod>
     </url>
     <url>
         <loc>http://blog.mlindgren.ca/ORTS-Lua-Integration/</loc>

@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="&#8230;or &#8220;Another Reason I&#8217;m Considering Switching to Android.&#8221; Yesterday evening, as I was leaving work, I was carrying on a &hellip;">
+  <meta name="description" content="Welcome, dear reader! Although this is the inaugural post for this website, I won&#8217;t bother with any introduction here.  If that sort of thing &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,61 +99,6 @@
     <article>
       
 
-<div class="category-Technology">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/06/15/my-iphone-debacle/">My iPhone debacle</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-15T23:07:00-07:00" pubdate data-updated="true">Jun 15<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>&#8230;or &#8220;Another Reason I&#8217;m Considering <em>Switching</em> to Android.&#8221;</p>
-
-<p>Yesterday evening, as I was leaving work, I was carrying on a conversation via text message with a friend of mine.  Upon arriving home, I realized that she&#8217;d apparently stopped responding, so I pulled my phone out of my pocket to check if I&#8217;d missed a message.  Instead of my usual lock screen, though, I was met a very unwelcome &#8220;Connect to iTunes&#8221; prompt.  I&#8217;d been running the beta of OS 4, and it turns out that if your developer licence expires while you still have the beta installed, Apple will <em>remotely lock you out of your device without so much as a warning.</em> I guess I should have expected as much.<!--more--></p>
-
-<p>At this point I was mildly annoyed.  Because it&#8217;s such a slow an arduous process to sync an iPhone, I hadn&#8217;t backed mine up since&#8230; probably about two weeks ago, when my developer license actually expired.  &#8221;Go figure,&#8221; I thought; &#8220;if only they&#8217;d locked me out of my device <em>when </em>my licence expired, I might not have lost as much data.&#8221;  Still, I don&#8217;t keep much important information on my phone, so a two-week setback, while irksome, was not disastrous.</p>
-
-<p>&#8230;Or at least it wouldn&#8217;t have been if not for what happened next.  In their infinite wisdom, Apple decided not to provide an officially supported way to downgrade from a beta operating system release to a stable release, despite their aforementioned policy of locking &#8220;expired&#8221; installations.  Luckily, there exists <a title="iPhone OS 4 downgrade" href="http://www.maclife.com/article/howtos/downgrade_iphone_os_40" target="_blank">a workaround</a>, and if all goes well it&#8217;s relatively uncomplicated.  Unfortunately for me, all did <em>not </em>go well.  The workaround relies on the <a href="http://sourceforge.net/projects/libusb/" target="_self">libusb library</a> in order to communicate with the iPhone.  Its Windows port,<a href="http://sourceforge.net/apps/trac/libusb-win32/wiki" target="_self"> libusb-win32</a>, is ostensibly compatible with both 32 and 64-bit Windows Vista and Windows 7.  The only problem is that there&#8217;s a known issue which causes all of your USB drivers to stop working if the library isn&#8217;t installed in Windows XP compatbility mode under those operating systems, and it&#8217;s not mentioned anywhere in the installer or in any of the downgrade tutorials I saw.</p>
-
-<p>So, yes&#8230; in an attempt to downgrade my iPhone, I managed to completely disable my computer&#8217;s USB drivers. libusb breaks one&#8217;s computer in particularly pernicious way, too.  I&#8217;m anything but an expert on precisely how Windows handles drivers, so forgive me if the terminology here is incorrect, but I believe this is how it happens: since a number of USB devices are inevitably in use when it&#8217;s installed, libusb&#8217;s changes don&#8217;t affect those drivers until the system is restarted.  I didn&#8217;t have my iPhone plugged in when I installed libusb, though, so when I did plug it in afterwards it failed to connect.  My mouse and keyboard were still working at this point.  I figured that perhaps I needed to reboot my computer.  Upon rebooting, of course, I found that none of my USB devices worked at all.  I couldn&#8217;t so much as log in, let alone uninstall libusb.</p>
-
-<p>I don&#8217;t own any PS/2 devices, so switching to a different mouse and keyboard wasn&#8217;t an option.  I spent probably about an hour trying to find a way to restore my USB drivers from the Windows recovery console, but came up empty handed.  Deleting the libusb sys and dll files did nothing, despite forum posts to the contrary.  I couldn&#8217;t find any registry keys which obviously pertained to the library, nor could I find any system files which appeared to have been modified recently (excluding those I&#8217;d already deleted, of course.)  Ultimately I gave up, and since my operating system is installed on an SSD drive which is otherwise empty, I decided that reformatting would be the simplest solution.<em> I had to reformat my computer because Apple locked my phone.</em></p>
-
-<p>I did eventually manage to restore my iPhone, using my development Mac Mini.  I probably should have done so in the first place, but since my iPhone is synced to my Windows PC (which has much larger hard drives and is therefore better suited to storing my music collection), I figured that it would be more convenient to do the restore process using the PC.  Oh, how wrong I was!  That said, I don&#8217;t fault Windows for this; I&#8217;m sure that installing a bad device driver on a Mac would have much the same effect.</p>
-
-<p>This is what I see as a typical case of Apple&#8217;s &#8220;security&#8221; policies interfering with the usability of their products.  Granted, I wasn&#8217;t nearly as prudent as I should have been, so I can&#8217;t blame <em>all </em>of my troubles on them.  But really, if they&#8217;re going to put out operating systems which simply &#8220;expire&#8221; under certain circumstances, could they not at least provide an officially supported method to downgrade to an older version?</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2010/06/15/my-iphone-debacle/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
 <div class="category-Coding">
 
   <header>
@@ -228,7 +173,7 @@
   <ul id="recent_posts">
     
       
-      <li class="post             category-Technology            ">
+      <li class="post             category-Links            ">
         <a href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a>
       </li>
     
