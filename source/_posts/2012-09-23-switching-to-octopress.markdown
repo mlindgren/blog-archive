@@ -18,7 +18,7 @@ longer the right choice for my specific needs. These are my problems with it:
 
 - It's not very good for sharing source code. There are a multitude of plugins
   available for syntax highlighting; the best of them seems to be
-  [Alex Gorbatchev's Syntax Highlighter](http://alexgorbatchev.com/SyntaxHighlighter/), 
+  [Alex Gorbatchev's Syntax Highlighter](http://alexgorbatchev.com/SyntaxHighlighter/),
   which is used by
   [Wordpress.com](http://wordpress.com) and is also what I was using on my blog.
   But I've had problems with the Wordpress converting some of the characters in

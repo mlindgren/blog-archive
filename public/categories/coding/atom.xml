@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/coding/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2012-10-03T22:53:26-07:00</updated>
+  <updated>2012-11-15T21:41:29-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -12,6 +12,183 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Photo App Progress Update]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2012/11/14/photo-app-progress-update/"/>
+    <updated>2012-11-14T22:58:00-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2012/11/14/photo-app-progress-update</id>
+    <content type="html"><![CDATA[<p>In September I <a href="/entry/2012/09/14/social-networks-and-content-ownership/">wrote about</a>
+my intention to develop a web application to share my photos. I made good
+progress on it throughout September and early October, but for various reasons I
+haven't been able to work on it much in the past month or so. Last weekend,
+though, I was able to solve some blocking issues which were preventing me from
+doing an alpha release. Those being dealt with, I've now got a few of my albums
+up at <a href="http://photos.mlindgren.ca/">photos.mlindgren.ca</a>; take a look and leave
+a comment if you have any feedback.</p>
+
+<p>I haven't released the source code yet as there's still a great deal of work to
+be done, and I'm generally of the belief that dumping a bunch of unfinished,
+messy code on Github with the hope that the community will sort it out is of
+little benefit to anyone. My goal at this point is to do a beta release in a
+two to three months or so and release the code at that point. That timeline is
+anything but firm, though. This project is turning out to be much more work than
+I expected (as projects are wont to do), and I expect to be fairly busy over the
+next couple months.</p>
+
+<p>Anyway, with the alpha version up and running, this seems like a good
+opportunity to reflect on some of the issues I've faced that complicated the
+project, and on what remains to be done.</p>
+
+<h2>Wand and the OOM Killer</h2>
+
+<p>I mentioned in my
+<a href="/entry/2012/09/14/the-state-of-python-imaging/">post on Python imaging libraries</a>
+that I'm using <a href="http://dahlia.kr/wand/index.html">Wand</a> to resize and transform
+uploaded photos. It's very convenient and easy to use, and from a
+maintainability and ease of use perspective I much prefer using Python bindings
+for ImageMagick to shelling out to the ImageMagick executable. One
+of my goals for this project is that other people should be able to install it
+on their own servers with relative ease, and I suspect relying on ImageMagick
+executables for image processing would lead to cross-platform and configuration
+issues.</p>
+
+<p>But, Wand is not yet a mature library and it has some significant issues of its
+own. First and foremost, when I started using it it had some major memory
+leaks. I found and fixed more than 10 leaks and submitted a pull request which
+was merged into the main repository&mdash;however, there hasn't yet been an
+official release including my fixes yet, so pip installs and downloads from the
+Wand website will still include those leaks.</p>
+
+<p>I'm not sure if I got all of the leaks or if more still remain. The ones I fixed
+were discovered mostly through ad-hoc testing and reading the code. I've been
+running my app for several days now and the memory consumption when it's idle
+has stayed flat, so I believe I've removed at least the most common leaks, but I
+haven't had a chance to sit down with Valgrind yet and run the Wand unit tests
+through it to make sure that I got <em>all</em> of the leaks. I'll have to do that
+before I do any sort of public release of my software;
+I don't want to rely on a leaky library.</p>
+
+<p>Beyond the leaks, I ran into another memory issue which proved problematic:
+resizing photographs can use a great deal of memory, which is extremely limited
+on a reasonably-priced <acronym title="Virtual Private Server">VPS</acronym>.
+I have limited knowledge about image processing in general and ImageMagick in
+particular, but I'm not aware of any resizing algorithms which can operate
+directly on compressed image data, and if any such algorithms exist, ImageMagick
+doesn't use them. That being the case, to resize an image, the entire image has
+to be loaded into memory decompressed. For an 8 megapixel photograph at 24 bits
+per pixel, that means allocating approximately 183MB of memory.</p>
+
+<p>On a 512MB VPS, this means that trying to resize three images
+concurrently&mdash;or even sequentially in some cases, since Python isn't
+guaranteed to immediately relinquish allocated memory to the operating system
+when objects resident in that memory are "deleted"&mdash;practically guarantees
+that the process will be killed by the
+<acronym title="Out Of Memory">OOM</acronym> killer.</p>
+
+<p>This goes hand in hand with another complication, which is that resizing images
+is too slow to be done in the same server thread that's handling requests and
+generating responses. For each image that's uploaded, I save several different
+sizes for different purposes, and due to the aforementioned memory constraints I
+can't even resize them concurrently. Resizing each image several times in the
+responding thread drastically reduces throughput for the client
+since it incurs a significant wait time for the server to process each image
+after it's uploaded.</p>
+
+<h2>Enter Subprocess</h2>
+
+<p>So here's the solution I've come up with for the time being, and I'm very unsure
+whether or not it's actually a good solution, so please do let me know in the
+comments if there's a better way to do this.  When a new image is uploaded, the
+responding thread saves the image in the appropriate directory and adds it to
+the database, but does not resize it.  For each of the sizes that the image
+needs to be resized to, it adds a task to a
+<a href="http://docs.python.org/2/library/queue.html">synchronous queue</a>. The queue is
+consumed by a different thread which runs throughout the lifetime of the
+application. That thread maintains a (thread-local) queue of
+<a href="http://docs.python.org/2/library/multiprocessing.html">subprocesses</a> with a
+configurable maximum length. When a new resizing task is consumed, if there is
+room in the subprocess queue, a new subprocess is spawned to resize the image.
+Otherwise, the thread joins the subprocess at the front of the queue so as to
+block until there's room to spawn a new subprocess. The exit code of completed
+processes is checked to ensure that the resize was successful; in case of
+failure, the task is re-added to the back of the task queue.</p>
+
+<p>This guarantees that the application server itself will never be killed by the
+OOM killer since it uses minimal memory. It never has to load images into
+memory; all of that is done in the resizing subprocesses.  By configuring the
+maximum number of concurrent subprocesses, one can scale this solution according
+to available resources: if you have plenty of RAM, you can resize many images
+concurrently and get through the queue faster, or if you have very little, you
+can limit the queue to one or two processes to minimize the chance that anything
+will be OOM killed.</p>
+
+<p>The subprocess spawning notwithstanding, this is a pretty standard task queue
+model, so you might be wondering why I didn't use something like
+<a href="http://celeryproject.org/">Celery</a> in conjunction with a real message queue.
+It comes down to minimizing the number of external dependencies and maximizing
+ease of use. My project already depends on a number of libraries which will have
+to be installed by users. To the greatest extent that I can do so without
+compromising on features, I want to avoid complicating the installation further
+by adding more dependencies. Celery is particularly difficult to install as it
+requires installing and configuring a broker and managing processes for both the
+broker and Celery itself. Were I writing a large-scale service and maintaining a
+single backend for hundreds of users, it would probably be the right choice, but
+as I am writing software for users to install on their own servers, it is
+probably not.</p>
+
+<p>This method works fairly well and it's the best I've come up with so far, but
+something about it makes it feel more like a hack than a well thought out and
+robust solution. I also wonder if it defeats the purpose of using Wand in the
+first place; I use it for very little other than resizing, and since I'm going
+to the trouble of spawning subprocesses to do that, perhaps it would actually be
+better to just directly invoke the ImageMagick binaries. As mentioned above, I
+have concerns about what impact that would have in different environments, but I
+haven't really validated those concerns; they're just hunches.</p>
+
+<h2>The Road Ahead</h2>
+
+<p>So I've got a workable, if not perfect, solution to one of the biggest problems
+I encountered... but as I mentioned previously, there's still much work to be
+done. Here are a few (but not all) of the things I'd like to do before I release
+anything publicly:</p>
+
+<ul>
+<li><strong>Lots of UI work.</strong> Right now the app works very poorly on phones and iPads.
+I also need to figure out how to make certain features more discoverable, and
+although I'm happy with how albums look right now, there are still some extra
+touches that I want to add which I haven't yet been able to (because CSS and
+HTML suck.)</li>
+<li><strong>Better administrative tools.</strong> Uploading works great, but I have very
+barebones interfaces for editing albums right now. There is currently no means
+of rotating a photo from the editing interface (although doing so should
+almost never be necessary since the app automatically rotates images which
+have EXIF orientation data.)</li>
+<li><strong>Mirroring and proxying to cloud storage services</strong> such as Azure and S3. VPS
+resources are very expensive; extra disk space on some popular hosts runs
+around a dollar per gigabyte per month. That's ten times the cost of disk
+space on the cloud storage services I've looked at. Cloud-hosted images might
+also improve load speeds for visitors.</li>
+<li><strong>Comments.</strong> This one is pretty big, obviously, but I haven't added it yet
+because I can't decide on how best to handle it. I'd like to avoid writing my
+own comment system and requiring potential commenters to sign up for yet
+another account. (I'd use Persona for commenter identification and
+authentication just as I do for the admin login, but very few people currently
+have Persona accounts or even know what it is.) I like Disqus, but I'm not
+sure it would integrate well with the minimalist interface I've designed.</li>
+<li><strong>Geotagging and maps.</strong> I'm already reading GPS data from EXIF tags where
+available, but now I need to do something with it. I'd like to add the ability
+to manually add locations to photos and albums, and to have a map that shows
+where photos were taken.</li>
+</ul>
+
+
+<p>Those five items represent maybe a quarter to a third of the work I still have
+planned, so to repeat myself again, there's a lot of work to do. But I'm very
+happy with the progress I've made so far, and I feel confident that I can get
+this finished. It's just a matter of when.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[strlen without conditionals]]></title>
@@ -230,37 +407,6 @@ function, so that you can always call it using <code>my_dict[my_var](x, y, z)</c
 <p>You can also use the laziness aspect of lambdas to refer to variables which haven't been declared yet, although I'd recommend against that because it can become quite confusing. Anything within the lambda is evaluated only when the lambda is called.</p>
 
 <p>And there you have it! Those are the basics of lambdas in Python. Of course, the above is only a trivial example of what can be accomplished with lambdas.  If you'd like to learn more, there's a great write-up available <a title="Lambda functions in Python" href="http://www.secnetix.de/olli/Python/lambda_functions.hawk">here.</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android NDK Stack Trace Script]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/04/09/android-ndk-stack-trace-script/"/>
-    <updated>2011-04-09T16:30:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/04/09/android-ndk-stack-trace-script</id>
-    <content type="html"><![CDATA[<p>I've finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I've decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write "performance-critical" parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I've not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don't imagine it's too difficult, but I haven't spent much time on it—I've not needed to do much debugging yet.)<!--more--></p>
-
-<p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it's a bit of a pain to use.  To that end, I've put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you'd like to do something similar on Windows, I'm sure it won't be hard, but you're on your own.  Here's how to use it:</p>
-
-<ol>
-    <li>Create a folder in your project called "debug" (or whatever name you'd like)</li>
-    <li>Create a file called <code>debug.sh</code>, consisting of the following:
-
-``` bash
-#!/usr/bin/env bash
-NDK_ROOT/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-objdump -S PATH_TO_SOLIB > SOLIB_NAME.arm
-adb logcat -d > logcat.txt
-python parse_stack.py SOLIB_NAME.arm logcat.txt
-```
-
-    <li><code>chmod +x debug.sh</code> so that it's executable</li>
-        <li>Run the script with <code>./debug.sh</code> each time you need to see a stack trace</li>
-</ol>
-
-
-<p>Obviously there are a few things you'll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
-
-<p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don't change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you'll need to dump them again to get accurate results.</p>
 ]]></content>
   </entry>
   

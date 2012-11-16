@@ -9,11 +9,9 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="David Somers presents an
-excellent rundown
-of what
-Mozilla Persona is and why it&#8217;s
-currently the best option for identity and authentication &hellip;">
+  <meta name="description" content="In September I wrote about
+my intention to develop a web application to share my photos. I made good
+progress on it throughout September and early &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,6 +96,215 @@ currently the best option for identity and authentication &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-14T22:58:00-08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In September I <a href="/entry/2012/09/14/social-networks-and-content-ownership/">wrote about</a>
+my intention to develop a web application to share my photos. I made good
+progress on it throughout September and early October, but for various reasons I
+haven&#8217;t been able to work on it much in the past month or so. Last weekend,
+though, I was able to solve some blocking issues which were preventing me from
+doing an alpha release. Those being dealt with, I&#8217;ve now got a few of my albums
+up at <a href="http://photos.mlindgren.ca/">photos.mlindgren.ca</a>; take a look and leave
+a comment if you have any feedback.</p>
+
+<p>I haven&#8217;t released the source code yet as there&#8217;s still a great deal of work to
+be done, and I&#8217;m generally of the belief that dumping a bunch of unfinished,
+messy code on Github with the hope that the community will sort it out is of
+little benefit to anyone. My goal at this point is to do a beta release in a
+two to three months or so and release the code at that point. That timeline is
+anything but firm, though. This project is turning out to be much more work than
+I expected (as projects are wont to do), and I expect to be fairly busy over the
+next couple months.</p>
+
+<p>Anyway, with the alpha version up and running, this seems like a good
+opportunity to reflect on some of the issues I&#8217;ve faced that complicated the
+project, and on what remains to be done.</p>
+
+<h2>Wand and the OOM Killer</h2>
+
+<p>I mentioned in my
+<a href="/entry/2012/09/14/the-state-of-python-imaging/">post on Python imaging libraries</a>
+that I&#8217;m using <a href="http://dahlia.kr/wand/index.html">Wand</a> to resize and transform
+uploaded photos. It&#8217;s very convenient and easy to use, and from a
+maintainability and ease of use perspective I much prefer using Python bindings
+for ImageMagick to shelling out to the ImageMagick executable. One
+of my goals for this project is that other people should be able to install it
+on their own servers with relative ease, and I suspect relying on ImageMagick
+executables for image processing would lead to cross-platform and configuration
+issues.</p>
+
+<p>But, Wand is not yet a mature library and it has some significant issues of its
+own. First and foremost, when I started using it it had some major memory
+leaks. I found and fixed more than 10 leaks and submitted a pull request which
+was merged into the main repository&mdash;however, there hasn&#8217;t yet been an
+official release including my fixes yet, so pip installs and downloads from the
+Wand website will still include those leaks.</p>
+
+<p>I&#8217;m not sure if I got all of the leaks or if more still remain. The ones I fixed
+were discovered mostly through ad-hoc testing and reading the code. I&#8217;ve been
+running my app for several days now and the memory consumption when it&#8217;s idle
+has stayed flat, so I believe I&#8217;ve removed at least the most common leaks, but I
+haven&#8217;t had a chance to sit down with Valgrind yet and run the Wand unit tests
+through it to make sure that I got <em>all</em> of the leaks. I&#8217;ll have to do that
+before I do any sort of public release of my software;
+I don&#8217;t want to rely on a leaky library.</p>
+
+<p>Beyond the leaks, I ran into another memory issue which proved problematic:
+resizing photographs can use a great deal of memory, which is extremely limited
+on a reasonably-priced <acronym title="Virtual Private Server">VPS</acronym>.
+I have limited knowledge about image processing in general and ImageMagick in
+particular, but I&#8217;m not aware of any resizing algorithms which can operate
+directly on compressed image data, and if any such algorithms exist, ImageMagick
+doesn&#8217;t use them. That being the case, to resize an image, the entire image has
+to be loaded into memory decompressed. For an 8 megapixel photograph at 24 bits
+per pixel, that means allocating approximately 183MB of memory.</p>
+
+<p>On a 512MB VPS, this means that trying to resize three images
+concurrently&mdash;or even sequentially in some cases, since Python isn&#8217;t
+guaranteed to immediately relinquish allocated memory to the operating system
+when objects resident in that memory are &#8220;deleted&#8221;&mdash;practically guarantees
+that the process will be killed by the
+<acronym title="Out Of Memory">OOM</acronym> killer.</p>
+
+<p>This goes hand in hand with another complication, which is that resizing images
+is too slow to be done in the same server thread that&#8217;s handling requests and
+generating responses. For each image that&#8217;s uploaded, I save several different
+sizes for different purposes, and due to the aforementioned memory constraints I
+can&#8217;t even resize them concurrently. Resizing each image several times in the
+responding thread drastically reduces throughput for the client
+since it incurs a significant wait time for the server to process each image
+after it&#8217;s uploaded.</p>
+
+<h2>Enter Subprocess</h2>
+
+<p>So here&#8217;s the solution I&#8217;ve come up with for the time being, and I&#8217;m very unsure
+whether or not it&#8217;s actually a good solution, so please do let me know in the
+comments if there&#8217;s a better way to do this.  When a new image is uploaded, the
+responding thread saves the image in the appropriate directory and adds it to
+the database, but does not resize it.  For each of the sizes that the image
+needs to be resized to, it adds a task to a
+<a href="http://docs.python.org/2/library/queue.html">synchronous queue</a>. The queue is
+consumed by a different thread which runs throughout the lifetime of the
+application. That thread maintains a (thread-local) queue of
+<a href="http://docs.python.org/2/library/multiprocessing.html">subprocesses</a> with a
+configurable maximum length. When a new resizing task is consumed, if there is
+room in the subprocess queue, a new subprocess is spawned to resize the image.
+Otherwise, the thread joins the subprocess at the front of the queue so as to
+block until there&#8217;s room to spawn a new subprocess. The exit code of completed
+processes is checked to ensure that the resize was successful; in case of
+failure, the task is re-added to the back of the task queue.</p>
+
+<p>This guarantees that the application server itself will never be killed by the
+OOM killer since it uses minimal memory. It never has to load images into
+memory; all of that is done in the resizing subprocesses.  By configuring the
+maximum number of concurrent subprocesses, one can scale this solution according
+to available resources: if you have plenty of RAM, you can resize many images
+concurrently and get through the queue faster, or if you have very little, you
+can limit the queue to one or two processes to minimize the chance that anything
+will be OOM killed.</p>
+
+<p>The subprocess spawning notwithstanding, this is a pretty standard task queue
+model, so you might be wondering why I didn&#8217;t use something like
+<a href="http://celeryproject.org/">Celery</a> in conjunction with a real message queue.
+It comes down to minimizing the number of external dependencies and maximizing
+ease of use. My project already depends on a number of libraries which will have
+to be installed by users. To the greatest extent that I can do so without
+compromising on features, I want to avoid complicating the installation further
+by adding more dependencies. Celery is particularly difficult to install as it
+requires installing and configuring a broker and managing processes for both the
+broker and Celery itself. Were I writing a large-scale service and maintaining a
+single backend for hundreds of users, it would probably be the right choice, but
+as I am writing software for users to install on their own servers, it is
+probably not.</p>
+
+<p>This method works fairly well and it&#8217;s the best I&#8217;ve come up with so far, but
+something about it makes it feel more like a hack than a well thought out and
+robust solution. I also wonder if it defeats the purpose of using Wand in the
+first place; I use it for very little other than resizing, and since I&#8217;m going
+to the trouble of spawning subprocesses to do that, perhaps it would actually be
+better to just directly invoke the ImageMagick binaries. As mentioned above, I
+have concerns about what impact that would have in different environments, but I
+haven&#8217;t really validated those concerns; they&#8217;re just hunches.</p>
+
+<h2>The Road Ahead</h2>
+
+<p>So I&#8217;ve got a workable, if not perfect, solution to one of the biggest problems
+I encountered&#8230; but as I mentioned previously, there&#8217;s still much work to be
+done. Here are a few (but not all) of the things I&#8217;d like to do before I release
+anything publicly:</p>
+
+<ul>
+<li><strong>Lots of UI work.</strong> Right now the app works very poorly on phones and iPads.
+I also need to figure out how to make certain features more discoverable, and
+although I&#8217;m happy with how albums look right now, there are still some extra
+touches that I want to add which I haven&#8217;t yet been able to (because CSS and
+HTML suck.)</li>
+<li><strong>Better administrative tools.</strong> Uploading works great, but I have very
+barebones interfaces for editing albums right now. There is currently no means
+of rotating a photo from the editing interface (although doing so should
+almost never be necessary since the app automatically rotates images which
+have EXIF orientation data.)</li>
+<li><strong>Mirroring and proxying to cloud storage services</strong> such as Azure and S3. VPS
+resources are very expensive; extra disk space on some popular hosts runs
+around a dollar per gigabyte per month. That&#8217;s ten times the cost of disk
+space on the cloud storage services I&#8217;ve looked at. Cloud-hosted images might
+also improve load speeds for visitors.</li>
+<li><strong>Comments.</strong> This one is pretty big, obviously, but I haven&#8217;t added it yet
+because I can&#8217;t decide on how best to handle it. I&#8217;d like to avoid writing my
+own comment system and requiring potential commenters to sign up for yet
+another account. (I&#8217;d use Persona for commenter identification and
+authentication just as I do for the admin login, but very few people currently
+have Persona accounts or even know what it is.) I like Disqus, but I&#8217;m not
+sure it would integrate well with the minimalist interface I&#8217;ve designed.</li>
+<li><strong>Geotagging and maps.</strong> I&#8217;m already reading GPS data from EXIF tags where
+available, but now I need to do something with it. I&#8217;d like to add the ability
+to manually add locations to photos and albums, and to have a map that shows
+where photos were taken.</li>
+</ul>
+
+
+<p>Those five items represent maybe a quarter to a third of the work I still have
+planned, so to repeat myself again, there&#8217;s a lot of work to do. But I&#8217;m very
+happy with the progress I&#8217;ve made so far, and I feel confident that I can get
+this finished. It&#8217;s just a matter of when.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2012/11/14/photo-app-progress-update/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
   
   
     <article>
@@ -606,59 +813,6 @@ Apple.</small></p>
 
     </article>
   
-  
-    <article>
-      
-
-<div class="category-Technology">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-14T00:45:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&#8217;m always wary about pre-announcing things I&#8217;m working on; I have more ambition than spare time, which leads to a tendency to start projects and not finish them.  But if there&#8217;s to be a point in maintaining this website, I need to actually <em>write things</em> once in a while, so I may as well write about what I&#8217;ve been hacking on lately.  At the moment, I&#8217;m building a web-based photo album in Python.  My primary reason for doing this is that I&#8217;d like to own more of my information.  Apps and social networks have some significant advantages, particularly for the less technologically inclined, but I&#8217;m ambivalent about the trend away from an open Internet and towards a set of non-interoperable, monolithic walled-garden services.<!--more--></p>
-
-<p>When Google+ debuted, my enthusiasm for the service followed a sort of bell curve.  I was already using Twitter and Facebook, and I didn&#8217;t want to have to post everything to yet another service.  At the urging of friends, I joined anyway, and warmed to it considerably.  It was simply better software than Facebook; the interface was cleaner, the privacy controls more usable, the communication options more diverse, the means of sharing and interacting with media more engaging and deeply integrated.  Best of all, there wasn&#8217;t nearly as much app spam.  Much of this is probably still true, although the impression I get from Google+ pages I&#8217;ve stumbled across recently is that they&#8217;ve been trying to make it look more like Facebook, to its detriment.</p>
-
-<p>Realizing that it was a better product in almost every regard, I started using Google+ almost exclusively and tried to recruit additional friends away from Facebook.  I stopped uploading new photos to Facebook and even purchased additional storage capacity on Google+ so I could upload all of my photos there at the original quality.  Problems quickly became apparent, though.  Despite my best efforts, nobody was using the service; even among those of my friends who were enthusiastic early adopters, actual <em>social</em> activity among my circles dropped off quickly, and I soon found myself wondering why I even bothered to check for updates.  I finally deleted my account when I logged in one day and realized that the newest post in my news feed was from several months prior.</p>
-
-<p>And with my Google+ account, there went all of the photos and other content I had uploaded.  I still have the files, of course, but the effort I expended in selecting a handful of good photos to upload to each gallery from the hundreds of shots I take on most outings, not to mention the comments, captions, and other metadata I had curated, vanished into the ether with not a trace left behind.  The moral of the story is that private social networks are impermanent, and thus anything uploaded to them necessarily has an unknown but very much finite period of accessibility and relevance.  Whether or not Google ever admits it, Google+ never quite took off, but it could have supplanted Facebook just as Facebook did MySpace.  If and when some other service comes along and succeeds where Google+ failed, every user on Facebook will be forced to start over from scratch on whatever&#8217;s in vogue next.</p>
-
-<p>I&#8217;m tired of playing that game. I want to keep control over the content I create so that I can truly decide how it&#8217;s shared and with whom, and so that if I need to migrate my data to a new system, I have the means to do so.<sup>1</sup> The ultimate realization of this ideal is in decentralized services based on open protocols, such as <a title="Tent" href="http://tent.io/">Tent</a>. I&#8217;m very enthusiastic about such attempts, but realistically, I&#8217;m skeptical that any of them will ever gain the necessary traction to make a real difference. Even if Tent or some analogue gains millions of users, it will be a drop in the bucket compared to Facebook, and entrenched players such as Facebook will have no incentive to interoperate because decentralized services do nothing but threaten their business model.</p>
-
-<p>I will do as much as is in my power to help services like Tent succeed, but for the time being, that is not much.  That kind of leaves me without a good means of pushing my content to the people who care about it.  Nevertheless, I can still take ownership of it by hosting it on my own server using my own tools.  That is the purpose of developing my own photo album software.  I&#8217;m making good progress so far, and hopefully soon I&#8217;ll have more to share; once the code is in a reasonably complete state with most of the major features I want for my own purposes, I intend to make the app open source and share the code on my <a title="mlindgren on Github" href="https://github.com/mlindgren" target="_blank">Github account.</a>  And now that I&#8217;ve announced my intent publicly, I expect anyone who reads this to hold me to my plan to ensure that I get it finished!</p>
-
-<p><sup>1</sup> <small>Both Facebook and Google+ provide a means of exporting the data you&#8217;ve shared. I believe both will export everything belonging to you personally, but I don&#8217;t think you necessarily get to keep all of the social data associated with your content, e.g. comments, nor the relationships between different pieces of content. Last I checked, the data was merely dumped into a bunch of flat files; nothing is kept in a structured format that makes it easy to work with, and even if it were, other privates services don&#8217;t usually offer the option to import your data. While it may still not be easy, if you own your own data and manage it using open source tools, it&#8217;s at least <em>possible</em> to migrate everything to another system with the greatest fidelity supported by that system.</small></p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2012/09/14/social-networks-and-content-ownership/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/2/">&larr; Older</a>
@@ -684,6 +838,11 @@ Apple.</small></p>
   <ul id="recent_posts">
     
       
+      <li class="post             category-Coding            ">
+        <a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a>
+      </li>
+    
+      
       <li class="post             category-Links            ">
         <a href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a>
       </li>
@@ -701,11 +860,6 @@ Apple.</small></p>
       
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
-      </li>
-    
-      
-      <li class="post             category-Technology            ">
-        <a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a>
       </li>
     
   </ul>
