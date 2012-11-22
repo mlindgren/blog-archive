@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/coding/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2012-11-15T21:41:29-08:00</updated>
+  <updated>2012-11-22T14:40:02-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -271,7 +271,7 @@ for(int i = 0; i &lt; 100000; ++i)
   n = mystrlen(argv[argc - 1]);
 gettimeofday(&amp;end, NULL);</p>
 
-<p>printf(&quot;Elapsed: %ld sec %ld usec\n&quot;,</p>
+<p>printf("Elapsed: %ld sec %ld usec\n",</p>
 
 <pre><code>   (long) end.tv_sec - start.tv_sec,
    (long) end.tv_usec - start.tv_usec);

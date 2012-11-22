@@ -77,12 +77,12 @@ struct timeval start;
 struct timeval end;
 volatile int n;
 
-gettimeofday(&amp;start, NULL);
-for(int i = 0; i &lt; 100000; ++i)
+gettimeofday(&start, NULL);
+for(int i = 0; i < 100000; ++i)
   n = mystrlen(argv[argc - 1]);
-gettimeofday(&amp;end, NULL);
+gettimeofday(&end, NULL);
 
-printf(&quot;Elapsed: %ld sec %ld usec\n&quot;,
+printf("Elapsed: %ld sec %ld usec\n",
        (long) end.tv_sec - start.tv_sec,
        (long) end.tv_usec - start.tv_usec);
 ```
