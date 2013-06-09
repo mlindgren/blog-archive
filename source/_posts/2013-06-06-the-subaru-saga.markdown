@@ -9,7 +9,7 @@ categories: Personal
 Or "buying used cars is the worst and I will never do it ever again."
 
 I recently purchased a new-to-me 2011
-[Subaru WRX STI](http://www.subaru.com/vehicles/impreza-wrx/index.html).
+[Subaru WRX STI](http://www.subaru.com/vehicles/impreza-wrx/index.html) sedan.
 I had been thinking about buying a new car for a long time&mdash;since I graduated,
 more or less. Until I bought my Subaru, I owned an ageing Honda Civic (1997, to
 be precise), and while it was a very capable and extremely reliable car
@@ -564,17 +564,114 @@ My lawyer agreed to write a letter to the dealership on my behalf, and that if
 they did not respond favourably, we could take them to arbitration. I sent her
 all of the documents necessary for the letter on May 15th, and followed up on
 May 20th to check on her progress. She told me that she would be working
-on the letter soon. I have not heard from her since, even after sending her
-another email on the 24th. Good help is hard to find.
+on the letter soon. I sent her another email on the 24th, but didn't hear back
+from her until the 7th of June when I let her know that I would no longer need
+her services. Good help is hard to find.
 
-## Alternate Solutions
+## Resolution
 
 Luckily lawyers are not the only means of gaining leverage against corporations.
 I also contacted [Jesse Jones](http://www.king5.com/news/get-jesse) of King 5
 News, and filed complaints with Subaru of America, the Better Business Bureau,
-and the Washington State Attorney General's Office. I didn't get a call back
+and the Washington State Attorney General's office. I didn't get a call back
 from Jesse, but the other three seem to have had an effect. I exchanged several
-emails with a representative from Subaru who contacted the dealership to 
+emails with a representative from Subaru who contacted the dealership on my
+behalf to try to mediate a resolution. The representative didn't seem to have
+much actual power over the dealership, but she was courteous and timely, seemed
+sympathetic to my concerns, and made a real effort to do what she could, so I
+certainly appreciate that.
+
+The complaint to the Attorney General's office seemed to have more of an effect.
+Not long after Walker's received it, James called me back and offered to write
+me a cheque to cover some of the depreciation as well as fixing the air
+conditioner, as long as I would sign a document releasing the dealership from
+all liability relating to the matter. Given that I had been fighting with the
+dealership for a month and that my lawyer had gone <acronym title="Away WithOut
+Leave"> AWOL</acronym>, I readily accepted this offer.
+
+I took the car back to Eastside Subaru to determine what the depreciation would
+actually be. Given the lack of mechanical damage, the absence of records of the
+accident, the fact that the damage was almost completely repaired, and the
+rarity of the STI sedan, I was told that the depreciation would probably not be
+more than $1,000 to $1,500. This seemed low to me, but I discussed it with a
+friend who is very knowledgeable about cars and he felt that it was not
+unreasonable. I took the car back to Walker's on the 4th of June, and they ended
+up fixing the AC condenser and air intake duct and giving me a cheque for
+$1,000.
+
+In the interest of fairness I will say that I did have a fairly positive
+experience at the Walker's Renton Subaru service department when I took my
+vehicle in for the repairs. The service advisor I dealt with,
+[Brad Hallock](http://www.dealerrater.com/sales/Brad-Hallock-review-33465/), was
+very courteous and helpful. Of course, that doesn't come close to excusing the
+rest of my experience with Walker's, particularly given that it was the Subaru
+service technicians who ostensibly inspected the vehicle when they bought it.
+While I was picking up my car after the service was finished, I overheard
+another service advisor talking about the "world class inspection" that they
+were going to do for another customer. I was tempted to interrupt and tell the
+customer about my experience with their "world class inspection," but to my
+shame, I'm too non-confrontational.
+
+I am fairly satisfied with the compensation I received, and overjoyed to be able
+to put this ordeal behind me. At this point I consider the matter to be closed.
+The Attorney General's office has closed their file on the case, and as soon as
+Walker's responds to the Better Business Bureau complaint, I will close that as
+well. I am looking forward to never having any contact with them again.
+
+That said, I am absolutely not satisfied with how the dealership handled the
+issue in the month between my discovering the problem and them finally giving me
+some compensation. (Otherwise I would not be writing this, of course.) I spent
+far too much time fighting with them. At every juncture I encountered
+dishonesty, self-interest, and a complete refusal to accept responsibility for
+the complete failure of their technicians to thoroughly inspect the car. Between
+the time I spent playing telephone tag with the general manager, the time to
+find and hire a lawyer, the time spent on filing complaints with third parties,
+and the disruption of my schedule resulting from the loss of use of my vehicle
+for nearly a month[^time], I probably wasted more than a dozen hours on this,
+and it certainly impacted my productivity at work as well.
+
+Ken and Jan repeatedly assured me of the quality of Walker's inspections and
+servicing, and the qualifications of their technicians, when I was buying the
+car. When it turned out that those technicians had missed significant accident
+damage which was still present on the vehicle and should have been easily
+discoverable by a qualified technician, nobody at the dealership would stand
+behind those claims of excellence; they repeatedly insisted that they could not
+have known and were not responsible. When I asked why they would take such an
+expensive vehicle as a trade-in without doing a thorough inspection, I was told
+that since the CarFax didn't indicate any problems, they had no reason to
+suspect that there would be anything wrong with the vehicle. I find this
+appalling, though I guess I shouldn't find it shocking.
+
+I don't understand why I had to fight with the dealership about this _at all_.
+They should have just refunded the sale completely as soon as I raised the issue
+with them, and gone after the original owner to recoup their losses, who was
+_clearly_ in violation of his sale contract.
+
+## Lessons Learned
+
+I hope this doesn't sound histrionic, because it is completely genuine, but I
+was also emotionally affected by all of this. I tend to be very trusting and
+give people the benefit of the doubt with respect to their motivations. I am
+ill-equipped to deal with salespeople because I am not naturally inclined to
+assume that someone will mislead me and take advantage of me out of
+self-interest. I expect cold, detached, exploitative behaviour from large
+corporations, but Walker's really isn't that large, and these were _real people_
+with whom I had face-to-face conversations, who had the power to do the right
+thing but were unwilling to. The whole experience has made me more cynical.
+
+Moreover, the feeling I hate more than any other is powerlessness, and I found
+it simultaneously frustrating and discouraging to be in a situation where for a
+long time I seemed to have practically no recourse against the dealership for
+the losses I'd suffered due to their incompetence.
+
+I'll never again enjoy my car as much I did for the first two months I owned it,
+although people have reassured me that Subarus are built like tanks, I'm not
+sure I'll be able to completely get past the paranoia that every tiny creak or
+shudder might be forewarning of some impending catastrophic failure. But on the
+bright side, I do still love the car.
+
+With every negative experience comes the silver lining of life lessons to be
+learned, and this is no different. 
 
 [^manual]: The STI is only available with a six-speed manual transmission, but I was specifically looking for a manual car anyway. One might wonder why I'd seek out a manual even when I hardly knew how to drive them.  The answer is that I'd always been intrigued by manual transmissions, and after taking a quick lesson I was set on buying a manual because I found it to be a lot of fun. Plus, without simply jumping in and buying a manual car, one has limited opportunity to learn&mdash;you can only spend so much time borrowing friends' vehicles, and lessons are expensive.  Unfortunately, being inexperienced at driving manual may have influenced me to make the purchase faster than I otherwise might have, as it's embarrassing to go on a test drive and stall the car several times, and I was worried that if I couldn't borrow a car to practice before subsequent test drives I'd do an even worse job of it.
 
@@ -585,3 +682,5 @@ emails with a representative from Subaru who contacted the dealership to
 [^legal]: NB for legal purposes: _his words_, not mine.
 
 [^arbitration]: The sale contract contains an arbitration clause, and there is no discovery process in arbitration, so even if the dealership has evidence of the accident we would likely not have been able to get it.
+
+[^time]: This was admittedly perhaps an unnecessary step on my part, but at the time I felt that it was the safest thing to do, and it would never have been a problem had the dealership not sold me a damaged vehicle in the first place.
