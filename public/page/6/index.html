@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I&rsquo;m currently reading Coders at Work by Peter Seibel. The book is a collection of interviews with respected and knowledgeable programmers. &hellip;">
+  <meta name="description" content="I&rsquo;m a huge fan of TED Talks. This is a fascinating video in which Dan Pink summarizes some of his research into human motivation, which I found &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,71 +94,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/">Puzzle Panel Postmortem: Framework</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-13T00:33:00-07:00" pubdate data-updated="true">Jul 13<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m currently reading <a title="Coders at Work" href="http://www.codersatwork.com/">Coders at Work</a> by Peter Seibel.  The book is a collection of interviews with respected and knowledgeable programmers.  While the interview format can be somewhat difficult to read at times, the book is excellent.  Seibel is himself an experienced programmer, and asks the sort of insightful questions no ordinary interviewer could, making for fascinating discussions.  One could mine the book for weeks for interesting quotes.  I&rsquo;m going to try to resist that temptation, but because it relates to the topic at hand, I will permit myself to share with you one statement made by Joe Armstrong:</p>
-
-<blockquote>Being a young programmer today must be awful—you can choose 20 different programming languages, dozens of framework[s] and operating systems and you&#8217;re paralysed by choice.</blockquote>
-
-
-<p>I think Armstrong is mistaken; it&rsquo;s anything but awful to be a young programmer today.  However, it&rsquo;s certainly true that the number of choices one must make in starting a project can be daunting.  The choices you make at the start of a project can have far-reaching implications.  Choose wisely and your endeavour might be easy and successful, but choose poorly and you&rsquo;ll almost certainly regret it later.  For iPhone game developers, perhaps the most important choice that must be made early on in a project is which graphics libraries to use.<!--more--></p>
-
-<p>There are essentially two graphics libraries for iPhone game developers to choose between.  Apple&rsquo;s <a title="Quartz" href="http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html" target="_blank">Quartz</a> and Core Animation libraries provide a fairly robust set of classes and methods for 2D drawing, and they&rsquo;re quite easy to use and well-integrated with regular iPhone UI elements.  Of course, this simplicity comes at a price; the performance of Quartz leaves something to be desired for high-complexity scenes.  The other option is, of course, OpenGL.  OpenGL offers much better performance (and is of course capable of 3D, which Quartz is not), but it&rsquo;s also more difficult to use.</p>
-
-<p>For Puzzle Panel, I wanted to be able to squeeze absolutely every drop of performance possible out of the iPhone to ensure the best experience for users.  A simple 2D puzzle game might not seem like a high-performance application, but given the limited fillrate of the iPhone 3G GPU and the fidelity of effects I was hoping to achieve, I wanted to ensure that I wouldn&rsquo;t be limited by my choice of rendering platform.  This made OpenGL the obvious choice, but given that I was also learning Objective C as I wrote the game, I was concerned about the amount of time it would have taken me to write the abstraction layers necessary to allow me to focus on gameplay.</p>
-
-<p>Luckily, another option presented itself to me in the form of <a title="Cocos2D for iPhone" href="http://cocos2d-iPhone.org">Cocos2D for iPhone.</a> Cocos2D is a framework for 2D game creation, originally written in Python, but ported to Objective C for the iPhone by Ricardo Quesada.  It provides a rich hierarchy of classes specifically designed for 2D game development, and handles all of the low-level OpenGL calls for you.  Its features include texture loading, text rendering, sprite atlases, particle systems, timed actions, and physics simulation (through integration with <a title="Box2D" href="http://www.box2d.org/" target="_blank">Box2D</a> and/or <a title="Chipmunk" href="http://code.google.com/p/chipmunk-physics/" target="_blank">Chipmunk</a>).  Best of all, it&rsquo;s distributed under the GNU LGPL license, so it&rsquo;s open source and completely free for both commercial and non-commercial projects.</p>
-
-<p>There are a multitude of excellent <a title="Cocos2D tutorials" href="http://www.cocos2d-iphone.org/wiki/doku.php/" target="_blank">Cocos2D tutorials</a> on the Internet, so I&rsquo;m not (at this time) going to go into much detail about how it&rsquo;s used.  For illustrative purposes, though, I will provide a specific example of how a scene is organized in Puzzle Panel:</p>
-
-<p><a href="/images/nodes.png"><img class="aligncenter size-medium wp-image-101"
-title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usage in Puzzle Panel" width="300" height="271" style="display: block; margin-left: auto; margin-right: auto;"/></a></p>
-
-<p>The above is a side-view of a typical game scene in Puzzle Panel.  Rendered objects in Cocos2D are always subclasses of <span style="display: inline; font-family: Courier">CCNode</span>, labeled &ldquo;Node&rdquo; in the diagram above.  Each node (except for the top-level node, the Scene) has a parent and may have any number of children; Cocos2D uses a simple 2D scene graph in which nodes are rendered breadth-first.  <span style="display: inline; font-family: Courier">CCLayer</span>s, or &ldquo;Layers&rdquo; above, are simple Node subclasses which are typically used for scene organization: one might have a background layer and a foreground layer, and add sprites to each as necessary.</p>
-
-<p>Essentially, creating a game is as simple as subclassing renderable classes (such as <span style="display: inline; font-family: Courier">CCSprite</span>s/&ldquo;Sprites&rdquo;) and adding your own behaviours.  Once you&rsquo;ve coded all of the behaviours you need, you throw a few Nodes in your scene and you&rsquo;re done!  Cocos2D makes excellent use of object-oriented paradigms, and if you leverage that properly in your own code, you&rsquo;ll end up with a very flexible and powerful game engine.</p>
-
-<p>Using Cocos2D probably saved me hundreds of hours of development time.  In contrast to Puzzle Panel&rsquo;s mere 8,500 lines of source code, Cocos2D is comprised of more than 23,000 lines.  As an amateur game developer, I found using a framework to be particularly helpful because it allowed me to maintain a higher-level perspective on the design of the game.  By ignoring the complexities of OpenGL, I was able to spend more time thinking about how best to expand my game and make it as fun, polished and playable as possible.  Using a pre-written framework also eliminates a lot of worrying about feature creep &ndash; by starting with a robust set of tools, it&rsquo;s less likely that one will spend unnecessary time writing lower-level features that are never ultimately used.</p>
-
-<p>I don&rsquo;t wish to disparage the process of writing one&rsquo;s own OpenGL code &ldquo;from the ground up.&rdquo;  I&rsquo;d love to write my own game engine &ldquo;from scratch&rdquo; for my next big project.  Furthermore, a skilled OpenGL programmer could likely gain some extra performance by foregoing unnecessary features.  I really do think, though, that Cocos2D is an absolutely excellent choice if you really want to focus on game design, while still having the flexibility to get &ldquo;close to the metal&rdquo; where necessary.  If you&rsquo;re considering developing a 2D game for the iPhone, <a title="Cocos2D for iPhone" href="http://cocos2d-iPhone.org">check it out.</a></p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
   
   
     <article>

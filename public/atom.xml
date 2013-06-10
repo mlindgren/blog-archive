@@ -4,7 +4,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2013-06-09T22:22:43-07:00</updated>
+  <updated>2013-06-09T22:24:34-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -1461,17 +1461,6 @@ Vindictiveness? <br />
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Dark Souls is the best game I've ever played]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/"/>
-    <updated>2012-01-09T13:44:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played</id>
-    <content type="html"><![CDATA[<p>Due to school and other commitments, I&rsquo;m a bit behind the curve on writing about <em>Dark Souls</em>.  I purchased it when it was first released, but I was too busy to commit much time to it, and the release of <em>Skyrim</em> in November relegated it to the back burner.  I&rsquo;ve recently had some more time to play it, and although I&rsquo;m only about 32 hours in and perhaps half finished, I&rsquo;m ready to make proclamation: <span style="background-color: #ff0;"><strong><em>Dark Souls</em> is the best game I&rsquo;ve ever played,</strong> and to whatever extent art can be judged objectively, I think there&rsquo;s a strong argument to be made that it&rsquo;s objectively one of the best games ever created from an artistic standpoint.</span></p>
-
-<p>Whether or not you&rsquo;ve played it, if you&rsquo;re a gamer you&rsquo;ve likely heard of <em>Dark Souls</em>: besides the critical acclaim it has received, it&rsquo;s lauded as being <a href="http://blogs.wsj.com/speakeasy/2011/10/05/is-dark-souls-the-hardest-videogame-ever/" title="Is Dark Souls the hardest videogame ever?">arguably one of the most difficult games ever made</a>.  Its difficulty sets Dark Souls apart and makes successfully completing it a badge of merit among &ldquo;hardcore&rdquo; gamers.  More importantly, though, Dark Souls&#8217; relentless challenge and stubborn defiance of the precepts of modern game design allow it to achieve a level of artistic purity that other games can&rsquo;t even begin to approach.</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[2010 and 2011 in Review]]></title>
     <link href="http://blog.mlindgren.ca/entry/2011/12/31/2010-and-2011-in-review/"/>
     <updated>2011-12-31T15:59:00-08:00</updated>
@@ -1900,6 +1889,15 @@ As much as I believe in Apple, I think everybody deserves great user experience,
 <p>Obviously there are a few things you&rsquo;ll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
 
 <p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don&rsquo;t change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you&rsquo;ll need to dump them again to get accurate results.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Non-Myths About Programming]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2011/02/03/non-myths-about-programming/"/>
+    <updated>2011-02-03T20:53:00-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2011/02/03/non-myths-about-programming</id>
+    <content type="html"><![CDATA[<p>Whilst browsing <a href="http://reddit.com" target="_blank">Reddit</a> today, I came across a short essay by <a href="http://stwww.weizmann.ac.il/g-cs/benari/" target="_blank">Mordechai Ben-Ari</a> titled &ldquo;<a title="PDF: Non-Myths About Programming" href="http://stwww.weizmann.ac.il/G-CS/BENARI/articles/nonmyths.pdf" target="_blank">Non-Myths About Programming</a>&rdquo; (PDF warning).  It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.  I would urge anyone considering a career in computer science to read it.  Given its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother summarizing the article—instead, I&rsquo;ll merely say that you should click the link and check it out for yourself.</p>
 ]]></content>
   </entry>
   
