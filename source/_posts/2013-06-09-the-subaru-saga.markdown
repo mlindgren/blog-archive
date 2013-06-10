@@ -225,9 +225,8 @@ $30,800 unless the dealership would fix some of them.  They were very reluctant
 to budge on this and in the end I gave in more than I probably should have.  I
 talked to both Ken and his manager, and both were incredulous about the report
 that the mechanic had given me; they didn't feel that most of the items were
-real issues.  I very clearly recall Ken's manager (whose name I never got, but
-as an aside, I'm pretty sure it's
-[Jan Rac](http://www.dealerrater.com/sales/Jan-Rac-review-136803))
+real issues.  I very clearly recall Ken's manager,
+[Jan Rac](http://www.dealerrater.com/sales/Jan-Rac-review-136803),
 giving me a spiel about how Walker's Renton Subaru had well-qualified
 technicians, how they had a reputation to uphold, and how they had the only "STI
 tech" in the area and that nobody else is allowed to work on STIs.  I thought at
@@ -244,12 +243,12 @@ cars; they're only looking for problems (yes, that's _exactly the point_) and
 implied that the guy I'd taken it to was just looking to cash in...  even after
 my wife and I[^wife] repeatedly told him that we had no affiliation with that
 mechanic and that the mechanic knew that we would not be taking the car back to
-him for repairs. We negotiated more and finally agreed them replacing the brake
-pads and doing some of the fluid flushes in exchange for bumping the sale price
-up to $31,000 (because the brake pad replacement alone cost almost $600 since
-the STI uses Brembo pads).  It terms of the maintenance they offered, it wasn't
-that great a deal for me, and as I mentioned earlier, in retrospect I really
-should have just walked at this point. In fact I almost did over a
+him for repairs. We negotiated more and finally agreed to them replacing the
+brake pads and doing some of the fluid flushes in exchange for bumping the sale
+price up to $31,000 (because the brake pad replacement alone cost almost $600
+since the STI uses Brembo pads).  It terms of the maintenance they offered, it
+wasn't that great a deal for me, and as I mentioned earlier, in retrospect I
+really should have just walked at this point. In fact I almost did over a
 miscommunication about the brake pad replacement: I wanted all of them replaced,
 but Ken had assumed I meant only one pair and had neglected to ask _which_ pair.
 I had been at the dealership literally all day at this point; I was there for at
@@ -289,7 +288,7 @@ actually did just type in the wrong VIN and wasn't lying to me.  But... well,
 let's do some math.
 
 A VIN is 17 alphanumeric characters long, and each character has certain
-restrictions what it can be.  That means that there are 6.5273512 &times;
+restrictions on what it can be.  That means that there are 6.5273512 &times;
 10<sup>25</sup> possible VINs.  That is a very, very large number.  VINs have
 been in use since 1954, and the number of cars in the world just surpassed one
 billion in 2011, but I think the source I got that from was only referring to
@@ -304,10 +303,10 @@ more unlikely than getting six of six numbers on the 6/49[^lottery].
 I don't know all the details of how VINs really work; they're definitely not
 uniformly distributed, and as I said, I was never very good at statistics
 anyway.  So let's make this a little simpler.  The last six digits of a VIN are
-sequential, to the best of my knowledge, if all the other digits are fixed then
-then all of the possibilities afforded by those last six digits should refer to
-the same model of car, for the same model year, made by the same plant.  In
-North America the last five digits must be numeric, but since STIs are
+sequential, and to the best of my knowledge, if all the other digits are fixed
+then then all of the possibilities afforded by those last six digits should
+refer to the same model of car, for the same model year, made by the same plant.
+In North America the last five digits must be numeric, but since STIs are
 manufactured in Japan, I think that gives us 33<sup>6</sup> possibilities
 (because some characters are excluded), which is 1,291,467,969.  So again, the
 possibility of typing a wrong digit in an arbitrary position and getting a car
@@ -437,10 +436,10 @@ cancel the transaction and be done with it.  We argued for a while, but it was
 fairly late on Friday afternoon and he told me that there was no one at the
 dealership who could make that decision at that time. He said that he'd get the
 general manger to call me back the next day before noon. I asked him to tell the
-GM that I would be talking to an attorney if I don't get the answer I want, and
-left. From this point until the beginning of June, I completely stopped driving
-the car, as I wanted to ensure the strength of my case by minimizing the number
-of miles I put on the car.
+GM that I would be talking to an attorney if I didn't get the answer I wanted,
+and left. From this point until the beginning of June, I completely stopped
+driving the car, as I wanted to ensure the strength of my case by minimizing the
+number of miles I put on the car.
 
 That Saturday I had plans to go hiking, and I didn't want to cancel them just
 for a phone call that probably wouldn't go anywhere, so I called the dealership
