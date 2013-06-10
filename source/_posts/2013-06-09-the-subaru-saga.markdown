@@ -16,10 +16,10 @@ graduated, more or less. Until I bought my Subaru, I owned an ageing Honda Civic
 throughout the many years I owned it for, it was old enough that it lacked some
 of the conveniences one expects in a car these days, such as power locks and
 windows, and most importantly, air conditioning.  The lack of air conditioning
-in particular less than ideal for summer road trips, and more importantly, it
-was in need of some moderately expensive maintenance, and it didn't seem to make
-sense to me to spend much money on it given that the overall value of the car
-was fairly low.
+in particularmade it  less than ideal for summer road trips, and more
+importantly, it was in need of some moderately expensive maintenance, and it
+didn't seem to make sense to me to spend much money on it given that the overall
+value of the car was fairly low.
 
 I didn't go on many test drives before I purchased my Subaru, but I didn't feel
 the need to; I had already spent months watching reviews, reading forums,
