@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a &hellip;">
+  <meta name="description" content="Whilst browsing Reddit today, I came across a short essay by Mordechai Ben-Ari titled &ldquo;Non-Myths About Programming&rdquo; (PDF warning).  It& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,6 +99,107 @@
     <article>
       
 
+<div class="category-Links">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2011/02/03/non-myths-about-programming/">Non-Myths About Programming</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-03T20:53:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Whilst browsing <a href="http://reddit.com" target="_blank">Reddit</a> today, I came across a short essay by <a href="http://stwww.weizmann.ac.il/g-cs/benari/" target="_blank">Mordechai Ben-Ari</a> titled &ldquo;<a title="PDF: Non-Myths About Programming" href="http://stwww.weizmann.ac.il/G-CS/BENARI/articles/nonmyths.pdf" target="_blank">Non-Myths About Programming</a>&rdquo; (PDF warning).  It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.  I would urge anyone considering a career in computer science to read it.  Given its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother summarizing the article—instead, I&rsquo;ll merely say that you should click the link and check it out for yourself.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2011/02/03/non-myths-about-programming/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Technology">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/10/03/194/">Making Samba shares accessible to Apache on OS X</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-03T19:29:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts.  The basic idea is that authorized users can log in to a web interface and browse files in specific locations on my home network.  The Python script is accessed through Apache on my Mac Mini, but some of the files I need access to are on Windows boxes.  Unfortunately this presented something of a problem, as the Apache user on OS X (<code>_www</code> as of Snow Leopard) doesn&rsquo;t have permission to access Windows shares mounted by users.</p>
+
+<p>Sounds simple enough, right?  Just <code>chmod</code> or <code>chown</code> the Windows share and go to town.  Unfortunately, this doesn&rsquo;t seem to work; neither <code>chown</code> or <code>chmod</code> have any effect on mounted Windows shares.  Oddly, they don&rsquo;t output any errors; they just don&rsquo;t <em>do anything.</em> The only way around this seems to be to mount the shares <em>as</em> the Apache user (or whichever user you need to have access).  Here&rsquo;s how to do so in Snow Leopard, with instructions modified slightly from a <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a> <a title="Stack Overflow: mount a windows smb share on OS X as so it can be accessed by 'www' user" href="http://stackoverflow.com/questions/324171/mount-a-windows-smb-share-on-os-x-as-so-it-can-be-accessed-by-www-user" target="_blank">question on the subject</a>:</p>
+
+<ol>
+    <li>Create the mountpoint<br />
+        <code>mkdir /Volumes/Mount_Name</code></li>
+    <li>Set the permissions on the mount point
+<pre><code>sudo chown _www:_www /Volumes/Mount_Name
+sudo chmod 755 /Volumes/Mount_Name
+</code></pre>
+</li>
+    <li>If necessary, make a symlink from your Apache documents folder to the mount point<br />
+         <code>ln -s /Volumes/Mount_Name /Library/WebServer/Documents/Mount_Name</code></li>
+    <li>Mount the share <strong>as the Apache user</strong><br />
+        <code>sudo -u _www mount_smbfs //DOMAIN;User:Password@Host/Share /Volumes/Mount_Name</code></li>
+</ol>
+
+
+<p>I doubt a great number of people will need this information as it&rsquo;s a strange sort of setup, but it&rsquo;s my hope that these instructions will save someone some time.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2010/10/03/194/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
 <div class="category-Coding">
 
   <header>
@@ -126,7 +227,7 @@
   </header>
 
 
-  <div class="entry-content"><p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&#8217;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&#8217;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&#8217;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a><!--more--></p>
+  <div class="entry-content"><p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&rsquo;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&rsquo;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&rsquo;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a><!--more--></p>
 
 <ol>
     <li>Connect your phone to your computer and open a terminal window.  Run <code>adb devices</code> to confirm that adb can &#8220;see&#8221; your phone.  You should see something like this:
@@ -163,7 +264,7 @@ You should now have full access to your phone from adb and Eclipse.
 </ol>
 
 
-<p>I hope this proves helpful.  If you have any corrections or if this method didn&#8217;t work for you, leave a comment.</p>
+<p>I hope this proves helpful.  If you have any corrections or if this method didn&rsquo;t work for you, leave a comment.</p>
 </div>
     <footer>
       <a rel="full-article" href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/#comments">Comments &rarr;</a>
@@ -204,14 +305,14 @@ You should now have full access to your phone from adb and Eclipse.
   </header>
 
 
-  <div class="entry-content"><p>Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple&#8217;s app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they&#8217;ve claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.<!--more--></p>
+  <div class="entry-content"><p>Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple&rsquo;s app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they&rsquo;ve claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.<!--more--></p>
 
 <p>The phone I switched to is the HTC Desire on Telus:</p>
 
 <p><img class="aligncenter size-full wp-image-152" style="display: block;
 margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC Desire" width="198" height="300" /></p>
 
-<p>With a 1Ghz CPU and 576MB of RAM, the Desire packs some powerful hardware.  So far, I&#8217;ve been quite impressed by the hardware, but that&#8217;s all I&#8217;ll say about it for now.  I&#8217;m more interested in relating my first impressions of the Android platform.  In no particular order:</p>
+<p>With a 1Ghz CPU and 576MB of RAM, the Desire packs some powerful hardware.  So far, I&rsquo;ve been quite impressed by the hardware, but that&rsquo;s all I&rsquo;ll say about it for now.  I&rsquo;m more interested in relating my first impressions of the Android platform.  In no particular order:</p>
 
 <ul>
     <li>The openness of the Android market and of the platform itself is immediately apparent as an ex-iPhone user.  <em>I love it.</em> I love being able to download emulators directly from the app store.  I love being able to install interactive programming environments on my phone.  I love having a native Latitude app.  I love that Google Voice is available, even though it&#8217;s currently US-only.  Most of all, I love that neither Apple nor any other company can tell me what I can and cannot install on my phone.</li>
@@ -224,10 +325,10 @@ margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC De
 </ul>
 
 
-<p>I fully intend to do some serious Android development, so I&#8217;ll surely write more about the platform as I become more familiar with it.  For now, though, the bottom line is this: I love Android.  Switching from iOS was an excellent decision and I doubt I&#8217;ll ever look back.  I&#8217;d urge anyone thinking about a phone upgrade to consider Android as well.</p>
+<p>I fully intend to do some serious Android development, so I&rsquo;ll surely write more about the platform as I become more familiar with it.  For now, though, the bottom line is this: I love Android.  Switching from iOS was an excellent decision and I doubt I&rsquo;ll ever look back.  I&rsquo;d urge anyone thinking about a phone upgrade to consider Android as well.</p>
 
 <p><sup>1</sup><span style="font-size: 0.8em;">A reader on <a href="http://www.reddit.com/r/Android/comments/dafec/android_first_impressions_from_an_exiphone/" target="_blank" title="Reddit">Reddit</a> brought to my attention the fact that the Android <a href="http://en.wikipedia.org/wiki/Dalvik_%28software%29" target="_blank" title="Dalvik">Dalvik</a> virtual machine and its bytecode are significantly different from their Java equivalents, so although Android apps are written in Java, compiled Android apps are not really Java.  (Apparently Oracle disagrees, mind you.)</span><br/>
-<sup>2</sup><span style="font-size: 0.8em;">Another Redditor pointed out that the 700% figure may be something of an exaggeration.  I&#8217;ve heard varying figures - anywhere from 2x to 10x - but 700% was based on the specific video I linked to.  However, it&#8217;s true that real-world performance will likely differ significantly from the results of synthetic benchmarks.</span></p>
+<sup>2</sup><span style="font-size: 0.8em;">Another Redditor pointed out that the 700% figure may be something of an exaggeration.  I&rsquo;ve heard varying figures &ndash; anywhere from 2x to 10x &ndash; but 700% was based on the specific video I linked to.  However, it&rsquo;s true that real-world performance will likely differ significantly from the results of synthetic benchmarks.</span></p>
 </div>
     <footer>
       <a rel="full-article" href="/entry/2010/09/06/android-first-impressions/#comments">Comments &rarr;</a>
@@ -268,11 +369,11 @@ margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC De
   </header>
 
 
-  <div class="entry-content"><p>It&#8217;s common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn&#8217;t get complacent just yet.  There&#8217;s still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.<!--more--></p>
+  <div class="entry-content"><p>It&rsquo;s common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn&rsquo;t get complacent just yet.  There&rsquo;s still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.<!--more--></p>
 
-<p>I&#8217;ve always felt that a lack of exposure is one of the primary detriments to computer science enrollment.  While I don&#8217;t have any hard data, my own experience combined with an informal surveyal of friends and colleagues leads me to believe that a large percentage of North American high schools—possibly even a majority—offer little in the way of comprehensive computing classes.  While I don&#8217;t dispute the importance of math, English and science, I can&#8217;t help but wonder why computing isn&#8217;t given an equal footing in the educational sphere, given its ubiquity today.</p>
+<p>I&rsquo;ve always felt that a lack of exposure is one of the primary detriments to computer science enrollment.  While I don&rsquo;t have any hard data, my own experience combined with an informal surveyal of friends and colleagues leads me to believe that a large percentage of North American high schools—possibly even a majority—offer little in the way of comprehensive computing classes.  While I don&rsquo;t dispute the importance of math, English and science, I can&rsquo;t help but wonder why computing isn&rsquo;t given an equal footing in the educational sphere, given its ubiquity today.</p>
 
-<p>I&#8217;ve encountered a great number of intelligent and educated people who have <em>no idea whatsoever</em> about what the field of computer science is, or even how computers and software work.  I understand that most people don&#8217;t necessarily need that information.  However, it&#8217;s odd to me that basic computer literacy isn&#8217;t required of college graduates (let alone high school students) in the same way that basic writing and math skills are.  In the interest of meeting ever-increasing economic demand for technically skilled graduates, shouldn&#8217;t we do more to expose students to computing?</p>
+<p>I&rsquo;ve encountered a great number of intelligent and educated people who have <em>no idea whatsoever</em> about what the field of computer science is, or even how computers and software work.  I understand that most people don&rsquo;t necessarily need that information.  However, it&rsquo;s odd to me that basic computer literacy isn&rsquo;t required of college graduates (let alone high school students) in the same way that basic writing and math skills are.  In the interest of meeting ever-increasing economic demand for technically skilled graduates, shouldn&rsquo;t we do more to expose students to computing?</p>
 
 <p>To illustrate my point, here are a few examples:</p>
 
@@ -283,125 +384,16 @@ margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC De
 </ul>
 
 
-<p>I&#8217;m not entirely sure if these examples will properly communicate the point I&#8217;d hoped they would. I wouldn&#8217;t want anyone to misunderstand the purpose of this post, either; I don&#8217;t mean to complain about how computer science is perceived.  I don&#8217;t particularly care how people feel about my field of study.</p>
+<p>I&rsquo;m not entirely sure if these examples will properly communicate the point I&rsquo;d hoped they would. I wouldn&rsquo;t want anyone to misunderstand the purpose of this post, either; I don&rsquo;t mean to complain about how computer science is perceived.  I don&rsquo;t particularly care how people feel about my field of study.</p>
 
 <p>My point is this: it seems to me that a large percentage of people, no matter how well educated they may otherwise be, have no idea how computers work or how software is developed.  I feel that the primary reason for this is, in most cases, that they were never exposed to computing in a serious way.  Until this is remedied, computer science enrollment will continue to be mediocre and the field of computer science will not reach its full potential.  After all, who wants to go into a field he or she knows nothing about?</p>
 
-<p>I&#8217;ve mentioned that I&#8217;m surprised at the lack of computer literacy I see in some college graduates.  Colleges are not my primary concern, though.  If computer science enrollment is to be increased, exposure to computing needs to start much earlier.  At the very least, I&#8217;d like to see is comprehensive computing courses&mdash;which teach skills up to and including basic programming&mdash;made available in a majority of high schools.  Ideally, these classes should not simply be electives; one computing class should be a required part of any high school curriculum.  (I don&#8217;t mean a course in touch typing.)  Of course, given the real-world economic and temporal constraints that educators face, I don&#8217;t expect that any of these things will happen any time soon.  One can always hope, though!</p>
+<p>I&rsquo;ve mentioned that I&rsquo;m surprised at the lack of computer literacy I see in some college graduates.  Colleges are not my primary concern, though.  If computer science enrollment is to be increased, exposure to computing needs to start much earlier.  At the very least, I&rsquo;d like to see is comprehensive computing courses&mdash;which teach skills up to and including basic programming&mdash;made available in a majority of high schools.  Ideally, these classes should not simply be electives; one computing class should be a required part of any high school curriculum.  (I don&rsquo;t mean a course in touch typing.)  Of course, given the real-world economic and temporal constraints that educators face, I don&rsquo;t expect that any of these things will happen any time soon.  One can always hope, though!</p>
 
 <p><span style="font-size: 0.8em;">On a related note, you may be amused to find out <a href="http://www.youtube.com/watch?v=o4MwTvtyrUQ" title="what a browser is">what a browser is.</a></span></p>
 </div>
     <footer>
       <a rel="full-article" href="/entry/2010/08/27/misconceptions-about-computer-science/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/">Puzzle Panel Postmortem: Framework</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-13T00:33:00-07:00" pubdate data-updated="true">Jul 13<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&#8217;m currently reading <a title="Coders at Work" href="http://www.codersatwork.com/">Coders at Work</a> by Peter Seibel.  The book is a collection of interviews with respected and knowledgeable programmers.  While the interview format can be somewhat difficult to read at times, the book is excellent.  Seibel is himself an experienced programmer, and asks the sort of insightful questions no ordinary interviewer could, making for fascinating discussions.  One could mine the book for weeks for interesting quotes.  I&#8217;m going to try to resist that temptation, but because it relates to the topic at hand, I will permit myself to share with you one statement made by Joe Armstrong:</p>
-
-<blockquote>Being a young programmer today must be awful—you can choose 20 different programming languages, dozens of framework[s] and operating systems and you&#8217;re paralysed by choice.</blockquote>
-
-
-<p>I think Armstrong is mistaken; it&#8217;s anything but awful to be a young programmer today.  However, it&#8217;s certainly true that the number of choices one must make in starting a project can be daunting.  The choices you make at the start of a project can have far-reaching implications.  Choose wisely and your endeavour might be easy and successful, but choose poorly and you&#8217;ll almost certainly regret it later.  For iPhone game developers, perhaps the most important choice that must be made early on in a project is which graphics libraries to use.<!--more--></p>
-
-<p>There are essentially two graphics libraries for iPhone game developers to choose between.  Apple&#8217;s <a title="Quartz" href="http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html" target="_blank">Quartz</a> and Core Animation libraries provide a fairly robust set of classes and methods for 2D drawing, and they&#8217;re quite easy to use and well-integrated with regular iPhone UI elements.  Of course, this simplicity comes at a price; the performance of Quartz leaves something to be desired for high-complexity scenes.  The other option is, of course, OpenGL.  OpenGL offers much better performance (and is of course capable of 3D, which Quartz is not), but it&#8217;s also more difficult to use.</p>
-
-<p>For Puzzle Panel, I wanted to be able to squeeze absolutely every drop of performance possible out of the iPhone to ensure the best experience for users.  A simple 2D puzzle game might not seem like a high-performance application, but given the limited fillrate of the iPhone 3G GPU and the fidelity of effects I was hoping to achieve, I wanted to ensure that I wouldn&#8217;t be limited by my choice of rendering platform.  This made OpenGL the obvious choice, but given that I was also learning Objective C as I wrote the game, I was concerned about the amount of time it would have taken me to write the abstraction layers necessary to allow me to focus on gameplay.</p>
-
-<p>Luckily, another option presented itself to me in the form of <a title="Cocos2D for iPhone" href="http://cocos2d-iPhone.org">Cocos2D for iPhone.</a> Cocos2D is a framework for 2D game creation, originally written in Python, but ported to Objective C for the iPhone by Ricardo Quesada.  It provides a rich hierarchy of classes specifically designed for 2D game development, and handles all of the low-level OpenGL calls for you.  Its features include texture loading, text rendering, sprite atlases, particle systems, timed actions, and physics simulation (through integration with <a title="Box2D" href="http://www.box2d.org/" target="_blank">Box2D</a> and/or <a title="Chipmunk" href="http://code.google.com/p/chipmunk-physics/" target="_blank">Chipmunk</a>).  Best of all, it&#8217;s distributed under the GNU LGPL license, so it&#8217;s open source and completely free for both commercial and non-commercial projects.</p>
-
-<p>There are a multitude of excellent <a title="Cocos2D tutorials" href="http://www.cocos2d-iphone.org/wiki/doku.php/" target="_blank">Cocos2D tutorials</a> on the Internet, so I&#8217;m not (at this time) going to go into much detail about how it&#8217;s used.  For illustrative purposes, though, I will provide a specific example of how a scene is organized in Puzzle Panel:</p>
-
-<p><a href="/images/nodes.png"><img class="aligncenter size-medium wp-image-101"
-title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usage in Puzzle Panel" width="300" height="271" style="display: block; margin-left: auto; margin-right: auto;"/></a></p>
-
-<p>The above is a side-view of a typical game scene in Puzzle Panel.  Rendered objects in Cocos2D are always subclasses of <span style="display: inline; font-family: Courier">CCNode</span>, labeled &#8220;Node&#8221; in the diagram above.  Each node (except for the top-level node, the Scene) has a parent and may have any number of children; Cocos2D uses a simple 2D scene graph in which nodes are rendered breadth-first.  <span style="display: inline; font-family: Courier">CCLayer</span>s, or &#8220;Layers&#8221; above, are simple Node subclasses which are typically used for scene organization: one might have a background layer and a foreground layer, and add sprites to each as necessary.</p>
-
-<p>Essentially, creating a game is as simple as subclassing renderable classes (such as <span style="display: inline; font-family: Courier">CCSprite</span>s/&#8221;Sprites&#8221;) and adding your own behaviours.  Once you&#8217;ve coded all of the behaviours you need, you throw a few Nodes in your scene and you&#8217;re done!  Cocos2D makes excellent use of object-oriented paradigms, and if you leverage that properly in your own code, you&#8217;ll end up with a very flexible and powerful game engine.</p>
-
-<p>Using Cocos2D probably saved me hundreds of hours of development time.  In contrast to Puzzle Panel&#8217;s mere 8,500 lines of source code, Cocos2D is comprised of more than 23,000 lines.  As an amateur game developer, I found using a framework to be particularly helpful because it allowed me to maintain a higher-level perspective on the design of the game.  By ignoring the complexities of OpenGL, I was able to spend more time thinking about how best to expand my game and make it as fun, polished and playable as possible.  Using a pre-written framework also eliminates a lot of worrying about feature creep - by starting with a robust set of tools, it&#8217;s less likely that one will spend unnecessary time writing lower-level features that are never ultimately used.</p>
-
-<p>I don&#8217;t wish to disparage the process of writing one&#8217;s own OpenGL code &#8220;from the ground up.&#8221;  I&#8217;d love to write my own game engine &#8220;from scratch&#8221; for my next big project.  Furthermore, a skilled OpenGL programmer could likely gain some extra performance by foregoing unnecessary features.  I really do think, though, that Cocos2D is an absolutely excellent choice if you really want to focus on game design, while still having the flexibility to get &#8220;close to the metal&#8221; where necessary.  If you&#8217;re considering developing a 2D game for the iPhone, <a title="Cocos2D for iPhone" href="http://cocos2d-iPhone.org">check it out.</a></p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
-<div class="category-Links">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/">Drive: The Surprising Truth About What Motivates Us</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-15T23:19:00-07:00" pubdate data-updated="true">Jun 15<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&#8217;m a huge fan of TED Talks. This is a fascinating video in which Dan Pink summarizes some of his research into human motivation, which I found at <a title="Coding Horror" href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror.</a></p>
-
-<object width="640" height="385" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowfullscreen" value="true" /><embed width="640" height="385" type="application/x-shockwave-flash" src="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" allowFullScreen="true" allowscriptaccess="always" allowfullscreen="true" /></object>
-
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/#comments">Comments &rarr;</a>
     </footer>
 
 </div>
@@ -435,6 +427,11 @@ title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usa
   <ul id="recent_posts">
     
       
+      <li class="post             category-Personal            ">
+        <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a>
       </li>
@@ -452,11 +449,6 @@ title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usa
       
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
       </li>
     
   </ul>

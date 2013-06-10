@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I&#8217;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math &hellip;">
+  <meta name="description" content="I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -125,11 +125,11 @@
   </header>
 
 
-<div class="entry-content"><p>I&#8217;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&#8217;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.<!--more--></p>
+<div class="entry-content"><p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.<!--more--></p>
 
-<p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee&#8217;s Twitter</a>: &#8221;<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>.&#8221;  (The page contains solutions, so don&#8217;t read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it&#8217;s fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
+<p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee&rsquo;s Twitter</a>: &#8221;<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>.&ldquo;  (The page contains solutions, so don&rsquo;t read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it&rsquo;s fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
 
-<p>My solution is below, but I&#8217;d recommend that you go give this a try yourself before you read on.</p>
+<p>My solution is below, but I&rsquo;d recommend that you go give this a try yourself before you read on.</p>
 
 <p>&nbsp;<br />
 &nbsp;<br />
@@ -143,7 +143,7 @@
 &nbsp;<br />
 &nbsp;<br /></p>
 
-<p>Alright, ready? Here&#8217;s my solution:</p>
+<p>Alright, ready? Here&rsquo;s my solution:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -190,15 +190,15 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>As you can see, the solution is actually very simple, but there are a couple of tricks necessary to make it work.  First of all, you obviously can&#8217;t use a loop to count the characters because a loop requires a conditional jump to either terminate or continue.  You could still use a loop-like construct such as <code>goto</code>, but that only reframes the problem; you still need to make a decision about when to jump out.</p>
+<p>As you can see, the solution is actually very simple, but there are a couple of tricks necessary to make it work.  First of all, you obviously can&rsquo;t use a loop to count the characters because a loop requires a conditional jump to either terminate or continue.  You could still use a loop-like construct such as <code>goto</code>, but that only reframes the problem; you still need to make a decision about when to jump out.</p>
 
-<p>So, the problem can basically be reduced to this: how can you make a decision without using a conditional?  Well, you can index into an array of possibilities using some property that you can derive from your input.  In this case, the most important property is that the characters can be grouped into two sets: terminating characters (i.e. <code>'\0'</code>) and non-terminating characters (all others).  On that basis, our array of possibilites can consist of two function pointers, one which continues recursively and the other which terminates.</p>
+<p>So, the problem can basically be reduced to this: how can you make a decision without using a conditional?  Well, you can index into an array of possibilities using some property that you can derive from your input.  In this case, the most important property is that the characters can be grouped into two sets: terminating characters (i.e. <code>&lsquo;\0&rsquo;</code>) and non-terminating characters (all others).  On that basis, our array of possibilites can consist of two function pointers, one which continues recursively and the other which terminates.</p>
 
-<p>The only problem remaining is how to group the characters, again without using conditionals.  My first thought here was actually to divide the character by itself, in which case all non-terminating characters would be 1, and the null terminator would be&#8230; oh, a divide-by-zero error. I quickly dismissed that thought and realized that binary not is a simpler way to map the characters.  However, Eevee came up with what I think is <a href="https://gist.github.com/3746130" title="Eevee's solution on Github" target="_blank">a very clever and quite unorthodox solution</a> involving division by handling the <code>SIGFPE</code> generated by the division by zero and using the handler to change an unconditional jump address.</p>
+<p>The only problem remaining is how to group the characters, again without using conditionals.  My first thought here was actually to divide the character by itself, in which case all non-terminating characters would be 1, and the null terminator would be&hellip; oh, a divide-by-zero error. I quickly dismissed that thought and realized that binary not is a simpler way to map the characters.  However, Eevee came up with what I think is <a href="https://gist.github.com/3746130" title="Eevee's solution on Github" target="_blank">a very clever and quite unorthodox solution</a> involving division by handling the <code>SIGFPE</code> generated by the division by zero and using the handler to change an unconditional jump address.</p>
 
-<p>I&#8217;d recommend also checking out the solutions provided in the <a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">original post</a>; all three of them are a bit more elegant than mine, if perhaps a bit more difficult to understand.  (In particular, the count parameter that I use is superfluous, although I don&#8217;t consider the difference particularly important since it can easily be hidden in my solution using a macro or helper function.)</p>
+<p>I&rsquo;d recommend also checking out the solutions provided in the <a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">original post</a>; all three of them are a bit more elegant than mine, if perhaps a bit more difficult to understand.  (In particular, the count parameter that I use is superfluous, although I don&rsquo;t consider the difference particularly important since it can easily be hidden in my solution using a macro or helper function.)</p>
 
-<p>Since my solution isn&#8217;t significantly different from those presented in the original post, I wanted to go a bit further and take a look at the performance implications of not using conditionals.  Yeah, yeah, premature optimization is the root of all evil and all that&mdash;I&#8217;m just doing this out of curiosity; regardless of the results, I would never go this far out of my way to avoid a conditional jump in a real program, nor would I recommend doing so to anyone else.    I decided to compare my solution above against a naïve implementation with a while loop; comparing it against <code>strlen()</code> from <code>string.h</code> would be pretty meaningless because it would be linked against a precompiled library which, for all I know, could be hand-optimized.  So here&#8217;s the code I&#8217;m using instead:</p>
+<p>Since my solution isn&rsquo;t significantly different from those presented in the original post, I wanted to go a bit further and take a look at the performance implications of not using conditionals.  Yeah, yeah, premature optimization is the root of all evil and all that&mdash;I&rsquo;m just doing this out of curiosity; regardless of the results, I would never go this far out of my way to avoid a conditional jump in a real program, nor would I recommend doing so to anyone else.    I decided to compare my solution above against a naïve implementation with a while loop; comparing it against <code>strlen()</code> from <code>string.h</code> would be pretty meaningless because it would be linked against a precompiled library which, for all I know, could be hand-optimized.  So here&rsquo;s the code I&rsquo;m using instead:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -215,7 +215,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>And here&#8217;s how I&#8217;m timing the functions&#8230;</p>
+<p>And here&rsquo;s how I&rsquo;m timing the functions&hellip;</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -244,13 +244,13 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>I&#8217;m assigning the result to a volatile int to ensure that even when the code is optimized, the compiler won&#8217;t completely optimize out the function call.  So, first, predictions: anyone who has taken a computer architecture course will tell you that conditional jumps can be very expensive because of the recovery the CPU has to do if the branch is mispredicted.  However, branch predictors typically have very high accuracy, and there&#8217;s also a significant overhead involved in putting the parameters and return address on the stack when a function is called.  Therefore, I predict that in that with no compiler optimization, the while loop will be faster.</p>
+<p>I&rsquo;m assigning the result to a volatile int to ensure that even when the code is optimized, the compiler won&rsquo;t completely optimize out the function call.  So, first, predictions: anyone who has taken a computer architecture course will tell you that conditional jumps can be very expensive because of the recovery the CPU has to do if the branch is mispredicted.  However, branch predictors typically have very high accuracy, and there&rsquo;s also a significant overhead involved in putting the parameters and return address on the stack when a function is called.  Therefore, I predict that in that with no compiler optimization, the while loop will be faster.</p>
 
-<p>&#8230;And, it is.  Running each function in a loop 100,000 times on a 23-character string, the average over five trials was 28,699 µsec for the non-conditional version and 9,012 µsec for the while loop.  Using a fixed string will cause the branch predictor to have near-perfect accuracy in the while loop version, so there might be a slight difference if I used a large array of strings of randomized lengths, but I doubt it would be significant.</p>
+<p>&hellip;And, it is.  Running each function in a loop 100,000 times on a 23-character string, the average over five trials was 28,699 µsec for the non-conditional version and 9,012 µsec for the while loop.  Using a fixed string will cause the branch predictor to have near-perfect accuracy in the while loop version, so there might be a slight difference if I used a large array of strings of randomized lengths, but I doubt it would be significant.</p>
 
-<p>But what if we let the compiler (llvm-gcc in this case) optimize it?  I don&#8217;t know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don&#8217;t know.</p>
+<p>But what if we let the compiler (llvm-gcc in this case) optimize it?  I don&rsquo;t know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don&rsquo;t know.</p>
 
-<p>As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That&#8217;s a significant improvement, but it&#8217;s still slower than the unoptimized while loop, so it obviously won&#8217;t beat that.  And indeed, the optimized while loop takes only 3,072 µsec.</p>
+<p>As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That&rsquo;s a significant improvement, but it&rsquo;s still slower than the unoptimized while loop, so it obviously won&rsquo;t beat that.  And indeed, the optimized while loop takes only 3,072 µsec.</p>
 </div>
 
 </div>
@@ -324,6 +324,11 @@
   <ul id="recent_posts">
     
       
+      <li class="post             category-Personal            ">
+        <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a>
       </li>
@@ -341,11 +346,6 @@
       
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="As a small weekend project, I&#8217;ve been working on a simple Python HTTP &#8220;file server&#8221; of sorts. The basic idea is that authorized &hellip;">
+  <meta name="description" content="As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts. The basic idea is that authorized &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -125,9 +125,9 @@
   </header>
 
 
-<div class="entry-content"><p>As a small weekend project, I&#8217;ve been working on a simple Python HTTP &#8220;file server&#8221; of sorts.  The basic idea is that authorized users can log in to a web interface and browse files in specific locations on my home network.  The Python script is accessed through Apache on my Mac Mini, but some of the files I need access to are on Windows boxes.  Unfortunately this presented something of a problem, as the Apache user on OS X (<code>_www</code> as of Snow Leopard) doesn&#8217;t have permission to access Windows shares mounted by users.</p>
+<div class="entry-content"><p>As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts.  The basic idea is that authorized users can log in to a web interface and browse files in specific locations on my home network.  The Python script is accessed through Apache on my Mac Mini, but some of the files I need access to are on Windows boxes.  Unfortunately this presented something of a problem, as the Apache user on OS X (<code>_www</code> as of Snow Leopard) doesn&rsquo;t have permission to access Windows shares mounted by users.</p>
 
-<p>Sounds simple enough, right?  Just <code>chmod</code> or <code>chown</code> the Windows share and go to town.  Unfortunately, this doesn&#8217;t seem to work; neither <code>chown</code> or <code>chmod</code> have any effect on mounted Windows shares.  Oddly, they don&#8217;t output any errors; they just don&#8217;t <em>do anything.</em> The only way around this seems to be to mount the shares <em>as</em> the Apache user (or whichever user you need to have access).  Here&#8217;s how to do so in Snow Leopard, with instructions modified slightly from a <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a> <a title="Stack Overflow: mount a windows smb share on OS X as so it can be accessed by 'www' user" href="http://stackoverflow.com/questions/324171/mount-a-windows-smb-share-on-os-x-as-so-it-can-be-accessed-by-www-user" target="_blank">question on the subject</a>:</p>
+<p>Sounds simple enough, right?  Just <code>chmod</code> or <code>chown</code> the Windows share and go to town.  Unfortunately, this doesn&rsquo;t seem to work; neither <code>chown</code> or <code>chmod</code> have any effect on mounted Windows shares.  Oddly, they don&rsquo;t output any errors; they just don&rsquo;t <em>do anything.</em> The only way around this seems to be to mount the shares <em>as</em> the Apache user (or whichever user you need to have access).  Here&rsquo;s how to do so in Snow Leopard, with instructions modified slightly from a <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a> <a title="Stack Overflow: mount a windows smb share on OS X as so it can be accessed by 'www' user" href="http://stackoverflow.com/questions/324171/mount-a-windows-smb-share-on-os-x-as-so-it-can-be-accessed-by-www-user" target="_blank">question on the subject</a>:</p>
 
 <ol>
     <li>Create the mountpoint<br />
@@ -144,7 +144,7 @@ sudo chmod 755 /Volumes/Mount_Name
 </ol>
 
 
-<p>I doubt a great number of people will need this information as it&#8217;s a strange sort of setup, but it&#8217;s my hope that these instructions will save someone some time.</p>
+<p>I doubt a great number of people will need this information as it&rsquo;s a strange sort of setup, but it&rsquo;s my hope that these instructions will save someone some time.</p>
 </div>
 
 </div>
@@ -218,6 +218,11 @@ sudo chmod 755 /Volumes/Mount_Name
   <ul id="recent_posts">
     
       
+      <li class="post             category-Personal            ">
+        <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a>
       </li>
@@ -235,11 +240,6 @@ sudo chmod 755 /Volumes/Mount_Name
       
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
       </li>
     
   </ul>

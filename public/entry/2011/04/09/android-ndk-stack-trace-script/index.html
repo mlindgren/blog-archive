@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I&#8217;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&#8217;ve decided to use the &hellip;">
+  <meta name="description" content="I&rsquo;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&rsquo;ve decided to use the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -125,9 +125,9 @@
   </header>
 
 
-<div class="entry-content"><p>I&#8217;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&#8217;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &#8220;performance-critical&#8221; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&#8217;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&#8217;t imagine it&#8217;s too difficult, but I haven&#8217;t spent much time on it—I&#8217;ve not needed to do much debugging yet.)<!--more--></p>
+<div class="entry-content"><p>I&rsquo;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&rsquo;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &ldquo;performance-critical&rdquo; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&rsquo;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&rsquo;t imagine it&rsquo;s too difficult, but I haven&rsquo;t spent much time on it—I&rsquo;ve not needed to do much debugging yet.)<!--more--></p>
 
-<p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it&#8217;s a bit of a pain to use.  To that end, I&#8217;ve put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you&#8217;d like to do something similar on Windows, I&#8217;m sure it won&#8217;t be hard, but you&#8217;re on your own.  Here&#8217;s how to use it:</p>
+<p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it&rsquo;s a bit of a pain to use.  To that end, I&rsquo;ve put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you&rsquo;d like to do something similar on Windows, I&rsquo;m sure it won&rsquo;t be hard, but you&rsquo;re on your own.  Here&rsquo;s how to use it:</p>
 
 <ol>
     <li>Create a folder in your project called &#8220;debug&#8221; (or whatever name you&#8217;d like)</li>
@@ -148,9 +148,9 @@
 </ol>
 
 
-<p>Obviously there are a few things you&#8217;ll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
+<p>Obviously there are a few things you&rsquo;ll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
 
-<p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don&#8217;t change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you&#8217;ll need to dump them again to get accurate results.</p>
+<p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don&rsquo;t change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you&rsquo;ll need to dump them again to get accurate results.</p>
 </div>
 
 </div>
@@ -224,6 +224,11 @@
   <ul id="recent_posts">
     
       
+      <li class="post             category-Personal            ">
+        <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a>
       </li>
@@ -241,11 +246,6 @@
       
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
       </li>
     
   </ul>

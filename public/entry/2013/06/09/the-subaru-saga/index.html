@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>mlindgren.ca</title>
+  <title>The Subaru Saga - mlindgren.ca</title>
   <meta name="author" content="Mitch Lindgren">
 
   
@@ -20,7 +20,7 @@ I had &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.mlindgren.ca/">
+  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2013/06/09/the-subaru-saga/">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -94,18 +94,17 @@ I had &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
       
+
+<div id="category-wrapper" class="category-Personal">
+<article class="hentry " role="article">
+  
 
 <div class="category-Personal">
 
   <header>
     
-      <h1 class="entry-title"><a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a></h1>
+      <h1 class="entry-title"><a href="#">The Subaru Saga</a></h1>
     
     
       <p class="meta">
@@ -128,7 +127,7 @@ I had &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>Or &ldquo;buying used cars is the worst and I will never do it ever again.&rdquo;</p>
+<div class="entry-content"><p>Or &ldquo;buying used cars is the worst and I will never do it ever again.&rdquo;</p>
 
 <p>I recently purchased a new-to-me 2011
 <a href="http://www.subaru.com/vehicles/impreza-wrx/index.html">Subaru WRX STI</a> sedan.
@@ -897,28 +896,13 @@ you go away.</li>
 </div>
 
 </div>
-    <footer>
-      <a rel="full-article" href="/entry/2013/06/09/the-subaru-saga/#comments">Comments &rarr;</a>
-    </footer>
 
 </div>
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
 
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a></h1>
-    
-    
-      <p class="meta">
-        
-
 
 
 
@@ -929,639 +913,42 @@ you go away.</li>
   
 
 
-<time datetime="2012-11-14T22:58:00-08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In September I <a href="/entry/2012/09/14/social-networks-and-content-ownership/">wrote about</a>
-my intention to develop a web application to share my photos. I made good
-progress on it throughout September and early October, but for various reasons I
-haven&rsquo;t been able to work on it much in the past month or so. Last weekend,
-though, I was able to solve some blocking issues which were preventing me from
-doing an alpha release. Those being dealt with, I&rsquo;ve now got a few of my albums
-up at <a href="http://photos.mlindgren.ca/">photos.mlindgren.ca</a>; take a look and leave
-a comment if you have any feedback.</p>
-
-<p>I haven&rsquo;t released the source code yet as there&rsquo;s still a great deal of work to
-be done, and I&rsquo;m generally of the belief that dumping a bunch of unfinished,
-messy code on Github with the hope that the community will sort it out is of
-little benefit to anyone. My goal at this point is to do a beta release in a
-two to three months or so and release the code at that point. That timeline is
-anything but firm, though. This project is turning out to be much more work than
-I expected (as projects are wont to do), and I expect to be fairly busy over the
-next couple months.</p>
-
-<p>Anyway, with the alpha version up and running, this seems like a good
-opportunity to reflect on some of the issues I&rsquo;ve faced that complicated the
-project, and on what remains to be done.</p>
-
-<h2>Wand and the OOM Killer</h2>
-
-<p>I mentioned in my
-<a href="/entry/2012/09/14/the-state-of-python-imaging/">post on Python imaging libraries</a>
-that I&rsquo;m using <a href="http://dahlia.kr/wand/index.html">Wand</a> to resize and transform
-uploaded photos. It&rsquo;s very convenient and easy to use, and from a
-maintainability and ease of use perspective I much prefer using Python bindings
-for ImageMagick to shelling out to the ImageMagick executable. One
-of my goals for this project is that other people should be able to install it
-on their own servers with relative ease, and I suspect relying on ImageMagick
-executables for image processing would lead to cross-platform and configuration
-issues.</p>
-
-<p>But, Wand is not yet a mature library and it has some significant issues of its
-own. First and foremost, when I started using it it had some major memory
-leaks. I found and fixed more than 10 leaks and submitted a pull request which
-was merged into the main repository&mdash;however, there hasn&rsquo;t yet been an
-official release including my fixes yet, so pip installs and downloads from the
-Wand website will still include those leaks.</p>
-
-<p>I&rsquo;m not sure if I got all of the leaks or if more still remain. The ones I fixed
-were discovered mostly through ad-hoc testing and reading the code. I&rsquo;ve been
-running my app for several days now and the memory consumption when it&rsquo;s idle
-has stayed flat, so I believe I&rsquo;ve removed at least the most common leaks, but I
-haven&rsquo;t had a chance to sit down with Valgrind yet and run the Wand unit tests
-through it to make sure that I got <em>all</em> of the leaks. I&rsquo;ll have to do that
-before I do any sort of public release of my software;
-I don&rsquo;t want to rely on a leaky library.</p>
-
-<p>Beyond the leaks, I ran into another memory issue which proved problematic:
-resizing photographs can use a great deal of memory, which is extremely limited
-on a reasonably-priced <acronym title="Virtual Private Server">VPS</acronym>.
-I have limited knowledge about image processing in general and ImageMagick in
-particular, but I&rsquo;m not aware of any resizing algorithms which can operate
-directly on compressed image data, and if any such algorithms exist, ImageMagick
-doesn&rsquo;t use them. That being the case, to resize an image, the entire image has
-to be loaded into memory decompressed. For an 8 megapixel photograph at 24 bits
-per pixel, that means allocating approximately 183MB of memory.</p>
-
-<p>On a 512MB VPS, this means that trying to resize three images
-concurrently&mdash;or even sequentially in some cases, since Python isn&rsquo;t
-guaranteed to immediately relinquish allocated memory to the operating system
-when objects resident in that memory are &ldquo;deleted&rdquo;&mdash;practically guarantees
-that the process will be killed by the
-<acronym title="Out Of Memory">OOM</acronym> killer.</p>
-
-<p>This goes hand in hand with another complication, which is that resizing images
-is too slow to be done in the same server thread that&rsquo;s handling requests and
-generating responses. For each image that&rsquo;s uploaded, I save several different
-sizes for different purposes, and due to the aforementioned memory constraints I
-can&rsquo;t even resize them concurrently. Resizing each image several times in the
-responding thread drastically reduces throughput for the client
-since it incurs a significant wait time for the server to process each image
-after it&rsquo;s uploaded.</p>
-
-<h2>Enter Subprocess</h2>
-
-<p>So here&rsquo;s the solution I&rsquo;ve come up with for the time being, and I&rsquo;m very unsure
-whether or not it&rsquo;s actually a good solution, so please do let me know in the
-comments if there&rsquo;s a better way to do this.  When a new image is uploaded, the
-responding thread saves the image in the appropriate directory and adds it to
-the database, but does not resize it.  For each of the sizes that the image
-needs to be resized to, it adds a task to a
-<a href="http://docs.python.org/2/library/queue.html">synchronous queue</a>. The queue is
-consumed by a different thread which runs throughout the lifetime of the
-application. That thread maintains a (thread-local) queue of
-<a href="http://docs.python.org/2/library/multiprocessing.html">subprocesses</a> with a
-configurable maximum length. When a new resizing task is consumed, if there is
-room in the subprocess queue, a new subprocess is spawned to resize the image.
-Otherwise, the thread joins the subprocess at the front of the queue so as to
-block until there&rsquo;s room to spawn a new subprocess. The exit code of completed
-processes is checked to ensure that the resize was successful; in case of
-failure, the task is re-added to the back of the task queue.</p>
-
-<p>This guarantees that the application server itself will never be killed by the
-OOM killer since it uses minimal memory. It never has to load images into
-memory; all of that is done in the resizing subprocesses.  By configuring the
-maximum number of concurrent subprocesses, one can scale this solution according
-to available resources: if you have plenty of RAM, you can resize many images
-concurrently and get through the queue faster, or if you have very little, you
-can limit the queue to one or two processes to minimize the chance that anything
-will be OOM killed.</p>
-
-<p>The subprocess spawning notwithstanding, this is a pretty standard task queue
-model, so you might be wondering why I didn&rsquo;t use something like
-<a href="http://celeryproject.org/">Celery</a> in conjunction with a real message queue.
-It comes down to minimizing the number of external dependencies and maximizing
-ease of use. My project already depends on a number of libraries which will have
-to be installed by users. To the greatest extent that I can do so without
-compromising on features, I want to avoid complicating the installation further
-by adding more dependencies. Celery is particularly difficult to install as it
-requires installing and configuring a broker and managing processes for both the
-broker and Celery itself. Were I writing a large-scale service and maintaining a
-single backend for hundreds of users, it would probably be the right choice, but
-as I am writing software for users to install on their own servers, it is
-probably not.</p>
-
-<p>This method works fairly well and it&rsquo;s the best I&rsquo;ve come up with so far, but
-something about it makes it feel more like a hack than a well thought out and
-robust solution. I also wonder if it defeats the purpose of using Wand in the
-first place; I use it for very little other than resizing, and since I&rsquo;m going
-to the trouble of spawning subprocesses to do that, perhaps it would actually be
-better to just directly invoke the ImageMagick binaries. As mentioned above, I
-have concerns about what impact that would have in different environments, but I
-haven&rsquo;t really validated those concerns; they&rsquo;re just hunches.</p>
-
-<h2>The Road Ahead</h2>
-
-<p>So I&rsquo;ve got a workable, if not perfect, solution to one of the biggest problems
-I encountered&hellip; but as I mentioned previously, there&rsquo;s still much work to be
-done. Here are a few (but not all) of the things I&rsquo;d like to do before I release
-anything publicly:</p>
-
-<ul>
-<li><strong>Lots of UI work.</strong> Right now the app works very poorly on phones and iPads.
-I also need to figure out how to make certain features more discoverable, and
-although I&rsquo;m happy with how albums look right now, there are still some extra
-touches that I want to add which I haven&rsquo;t yet been able to (because CSS and
-HTML suck.)</li>
-<li><strong>Better administrative tools.</strong> Uploading works great, but I have very
-barebones interfaces for editing albums right now. There is currently no means
-of rotating a photo from the editing interface (although doing so should
-almost never be necessary since the app automatically rotates images which
-have EXIF orientation data.)</li>
-<li><strong>Mirroring and proxying to cloud storage services</strong> such as Azure and S3. VPS
-resources are very expensive; extra disk space on some popular hosts runs
-around a dollar per gigabyte per month. That&rsquo;s ten times the cost of disk
-space on the cloud storage services I&rsquo;ve looked at. Cloud-hosted images might
-also improve load speeds for visitors.</li>
-<li><strong>Comments.</strong> This one is pretty big, obviously, but I haven&rsquo;t added it yet
-because I can&rsquo;t decide on how best to handle it. I&rsquo;d like to avoid writing my
-own comment system and requiring potential commenters to sign up for yet
-another account. (I&rsquo;d use Persona for commenter identification and
-authentication just as I do for the admin login, but very few people currently
-have Persona accounts or even know what it is.) I like Disqus, but I&rsquo;m not
-sure it would integrate well with the minimalist interface I&rsquo;ve designed.</li>
-<li><strong>Geotagging and maps.</strong> I&rsquo;m already reading GPS data from EXIF tags where
-available, but now I need to do something with it. I&rsquo;d like to add the ability
-to manually add locations to photos and albums, and to have a map that shows
-where photos were taken.</li>
-</ul>
-
-
-<p>Those five items represent maybe a quarter to a third of the work I still have
-planned, so to repeat myself again, there&rsquo;s a lot of work to do. But I&rsquo;m very
-happy with the progress I&rsquo;ve made so far, and I feel confident that I can get
-this finished. It&rsquo;s just a matter of when.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2012/11/14/photo-app-progress-update/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-06-09T22:22:00-07:00" pubdate data-updated="true">Jun 9<span>th</span>, 2013</time>
       
 
-<div class="category-Links">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/categories/personal/'>Personal</a>
+  
+</span>
 
 
-<time datetime="2012-10-03T20:37:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>David Somers presents an
-<a href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">excellent rundown</a>
-of what
-<a href="http://www.mozilla.org/en-US/persona/">Mozilla Persona</a> is and why it&rsquo;s
-currently the best option for identity and authentication for web services. I&rsquo;ve
-implemented authentication using Persona in the
-<a href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/">photo album app</a>
-I&rsquo;m working on, and I found it remarkably easy to integrate with my app. And, as
-David explains, Persona is also much easier for users to understand than
-competing platforms like OpenID. If you&rsquo;re a web developer, you really need to
-add Persona support to your application as soon as
-possible. It can be done in literally a matter of minutes, and if Persona takes
-off the benefit to identity management on the Internet could be huge.</p>
-
-<p>Perhaps my favourite thing about Persona is that it gives me the opportunity to
-<a href="https://developer.mozilla.org/en-US/docs/Persona/Implementing_a_Persona_IdP">implement my own identity provider</a>,
-which means I can have <em>complete</em> control over how I authenticate to any
-Persona-consuming service. I could have <em>n</em>-factor authentication, with no limit
-on the complexity or specificity of the factors besides my own imagination. For
-example, I could generate SSL client certificates for each of my machines and
-hardcode their thumbprints into my identity provider to ensure that it wouldn&rsquo;t
-even service requests from machines I haven&rsquo;t explicitly added.  Or if I wanted
-to get creative, I could have my identity provider generate a random temporary
-key which I would have to retrieve via SSH (but this is less convenient and
-probably also less secure than doing SSL client authentication.) The
-possibilities are endless.</p>
-
-<p>Perhaps an end is finally in sight to the frustration of having dozens upon
-dozens of different accounts and passwords for various services,
-<a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/">each with its own uniquely nonsensical password composition policy</a>.  Everyone needs to implement Persona&mdash;preferably yesterday.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/#comments">Comments &rarr;</a>
-    </footer>
-
+      <div class="sharing">
+  
+  
+  
 </div>
 
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-
-<div class="category-Technology">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-23T23:22:00-07:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Backstory</h2>
-
-<p>I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
-better part of a decade now. By most metrics, it&rsquo;s still very good blogging
-software; I&rsquo;m not aware of any self-hostable alternative that can match
-Wordpress in terms of the union of ease of use, feature set and flexibility that
-it provides. That said, lately I&rsquo;ve been feeling that perhaps Wordpress is no
-longer the right choice for my specific needs. These are my problems with it:</p>
-
-<ul>
-<li>It&rsquo;s not very good for sharing source code. There are a multitude of plugins
-available for syntax highlighting; the best of them seems to be
-<a href="http://alexgorbatchev.com/SyntaxHighlighter/">Alex Gorbatchev&rsquo;s Syntax Highlighter</a>,
-which is used by
-<a href="http://wordpress.com">Wordpress.com</a> and is also what I was using on my blog.
-But I&rsquo;ve had problems with the Wordpress converting some of the characters in
-my code to HTML entities (e.g. <code>&amp;amp;</code> for &amp; ) which are then printed
-literally by the plugin.</li>
-<li>I find that more often than not Wordpress&#8217; visual editor is
-insufficient for the formatting I want in my posts. That forces me to use
-the raw HTML editor. That would be fine, except that Wordpress has a strange
-sort of off-spec way of storing post HTML. Paragraph and line break tags are
-omitted in the editor and the database, and are added when the page is
-actually rendered to the client. This is okay, I guess, and I <em>think</em>
-Wordpress is smart enough to not insert extra paragraph tags if you do wrap
-your own paragraphs with them. Still, it leads to some unpredictability with
-regard to how a post with hand-written HTML will actually be rendered.</li>
-<li>A similar but worse problem occurs when you try to insert extra line breaks.
-Even if you&rsquo;re using the raw HTML editor to insert <code>&lt;br /&gt;</code> tags, Wordpress
-will just get rid of them unless you insert additional non-breaking spaces
-(<code>&amp;nbsp;</code>) so that it thinks the lines are non-empty. But! If you switch back
-to the visual editor for any reason, even your <code>&amp;nbsp;&lt;br /&gt;</code> lines will be
-wiped out. Even for &ldquo;average&rdquo; users I can&rsquo;t think of any situation in which
-this &ldquo;feature&rdquo; would be desirable. If I put a bunch of extra newlines into
-something I&rsquo;m writing, it is because <em>I want exactly that many newlines.</em> I
-tend to not have much patience for software that thinks it&rsquo;s smarter than
-I am; that is why I still write most of my code in <a href="http://www.vim.org/">Vim</a>
-and use hand-written makefiles in an age of
-<acronym title="Integrated Development Environment">IDE</acronym>s.</li>
-<li>Never-ending updates. It seems like every time I log in there&rsquo;s a new update
-to download. Wordpress has updates down to a one-click install process, so
-this wouldn&rsquo;t be much of a problem except for the fact that
-every time I have to update Wordpress warns me that I should back up my
-database first. Why? Is there a significant possibility that the update might
-break everything? It&rsquo;s probably just a
-<acronym title="Cover Our Asses">COA</acronym>, and I back up my database
-daily anyway, but this whole aspect of Wordpress makes me uneasy and I don&rsquo;t
-want to have to deal with it any more. Even though I&rsquo;m covered for backups,
-recovering from a botched update would undoubtedly be a nightmare.</li>
-<li><a href="http://en.wikipedia.org/wiki/WordPress#Vulnerabilities">Vulnerabilities.</a> One
-of the big reasons that Wordpress is updated so frequently is that it has a
-long history of security vulnerabilities, and more are still being discovered
-and patched. This also means that if I don&rsquo;t log in frequently enough to
-download new security patches, I&rsquo;m at risk of having my site compromised,
-loaded up with malware and blacklisted by Google.</li>
-<li><p>It&rsquo;s written in PHP. <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP sucks.</a>
-(I can&rsquo;t link to that enough.) I don&rsquo;t want to be dogmatic about technology
-choices; good software is good software regardless of what language it&rsquo;s
-written in, and my primary desire is always to use whatever is best for the
-task at hand. But lately I&rsquo;ve been pretty vocal, both here and in person with
-friends and colleagues, about how bad PHP is. Continuing to rely on it
-undermines my credibility on the issue and makes me a bit of a hypocrite.</p>
-
-<p>And while this might seem trivial or pedantic, it&rsquo;s
-actually one of the root causes of almost all of the issues above; the weird
-HTML handling, inappropriate entity conversion, and security issues are all
-due, at least in part, to bad design patterns popularized and perpetuated by
-PHP. Wordpress still uses raw non-parameterized SQL queries; blogging software
-built on a modern web framework with a proper
-<acronym title="Object-Relational Mapping">ORM</acronym>
-would not be plagued by SQL
-injection exploits as Wordpress has been historically and probably continues
-to be.</p></li>
-<li>Wordpress supports themes so that you can customize the apperance of your
-site, but editing them kind of sucks, because they&rsquo;re all written in PHP
-instead of a proper templating language. Years ago I actually wrote a lot of
-PHP, but I still find Wordpress templates pretty ugly and difficult to
-understand; they seem more verbose than should really be necessary for what
-they accomplish, and have, on average, more <code>&lt;?php ?&gt;</code> sections than a
-keyboard has keys. (That analogy sucked. Sorry, it&rsquo;s late. What I&rsquo;m trying to
-say is that there are a lot of them.)</li>
-</ul>
-
-
-<h2>Octopress</h2>
-
-<p>So recently I got it into my head to switch over to
-<a href="http://octopress.org/">Octopress.</a> Octopress bills itself as &ldquo;a blogging
-framework for hackers,&rdquo; which is an attractive description given my
-<a href="/categories/coding">predilections.</a> It uses
-<a href="https://github.com/mojombo/jekyll">Jekyll</a> to generate static pages from a set
-of templates and content written in
-<a href="http://daringfireball.net/projects/markdown/">Markdown.</a><sup>1</sup> It is,
-without a doubt, harder to use than to Wordpress, but it has the following
-advantages:</p>
-
-<ul>
-<li>Rendering static pages once and serving dynamic content via AJAX is much more
-efficient than rendering entire pages dynamically for each visitor. This isn&rsquo;t
-really a concern for me because this is a very low-traffic site, and I have an
-entire quad-core <acronym title="Virtual Private Server">VPS</acronym>
-doing basically nothing besides serving this site. That said, it&rsquo;s nice to
-know that when I start doing other stuff on my VPS, I won&rsquo;t be contending for
-cycles with PHP and MySQL, so the site will always be very responsive. Plus,
-wow does the site load fast now (once you have that huge header image cached,
-anyway. I&rsquo;ll fix that soon.) Also not a huge concern for a blog, but I
-didn&rsquo;t expect the difference to even be noticeable, and it definitely is.</li>
-<li>Static pages significantly decrease the attack surface of the site; there is
-no database, so no SQL injection to worry about, and no scripts are being
-executed, so <a href="http://www.kb.cert.org/vuls/id/520827">PHP vulnerabilities</a>
-aren&rsquo;t a concern.</li>
-<li>Static pages means I get a nicely organized, easily navigable directory
-structure instead of God-awful rewrite rules.</li>
-<li>The default Octopress theme is very well designed and well-suited to
-customization.  I was able to modify it to make it look almost exactly like my
-old custom Wordpress theme did, while retaining the fully fluid layout of the
-Octopress theme&mdash;meaning that the layout will resize to look beautiful at
-any screen resolution, including on mobile devices.</li>
-<li>Octopress has pretty nice built in Github and Twitter widgets.</li>
-<li>Comments are handled by <a href="http://disqus.com/">Disqus</a>, which provides a nicer
-comment system than Wordpress&#8217; built in comments.  I was using Disqus anyway
-via a plugin, but now I don&rsquo;t have to worry about keeping the Disqus comments
-synced with the Wordpress database. Incidentally, Disqus provides a very nice
-system to migrate comments to new URLs by uploading a
-<acronym title="Comma Separate Value">CSV</acronym> file mapping old URLs to
-new URLs. They&rsquo;ve really thought of everything, so props to them for providing
-a great service.</li>
-<li>All of the blog content is stored on my local machine, which means I can write
-posts in a disconnected environment using Vim, version control them with Git,
-and then push them to my server when they&rsquo;re finished. I have a nice
-deployment setup where everything is stored in a Git repository on the server
-and a post-commit hook copies the updated content to the web root for the blog
-subdomain. All I have to do is <code>git push</code> and the blog is instantly updated.</li>
-<li>Since Wordpress uses hand-written SQL queries, it is tightly coupled with
-MySQL and doesn&rsquo;t support any other database. PHP is similarly tied to Apache;
-while it&rsquo;s possible to run it with other servers, it&rsquo;s not particularly easy.
-By ditching Wordpress, I can also get rid of Apache, PHP and MySQL. This is
-nice since I was planning to use nginx and Postgres for my
-<a href="/entry/2012/09/14/social-networks-and-content-ownership/">photo album project</a>
-anyway.</li>
-</ul>
-
-
-<p>Those are, give or take a few minor considerations, my reasons for switching
-blogging platforms. I&rsquo;d be remiss to not mention that Octopress does have some
-noteworthy disadvantages even for &ldquo;power users&rdquo; to whom the above advantages
-might sound attractive.
-<a href="http://alblue.bandlem.com/2012/02/disadvantages-of-octopress.html" title="Disadvantages of Octopress - AlBlue's Blog">This post</a>
-does a good job cataloguing a few of them. On the balance, though, I feel like
-it&rsquo;s a good choice for me, and although the switch took me considerably longer
-than I expected (the better part of an weekend where I&rsquo;d expected an evening or
-so of work), I&rsquo;m pretty happy that I did it.</p>
-
-<p>In an upcoming post, I&rsquo;ll discuss the actual process of reconfiguring my server
-and importing all of my content (which is what I had planned to do before this
-turned into a 1,600 word diatribe against Wordpress.) For now, if I&rsquo;ve inspired
-you and you&rsquo;re thinking about switching your own Wordpress site to Octopress,
-you can take a look at the
-<a href="https://github.com/mlindgren/wp2octopress"><acronym title="Extract, Transform, Load">ETL</acronym> I wrote</a>
-to ease the import process.</p>
-
-<p><sup>1</sup> <small>Did you know that Markdown was created by John Gruber? Until very
-recently, I didn&rsquo;t. And here I thought all he did was play apologist for
-Apple.</small></p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2012/09/23/switching-to-octopress/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/entry/2012/11/14/photo-app-progress-update/" title="Previous Post: Photo App Progress Update">&laquo; Photo App Progress Update</a>
       
+      
+    </p>
+  </footer>
+</article>
 
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-19T00:21:00-07:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.<!--more--></p>
-
-<p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee&rsquo;s Twitter</a>: &#8221;<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>.&ldquo;  (The page contains solutions, so don&rsquo;t read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it&rsquo;s fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
-
-<p>My solution is below, but I&rsquo;d recommend that you go give this a try yourself before you read on.</p>
-
-<p>&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br /></p>
-
-<p>Alright, ready? Here&rsquo;s my solution:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="n">mystrlen</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">);</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">mystrlenret</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">funcs</span><span class="p">[</span><span class="mi">2</span><span class="p">])(</span><span class="kt">char</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="n">mystrlen</span><span class="p">,</span> <span class="n">mystrlenret</span><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">mystrlen</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">funcs</span><span class="p">[(</span><span class="kt">int</span><span class="p">)(</span><span class="o">!*</span><span class="n">str</span><span class="p">)](</span><span class="o">++</span><span class="n">str</span><span class="p">,</span> <span class="o">++</span><span class="n">count</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">mystrlenret</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">mystrlen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">));</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you can see, the solution is actually very simple, but there are a couple of tricks necessary to make it work.  First of all, you obviously can&rsquo;t use a loop to count the characters because a loop requires a conditional jump to either terminate or continue.  You could still use a loop-like construct such as <code>goto</code>, but that only reframes the problem; you still need to make a decision about when to jump out.</p>
-
-<p>So, the problem can basically be reduced to this: how can you make a decision without using a conditional?  Well, you can index into an array of possibilities using some property that you can derive from your input.  In this case, the most important property is that the characters can be grouped into two sets: terminating characters (i.e. <code>&lsquo;\0&rsquo;</code>) and non-terminating characters (all others).  On that basis, our array of possibilites can consist of two function pointers, one which continues recursively and the other which terminates.</p>
-
-<p>The only problem remaining is how to group the characters, again without using conditionals.  My first thought here was actually to divide the character by itself, in which case all non-terminating characters would be 1, and the null terminator would be&hellip; oh, a divide-by-zero error. I quickly dismissed that thought and realized that binary not is a simpler way to map the characters.  However, Eevee came up with what I think is <a href="https://gist.github.com/3746130" title="Eevee's solution on Github" target="_blank">a very clever and quite unorthodox solution</a> involving division by handling the <code>SIGFPE</code> generated by the division by zero and using the handler to change an unconditional jump address.</p>
-
-<p>I&rsquo;d recommend also checking out the solutions provided in the <a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">original post</a>; all three of them are a bit more elegant than mine, if perhaps a bit more difficult to understand.  (In particular, the count parameter that I use is superfluous, although I don&rsquo;t consider the difference particularly important since it can easily be hidden in my solution using a macro or helper function.)</p>
-
-<p>Since my solution isn&rsquo;t significantly different from those presented in the original post, I wanted to go a bit further and take a look at the performance implications of not using conditionals.  Yeah, yeah, premature optimization is the root of all evil and all that&mdash;I&rsquo;m just doing this out of curiosity; regardless of the results, I would never go this far out of my way to avoid a conditional jump in a real program, nor would I recommend doing so to anyone else.    I decided to compare my solution above against a naïve implementation with a while loop; comparing it against <code>strlen()</code> from <code>string.h</code> would be pretty meaningless because it would be linked against a precompiled library which, for all I know, could be hand-optimized.  So here&rsquo;s the code I&rsquo;m using instead:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">mystrlen</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">c</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="o">*</span><span class="n">c</span><span class="o">++</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">len</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">len</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And here&rsquo;s how I&rsquo;m timing the functions&hellip;</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">struct</span> <span class="n">timeval</span> <span class="n">start</span><span class="p">;</span>
-</span><span class='line'><span class="k">struct</span> <span class="n">timeval</span> <span class="n">end</span><span class="p">;</span>
-</span><span class='line'><span class="k">volatile</span> <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">gettimeofday</span><span class="p">(</span><span class="o">&amp;</span><span class="n">start</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-</span><span class='line'><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100000</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">n</span> <span class="o">=</span> <span class="n">mystrlen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
-</span><span class='line'><span class="n">gettimeofday</span><span class="p">(</span><span class="o">&amp;</span><span class="n">end</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Elapsed: %ld sec %ld usec</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-</span><span class='line'>       <span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n">end</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">-</span> <span class="n">start</span><span class="p">.</span><span class="n">tv_sec</span><span class="p">,</span>
-</span><span class='line'>       <span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n">end</span><span class="p">.</span><span class="n">tv_usec</span> <span class="o">-</span> <span class="n">start</span><span class="p">.</span><span class="n">tv_usec</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I&rsquo;m assigning the result to a volatile int to ensure that even when the code is optimized, the compiler won&rsquo;t completely optimize out the function call.  So, first, predictions: anyone who has taken a computer architecture course will tell you that conditional jumps can be very expensive because of the recovery the CPU has to do if the branch is mispredicted.  However, branch predictors typically have very high accuracy, and there&rsquo;s also a significant overhead involved in putting the parameters and return address on the stack when a function is called.  Therefore, I predict that in that with no compiler optimization, the while loop will be faster.</p>
-
-<p>&hellip;And, it is.  Running each function in a loop 100,000 times on a 23-character string, the average over five trials was 28,699 µsec for the non-conditional version and 9,012 µsec for the while loop.  Using a fixed string will cause the branch predictor to have near-perfect accuracy in the while loop version, so there might be a slight difference if I used a large array of strings of randomized lengths, but I doubt it would be significant.</p>
-
-<p>But what if we let the compiler (llvm-gcc in this case) optimize it?  I don&rsquo;t know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don&rsquo;t know.</p>
-
-<p>As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That&rsquo;s a significant improvement, but it&rsquo;s still slower than the unoptimized while loop, so it obviously won&rsquo;t beat that.  And indeed, the optimized while loop takes only 3,072 µsec.</p>
+  <section>
+    <h1><a name="comments">Comments</a></h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-    <footer>
-      <a rel="full-article" href="/entry/2012/09/19/strlen-without-conditionals/#comments">Comments &rarr;</a>
-    </footer>
+  </section>
 
 </div>
 
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -1682,7 +1069,7 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
@@ -1712,7 +1099,7 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -1728,6 +1115,7 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
 
   
 </aside>
+
 
     </div>
   </div>
@@ -1765,7 +1153,10 @@ document.body.className += " " + navigator.platform;
       var disqus_shortname = 'mlindgrenca';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.mlindgren.ca/entry/2013/06/09/the-subaru-saga/';
+        var disqus_url = 'http://blog.mlindgren.ca/entry/2013/06/09/the-subaru-saga/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

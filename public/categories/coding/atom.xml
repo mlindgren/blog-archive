@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/coding/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2013-06-04T23:59:46-07:00</updated>
+  <updated>2013-06-09T22:22:43-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -21,14 +21,14 @@
     <content type="html"><![CDATA[<p>In September I <a href="/entry/2012/09/14/social-networks-and-content-ownership/">wrote about</a>
 my intention to develop a web application to share my photos. I made good
 progress on it throughout September and early October, but for various reasons I
-haven't been able to work on it much in the past month or so. Last weekend,
+haven&rsquo;t been able to work on it much in the past month or so. Last weekend,
 though, I was able to solve some blocking issues which were preventing me from
-doing an alpha release. Those being dealt with, I've now got a few of my albums
+doing an alpha release. Those being dealt with, I&rsquo;ve now got a few of my albums
 up at <a href="http://photos.mlindgren.ca/">photos.mlindgren.ca</a>; take a look and leave
 a comment if you have any feedback.</p>
 
-<p>I haven't released the source code yet as there's still a great deal of work to
-be done, and I'm generally of the belief that dumping a bunch of unfinished,
+<p>I haven&rsquo;t released the source code yet as there&rsquo;s still a great deal of work to
+be done, and I&rsquo;m generally of the belief that dumping a bunch of unfinished,
 messy code on Github with the hope that the community will sort it out is of
 little benefit to anyone. My goal at this point is to do a beta release in a
 two to three months or so and release the code at that point. That timeline is
@@ -37,15 +37,15 @@ I expected (as projects are wont to do), and I expect to be fairly busy over the
 next couple months.</p>
 
 <p>Anyway, with the alpha version up and running, this seems like a good
-opportunity to reflect on some of the issues I've faced that complicated the
+opportunity to reflect on some of the issues I&rsquo;ve faced that complicated the
 project, and on what remains to be done.</p>
 
 <h2>Wand and the OOM Killer</h2>
 
 <p>I mentioned in my
 <a href="/entry/2012/09/14/the-state-of-python-imaging/">post on Python imaging libraries</a>
-that I'm using <a href="http://dahlia.kr/wand/index.html">Wand</a> to resize and transform
-uploaded photos. It's very convenient and easy to use, and from a
+that I&rsquo;m using <a href="http://dahlia.kr/wand/index.html">Wand</a> to resize and transform
+uploaded photos. It&rsquo;s very convenient and easy to use, and from a
 maintainability and ease of use perspective I much prefer using Python bindings
 for ImageMagick to shelling out to the ImageMagick executable. One
 of my goals for this project is that other people should be able to install it
@@ -56,50 +56,50 @@ issues.</p>
 <p>But, Wand is not yet a mature library and it has some significant issues of its
 own. First and foremost, when I started using it it had some major memory
 leaks. I found and fixed more than 10 leaks and submitted a pull request which
-was merged into the main repository&mdash;however, there hasn't yet been an
+was merged into the main repository&mdash;however, there hasn&rsquo;t yet been an
 official release including my fixes yet, so pip installs and downloads from the
 Wand website will still include those leaks.</p>
 
-<p>I'm not sure if I got all of the leaks or if more still remain. The ones I fixed
-were discovered mostly through ad-hoc testing and reading the code. I've been
-running my app for several days now and the memory consumption when it's idle
-has stayed flat, so I believe I've removed at least the most common leaks, but I
-haven't had a chance to sit down with Valgrind yet and run the Wand unit tests
-through it to make sure that I got <em>all</em> of the leaks. I'll have to do that
+<p>I&rsquo;m not sure if I got all of the leaks or if more still remain. The ones I fixed
+were discovered mostly through ad-hoc testing and reading the code. I&rsquo;ve been
+running my app for several days now and the memory consumption when it&rsquo;s idle
+has stayed flat, so I believe I&rsquo;ve removed at least the most common leaks, but I
+haven&rsquo;t had a chance to sit down with Valgrind yet and run the Wand unit tests
+through it to make sure that I got <em>all</em> of the leaks. I&rsquo;ll have to do that
 before I do any sort of public release of my software;
-I don't want to rely on a leaky library.</p>
+I don&rsquo;t want to rely on a leaky library.</p>
 
 <p>Beyond the leaks, I ran into another memory issue which proved problematic:
 resizing photographs can use a great deal of memory, which is extremely limited
 on a reasonably-priced <acronym title="Virtual Private Server">VPS</acronym>.
 I have limited knowledge about image processing in general and ImageMagick in
-particular, but I'm not aware of any resizing algorithms which can operate
+particular, but I&rsquo;m not aware of any resizing algorithms which can operate
 directly on compressed image data, and if any such algorithms exist, ImageMagick
-doesn't use them. That being the case, to resize an image, the entire image has
+doesn&rsquo;t use them. That being the case, to resize an image, the entire image has
 to be loaded into memory decompressed. For an 8 megapixel photograph at 24 bits
 per pixel, that means allocating approximately 183MB of memory.</p>
 
 <p>On a 512MB VPS, this means that trying to resize three images
-concurrently&mdash;or even sequentially in some cases, since Python isn't
+concurrently&mdash;or even sequentially in some cases, since Python isn&rsquo;t
 guaranteed to immediately relinquish allocated memory to the operating system
-when objects resident in that memory are "deleted"&mdash;practically guarantees
+when objects resident in that memory are &ldquo;deleted&rdquo;&mdash;practically guarantees
 that the process will be killed by the
 <acronym title="Out Of Memory">OOM</acronym> killer.</p>
 
 <p>This goes hand in hand with another complication, which is that resizing images
-is too slow to be done in the same server thread that's handling requests and
-generating responses. For each image that's uploaded, I save several different
+is too slow to be done in the same server thread that&rsquo;s handling requests and
+generating responses. For each image that&rsquo;s uploaded, I save several different
 sizes for different purposes, and due to the aforementioned memory constraints I
-can't even resize them concurrently. Resizing each image several times in the
+can&rsquo;t even resize them concurrently. Resizing each image several times in the
 responding thread drastically reduces throughput for the client
 since it incurs a significant wait time for the server to process each image
-after it's uploaded.</p>
+after it&rsquo;s uploaded.</p>
 
 <h2>Enter Subprocess</h2>
 
-<p>So here's the solution I've come up with for the time being, and I'm very unsure
-whether or not it's actually a good solution, so please do let me know in the
-comments if there's a better way to do this.  When a new image is uploaded, the
+<p>So here&rsquo;s the solution I&rsquo;ve come up with for the time being, and I&rsquo;m very unsure
+whether or not it&rsquo;s actually a good solution, so please do let me know in the
+comments if there&rsquo;s a better way to do this.  When a new image is uploaded, the
 responding thread saves the image in the appropriate directory and adds it to
 the database, but does not resize it.  For each of the sizes that the image
 needs to be resized to, it adds a task to a
@@ -110,7 +110,7 @@ application. That thread maintains a (thread-local) queue of
 configurable maximum length. When a new resizing task is consumed, if there is
 room in the subprocess queue, a new subprocess is spawned to resize the image.
 Otherwise, the thread joins the subprocess at the front of the queue so as to
-block until there's room to spawn a new subprocess. The exit code of completed
+block until there&rsquo;s room to spawn a new subprocess. The exit code of completed
 processes is checked to ensure that the resize was successful; in case of
 failure, the task is re-added to the back of the task queue.</p>
 
@@ -124,7 +124,7 @@ can limit the queue to one or two processes to minimize the chance that anything
 will be OOM killed.</p>
 
 <p>The subprocess spawning notwithstanding, this is a pretty standard task queue
-model, so you might be wondering why I didn't use something like
+model, so you might be wondering why I didn&rsquo;t use something like
 <a href="http://celeryproject.org/">Celery</a> in conjunction with a real message queue.
 It comes down to minimizing the number of external dependencies and maximizing
 ease of use. My project already depends on a number of libraries which will have
@@ -137,27 +137,27 @@ single backend for hundreds of users, it would probably be the right choice, but
 as I am writing software for users to install on their own servers, it is
 probably not.</p>
 
-<p>This method works fairly well and it's the best I've come up with so far, but
+<p>This method works fairly well and it&rsquo;s the best I&rsquo;ve come up with so far, but
 something about it makes it feel more like a hack than a well thought out and
 robust solution. I also wonder if it defeats the purpose of using Wand in the
-first place; I use it for very little other than resizing, and since I'm going
+first place; I use it for very little other than resizing, and since I&rsquo;m going
 to the trouble of spawning subprocesses to do that, perhaps it would actually be
 better to just directly invoke the ImageMagick binaries. As mentioned above, I
 have concerns about what impact that would have in different environments, but I
-haven't really validated those concerns; they're just hunches.</p>
+haven&rsquo;t really validated those concerns; they&rsquo;re just hunches.</p>
 
 <h2>The Road Ahead</h2>
 
-<p>So I've got a workable, if not perfect, solution to one of the biggest problems
-I encountered... but as I mentioned previously, there's still much work to be
-done. Here are a few (but not all) of the things I'd like to do before I release
+<p>So I&rsquo;ve got a workable, if not perfect, solution to one of the biggest problems
+I encountered&hellip; but as I mentioned previously, there&rsquo;s still much work to be
+done. Here are a few (but not all) of the things I&rsquo;d like to do before I release
 anything publicly:</p>
 
 <ul>
 <li><strong>Lots of UI work.</strong> Right now the app works very poorly on phones and iPads.
 I also need to figure out how to make certain features more discoverable, and
-although I'm happy with how albums look right now, there are still some extra
-touches that I want to add which I haven't yet been able to (because CSS and
+although I&rsquo;m happy with how albums look right now, there are still some extra
+touches that I want to add which I haven&rsquo;t yet been able to (because CSS and
 HTML suck.)</li>
 <li><strong>Better administrative tools.</strong> Uploading works great, but I have very
 barebones interfaces for editing albums right now. There is currently no means
@@ -166,27 +166,27 @@ almost never be necessary since the app automatically rotates images which
 have EXIF orientation data.)</li>
 <li><strong>Mirroring and proxying to cloud storage services</strong> such as Azure and S3. VPS
 resources are very expensive; extra disk space on some popular hosts runs
-around a dollar per gigabyte per month. That's ten times the cost of disk
-space on the cloud storage services I've looked at. Cloud-hosted images might
+around a dollar per gigabyte per month. That&rsquo;s ten times the cost of disk
+space on the cloud storage services I&rsquo;ve looked at. Cloud-hosted images might
 also improve load speeds for visitors.</li>
-<li><strong>Comments.</strong> This one is pretty big, obviously, but I haven't added it yet
-because I can't decide on how best to handle it. I'd like to avoid writing my
+<li><strong>Comments.</strong> This one is pretty big, obviously, but I haven&rsquo;t added it yet
+because I can&rsquo;t decide on how best to handle it. I&rsquo;d like to avoid writing my
 own comment system and requiring potential commenters to sign up for yet
-another account. (I'd use Persona for commenter identification and
+another account. (I&rsquo;d use Persona for commenter identification and
 authentication just as I do for the admin login, but very few people currently
-have Persona accounts or even know what it is.) I like Disqus, but I'm not
-sure it would integrate well with the minimalist interface I've designed.</li>
-<li><strong>Geotagging and maps.</strong> I'm already reading GPS data from EXIF tags where
-available, but now I need to do something with it. I'd like to add the ability
+have Persona accounts or even know what it is.) I like Disqus, but I&rsquo;m not
+sure it would integrate well with the minimalist interface I&rsquo;ve designed.</li>
+<li><strong>Geotagging and maps.</strong> I&rsquo;m already reading GPS data from EXIF tags where
+available, but now I need to do something with it. I&rsquo;d like to add the ability
 to manually add locations to photos and albums, and to have a map that shows
 where photos were taken.</li>
 </ul>
 
 
 <p>Those five items represent maybe a quarter to a third of the work I still have
-planned, so to repeat myself again, there's a lot of work to do. But I'm very
-happy with the progress I've made so far, and I feel confident that I can get
-this finished. It's just a matter of when.</p>
+planned, so to repeat myself again, there&rsquo;s a lot of work to do. But I&rsquo;m very
+happy with the progress I&rsquo;ve made so far, and I feel confident that I can get
+this finished. It&rsquo;s just a matter of when.</p>
 ]]></content>
   </entry>
   
@@ -195,11 +195,11 @@ this finished. It's just a matter of when.</p>
     <link href="http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals/"/>
     <updated>2012-09-19T00:21:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals</id>
-    <content type="html"><![CDATA[<p>I'm not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I'm not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.<!--more--></p>
+    <content type="html"><![CDATA[<p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.<!--more--></p>
 
-<p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee's Twitter</a>: "<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>."  (The page contains solutions, so don't read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it's fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
+<p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee&rsquo;s Twitter</a>: "<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>.&ldquo;  (The page contains solutions, so don&rsquo;t read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it&rsquo;s fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
 
-<p>My solution is below, but I'd recommend that you go give this a try yourself before you read on.</p>
+<p>My solution is below, but I&rsquo;d recommend that you go give this a try yourself before you read on.</p>
 
 <p>&nbsp;<br />
 &nbsp;<br />
@@ -213,7 +213,7 @@ this finished. It's just a matter of when.</p>
 &nbsp;<br />
 &nbsp;<br /></p>
 
-<p>Alright, ready? Here's my solution:</p>
+<p>Alright, ready? Here&rsquo;s my solution:</p>
 
 <p>``` c</p>
 
@@ -231,24 +231,24 @@ int mystrlenret(char </em>str, int count);</p>
 
 <p>int mystrlenret(char *str, int count)
 {
-  return count - 1;
+  return count &ndash; 1;
 }</p>
 
 <p>int main(int argc, char *argv[])
 {
-  printf("%i\n", mystrlen(argv[argc - 1], 0));
+  printf(&ldquo;%i\n&rdquo;, mystrlen(argv[argc &ndash; 1], 0));
 }
 ```</p>
 
-<p>As you can see, the solution is actually very simple, but there are a couple of tricks necessary to make it work.  First of all, you obviously can't use a loop to count the characters because a loop requires a conditional jump to either terminate or continue.  You could still use a loop-like construct such as <code>goto</code>, but that only reframes the problem; you still need to make a decision about when to jump out.</p>
+<p>As you can see, the solution is actually very simple, but there are a couple of tricks necessary to make it work.  First of all, you obviously can&rsquo;t use a loop to count the characters because a loop requires a conditional jump to either terminate or continue.  You could still use a loop-like construct such as <code>goto</code>, but that only reframes the problem; you still need to make a decision about when to jump out.</p>
 
-<p>So, the problem can basically be reduced to this: how can you make a decision without using a conditional?  Well, you can index into an array of possibilities using some property that you can derive from your input.  In this case, the most important property is that the characters can be grouped into two sets: terminating characters (i.e. <code>'\0'</code>) and non-terminating characters (all others).  On that basis, our array of possibilites can consist of two function pointers, one which continues recursively and the other which terminates.</p>
+<p>So, the problem can basically be reduced to this: how can you make a decision without using a conditional?  Well, you can index into an array of possibilities using some property that you can derive from your input.  In this case, the most important property is that the characters can be grouped into two sets: terminating characters (i.e. <code>&lsquo;\0&rsquo;</code>) and non-terminating characters (all others).  On that basis, our array of possibilites can consist of two function pointers, one which continues recursively and the other which terminates.</p>
 
-<p>The only problem remaining is how to group the characters, again without using conditionals.  My first thought here was actually to divide the character by itself, in which case all non-terminating characters would be 1, and the null terminator would be... oh, a divide-by-zero error. I quickly dismissed that thought and realized that binary not is a simpler way to map the characters.  However, Eevee came up with what I think is <a href="https://gist.github.com/3746130" title="Eevee's solution on Github" target="_blank">a very clever and quite unorthodox solution</a> involving division by handling the <code>SIGFPE</code> generated by the division by zero and using the handler to change an unconditional jump address.</p>
+<p>The only problem remaining is how to group the characters, again without using conditionals.  My first thought here was actually to divide the character by itself, in which case all non-terminating characters would be 1, and the null terminator would be&hellip; oh, a divide-by-zero error. I quickly dismissed that thought and realized that binary not is a simpler way to map the characters.  However, Eevee came up with what I think is <a href="https://gist.github.com/3746130" title="Eevee's solution on Github" target="_blank">a very clever and quite unorthodox solution</a> involving division by handling the <code>SIGFPE</code> generated by the division by zero and using the handler to change an unconditional jump address.</p>
 
-<p>I'd recommend also checking out the solutions provided in the <a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">original post</a>; all three of them are a bit more elegant than mine, if perhaps a bit more difficult to understand.  (In particular, the count parameter that I use is superfluous, although I don't consider the difference particularly important since it can easily be hidden in my solution using a macro or helper function.)</p>
+<p>I&rsquo;d recommend also checking out the solutions provided in the <a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">original post</a>; all three of them are a bit more elegant than mine, if perhaps a bit more difficult to understand.  (In particular, the count parameter that I use is superfluous, although I don&rsquo;t consider the difference particularly important since it can easily be hidden in my solution using a macro or helper function.)</p>
 
-<p>Since my solution isn't significantly different from those presented in the original post, I wanted to go a bit further and take a look at the performance implications of not using conditionals.  Yeah, yeah, premature optimization is the root of all evil and all that&mdash;I'm just doing this out of curiosity; regardless of the results, I would never go this far out of my way to avoid a conditional jump in a real program, nor would I recommend doing so to anyone else.    I decided to compare my solution above against a naïve implementation with a while loop; comparing it against <code>strlen()</code> from <code>string.h</code> would be pretty meaningless because it would be linked against a precompiled library which, for all I know, could be hand-optimized.  So here's the code I'm using instead:</p>
+<p>Since my solution isn&rsquo;t significantly different from those presented in the original post, I wanted to go a bit further and take a look at the performance implications of not using conditionals.  Yeah, yeah, premature optimization is the root of all evil and all that&mdash;I&rsquo;m just doing this out of curiosity; regardless of the results, I would never go this far out of my way to avoid a conditional jump in a real program, nor would I recommend doing so to anyone else.    I decided to compare my solution above against a naïve implementation with a while loop; comparing it against <code>strlen()</code> from <code>string.h</code> would be pretty meaningless because it would be linked against a precompiled library which, for all I know, could be hand-optimized.  So here&rsquo;s the code I&rsquo;m using instead:</p>
 
 <p><code>c
 int mystrlen(char *c)
@@ -259,7 +259,7 @@ int mystrlen(char *c)
 }
 </code></p>
 
-<p>And here's how I'm timing the functions...</p>
+<p>And here&rsquo;s how I&rsquo;m timing the functions&hellip;</p>
 
 <p>``` c
 struct timeval start;
@@ -268,10 +268,10 @@ volatile int n;</p>
 
 <p>gettimeofday(&amp;start, NULL);
 for(int i = 0; i &lt; 100000; ++i)
-  n = mystrlen(argv[argc - 1]);
+  n = mystrlen(argv[argc &ndash; 1]);
 gettimeofday(&amp;end, NULL);</p>
 
-<p>printf("Elapsed: %ld sec %ld usec\n",</p>
+<p>printf(&ldquo;Elapsed: %ld sec %ld usec\n&rdquo;,</p>
 
 <pre><code>   (long) end.tv_sec - start.tv_sec,
    (long) end.tv_usec - start.tv_usec);
@@ -279,13 +279,13 @@ gettimeofday(&amp;end, NULL);</p>
 
 <p>```</p>
 
-<p>I'm assigning the result to a volatile int to ensure that even when the code is optimized, the compiler won't completely optimize out the function call.  So, first, predictions: anyone who has taken a computer architecture course will tell you that conditional jumps can be very expensive because of the recovery the CPU has to do if the branch is mispredicted.  However, branch predictors typically have very high accuracy, and there's also a significant overhead involved in putting the parameters and return address on the stack when a function is called.  Therefore, I predict that in that with no compiler optimization, the while loop will be faster.</p>
+<p>I&rsquo;m assigning the result to a volatile int to ensure that even when the code is optimized, the compiler won&rsquo;t completely optimize out the function call.  So, first, predictions: anyone who has taken a computer architecture course will tell you that conditional jumps can be very expensive because of the recovery the CPU has to do if the branch is mispredicted.  However, branch predictors typically have very high accuracy, and there&rsquo;s also a significant overhead involved in putting the parameters and return address on the stack when a function is called.  Therefore, I predict that in that with no compiler optimization, the while loop will be faster.</p>
 
-<p>...And, it is.  Running each function in a loop 100,000 times on a 23-character string, the average over five trials was 28,699 µsec for the non-conditional version and 9,012 µsec for the while loop.  Using a fixed string will cause the branch predictor to have near-perfect accuracy in the while loop version, so there might be a slight difference if I used a large array of strings of randomized lengths, but I doubt it would be significant.</p>
+<p>&hellip;And, it is.  Running each function in a loop 100,000 times on a 23-character string, the average over five trials was 28,699 µsec for the non-conditional version and 9,012 µsec for the while loop.  Using a fixed string will cause the branch predictor to have near-perfect accuracy in the while loop version, so there might be a slight difference if I used a large array of strings of randomized lengths, but I doubt it would be significant.</p>
 
-<p>But what if we let the compiler (llvm-gcc in this case) optimize it?  I don't know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don't know.</p>
+<p>But what if we let the compiler (llvm-gcc in this case) optimize it?  I don&rsquo;t know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don&rsquo;t know.</p>
 
-<p>As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That's a significant improvement, but it's still slower than the unoptimized while loop, so it obviously won't beat that.  And indeed, the optimized while loop takes only 3,072 µsec.</p>
+<p>As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That&rsquo;s a significant improvement, but it&rsquo;s still slower than the unoptimized while loop, so it obviously won&rsquo;t beat that.  And indeed, the optimized while loop takes only 3,072 µsec.</p>
 ]]></content>
   </entry>
   
@@ -296,7 +296,7 @@ gettimeofday(&amp;end, NULL);</p>
     <id>http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging</id>
     <content type="html"><![CDATA[<p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
 
-<p>So, I'm <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I'm using Python because, well, I love it.  I think it's the perfect language for web development; it's simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:<!--more--></p>
+<p>So, I&rsquo;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&rsquo;m using Python because, well, I love it.  I think it&rsquo;s the perfect language for web development; it&rsquo;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:<!--more--></p>
 
 <p>``` python
 db_tags = dict([(tag.name, tag) for tag in</p>
@@ -306,22 +306,22 @@ db_tags = dict([(tag.name, tag) for tag in</p>
 
 <p>```</p>
 
-<p>What I'm doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag's name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn't particularly <em>difficult</em> to do in any other language; as I said, it's a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn't have list comprehensions.  I don't even want to think about how many lines of code this would take in Java; additionally, while I'm unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup></p>
+<p>What I&rsquo;m doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag&rsquo;s name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn&rsquo;t particularly <em>difficult</em> to do in any other language; as I said, it&rsquo;s a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn&rsquo;t have list comprehensions.  I don&rsquo;t even want to think about how many lines of code this would take in Java; additionally, while I&rsquo;m unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup></p>
 
-<p>So, Python's pretty great. But like all languages, it does have a few problems. The one I have had the most difficulty with in my current project is that third party library support is somewhat lacking in some important areas; specifically, there aren't many good options for reading and manipulating images. The most popular library seems to be the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>, PIL. It's easy enough to install and provides a <em>passable</em> set of core features, but doesn't go much beyond that.  For instance, none of the various camera raw formats seem to be supported, which I consider a fairly important feature for my photo album; I'd very much like be able to upload original raws and have the application automatically convert them to JPEGs for me.  Additionally, it doesn't provide much in the way of convenience methods for cropping and resizing images.  <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank">ImageMagick</a> has <a title="ImageMagick geometry" href="http://www.imagemagick.org/script/command-line-processing.php#geometry" target="_blank">a very nice means of specifying cropping and resizing geometry</a> with various aspect ratio-preserving (or not) behaviour, and I wanted to be able to leverage something similar for my app so that I could quickly prototype with various size options.</p>
+<p>So, Python&rsquo;s pretty great. But like all languages, it does have a few problems. The one I have had the most difficulty with in my current project is that third party library support is somewhat lacking in some important areas; specifically, there aren&rsquo;t many good options for reading and manipulating images. The most popular library seems to be the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>, PIL. It&rsquo;s easy enough to install and provides a <em>passable</em> set of core features, but doesn&rsquo;t go much beyond that.  For instance, none of the various camera raw formats seem to be supported, which I consider a fairly important feature for my photo album; I&rsquo;d very much like be able to upload original raws and have the application automatically convert them to JPEGs for me.  Additionally, it doesn&rsquo;t provide much in the way of convenience methods for cropping and resizing images.  <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank">ImageMagick</a> has <a title="ImageMagick geometry" href="http://www.imagemagick.org/script/command-line-processing.php#geometry" target="_blank">a very nice means of specifying cropping and resizing geometry</a> with various aspect ratio-preserving (or not) behaviour, and I wanted to be able to leverage something similar for my app so that I could quickly prototype with various size options.</p>
 
-<p>Given that ImageMagick provides most of the functionality I want that PIL lacks, it seemed like a good option, but it's a C library and Python doesn't yet have mature bindings for it.  It's getting there, though!  I decided to go with <a title="Python Wand library" href="http://dahlia.kr/wand/index.html" target="_blank">Wand</a>, which is a fork of python-magickwand.  It has a nice high-level API, but also provides direct access to most of the low-level MagickWand APIs, making it fairly flexible.  When I first found it, it did not have support for the nice geometry specifications I wanted to use, but being an open source project I was able to patch that in.  <a title="Wand version 0.2.2" href="http://dahlia.kr/wand/changes.html#version-0-2-2" target="_blank">Version 0.2.2</a> will include my patch, which provides the <code>Image.transform</code> method for easy cropping and resizing.  Eevee is also <a title="Sanpera - Eevee's Github" href="https://github.com/eevee/sanpera" target="_blank">working on a Python imaging library</a>, which is promising, but it's still a work in progress.</p>
+<p>Given that ImageMagick provides most of the functionality I want that PIL lacks, it seemed like a good option, but it&rsquo;s a C library and Python doesn&rsquo;t yet have mature bindings for it.  It&rsquo;s getting there, though!  I decided to go with <a title="Python Wand library" href="http://dahlia.kr/wand/index.html" target="_blank">Wand</a>, which is a fork of python-magickwand.  It has a nice high-level API, but also provides direct access to most of the low-level MagickWand APIs, making it fairly flexible.  When I first found it, it did not have support for the nice geometry specifications I wanted to use, but being an open source project I was able to patch that in.  <a title="Wand version 0.2.2" href="http://dahlia.kr/wand/changes.html#version-0-2-2" target="_blank">Version 0.2.2</a> will include my patch, which provides the <code>Image.transform</code> method for easy cropping and resizing.  Eevee is also <a title="Sanpera - Eevee's Github" href="https://github.com/eevee/sanpera" target="_blank">working on a Python imaging library</a>, which is promising, but it&rsquo;s still a work in progress.</p>
 
-<p>Unfortunately Wand doesn't yet support retrieving EXIF, <acronym title="International Press Telecommunications Council">IPTC</acronym> or <acronym title="Extensible Metadata Platform">XMP</acronym> metadata from images, which is another requirement for me.  ImageMagick does support EXIF at least, and that's on the roadmap for Wand, but implementing a high-level interface for EXIF tags is a bigger task than I have time for at the moment.  That meant that I had to turn to another library to retrieve metadata.  <a title="pyexiv2 library" href="http://tilloy.net/dev/pyexiv2/" target="_blank">pyexiv2</a>, a Python binding for the exiv2 C++ library, initially looked promising.  Unfortunately I discovered that it's not installable via any Python package manager; it must be built from source (via a build system I've never even heard of, and I'm familiar with more than a few build systems), unless a binary is provided for your platform by the project maintainers (i.e. you are on Debian, Ubuntu, Fedora or Windows).</p>
+<p>Unfortunately Wand doesn&rsquo;t yet support retrieving EXIF, <acronym title="International Press Telecommunications Council">IPTC</acronym> or <acronym title="Extensible Metadata Platform">XMP</acronym> metadata from images, which is another requirement for me.  ImageMagick does support EXIF at least, and that&rsquo;s on the roadmap for Wand, but implementing a high-level interface for EXIF tags is a bigger task than I have time for at the moment.  That meant that I had to turn to another library to retrieve metadata.  <a title="pyexiv2 library" href="http://tilloy.net/dev/pyexiv2/" target="_blank">pyexiv2</a>, a Python binding for the exiv2 C++ library, initially looked promising.  Unfortunately I discovered that it&rsquo;s not installable via any Python package manager; it must be built from source (via a build system I&rsquo;ve never even heard of, and I&rsquo;m familiar with more than a few build systems), unless a binary is provided for your platform by the project maintainers (i.e. you are on Debian, Ubuntu, Fedora or Windows).</p>
 
-<p>My project already has more dependencies than I'm entirely comfortable with; one of the reasons that Python only has modest adoption as a web application platform despite being a great language for the task is that it doesn't have a kitchen sink-style standard library, and third-party libraries require separate installation.  In general I consider that a good thing; I'd rather have a well-designed standard library than a <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/#general" target="_blank">gigantic mishmash of inconsistently named global functions.</a>  However, it does make deployment a little more complex.  So far I've managed to stick to libraries which can be installed in one step using well-known package managers, so the setup procedure for my app should not be too arduous.  Adding pyexiv2 as a dependency and thereby including an entirely different build system in the process would likely have complicated the installation procedure to the point that no actual ordinary humans would ever use my application.  That's something I want to avoid, if possible.</p>
+<p>My project already has more dependencies than I&rsquo;m entirely comfortable with; one of the reasons that Python only has modest adoption as a web application platform despite being a great language for the task is that it doesn&rsquo;t have a kitchen sink-style standard library, and third-party libraries require separate installation.  In general I consider that a good thing; I&rsquo;d rather have a well-designed standard library than a <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/#general" target="_blank">gigantic mishmash of inconsistently named global functions.</a>  However, it does make deployment a little more complex.  So far I&rsquo;ve managed to stick to libraries which can be installed in one step using well-known package managers, so the setup procedure for my app should not be too arduous.  Adding pyexiv2 as a dependency and thereby including an entirely different build system in the process would likely have complicated the installation procedure to the point that no actual ordinary humans would ever use my application.  That&rsquo;s something I want to avoid, if possible.</p>
 
-<p><del>For now I have settled for exif-py.</del>  It only handles EXIF tags, not IPTC or XMP, which is disappointing because I really wanted to support multiple metadata formats.  It's a pure Python library in a single file, though, so I can just include with my distribution.  It's easy to use and gets the job done, so it will have to do for now.  I'm hoping that pyexiv2 will show up in pip (a Python package manager) at some point, though.  [<strong>Updated September 16, 2012: </strong>I've discovered that exif-py is broken in at least a couple significant ways, so I'm kind of back at square one for handling metadata.  exif-py seems to be unable to detect EXIF data in some files that have it.  Additionally, the strings that it translates orientation codes to are not consistent with each other, so they're basically wrong.  I've informed the maintainers of these issues, but I don't have time to fix them myself.]</p>
+<p><del>For now I have settled for exif-py.</del>  It only handles EXIF tags, not IPTC or XMP, which is disappointing because I really wanted to support multiple metadata formats.  It&rsquo;s a pure Python library in a single file, though, so I can just include with my distribution.  It&rsquo;s easy to use and gets the job done, so it will have to do for now.  I&rsquo;m hoping that pyexiv2 will show up in pip (a Python package manager) at some point, though.  [<strong>Updated September 16, 2012: </strong>I&rsquo;ve discovered that exif-py is broken in at least a couple significant ways, so I&rsquo;m kind of back at square one for handling metadata.  exif-py seems to be unable to detect EXIF data in some files that have it.  Additionally, the strings that it translates orientation codes to are not consistent with each other, so they&rsquo;re basically wrong.  I&rsquo;ve informed the maintainers of these issues, but I don&rsquo;t have time to fix them myself.]</p>
 
-<p>The process of trying to find a good imaging package for Python and ultimately settling for two separate libraries which still don't quite do everything I want has made it clear to me that third party library support for Python still has a way to go.  Hopefully the situation will improve as adoption of the language increases.  I'm happy to do my part, both through contributions to open source libraries such as Wand, and by building apps using Python to bolster the ecosystem.  I hope that by demonstrating what's possible with Python as a web application platform, I can help convince new web developers to build their applications using Python as well... which provides yet more reason for me to be diligent about finishing my photo album app!</p>
+<p>The process of trying to find a good imaging package for Python and ultimately settling for two separate libraries which still don&rsquo;t quite do everything I want has made it clear to me that third party library support for Python still has a way to go.  Hopefully the situation will improve as adoption of the language increases.  I&rsquo;m happy to do my part, both through contributions to open source libraries such as Wand, and by building apps using Python to bolster the ecosystem.  I hope that by demonstrating what&rsquo;s possible with Python as a web application platform, I can help convince new web developers to build their applications using Python as well&hellip; which provides yet more reason for me to be diligent about finishing my photo album app!</p>
 
-<p><sup>1</sup> <small>Okay, the <code>dict</code> function is perhaps not the most explicit. Check the docs once, though, and it's very easy to understand.</small><br/>
-<sup>2</sup> <small>Ruby would doubtless be similarly concise, and it seems like a nice language in my limited experience, but I find its syntax and distinction between "symbols" and strings to not be to my taste.</small></p>
+<p><sup>1</sup> <small>Okay, the <code>dict</code> function is perhaps not the most explicit. Check the docs once, though, and it&rsquo;s very easy to understand.</small><br/>
+<sup>2</sup> <small>Ruby would doubtless be similarly concise, and it seems like a nice language in my limited experience, but I find its syntax and distinction between &ldquo;symbols&rdquo; and strings to not be to my taste.</small></p>
 ]]></content>
   </entry>
   
@@ -330,7 +330,7 @@ db_tags = dict([(tag.name, tag) for tag in</p>
     <link href="http://blog.mlindgren.ca/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/"/>
     <updated>2011-09-21T00:34:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x</id>
-    <content type="html"><![CDATA[<p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I'm hoping that it will prove useful to someone. For one of my courses this term, we're building OpenGL apps using Nokia's open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I've used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn't use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it's not always immediately obvious how instructions for Windows development translate into other environments.</p>
+    <content type="html"><![CDATA[<p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&rsquo;m hoping that it will prove useful to someone. For one of my courses this term, we&rsquo;re building OpenGL apps using Nokia&rsquo;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&rsquo;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&rsquo;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&rsquo;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
 
 <!--more-->
 
@@ -352,7 +352,7 @@ db_tags = dict([(tag.name, tag) for tag in</p>
 </ol>
 
 
-<p>That's it! If you have any trouble, leave a comment.</p>
+<p>That&rsquo;s it! If you have any trouble, leave a comment.</p>
 ]]></content>
   </entry>
   
@@ -361,9 +361,9 @@ db_tags = dict([(tag.name, tag) for tag in</p>
     <link href="http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway/"/>
     <updated>2011-06-29T22:27:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway</id>
-    <content type="html"><![CDATA[<p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they're important. I thought I'd reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they're very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they're implemented in Python, but they're very similar in other languages where they're available.<!--more--></p>
+    <content type="html"><![CDATA[<p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.<!--more--></p>
 
-<p>I think the best way to explain lambdas is with a simple example. Say you want a switch statement. Python doesn’t have them, but what you can do is set up a dictionary and get a value out of it, which is sort of like a switch. However, you can't do this...</p>
+<p>I think the best way to explain lambdas is with a simple example. Say you want a switch statement. Python doesn’t have them, but what you can do is set up a dictionary and get a value out of it, which is sort of like a switch. However, you can&rsquo;t do this&hellip;</p>
 
 <p>``` python
 my_dict = {</p>
@@ -375,7 +375,7 @@ my_dict = {</p>
 
 <p>```</p>
 
-<p>...because the functions will be evaluated when the dictionary is initialized, so if they modify any state (or if they just take a while to execute) you’ll get bad behaviour. Functions are first class objects in Python, so you could insert the functions into the dictionary like so…</p>
+<p>&hellip;because the functions will be evaluated when the dictionary is initialized, so if they modify any state (or if they just take a while to execute) you’ll get bad behaviour. Functions are first class objects in Python, so you could insert the functions into the dictionary like so…</p>
 
 <p>``` python
 my_dict = {</p>
@@ -387,7 +387,7 @@ my_dict = {</p>
 
 <p>```</p>
 
-<p>...but that doesn't work either, because you don’t know how many (or which) arguments you need to pass to the function when you pull it out of the dictionary. So, what to do?</p>
+<p>&hellip;but that doesn&rsquo;t work either, because you don’t know how many (or which) arguments you need to pass to the function when you pull it out of the dictionary. So, what to do?</p>
 
 <p>``` python
 my_dict = {</p>
@@ -399,14 +399,14 @@ my_dict = {</p>
 
 <p>```</p>
 
-<p>Lambdas solve the problem because they're evaluated lazily. By being wrapped in
+<p>Lambdas solve the problem because they&rsquo;re evaluated lazily. By being wrapped in
 a lambda, the functions won’t be evaluated until the lambda itself is called.
 Furthermore, you can use the lambda to normalize the parameters of each
 function, so that you can always call it using <code>my_dict[my_var](x, y, z)</code>, even though the first function being called doesn’t actually make use of the z parameter. There is no other way to accomplish this in Python, besides a big long ugly list of ifs. (Obviously you’d normally reserve this technique for situations where you have more than two options.)</p>
 
-<p>You can also use the laziness aspect of lambdas to refer to variables which haven't been declared yet, although I'd recommend against that because it can become quite confusing. Anything within the lambda is evaluated only when the lambda is called.</p>
+<p>You can also use the laziness aspect of lambdas to refer to variables which haven&rsquo;t been declared yet, although I&rsquo;d recommend against that because it can become quite confusing. Anything within the lambda is evaluated only when the lambda is called.</p>
 
-<p>And there you have it! Those are the basics of lambdas in Python. Of course, the above is only a trivial example of what can be accomplished with lambdas.  If you'd like to learn more, there's a great write-up available <a title="Lambda functions in Python" href="http://www.secnetix.de/olli/Python/lambda_functions.hawk">here.</a></p>
+<p>And there you have it! Those are the basics of lambdas in Python. Of course, the above is only a trivial example of what can be accomplished with lambdas.  If you&rsquo;d like to learn more, there&rsquo;s a great write-up available <a title="Lambda functions in Python" href="http://www.secnetix.de/olli/Python/lambda_functions.hawk">here.</a></p>
 ]]></content>
   </entry>
   

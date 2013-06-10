@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="&#8230;or &#8220;Another Reason I&#8217;m Considering Switching to Android.&#8221; Yesterday evening, as I was leaving work, I was carrying on a &hellip;">
+  <meta name="description" content="I&rsquo;m currently reading Coders at Work by Peter Seibel. The book is a collection of interviews with respected and knowledgeable programmers. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,6 +99,115 @@
     <article>
       
 
+<div class="category-Coding">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/">Puzzle Panel Postmortem: Framework</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-13T00:33:00-07:00" pubdate data-updated="true">Jul 13<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m currently reading <a title="Coders at Work" href="http://www.codersatwork.com/">Coders at Work</a> by Peter Seibel.  The book is a collection of interviews with respected and knowledgeable programmers.  While the interview format can be somewhat difficult to read at times, the book is excellent.  Seibel is himself an experienced programmer, and asks the sort of insightful questions no ordinary interviewer could, making for fascinating discussions.  One could mine the book for weeks for interesting quotes.  I&rsquo;m going to try to resist that temptation, but because it relates to the topic at hand, I will permit myself to share with you one statement made by Joe Armstrong:</p>
+
+<blockquote>Being a young programmer today must be awful—you can choose 20 different programming languages, dozens of framework[s] and operating systems and you&#8217;re paralysed by choice.</blockquote>
+
+
+<p>I think Armstrong is mistaken; it&rsquo;s anything but awful to be a young programmer today.  However, it&rsquo;s certainly true that the number of choices one must make in starting a project can be daunting.  The choices you make at the start of a project can have far-reaching implications.  Choose wisely and your endeavour might be easy and successful, but choose poorly and you&rsquo;ll almost certainly regret it later.  For iPhone game developers, perhaps the most important choice that must be made early on in a project is which graphics libraries to use.<!--more--></p>
+
+<p>There are essentially two graphics libraries for iPhone game developers to choose between.  Apple&rsquo;s <a title="Quartz" href="http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html" target="_blank">Quartz</a> and Core Animation libraries provide a fairly robust set of classes and methods for 2D drawing, and they&rsquo;re quite easy to use and well-integrated with regular iPhone UI elements.  Of course, this simplicity comes at a price; the performance of Quartz leaves something to be desired for high-complexity scenes.  The other option is, of course, OpenGL.  OpenGL offers much better performance (and is of course capable of 3D, which Quartz is not), but it&rsquo;s also more difficult to use.</p>
+
+<p>For Puzzle Panel, I wanted to be able to squeeze absolutely every drop of performance possible out of the iPhone to ensure the best experience for users.  A simple 2D puzzle game might not seem like a high-performance application, but given the limited fillrate of the iPhone 3G GPU and the fidelity of effects I was hoping to achieve, I wanted to ensure that I wouldn&rsquo;t be limited by my choice of rendering platform.  This made OpenGL the obvious choice, but given that I was also learning Objective C as I wrote the game, I was concerned about the amount of time it would have taken me to write the abstraction layers necessary to allow me to focus on gameplay.</p>
+
+<p>Luckily, another option presented itself to me in the form of <a title="Cocos2D for iPhone" href="http://cocos2d-iPhone.org">Cocos2D for iPhone.</a> Cocos2D is a framework for 2D game creation, originally written in Python, but ported to Objective C for the iPhone by Ricardo Quesada.  It provides a rich hierarchy of classes specifically designed for 2D game development, and handles all of the low-level OpenGL calls for you.  Its features include texture loading, text rendering, sprite atlases, particle systems, timed actions, and physics simulation (through integration with <a title="Box2D" href="http://www.box2d.org/" target="_blank">Box2D</a> and/or <a title="Chipmunk" href="http://code.google.com/p/chipmunk-physics/" target="_blank">Chipmunk</a>).  Best of all, it&rsquo;s distributed under the GNU LGPL license, so it&rsquo;s open source and completely free for both commercial and non-commercial projects.</p>
+
+<p>There are a multitude of excellent <a title="Cocos2D tutorials" href="http://www.cocos2d-iphone.org/wiki/doku.php/" target="_blank">Cocos2D tutorials</a> on the Internet, so I&rsquo;m not (at this time) going to go into much detail about how it&rsquo;s used.  For illustrative purposes, though, I will provide a specific example of how a scene is organized in Puzzle Panel:</p>
+
+<p><a href="/images/nodes.png"><img class="aligncenter size-medium wp-image-101"
+title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usage in Puzzle Panel" width="300" height="271" style="display: block; margin-left: auto; margin-right: auto;"/></a></p>
+
+<p>The above is a side-view of a typical game scene in Puzzle Panel.  Rendered objects in Cocos2D are always subclasses of <span style="display: inline; font-family: Courier">CCNode</span>, labeled &ldquo;Node&rdquo; in the diagram above.  Each node (except for the top-level node, the Scene) has a parent and may have any number of children; Cocos2D uses a simple 2D scene graph in which nodes are rendered breadth-first.  <span style="display: inline; font-family: Courier">CCLayer</span>s, or &ldquo;Layers&rdquo; above, are simple Node subclasses which are typically used for scene organization: one might have a background layer and a foreground layer, and add sprites to each as necessary.</p>
+
+<p>Essentially, creating a game is as simple as subclassing renderable classes (such as <span style="display: inline; font-family: Courier">CCSprite</span>s/&ldquo;Sprites&rdquo;) and adding your own behaviours.  Once you&rsquo;ve coded all of the behaviours you need, you throw a few Nodes in your scene and you&rsquo;re done!  Cocos2D makes excellent use of object-oriented paradigms, and if you leverage that properly in your own code, you&rsquo;ll end up with a very flexible and powerful game engine.</p>
+
+<p>Using Cocos2D probably saved me hundreds of hours of development time.  In contrast to Puzzle Panel&rsquo;s mere 8,500 lines of source code, Cocos2D is comprised of more than 23,000 lines.  As an amateur game developer, I found using a framework to be particularly helpful because it allowed me to maintain a higher-level perspective on the design of the game.  By ignoring the complexities of OpenGL, I was able to spend more time thinking about how best to expand my game and make it as fun, polished and playable as possible.  Using a pre-written framework also eliminates a lot of worrying about feature creep &ndash; by starting with a robust set of tools, it&rsquo;s less likely that one will spend unnecessary time writing lower-level features that are never ultimately used.</p>
+
+<p>I don&rsquo;t wish to disparage the process of writing one&rsquo;s own OpenGL code &ldquo;from the ground up.&rdquo;  I&rsquo;d love to write my own game engine &ldquo;from scratch&rdquo; for my next big project.  Furthermore, a skilled OpenGL programmer could likely gain some extra performance by foregoing unnecessary features.  I really do think, though, that Cocos2D is an absolutely excellent choice if you really want to focus on game design, while still having the flexibility to get &ldquo;close to the metal&rdquo; where necessary.  If you&rsquo;re considering developing a 2D game for the iPhone, <a title="Cocos2D for iPhone" href="http://cocos2d-iPhone.org">check it out.</a></p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Links">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/">Drive: The Surprising Truth About What Motivates Us</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-15T23:19:00-07:00" pubdate data-updated="true">Jun 15<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m a huge fan of TED Talks. This is a fascinating video in which Dan Pink summarizes some of his research into human motivation, which I found at <a title="Coding Horror" href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror.</a></p>
+
+<object width="640" height="385" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowfullscreen" value="true" /><embed width="640" height="385" type="application/x-shockwave-flash" src="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" allowFullScreen="true" allowscriptaccess="always" allowfullscreen="true" /></object>
+
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/#comments">Comments &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
 <div class="category-Technology">
 
   <header>
@@ -126,21 +235,21 @@
   </header>
 
 
-  <div class="entry-content"><p>&#8230;or &#8220;Another Reason I&#8217;m Considering <em>Switching</em> to Android.&#8221;</p>
+  <div class="entry-content"><p>&hellip;or &ldquo;Another Reason I&rsquo;m Considering <em>Switching</em> to Android.&rdquo;</p>
 
-<p>Yesterday evening, as I was leaving work, I was carrying on a conversation via text message with a friend of mine.  Upon arriving home, I realized that she&#8217;d apparently stopped responding, so I pulled my phone out of my pocket to check if I&#8217;d missed a message.  Instead of my usual lock screen, though, I was met a very unwelcome &#8220;Connect to iTunes&#8221; prompt.  I&#8217;d been running the beta of OS 4, and it turns out that if your developer licence expires while you still have the beta installed, Apple will <em>remotely lock you out of your device without so much as a warning.</em> I guess I should have expected as much.<!--more--></p>
+<p>Yesterday evening, as I was leaving work, I was carrying on a conversation via text message with a friend of mine.  Upon arriving home, I realized that she&rsquo;d apparently stopped responding, so I pulled my phone out of my pocket to check if I&rsquo;d missed a message.  Instead of my usual lock screen, though, I was met a very unwelcome &ldquo;Connect to iTunes&rdquo; prompt.  I&rsquo;d been running the beta of OS 4, and it turns out that if your developer licence expires while you still have the beta installed, Apple will <em>remotely lock you out of your device without so much as a warning.</em> I guess I should have expected as much.<!--more--></p>
 
-<p>At this point I was mildly annoyed.  Because it&#8217;s such a slow an arduous process to sync an iPhone, I hadn&#8217;t backed mine up since&#8230; probably about two weeks ago, when my developer license actually expired.  &#8221;Go figure,&#8221; I thought; &#8220;if only they&#8217;d locked me out of my device <em>when </em>my licence expired, I might not have lost as much data.&#8221;  Still, I don&#8217;t keep much important information on my phone, so a two-week setback, while irksome, was not disastrous.</p>
+<p>At this point I was mildly annoyed.  Because it&rsquo;s such a slow an arduous process to sync an iPhone, I hadn&rsquo;t backed mine up since&hellip; probably about two weeks ago, when my developer license actually expired.  &#8221;Go figure,&ldquo; I thought; &#8220;if only they&rsquo;d locked me out of my device <em>when </em>my licence expired, I might not have lost as much data.&rdquo;  Still, I don&rsquo;t keep much important information on my phone, so a two-week setback, while irksome, was not disastrous.</p>
 
-<p>&#8230;Or at least it wouldn&#8217;t have been if not for what happened next.  In their infinite wisdom, Apple decided not to provide an officially supported way to downgrade from a beta operating system release to a stable release, despite their aforementioned policy of locking &#8220;expired&#8221; installations.  Luckily, there exists <a title="iPhone OS 4 downgrade" href="http://www.maclife.com/article/howtos/downgrade_iphone_os_40" target="_blank">a workaround</a>, and if all goes well it&#8217;s relatively uncomplicated.  Unfortunately for me, all did <em>not </em>go well.  The workaround relies on the <a href="http://sourceforge.net/projects/libusb/" target="_self">libusb library</a> in order to communicate with the iPhone.  Its Windows port,<a href="http://sourceforge.net/apps/trac/libusb-win32/wiki" target="_self"> libusb-win32</a>, is ostensibly compatible with both 32 and 64-bit Windows Vista and Windows 7.  The only problem is that there&#8217;s a known issue which causes all of your USB drivers to stop working if the library isn&#8217;t installed in Windows XP compatbility mode under those operating systems, and it&#8217;s not mentioned anywhere in the installer or in any of the downgrade tutorials I saw.</p>
+<p>&hellip;Or at least it wouldn&rsquo;t have been if not for what happened next.  In their infinite wisdom, Apple decided not to provide an officially supported way to downgrade from a beta operating system release to a stable release, despite their aforementioned policy of locking &ldquo;expired&rdquo; installations.  Luckily, there exists <a title="iPhone OS 4 downgrade" href="http://www.maclife.com/article/howtos/downgrade_iphone_os_40" target="_blank">a workaround</a>, and if all goes well it&rsquo;s relatively uncomplicated.  Unfortunately for me, all did <em>not </em>go well.  The workaround relies on the <a href="http://sourceforge.net/projects/libusb/" target="_self">libusb library</a> in order to communicate with the iPhone.  Its Windows port,<a href="http://sourceforge.net/apps/trac/libusb-win32/wiki" target="_self"> libusb-win32</a>, is ostensibly compatible with both 32 and 64-bit Windows Vista and Windows 7.  The only problem is that there&rsquo;s a known issue which causes all of your USB drivers to stop working if the library isn&rsquo;t installed in Windows XP compatbility mode under those operating systems, and it&rsquo;s not mentioned anywhere in the installer or in any of the downgrade tutorials I saw.</p>
 
-<p>So, yes&#8230; in an attempt to downgrade my iPhone, I managed to completely disable my computer&#8217;s USB drivers. libusb breaks one&#8217;s computer in particularly pernicious way, too.  I&#8217;m anything but an expert on precisely how Windows handles drivers, so forgive me if the terminology here is incorrect, but I believe this is how it happens: since a number of USB devices are inevitably in use when it&#8217;s installed, libusb&#8217;s changes don&#8217;t affect those drivers until the system is restarted.  I didn&#8217;t have my iPhone plugged in when I installed libusb, though, so when I did plug it in afterwards it failed to connect.  My mouse and keyboard were still working at this point.  I figured that perhaps I needed to reboot my computer.  Upon rebooting, of course, I found that none of my USB devices worked at all.  I couldn&#8217;t so much as log in, let alone uninstall libusb.</p>
+<p>So, yes&hellip; in an attempt to downgrade my iPhone, I managed to completely disable my computer&rsquo;s USB drivers. libusb breaks one&rsquo;s computer in particularly pernicious way, too.  I&rsquo;m anything but an expert on precisely how Windows handles drivers, so forgive me if the terminology here is incorrect, but I believe this is how it happens: since a number of USB devices are inevitably in use when it&rsquo;s installed, libusb&rsquo;s changes don&rsquo;t affect those drivers until the system is restarted.  I didn&rsquo;t have my iPhone plugged in when I installed libusb, though, so when I did plug it in afterwards it failed to connect.  My mouse and keyboard were still working at this point.  I figured that perhaps I needed to reboot my computer.  Upon rebooting, of course, I found that none of my USB devices worked at all.  I couldn&rsquo;t so much as log in, let alone uninstall libusb.</p>
 
-<p>I don&#8217;t own any PS/2 devices, so switching to a different mouse and keyboard wasn&#8217;t an option.  I spent probably about an hour trying to find a way to restore my USB drivers from the Windows recovery console, but came up empty handed.  Deleting the libusb sys and dll files did nothing, despite forum posts to the contrary.  I couldn&#8217;t find any registry keys which obviously pertained to the library, nor could I find any system files which appeared to have been modified recently (excluding those I&#8217;d already deleted, of course.)  Ultimately I gave up, and since my operating system is installed on an SSD drive which is otherwise empty, I decided that reformatting would be the simplest solution.<em> I had to reformat my computer because Apple locked my phone.</em></p>
+<p>I don&rsquo;t own any PS/2 devices, so switching to a different mouse and keyboard wasn&rsquo;t an option.  I spent probably about an hour trying to find a way to restore my USB drivers from the Windows recovery console, but came up empty handed.  Deleting the libusb sys and dll files did nothing, despite forum posts to the contrary.  I couldn&rsquo;t find any registry keys which obviously pertained to the library, nor could I find any system files which appeared to have been modified recently (excluding those I&rsquo;d already deleted, of course.)  Ultimately I gave up, and since my operating system is installed on an SSD drive which is otherwise empty, I decided that reformatting would be the simplest solution.<em> I had to reformat my computer because Apple locked my phone.</em></p>
 
-<p>I did eventually manage to restore my iPhone, using my development Mac Mini.  I probably should have done so in the first place, but since my iPhone is synced to my Windows PC (which has much larger hard drives and is therefore better suited to storing my music collection), I figured that it would be more convenient to do the restore process using the PC.  Oh, how wrong I was!  That said, I don&#8217;t fault Windows for this; I&#8217;m sure that installing a bad device driver on a Mac would have much the same effect.</p>
+<p>I did eventually manage to restore my iPhone, using my development Mac Mini.  I probably should have done so in the first place, but since my iPhone is synced to my Windows PC (which has much larger hard drives and is therefore better suited to storing my music collection), I figured that it would be more convenient to do the restore process using the PC.  Oh, how wrong I was!  That said, I don&rsquo;t fault Windows for this; I&rsquo;m sure that installing a bad device driver on a Mac would have much the same effect.</p>
 
-<p>This is what I see as a typical case of Apple&#8217;s &#8220;security&#8221; policies interfering with the usability of their products.  Granted, I wasn&#8217;t nearly as prudent as I should have been, so I can&#8217;t blame <em>all </em>of my troubles on them.  But really, if they&#8217;re going to put out operating systems which simply &#8220;expire&#8221; under certain circumstances, could they not at least provide an officially supported method to downgrade to an older version?</p>
+<p>This is what I see as a typical case of Apple&rsquo;s &ldquo;security&rdquo; policies interfering with the usability of their products.  Granted, I wasn&rsquo;t nearly as prudent as I should have been, so I can&rsquo;t blame <em>all </em>of my troubles on them.  But really, if they&rsquo;re going to put out operating systems which simply &ldquo;expire&rdquo; under certain circumstances, could they not at least provide an officially supported method to downgrade to an older version?</p>
 </div>
     <footer>
       <a rel="full-article" href="/entry/2010/06/15/my-iphone-debacle/#comments">Comments &rarr;</a>
@@ -183,17 +292,17 @@
 
   <div class="entry-content"><p>Welcome, dear reader!</p>
 
-<p>Although this is the inaugural post for this website, I won&#8217;t bother with any introduction here.  If that sort of thing interests you, I refer you to the <a title="About" href="http://www.mlindgren.ca/about" target="_self">&#8220;about&#8221; page.</a> For this entry, I&#8217;d like to dive right into the sort of content that this site is to be host to.  My iPhone developer program membership expires today, and I won&#8217;t be renewing it—not immediately, at least.  That being the case, I think that this is a good time to reflect on my year as a so-called &#8220;iPhone developer.&#8221;<!--more--></p>
+<p>Although this is the inaugural post for this website, I won&rsquo;t bother with any introduction here.  If that sort of thing interests you, I refer you to the <a title="About" href="http://www.mlindgren.ca/about" target="_self">&ldquo;about&rdquo; page.</a> For this entry, I&rsquo;d like to dive right into the sort of content that this site is to be host to.  My iPhone developer program membership expires today, and I won&rsquo;t be renewing it—not immediately, at least.  That being the case, I think that this is a good time to reflect on my year as a so-called &ldquo;iPhone developer.&rdquo;<!--more--></p>
 
-<p>There&#8217;s lots to be said about the iPhone, the app store, and Apple in general; I&#8217;m sure I&#8217;ll write on those topics profusely.  For the time being, though, I&#8217;m going to limit myself to a discussion of the product of my labour: <a title="Puzzle Panel" href="http://www.mlindgren.ca/projects/puzzle-panel" target="_self">Puzzle Panel.</a> I&#8217;ve twice given a presentation on the development of Puzzle Panel as part of the University of Alberta <a title="University of Alberta Computers &amp; Games" href="http://www.cs.ualberta.ca/undergraduate-students/course-directory/computers-and-games" target="_blank">Computers &amp; Games course</a>, but while I was grateful for the opportunity to discuss my game, the format of the presentation was such that I was never quite able to express everything that I wanted to.  (I doubt that most of those in attendance would have been interested, anyway.)  It is my hope that this site will give me a platform to communicate with greater fidelity.</p>
+<p>There&rsquo;s lots to be said about the iPhone, the app store, and Apple in general; I&rsquo;m sure I&rsquo;ll write on those topics profusely.  For the time being, though, I&rsquo;m going to limit myself to a discussion of the product of my labour: <a title="Puzzle Panel" href="http://www.mlindgren.ca/projects/puzzle-panel" target="_self">Puzzle Panel.</a> I&rsquo;ve twice given a presentation on the development of Puzzle Panel as part of the University of Alberta <a title="University of Alberta Computers &amp; Games" href="http://www.cs.ualberta.ca/undergraduate-students/course-directory/computers-and-games" target="_blank">Computers &amp; Games course</a>, but while I was grateful for the opportunity to discuss my game, the format of the presentation was such that I was never quite able to express everything that I wanted to.  (I doubt that most of those in attendance would have been interested, anyway.)  It is my hope that this site will give me a platform to communicate with greater fidelity.</p>
 
-<p>If you&#8217;re not familiar with Puzzle Panel, there&#8217;s a trailer available <a title="Puzzle Panel trailer on YouTube" href="http://www.youtube.com/watch?v=obg-I9JnzFU" target="_blank">here</a>, or you can check out the <a title="Puzzle Panel project page" href="http://www.mlindgren.ca/projects/puzzle-panel">project page</a> or <a title="Puzzle Panel website" href="http://puzzlepanel.net">website</a> for more information.  Unfortunately, the expiry of my developer program membership means that Puzzle Panel will no longer be available on the iPhone app store for the time being.  I&#8217;d like to remedy this; I want the game to be available indefinitely and to as many people as possible.  However, for reasons I&#8217;ll likely discuss at a later date, I&#8217;m hesitant to pay the $100 membership fee again, so at this point I&#8217;m&#8230; investigating my options, let&#8217;s say.</p>
+<p>If you&rsquo;re not familiar with Puzzle Panel, there&rsquo;s a trailer available <a title="Puzzle Panel trailer on YouTube" href="http://www.youtube.com/watch?v=obg-I9JnzFU" target="_blank">here</a>, or you can check out the <a title="Puzzle Panel project page" href="http://www.mlindgren.ca/projects/puzzle-panel">project page</a> or <a title="Puzzle Panel website" href="http://puzzlepanel.net">website</a> for more information.  Unfortunately, the expiry of my developer program membership means that Puzzle Panel will no longer be available on the iPhone app store for the time being.  I&rsquo;d like to remedy this; I want the game to be available indefinitely and to as many people as possible.  However, for reasons I&rsquo;ll likely discuss at a later date, I&rsquo;m hesitant to pay the $100 membership fee again, so at this point I&rsquo;m&hellip; investigating my options, let&rsquo;s say.</p>
 
-<p>Anyway, returning to the topic at hand, I purchased my iPhone with the specific intent to develop an app.  The iPhone is often cited as a great gaming device, and I think that <em>would be</em> true if not for the lack of physical input options: the phone&#8217;s hardware is powerful and its operating system is pleasantly efficient, but the touch screen just doesn&#8217;t work for most games.  For puzzle games, though, it works pretty well; the tap-and-swipe paradigm of the iPhone lends itself naturally to puzzle-style gameplay.  (The good ol&#8217; D-pad is still faster and more accurate, though.)  Hence, Puzzle Panel.</p>
+<p>Anyway, returning to the topic at hand, I purchased my iPhone with the specific intent to develop an app.  The iPhone is often cited as a great gaming device, and I think that <em>would be</em> true if not for the lack of physical input options: the phone&rsquo;s hardware is powerful and its operating system is pleasantly efficient, but the touch screen just doesn&rsquo;t work for most games.  For puzzle games, though, it works pretty well; the tap-and-swipe paradigm of the iPhone lends itself naturally to puzzle-style gameplay.  (The good ol&#8217; D-pad is still faster and more accurate, though.)  Hence, Puzzle Panel.</p>
 
-<p>The game was developed over five months.  I don&#8217;t have a good sense of how many hours it actually took, but if I&#8217;d estimate somewhere between 200 and 400.  I worked on it in the evenings after work and on my days off - sometimes obsessively, devoting all of my free time to it, sometimes barely touching it for weeks at a time.  Not including the frameworks and libraries I used, the game consists of roughly 8,500 lines of Objective C code across 40 or so classes.  The most time-consuming part of the project, though, was the artwork.  I&#8217;m anything but a practised artist, so creating the game backgrounds and other art assets took dozens and dozens of hours.  While I was impressed at what my Wacom tablet allowed me to accomplish, I was never entirely satisfied with the results.  Still, I think doing the artwork myself was a wise decision.</p>
+<p>The game was developed over five months.  I don&rsquo;t have a good sense of how many hours it actually took, but if I&rsquo;d estimate somewhere between 200 and 400.  I worked on it in the evenings after work and on my days off &ndash; sometimes obsessively, devoting all of my free time to it, sometimes barely touching it for weeks at a time.  Not including the frameworks and libraries I used, the game consists of roughly 8,500 lines of Objective C code across 40 or so classes.  The most time-consuming part of the project, though, was the artwork.  I&rsquo;m anything but a practised artist, so creating the game backgrounds and other art assets took dozens and dozens of hours.  While I was impressed at what my Wacom tablet allowed me to accomplish, I was never entirely satisfied with the results.  Still, I think doing the artwork myself was a wise decision.</p>
 
-<p>That&#8217;s the basic high-level project overview.  In the next post, I&#8217;ll discuss the <a title="Cocos2D-iPhone" href="http://cocos2d-iphone.org/" target="_blank">Cocos2D-iPhone</a> framework and why I chose to use it, and then I&#8217;ll go through a &#8220;postmortem&#8221; in subsequent posts.  I&#8217;ll endeavour to include more technical information—code snippets and the like—in future posts.</p>
+<p>That&rsquo;s the basic high-level project overview.  In the next post, I&rsquo;ll discuss the <a title="Cocos2D-iPhone" href="http://cocos2d-iphone.org/" target="_blank">Cocos2D-iPhone</a> framework and why I chose to use it, and then I&rsquo;ll go through a &ldquo;postmortem&rdquo; in subsequent posts.  I&rsquo;ll endeavour to include more technical information—code snippets and the like—in future posts.</p>
 </div>
     <footer>
       <a rel="full-article" href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/#comments">Comments &rarr;</a>
@@ -228,6 +337,11 @@
   <ul id="recent_posts">
     
       
+      <li class="post             category-Personal            ">
+        <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a>
       </li>
@@ -245,11 +359,6 @@
       
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
       </li>
     
   </ul>

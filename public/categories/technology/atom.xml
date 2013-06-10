@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Technology | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/technology/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2013-06-04T23:59:46-07:00</updated>
+  <updated>2013-06-09T22:22:43-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -20,20 +20,20 @@
     <id>http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress</id>
     <content type="html"><![CDATA[<h2>Backstory</h2>
 
-<p>I've been using Wordpress on various sites that I've maintained for probably the
-better part of a decade now. By most metrics, it's still very good blogging
-software; I'm not aware of any self-hostable alternative that can match
+<p>I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
+better part of a decade now. By most metrics, it&rsquo;s still very good blogging
+software; I&rsquo;m not aware of any self-hostable alternative that can match
 Wordpress in terms of the union of ease of use, feature set and flexibility that
-it provides. That said, lately I've been feeling that perhaps Wordpress is no
+it provides. That said, lately I&rsquo;ve been feeling that perhaps Wordpress is no
 longer the right choice for my specific needs. These are my problems with it:</p>
 
 <ul>
-<li>It's not very good for sharing source code. There are a multitude of plugins
+<li>It&rsquo;s not very good for sharing source code. There are a multitude of plugins
 available for syntax highlighting; the best of them seems to be
-<a href="http://alexgorbatchev.com/SyntaxHighlighter/">Alex Gorbatchev's Syntax Highlighter</a>,
+<a href="http://alexgorbatchev.com/SyntaxHighlighter/">Alex Gorbatchev&rsquo;s Syntax Highlighter</a>,
 which is used by
 <a href="http://wordpress.com">Wordpress.com</a> and is also what I was using on my blog.
-But I've had problems with the Wordpress converting some of the characters in
+But I&rsquo;ve had problems with the Wordpress converting some of the characters in
 my code to HTML entities (e.g. <code>&amp;amp;</code> for &amp; ) which are then printed
 literally by the plugin.</li>
 <li>I find that more often than not Wordpress' visual editor is
@@ -46,42 +46,42 @@ Wordpress is smart enough to not insert extra paragraph tags if you do wrap
 your own paragraphs with them. Still, it leads to some unpredictability with
 regard to how a post with hand-written HTML will actually be rendered.</li>
 <li>A similar but worse problem occurs when you try to insert extra line breaks.
-Even if you're using the raw HTML editor to insert <code>&lt;br /&gt;</code> tags, Wordpress
+Even if you&rsquo;re using the raw HTML editor to insert <code>&lt;br /&gt;</code> tags, Wordpress
 will just get rid of them unless you insert additional non-breaking spaces
 (<code>&amp;nbsp;</code>) so that it thinks the lines are non-empty. But! If you switch back
 to the visual editor for any reason, even your <code>&amp;nbsp;&lt;br /&gt;</code> lines will be
-wiped out. Even for "average" users I can't think of any situation in which
-this "feature" would be desirable. If I put a bunch of extra newlines into
-something I'm writing, it is because <em>I want exactly that many newlines.</em> I
-tend to not have much patience for software that thinks it's smarter than
+wiped out. Even for &ldquo;average&rdquo; users I can&rsquo;t think of any situation in which
+this &ldquo;feature&rdquo; would be desirable. If I put a bunch of extra newlines into
+something I&rsquo;m writing, it is because <em>I want exactly that many newlines.</em> I
+tend to not have much patience for software that thinks it&rsquo;s smarter than
 I am; that is why I still write most of my code in <a href="http://www.vim.org/">Vim</a>
 and use hand-written makefiles in an age of
 <acronym title="Integrated Development Environment">IDE</acronym>s.</li>
-<li>Never-ending updates. It seems like every time I log in there's a new update
+<li>Never-ending updates. It seems like every time I log in there&rsquo;s a new update
 to download. Wordpress has updates down to a one-click install process, so
-this wouldn't be much of a problem except for the fact that
+this wouldn&rsquo;t be much of a problem except for the fact that
 every time I have to update Wordpress warns me that I should back up my
 database first. Why? Is there a significant possibility that the update might
-break everything? It's probably just a
+break everything? It&rsquo;s probably just a
 <acronym title="Cover Our Asses">COA</acronym>, and I back up my database
-daily anyway, but this whole aspect of Wordpress makes me uneasy and I don't
-want to have to deal with it any more. Even though I'm covered for backups,
+daily anyway, but this whole aspect of Wordpress makes me uneasy and I don&rsquo;t
+want to have to deal with it any more. Even though I&rsquo;m covered for backups,
 recovering from a botched update would undoubtedly be a nightmare.</li>
 <li><a href="http://en.wikipedia.org/wiki/WordPress#Vulnerabilities">Vulnerabilities.</a> One
 of the big reasons that Wordpress is updated so frequently is that it has a
 long history of security vulnerabilities, and more are still being discovered
-and patched. This also means that if I don't log in frequently enough to
-download new security patches, I'm at risk of having my site compromised,
+and patched. This also means that if I don&rsquo;t log in frequently enough to
+download new security patches, I&rsquo;m at risk of having my site compromised,
 loaded up with malware and blacklisted by Google.</li>
-<li><p>It's written in PHP. <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP sucks.</a>
-(I can't link to that enough.) I don't want to be dogmatic about technology
-choices; good software is good software regardless of what language it's
+<li><p>It&rsquo;s written in PHP. <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP sucks.</a>
+(I can&rsquo;t link to that enough.) I don&rsquo;t want to be dogmatic about technology
+choices; good software is good software regardless of what language it&rsquo;s
 written in, and my primary desire is always to use whatever is best for the
-task at hand. But lately I've been pretty vocal, both here and in person with
+task at hand. But lately I&rsquo;ve been pretty vocal, both here and in person with
 friends and colleagues, about how bad PHP is. Continuing to rely on it
 undermines my credibility on the issue and makes me a bit of a hypocrite.</p>
 
-<p>And while this might seem trivial or pedantic, it's
+<p>And while this might seem trivial or pedantic, it&rsquo;s
 actually one of the root causes of almost all of the issues above; the weird
 HTML handling, inappropriate entity conversion, and security issues are all
 due, at least in part, to bad design patterns popularized and perpetuated by
@@ -92,12 +92,12 @@ would not be plagued by SQL
 injection exploits as Wordpress has been historically and probably continues
 to be.</p></li>
 <li>Wordpress supports themes so that you can customize the apperance of your
-site, but editing them kind of sucks, because they're all written in PHP
+site, but editing them kind of sucks, because they&rsquo;re all written in PHP
 instead of a proper templating language. Years ago I actually wrote a lot of
 PHP, but I still find Wordpress templates pretty ugly and difficult to
 understand; they seem more verbose than should really be necessary for what
 they accomplish, and have, on average, more <code>&lt;?php ?&gt;</code> sections than a
-keyboard has keys. (That analogy sucked. Sorry, it's late. What I'm trying to
+keyboard has keys. (That analogy sucked. Sorry, it&rsquo;s late. What I&rsquo;m trying to
 say is that there are a lot of them.)</li>
 </ul>
 
@@ -105,8 +105,8 @@ say is that there are a lot of them.)</li>
 <h2>Octopress</h2>
 
 <p>So recently I got it into my head to switch over to
-<a href="http://octopress.org/">Octopress.</a> Octopress bills itself as "a blogging
-framework for hackers," which is an attractive description given my
+<a href="http://octopress.org/">Octopress.</a> Octopress bills itself as &ldquo;a blogging
+framework for hackers,&rdquo; which is an attractive description given my
 <a href="/categories/coding">predilections.</a> It uses
 <a href="https://github.com/mojombo/jekyll">Jekyll</a> to generate static pages from a set
 of templates and content written in
@@ -116,19 +116,19 @@ advantages:</p>
 
 <ul>
 <li>Rendering static pages once and serving dynamic content via AJAX is much more
-efficient than rendering entire pages dynamically for each visitor. This isn't
+efficient than rendering entire pages dynamically for each visitor. This isn&rsquo;t
 really a concern for me because this is a very low-traffic site, and I have an
 entire quad-core <acronym title="Virtual Private Server">VPS</acronym>
-doing basically nothing besides serving this site. That said, it's nice to
-know that when I start doing other stuff on my VPS, I won't be contending for
+doing basically nothing besides serving this site. That said, it&rsquo;s nice to
+know that when I start doing other stuff on my VPS, I won&rsquo;t be contending for
 cycles with PHP and MySQL, so the site will always be very responsive. Plus,
 wow does the site load fast now (once you have that huge header image cached,
-anyway. I'll fix that soon.) Also not a huge concern for a blog, but I
-didn't expect the difference to even be noticeable, and it definitely is.</li>
+anyway. I&rsquo;ll fix that soon.) Also not a huge concern for a blog, but I
+didn&rsquo;t expect the difference to even be noticeable, and it definitely is.</li>
 <li>Static pages significantly decrease the attack surface of the site; there is
 no database, so no SQL injection to worry about, and no scripts are being
 executed, so <a href="http://www.kb.cert.org/vuls/id/520827">PHP vulnerabilities</a>
-aren't a concern.</li>
+aren&rsquo;t a concern.</li>
 <li>Static pages means I get a nicely organized, easily navigable directory
 structure instead of God-awful rewrite rules.</li>
 <li>The default Octopress theme is very well designed and well-suited to
@@ -139,21 +139,21 @@ any screen resolution, including on mobile devices.</li>
 <li>Octopress has pretty nice built in Github and Twitter widgets.</li>
 <li>Comments are handled by <a href="http://disqus.com/">Disqus</a>, which provides a nicer
 comment system than Wordpress' built in comments.  I was using Disqus anyway
-via a plugin, but now I don't have to worry about keeping the Disqus comments
+via a plugin, but now I don&rsquo;t have to worry about keeping the Disqus comments
 synced with the Wordpress database. Incidentally, Disqus provides a very nice
 system to migrate comments to new URLs by uploading a
 <acronym title="Comma Separate Value">CSV</acronym> file mapping old URLs to
-new URLs. They've really thought of everything, so props to them for providing
+new URLs. They&rsquo;ve really thought of everything, so props to them for providing
 a great service.</li>
 <li>All of the blog content is stored on my local machine, which means I can write
 posts in a disconnected environment using Vim, version control them with Git,
-and then push them to my server when they're finished. I have a nice
+and then push them to my server when they&rsquo;re finished. I have a nice
 deployment setup where everything is stored in a Git repository on the server
 and a post-commit hook copies the updated content to the web root for the blog
 subdomain. All I have to do is <code>git push</code> and the blog is instantly updated.</li>
 <li>Since Wordpress uses hand-written SQL queries, it is tightly coupled with
-MySQL and doesn't support any other database. PHP is similarly tied to Apache;
-while it's possible to run it with other servers, it's not particularly easy.
+MySQL and doesn&rsquo;t support any other database. PHP is similarly tied to Apache;
+while it&rsquo;s possible to run it with other servers, it&rsquo;s not particularly easy.
 By ditching Wordpress, I can also get rid of Apache, PHP and MySQL. This is
 nice since I was planning to use nginx and Postgres for my
 <a href="/entry/2012/09/14/social-networks-and-content-ownership/">photo album project</a>
@@ -162,25 +162,25 @@ anyway.</li>
 
 
 <p>Those are, give or take a few minor considerations, my reasons for switching
-blogging platforms. I'd be remiss to not mention that Octopress does have some
-noteworthy disadvantages even for "power users" to whom the above advantages
+blogging platforms. I&rsquo;d be remiss to not mention that Octopress does have some
+noteworthy disadvantages even for &ldquo;power users&rdquo; to whom the above advantages
 might sound attractive.
 <a href="http://alblue.bandlem.com/2012/02/disadvantages-of-octopress.html" title="Disadvantages of Octopress - AlBlue's Blog">This post</a>
 does a good job cataloguing a few of them. On the balance, though, I feel like
-it's a good choice for me, and although the switch took me considerably longer
-than I expected (the better part of an weekend where I'd expected an evening or
-so of work), I'm pretty happy that I did it.</p>
+it&rsquo;s a good choice for me, and although the switch took me considerably longer
+than I expected (the better part of an weekend where I&rsquo;d expected an evening or
+so of work), I&rsquo;m pretty happy that I did it.</p>
 
-<p>In an upcoming post, I'll discuss the actual process of reconfiguring my server
+<p>In an upcoming post, I&rsquo;ll discuss the actual process of reconfiguring my server
 and importing all of my content (which is what I had planned to do before this
-turned into a 1,600 word diatribe against Wordpress.) For now, if I've inspired
-you and you're thinking about switching your own Wordpress site to Octopress,
+turned into a 1,600 word diatribe against Wordpress.) For now, if I&rsquo;ve inspired
+you and you&rsquo;re thinking about switching your own Wordpress site to Octopress,
 you can take a look at the
 <a href="https://github.com/mlindgren/wp2octopress"><acronym title="Extract, Transform, Load">ETL</acronym> I wrote</a>
 to ease the import process.</p>
 
 <p><sup>1</sup> <small>Did you know that Markdown was created by John Gruber? Until very
-recently, I didn't. And here I thought all he did was play apologist for
+recently, I didn&rsquo;t. And here I thought all he did was play apologist for
 Apple.</small></p>
 ]]></content>
   </entry>
@@ -190,19 +190,19 @@ Apple.</small></p>
     <link href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/"/>
     <updated>2012-09-14T00:45:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership</id>
-    <content type="html"><![CDATA[<p>I'm always wary about pre-announcing things I'm working on; I have more ambition than spare time, which leads to a tendency to start projects and not finish them.  But if there's to be a point in maintaining this website, I need to actually <em>write things</em> once in a while, so I may as well write about what I've been hacking on lately.  At the moment, I'm building a web-based photo album in Python.  My primary reason for doing this is that I'd like to own more of my information.  Apps and social networks have some significant advantages, particularly for the less technologically inclined, but I'm ambivalent about the trend away from an open Internet and towards a set of non-interoperable, monolithic walled-garden services.<!--more--></p>
+    <content type="html"><![CDATA[<p>I&rsquo;m always wary about pre-announcing things I&rsquo;m working on; I have more ambition than spare time, which leads to a tendency to start projects and not finish them.  But if there&rsquo;s to be a point in maintaining this website, I need to actually <em>write things</em> once in a while, so I may as well write about what I&rsquo;ve been hacking on lately.  At the moment, I&rsquo;m building a web-based photo album in Python.  My primary reason for doing this is that I&rsquo;d like to own more of my information.  Apps and social networks have some significant advantages, particularly for the less technologically inclined, but I&rsquo;m ambivalent about the trend away from an open Internet and towards a set of non-interoperable, monolithic walled-garden services.<!--more--></p>
 
-<p>When Google+ debuted, my enthusiasm for the service followed a sort of bell curve.  I was already using Twitter and Facebook, and I didn't want to have to post everything to yet another service.  At the urging of friends, I joined anyway, and warmed to it considerably.  It was simply better software than Facebook; the interface was cleaner, the privacy controls more usable, the communication options more diverse, the means of sharing and interacting with media more engaging and deeply integrated.  Best of all, there wasn't nearly as much app spam.  Much of this is probably still true, although the impression I get from Google+ pages I've stumbled across recently is that they've been trying to make it look more like Facebook, to its detriment.</p>
+<p>When Google+ debuted, my enthusiasm for the service followed a sort of bell curve.  I was already using Twitter and Facebook, and I didn&rsquo;t want to have to post everything to yet another service.  At the urging of friends, I joined anyway, and warmed to it considerably.  It was simply better software than Facebook; the interface was cleaner, the privacy controls more usable, the communication options more diverse, the means of sharing and interacting with media more engaging and deeply integrated.  Best of all, there wasn&rsquo;t nearly as much app spam.  Much of this is probably still true, although the impression I get from Google+ pages I&rsquo;ve stumbled across recently is that they&rsquo;ve been trying to make it look more like Facebook, to its detriment.</p>
 
 <p>Realizing that it was a better product in almost every regard, I started using Google+ almost exclusively and tried to recruit additional friends away from Facebook.  I stopped uploading new photos to Facebook and even purchased additional storage capacity on Google+ so I could upload all of my photos there at the original quality.  Problems quickly became apparent, though.  Despite my best efforts, nobody was using the service; even among those of my friends who were enthusiastic early adopters, actual <em>social</em> activity among my circles dropped off quickly, and I soon found myself wondering why I even bothered to check for updates.  I finally deleted my account when I logged in one day and realized that the newest post in my news feed was from several months prior.</p>
 
-<p>And with my Google+ account, there went all of the photos and other content I had uploaded.  I still have the files, of course, but the effort I expended in selecting a handful of good photos to upload to each gallery from the hundreds of shots I take on most outings, not to mention the comments, captions, and other metadata I had curated, vanished into the ether with not a trace left behind.  The moral of the story is that private social networks are impermanent, and thus anything uploaded to them necessarily has an unknown but very much finite period of accessibility and relevance.  Whether or not Google ever admits it, Google+ never quite took off, but it could have supplanted Facebook just as Facebook did MySpace.  If and when some other service comes along and succeeds where Google+ failed, every user on Facebook will be forced to start over from scratch on whatever's in vogue next.</p>
+<p>And with my Google+ account, there went all of the photos and other content I had uploaded.  I still have the files, of course, but the effort I expended in selecting a handful of good photos to upload to each gallery from the hundreds of shots I take on most outings, not to mention the comments, captions, and other metadata I had curated, vanished into the ether with not a trace left behind.  The moral of the story is that private social networks are impermanent, and thus anything uploaded to them necessarily has an unknown but very much finite period of accessibility and relevance.  Whether or not Google ever admits it, Google+ never quite took off, but it could have supplanted Facebook just as Facebook did MySpace.  If and when some other service comes along and succeeds where Google+ failed, every user on Facebook will be forced to start over from scratch on whatever&rsquo;s in vogue next.</p>
 
-<p>I'm tired of playing that game. I want to keep control over the content I create so that I can truly decide how it's shared and with whom, and so that if I need to migrate my data to a new system, I have the means to do so.<sup>1</sup> The ultimate realization of this ideal is in decentralized services based on open protocols, such as <a title="Tent" href="http://tent.io/">Tent</a>. I'm very enthusiastic about such attempts, but realistically, I'm skeptical that any of them will ever gain the necessary traction to make a real difference. Even if Tent or some analogue gains millions of users, it will be a drop in the bucket compared to Facebook, and entrenched players such as Facebook will have no incentive to interoperate because decentralized services do nothing but threaten their business model.</p>
+<p>I&rsquo;m tired of playing that game. I want to keep control over the content I create so that I can truly decide how it&rsquo;s shared and with whom, and so that if I need to migrate my data to a new system, I have the means to do so.<sup>1</sup> The ultimate realization of this ideal is in decentralized services based on open protocols, such as <a title="Tent" href="http://tent.io/">Tent</a>. I&rsquo;m very enthusiastic about such attempts, but realistically, I&rsquo;m skeptical that any of them will ever gain the necessary traction to make a real difference. Even if Tent or some analogue gains millions of users, it will be a drop in the bucket compared to Facebook, and entrenched players such as Facebook will have no incentive to interoperate because decentralized services do nothing but threaten their business model.</p>
 
-<p>I will do as much as is in my power to help services like Tent succeed, but for the time being, that is not much.  That kind of leaves me without a good means of pushing my content to the people who care about it.  Nevertheless, I can still take ownership of it by hosting it on my own server using my own tools.  That is the purpose of developing my own photo album software.  I'm making good progress so far, and hopefully soon I'll have more to share; once the code is in a reasonably complete state with most of the major features I want for my own purposes, I intend to make the app open source and share the code on my <a title="mlindgren on Github" href="https://github.com/mlindgren" target="_blank">Github account.</a>  And now that I've announced my intent publicly, I expect anyone who reads this to hold me to my plan to ensure that I get it finished!</p>
+<p>I will do as much as is in my power to help services like Tent succeed, but for the time being, that is not much.  That kind of leaves me without a good means of pushing my content to the people who care about it.  Nevertheless, I can still take ownership of it by hosting it on my own server using my own tools.  That is the purpose of developing my own photo album software.  I&rsquo;m making good progress so far, and hopefully soon I&rsquo;ll have more to share; once the code is in a reasonably complete state with most of the major features I want for my own purposes, I intend to make the app open source and share the code on my <a title="mlindgren on Github" href="https://github.com/mlindgren" target="_blank">Github account.</a>  And now that I&rsquo;ve announced my intent publicly, I expect anyone who reads this to hold me to my plan to ensure that I get it finished!</p>
 
-<p><sup>1</sup> <small>Both Facebook and Google+ provide a means of exporting the data you've shared. I believe both will export everything belonging to you personally, but I don't think you necessarily get to keep all of the social data associated with your content, e.g. comments, nor the relationships between different pieces of content. Last I checked, the data was merely dumped into a bunch of flat files; nothing is kept in a structured format that makes it easy to work with, and even if it were, other privates services don't usually offer the option to import your data. While it may still not be easy, if you own your own data and manage it using open source tools, it's at least <em>possible</em> to migrate everything to another system with the greatest fidelity supported by that system.</small></p>
+<p><sup>1</sup> <small>Both Facebook and Google+ provide a means of exporting the data you&rsquo;ve shared. I believe both will export everything belonging to you personally, but I don&rsquo;t think you necessarily get to keep all of the social data associated with your content, e.g. comments, nor the relationships between different pieces of content. Last I checked, the data was merely dumped into a bunch of flat files; nothing is kept in a structured format that makes it easy to work with, and even if it were, other privates services don&rsquo;t usually offer the option to import your data. While it may still not be easy, if you own your own data and manage it using open source tools, it&rsquo;s at least <em>possible</em> to migrate everything to another system with the greatest fidelity supported by that system.</small></p>
 ]]></content>
   </entry>
   
@@ -211,12 +211,12 @@ Apple.</small></p>
     <link href="http://blog.mlindgren.ca/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/"/>
     <updated>2011-09-21T00:17:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer</id>
-    <content type="html"><![CDATA[<p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I'll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
+    <content type="html"><![CDATA[<p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
 
 <!--more-->
 
 
-<p>Unfortunately, however, the Snow Leopard disc image is large enough that it can only be burned to a dual-layer DVD. I don't tend to keep writeable dual-layer DVDs lying around, so I needed a solution which required only the disc image itself. There are a number of methods available for installing OS X over the network, but none of them seemed to work for me—perhaps owing to the fact that I had only one Mac. Luckily, I discovered that you can install OS X from a separate partition on the same disk. Here's how:</p>
+<p>Unfortunately, however, the Snow Leopard disc image is large enough that it can only be burned to a dual-layer DVD. I don&rsquo;t tend to keep writeable dual-layer DVDs lying around, so I needed a solution which required only the disc image itself. There are a number of methods available for installing OS X over the network, but none of them seemed to work for me—perhaps owing to the fact that I had only one Mac. Luckily, I discovered that you can install OS X from a separate partition on the same disk. Here&rsquo;s how:</p>
 
 <ol>
     <li>First, you'll need to re-partition your disk. Open Disk Utility and select the disk you want to use. Be sure to select the disk itself, rather than one of its partitions, which are indented beneath the disk.</li>
@@ -227,7 +227,7 @@ Apple.</small></p>
 </ol>
 
 
-<p>That's it! In retrospect, it's completely obvious, but I haven't seen these instructions anywhere else on the web. This technique might be particularly useful for owners of Macs without disc drives.</p>
+<p>That&rsquo;s it! In retrospect, it&rsquo;s completely obvious, but I haven&rsquo;t seen these instructions anywhere else on the web. This technique might be particularly useful for owners of Macs without disc drives.</p>
 ]]></content>
   </entry>
   
@@ -335,7 +335,7 @@ In fairness, I'm of two minds about this because the back button does save a lot
     <link href="http://blog.mlindgren.ca/entry/2011/04/16/android-uiux-gripes/"/>
     <updated>2011-04-16T22:08:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2011/04/16/android-uiux-gripes</id>
-    <content type="html"><![CDATA[<p>The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">"Android Gripes."</a> The name is perhaps a bit misleading, as it's not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he's recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of... well, complaining about Android.<!--more--></p>
+    <content type="html"><![CDATA[<p>The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">&ldquo;Android Gripes.&rdquo;</a> The name is perhaps a bit misleading, as it&rsquo;s not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he&rsquo;s recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of&hellip; well, complaining about Android.<!--more--></p>
 
 <p>That might be a little unfair.  Perhaps I should let the author speak for himself:</p>
 
@@ -344,9 +344,9 @@ In fairness, I'm of two minds about this because the back button does save a lot
 As much as I believe in Apple, I think everybody deserves great user experience, especially when it comes to phones. I think it is my mission to let more people know that Android does not provide you that. Android only provides inferior user experience. You either admit it and bear with it, or go for better alternatives. That’s why I started writing this blog.</blockquote>
 
 
-<p>(Emphasis added.)  English is not the author's native language, so you'll have to excuse the occasionally odd grammar.  It's immediately apparent that the author's stated opinion of Android is patently absurd; bad UI/UX can have many negative consequences, but it is certainly not criminal.  Redditors have also <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/">pointed out</a> that a number of comparisons the Android Gripes author makes are somewhat unfair.  For instance, he <a href="http://android-gripes.tumblr.com/post/4409289546/why-do-apps-from-the-same-company-look-worse-on-android">compares old, oudated Android apps</a> against apps which were recently updated on iOS, and misleadingly remarks on "extra" (meaning blank) space in the Facebook app.  The blank space in question <em>does</em> contain content when one is signed into a legitimate profile.</p>
+<p>(Emphasis added.)  English is not the author&rsquo;s native language, so you&rsquo;ll have to excuse the occasionally odd grammar.  It&rsquo;s immediately apparent that the author&rsquo;s stated opinion of Android is patently absurd; bad UI/UX can have many negative consequences, but it is certainly not criminal.  Redditors have also <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/">pointed out</a> that a number of comparisons the Android Gripes author makes are somewhat unfair.  For instance, he <a href="http://android-gripes.tumblr.com/post/4409289546/why-do-apps-from-the-same-company-look-worse-on-android">compares old, oudated Android apps</a> against apps which were recently updated on iOS, and misleadingly remarks on &ldquo;extra&rdquo; (meaning blank) space in the Facebook app.  The blank space in question <em>does</em> contain content when one is signed into a legitimate profile.</p>
 
-<p>With all of that said, I'm not writing this post to refute the Android Gripes author.  I actually agree with an unfortunate number of his points.  While there's a lot that can be said about where the iPhone's UI/UX fails (I've <a href="http://www.mlindgren.ca/archives/151">previously mentioned</a> their complete lack of a workable notification system), excuses and rationalizations won't do anything to improve the state of Android apps.  Even if you believe that Android's UI/UX is better than Apple's (and I do feel that that's a hard case to make), I think it's undeniable that there's room for improvement.  It's certainly worth mentioning that some of the Android Gripe's authors examples are misleading, but what's more important is that we—that is to say, Android developers—ask ourselves where we're failing users, why it's happening, and what we can do to improve the platform.  In a future post, I'll offer my perspective on where Android could be improved.</p>
+<p>With all of that said, I&rsquo;m not writing this post to refute the Android Gripes author.  I actually agree with an unfortunate number of his points.  While there&rsquo;s a lot that can be said about where the iPhone&rsquo;s UI/UX fails (I&rsquo;ve <a href="http://www.mlindgren.ca/archives/151">previously mentioned</a> their complete lack of a workable notification system), excuses and rationalizations won&rsquo;t do anything to improve the state of Android apps.  Even if you believe that Android&rsquo;s UI/UX is better than Apple&rsquo;s (and I do feel that that&rsquo;s a hard case to make), I think it&rsquo;s undeniable that there&rsquo;s room for improvement.  It&rsquo;s certainly worth mentioning that some of the Android Gripe&rsquo;s authors examples are misleading, but what&rsquo;s more important is that we—that is to say, Android developers—ask ourselves where we&rsquo;re failing users, why it&rsquo;s happening, and what we can do to improve the platform.  In a future post, I&rsquo;ll offer my perspective on where Android could be improved.</p>
 ]]></content>
   </entry>
   

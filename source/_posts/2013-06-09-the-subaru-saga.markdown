@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Subaru Saga"
-date: 2013-06-06 21:03
+date: 2013-06-09 22:22
 comments: true
 categories: Personal
 ---
@@ -10,15 +10,16 @@ Or "buying used cars is the worst and I will never do it ever again."
 
 I recently purchased a new-to-me 2011
 [Subaru WRX STI](http://www.subaru.com/vehicles/impreza-wrx/index.html) sedan.
-I had been thinking about buying a new car for a long time&mdash;since I graduated,
-more or less. Until I bought my Subaru, I owned an ageing Honda Civic (1997, to
-be precise), and while it was a very capable and extremely reliable car
+I had been thinking about buying a new car for a long time&mdash;since I
+graduated, more or less. Until I bought my Subaru, I owned an ageing Honda Civic
+(1997, to be precise).  While it was a very capable and extremely reliable car
 throughout the many years I owned it for, it was old enough that it lacked some
 of the conveniences one expects in a car these days, such as power locks and
-windows... and air conditioning, which made it less than ideal for summer road
-trips. More importantly, it was in need of some moderately expensive
-maintenance, and it didn't seem to make sense to me to spend much money on it
-given that the overall value of the car was fairly low.
+windows, and most importantly, air conditioning.  The lack of air conditioning
+in particular less than ideal for summer road trips, and more importantly, it
+was in need of some moderately expensive maintenance, and it didn't seem to make
+sense to me to spend much money on it given that the overall value of the car
+was fairly low.
 
 I didn't go on many test drives before I purchased my Subaru, but I didn't feel
 the need to; I had already spent months watching reviews, reading forums,
@@ -30,6 +31,17 @@ contenders, but each had significant drawbacks with regard to my personal
 preferences. The Evo has a notoriously lacklustre interior (not that the STI is
 _a lot_ better, to be fair); I don't like the way the MazdaSpeed3 looks, and the
 Golf comes with the reputation of higher maintenance costs for German cars.
+
+I also really like the Subaru community.
+[/r/subaru](http://www.reddit.com/r/subaru) is the largest manufacturer-specific
+subreddit, and in addition to forums like [NASIOC](http://forums.nasioc.com/),
+it comprises a vibrant community of enthusiastic Subaru owners. Of course other
+brands have significant followings as well&mdash;particularly VW&mdash;but my
+impression of the Subaru community is that it's less elitist and, in contrast to
+the others, puts as much emphasis on what one can _do_ with the cars as on the
+cars themselves. To "go Subaruing" is a popular term for going out into the mud
+or the snow or the sand or the bush and getting the car wet and dirty, and
+having a ton of fun in the process.
 
 The STI, then, was the clear winner in my eyes.  Truth be told, a WRX probably
 would have been more than sufficient for my needs, but I generally prefer to put
@@ -51,21 +63,22 @@ the Mazda dealership because that is where the salesman I first contacted
 worked.
 
 [Ken Palmer](http://www.dealerrater.com/sales/Ken-Palmer-review-33450/) was the
-salesperson I dealt with. Both he and the dealership itself have
-very high ratings on the site that link points to (DealerRater.com), which is
-surprising to me because dealing with them has been by far the worst experience
-I've ever had as a consumer.  The reason for that will become clear shortly, but
-bear in mind that even before I discovered the major issue which prompted this
-post, I would not have said that my buying experience with Walker's was _good_
-by any means.  Incidentally, their
+salesperson I dealt with. Both he and the dealership itself have very high
+ratings on the site that link points to (DealerRater.com), which is surprising
+to me because dealing with them (particularly the dealership; I have less
+animosity for Ken) has been by far the worst experience I've ever had as a
+consumer.  The reason for that will become clear shortly, but bear in mind that
+even before I discovered the major issue which prompted this post, I would not
+have said that my buying experience with Walker's was _good_ by any means.
+Incidentally, their
 [Yelp ratings](http://www.yelp.com/biz/walkers-renton-subaru-renton-2) are
 considerably lower, although there aren't as many reviews on Yelp.
 
 We went to the Mazda dealership and I took a look at the car. It looked great;
 the paint job was (and is) in great shape for the most part, although there were
-a number of small nicks on the rear passenger doors where the body flares out
-into the wide wheel arches, as well as some on the front bumper pieces where the
-fog lights would go (this car doesn't have fog lights).  I didn't really notice
+a number of small nicks on the rear doors where the body flares out into the
+wide wheel arches, as well as some on the front bumper pieces where the fog
+lights would go (this car doesn't have fog lights).  I didn't really notice
 those at the time, but they're minor and I doubt they would have influenced my
 purchasing decision anyway. There was also some minor cosmetic damage to the
 interior: a bit of chipping on the painted bezel around the satellite navigation
@@ -88,10 +101,10 @@ completely correct about that.
 
 During the test drive I noticed that the exhaust was very loud&mdash;not
 irritatingly so, and I loved the way it sounded, but I thought it couldn't
-possibly be stock so I asked Ken. He told me that the exhaust system was stock,
-which at the time I naïvely accepted. I later found out that this was not true.
-I believe that the downpipe, midpipe and catalytic converter are stock, but the
-tail pipe seems to have been replaced with a
+possibly be stock so I asked Ken. He confirmed that it was stock, which at the
+time I naïvely accepted. I later found out that this was not true.  I believe
+that the downpipe, midpipe and catalytic converter are stock, but the tail pipe
+seems to have been replaced with a
 [Nameless Performance AxelBack Muffler Delete](http://shop.namelessperformance.com/sti-sedan-axleback/).
 That's strike number one against Ken. I like the exhaust, and I don't mind that
 it's aftermarket, but he should have done his research on the vehicle before
@@ -116,27 +129,29 @@ less than 75% tread depth. The private party Blue Book value given those facts
 is currently $30,000. Ultimately I paid $31,000, which given dealership markup
 seemed reasonable at the time.
 
-I spent quite a long time negotiating with Ken, so let me tell you a little bit
-about his personality and style as a salesperson. I can't help but view him as a
-reasonably nice guy, even though I felt that he was subtly pushing me to spend
-more than I wanted to, and even though he gave me misinformation and made
-statements of dubious veracity in several instances (I hesitate to say "lied").
-For instance, when I told him I didn't _need_ a new car and that I could just as
-easily walk away, he repeatedly emphasized that the STI was "a hot item" and
-that if I left and came back tomorrow, it might not still be on the lot.  This
-is _kind of_ true because STIs do seem to sell quickly in the Seattle area _when
-they're sold at a good price_; however, I'd been looking at Craigslist and
-AutoTrader for months at this point, and I knew that this car in particular had
-been sitting on their lot for at least a month&mdash;maybe more like two months.
-That fact was also ascertainable from some of the paperwork Ken gave me on the
-vehicle, so it was a pretty poor attempt to mislead me.  I also happened to
-notice that the price on Craigslist had dropped something like $50 between the
-night before and the day I was there, so I called him on that as well. He
-changed his story at that point and told me how the STI is a performance car for
-a particular type of buyer, and not just anyone would be looking for one, to
-which I replied: yeah, that's my point!  It's a sought-after car but it's also
-not something just anyone is going to drop in and buy, so I know you can't move
-this as fast as you say you can.
+I spent quite a long time negotiating with Ken, so I want to take some time to
+describe his personality and style as a salesperson. I can't help but view him
+as a reasonably nice guy. He seemed to be friendly and in posession of a good
+sense of humor, and was very patient with my less than stellar manual driving.
+That said, he was subtly pushing me to spend more than I wanted to, and he gave
+me misinformation and made statements of dubious veracity in several instances
+(I hesitate to say "lied").  For instance, when I told him I didn't _need_ a new
+car and that I could just as easily walk away, he repeatedly emphasized that the
+STI was "a hot item" and that if I left and came back tomorrow, it might not
+still be on the lot.  This is kind of true under the right circumstances, but I
+had been looking at Craigslist and AutoTrader for months at this point, and I
+knew that this car in particular had been sitting on their lot for at least a
+month&mdash;maybe more like two months.  That fact was also ascertainable from
+some of the paperwork Ken gave me on the vehicle, so it was a pretty poor
+attempt to mislead me.
+
+I also happened to notice that the price on Craigslist had dropped something
+like $50 between the night before and the day I was there, so I called him on
+that as well. He changed his story at that point and told me how the STI is a
+performance car for a particular type of buyer, and not just anyone would be
+looking for one, to which I replied: yeah, that's my point!  It's a sought-after
+car but it's also not something just anyone is going to drop in and buy, so I
+know you can't sell it as quickly as you say you can.
 
 While Ken repeatedly insisted that he was on my side and wanted to work with me
 to get me the best deal possible, and that he wasn't a typical pushy sales guy,
@@ -251,52 +266,54 @@ taxes, the total cost was around $38,000.
 
 Here's where things get _really_ shady.  I left the car at the dealership to
 have the service done so I wouldn't have to drive back to Renton for it (which
-is a 30 minute to one hour drive from Redmond, depending on traffic).  When I
-came back to pick up the car, I went to the service desk to get the keys and
-request a copy of the service history and schedule so that I would have it for
-my records (and to verify that they actually did the work).  The service advisor
-I talked to, whose name I think is Kay, asked me if I was aware that the car had
-been in an accident and had had about $4,000 worth of bodywork done. My heart
-leapt into my throat at this revelation, and I said that no, I did _not_
-know that, and in fact I had been told that the car had _not_ been in any
-accidents.  She got an "oh shit" kind of look on her face and then said she'd
-double check, and after a bit of typing told me that actually she'd just typed
-the VIN in wrong, and that this car was fine.
+is a 30 minute to one hour drive from where I live in Redmond, depending on
+traffic).  When I came back to pick up the car, I went to the service desk to
+get the keys and request a copy of the service history and schedule so that I
+would have it for my records (and to verify that they actually did the work).
+The service advisor I talked to, whose name I think is Kay, asked me if I was
+aware that the car had been in an accident and had had about $4,000 worth of
+bodywork done. My heart leapt into my throat at this revelation, and I said that
+no, I did _not_ know that, and in fact I had been told that the car had _not_
+been in any accidents.  She got an "oh shit" kind of look on her face and then
+said she'd double check, and after a bit of typing told me that actually she'd
+just typed the VIN in wrong, and that this car was fine.
 
-This is what those of a literary persuasion might call foreshadowing.
+This is what those of a literary predilection might call foreshadowing.
 
 I was too relieved to really think too much of it at the time, and anyway the
 contract had already been signed at this point, but knowing what I do now this
 is obviously _hugely_ suspicious.  Kay strikes me as a nice person, and I mean
-genuinely nice rather than in a salesperson sort of way.  I really want to
-believe that she actually did just type in the wrong VIN and wasn't lying to me.
-But... well, let's do some math.
+genuinely nice rather than in a salesperson sort of way where niceness is
+necessistated as a means of being persuasive.  I really want to believe that she
+actually did just type in the wrong VIN and wasn't lying to me.  But... well,
+let's do some math.
 
 A VIN is 17 alphanumeric characters long, and each character has certain
-restrictions what it can be.  That means that there are 6.5273512 &mult;
+restrictions what it can be.  That means that there are 6.5273512 &times;
 10<sup>25</sup> possible VINs.  That is a very, very large number.  VINs have
 been in use since 1954, and the number of cars in the world just surpassed one
-billion in 2011, but I think that only refers to cars currently on the road.  So
-I think it's generous to assume that there have been 10 billion cars with VINs
-since 1954.  Now, I was never very good at statistics so this calculation is
-probably inaccurate for a host of reasons, but by my math that means that if you
-type an arbitrary wrong digit when entering a VIN, you have a 1.532015 &mult;
-10<sup>-16</sup> chance of getting a vehicle that actually _exists._  By way of
-comparison, that is 8 orders of magnitude more unlikely than getting six of six
-numbers on the 6/49[^lottery].
+billion in 2011, but I think the source I got that from was only referring to
+cars currently on the road.  So I think it's generous to assume that there have
+been 10 billion cars with VINs since 1954.  Now, I was never very good at
+statistics so this calculation is probably inaccurate for a host of reasons, but
+by my math that means that if you type an arbitrary wrong digit when entering a
+VIN, you have a 1.532015 &times; 10<sup>-16</sup> chance of getting a vehicle
+that actually _exists._  By way of comparison, that is 8 orders of magnitude
+more unlikely than getting six of six numbers on the 6/49[^lottery].
 
 I don't know all the details of how VINs really work; they're definitely not
-evenly distributed, and as I said, I was never very good at statistics anyway.
-So let's make this a little simpler.  The last six digits of a VIN are
+uniformly distributed, and as I said, I was never very good at statistics
+anyway.  So let's make this a little simpler.  The last six digits of a VIN are
 sequential, to the best of my knowledge, if all the other digits are fixed then
 then all of the possibilities afforded by those last six digits should refer to
 the same model of car, for the same model year, made by the same plant.  In
 North America the last five digits must be numeric, but since STIs are
-manufactured in Japan, I think that gives us 33<sup>6</sup> possibilities, which
-is 1,291,467,969.  So again, the possibility of typing a wrong digit in an
-arbitrary position and getting a car that actually exists is very low.  But even
-assuming that she managed to do that, I'm fairly certain their service records
-only show cars that have actually come to _that dealership_ for service.
+manufactured in Japan, I think that gives us 33<sup>6</sup> possibilities
+(because some characters are excluded), which is 1,291,467,969.  So again, the
+possibility of typing a wrong digit in an arbitrary position and getting a car
+that actually exists is very low.  But even assuming that she managed to do
+that, I'm fairly certain their service records only show cars that have actually
+come to _that dealership_ for service.
 
 _So how the fuck could she have possibly happened upon the same car, that came
 to their dealership and got work done for an accident which probably would have
@@ -321,12 +338,11 @@ told me about.  She checked and sure enough they had _not_ done the fluid
 flushes, which they were contractually obligated to do.  She said that they'd
 get it done with the 3M service, and indeed they did (or at least they gave me a
 service record indicating such&mdash;I don't really have the expertise to check
-myself).  I can't help but suspect that they neglected to do this the first time
-on purpose, hoping that I just wouldn't notice.  When I picked up the car the
-next time, Kay told me she was really glad that they had done the rear
-differential fluid flush, as the fluid that had been in there was _very_ overdue
-for a change.  I think the word she used to describe it was "pudding" or
-"sludge."
+myself).  I wondered if they neglected to do this the first time on purpose,
+hoping that I just wouldn't notice.  When I picked up the car the next time, Kay
+told me she was really glad that they had done the rear differential fluid
+flush, as the fluid had been _very_ overdue for a change.  I think the word she
+used to describe it was "pudding" or "sludge."
 
 Recall that this is the maintenance they told me their world-class technicians
 hadn't felt it necessary to do. I'm sure you can understand that my attitude at this
@@ -341,7 +357,7 @@ installed myself. My new car put a smile on my face every day; even the short
 commute to work was a joy.
 
 But I noticed a couple problems. First I noticed that the heated seat bottom on
-the driver's side didn't work.  The back works, but the bottom doesn't get warm
+the driver's side didn't work.  The back worked, but the bottom didn't get warm
 at all.  I was annoyed that I hadn't noticed it during the test drive, but it
 would be covered by the warranty, so I didn't consider it a big issue. Then, on
 the 27th of April, my wife and I went to central Washington to escape the rain
@@ -357,7 +373,7 @@ During the next week I also replaced the air filter (by myself, which I was
 pretty proud of, even though it's about the easiest thing to change on a car)
 and noticed that the air box had a large crack in it, and that the air intake
 duct which goes into the air box had been broken in half height-wise and
-shoddily glued back together with some kind of sealant.  I still didn't think to
+shoddily glued back together with some kind of sealant.  I still didn't think
 much of it at this point as I figured someone had damaged them while replacing
 the air filter previously.
 
@@ -372,95 +388,111 @@ the air conditioner couldn't because the condenser had been
 
 Ugh.
 
-I went back to Eastside Subaru and asked them to point out how they know it's
+I went back to Eastside Subaru and asked them to point out how they knew it was
 accident damage, since Walker's had told me the car had not been in an accident.
 The technician who serviced the car came out and pointed out several things to
 me.  The tubes from the AC condenser were bent in such a way that it was obvious
-to him that there was an impact, and they leak badly. Moreover, the condenser
-itself is quite obviously bent.  There are tool marks on the bolts that hold on
-both of the front quarter panels, indicating that they've been removed to be
-repaired or replaced.  There's an AC recharge sticker on the inside of the hood
-which appears to have been glued on, not very well, so it's peeling off; I
-believe the tech also said that he thought the whole hood had likely been
-replaced.  The power steering fluid reservoir attaches to the body of the
-vehicle in two places and one of those was cracked. The radiator support bar is
-also bent. It's slight enough that the untrained eye might not notice it, but
-the tech at Eastside tells me, and I am very confident that these were his exact
-words[^legal], that Walker's "had to have known" that the vehicle was in an
-accident.
+to him that there had been an impact, and they leaked badly. Moreover, the
+condenser itself was quite obviously bent.  There are tool marks on the bolts
+that hold on both of the front quarter panels, indicating that they've been
+removed to be repaired or replaced.  There's an AC recharge sticker on the
+inside of the hood which appears to have been glued on, not very well, so it's
+peeling off; I believe the techician also said that he thought the whole hood
+had likely been replaced.  The power steering fluid reservoir attaches to the
+body of the vehicle in two places and one of those was cracked. The radiator
+support bar is also bent. It's slight enough that the untrained eye would
+probably not notice it, but the techician at Eastside told me, and I am very
+confident that these were his exact words[^legal], that Walker's "had to have
+known" that the vehicle was in an accident.
 
 I drove back down to Renton and spent probably about half an hour yelling at
 various people.  Ken tried to placate me in various ways; he told me that they
 didn't know and that they couldn't have known; he mentioned that "my guy" didn't
-notice the problem either; he tried to tell me that this won't actually decrease
-the resale value of the car (bullshit) and that since it's not on the CarFax or
-title no one needs to know anyway. He made repeated use of euphemisms implying
-that maybe there _wasn't_ actually any damage and the car _hadn't_ actually been
-in an accident, even after I _showed him_ the damaged parts. He seemed to be
-acting almost as though if I simply willed it hard enough I could bring about
-some alternate reality wherein my car was pristine and undamaged.  (Believe me,
-I tried.) This, to me, emphasizes the problem with people like Ken and his
-manager and, as I'll soon describe, his manager's manager&mdash;that is to
-say, salespeople&mdash;they have an atypical understanding of the concept of
+notice the problem either; he tried to tell me that this wouldn't actually
+decrease the resale value of the car (bullshit) and that since it's not on the
+CarFax or title no one needs to know anyway. He made repeated use of euphemisms
+implying that maybe there _wasn't_ actually any damage and the car _hadn't_
+actually been in an accident, even after I _showed him_ the damaged parts. He
+seemed to be acting almost as though if I simply willed it hard enough I could
+bring about some alternate reality wherein my car was pristine and undamaged.
+(Believe me, I tried.) This, to me, emphasizes the problem with people like Ken
+and his manager and, as I'll soon describe, his manager's manager&mdash;that is
+to say, salespeople&mdash;they have an atypical understanding of the concepts of
 _facts_ and _truth_ and act as though reality is open to interpretation.
 
 I told Ken that I refuse to lie to someone when I sell the car (and let this
 post be a testament to that, because it is now public knowledge, whether or not
 it ever shows up on the CarFax) and that I felt that I was probably out
 thousands of dollars in resale value, not to mention the fact that I have no
-idea what kind of mechanical issues this could result in down the road, even
-though the car seems okay for the time being. My confidence in my extended
-warranty has also gone down the drain, because if anything fails and can be
-shown to have signs of accident damage, even if it's very minor, then it won't
-be covered.
+idea what kind of mechanical issues this could result in down the road. My
+confidence in my extended warranty has also gone down the drain, because if
+anything fails and can be shown to have signs of accident damage, even if it's
+very minor, then it won't be covered.
 
 I made it clear that I wanted them to take the car back and refund me the entire
 purchase price including the extended warranty, 3M treatment, and taxes I paid.
-This doesn't even account for the hundreds of dollars I had already put into the
-car (mud flaps, floor mats, air filter, etc).  We argued for a bit but he told
-me that there was no one at the dealership who could make that decision at that
-time, and that he'd get the general manger to call me back the next day before
-noon. I asked him to tell the GM that I would be talking to an attorney if I
-don't get the answer I want, and left.
+That didn't even account for the hundreds of dollars I had already put into the
+car (mud flaps, floor mats, air filter, etc); I didn't care, I just wanted to
+cancel the transaction and be done with it.  We argued for a while, but it was
+fairly late on Friday afternoon and he told me that there was no one at the
+dealership who could make that decision at that time. He said that he'd get the
+general manger to call me back the next day before noon. I asked him to tell the
+GM that I would be talking to an attorney if I don't get the answer I want, and
+left. From this point until the beginning of June, I completely stopped driving
+the car, as I wanted to ensure the strength of my case by minimizing the number
+of miles I put on the car.
 
-On Saturday I had plans to go hiking, and I didn't want to cancel them just for
-a phone call that probably wouldn't go anywhere, so I called the dealership
+That Saturday I had plans to go hiking, and I didn't want to cancel them just
+for a phone call that probably wouldn't go anywhere, so I called the dealership
 early in the morning.  Ken wasn't there yet, but I left a message for him saying
 that I may not be available to answer the phone but that he could leave me a
 message.  Nobody called me on Saturday, and in fact I haven't spoken to Ken at
-all since that Friday, the 3rd of May.  On Monday, the 7th, I called back and
-asked to speak to the general manager,
-[James Capestany](http://www.linkedin.com/pub/james-capestany/11/b84/772).
-I ended up having more or less the same conversation with him that I had with
-Ken.  He was and is adamant that the dealership didn't know that the car was in
-an accident, and further, that it's not their responsibility to know.  He
-pointed out that the salespeople do not have mechanical qualifications.  I asked
-him why his _technicians_ failed to thoroughly inspect a car which costs upwards
-of $30,000 when they took it as a trade-in.  He gave me a completely
-unsatisfactory answer which I don't quite recall.  I told him that I've read the
-sale contract, including the provision for trade-ins which states that the party
+all since that Friday, the 3rd of May.  On Monday, the 7th of May, I called back
+and asked to speak to the general manager,
+[James Capestany](http://www.linkedin.com/pub/james-capestany/11/b84/772).  I
+ended up having more or less the same conversation with him that I had with Ken.
+He was and is adamant that the dealership didn't know that the car was in an
+accident, and further, that it's not their responsibility to know.  He pointed
+out that the salespeople do not have mechanical qualifications.  I asked him why
+his _technicians_ failed to thoroughly inspect a car which costs upwards of
+$30,000 when they took it as a trade-in.  He gave me a completely unsatisfactory
+answer which I don't quite recall.  I told him that I had read the sale
+contract, including the provision for trade-ins which states that the party
 trading in the car warrants that it has not had any undisclosed damage requiring
-bodywork, and asked why he's screwing me instead of taking the car back and
+bodywork, and asked why he was screwing me instead of taking the car back and
 going after the person who clearly violated that contract when he traded it in.
 I don't recall his answer to this question either, except insofar as it also
 being unsatisfactory.
 
-As Ken did, the James tried to convince me that the accident won't affect the
-resale value of the car that badly.  I said that if he's confident that that's
-the case, he should have no problem with me getting it appraised by another
+As Ken did, the James tried to convince me that the accident wouldn't affect the
+resale value of the car that badly.  I said that if he were confident that that
+was the case, he should have no problem with me getting it appraised by another
 Subaru dealership and then having Walker's compensate me for the difference in
 value.  He replied, somewhat angrily I think, "No, I'm not gonna do that."  I
-told him that I hold the dealership responsible for their failure to thoroughly
-investigate the car, and that I will be talking to a lawyer if they won't refund
-me or at least compensate me for the depreciation.  He stated that I could
-talk to a lawyer if I wanted to, but that the
+told him that I held the dealership responsible for their failure to thoroughly
+inspect the car, and that I would be talking to a lawyer if they wouldn't refund
+me or at least compensate me for the depreciation.  He stated that I could talk
+to a lawyer if I wanted to, but that the
 [RCW (i.e. state law) on the matter](http://apps.leg.wa.gov/rcw/default.aspx?cite=46.70.180)
-says that they are only liable if they don't disclose damage that they knew
-about, and he reiterates that they did not know.  Even to this date, I am unsure
-of whether or I believe that. I am a firm believer in Hanlon's razor ("Never
-attribute to malice that which is adequately explained by stupidity"), but the
-odds I calculated above make me incredulous that Kay didn't actually have some
-record of the accident, in which case they obviously would have to have known.
+states that they are only liable if they don't disclose damage that they know
+about, and he reiterated that they did not know.
+
+Even to this date, I am unsure of whether or I believe that. I am a firm
+believer in Hanlon's razor ("Never attribute to malice that which is adequately
+explained by stupidity"), but the odds I calculated above make me incredulous
+that Kay didn't actually have some record of the accident, in which case they
+obviously would have to have known. The dealership has shown me, as "proof" that
+they didn't know, copies of reports run in December of 2012 which indicated that
+the car had a clean record. But still, I'm incredulous that _nobody_ noticed
+the damage before I took the car to Eastside Subaru. The technicians at Walker's
+should have done a thorough inspection as Ken and Jan assured me they did, so
+either someone lied about the damage, or their technicians neglected to do their
+duty, or they are incompetent. And what of the other customers who must have
+looked at the vehicle before I did? When I was selling my Civic after I bought
+the STI, two of the three people who test drove it had some mechanical
+experience and identified some potential issues with the vehicle that I wasn't
+aware of. Did nobody more knowledgeable than I look at this STI and notice the
+damaged parts?
 
 Either way, I told James that I would be talking to a lawyer.  He told me that
 he'd try to get in touch with the previous owner of the vehicle, and that he'd
@@ -468,20 +500,21 @@ pull up the repair order from when it was first traded in to see if they had any
 indication that the car may have been in an accident. Ultimately he wasn't able
 to get in touch with the previous owner, but I'm not sure what difference it
 would have made. If that guy had any common sense whatsoever, he would have lied
-about the accident since knowingly trading it in without disclosing it is a
-violation of the trade in contract.  And even if he had told the truth, what
-then? Would Walker's have sued him if _he_ refused to compensate me? I doubt it.
+about the accident since knowingly trading the car in without disclosing the
+accident is a violation of the trade in contract.  And even if he had told the
+truth, what then? Would Walker's have sued him if _he_ refused to compensate me?
+I doubt it.
 
 Later that same day, James called back. He asked me to explain again what
 Eastside Subaru told me about the air conditioning.  When I mentioned that they
-said they couldn't warranty the part because of accident damage, he says that
+said they couldn't warranty the part because of accident damage, he said that
 that's not true and he didn't know why they'd say that.  He said that they just
-changed management and probably didn't know what they're doing, and that
-Walker's has been in business for 25 years.  He told me if I bring the car down
-he will replace the AC condenser under warranty.  I told him that that was not
-my primary concern and that it won't be good enough.  He accepted that, but
-pointed out that I still needed to get the AC fixed and that he could have it
-done under warranty.
+changed management and probably didn't know what they were doing, and that
+Walker's has been in business for 25 years.  He told me if I brought the car
+down he would replace the AC condenser under warranty.  I told him that that was
+not my primary concern and that it wouldn't be good enough.  He accepted that,
+but pointed out that I still needed to get the AC fixed and that he could have
+it done under warranty.
 
 Obviously what James told me about the condenser being replaceable under
 warranty was not true. I looked it up after I got off that call and
@@ -501,7 +534,7 @@ one thing, it was open to interpretation and it was a matter of customer service
 and reputation to do warranty replacements in situations like this.
 
 Maybe I'm splitting hairs at this point, but what James was offering was _not a
-warranty replacement_, and I know that for a fact because I as part of the
+warranty replacement_, and I know that for a fact because as part of the
 eventual resolution of this nightmare, I did get Walker's to replace the
 AC condenser, and the amount charged is listed as "Internal" rather than
 "Warranty" on the service record. I do think the distinction is important
@@ -527,11 +560,11 @@ very busy. Thus, there's no guarantee that you'll get a _good_ lawyer.
 I do not think that I got a good lawyer.
 
 I had to call several lawyers before I was able to find one who would take on
-the case. One of the lawyers who called me back couldn't take the case, but he
-provided me with some basic information.  He said that he thought I had a good
-case under the Washington state consumer protection law.  He said that the
-dealership's failure to thoroughly inspect the car before selling it and
-claiming it had not been in an accident could be considered an unlawful
+the case. One of the lawyers who called me back but couldn't take the case was
+kind enough to provide me with some basic information.  He said that he thought
+I had a good case under the Washington state consumer protection law.  He said
+that the dealership's failure to thoroughly inspect the car before selling it
+and claiming it had not been in an accident could be considered an unlawful
 "deceptive act" under
 [RCW 19.86.020](http://apps.leg.wa.gov/rcw/default.aspx?cite=19.86.020).
 He also pointed out that the Consumer Protection Act allows for triple damages
@@ -540,10 +573,11 @@ discussions with James, but I never actually mentioned it to him the lawyer who
 eventually took on the case didn't think much of its applicability.
 
 In fact, the lawyer I did eventually end up hiring didn't initially think that I
-had a case at all. She was essentially in agreement with James that the
-dealership would only be liable if they knew about the accident before selling
-the car to me, and since we would likely not be able to prove that even if it
-were true[^arbitration], we would have no case.
+had a case at all (but didn't tell me this until I had already hired her). She
+was essentially in agreement with James that the dealership would only be liable
+if they knew about the accident before selling the car to me, and since we would
+likely not be able to prove that even if it were true[^arbitration], we would
+have no case.
 
 I did some research of my own and discovered a few other laws which might be
 applicable. I won't bother mentioning all of them, but I felt that the strongest
@@ -583,7 +617,7 @@ certainly appreciate that.
 
 The complaint to the Attorney General's office seemed to have more of an effect.
 Not long after Walker's received it, James called me back and offered to write
-me a cheque to cover some of the depreciation as well as fixing the air
+me a cheque to cover some of the depreciation in addition to fixing the air
 conditioner, as long as I would sign a document releasing the dealership from
 all liability relating to the matter. Given that I had been fighting with the
 dealership for a month and that my lawyer had gone <acronym title="Away WithOut
@@ -595,22 +629,24 @@ accident, the fact that the damage was almost completely repaired, and the
 rarity of the STI sedan, I was told that the depreciation would probably not be
 more than $1,000 to $1,500. This seemed low to me, but I discussed it with a
 friend who is very knowledgeable about cars and he felt that it was not
-unreasonable. I took the car back to Walker's on the 4th of June, and they ended
-up fixing the AC condenser and air intake duct and giving me a cheque for
-$1,000.
+unreasonable. If you disagree with this, please **do not** tell me, because at
+this point I don't want to know. (Ignorance is bliss.) I took the car back to
+Walker's on the 4th of June, and they ended up fixing the AC condenser and air
+intake duct and giving me a cheque for $1,000.
 
 In the interest of fairness I will say that I did have a fairly positive
 experience at the Walker's Renton Subaru service department when I took my
 vehicle in for the repairs. The service advisor I dealt with,
 [Brad Hallock](http://www.dealerrater.com/sales/Brad-Hallock-review-33465/), was
 very courteous and helpful. Of course, that doesn't come close to excusing the
-rest of my experience with Walker's, particularly given that it was the Subaru
-service technicians who ostensibly inspected the vehicle when they bought it.
-While I was picking up my car after the service was finished, I overheard
-another service advisor talking about the "world class inspection" that they
-were going to do for another customer. I was tempted to interrupt and tell the
-customer about my experience with their "world class inspection," but to my
-shame, I'm too non-confrontational.
+rest of my experience with the dealership, particularly given that it was the
+Walker's Renton Subaru service technicians who ostensibly inspected the vehicle
+when they bought it.  While I was picking up my car after the service was
+finished, I overheard another service advisor talking about the "world class
+inspection" that they were going to do for another customer. I was tempted to
+interrupt and tell the customer about my experience with their "world class
+inspection," but to my shame, I'm too non-confrontational to do something like
+that. It's a flaw that I need to work on.
 
 I am fairly satisfied with the compensation I received, and overjoyed to be able
 to put this ordeal behind me. At this point I consider the matter to be closed.
@@ -623,24 +659,24 @@ issue in the month between my discovering the problem and them finally giving me
 some compensation. (Otherwise I would not be writing this, of course.) I spent
 far too much time fighting with them. At every juncture I encountered
 dishonesty, self-interest, and a complete refusal to accept responsibility for
-the complete failure of their technicians to thoroughly inspect the car. Between
+the failure of their technicians to thoroughly inspect the car. Between
 the time I spent playing telephone tag with the general manager, the time to
 find and hire a lawyer, the time spent on filing complaints with third parties,
 and the disruption of my schedule resulting from the loss of use of my vehicle
 for nearly a month[^time], I probably wasted more than a dozen hours on this,
 and it certainly impacted my productivity at work as well.
 
-Ken and Jan repeatedly assured me of the quality of Walker's inspections and
-servicing, and the qualifications of their technicians, when I was buying the
-car. When it turned out that those technicians had missed significant accident
-damage which was still present on the vehicle and should have been easily
-discoverable by a qualified technician, nobody at the dealership would stand
-behind those claims of excellence; they repeatedly insisted that they could not
-have known and were not responsible. When I asked why they would take such an
-expensive vehicle as a trade-in without doing a thorough inspection, I was told
-that since the CarFax didn't indicate any problems, they had no reason to
-suspect that there would be anything wrong with the vehicle. I find this
-appalling, though I guess I shouldn't find it shocking.
+When I was buying the car, Ken and Jan repeatedly assured me of the quality of
+Walker's inspections and servicing, and the qualifications of their technicians.
+When it turned out that those technicians had missed significant accident damage
+which was still present on the vehicle and should have been easily discoverable
+by a qualified technician, nobody at the dealership would stand behind those
+claims of excellence; they repeatedly insisted that they could not have known
+and were not responsible. I find this appalling, though I guess I shouldn't find
+it shocking. When I asked why they would take such an expensive vehicle as a
+trade-in without doing a thorough inspection, I was told that since the CarFax
+didn't indicate any problems, they had no reason to suspect that there would be
+anything wrong with the vehicle.
 
 I don't understand why I had to fight with the dealership about this _at all_.
 They should have just refunded the sale completely as soon as I raised the issue
@@ -658,22 +694,65 @@ self-interest. I expect cold, detached, exploitative behaviour from large
 corporations, but Walker's really isn't that large, and these were _real people_
 with whom I had face-to-face conversations, who had the power to do the right
 thing but were unwilling to. The whole experience has made me more cynical.
-
 Moreover, the feeling I hate more than any other is powerlessness, and I found
 it simultaneously frustrating and discouraging to be in a situation where for a
 long time I seemed to have practically no recourse against the dealership for
 the losses I'd suffered due to their incompetence.
 
 I'll never again enjoy my car as much I did for the first two months I owned it,
-although people have reassured me that Subarus are built like tanks, I'm not
+and although I've been reassured that Subarus are built like tanks, I'm not
 sure I'll be able to completely get past the paranoia that every tiny creak or
 shudder might be forewarning of some impending catastrophic failure. But on the
-bright side, I do still love the car.
+bright side, I do still love the car. I was worried that I'd hate it after all
+of this because of the negative associations with all the time I wasted and
+frustration I experienced, but that isn't the case. It's still a ton of fun to
+drive. I'm looking forward to finally taking it on its inaugural road trip, to
+modding it and making it my own, and to spending many hours "going Subaruing."
 
-With every negative experience comes the silver lining of life lessons to be
-learned, and this is no different. 
+And, with every negative experience comes the silver lining of life lessons to be
+learned, and this is no different. Here are my takeaways from this:
 
-[^manual]: The STI is only available with a six-speed manual transmission, but I was specifically looking for a manual car anyway. One might wonder why I'd seek out a manual even when I hardly knew how to drive them.  The answer is that I'd always been intrigued by manual transmissions, and after taking a quick lesson I was set on buying a manual because I found it to be a lot of fun. Plus, without simply jumping in and buying a manual car, one has limited opportunity to learn&mdash;you can only spend so much time borrowing friends' vehicles, and lessons are expensive.  Unfortunately, being inexperienced at driving manual may have influenced me to make the purchase faster than I otherwise might have, as it's embarrassing to go on a test drive and stall the car several times, and I was worried that if I couldn't borrow a car to practice before subsequent test drives I'd do an even worse job of it.
+*   A clean record from CarFax and other similar services is completely
+    meaningless. Anything not reported to insurance or the police will not show
+    up on a CarFax report, and in my case, I have reason to believe that an
+    insurance claim and police report _were_ made for the accident my vehicle
+    was in, and CarFax _still_ shows nothing[^CarFax].
+*   Mechanics can be similarly unreliable. Ideally one should have a trusted
+    mechanic whom they've dealt with previously. I haven't lived in Washginton
+    long enough to know any mechanics well, so I should have asked friends who
+    are knowledgeable about cars for recommendations instead of just picking one
+    based on Yelp reviews.
+*   Even if you don't know much about cars, there are certain things you can
+    look for under the hood when buying a used car which may indicate that the
+    vehicle was in an accident or had bodywork done. Check for tool marks (i.e.
+    missing paint) on the bolts under the hood. Check for damaged plastic
+    components. Some vehicles (although I don't think mine is among them,
+    unfortunately) have the VIN stamped on major components; if any of the VINs
+    are missing or don't match, something is up.
+*   I'm not sure if this is a fair generalization based on this one experience,
+    but if I were to buy another used car I would be very suspicious of vehicles
+    which are overdue for important maintenance, as it may indicate that the
+    seller did not thoroughly inspect the vehicle or does not care to maintain
+    it himself.
+*   I am by no means an expert negotiator so take this with a grain of salt as
+    well, but I suspect that immediate face-to-face negotiation is not the best
+    way to go. It suggests a desire to buy a vehicle quickly, and the more time
+    one spends negotiating, the less willing one will be to walk away due to the
+    lost investment of time. It is probably better to tell the dealership what
+    you are willing to pay and immediately leave if they won't meet that demand.
+    Either they'll call you back with a good offer, or you can continue to look
+    elsewhere.
+*   Buying a new car means suffering immediate depreciation, but it's also much
+    less likely to result in nasty surprises like this. Many states have lemon
+    laws to protect new car buyers from troublesome cars, but these rarely apply
+    to used cars. Consider whether this tradeoff is worthwhile. Personally, I'll
+    definitely be looking at new cars next time I buy a vehicle.
+*   And most importantly, when legal options don't pan out, the best way to get
+    what you want from a corporation may simply be to be persistent and annoying
+    enough that it becomes worth their money to solve your issue just to make
+    you go away.
+
+[^manual]: The STI is only available with a six-speed manual transmission, but I was specifically looking for a manual car anyway. One might wonder why I'd seek out a manual even when I hardly knew how to drive them.  The answer is that I'd always been intrigued by manual transmissions, and after taking a quick lesson I was set on buying a manual because I found it to be a lot of fun. Plus, without simply jumping in and buying a manual car, one has limited opportunity to learn&mdash;you can only spend so much time borrowing friends' vehicles, and lessons are expensive.  (For those of you outside of North America, manuals are fairly rare here, accounting for less than 7% of yearly sales. They can't be rented at all because most people, particularly younger people, don't know how to drive them, so the rental companies would be constantly replacing burnt-out clutches and ground up gears if they did offer manual vehicles.) Unfortunately, being inexperienced at driving manual may have influenced me to make the purchase faster than I otherwise might have, as it's embarrassing to go on a test drive and stall the car several times, and I was worried that if I couldn't borrow a car to practice before subsequent test drives I'd do an even worse job of it.
 
 [^wife]: Between the first round of negotiation and the second, my friend had to leave due to a commitment&mdash;not to mention the excruciating tedium of sitting their listening to me negotiate the price of a car. My wife joined me when I went back to the dealership.
 
@@ -684,3 +763,5 @@ learned, and this is no different.
 [^arbitration]: The sale contract contains an arbitration clause, and there is no discovery process in arbitration, so even if the dealership has evidence of the accident we would likely not have been able to get it.
 
 [^time]: This was admittedly perhaps an unnecessary step on my part, but at the time I felt that it was the safest thing to do, and it would never have been a problem had the dealership not sold me a damaged vehicle in the first place.
+
+[^CarFax]: With my luck it will probably show up on the report around the time I go to sell the car... not that it makes much of a difference, since as I mentioned previously, I refuse to lie prospective buyers about my knowledge of the accident.

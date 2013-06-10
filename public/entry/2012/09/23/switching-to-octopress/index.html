@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="Backstory I&#8217;ve been using Wordpress on various sites that I&#8217;ve maintained for probably the
+  <meta name="description" content="Backstory I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
 better part of a decade now. By most metrics, &hellip;">
   
 
@@ -128,20 +128,20 @@ better part of a decade now. By most metrics, &hellip;">
 
 <div class="entry-content"><h2>Backstory</h2>
 
-<p>I&#8217;ve been using Wordpress on various sites that I&#8217;ve maintained for probably the
-better part of a decade now. By most metrics, it&#8217;s still very good blogging
-software; I&#8217;m not aware of any self-hostable alternative that can match
+<p>I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
+better part of a decade now. By most metrics, it&rsquo;s still very good blogging
+software; I&rsquo;m not aware of any self-hostable alternative that can match
 Wordpress in terms of the union of ease of use, feature set and flexibility that
-it provides. That said, lately I&#8217;ve been feeling that perhaps Wordpress is no
+it provides. That said, lately I&rsquo;ve been feeling that perhaps Wordpress is no
 longer the right choice for my specific needs. These are my problems with it:</p>
 
 <ul>
-<li>It&#8217;s not very good for sharing source code. There are a multitude of plugins
+<li>It&rsquo;s not very good for sharing source code. There are a multitude of plugins
 available for syntax highlighting; the best of them seems to be
-<a href="http://alexgorbatchev.com/SyntaxHighlighter/">Alex Gorbatchev&#8217;s Syntax Highlighter</a>,
+<a href="http://alexgorbatchev.com/SyntaxHighlighter/">Alex Gorbatchev&rsquo;s Syntax Highlighter</a>,
 which is used by
 <a href="http://wordpress.com">Wordpress.com</a> and is also what I was using on my blog.
-But I&#8217;ve had problems with the Wordpress converting some of the characters in
+But I&rsquo;ve had problems with the Wordpress converting some of the characters in
 my code to HTML entities (e.g. <code>&amp;amp;</code> for &amp; ) which are then printed
 literally by the plugin.</li>
 <li>I find that more often than not Wordpress&#8217; visual editor is
@@ -154,42 +154,42 @@ Wordpress is smart enough to not insert extra paragraph tags if you do wrap
 your own paragraphs with them. Still, it leads to some unpredictability with
 regard to how a post with hand-written HTML will actually be rendered.</li>
 <li>A similar but worse problem occurs when you try to insert extra line breaks.
-Even if you&#8217;re using the raw HTML editor to insert <code>&lt;br /&gt;</code> tags, Wordpress
+Even if you&rsquo;re using the raw HTML editor to insert <code>&lt;br /&gt;</code> tags, Wordpress
 will just get rid of them unless you insert additional non-breaking spaces
 (<code>&amp;nbsp;</code>) so that it thinks the lines are non-empty. But! If you switch back
 to the visual editor for any reason, even your <code>&amp;nbsp;&lt;br /&gt;</code> lines will be
-wiped out. Even for &#8220;average&#8221; users I can&#8217;t think of any situation in which
-this &#8220;feature&#8221; would be desirable. If I put a bunch of extra newlines into
-something I&#8217;m writing, it is because <em>I want exactly that many newlines.</em> I
-tend to not have much patience for software that thinks it&#8217;s smarter than
+wiped out. Even for &ldquo;average&rdquo; users I can&rsquo;t think of any situation in which
+this &ldquo;feature&rdquo; would be desirable. If I put a bunch of extra newlines into
+something I&rsquo;m writing, it is because <em>I want exactly that many newlines.</em> I
+tend to not have much patience for software that thinks it&rsquo;s smarter than
 I am; that is why I still write most of my code in <a href="http://www.vim.org/">Vim</a>
 and use hand-written makefiles in an age of
 <acronym title="Integrated Development Environment">IDE</acronym>s.</li>
-<li>Never-ending updates. It seems like every time I log in there&#8217;s a new update
+<li>Never-ending updates. It seems like every time I log in there&rsquo;s a new update
 to download. Wordpress has updates down to a one-click install process, so
-this wouldn&#8217;t be much of a problem except for the fact that
+this wouldn&rsquo;t be much of a problem except for the fact that
 every time I have to update Wordpress warns me that I should back up my
 database first. Why? Is there a significant possibility that the update might
-break everything? It&#8217;s probably just a
+break everything? It&rsquo;s probably just a
 <acronym title="Cover Our Asses">COA</acronym>, and I back up my database
-daily anyway, but this whole aspect of Wordpress makes me uneasy and I don&#8217;t
-want to have to deal with it any more. Even though I&#8217;m covered for backups,
+daily anyway, but this whole aspect of Wordpress makes me uneasy and I don&rsquo;t
+want to have to deal with it any more. Even though I&rsquo;m covered for backups,
 recovering from a botched update would undoubtedly be a nightmare.</li>
 <li><a href="http://en.wikipedia.org/wiki/WordPress#Vulnerabilities">Vulnerabilities.</a> One
 of the big reasons that Wordpress is updated so frequently is that it has a
 long history of security vulnerabilities, and more are still being discovered
-and patched. This also means that if I don&#8217;t log in frequently enough to
-download new security patches, I&#8217;m at risk of having my site compromised,
+and patched. This also means that if I don&rsquo;t log in frequently enough to
+download new security patches, I&rsquo;m at risk of having my site compromised,
 loaded up with malware and blacklisted by Google.</li>
-<li><p>It&#8217;s written in PHP. <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP sucks.</a>
-(I can&#8217;t link to that enough.) I don&#8217;t want to be dogmatic about technology
-choices; good software is good software regardless of what language it&#8217;s
+<li><p>It&rsquo;s written in PHP. <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP sucks.</a>
+(I can&rsquo;t link to that enough.) I don&rsquo;t want to be dogmatic about technology
+choices; good software is good software regardless of what language it&rsquo;s
 written in, and my primary desire is always to use whatever is best for the
-task at hand. But lately I&#8217;ve been pretty vocal, both here and in person with
+task at hand. But lately I&rsquo;ve been pretty vocal, both here and in person with
 friends and colleagues, about how bad PHP is. Continuing to rely on it
 undermines my credibility on the issue and makes me a bit of a hypocrite.</p>
 
-<p>And while this might seem trivial or pedantic, it&#8217;s
+<p>And while this might seem trivial or pedantic, it&rsquo;s
 actually one of the root causes of almost all of the issues above; the weird
 HTML handling, inappropriate entity conversion, and security issues are all
 due, at least in part, to bad design patterns popularized and perpetuated by
@@ -200,12 +200,12 @@ would not be plagued by SQL
 injection exploits as Wordpress has been historically and probably continues
 to be.</p></li>
 <li>Wordpress supports themes so that you can customize the apperance of your
-site, but editing them kind of sucks, because they&#8217;re all written in PHP
+site, but editing them kind of sucks, because they&rsquo;re all written in PHP
 instead of a proper templating language. Years ago I actually wrote a lot of
 PHP, but I still find Wordpress templates pretty ugly and difficult to
 understand; they seem more verbose than should really be necessary for what
 they accomplish, and have, on average, more <code>&lt;?php ?&gt;</code> sections than a
-keyboard has keys. (That analogy sucked. Sorry, it&#8217;s late. What I&#8217;m trying to
+keyboard has keys. (That analogy sucked. Sorry, it&rsquo;s late. What I&rsquo;m trying to
 say is that there are a lot of them.)</li>
 </ul>
 
@@ -213,8 +213,8 @@ say is that there are a lot of them.)</li>
 <h2>Octopress</h2>
 
 <p>So recently I got it into my head to switch over to
-<a href="http://octopress.org/">Octopress.</a> Octopress bills itself as &#8220;a blogging
-framework for hackers,&#8221; which is an attractive description given my
+<a href="http://octopress.org/">Octopress.</a> Octopress bills itself as &ldquo;a blogging
+framework for hackers,&rdquo; which is an attractive description given my
 <a href="/categories/coding">predilections.</a> It uses
 <a href="https://github.com/mojombo/jekyll">Jekyll</a> to generate static pages from a set
 of templates and content written in
@@ -224,19 +224,19 @@ advantages:</p>
 
 <ul>
 <li>Rendering static pages once and serving dynamic content via AJAX is much more
-efficient than rendering entire pages dynamically for each visitor. This isn&#8217;t
+efficient than rendering entire pages dynamically for each visitor. This isn&rsquo;t
 really a concern for me because this is a very low-traffic site, and I have an
 entire quad-core <acronym title="Virtual Private Server">VPS</acronym>
-doing basically nothing besides serving this site. That said, it&#8217;s nice to
-know that when I start doing other stuff on my VPS, I won&#8217;t be contending for
+doing basically nothing besides serving this site. That said, it&rsquo;s nice to
+know that when I start doing other stuff on my VPS, I won&rsquo;t be contending for
 cycles with PHP and MySQL, so the site will always be very responsive. Plus,
 wow does the site load fast now (once you have that huge header image cached,
-anyway. I&#8217;ll fix that soon.) Also not a huge concern for a blog, but I
-didn&#8217;t expect the difference to even be noticeable, and it definitely is.</li>
+anyway. I&rsquo;ll fix that soon.) Also not a huge concern for a blog, but I
+didn&rsquo;t expect the difference to even be noticeable, and it definitely is.</li>
 <li>Static pages significantly decrease the attack surface of the site; there is
 no database, so no SQL injection to worry about, and no scripts are being
 executed, so <a href="http://www.kb.cert.org/vuls/id/520827">PHP vulnerabilities</a>
-aren&#8217;t a concern.</li>
+aren&rsquo;t a concern.</li>
 <li>Static pages means I get a nicely organized, easily navigable directory
 structure instead of God-awful rewrite rules.</li>
 <li>The default Octopress theme is very well designed and well-suited to
@@ -247,21 +247,21 @@ any screen resolution, including on mobile devices.</li>
 <li>Octopress has pretty nice built in Github and Twitter widgets.</li>
 <li>Comments are handled by <a href="http://disqus.com/">Disqus</a>, which provides a nicer
 comment system than Wordpress&#8217; built in comments.  I was using Disqus anyway
-via a plugin, but now I don&#8217;t have to worry about keeping the Disqus comments
+via a plugin, but now I don&rsquo;t have to worry about keeping the Disqus comments
 synced with the Wordpress database. Incidentally, Disqus provides a very nice
 system to migrate comments to new URLs by uploading a
 <acronym title="Comma Separate Value">CSV</acronym> file mapping old URLs to
-new URLs. They&#8217;ve really thought of everything, so props to them for providing
+new URLs. They&rsquo;ve really thought of everything, so props to them for providing
 a great service.</li>
 <li>All of the blog content is stored on my local machine, which means I can write
 posts in a disconnected environment using Vim, version control them with Git,
-and then push them to my server when they&#8217;re finished. I have a nice
+and then push them to my server when they&rsquo;re finished. I have a nice
 deployment setup where everything is stored in a Git repository on the server
 and a post-commit hook copies the updated content to the web root for the blog
 subdomain. All I have to do is <code>git push</code> and the blog is instantly updated.</li>
 <li>Since Wordpress uses hand-written SQL queries, it is tightly coupled with
-MySQL and doesn&#8217;t support any other database. PHP is similarly tied to Apache;
-while it&#8217;s possible to run it with other servers, it&#8217;s not particularly easy.
+MySQL and doesn&rsquo;t support any other database. PHP is similarly tied to Apache;
+while it&rsquo;s possible to run it with other servers, it&rsquo;s not particularly easy.
 By ditching Wordpress, I can also get rid of Apache, PHP and MySQL. This is
 nice since I was planning to use nginx and Postgres for my
 <a href="/entry/2012/09/14/social-networks-and-content-ownership/">photo album project</a>
@@ -270,25 +270,25 @@ anyway.</li>
 
 
 <p>Those are, give or take a few minor considerations, my reasons for switching
-blogging platforms. I&#8217;d be remiss to not mention that Octopress does have some
-noteworthy disadvantages even for &#8220;power users&#8221; to whom the above advantages
+blogging platforms. I&rsquo;d be remiss to not mention that Octopress does have some
+noteworthy disadvantages even for &ldquo;power users&rdquo; to whom the above advantages
 might sound attractive.
 <a href="http://alblue.bandlem.com/2012/02/disadvantages-of-octopress.html" title="Disadvantages of Octopress - AlBlue's Blog">This post</a>
 does a good job cataloguing a few of them. On the balance, though, I feel like
-it&#8217;s a good choice for me, and although the switch took me considerably longer
-than I expected (the better part of an weekend where I&#8217;d expected an evening or
-so of work), I&#8217;m pretty happy that I did it.</p>
+it&rsquo;s a good choice for me, and although the switch took me considerably longer
+than I expected (the better part of an weekend where I&rsquo;d expected an evening or
+so of work), I&rsquo;m pretty happy that I did it.</p>
 
-<p>In an upcoming post, I&#8217;ll discuss the actual process of reconfiguring my server
+<p>In an upcoming post, I&rsquo;ll discuss the actual process of reconfiguring my server
 and importing all of my content (which is what I had planned to do before this
-turned into a 1,600 word diatribe against Wordpress.) For now, if I&#8217;ve inspired
-you and you&#8217;re thinking about switching your own Wordpress site to Octopress,
+turned into a 1,600 word diatribe against Wordpress.) For now, if I&rsquo;ve inspired
+you and you&rsquo;re thinking about switching your own Wordpress site to Octopress,
 you can take a look at the
 <a href="https://github.com/mlindgren/wp2octopress"><acronym title="Extract, Transform, Load">ETL</acronym> I wrote</a>
 to ease the import process.</p>
 
 <p><sup>1</sup> <small>Did you know that Markdown was created by John Gruber? Until very
-recently, I didn&#8217;t. And here I thought all he did was play apologist for
+recently, I didn&rsquo;t. And here I thought all he did was play apologist for
 Apple.</small></p>
 </div>
 
@@ -363,6 +363,11 @@ Apple.</small></p>
   <ul id="recent_posts">
     
       
+      <li class="post             category-Personal            ">
+        <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
+      </li>
+    
+      
       <li class="post             category-Coding            ">
         <a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a>
       </li>
@@ -380,11 +385,6 @@ Apple.</small></p>
       
       <li class="post             category-Coding            ">
         <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
       </li>
     
   </ul>
