@@ -569,8 +569,8 @@ and claiming it had not been in an accident could be considered an unlawful
 [RCW 19.86.020](http://apps.leg.wa.gov/rcw/default.aspx?cite=19.86.020).
 He also pointed out that the Consumer Protection Act allows for triple damages
 up to a maximum of $25,000, which might have been useful leverage in my
-discussions with James, but I never actually mentioned it to him the lawyer who
-eventually took on the case didn't think much of its applicability.
+discussions with James, but I never actually mentioned it to him  because the
+lawyer who eventually took on the case didn't think much of its applicability.
 
 In fact, the lawyer I did eventually end up hiring didn't initially think that I
 had a case at all (but didn't tell me this until I had already hired her). She
