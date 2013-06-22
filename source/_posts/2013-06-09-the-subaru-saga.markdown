@@ -131,8 +131,8 @@ seemed reasonable at the time.
 
 I spent quite a long time negotiating with Ken, so I want to take some time to
 describe his personality and style as a salesperson. I can't help but view him
-as a reasonably nice guy. He seemed to be friendly and in posession of a good
-sense of humor, and was very patient with my less than stellar manual driving.
+as a reasonably nice guy. He seemed to be friendly and in possession of a good
+sense of humour, and was very patient with my less than stellar manual driving.
 That said, he was subtly pushing me to spend more than I wanted to, and he gave
 me misinformation and made statements of dubious veracity in several instances
 (I hesitate to say "lied").  For instance, when I told him I didn't _need_ a new
@@ -283,7 +283,7 @@ I was too relieved to really think too much of it at the time, and anyway the
 contract had already been signed at this point, but knowing what I do now this
 is obviously _hugely_ suspicious.  Kay strikes me as a nice person, and I mean
 genuinely nice rather than in a salesperson sort of way where niceness is
-necessistated as a means of being persuasive.  I really want to believe that she
+necessitated as a means of being persuasive.  I really want to believe that she
 actually did just type in the wrong VIN and wasn't lying to me.  But... well,
 let's do some math.
 
@@ -396,11 +396,11 @@ condenser itself was quite obviously bent.  There are tool marks on the bolts
 that hold on both of the front quarter panels, indicating that they've been
 removed to be repaired or replaced.  There's an AC recharge sticker on the
 inside of the hood which appears to have been glued on, not very well, so it's
-peeling off; I believe the techician also said that he thought the whole hood
+peeling off; I believe the technician also said that he thought the whole hood
 had likely been replaced.  The power steering fluid reservoir attaches to the
 body of the vehicle in two places and one of those was cracked. The radiator
 support bar is also bent. It's slight enough that the untrained eye would
-probably not notice it, but the techician at Eastside told me, and I am very
+probably not notice it, but the technician at Eastside told me, and I am very
 confident that these were his exact words[^legal], that Walker's "had to have
 known" that the vehicle was in an accident.
 
