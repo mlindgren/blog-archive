@@ -9,8 +9,8 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="Puzzle Panel What is Puzzle Panel? Puzzle Panel is a match-three puzzle game I developed for the iPhone and iPod
-Touch.  Its design is based on & &hellip;">
+  <meta name="description" content="Puzzle Panel What is Puzzle Panel? Puzzle Panel is a match-three puzzle game, designed based on the popular &ldquo;puzzle
+league&rdquo; gameplay &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -54,6 +54,41 @@ Touch.  Its design is based on & &hellip;">
 
 -->
 <link rel="stylesheet" type="text/css" href="/stylesheets/mlindgren_ca_museo700.css">
+
+<!-- Load jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery.noConflict(); // ender.js conflicts with jQuery
+</script>
+
+ <!-- Load FancyBox -->
+ <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" />
+ <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript">
+ </script>
+
+<!-- Fix FancyBox style for OctoPress -->
+<style type="text/css">
+  .fancybox-wrap { position: fixed !important; }
+  .fancybox-opened {
+    -webkit-border-radius: 4px !important;
+       -moz-border-radius: 4px !important;
+            border-radius: 4px !important;
+  }
+  .fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+</style>
+
+
+<!-- Custom Scripts -->
+<script language="Javascript" type="text/javascript">
+// ender.js gobbles jQuery's ready event: Use ender.js $ instead
+$(document).ready(function() {
+    jQuery(".fancybox").fancybox();
+});
+</script>
 
   
 
@@ -103,15 +138,18 @@ Touch.  Its design is based on & &hellip;">
   
   <h2>What is Puzzle Panel?</h2>
 
-<p>Puzzle Panel is a match-three puzzle game I developed for the iPhone and iPod
-Touch.  Its design is based on &ldquo;puzzle league&rdquo; style games. I have written a
-<a href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/">couple</a>
-<a href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/">posts</a> about its
+<p>Puzzle Panel is a match-three puzzle game, designed based on the popular &ldquo;puzzle
+league&rdquo; gameplay style, which I developed for the iPhone and iPod
+Touch in 2009.  Since its release on the iOS App Store in October of 2009, it
+has been downloaded over 3,000 times worldwide. I have written a
+couple posts (<a href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/">1</a>,
+<a href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/">2</a>) about its
 development.</p>
 
 <h2>Where can I get it?</h2>
 
-<p>Puzzle Panel is currently unavailable. Please check back later.</p>
+<p>Puzzle Panel is currently available for <strong>free</strong>
+<a href="https://itunes.apple.com/us/app/puzzle-panel/id332677513">on the iOS App Store</a>.</p>
 
 <h2>What about the source code?</h2>
 
@@ -293,23 +331,6 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
     });
   </script>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("lindgrenM", 5, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <p>Follow <a href="http://twitter.com/lindgrenM">@lindgrenM</a></p>
-  
 </section>
 
 
