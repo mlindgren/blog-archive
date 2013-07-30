@@ -1,30 +1,30 @@
 ---
 layout: post
 title: "Road Trip! Part I"
-date: 2013-07-21 21:44
+date: 2013-07-30 2:58
 comments: true
 categories: Personal
 published: false
 ---
 
-I try to go on at least one long road trip every year. I'm one of those people
-who actually enjoy driving, even for absurdly long stretches of time; anything
-up to 12 hours per day on the road is fairly comfortable for me, and even beyond
-that I don't find long trips all that tiring. I'd much, much rather drive 12
-hours in my car than take a two hour plane trip.
-
 I love visiting new places. I've lived in the United States for just over a year
-now, and one of the things I love about this country is how vast it is and how
+now, and one of my favourite things about this country is how vast it is and how
 many opportunities it presents for exploration. Canada is just slightly larger
 than the United States, but it's also very sparsely populated north of, say,
 Edmonton, so practically speaking I think one can explore much more of the
 States while still maintaining access to the comforts of civilization.
 
+To that end, I try to go on at least one long road trip every year. I'm also one
+of those people who actually enjoy driving, even for absurdly long stretches of
+time; anything up to 12 hours per day on the road is fairly comfortable for me,
+and even beyond that I don't find long trips all that tiring. I'd much, much
+rather drive 12 hours in my car than take a two hour plane trip.
+
 My new car was also begging to be broken in on a long road trip. Although I had
 a bit of a [rocky start with it](/entry/2013/06/09/the-subaru-saga/), all of the
 issues have now been sorted out (or at least as sorted out as they'll ever be),
-so it offered another compelling reason to take a long trip. So it was that I
-booked the 5th to 12th of July off of work and embarked on a 3,378 mile
+so it offered another compelling reason to take a long trip. And so it was that
+I booked the 5th to 12th of July off of work and embarked on a 3,378 mile
 (5,436km) drive from Redmond, Washington through Oregon, Idaho, and Nevada to
 Utah, and then back home through Arizona, Nevada, California and Oregon. Here's
 a map of my travels:
@@ -92,10 +92,10 @@ night in Ontario, Oregon.
 
 On the second day I drove through Idaho, Nevada and Utah. The tag line on
 Idaho's license plates is "Scenic Idaho," and while I don't doubt that it's true
-of some parts of the state, it's probably not referring to the southwestern bit
-of the state. Other than some cool gorges, there wasn't much to see. I stopped
-at Malad Gorge State Park to take a few photos, and then continued on to
-Wendover, Utah, where the Bonneville Salt Flats are located.
+of some parts of the state, it's probably not referring to the southwestern bit.
+Other than some cool gorges, there wasn't much to see. I stopped at Malad Gorge
+State Park to take a few photos, and then continued on to Wendover, Utah, where
+the Bonneville Salt Flats are located.
 
 I was looking forward to driving on the salt flats and trying to hit my car's
 top speed of 158mph (254km/h), but unfortunately it had been raining before I
@@ -107,60 +107,64 @@ apparently in some cases to the point that your vehicle becomes unrecoverable.
 I'll have to go back to the salt flats another time when they're dry, but at any
 rate, they were still very pretty and it was fun to get my car a bit dirty.
 
-I drove through Salt Lake City, which is absolutely beautiful. As I drove in
-from the west, the sunset painted the mountains to the east of the city
-brilliant red, and a thunderstorm in Provo to the south periodically lit the sky
-with flashes of lighting. Sadly, I wasn't able to find a vantage point to get
-any pictures of this, and as it was starting to get dark I was short on time. I
-stopped for dinner and then continued on to Price, Utah, where I spent the
-night.
+Continuing on from the Salt Flats, I drove through Salt Lake City, which is
+absolutely beautiful. As I drove in from the west, the sunset painted the
+mountains to the east of the city brilliant red, and a thunderstorm in Provo to
+the south periodically lit the sky with flashes of lighting. Sadly, I didn't
+have time to find a vantage point to get any pictures of this, as it was
+starting to get dark and I still had a few hours of driving ahead of me. I
+stopped for dinner in Salt Lake City and then continued on to Price, Utah, where
+I spent the night.
 
 {% gallery %}
-/images/utah-part1-album-29.jpg[/images/utah-part1-thumb-29.jpg]: Malad Gorge State Park, ID
-/images/utah-part1-album-30.jpg[/images/utah-part1-thumb-30.jpg]: Malad Gorge State Park, ID
-/images/utah-part1-album-31.jpg[/images/utah-part1-thumb-31.jpg]: Malad Gorge State Park, ID
-/images/utah-part1-album-32.jpg[/images/utah-part1-thumb-32.jpg]: Malad Gorge State Park, ID
-/images/utah-part1-album-33.jpg[/images/utah-part1-thumb-33.jpg]: Malad Gorge State Park, ID
-/images/utah-part1-album-34.jpg[/images/utah-part1-thumb-34.jpg]: Malad Gorge State Park, ID
-/images/utah-part1-album-35.jpg[/images/utah-part1-thumb-35.jpg]: Malad Gorge State Park, ID
-/images/utah-part1-album-36.jpg[/images/utah-part1-thumb-36.jpg]: Malad Gorge State Park, ID
-/images/utah-part1-album-37.jpg[/images/utah-part1-thumb-37.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-38.jpg[/images/utah-part1-thumb-38.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-39.jpg[/images/utah-part1-thumb-39.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-40.jpg[/images/utah-part1-thumb-40.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-41.jpg[/images/utah-part1-thumb-41.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-42.jpg[/images/utah-part1-thumb-42.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-43.jpg[/images/utah-part1-thumb-43.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-44.jpg[/images/utah-part1-thumb-44.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-45.jpg[/images/utah-part1-thumb-45.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-46.jpg[/images/utah-part1-thumb-46.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-47.jpg[/images/utah-part1-thumb-47.jpg]: Bonneville Salt Flats, UT
-/images/utah-part1-album-48.jpg[/images/utah-part1-thumb-48.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-29.jpg[/images/utah/utah-part1-thumb-29.jpg]: Malad Gorge State Park, ID
+/images/utah/utah-part1-album-30.jpg[/images/utah/utah-part1-thumb-30.jpg]: Malad Gorge State Park, ID
+/images/utah/utah-part1-album-31.jpg[/images/utah/utah-part1-thumb-31.jpg]: Malad Gorge State Park, ID
+/images/utah/utah-part1-album-32.jpg[/images/utah/utah-part1-thumb-32.jpg]: Malad Gorge State Park, ID
+/images/utah/utah-part1-album-33.jpg[/images/utah/utah-part1-thumb-33.jpg]: Malad Gorge State Park, ID
+/images/utah/utah-part1-album-34.jpg[/images/utah/utah-part1-thumb-34.jpg]: Malad Gorge State Park, ID
+/images/utah/utah-part1-album-35.jpg[/images/utah/utah-part1-thumb-35.jpg]: Malad Gorge State Park, ID
+/images/utah/utah-part1-album-36.jpg[/images/utah/utah-part1-thumb-36.jpg]: Malad Gorge State Park, ID
+/images/utah/utah-part1-album-37.jpg[/images/utah/utah-part1-thumb-37.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-38.jpg[/images/utah/utah-part1-thumb-38.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-39.jpg[/images/utah/utah-part1-thumb-39.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-40.jpg[/images/utah/utah-part1-thumb-40.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-41.jpg[/images/utah/utah-part1-thumb-41.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-42.jpg[/images/utah/utah-part1-thumb-42.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-43.jpg[/images/utah/utah-part1-thumb-43.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-44.jpg[/images/utah/utah-part1-thumb-44.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-45.jpg[/images/utah/utah-part1-thumb-45.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-46.jpg[/images/utah/utah-part1-thumb-46.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-47.jpg[/images/utah/utah-part1-thumb-47.jpg]: Bonneville Salt Flats, UT
+/images/utah/utah-part1-album-48.jpg[/images/utah/utah-part1-thumb-48.jpg]: Bonneville Salt Flats, UT
 {% endgallery %}
 
 The third day of my trip was Saturday, the 6th of July, and I arrived in Moab,
 Utah around noon, where it was already over 100&deg;F (38&deg;C). I checked into
-my campsite and explored the town briefly. I didn't feel much like doing any
-hiking in the oppressive heat, but it showed no signs of letting up before dusk,
-so I bought a bunch of water and headed to Arches National Park.
+my campsite and explored the town briefly. I was reluctant to go hiking in the
+oppressive heat, but it showed no signs of letting up before dusk, so I bought
+several bottles of water and Powerade and headed to Arches National Park.
 
 Arches is remarkably beautiful. Of all the places I visited on my trip, it was
-second only to Zion. Even if I had gone to Zion first, Arches still would have
-been amazing, but as I hadn't been to Zion yet it was truly awe inspiring. The
-scenic drive through the park alone is impressive, but there are many arches to
-see, and most require only relatively short hikes to get to. That said, for
-someone from a northern climate such as myself, a 2 mile hike in 100-degree heat
-is a lot harder than one might expect.
+second only to Zion National Park. Even if I had gone to Zion first, Arches
+still would have been amazing, but as I hadn't yet been to Zion it was truly awe
+inspiring. Arches is also a very accessible national park; the scenic drive
+through the park alone is impressive, and many of the most impressive arches
+require only short hikes to see up close. That said, for someone from a northern
+climate such as myself, a 2 mile hike in 100-degree heat is a lot harder than
+one might expect.
 
-I started with Landscape Arch and tried to continue on to Double O Arch, but
-between the extreme heat and a harsh wind that coated my face, eyes, mouth and
-camera with orange-red sand, I decided to turn back part way there; with so many
-other arches to see, I didn't want to expend too much effort on the first few. I
-stopped at Pine Tree Arch and Tunnel Arch on the way back. I then made the short
-hikes to Skyline Arch and Sand Dune Arch, the latter of which is one of the most
-picturesque arches in the park, in my opinion. Being in a canyon, the soft sand
-around the arch is also delightfully cool on a hot day. Were it not so busy, it
-would be the perfect place for a nap.
+I started with Landscape Arch, which was suitably picturesque and monumental for
+my first arch. From there, I tried to continue on to Double O Arch, which is
+further along the same trail. But between the extreme heat and a harsh wind that
+coated my face, eyes, mouth and camera with orange-red sand, I decided to turn
+back before I reached Double O Arch; with so many other arches to see, I didn't
+want to exhaust myself visiting the first few arches. I stopped at Pine Tree
+Arch and Tunnel Arch on the way back. I then made the short hikes to Skyline
+Arch and Sand Dune Arch, the latter of which is one of the most picturesque
+arches in the park, in my opinion. Being in a canyon, the soft sand around the
+arch is also delightfully cool on a hot day. Were it not so busy, it would be
+the perfect place for a nap.
 
 Finally, with sunset coming on, I hiked up to Delicate Arch. I waited until the
 sun had gone down to try to get some long exposures, but I was mostly
@@ -171,73 +175,99 @@ a maximum exposure length of 30 seconds. I resolved to come back again to try to
 get some night time and sunrise shots after buying a remote shutter trigger.
 
 {% gallery %}
-/images/utah-part1-album-49.jpg[/images/utah-part1-thumb-49.jpg]: Just outside of Arches National Park, UT
-/images/utah-part1-album-50.jpg[/images/utah-part1-thumb-50.jpg]: Just outside of Arches National Park, UT
-/images/utah-part1-album-51.jpg[/images/utah-part1-thumb-51.jpg]: Just outside of Arches National Park, UT
-/images/utah-part1-album-52.jpg[/images/utah-part1-thumb-52.jpg]: The picnic area near the Landscape Arch trailhead
-/images/utah-part1-album-53.jpg[/images/utah-part1-thumb-53.jpg]: The picnic area near the Landscape Arch trailhead
-/images/utah-part1-album-54.jpg[/images/utah-part1-thumb-54.jpg]: Stone formations along the Landscape Arch trail
-/images/utah-part1-album-55.jpg[/images/utah-part1-thumb-55.jpg]: Along the Landscape Arch trail
-/images/utah-part1-album-56.jpg[/images/utah-part1-thumb-56.jpg]: Soft orange-red sand in a narrow canyon along the Landscape Arch trail
-/images/utah-part1-album-57.jpg[/images/utah-part1-thumb-57.jpg]: A cactus! It's a novelty for me to see them growing in the wild
-/images/utah-part1-album-58.jpg[/images/utah-part1-thumb-58.jpg]:
-/images/utah-part1-album-59.jpg[/images/utah-part1-thumb-59.jpg]:
-/images/utah-part1-album-60.jpg[/images/utah-part1-thumb-60.jpg]:
-/images/utah-part1-album-61.jpg[/images/utah-part1-thumb-61.jpg]:
-/images/utah-part1-album-62.jpg[/images/utah-part1-thumb-62.jpg]:
-/images/utah-part1-album-63.jpg[/images/utah-part1-thumb-63.jpg]:
-/images/utah-part1-album-64.jpg[/images/utah-part1-thumb-64.jpg]:
-/images/utah-part1-album-65.jpg[/images/utah-part1-thumb-65.jpg]:
-/images/utah-part1-album-66.jpg[/images/utah-part1-thumb-66.jpg]:
-/images/utah-part1-album-67.jpg[/images/utah-part1-thumb-67.jpg]:
-/images/utah-part1-album-68.jpg[/images/utah-part1-thumb-68.jpg]:
-/images/utah-part1-album-69.jpg[/images/utah-part1-thumb-69.jpg]:
-/images/utah-part1-album-70.jpg[/images/utah-part1-thumb-70.jpg]:
-/images/utah-part1-album-71.jpg[/images/utah-part1-thumb-71.jpg]:
-/images/utah-part1-album-72.jpg[/images/utah-part1-thumb-72.jpg]:
-/images/utah-part1-album-73.jpg[/images/utah-part1-thumb-73.jpg]:
-/images/utah-part1-album-74.jpg[/images/utah-part1-thumb-74.jpg]:
-/images/utah-part1-album-75.jpg[/images/utah-part1-thumb-75.jpg]:
-/images/utah-part1-album-76.jpg[/images/utah-part1-thumb-76.jpg]:
-/images/utah-part1-album-77.jpg[/images/utah-part1-thumb-77.jpg]:
-/images/utah-part1-album-78.jpg[/images/utah-part1-thumb-78.jpg]:
-/images/utah-part1-album-79.jpg[/images/utah-part1-thumb-79.jpg]:
-/images/utah-part1-album-80.jpg[/images/utah-part1-thumb-80.jpg]:
-/images/utah-part1-album-81.jpg[/images/utah-part1-thumb-81.jpg]:
-/images/utah-part1-album-82.jpg[/images/utah-part1-thumb-82.jpg]:
-/images/utah-part1-album-83.jpg[/images/utah-part1-thumb-83.jpg]:
-/images/utah-part1-album-84.jpg[/images/utah-part1-thumb-84.jpg]:
-/images/utah-part1-album-85.jpg[/images/utah-part1-thumb-85.jpg]:
-/images/utah-part1-album-86.jpg[/images/utah-part1-thumb-86.jpg]:
-/images/utah-part1-album-87.jpg[/images/utah-part1-thumb-87.jpg]:
-/images/utah-part1-album-88.jpg[/images/utah-part1-thumb-88.jpg]:
-/images/utah-part1-album-89.jpg[/images/utah-part1-thumb-89.jpg]:
-/images/utah-part1-album-90.jpg[/images/utah-part1-thumb-90.jpg]:
-/images/utah-part1-album-91.jpg[/images/utah-part1-thumb-91.jpg]:
-/images/utah-part1-album-92.jpg[/images/utah-part1-thumb-92.jpg]:
-/images/utah-part1-album-93.jpg[/images/utah-part1-thumb-93.jpg]:
-/images/utah-part1-album-94.jpg[/images/utah-part1-thumb-94.jpg]:
-/images/utah-part1-album-95.jpg[/images/utah-part1-thumb-95.jpg]:
-/images/utah-part1-album-96.jpg[/images/utah-part1-thumb-96.jpg]:
-/images/utah-part1-album-97.jpg[/images/utah-part1-thumb-97.jpg]:
-/images/utah-part1-album-98.jpg[/images/utah-part1-thumb-98.jpg]:
-/images/utah-part1-album-99.jpg[/images/utah-part1-thumb-99.jpg]:
-/images/utah-part1-album-100.jpg[/images/utah-part1-thumb-100.jpg]:
-/images/utah-part1-album-101.jpg[/images/utah-part1-thumb-101.jpg]:
-/images/utah-part1-album-102.jpg[/images/utah-part1-thumb-102.jpg]:
-/images/utah-part1-album-103.jpg[/images/utah-part1-thumb-103.jpg]:
-/images/utah-part1-album-104.jpg[/images/utah-part1-thumb-104.jpg]:
-/images/utah-part1-album-105.jpg[/images/utah-part1-thumb-105.jpg]:
-/images/utah-part1-album-106.jpg[/images/utah-part1-thumb-106.jpg]:
-/images/utah-part1-album-107.jpg[/images/utah-part1-thumb-107.jpg]:
-/images/utah-part1-album-108.jpg[/images/utah-part1-thumb-108.jpg]:
-/images/utah-part1-album-109.jpg[/images/utah-part1-thumb-109.jpg]:
-/images/utah-part1-album-110.jpg[/images/utah-part1-thumb-110.jpg]:
-/images/utah-part1-album-111.jpg[/images/utah-part1-thumb-111.jpg]:
-/images/utah-part1-album-112.jpg[/images/utah-part1-thumb-112.jpg]:
-/images/utah-part1-album-113.jpg[/images/utah-part1-thumb-113.jpg]:
-/images/utah-part1-album-114.jpg[/images/utah-part1-thumb-114.jpg]:
+/images/utah/utah-part1-album-49.jpg[/images/utah/utah-part1-thumb-49.jpg]: Just outside of Arches National Park, UT
+/images/utah/utah-part1-album-50.jpg[/images/utah/utah-part1-thumb-50.jpg]: Just outside of Arches National Park, UT
+/images/utah/utah-part1-album-51.jpg[/images/utah/utah-part1-thumb-51.jpg]: Just outside of Arches National Park, UT
+/images/utah/utah-part1-album-52.jpg[/images/utah/utah-part1-thumb-52.jpg]: The picnic area near the Landscape Arch trailhead
+/images/utah/utah-part1-album-53.jpg[/images/utah/utah-part1-thumb-53.jpg]: The picnic area near the Landscape Arch trailhead
+/images/utah/utah-part1-album-54.jpg[/images/utah/utah-part1-thumb-54.jpg]: Stone formations along the Landscape Arch trail
+/images/utah/utah-part1-album-55.jpg[/images/utah/utah-part1-thumb-55.jpg]: Along the Landscape Arch trail
+/images/utah/utah-part1-album-56.jpg[/images/utah/utah-part1-thumb-56.jpg]: Soft orange-red sand in a narrow canyon along the Landscape Arch trail
+/images/utah/utah-part1-album-57.jpg[/images/utah/utah-part1-thumb-57.jpg]: A cactus! It's a novelty for me to see them growing in the wild
+/images/utah/utah-part1-album-58.jpg[/images/utah/utah-part1-thumb-58.jpg]: Panorama of the desert along the Landscape Arch trail
+/images/utah/utah-part1-album-59.jpg[/images/utah/utah-part1-thumb-59.jpg]: These rock formations are completely unlike anything I'm used to
+/images/utah/utah-part1-album-60.jpg[/images/utah/utah-part1-thumb-60.jpg]: Landscape Arch! The first of many arches I saw.
+/images/utah/utah-part1-album-61.jpg[/images/utah/utah-part1-thumb-61.jpg]: Landscape Arch
+/images/utah/utah-part1-album-62.jpg[/images/utah/utah-part1-thumb-62.jpg]: More cacti
+/images/utah/utah-part1-album-63.jpg[/images/utah/utah-part1-thumb-63.jpg]: These trails are actually quite tiring to hike on; much energy is expended moving the soft sand
+/images/utah/utah-part1-album-64.jpg[/images/utah/utah-part1-thumb-64.jpg]: I love the way the sand looks, though, and it feels very nice as well. I wish the beaches in Washington had such soft sand.
+/images/utah/utah-part1-album-65.jpg[/images/utah/utah-part1-thumb-65.jpg]: Landscape Arch
+/images/utah/utah-part1-album-66.jpg[/images/utah/utah-part1-thumb-66.jpg]: Landscape Arch panorama
+/images/utah/utah-part1-album-67.jpg[/images/utah/utah-part1-thumb-67.jpg]: Landscape Arch
+/images/utah/utah-part1-album-68.jpg[/images/utah/utah-part1-thumb-68.jpg]: Desert
+/images/utah/utah-part1-album-69.jpg[/images/utah/utah-part1-thumb-69.jpg]: I'm not sure if this formation has a name
+/images/utah/utah-part1-album-70.jpg[/images/utah/utah-part1-thumb-70.jpg]: Check out the mountains in the distance. Apparently they're very nice for hiking.
+/images/utah/utah-part1-album-71.jpg[/images/utah/utah-part1-thumb-71.jpg]: Looking down from along the Double O Arch trail as a visitor approaches Landscape Arch
+/images/utah/utah-part1-album-72.jpg[/images/utah/utah-part1-thumb-72.jpg]: Panorama from along the Double O Arch trail.  This is about where I turned back.
+/images/utah/utah-part1-album-73.jpg[/images/utah/utah-part1-thumb-73.jpg]: Tunnel Arch
+/images/utah/utah-part1-album-74.jpg[/images/utah/utah-part1-thumb-74.jpg]: Tunnel Arch
+/images/utah/utah-part1-album-75.jpg[/images/utah/utah-part1-thumb-75.jpg]: Pine Tree Arch
+/images/utah/utah-part1-album-76.jpg[/images/utah/utah-part1-thumb-76.jpg]: Pine Tree Arch
+/images/utah/utah-part1-album-78.jpg[/images/utah/utah-part1-thumb-78.jpg]: Pine Tree Arch
+/images/utah/utah-part1-album-77.jpg[/images/utah/utah-part1-thumb-77.jpg]: Desert brush
+/images/utah/utah-part1-album-79.jpg[/images/utah/utah-part1-thumb-79.jpg]: So much novel flora to see. I like the color contrast between the plant and the sand.
+/images/utah/utah-part1-album-80.jpg[/images/utah/utah-part1-thumb-80.jpg]: Many of the larger trees in the area are dead, presumably for lack of water
+/images/utah/utah-part1-album-81.jpg[/images/utah/utah-part1-thumb-81.jpg]: Desert landscape
+/images/utah/utah-part1-album-82.jpg[/images/utah/utah-part1-thumb-82.jpg]: The colours are otherworldly
+/images/utah/utah-part1-album-83.jpg[/images/utah/utah-part1-thumb-83.jpg]: Back at the Landscape Arch trailhead. Check out the mountains in the distance.
+/images/utah/utah-part1-album-84.jpg[/images/utah/utah-part1-thumb-84.jpg]: Back at the Landscape Arch trailhead. Check out the mountains in the distance.
+/images/utah/utah-part1-album-85.jpg[/images/utah/utah-part1-thumb-85.jpg]: Devil's Garden
+/images/utah/utah-part1-album-86.jpg[/images/utah/utah-part1-thumb-86.jpg]: Ominous
+/images/utah/utah-part1-album-87.jpg[/images/utah/utah-part1-thumb-87.jpg]: To the northwest, God Rays break through threatening clouds
+/images/utah/utah-part1-album-88.jpg[/images/utah/utah-part1-thumb-88.jpg]: But to the south, it's mostly blue sky
+/images/utah/utah-part1-album-89.jpg[/images/utah/utah-part1-thumb-89.jpg]: I couldn't resist throwing a few shots of my car in
+/images/utah/utah-part1-album-90.jpg[/images/utah/utah-part1-thumb-90.jpg]: The sky was even more amazing in person
+/images/utah/utah-part1-album-91.jpg[/images/utah/utah-part1-thumb-91.jpg]: Again, here my photography skills simply don't do the landscape justice
+/images/utah/utah-part1-album-92.jpg[/images/utah/utah-part1-thumb-92.jpg]: Skyline Arch
+/images/utah/utah-part1-album-93.jpg[/images/utah/utah-part1-thumb-93.jpg]: Skyline Arch
+/images/utah/utah-part1-album-94.jpg[/images/utah/utah-part1-thumb-94.jpg]: The canyon beneath Skyline Arch
+/images/utah/utah-part1-album-95.jpg[/images/utah/utah-part1-thumb-95.jpg]: Returning along the Skyline Arch trail, there's more picturesque sand
+/images/utah/utah-part1-album-96.jpg[/images/utah/utah-part1-thumb-96.jpg]: Looking toward the Skyline Arch trailhead
+/images/utah/utah-part1-album-97.jpg[/images/utah/utah-part1-thumb-97.jpg]: Sand Dune Arch. Besides Delicate Arch, this is my favourite arch.
+/images/utah/utah-part1-album-98.jpg[/images/utah/utah-part1-thumb-98.jpg]: Sand Dune Arch
+/images/utah/utah-part1-album-99.jpg[/images/utah/utah-part1-thumb-99.jpg]: It should be obvious where Sand Dune Arch got its name
+/images/utah/utah-part1-album-100.jpg[/images/utah/utah-part1-thumb-100.jpg]: Sand Dune Arch
+/images/utah/utah-part1-album-101.jpg[/images/utah/utah-part1-thumb-101.jpg]: Looking out of the Sand Dune Arch canyon entrance
+/images/utah/utah-part1-album-102.jpg[/images/utah/utah-part1-thumb-102.jpg]: The sky just got progressively more beautiful as the sun set
+/images/utah/utah-part1-album-103.jpg[/images/utah/utah-part1-thumb-103.jpg]: Panorama near the Sand Dune Arch trailhead
+/images/utah/utah-part1-album-104.jpg[/images/utah/utah-part1-thumb-104.jpg]: Near the Delicate Arch trailhead. Night was coming on quickly as I set off on my first hike to Delicate Arch.
+/images/utah/utah-part1-album-105.jpg[/images/utah/utah-part1-thumb-105.jpg]: To the east, the red cliffs glow with the sun's last rays
+/images/utah/utah-part1-album-109.jpg[/images/utah/utah-part1-thumb-109.jpg]: In the distance, what I believe is one of the Windows Arches is visible
+/images/utah/utah-part1-album-106.jpg[/images/utah/utah-part1-thumb-106.jpg]: And back to the west, the horizon is on fire
+/images/utah/utah-part1-album-107.jpg[/images/utah/utah-part1-thumb-107.jpg]
+/images/utah/utah-part1-album-108.jpg[/images/utah/utah-part1-thumb-108.jpg]
+/images/utah/utah-part1-album-110.jpg[/images/utah/utah-part1-thumb-110.jpg]
+/images/utah/utah-part1-album-111.jpg[/images/utah/utah-part1-thumb-111.jpg]
+/images/utah/utah-part1-album-112.jpg[/images/utah/utah-part1-thumb-112.jpg]
+/images/utah/utah-part1-album-113.jpg[/images/utah/utah-part1-thumb-113.jpg]
+/images/utah/utah-part1-album-114.jpg[/images/utah/utah-part1-thumb-114.jpg]: I stayed by Delicate Arch until darkness fell. I wasn't able to get any good sunset photos of the arch itself, but I did get a decent long exposure of cars heading back to Moab for the night.
 {% endgallery %}
+
+Getting ready for bed that evening, I left the flap on my tent open for probably
+about a minute or two while I moved some of my gear from the car into the tent.
+Upon getting in the tent and turning on my flashlight, I discovered that that
+minute or two had been long enough for a
+[solfugid](en.wikipedia.org/wiki/Solifugae) to invite itself in. My dad is an
+entomologist so I'm not particularly frightened of insects or arachnids, though
+I'm certainly not as welcoming of them as he is, nor, obviously, as
+knowledgeable about them. The solfugid was pretty alarming because at the time I
+didn't actually know what it was; I only knew that it was very fast and had very
+large mandibles, and that Utah (in contrast to everywhere I've ever lived) does
+actually have venomous arthropods.
+
+After a lot of swearing and awkward attempts to keep my eye on it while blindly
+reaching for something that I could safely trap it in, I managed to scoop it up
+in a cooking pot and throw it outside. I then searched the Internet for
+something like "insect with 10 legs with 2 huge front legs" and found out what
+it was, and that they're relatively harmless.  (When I talked to my dad about it
+later, he was quick to point out that solfugids are arachnids, not insects, and
+that the two front "legs" aren't actually legs at all. He also said that he was
+jealous of my encounter as he's never seen one in the wild.) I still wouldn't want to
+get bitten by those big mandibles, though.
+
+<div style="margin-left: auto; margin-right: auto; text-align: center">
+{% photo /images/utah/utah-part1-album-115.jpg /images/utah/utah-part1-thumb-115.jpg A solfugid in my tent %}
+</div>
 
 Sunday was just as crushingly hot as Saturday had been (and, indeed, as the
 entire next week would be). To cool down during the hottest part of the day, I
@@ -283,6 +313,12 @@ cellular reception, I didn't want to push my luck, so I turned around and went
 back down the canyon and back to the interstate. (I feel like I'm letting Subaru
 owners down by admitting that, but better safe than sorry!)
 
+As an aside, on my way back, right by the intersection of Long Canyon Road and
+the highway, I saw a large matte black Ford truck with a huge camera rig on the
+back, as well as a Mustang with fake bullet holes and a missing taillight on a
+flatbed tow truck. Clearly filming for some movie was going on in the area. Fast
+& The Furious 7? Transformers 4? Who knows.
+
 The view of the Colorado River from Dead Horse Point is well worth the drive,
 but once you've seen it, there's not much else to do in the state park, so I
 didn't spend too long there. As I was leaving, a beautiful but ephemeral rainbow
@@ -290,7 +326,38 @@ presented itself to the east, punctuated by flashes of lightning from a storm
 that had  rolled in to the east of Moab. Sadly I couldn't get any decent
 pictures of this.
 
-[photos here]
+{% gallery %}
+/images/utah/utah-part1-album-116.jpg[/images/utah/utah-part1-thumb-116.jpg]: I am too Canadian for this kind of heat
+/images/utah/utah-part1-album-117.jpg[/images/utah/utah-part1-thumb-117.jpg]: Long Canyon Road
+/images/utah/utah-part1-album-118.jpg[/images/utah/utah-part1-thumb-118.jpg]: Long Canyon Road
+/images/utah/utah-part1-album-119.jpg[/images/utah/utah-part1-thumb-119.jpg]: Long Canyon Road
+/images/utah/utah-part1-album-120.jpg[/images/utah/utah-part1-thumb-120.jpg]: Long Canyon Road
+/images/utah/utah-part1-album-121.jpg[/images/utah/utah-part1-thumb-121.jpg]: Long Canyon Road
+/images/utah/utah-part1-album-122.jpg[/images/utah/utah-part1-thumb-122.jpg]: Long Canyon Road
+/images/utah/utah-part1-album-123.jpg[/images/utah/utah-part1-thumb-123.jpg]: Long Canyon Road
+/images/utah/utah-part1-album-125.jpg[/images/utah/utah-part1-thumb-125.jpg]: Long Canyon Road
+/images/utah/utah-part1-album-144.jpg[/images/utah/utah-part1-thumb-144.jpg]: Dusty!
+/images/utah/utah-part1-album-124.jpg[/images/utah/utah-part1-thumb-124.jpg]: It's a rough road, but it does offer quite the view
+/images/utah/utah-part1-album-126.jpg[/images/utah/utah-part1-thumb-126.jpg]: Again, the mountains in the distance demonstrate the diversity of Utah's geology
+/images/utah/utah-part1-album-127.jpg[/images/utah/utah-part1-thumb-127.jpg]: Not to mention its beauty
+/images/utah/utah-part1-album-128.jpg[/images/utah/utah-part1-thumb-128.jpg]: Looking back down at where Long Canyon Road meets the highway
+/images/utah/utah-part1-album-129.jpg[/images/utah/utah-part1-thumb-129.jpg]: Panorama from Dead Horse Point
+/images/utah/utah-part1-album-130.jpg[/images/utah/utah-part1-thumb-130.jpg]: Potash ponds in the distance as seen from Dead Horse Point. They're kind of an unnatural blight on the pristine desert landscape, but on the other hand, their radiant blue colour makes them actually kind of pretty.
+/images/utah/utah-part1-album-131.jpg[/images/utah/utah-part1-thumb-131.jpg]: A nameless road cuts through the desert landscape
+/images/utah/utah-part1-album-132.jpg[/images/utah/utah-part1-thumb-132.jpg]: Dead Horse Point
+/images/utah/utah-part1-album-133.jpg[/images/utah/utah-part1-thumb-133.jpg]: The view from Dead Horse Point
+/images/utah/utah-part1-album-134.jpg[/images/utah/utah-part1-thumb-134.jpg]: The view from Dead Horse Point
+/images/utah/utah-part1-album-135.jpg[/images/utah/utah-part1-thumb-135.jpg]: The view from Dead Horse Point
+/images/utah/utah-part1-album-136.jpg[/images/utah/utah-part1-thumb-136.jpg]: The view from Dead Horse Point
+/images/utah/utah-part1-album-137.jpg[/images/utah/utah-part1-thumb-137.jpg]: It's me!
+/images/utah/utah-part1-album-138.jpg[/images/utah/utah-part1-thumb-138.jpg]: The view from Dead Horse Point
+/images/utah/utah-part1-album-139.jpg[/images/utah/utah-part1-thumb-139.jpg]: Another shot of the potash ponds
+/images/utah/utah-part1-album-140.jpg[/images/utah/utah-part1-thumb-140.jpg]: Another angle from Dead Horse Point
+/images/utah/utah-part1-album-141.jpg[/images/utah/utah-part1-thumb-141.jpg]: Another Dead Horse Point panorama
+/images/utah/utah-part1-album-142.jpg[/images/utah/utah-part1-thumb-142.jpg]: An observation deck atop Dead Horse Point
+/images/utah/utah-part1-album-143.jpg[/images/utah/utah-part1-thumb-143.jpg]: Just beyond the deck, the sheer rock wall drops thousands of feet to the canyon floor
+/images/utah/utah-part1-album-145.jpg[/images/utah/utah-part1-thumb-145.jpg]: Near Canyonlands National Park, with a storm brewing beyond Moab to the northeast
+{% endgallery %}
 
 Earlier in the day I had picked up a remote shutter trigger for my camera from a
 small photography store in Moab, so with my resolution to return to Delicate
@@ -333,4 +400,33 @@ Bryce Canyon and spend the night. I'll save the rest for part II, as Bryce
 Canyon and Zion National Parks were even more spectacular than Arches and
 Canyonlands, and are more than deserving of their own post.
 
-[photos here]
+{% gallery %}
+/images/utah/utah-part1-album-146.jpg[/images/utah/utah-part1-thumb-146.jpg]: The first light of the morning is just touching the top of Delicate Arch
+/images/utah/utah-part1-album-147.jpg[/images/utah/utah-part1-thumb-147.jpg]: Delicate Arch
+/images/utah/utah-part1-album-148.jpg[/images/utah/utah-part1-thumb-148.jpg]: Delicate Arch
+/images/utah/utah-part1-album-149.jpg[/images/utah/utah-part1-thumb-149.jpg]: The Delicate Arch amphitheatre
+/images/utah/utah-part1-album-150.jpg[/images/utah/utah-part1-thumb-150.jpg]: Looking northeast along the trail to Delicate Arch. I was perched in the small rock tunnel (I hesitate to call it a proper arch) northwest of the arch itself.
+/images/utah/utah-part1-album-151.jpg[/images/utah/utah-part1-thumb-151.jpg]: A couple other early morning hikers took a seat atop the tall cliff to the southwest to watch the sunrise
+/images/utah/utah-part1-album-152.jpg[/images/utah/utah-part1-thumb-152.jpg]: Panorama of Delicate Arch and surroundings
+/images/utah/utah-part1-album-153.jpg[/images/utah/utah-part1-thumb-153.jpg]: Here's a (rather poor) shot of my camera setup, in case you were curious
+/images/utah/utah-part1-album-155.jpg[/images/utah/utah-part1-thumb-155.jpg]: Looking back at the cliffs I photographed from the trailhead at sunset
+/images/utah/utah-part1-album-156.jpg[/images/utah/utah-part1-thumb-156.jpg]: Now the sun is truly beginning to light up the arch
+/images/utah/utah-part1-album-157.jpg[/images/utah/utah-part1-thumb-157.jpg]: It's stunning. My photography is by no means excellent, but I doubt any expert could capture the majesty of Delicate Arch at sunrise.
+/images/utah/utah-part1-album-158.jpg[/images/utah/utah-part1-thumb-158.jpg]: The desert to the northwest
+/images/utah/utah-part1-album-159.jpg[/images/utah/utah-part1-thumb-159.jpg]: The overpowering golden glow of the morning sun promises another breathtakingly hot day
+/images/utah/utah-part1-album-160.jpg[/images/utah/utah-part1-thumb-160.jpg]: I climbed up above the tunnel where my camera and tripod were sitting to take this. In the lower left is the trail.
+/images/utah/utah-part1-album-161.jpg[/images/utah/utah-part1-thumb-161.jpg]: Delicate Arch again, now roughly half lit by the morning sun
+/images/utah/utah-part1-album-162.jpg[/images/utah/utah-part1-thumb-162.jpg]: The desert and mountains are also beautiful in the morning light
+/images/utah/utah-part1-album-163.jpg[/images/utah/utah-part1-thumb-163.jpg]: Delicate Arch
+/images/utah/utah-part1-album-164.jpg[/images/utah/utah-part1-thumb-164.jpg]: Delicate Arch
+/images/utah/utah-part1-album-165.jpg[/images/utah/utah-part1-thumb-165.jpg]: A panorama of the trail to the north
+/images/utah/utah-part1-album-166.jpg[/images/utah/utah-part1-thumb-166.jpg]: Delicate Arch
+/images/utah/utah-part1-album-168.jpg[/images/utah/utah-part1-thumb-168.jpg]: Delicate Arch
+/images/utah/utah-part1-album-169.jpg[/images/utah/utah-part1-thumb-169.jpg]: A panorama of the amphitheatre from south of the arch
+/images/utah/utah-part1-album-170.jpg[/images/utah/utah-part1-thumb-170.jpg]: More cacti!
+/images/utah/utah-part1-album-171.jpg[/images/utah/utah-part1-thumb-171.jpg]: A lizard basking in the morning sun
+/images/utah/utah-part1-album-172.jpg[/images/utah/utah-part1-thumb-172.jpg]: It kept its eye on me, but seem relatively unconcerned with my presence
+/images/utah/utah-part1-album-173.jpg[/images/utah/utah-part1-thumb-173.jpg]: Another one! They were all over the place
+/images/utah/utah-part1-album-174.jpg[/images/utah/utah-part1-thumb-174.jpg]: The sunrise was basically over by the time I arrived at Mesa Arch, but it was still lit quite spectacularly
+/images/utah/utah-part1-album-175.jpg[/images/utah/utah-part1-thumb-175.jpg]: Mesa Arch
+{% endgallery %}
