@@ -7,8 +7,6 @@ categories: [Technology]
 published: true
 ---
 
-## Backstory
-
 I've been using Wordpress on various sites that I've maintained for probably the
 better part of a decade now. By most metrics, it's still very good blogging
 software; I'm not aware of any self-hostable alternative that can match
@@ -88,7 +86,7 @@ longer the right choice for my specific needs. These are my problems with it:
   keyboard has keys. (That analogy sucked. Sorry, it's late. What I'm trying to
   say is that there are a lot of them.)
 
-## Octopress
+<!-- more -->
 
 So recently I got it into my head to switch over to
 [Octopress.](http://octopress.org/) Octopress bills itself as "a blogging

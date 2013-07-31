@@ -26,7 +26,7 @@ next couple months.
 
 Anyway, with the alpha version up and running, this seems like a good
 opportunity to reflect on some of the issues I've faced that complicated the
-project, and on what remains to be done.
+project, and on what remains to be done. <!-- more -->
 
 ## Wand and the OOM Killer
 

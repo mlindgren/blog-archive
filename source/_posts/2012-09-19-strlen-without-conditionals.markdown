@@ -7,11 +7,12 @@ external-url:
 categories: [Coding]
 published: true
 ---
-I'm not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I'm not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.<!--more-->
+I'm not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I'm not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.
 
 There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee's Twitter</a>: "<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>."  (The page contains solutions, so don't read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it's fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.
 
 My solution is below, but I'd recommend that you go give this a try yourself before you read on.
+<!-- more -->
 
 &nbsp;<br />
 &nbsp;<br />

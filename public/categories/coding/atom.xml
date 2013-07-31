@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/coding/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2013-07-30T21:58:50-07:00</updated>
+  <updated>2013-07-30T22:23:00-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -38,7 +38,7 @@ next couple months.</p>
 
 <p>Anyway, with the alpha version up and running, this seems like a good
 opportunity to reflect on some of the issues I&rsquo;ve faced that complicated the
-project, and on what remains to be done.</p>
+project, and on what remains to be done. <!-- more --></p>
 
 <h2>Wand and the OOM Killer</h2>
 
@@ -195,11 +195,14 @@ this finished. It&rsquo;s just a matter of when.</p>
     <link href="http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals/"/>
     <updated>2012-09-19T00:21:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.<!--more--></p>
+    <content type="html"><![CDATA[<p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.</p>
 
 <p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee&rsquo;s Twitter</a>: "<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>.&ldquo;  (The page contains solutions, so don&rsquo;t read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it&rsquo;s fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
 
 <p>My solution is below, but I&rsquo;d recommend that you go give this a try yourself before you read on.</p>
+
+<!-- more -->
+
 
 <p>&nbsp;<br />
 &nbsp;<br />
@@ -296,7 +299,7 @@ gettimeofday(&amp;end, NULL);</p>
     <id>http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging</id>
     <content type="html"><![CDATA[<p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
 
-<p>So, I&rsquo;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&rsquo;m using Python because, well, I love it.  I think it&rsquo;s the perfect language for web development; it&rsquo;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:<!--more--></p>
+<p>So, I&rsquo;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&rsquo;m using Python because, well, I love it.  I think it&rsquo;s the perfect language for web development; it&rsquo;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:</p>
 
 <p>``` python
 db_tags = dict([(tag.name, tag) for tag in</p>
@@ -309,6 +312,9 @@ db_tags = dict([(tag.name, tag) for tag in</p>
 <p>What I&rsquo;m doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag&rsquo;s name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn&rsquo;t particularly <em>difficult</em> to do in any other language; as I said, it&rsquo;s a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn&rsquo;t have list comprehensions.  I don&rsquo;t even want to think about how many lines of code this would take in Java; additionally, while I&rsquo;m unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup></p>
 
 <p>So, Python&rsquo;s pretty great. But like all languages, it does have a few problems. The one I have had the most difficulty with in my current project is that third party library support is somewhat lacking in some important areas; specifically, there aren&rsquo;t many good options for reading and manipulating images. The most popular library seems to be the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>, PIL. It&rsquo;s easy enough to install and provides a <em>passable</em> set of core features, but doesn&rsquo;t go much beyond that.  For instance, none of the various camera raw formats seem to be supported, which I consider a fairly important feature for my photo album; I&rsquo;d very much like be able to upload original raws and have the application automatically convert them to JPEGs for me.  Additionally, it doesn&rsquo;t provide much in the way of convenience methods for cropping and resizing images.  <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank">ImageMagick</a> has <a title="ImageMagick geometry" href="http://www.imagemagick.org/script/command-line-processing.php#geometry" target="_blank">a very nice means of specifying cropping and resizing geometry</a> with various aspect ratio-preserving (or not) behaviour, and I wanted to be able to leverage something similar for my app so that I could quickly prototype with various size options.</p>
+
+<!-- more -->
+
 
 <p>Given that ImageMagick provides most of the functionality I want that PIL lacks, it seemed like a good option, but it&rsquo;s a C library and Python doesn&rsquo;t yet have mature bindings for it.  It&rsquo;s getting there, though!  I decided to go with <a title="Python Wand library" href="http://dahlia.kr/wand/index.html" target="_blank">Wand</a>, which is a fork of python-magickwand.  It has a nice high-level API, but also provides direct access to most of the low-level MagickWand APIs, making it fairly flexible.  When I first found it, it did not have support for the nice geometry specifications I wanted to use, but being an open source project I was able to patch that in.  <a title="Wand version 0.2.2" href="http://dahlia.kr/wand/changes.html#version-0-2-2" target="_blank">Version 0.2.2</a> will include my patch, which provides the <code>Image.transform</code> method for easy cropping and resizing.  Eevee is also <a title="Sanpera - Eevee's Github" href="https://github.com/eevee/sanpera" target="_blank">working on a Python imaging library</a>, which is promising, but it&rsquo;s still a work in progress.</p>
 
@@ -331,9 +337,6 @@ db_tags = dict([(tag.name, tag) for tag in</p>
     <updated>2011-09-21T00:34:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x</id>
     <content type="html"><![CDATA[<p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&rsquo;m hoping that it will prove useful to someone. For one of my courses this term, we&rsquo;re building OpenGL apps using Nokia&rsquo;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&rsquo;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&rsquo;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&rsquo;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
-
-<!--more-->
-
 
 <p>In particular, I found myself having difficulty linking the OpenGL Utility Toolkit (GLUT) with my project on Mac OS X. After much Googling and some frustration, I came up with the correct way to go about it, which is as follows:</p>
 
@@ -361,7 +364,7 @@ db_tags = dict([(tag.name, tag) for tag in</p>
     <link href="http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway/"/>
     <updated>2011-06-29T22:27:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway</id>
-    <content type="html"><![CDATA[<p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.<!--more--></p>
+    <content type="html"><![CDATA[<p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.<!-- more --></p>
 
 <p>I think the best way to explain lambdas is with a simple example. Say you want a switch statement. Python doesn’t have them, but what you can do is set up a dictionary and get a value out of it, which is sort of like a switch. However, you can&rsquo;t do this&hellip;</p>
 

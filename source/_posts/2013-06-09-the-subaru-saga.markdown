@@ -47,6 +47,7 @@ The STI, then, was the clear winner in my eyes.  Truth be told, a WRX probably
 would have been more than sufficient for my needs, but I generally prefer to put
 down the extra money and be sure that I'm getting the best product. And hey, one
 only has so long to exercise the opportunity to be young and irresponsible!
+<!-- more -->
 
 ## Finding My Car
 

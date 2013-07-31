@@ -9,8 +9,6 @@ published: true
 ---
 This tutorial is for an extremely specific and possibly unusual set of circumstances, but I'm hoping that it will prove useful to someone. For one of my courses this term, we're building OpenGL apps using Nokia's open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I've used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn't use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it's not always immediately obvious how instructions for Windows development translate into other environments.
 
-<!--more-->
-
 In particular, I found myself having difficulty linking the OpenGL Utility Toolkit (GLUT) with my project on Mac OS X. After much Googling and some frustration, I came up with the correct way to go about it, which is as follows:
 <ol>
 	<li>In Qt Creator, open your project file (.pro) in the text editor.  Right click on the text editor pane and select "Add Library..."</li>

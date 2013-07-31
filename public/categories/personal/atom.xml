@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Personal | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/personal/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2013-07-30T21:58:50-07:00</updated>
+  <updated>2013-07-30T22:23:00-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -338,6 +338,9 @@ having a ton of fun in the process.</p>
 would have been more than sufficient for my needs, but I generally prefer to put
 down the extra money and be sure that I&rsquo;m getting the best product. And hey, one
 only has so long to exercise the opportunity to be young and irresponsible!</p>
+
+<!-- more -->
+
 
 <h2>Finding My Car</h2>
 
@@ -1085,7 +1088,7 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
     <id>http://blog.mlindgren.ca/entry/2011/12/31/2010-and-2011-in-review</id>
     <content type="html"><![CDATA[<p>If you&rsquo;ll forgive me for &ldquo;metablogging,&rdquo; I&rsquo;ve been ruminating lately on the purpose of this website.  Up until now, I&rsquo;ve been trying to focus exclusively on technology, programming and game design, and to minimize the subjective aspects of my connection to those fields.  Put more simply, I&rsquo;ve been avoiding writing about who I am and what I do in favour of producing a series of mostly impersonal tutorials and critiques of technology.  There are a number of reasons for this—the word &ldquo;professionalism&rdquo; comes to mind as chief among them.  I&rsquo;d like this website to be my public face on the Internet, and as every saavy Internet denizen should know by now, there are certain risks associated with maintaining a public persona.  I greatly admire <a href="http://zedshaw.com/">Zed Shaw</a>, for his personality as well as his technical accomplishments, but I have no desire to make myself unemployable as he claims to have done (albeit temporarily).</p>
 
-<p>That said, trying to take a dry, detached and objective approach to creating a personal website presents a number of problems itself.  First and foremost, it&rsquo;s an inherent contradiction; if I don&rsquo;t write about myself in any meaningful capacity, then there is nothing aside from the superficial about this website which makes it mine.  I can&rsquo;t imagine it makes for a very interesting read, either.  Realistically, how many people will come here looking for <a title="How to link GLUT in Qt Creator on OS X" href="http://www.mlindgren.ca/archives/453">advice on how to link GLUT?</a>  Readership numbers are of little to no concern to me, mind you, but I can at least endeavour to give this website a purposeful existence.  To that end, I want to start writing more about personal topics, although for the sake of cohesiveness I&rsquo;m going to continue to focus primarily on those aspects of my life that will be of interest to a technically-minded audience.<!--more--></p>
+<p>That said, trying to take a dry, detached and objective approach to creating a personal website presents a number of problems itself.  First and foremost, it&rsquo;s an inherent contradiction; if I don&rsquo;t write about myself in any meaningful capacity, then there is nothing aside from the superficial about this website which makes it mine.  I can&rsquo;t imagine it makes for a very interesting read, either.  Realistically, how many people will come here looking for <a title="How to link GLUT in Qt Creator on OS X" href="http://www.mlindgren.ca/archives/453">advice on how to link GLUT?</a>  Readership numbers are of little to no concern to me, mind you, but I can at least endeavour to give this website a purposeful existence.  To that end, I want to start writing more about personal topics, although for the sake of cohesiveness I&rsquo;m going to continue to focus primarily on those aspects of my life that will be of interest to a technically-minded audience.<!-- more --></p>
 
 <p>As a start, I think that this is a good time to reflect on what I&rsquo;ve done since I started this blog in May of 2010.  Early in May, I moved to Calgary, Alberta, to start a sixteen-month internship with <a href="http://pason.com/">Pason Systems Corporation.</a>  Pason is the market-leading provider of oil rig instrumentation and service, with a wide variety of tools and technology available to facilitate safety and improve efficiency on oil rigs.  All of Pason&rsquo;s rig-site hardware and software is designed in house, but my work was on an internal web application designed to support Pason&rsquo;s most valuable employees: the field technicians who directly provide services and equipment to customers.</p>
 

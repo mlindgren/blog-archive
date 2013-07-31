@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="If you&rsquo;ll forgive me for &ldquo;metablogging,&rdquo; I&rsquo;ve been ruminating lately on the purpose of this website.  Up until now, I&rsquo; &hellip;">
+  <meta name="description" content="I&rsquo;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&rsquo;ve decided to use the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -143,11 +143,11 @@ $(document).ready(function() {
     <article>
       
 
-<div class="category-Personal">
+<div class="category-Coding">
 
   <header>
     
-      <h1 class="entry-title"><a href="/entry/2011/12/31/2010-and-2011-in-review/">2010 and 2011 in Review</a></h1>
+      <h1 class="entry-title"><a href="/entry/2011/04/09/android-ndk-stack-trace-script/">Android NDK Stack Trace Script</a></h1>
     
     
       <p class="meta">
@@ -163,19 +163,20 @@ $(document).ready(function() {
   
 
 
-<time datetime="2011-12-31T15:59:00-08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2011</time>
+<time datetime="2011-04-09T16:30:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>If you&rsquo;ll forgive me for &ldquo;metablogging,&rdquo; I&rsquo;ve been ruminating lately on the purpose of this website.  Up until now, I&rsquo;ve been trying to focus exclusively on technology, programming and game design, and to minimize the subjective aspects of my connection to those fields.  Put more simply, I&rsquo;ve been avoiding writing about who I am and what I do in favour of producing a series of mostly impersonal tutorials and critiques of technology.  There are a number of reasons for this—the word &ldquo;professionalism&rdquo; comes to mind as chief among them.  I&rsquo;d like this website to be my public face on the Internet, and as every saavy Internet denizen should know by now, there are certain risks associated with maintaining a public persona.  I greatly admire <a href="http://zedshaw.com/">Zed Shaw</a>, for his personality as well as his technical accomplishments, but I have no desire to make myself unemployable as he claims to have done (albeit temporarily).</p>
-
-<p>That said, trying to take a dry, detached and objective approach to creating a personal website presents a number of problems itself.  First and foremost, it&rsquo;s an inherent contradiction; if I don&rsquo;t write about myself in any meaningful capacity, then there is nothing aside from the superficial about this website which makes it mine.  I can&rsquo;t imagine it makes for a very interesting read, either.  Realistically, how many people will come here looking for <a title="How to link GLUT in Qt Creator on OS X" href="http://www.mlindgren.ca/archives/453">advice on how to link GLUT?</a>  Readership numbers are of little to no concern to me, mind you, but I can at least endeavour to give this website a purposeful existence.  To that end, I want to start writing more about personal topics, although for the sake of cohesiveness I&rsquo;m going to continue to focus primarily on those aspects of my life that will be of interest to a technically-minded audience.</div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/12/31/2010-and-2011-in-review/">Continue Reading &rarr;</a>
-    </footer>
+  <div class="entry-content"><p>I&rsquo;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&rsquo;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &ldquo;performance-critical&rdquo; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&rsquo;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&rsquo;t imagine it&rsquo;s too difficult, but I haven&rsquo;t spent much time on it—I&rsquo;ve not needed to do much debugging yet.)</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2011/04/09/android-ndk-stack-trace-script/">More &rarr;</a>
+      </footer>
+    
 
 </div>
 
@@ -189,7 +190,7 @@ $(document).ready(function() {
 
   <header>
     
-      <h1 class="entry-title"><a href="/entry/2011/12/30/ethical-game-design-from-gamasutra/">Ethical Game Design from Gamasutra</a></h1>
+      <h1 class="entry-title"><a href="/entry/2011/02/03/non-myths-about-programming/">Non-Myths About Programming</a></h1>
     
     
       <p class="meta">
@@ -205,62 +206,21 @@ $(document).ready(function() {
   
 
 
-<time datetime="2011-12-30T16:28:00-08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2011</time>
+<time datetime="2011-02-03T20:53:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>I came across a couple excellent articles on Gamasutra which I want to share here. The first, &ldquo;<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>&rdquo; is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, &ldquo;deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice.&rdquo; I&rsquo;ll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the &ldquo;freemium&rdquo; model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam&rsquo;s thoughts on the subject are certainly worth reading.</p>
-
-<p>&ldquo;<a title="Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy" href="http://www.gamasutra.com/blogs/EvanJones/20110815/8195/Radical_Plagiarism_The_Ethical_Lessons_of_the_Gamenauts_Controversy.php" target="_blank">Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy</a>,&rdquo; by <a href="http://www.gamasutra.com/blogs/author/EvanJones/4235/">Evan Jones</a>, is equally thought-provoking. Evan recounts the cloning of the indie game <a href="http://www.bored.com/game/play/150995/Radical_Fishing.html"><em>Radical Fishing</em></a> by the more established indie studio <a href="http://gamenauts.com/">Gamenauts</a>, and adds his perspective on the cultural impact of the rampant cloning that takes place on mobile app stores. Returning readers may recall that I&rsquo;ve previously <a title="In Defense of Clones" href="http://www.mlindgren.ca/archives/318">defended the practice of cloning games</a>. My defense excluded the cloning of smaller titles by established studios, which I&rsquo;ve always viewed as morally questionable at best, but Evan&rsquo;s article nevertheless gave me pause. He provides a strong counterpoint to my own thinking on the matter, and while I&rsquo;m not yet ready to reverse my position, his argument has undeniable weight. If you&rsquo;re at all interested in game development, both articles are well worth your time.</p>
+  <div class="entry-content"><p>Whilst browsing <a href="http://reddit.com" target="_blank">Reddit</a> today, I came across a short essay by <a href="http://stwww.weizmann.ac.il/g-cs/benari/" target="_blank">Mordechai Ben-Ari</a> titled &ldquo;<a title="PDF: Non-Myths About Programming" href="http://stwww.weizmann.ac.il/G-CS/BENARI/articles/nonmyths.pdf" target="_blank">Non-Myths About Programming</a>&rdquo; (PDF warning).  It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.  I would urge anyone considering a career in computer science to read it.  Given its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother summarizing the article—instead, I&rsquo;ll merely say that you should click the link and check it out for yourself.</p>
 </div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/12/30/ethical-game-design-from-gamasutra/">Continue Reading &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">How to link GLUT in Qt Creator on OS X</a></h1>
     
     
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-21T00:34:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
-        
-      </p>
+      <footer>
+        <a rel="full-article" href="/entry/2011/02/03/non-myths-about-programming/">Comments &rarr;</a>
+      </footer>
     
-  </header>
-
-
-  <div class="entry-content"><p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&rsquo;m hoping that it will prove useful to someone. For one of my courses this term, we&rsquo;re building OpenGL apps using Nokia&rsquo;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&rsquo;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&rsquo;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&rsquo;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
-
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">Continue Reading &rarr;</a>
-    </footer>
 
 </div>
 
@@ -274,7 +234,7 @@ $(document).ready(function() {
 
   <header>
     
-      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">How to reinstall OS X from a disc image using only one computer</a></h1>
+      <h1 class="entry-title"><a href="/entry/2010/10/03/194/">Making Samba shares accessible to Apache on OS X</a></h1>
     
     
       <p class="meta">
@@ -290,19 +250,40 @@ $(document).ready(function() {
   
 
 
-<time datetime="2011-09-21T00:17:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
+<time datetime="2010-10-03T19:29:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
+  <div class="entry-content"><p>As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts.  The basic idea is that authorized users can log in to a web interface and browse files in specific locations on my home network.  The Python script is accessed through Apache on my Mac Mini, but some of the files I need access to are on Windows boxes.  Unfortunately this presented something of a problem, as the Apache user on OS X (<code>_www</code> as of Snow Leopard) doesn&rsquo;t have permission to access Windows shares mounted by users.</p>
 
+<p>Sounds simple enough, right?  Just <code>chmod</code> or <code>chown</code> the Windows share and go to town.  Unfortunately, this doesn&rsquo;t seem to work; neither <code>chown</code> or <code>chmod</code> have any effect on mounted Windows shares.  Oddly, they don&rsquo;t output any errors; they just don&rsquo;t <em>do anything.</em> The only way around this seems to be to mount the shares <em>as</em> the Apache user (or whichever user you need to have access).  Here&rsquo;s how to do so in Snow Leopard, with instructions modified slightly from a <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a> <a title="Stack Overflow: mount a windows smb share on OS X as so it can be accessed by 'www' user" href="http://stackoverflow.com/questions/324171/mount-a-windows-smb-share-on-os-x-as-so-it-can-be-accessed-by-www-user" target="_blank">question on the subject</a>:</p>
+
+<ol>
+    <li>Create the mountpoint<br />
+        <code>mkdir /Volumes/Mount_Name</code></li>
+    <li>Set the permissions on the mount point
+<pre><code>sudo chown _www:_www /Volumes/Mount_Name
+sudo chmod 755 /Volumes/Mount_Name
+</code></pre>
+</li>
+    <li>If necessary, make a symlink from your Apache documents folder to the mount point<br />
+         <code>ln -s /Volumes/Mount_Name /Library/WebServer/Documents/Mount_Name</code></li>
+    <li>Mount the share <strong>as the Apache user</strong><br />
+        <code>sudo -u _www mount_smbfs //DOMAIN;User:Password@Host/Share /Volumes/Mount_Name</code></li>
+</ol>
+
+
+<p>I doubt a great number of people will need this information as it&rsquo;s a strange sort of setup, but it&rsquo;s my hope that these instructions will save someone some time.</p>
 </div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">Continue Reading &rarr;</a>
-    </footer>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2010/10/03/194/">Comments &rarr;</a>
+      </footer>
+    
 
 </div>
 
@@ -312,11 +293,11 @@ $(document).ready(function() {
     <article>
       
 
-<div class="category-Personal">
+<div class="category-Coding">
 
   <header>
     
-      <h1 class="entry-title"><a href="/entry/2011/08/22/rest-in-peace-jack-layton/">Rest in Peace, Jack Layton</a></h1>
+      <h1 class="entry-title"><a href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">Android Development Device Setup in Ubuntu 10.04</a></h1>
     
     
       <p class="meta">
@@ -332,31 +313,301 @@ $(document).ready(function() {
   
 
 
-<time datetime="2011-08-22T20:36:00-07:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2011</time>
+<time datetime="2010-09-12T17:02:00-07:00" pubdate data-updated="true">Sep 12<span>th</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>I don&rsquo;t discuss politics on this site, but today warrants an exception. Canada has suffered a terrible loss with the death of Jack Layton, the leader of the federal New Democratic Party. He was an inspiring figure, hopeful and optimistic right to the end, and he devoted his life to the betterment of Canada and its citizens. He was taken from us far too soon, and will be sorely missed.</p>
+  <div class="entry-content"><p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&rsquo;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&rsquo;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&rsquo;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a></div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">More &rarr;</a>
+      </footer>
+    
 
-<p style="text-align: center;"><a title="Jack Layton.  Click to view full resoltuon." href="/images/jack_layout.jpg"><img src="/images/jack_layton.jpg" alt="" width="658" height="370" /></a></p>
-
-
-<p>Rest in peace.</p>
 </div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/08/22/rest-in-peace-jack-layton/">Continue Reading &rarr;</a>
-    </footer>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Technology">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/09/06/android-first-impressions/">Android First Impressions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-06T20:19:00-07:00" pubdate data-updated="true">Sep 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple&rsquo;s app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they&rsquo;ve claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2010/09/06/android-first-impressions/">More &rarr;</a>
+      </footer>
+    
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/08/27/misconceptions-about-computer-science/">Where are all the Computer Scientists?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-27T19:01:00-07:00" pubdate data-updated="true">Aug 27<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn&rsquo;t get complacent just yet.  There&rsquo;s still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.</p>
+
+<p>I&rsquo;ve always felt that a lack of exposure is one of the primary detriments to computer science enrollment.  While I don&rsquo;t have any hard data, my own experience combined with an informal surveyal of friends and colleagues leads me to believe that a large percentage of North American high schools—possibly even a majority—offer little in the way of comprehensive computing classes.  While I don&rsquo;t dispute the importance of math, English and science, I can&rsquo;t help but wonder why computing isn&rsquo;t given an equal footing in the educational sphere, given its ubiquity today.</p>
+
+<p>I&rsquo;ve encountered a great number of intelligent and educated people who have <em>no idea whatsoever</em> about what the field of computer science is, or even how computers and software work.  I understand that most people don&rsquo;t necessarily need that information.  However, it&rsquo;s odd to me that basic computer literacy isn&rsquo;t required of college graduates (let alone high school students) in the same way that basic writing and math skills are.  In the interest of meeting ever-increasing economic demand for technically skilled graduates, shouldn&rsquo;t we do more to expose students to computing?</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2010/08/27/misconceptions-about-computer-science/">More &rarr;</a>
+      </footer>
+    
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/">Puzzle Panel Postmortem: Framework</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-13T00:33:00-07:00" pubdate data-updated="true">Jul 13<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m currently reading <a title="Coders at Work" href="http://www.codersatwork.com/">Coders at Work</a> by Peter Seibel.  The book is a collection of interviews with respected and knowledgeable programmers.  While the interview format can be somewhat difficult to read at times, the book is excellent.  Seibel is himself an experienced programmer, and asks the sort of insightful questions no ordinary interviewer could, making for fascinating discussions.  One could mine the book for weeks for interesting quotes.  I&rsquo;m going to try to resist that temptation, but because it relates to the topic at hand, I will permit myself to share with you one statement made by Joe Armstrong:</p>
+
+<blockquote>Being a young programmer today must be awful—you can choose 20 different programming languages, dozens of framework[s] and operating systems and you&#8217;re paralysed by choice.</blockquote>
+
+
+<p>I think Armstrong is mistaken; it&rsquo;s anything but awful to be a young programmer today.  However, it&rsquo;s certainly true that the number of choices one must make in starting a project can be daunting.  The choices you make at the start of a project can have far-reaching implications.  Choose wisely and your endeavour might be easy and successful, but choose poorly and you&rsquo;ll almost certainly regret it later.  For iPhone game developers, perhaps the most important choice that must be made early on in a project is which graphics libraries to use.</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/">More &rarr;</a>
+      </footer>
+    
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Links">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/">Drive: The Surprising Truth About What Motivates Us</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-15T23:19:00-07:00" pubdate data-updated="true">Jun 15<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m a huge fan of TED Talks. This is a fascinating video in which Dan Pink summarizes some of his research into human motivation, which I found at <a title="Coding Horror" href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror.</a></p>
+
+<object width="640" height="385" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowfullscreen" value="true" /><embed width="640" height="385" type="application/x-shockwave-flash" src="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" allowFullScreen="true" allowscriptaccess="always" allowfullscreen="true" /></object>
+
+</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/">Comments &rarr;</a>
+      </footer>
+    
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Technology">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/06/15/my-iphone-debacle/">My iPhone debacle</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-15T23:07:00-07:00" pubdate data-updated="true">Jun 15<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>&hellip;or &ldquo;Another Reason I&rsquo;m Considering <em>Switching</em> to Android.&rdquo;</p>
+
+<p>Yesterday evening, as I was leaving work, I was carrying on a conversation via text message with a friend of mine.  Upon arriving home, I realized that she&rsquo;d apparently stopped responding, so I pulled my phone out of my pocket to check if I&rsquo;d missed a message.  Instead of my usual lock screen, though, I was met a very unwelcome &ldquo;Connect to iTunes&rdquo; prompt.  I&rsquo;d been running the beta of OS 4, and it turns out that if your developer licence expires while you still have the beta installed, Apple will <em>remotely lock you out of your device without so much as a warning.</em> I guess I should have expected as much.</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2010/06/15/my-iphone-debacle/">More &rarr;</a>
+      </footer>
+    
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Coding">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/">Puzzle Panel Postmortem: Introduction</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-30T01:26:00-07:00" pubdate data-updated="true">May 30<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Welcome, dear reader!</p>
+
+<p>Although this is the inaugural post for this website, I won&rsquo;t bother with any introduction here.  If that sort of thing interests you, I refer you to the <a title="About" href="http://www.mlindgren.ca/about" target="_self">&ldquo;about&rdquo; page.</a> For this entry, I&rsquo;d like to dive right into the sort of content that this site is to be host to.  My iPhone developer program membership expires today, and I won&rsquo;t be renewing it—not immediately, at least.  That being the case, I think that this is a good time to reflect on my year as a so-called &ldquo;iPhone developer.&rdquo;</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/">More &rarr;</a>
+      </footer>
+    
 
 </div>
 
     </article>
   
   <div class="pagination">
-    
-      <a class="prev" href="/page/4/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
