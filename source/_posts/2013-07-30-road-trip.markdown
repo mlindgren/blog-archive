@@ -4,7 +4,6 @@ title: "Road Trip! Part I"
 date: 2013-07-30 2:58
 comments: true
 categories: Personal
-published: false
 ---
 
 I love visiting new places. I've lived in the United States for just over a year
@@ -26,8 +25,8 @@ issues have now been sorted out (or at least as sorted out as they'll ever be),
 so it offered another compelling reason to take a long trip. And so it was that
 I booked the 5th to 12th of July off of work and embarked on a 3,378 mile
 (5,436km) drive from Redmond, Washington through Oregon, Idaho, and Nevada to
-Utah, and then back home through Arizona, Nevada, California and Oregon. Here's
-a map of my travels:
+Utah, and then back home through Arizona, Nevada, California and Oregon.
+<!-- more --> Here's a map of my travels:
 
 <iframe style="margin-left: auto; margin-right: auto; display: block;"
 width="640" height="480" frameborder="0" scrolling="no"
@@ -151,7 +150,7 @@ still would have been amazing, but as I hadn't yet been to Zion it was truly awe
 inspiring. Arches is also a very accessible national park; the scenic drive
 through the park alone is impressive, and many of the most impressive arches
 require only short hikes to see up close. That said, for someone from a northern
-climate such as myself, a 2 mile hike in 100-degree heat is a lot harder than
+climate such as myself, a two mile hike in 100-degree heat is a lot harder than
 one might expect.
 
 I started with Landscape Arch, which was suitably picturesque and monumental for
@@ -160,11 +159,17 @@ further along the same trail. But between the extreme heat and a harsh wind that
 coated my face, eyes, mouth and camera with orange-red sand, I decided to turn
 back before I reached Double O Arch; with so many other arches to see, I didn't
 want to exhaust myself visiting the first few arches. I stopped at Pine Tree
-Arch and Tunnel Arch on the way back. I then made the short hikes to Skyline
-Arch and Sand Dune Arch, the latter of which is one of the most picturesque
-arches in the park, in my opinion. Being in a canyon, the soft sand around the
-arch is also delightfully cool on a hot day. Were it not so busy, it would be
-the perfect place for a nap.
+Arch and Tunnel Arch on the way back. Tunnel Arch is aptly named because it's
+really more of a hole through a large fin of rock, on its way to becoming an
+arch but not quite there yet. Pine Tree Arch was nice, but difficult to
+photograph without a wide angle lens.
+
+I then made the short hikes to Skyline Arch and Sand Dune Arch, the latter of
+which is one of the most picturesque arches in the park, in my opinion. Being in
+a canyon, the soft sand around the arch is also delightfully cool on a hot day.
+Were it not so busy, it would be the perfect place for a nap. Behind the arch,
+there's a crevice that one can easily walk into for a change of perspective, and
+it's quite easy to climb onto the top of the arch as well.
 
 Finally, with sunset coming on, I hiked up to Delicate Arch. I waited until the
 sun had gone down to try to get some long exposures, but I was mostly
@@ -243,27 +248,27 @@ get some night time and sunrise shots after buying a remote shutter trigger.
 /images/utah/utah-part1-album-114.jpg[/images/utah/utah-part1-thumb-114.jpg]: I stayed by Delicate Arch until darkness fell. I wasn't able to get any good sunset photos of the arch itself, but I did get a decent long exposure of cars heading back to Moab for the night.
 {% endgallery %}
 
-Getting ready for bed that evening, I left the flap on my tent open for probably
-about a minute or two while I moved some of my gear from the car into the tent.
-Upon getting in the tent and turning on my flashlight, I discovered that that
-minute or two had been long enough for a
-[solfugid](en.wikipedia.org/wiki/Solifugae) to invite itself in. My dad is an
-entomologist so I'm not particularly frightened of insects or arachnids, though
-I'm certainly not as welcoming of them as he is, nor, obviously, as
+Back at my tent as I was getting ready for bed that evening, I left the door
+flap open for probably about a minute or two while I moved some of my gear from
+the car into the tent.  Upon getting in the tent and turning on my flashlight, I
+discovered that that minute or two had been long enough for a
+[solfugid](http://en.wikipedia.org/wiki/Solifugae) to invite itself in. My dad
+is an entomologist so I'm not particularly frightened of insects or arachnids,
+though I'm certainly not as welcoming of them as he is, nor, obviously, as
 knowledgeable about them. The solfugid was pretty alarming because at the time I
 didn't actually know what it was; I only knew that it was very fast and had very
 large mandibles, and that Utah (in contrast to everywhere I've ever lived) does
 actually have venomous arthropods.
 
-After a lot of swearing and awkward attempts to keep my eye on it while blindly
-reaching for something that I could safely trap it in, I managed to scoop it up
-in a cooking pot and throw it outside. I then searched the Internet for
-something like "insect with 10 legs with 2 huge front legs" and found out what
-it was, and that they're relatively harmless.  (When I talked to my dad about it
-later, he was quick to point out that solfugids are arachnids, not insects, and
-that the two front "legs" aren't actually legs at all. He also said that he was
-jealous of my encounter as he's never seen one in the wild.) I still wouldn't want to
-get bitten by those big mandibles, though.
+After a lot of swearing and awkward attempts to keep my eye on its rapid
+confused scurrying while blindly reaching for something that I could safely trap
+it in, I managed to scoop it up in a cooking pot and throw it outside. I then
+searched the Internet for something like "insect with 10 legs with 2 huge front
+legs" and found out what it was, and that they're relatively harmless.  (When I
+talked to my dad about it later, he was quick to point out that solfugids are
+arachnids, not insects, and that the two front "legs" aren't actually legs at
+all. He also said that he was jealous of my encounter as he's never seen one in
+the wild.) I still wouldn't want to get bitten by those big mandibles, though.
 
 <div style="margin-left: auto; margin-right: auto; text-align: center">
 {% photo /images/utah/utah-part1-album-115.jpg /images/utah/utah-part1-thumb-115.jpg A solfugid in my tent %}
@@ -278,7 +283,7 @@ propeller, by maintaining a high rate of speed the boat is able to skim over
 water only a few inches deep, and at various points on the tour the captain puts
 the boat into a spin, soaking everyone on board with refreshing river water. In
 retrospect, I could easily have brought my phone along in a couple ZipLoc bags
-for photos, but I wasn't sure just how wet the tour would be at the time; hence,
+for photos, but at the time I wasn't sure just how wet the tour would be; hence,
 there are no photos.
 
 After the jet boat tour I decided to check out Dead Horse Point State Park. I
@@ -292,7 +297,7 @@ And, as I discovered, it also has a pretty broad definition of what qualifies as
 a road.
 
 Mapping a route from Moab to Dead Horse Point, I was presented with two options,
-and I chose the alternate route which I thought would be a more scenic drive.
+and I chose the "alternate" route which I thought would be a more scenic drive.
 And indeed it was&mdash;but it also turned out to traverse Long Canyon Road, a
 somewhat steep and rocky 4x4 trail from the Colorado River basin up to the Dead
 Horse Point mesa. There are settings in the GPS to enable or disable routing
@@ -308,22 +313,26 @@ trail, but I didn't encounter any other cars. I drove up to just beyond  the
 giant fallen rock before Pucker Pass, at which point the road was fairly steep
 and covered in extremely soft sand which afforded my tires almost no traction. I
 think I probably could have made it through and continued to the end of the
-trail, but as I was alone, dozen of miles from the nearest city, and with no
+trail, but as I was alone, dozens of miles from the nearest city, and with no
 cellular reception, I didn't want to push my luck, so I turned around and went
-back down the canyon and back to the interstate. (I feel like I'm letting Subaru
-owners down by admitting that, but better safe than sorry!)
+back down the canyon and back to the interstate. (I feel like I'm letting other
+Subaru owners down by admitting that, but better safe than sorry!) The road
+probably doesn't look that bad in my photos, and it wouldn't be for a vehicle
+with proper tires and more clearance, but keep in mind that the places I stopped
+for pictures were the least steep and bumpy parts.
 
 As an aside, on my way back, right by the intersection of Long Canyon Road and
-the highway, I saw a large matte black Ford truck with a huge camera rig on the
-back, as well as a Mustang with fake bullet holes and a missing taillight on a
-flatbed tow truck. Clearly filming for some movie was going on in the area. Fast
-& The Furious 7? Transformers 4? Who knows.
+the highway, I saw a large matte black Ford truck with a huge stabilized camera
+rig on the back, as well as a Mustang with fake bullet holes and a missing
+taillight on a flatbed tow truck. Clearly filming for some movie was going on in
+the area. Fast & The Furious 7? Transformers 4? Who knows.
 
-The view of the Colorado River from Dead Horse Point is well worth the drive,
-but once you've seen it, there's not much else to do in the state park, so I
-didn't spend too long there. As I was leaving, a beautiful but ephemeral rainbow
-presented itself to the east, punctuated by flashes of lightning from a storm
-that had  rolled in to the east of Moab. Sadly I couldn't get any decent
+Finally, more than an hour later than I had expected to, I arrived at Dead Horse
+Point. The view of the Colorado River from Dead Horse Point is well worth the
+drive, but once you've seen it, there's not much else to do in the state park,
+so I didn't spend too long there. As I was leaving, a beautiful but ephemeral
+rainbow presented itself to the east, punctuated by flashes of lightning from a
+storm that had  rolled in to the east of Moab. Sadly I couldn't get any decent
 pictures of this.
 
 {% gallery %}
@@ -375,7 +384,7 @@ object for a long exposure when you can't actually _see the object._ I thought I
 might be able to accomplish this by trial and error, but doing so turned out to
 be time consuming and unreliable.
 
-I later did some searching and discovered that one of the preferred solutions to
+I later did some research and discovered that one of the preferred solutions to
 this problem is to carry a laser pointer with one's photographic equipment. By
 shining the laser on the object you want to focus on, you'll have a small,
 bright point, and you'll know that your image is in focus when that point is
@@ -386,7 +395,7 @@ stabilization mechanism will result in a blurry image.
 
 Anyway, once the sun came up I was able to get some reasonably nice photos,
 although I was somewhat compositionally limited by the swarm of people who had
-arrived around 6am. Now that I could see where I was going, I took the
+arrived around 6am. Now that I was able to see where I was going, I took the
 opportunity to explore the natural stone amphitheatre below the arch, as well as
 the jutting outcropping of rock to the south. Here I found a number of lizards
 warming themselves in the morning sun.
@@ -411,7 +420,7 @@ Canyonlands, and are more than deserving of their own post.
 /images/utah/utah-part1-album-153.jpg[/images/utah/utah-part1-thumb-153.jpg]: Here's a (rather poor) shot of my camera setup, in case you were curious
 /images/utah/utah-part1-album-155.jpg[/images/utah/utah-part1-thumb-155.jpg]: Looking back at the cliffs I photographed from the trailhead at sunset
 /images/utah/utah-part1-album-156.jpg[/images/utah/utah-part1-thumb-156.jpg]: Now the sun is truly beginning to light up the arch
-/images/utah/utah-part1-album-157.jpg[/images/utah/utah-part1-thumb-157.jpg]: It's stunning. My photography is by no means excellent, but I doubt any expert could capture the majesty of Delicate Arch at sunrise.
+/images/utah/utah-part1-album-157.jpg[/images/utah/utah-part1-thumb-157.jpg]: It's stunning. My photography is by no means excellent, but I doubt any expert could truly capture the majesty of Delicate Arch at sunrise.
 /images/utah/utah-part1-album-158.jpg[/images/utah/utah-part1-thumb-158.jpg]: The desert to the northwest
 /images/utah/utah-part1-album-159.jpg[/images/utah/utah-part1-thumb-159.jpg]: The overpowering golden glow of the morning sun promises another breathtakingly hot day
 /images/utah/utah-part1-album-160.jpg[/images/utah/utah-part1-thumb-160.jpg]: I climbed up above the tunnel where my camera and tripod were sitting to take this. In the lower left is the trail.

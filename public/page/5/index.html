@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts. The basic idea is that authorized &hellip;">
+  <meta name="description" content="Whilst browsing Reddit today, I came across a short essay by Mordechai Ben-Ari titled &ldquo;Non-Myths About Programming&rdquo; (PDF warning).  It& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,7 +85,16 @@ type="text/javascript"></script>
 <script language="Javascript" type="text/javascript">
 // ender.js gobbles jQuery's ready event: Use ender.js $ instead
 $(document).ready(function() {
-    jQuery(".fancybox").fancybox();
+    jQuery(".fancybox").fancybox(
+    {
+      helpers:
+      {
+        overlay:
+        {
+          locked: false
+        }
+      }
+    });
 });
 </script>
 
@@ -129,6 +138,47 @@ $(document).ready(function() {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Links">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2011/02/03/non-myths-about-programming/">Non-Myths About Programming</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-03T20:53:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Whilst browsing <a href="http://reddit.com" target="_blank">Reddit</a> today, I came across a short essay by <a href="http://stwww.weizmann.ac.il/g-cs/benari/" target="_blank">Mordechai Ben-Ari</a> titled &ldquo;<a title="PDF: Non-Myths About Programming" href="http://stwww.weizmann.ac.il/G-CS/BENARI/articles/nonmyths.pdf" target="_blank">Non-Myths About Programming</a>&rdquo; (PDF warning).  It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.  I would urge anyone considering a career in computer science to read it.  Given its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother summarizing the article—instead, I&rsquo;ll merely say that you should click the link and check it out for yourself.</p>
+</div>
+    <footer>
+      <a rel="full-article" href="/entry/2011/02/03/non-myths-about-programming/">Continue Reading &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
   
   
     <article>
@@ -183,7 +233,7 @@ sudo chmod 755 /Volumes/Mount_Name
 <p>I doubt a great number of people will need this information as it&rsquo;s a strange sort of setup, but it&rsquo;s my hope that these instructions will save someone some time.</p>
 </div>
     <footer>
-      <a rel="full-article" href="/entry/2010/10/03/194/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2010/10/03/194/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -221,47 +271,9 @@ sudo chmod 755 /Volumes/Mount_Name
   </header>
 
 
-  <div class="entry-content"><p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&rsquo;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&rsquo;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&rsquo;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a><!--more--></p>
-
-<ol>
-    <li>Connect your phone to your computer and open a terminal window.  Run <code>adb devices</code> to confirm that adb can &#8220;see&#8221; your phone.  You should see something like this:
-<pre><code>$ adb devices
-List of devices attached
-???????????? no permissions</code></pre>
-    </li><li>Type <code>lsusb</code> to get a list of attached USB devices.  Look for an entry with your phone&#8217;s manufacturer; for instance, since I have an HTC device, I get:
-<pre><code>$ lsusb
-...
-Bus 002 Device 003: ID 0bb4:0c87 High Tech Computer Corp. 
-...</code></pre>
-
-Note the ID - in my case, <code>0bb4:0c87</code>.  The part before the colon is the vendor ID.  The part after it is the product ID.  Keep these in mind.
-</li><li>
-You&#8217;ll now need to create a udev rules file using your preferred text editor.  <a href="http://dimitar.me/how-to-connect-your-android-phone-to-ubuntu-to-do-developmenttestinginstallations-or-tethering/" title="How to connect your Android phone to Ubuntu">This guide</a> lists a number of different file names per-device, but based on my reading of the udev man page, I don&#8217;t believe the file name is actually important.  The official documentation recommends <code>51-android.rules</code>, which is what I went with.  You&#8217;ll need to use <code>sudo</code> to get permission to create the file:
-<pre><code>$ sudo vi /etc/udev/rules.d/51-android.rules</code></pre>
-</li>
-<li>
-The contents of the file should be as follows:
-<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="[Vendor ID]", ATTRS{idProduct}=="[Product ID]", MODE="0666"</code></pre>
-&#8230;where the bracketed bits are replaced with the IDs you got earlier from lsusb.  For my HTC Desire, I entered:
-<pre><code>SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bb4", ATTRS{idProduct}=="0c87", MODE="0666"</code></pre>
-</li>
-<li>
-Save the file.  Most of the documentation I&#8217;ve come across says that restarting adb and udev is sufficient to give adb access to your device, but <strong>in my case I had to completely restart my computer before adb properly recognized my phone.</strong>  Nevertheless, it&#8217;s probably best to adb and udev first:
-<pre><code>$ sudo restart udev
-$ adb kill-server
-$ adb start-server</code></pre>
-Run <code>adb devices</code> again to see if your phone is recognized.  If you still see <code>???????????? no permissions</code>, you&#8217;ll probably need to restart your computer.
-</li>
-<li>
-You should now have full access to your phone from adb and Eclipse.
-</li>
-</ol>
-
-
-<p>I hope this proves helpful.  If you have any corrections or if this method didn&rsquo;t work for you, leave a comment.</p>
-</div>
+  <div class="entry-content"><p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&rsquo;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&rsquo;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&rsquo;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a></div>
     <footer>
-      <a rel="full-article" href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -299,33 +311,9 @@ You should now have full access to your phone from adb and Eclipse.
   </header>
 
 
-  <div class="entry-content"><p>Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple&rsquo;s app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they&rsquo;ve claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.<!--more--></p>
-
-<p>The phone I switched to is the HTC Desire on Telus:</p>
-
-<p><img class="aligncenter size-full wp-image-152" style="display: block;
-margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC Desire" width="198" height="300" /></p>
-
-<p>With a 1Ghz CPU and 576MB of RAM, the Desire packs some powerful hardware.  So far, I&rsquo;ve been quite impressed by the hardware, but that&rsquo;s all I&rsquo;ll say about it for now.  I&rsquo;m more interested in relating my first impressions of the Android platform.  In no particular order:</p>
-
-<ul>
-    <li>The openness of the Android market and of the platform itself is immediately apparent as an ex-iPhone user.  <em>I love it.</em> I love being able to download emulators directly from the app store.  I love being able to install interactive programming environments on my phone.  I love having a native Latitude app.  I love that Google Voice is available, even though it&#8217;s currently US-only.  Most of all, I love that neither Apple nor any other company can tell me what I can and cannot install on my phone.</li>
-    <li>Widgets provide an extremely convenient way to access information without having to switch between apps.  While there aren&#8217;t as many widgets available as I wish there were (or perhaps they&#8217;re just difficult to find - more on this later), the built-in widgets alone have made the switch worthwhile for me.  I frequently check my phone for Twitter updates, new e-mail from work, news, and what have you; with Android, I can do all of this without ever leaving the home screen.  It&#8217;s delightful.  Beyond widgets, Android offers supreme customizability with themes, home screen replacement apps, and even (if you&#8217;re adventurous) custom device ROMs.</li>
-    <li>Although openness and customizability are boons to the Android platform, they also result in serious <a href="http://www.zdnet.com/blog/hardware/android-fragmentation-is-real/8499">fragmentation</a> which could hurt the platform in the long run.  I&#8217;ve already encountered widgets and apps which don&#8217;t quite display properly on my device, presumably because of HTC&#8217;s custom Sense UI.  What&#8217;s worse is how sluggish <a href="http://www.sonyericsson.com/cws/cws/home?cc=ca&amp;lc=en">some manufacturers</a> are to release critical operating system updates for their devices.  I&#8217;m picking on Sony because they don&#8217;t have a single device running Android 2.x, but even among other manufacturers, it doesn&#8217;t seem unusual for ROM updates to lag behind Google releases by several months. Worse <em>still </em>is that carrier locks can prevent these updates from being pushed to devices.  Android 2.2 &#8220;Froyo&#8221; has been available for the HTC Desire since late July, but Telus customers (who haven&#8217;t unlocked their phones) still haven&#8217;t received the update.  Supporting custom UIs, old operating system versions <em>and </em>varied hardware will force Android developers to commit more resources to testing and fewer to innovation, and the platform as a whole will suffer for it.</li>
-    <li>Android is fast.  Remarkably fast.  I don&#8217;t presently have enough information to objectively compare it to iOS, but I can say that I&#8217;ve been very impressed.  Five years ago I would have doubted that such performance would ever be possible with Java running on a mobile device.  (<span style="text-decoration: line-through;">I&#8217;m aware that most of the core of Android is written in C, but the apps and UI are still Java.</span> See correction below.<sup>1</sup>)  Having just purchased my Desire three days ago, I haven&#8217;t had a chance to install Froyo, either, but <a href="http://www.youtube.com/watch?v=utnYpybdIKo" target="_blank">benchmarks show</a> that it increases performance by up to 700%.<sup>2</sup></li>
-    <li>Navigation and searching in the Android Market is absolutely terrible.  I find it hard to believe that the Market is Google&#8217;s doing, because searching the market never seems to bring up what I&#8217;d consider to be the &#8220;best&#8221; results, unless you type in the exact name of a specific app you&#8217;re looking for.  The aren&#8217;t nearly enough categories, either.</li>
-    <li>On a related note, Android does lack some of the polish that iOS offers.  There&#8217;s not as much consistency in terms of UI elements and general design patterns.  Customizing home screens and managing multiple apps which run simultaneously may not be something that typical phone users will care to do.  For power users, though, it&#8217;s not a problem.  (Some sort of built-in task manager would be nice, though.)</li>
-    <li>Android is just a much better communication platform than iOS ever has been, and perhaps ever will be.  Apple has finally grudgingly implemented something akin to multi-tasking (if you own an iPhone 3GS or better), but there&#8217;s <em>still </em>no good way for iPhone apps to notify users of important events.  When participating in a conversation using an instant messenger app (or any similar activity), it&#8217;s crucial that you&#8217;re notified of incoming messages, but notifications shouldn&#8217;t be obtrusive and interrupt whatever else you may be doing.  Android&#8217;s notification bar is perfect for this.  iOS doesn&#8217;t even have what I&#8217;d call a serious attempt at a solution.  And with <a href="http://www.google.com/talk/" target="_blank">Google Talk</a> a core platform feature, Android devices can actually compete with the ease and convenience of <a href="http://na.blackberry.com/devices/features/im/blackberry_messenger.jsp" target="_blank">BlackBerry Messenger.</a> Meanwhile, Apple&#8217;s just introduced&#8230; <a href="http://www.apple.com/itunes/ping/" target="_blank">Ping.</a> Snore.</li>
-</ul>
-
-
-<p>I fully intend to do some serious Android development, so I&rsquo;ll surely write more about the platform as I become more familiar with it.  For now, though, the bottom line is this: I love Android.  Switching from iOS was an excellent decision and I doubt I&rsquo;ll ever look back.  I&rsquo;d urge anyone thinking about a phone upgrade to consider Android as well.</p>
-
-<p><sup>1</sup><span style="font-size: 0.8em;">A reader on <a href="http://www.reddit.com/r/Android/comments/dafec/android_first_impressions_from_an_exiphone/" target="_blank" title="Reddit">Reddit</a> brought to my attention the fact that the Android <a href="http://en.wikipedia.org/wiki/Dalvik_%28software%29" target="_blank" title="Dalvik">Dalvik</a> virtual machine and its bytecode are significantly different from their Java equivalents, so although Android apps are written in Java, compiled Android apps are not really Java.  (Apparently Oracle disagrees, mind you.)</span><br/>
-<sup>2</sup><span style="font-size: 0.8em;">Another Redditor pointed out that the 700% figure may be something of an exaggeration.  I&rsquo;ve heard varying figures &ndash; anywhere from 2x to 10x &ndash; but 700% was based on the specific video I linked to.  However, it&rsquo;s true that real-world performance will likely differ significantly from the results of synthetic benchmarks.</span></p>
-</div>
+  <div class="entry-content"><p>Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple&rsquo;s app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they&rsquo;ve claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.</div>
     <footer>
-      <a rel="full-article" href="/entry/2010/09/06/android-first-impressions/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2010/09/06/android-first-impressions/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -363,96 +351,9 @@ margin-left: auto; margin-right: auto;" src="/images/htc-desire.png" alt="HTC De
   </header>
 
 
-  <div class="entry-content"><p>It&rsquo;s common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn&rsquo;t get complacent just yet.  There&rsquo;s still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.<!--more--></p>
-
-<p>I&rsquo;ve always felt that a lack of exposure is one of the primary detriments to computer science enrollment.  While I don&rsquo;t have any hard data, my own experience combined with an informal surveyal of friends and colleagues leads me to believe that a large percentage of North American high schools—possibly even a majority—offer little in the way of comprehensive computing classes.  While I don&rsquo;t dispute the importance of math, English and science, I can&rsquo;t help but wonder why computing isn&rsquo;t given an equal footing in the educational sphere, given its ubiquity today.</p>
-
-<p>I&rsquo;ve encountered a great number of intelligent and educated people who have <em>no idea whatsoever</em> about what the field of computer science is, or even how computers and software work.  I understand that most people don&rsquo;t necessarily need that information.  However, it&rsquo;s odd to me that basic computer literacy isn&rsquo;t required of college graduates (let alone high school students) in the same way that basic writing and math skills are.  In the interest of meeting ever-increasing economic demand for technically skilled graduates, shouldn&rsquo;t we do more to expose students to computing?</p>
-
-<p>To illustrate my point, here are a few examples:</p>
-
-<ul>
-    <li style="margin-bottom: 1em;">I used to work retail, and small-talk at the till would frequently turn to my university career.  Almost invariably when I told a customer that I was enrolled in a computer science program, he or she would reply &#8220;Oh, I always have so much trouble getting computers to work.  I think mine has a virus.&#8221;  This was usually followed by &#8220;But it&#8217;s good that you&#8217;re learning about them; we&#8217;ll always need people to fix them!&#8221;</li>
-    <li style="margin-bottom: 1em;">While discussing my current job with a friend of mine who is in the third year of her degree program, I described my workflow to her.  I told her that a bug report or feature request will come in from a customer, I&#8217;ll gather requirements and implement a solution, and then make adjustments as necessary until the customer is satisfied.  She asked, &#8220;How many do you get done in a day?&#8221;  I couldn&#8217;t help but laugh; there are very few tasks in client-focused software development which are both worth mentioning and completable in one day.  Perhaps I&#8217;m being unfair here, as that question probably seems reasonable to someone with little knowledge of software development.  However, no one would ask of a an architect, &#8220;How many buildings do you design in a day?&#8221;  Why is software different?  I&#8217;d argue that it&#8217;s because most people are never exposed to software development.</li>
-    <li style="margin-bottom: 1em;">In my third year of university I was required to take an English course to fulfill my breadth requirements.  While discussing one of my papers with her, the professor complimented me on my writing.  She said that I had a strong, persuasive style, and asked if I was a law student.  She was shocked when I told her that, as a matter of fact, I was in computer science.  She then told me that she was glad I&#8217;d taken her course (on Renaissance and early modern literature), as it would ensure that I was somewhat cultured and not simply a &#8220;computer nerd.&#8221;  I have a great deal of respect for that professor and I don&#8217;t believe that her comment had any ill intent, but it again illustrates the fact that computer science is frequently misunderstood and/or not taken seriously.</li>
-</ul>
-
-
-<p>I&rsquo;m not entirely sure if these examples will properly communicate the point I&rsquo;d hoped they would. I wouldn&rsquo;t want anyone to misunderstand the purpose of this post, either; I don&rsquo;t mean to complain about how computer science is perceived.  I don&rsquo;t particularly care how people feel about my field of study.</p>
-
-<p>My point is this: it seems to me that a large percentage of people, no matter how well educated they may otherwise be, have no idea how computers work or how software is developed.  I feel that the primary reason for this is, in most cases, that they were never exposed to computing in a serious way.  Until this is remedied, computer science enrollment will continue to be mediocre and the field of computer science will not reach its full potential.  After all, who wants to go into a field he or she knows nothing about?</p>
-
-<p>I&rsquo;ve mentioned that I&rsquo;m surprised at the lack of computer literacy I see in some college graduates.  Colleges are not my primary concern, though.  If computer science enrollment is to be increased, exposure to computing needs to start much earlier.  At the very least, I&rsquo;d like to see is comprehensive computing courses&mdash;which teach skills up to and including basic programming&mdash;made available in a majority of high schools.  Ideally, these classes should not simply be electives; one computing class should be a required part of any high school curriculum.  (I don&rsquo;t mean a course in touch typing.)  Of course, given the real-world economic and temporal constraints that educators face, I don&rsquo;t expect that any of these things will happen any time soon.  One can always hope, though!</p>
-
-<p><span style="font-size: 0.8em;">On a related note, you may be amused to find out <a href="http://www.youtube.com/watch?v=o4MwTvtyrUQ" title="what a browser is">what a browser is.</a></span></p>
-</div>
+  <div class="entry-content"><p>It&rsquo;s common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn&rsquo;t get complacent just yet.  There&rsquo;s still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.</div>
     <footer>
-      <a rel="full-article" href="/entry/2010/08/27/misconceptions-about-computer-science/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
-<div class="category-Coding">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/">Puzzle Panel Postmortem: Framework</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-13T00:33:00-07:00" pubdate data-updated="true">Jul 13<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m currently reading <a title="Coders at Work" href="http://www.codersatwork.com/">Coders at Work</a> by Peter Seibel.  The book is a collection of interviews with respected and knowledgeable programmers.  While the interview format can be somewhat difficult to read at times, the book is excellent.  Seibel is himself an experienced programmer, and asks the sort of insightful questions no ordinary interviewer could, making for fascinating discussions.  One could mine the book for weeks for interesting quotes.  I&rsquo;m going to try to resist that temptation, but because it relates to the topic at hand, I will permit myself to share with you one statement made by Joe Armstrong:</p>
-
-<blockquote>Being a young programmer today must be awful—you can choose 20 different programming languages, dozens of framework[s] and operating systems and you&#8217;re paralysed by choice.</blockquote>
-
-
-<p>I think Armstrong is mistaken; it&rsquo;s anything but awful to be a young programmer today.  However, it&rsquo;s certainly true that the number of choices one must make in starting a project can be daunting.  The choices you make at the start of a project can have far-reaching implications.  Choose wisely and your endeavour might be easy and successful, but choose poorly and you&rsquo;ll almost certainly regret it later.  For iPhone game developers, perhaps the most important choice that must be made early on in a project is which graphics libraries to use.<!--more--></p>
-
-<p>There are essentially two graphics libraries for iPhone game developers to choose between.  Apple&rsquo;s <a title="Quartz" href="http://developer.apple.com/iphone/library/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html" target="_blank">Quartz</a> and Core Animation libraries provide a fairly robust set of classes and methods for 2D drawing, and they&rsquo;re quite easy to use and well-integrated with regular iPhone UI elements.  Of course, this simplicity comes at a price; the performance of Quartz leaves something to be desired for high-complexity scenes.  The other option is, of course, OpenGL.  OpenGL offers much better performance (and is of course capable of 3D, which Quartz is not), but it&rsquo;s also more difficult to use.</p>
-
-<p>For Puzzle Panel, I wanted to be able to squeeze absolutely every drop of performance possible out of the iPhone to ensure the best experience for users.  A simple 2D puzzle game might not seem like a high-performance application, but given the limited fillrate of the iPhone 3G GPU and the fidelity of effects I was hoping to achieve, I wanted to ensure that I wouldn&rsquo;t be limited by my choice of rendering platform.  This made OpenGL the obvious choice, but given that I was also learning Objective C as I wrote the game, I was concerned about the amount of time it would have taken me to write the abstraction layers necessary to allow me to focus on gameplay.</p>
-
-<p>Luckily, another option presented itself to me in the form of <a title="Cocos2D for iPhone" href="http://cocos2d-iPhone.org">Cocos2D for iPhone.</a> Cocos2D is a framework for 2D game creation, originally written in Python, but ported to Objective C for the iPhone by Ricardo Quesada.  It provides a rich hierarchy of classes specifically designed for 2D game development, and handles all of the low-level OpenGL calls for you.  Its features include texture loading, text rendering, sprite atlases, particle systems, timed actions, and physics simulation (through integration with <a title="Box2D" href="http://www.box2d.org/" target="_blank">Box2D</a> and/or <a title="Chipmunk" href="http://code.google.com/p/chipmunk-physics/" target="_blank">Chipmunk</a>).  Best of all, it&rsquo;s distributed under the GNU LGPL license, so it&rsquo;s open source and completely free for both commercial and non-commercial projects.</p>
-
-<p>There are a multitude of excellent <a title="Cocos2D tutorials" href="http://www.cocos2d-iphone.org/wiki/doku.php/" target="_blank">Cocos2D tutorials</a> on the Internet, so I&rsquo;m not (at this time) going to go into much detail about how it&rsquo;s used.  For illustrative purposes, though, I will provide a specific example of how a scene is organized in Puzzle Panel:</p>
-
-<p><a href="/images/nodes.png"><img class="aligncenter size-medium wp-image-101"
-title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usage in Puzzle Panel" width="300" height="271" style="display: block; margin-left: auto; margin-right: auto;"/></a></p>
-
-<p>The above is a side-view of a typical game scene in Puzzle Panel.  Rendered objects in Cocos2D are always subclasses of <span style="display: inline; font-family: Courier">CCNode</span>, labeled &ldquo;Node&rdquo; in the diagram above.  Each node (except for the top-level node, the Scene) has a parent and may have any number of children; Cocos2D uses a simple 2D scene graph in which nodes are rendered breadth-first.  <span style="display: inline; font-family: Courier">CCLayer</span>s, or &ldquo;Layers&rdquo; above, are simple Node subclasses which are typically used for scene organization: one might have a background layer and a foreground layer, and add sprites to each as necessary.</p>
-
-<p>Essentially, creating a game is as simple as subclassing renderable classes (such as <span style="display: inline; font-family: Courier">CCSprite</span>s/&ldquo;Sprites&rdquo;) and adding your own behaviours.  Once you&rsquo;ve coded all of the behaviours you need, you throw a few Nodes in your scene and you&rsquo;re done!  Cocos2D makes excellent use of object-oriented paradigms, and if you leverage that properly in your own code, you&rsquo;ll end up with a very flexible and powerful game engine.</p>
-
-<p>Using Cocos2D probably saved me hundreds of hours of development time.  In contrast to Puzzle Panel&rsquo;s mere 8,500 lines of source code, Cocos2D is comprised of more than 23,000 lines.  As an amateur game developer, I found using a framework to be particularly helpful because it allowed me to maintain a higher-level perspective on the design of the game.  By ignoring the complexities of OpenGL, I was able to spend more time thinking about how best to expand my game and make it as fun, polished and playable as possible.  Using a pre-written framework also eliminates a lot of worrying about feature creep &ndash; by starting with a robust set of tools, it&rsquo;s less likely that one will spend unnecessary time writing lower-level features that are never ultimately used.</p>
-
-<p>I don&rsquo;t wish to disparage the process of writing one&rsquo;s own OpenGL code &ldquo;from the ground up.&rdquo;  I&rsquo;d love to write my own game engine &ldquo;from scratch&rdquo; for my next big project.  Furthermore, a skilled OpenGL programmer could likely gain some extra performance by foregoing unnecessary features.  I really do think, though, that Cocos2D is an absolutely excellent choice if you really want to focus on game design, while still having the flexibility to get &ldquo;close to the metal&rdquo; where necessary.  If you&rsquo;re considering developing a 2D game for the iPhone, <a title="Cocos2D for iPhone" href="http://cocos2d-iPhone.org">check it out.</a></p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2010/08/27/misconceptions-about-computer-science/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -487,6 +388,11 @@ title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usa
     
       
       <li class="post             category-Personal            ">
+        <a href="/entry/2013/07/30/road-trip/">Road Trip! Part I</a>
+      </li>
+    
+      
+      <li class="post             category-Personal            ">
         <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
       </li>
     
@@ -503,11 +409,6 @@ title="Node usage in Puzzle Panel" src="/images/nodes-300x271.png" alt="Node usa
       
       <li class="post             category-Technology            ">
         <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
       </li>
     
   </ul>

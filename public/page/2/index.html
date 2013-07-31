@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="(With apologies to Eevee, of whom I am a great fan.) So, I&rsquo;m working on a photo album app written in Python.  I&rsquo;m using Python because, &hellip;">
+  <meta name="description" content="I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,7 +85,16 @@ type="text/javascript"></script>
 <script language="Javascript" type="text/javascript">
 // ender.js gobbles jQuery's ready event: Use ender.js $ instead
 $(document).ready(function() {
-    jQuery(".fancybox").fancybox();
+    jQuery(".fancybox").fancybox(
+    {
+      helpers:
+      {
+        overlay:
+        {
+          locked: false
+        }
+      }
+    });
 });
 </script>
 
@@ -138,6 +147,46 @@ $(document).ready(function() {
 
   <header>
     
+      <h1 class="entry-title"><a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-19T00:21:00-07:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.</div>
+    <footer>
+      <a rel="full-article" href="/entry/2012/09/19/strlen-without-conditionals/">Continue Reading &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
+<div class="category-Coding">
+
+  <header>
+    
       <h1 class="entry-title"><a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a></h1>
     
     
@@ -163,34 +212,9 @@ $(document).ready(function() {
 
   <div class="entry-content"><p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
 
-<p>So, I&rsquo;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&rsquo;m using Python because, well, I love it.  I think it&rsquo;s the perfect language for web development; it&rsquo;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:<!--more--></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">db_tags</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span>
-</span><span class='line'>                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">MetadataTag</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">source</span> <span class="o">=</span> <span class="s">&#39;exif&#39;</span><span class="p">)])</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>What I&rsquo;m doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag&rsquo;s name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn&rsquo;t particularly <em>difficult</em> to do in any other language; as I said, it&rsquo;s a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn&rsquo;t have list comprehensions.  I don&rsquo;t even want to think about how many lines of code this would take in Java; additionally, while I&rsquo;m unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup></p>
-
-<p>So, Python&rsquo;s pretty great. But like all languages, it does have a few problems. The one I have had the most difficulty with in my current project is that third party library support is somewhat lacking in some important areas; specifically, there aren&rsquo;t many good options for reading and manipulating images. The most popular library seems to be the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>, PIL. It&rsquo;s easy enough to install and provides a <em>passable</em> set of core features, but doesn&rsquo;t go much beyond that.  For instance, none of the various camera raw formats seem to be supported, which I consider a fairly important feature for my photo album; I&rsquo;d very much like be able to upload original raws and have the application automatically convert them to JPEGs for me.  Additionally, it doesn&rsquo;t provide much in the way of convenience methods for cropping and resizing images.  <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank">ImageMagick</a> has <a title="ImageMagick geometry" href="http://www.imagemagick.org/script/command-line-processing.php#geometry" target="_blank">a very nice means of specifying cropping and resizing geometry</a> with various aspect ratio-preserving (or not) behaviour, and I wanted to be able to leverage something similar for my app so that I could quickly prototype with various size options.</p>
-
-<p>Given that ImageMagick provides most of the functionality I want that PIL lacks, it seemed like a good option, but it&rsquo;s a C library and Python doesn&rsquo;t yet have mature bindings for it.  It&rsquo;s getting there, though!  I decided to go with <a title="Python Wand library" href="http://dahlia.kr/wand/index.html" target="_blank">Wand</a>, which is a fork of python-magickwand.  It has a nice high-level API, but also provides direct access to most of the low-level MagickWand APIs, making it fairly flexible.  When I first found it, it did not have support for the nice geometry specifications I wanted to use, but being an open source project I was able to patch that in.  <a title="Wand version 0.2.2" href="http://dahlia.kr/wand/changes.html#version-0-2-2" target="_blank">Version 0.2.2</a> will include my patch, which provides the <code>Image.transform</code> method for easy cropping and resizing.  Eevee is also <a title="Sanpera - Eevee's Github" href="https://github.com/eevee/sanpera" target="_blank">working on a Python imaging library</a>, which is promising, but it&rsquo;s still a work in progress.</p>
-
-<p>Unfortunately Wand doesn&rsquo;t yet support retrieving EXIF, <acronym title="International Press Telecommunications Council">IPTC</acronym> or <acronym title="Extensible Metadata Platform">XMP</acronym> metadata from images, which is another requirement for me.  ImageMagick does support EXIF at least, and that&rsquo;s on the roadmap for Wand, but implementing a high-level interface for EXIF tags is a bigger task than I have time for at the moment.  That meant that I had to turn to another library to retrieve metadata.  <a title="pyexiv2 library" href="http://tilloy.net/dev/pyexiv2/" target="_blank">pyexiv2</a>, a Python binding for the exiv2 C++ library, initially looked promising.  Unfortunately I discovered that it&rsquo;s not installable via any Python package manager; it must be built from source (via a build system I&rsquo;ve never even heard of, and I&rsquo;m familiar with more than a few build systems), unless a binary is provided for your platform by the project maintainers (i.e. you are on Debian, Ubuntu, Fedora or Windows).</p>
-
-<p>My project already has more dependencies than I&rsquo;m entirely comfortable with; one of the reasons that Python only has modest adoption as a web application platform despite being a great language for the task is that it doesn&rsquo;t have a kitchen sink-style standard library, and third-party libraries require separate installation.  In general I consider that a good thing; I&rsquo;d rather have a well-designed standard library than a <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/#general" target="_blank">gigantic mishmash of inconsistently named global functions.</a>  However, it does make deployment a little more complex.  So far I&rsquo;ve managed to stick to libraries which can be installed in one step using well-known package managers, so the setup procedure for my app should not be too arduous.  Adding pyexiv2 as a dependency and thereby including an entirely different build system in the process would likely have complicated the installation procedure to the point that no actual ordinary humans would ever use my application.  That&rsquo;s something I want to avoid, if possible.</p>
-
-<p><del>For now I have settled for exif-py.</del>  It only handles EXIF tags, not IPTC or XMP, which is disappointing because I really wanted to support multiple metadata formats.  It&rsquo;s a pure Python library in a single file, though, so I can just include with my distribution.  It&rsquo;s easy to use and gets the job done, so it will have to do for now.  I&rsquo;m hoping that pyexiv2 will show up in pip (a Python package manager) at some point, though.  [<strong>Updated September 16, 2012: </strong>I&rsquo;ve discovered that exif-py is broken in at least a couple significant ways, so I&rsquo;m kind of back at square one for handling metadata.  exif-py seems to be unable to detect EXIF data in some files that have it.  Additionally, the strings that it translates orientation codes to are not consistent with each other, so they&rsquo;re basically wrong.  I&rsquo;ve informed the maintainers of these issues, but I don&rsquo;t have time to fix them myself.]</p>
-
-<p>The process of trying to find a good imaging package for Python and ultimately settling for two separate libraries which still don&rsquo;t quite do everything I want has made it clear to me that third party library support for Python still has a way to go.  Hopefully the situation will improve as adoption of the language increases.  I&rsquo;m happy to do my part, both through contributions to open source libraries such as Wand, and by building apps using Python to bolster the ecosystem.  I hope that by demonstrating what&rsquo;s possible with Python as a web application platform, I can help convince new web developers to build their applications using Python as well&hellip; which provides yet more reason for me to be diligent about finishing my photo album app!</p>
-
-<p><sup>1</sup> <small>Okay, the <code>dict</code> function is perhaps not the most explicit. Check the docs once, though, and it&rsquo;s very easy to understand.</small><br/>
-<sup>2</sup> <small>Ruby would doubtless be similarly concise, and it seems like a nice language in my limited experience, but I find its syntax and distinction between &ldquo;symbols&rdquo; and strings to not be to my taste.</small></p>
-</div>
+<p>So, I&rsquo;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&rsquo;m using Python because, well, I love it.  I think it&rsquo;s the perfect language for web development; it&rsquo;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:</div>
     <footer>
-      <a rel="full-article" href="/entry/2012/09/14/the-state-of-python-imaging/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2012/09/14/the-state-of-python-imaging/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -228,22 +252,9 @@ $(document).ready(function() {
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m always wary about pre-announcing things I&rsquo;m working on; I have more ambition than spare time, which leads to a tendency to start projects and not finish them.  But if there&rsquo;s to be a point in maintaining this website, I need to actually <em>write things</em> once in a while, so I may as well write about what I&rsquo;ve been hacking on lately.  At the moment, I&rsquo;m building a web-based photo album in Python.  My primary reason for doing this is that I&rsquo;d like to own more of my information.  Apps and social networks have some significant advantages, particularly for the less technologically inclined, but I&rsquo;m ambivalent about the trend away from an open Internet and towards a set of non-interoperable, monolithic walled-garden services.<!--more--></p>
-
-<p>When Google+ debuted, my enthusiasm for the service followed a sort of bell curve.  I was already using Twitter and Facebook, and I didn&rsquo;t want to have to post everything to yet another service.  At the urging of friends, I joined anyway, and warmed to it considerably.  It was simply better software than Facebook; the interface was cleaner, the privacy controls more usable, the communication options more diverse, the means of sharing and interacting with media more engaging and deeply integrated.  Best of all, there wasn&rsquo;t nearly as much app spam.  Much of this is probably still true, although the impression I get from Google+ pages I&rsquo;ve stumbled across recently is that they&rsquo;ve been trying to make it look more like Facebook, to its detriment.</p>
-
-<p>Realizing that it was a better product in almost every regard, I started using Google+ almost exclusively and tried to recruit additional friends away from Facebook.  I stopped uploading new photos to Facebook and even purchased additional storage capacity on Google+ so I could upload all of my photos there at the original quality.  Problems quickly became apparent, though.  Despite my best efforts, nobody was using the service; even among those of my friends who were enthusiastic early adopters, actual <em>social</em> activity among my circles dropped off quickly, and I soon found myself wondering why I even bothered to check for updates.  I finally deleted my account when I logged in one day and realized that the newest post in my news feed was from several months prior.</p>
-
-<p>And with my Google+ account, there went all of the photos and other content I had uploaded.  I still have the files, of course, but the effort I expended in selecting a handful of good photos to upload to each gallery from the hundreds of shots I take on most outings, not to mention the comments, captions, and other metadata I had curated, vanished into the ether with not a trace left behind.  The moral of the story is that private social networks are impermanent, and thus anything uploaded to them necessarily has an unknown but very much finite period of accessibility and relevance.  Whether or not Google ever admits it, Google+ never quite took off, but it could have supplanted Facebook just as Facebook did MySpace.  If and when some other service comes along and succeeds where Google+ failed, every user on Facebook will be forced to start over from scratch on whatever&rsquo;s in vogue next.</p>
-
-<p>I&rsquo;m tired of playing that game. I want to keep control over the content I create so that I can truly decide how it&rsquo;s shared and with whom, and so that if I need to migrate my data to a new system, I have the means to do so.<sup>1</sup> The ultimate realization of this ideal is in decentralized services based on open protocols, such as <a title="Tent" href="http://tent.io/">Tent</a>. I&rsquo;m very enthusiastic about such attempts, but realistically, I&rsquo;m skeptical that any of them will ever gain the necessary traction to make a real difference. Even if Tent or some analogue gains millions of users, it will be a drop in the bucket compared to Facebook, and entrenched players such as Facebook will have no incentive to interoperate because decentralized services do nothing but threaten their business model.</p>
-
-<p>I will do as much as is in my power to help services like Tent succeed, but for the time being, that is not much.  That kind of leaves me without a good means of pushing my content to the people who care about it.  Nevertheless, I can still take ownership of it by hosting it on my own server using my own tools.  That is the purpose of developing my own photo album software.  I&rsquo;m making good progress so far, and hopefully soon I&rsquo;ll have more to share; once the code is in a reasonably complete state with most of the major features I want for my own purposes, I intend to make the app open source and share the code on my <a title="mlindgren on Github" href="https://github.com/mlindgren" target="_blank">Github account.</a>  And now that I&rsquo;ve announced my intent publicly, I expect anyone who reads this to hold me to my plan to ensure that I get it finished!</p>
-
-<p><sup>1</sup> <small>Both Facebook and Google+ provide a means of exporting the data you&rsquo;ve shared. I believe both will export everything belonging to you personally, but I don&rsquo;t think you necessarily get to keep all of the social data associated with your content, e.g. comments, nor the relationships between different pieces of content. Last I checked, the data was merely dumped into a bunch of flat files; nothing is kept in a structured format that makes it easy to work with, and even if it were, other privates services don&rsquo;t usually offer the option to import your data. While it may still not be easy, if you own your own data and manage it using open source tools, it&rsquo;s at least <em>possible</em> to migrate everything to another system with the greatest fidelity supported by that system.</small></p>
-</div>
+  <div class="entry-content"><p>I&rsquo;m always wary about pre-announcing things I&rsquo;m working on; I have more ambition than spare time, which leads to a tendency to start projects and not finish them.  But if there&rsquo;s to be a point in maintaining this website, I need to actually <em>write things</em> once in a while, so I may as well write about what I&rsquo;ve been hacking on lately.  At the moment, I&rsquo;m building a web-based photo album in Python.  My primary reason for doing this is that I&rsquo;d like to own more of my information.  Apps and social networks have some significant advantages, particularly for the less technologically inclined, but I&rsquo;m ambivalent about the trend away from an open Internet and towards a set of non-interoperable, monolithic walled-garden services.</div>
     <footer>
-      <a rel="full-article" href="/entry/2012/09/14/social-networks-and-content-ownership/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2012/09/14/social-networks-and-content-ownership/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -286,7 +297,7 @@ for five months, but I&rsquo;ve decided to switch from shared hosting to a <acro
 title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress out of the www root directory.  The transition was surprisingly easy, but it&rsquo;s possible that some pages may contain dead links or missing images.  If you see any, please leave a comment and let me know!</p>
 </div>
     <footer>
-      <a rel="full-article" href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -326,146 +337,9 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 
   <div class="entry-content"><p>Online passes are becoming more and more ubiquitous in the games industry.  For those who aren&rsquo;t familiar with the terminology, an online pass is essentially a form of digital rights management designed to discourage and devalue used game sales by tying some game content to unique, one-use codes packaged with new copies of games.  Online passes are a contentious issue.  Some feel that they&rsquo;re a perfectly legitimate way for developers and publishers to ensure that they get their cut of each sale, and to reward those who purchase games new.  Others see them as a violation of consumer rights or contend that they inconvenience customers who <em>do</em> buy new (by requiring them to type in long access codes on game controllers) while being of only dubious value to publishers and developers.</p>
 
-<p>Most recently, there&rsquo;s been a bit of an uproar over the inclusion of an online pass in <em><a href="http://en.wikipedia.org/wiki/Kingdoms_of_Amalur:_Reckoning">Kingdoms of Amalur: Reckoning</a></em>, a single-player RPG with no online component.  The pass confers seven extra quests on those who purchase the game new, or deprives those who purchased used of them, depending on your perspective.<!--more-->  Before I lay my cards on the table, I&rsquo;ll let Curt Schilling, the founder of the studio behind the game, explain what he sees the purpose of the online pass as:</p>
-
-<blockquote>That being said, this next part is likely to piss people off, but it&#8217;s a truth and it&#8217;s how I feel. You can argue the merits and effectiveness of it, but right now it&#8217;s how it&#8217;s done and as someone that&#8217;s as invested as I am in this company, I stand by what has happened.
-
-DAY 1 DLC, to be extremely and VIVIDLY clear, is FREE, 100% totally FREE, to anyone that buys a new copy of Reckoning, ANYONE. 
-
-If you don&#8217;t buy new games you buy them used, and in that case you will have to pay for the Day 1 free DLC content the new copy buyers got for free.
-
-It&#8217;s clear the intent right? To promote early adopters and MUCH MORE IMPORTANT TO ME, REWARD fans and gamers who commit to us with their time and money when it benefits the company.</blockquote>
-
-
-<p>You can read the rest of his post <a href="http://forums.reckoning.amalur.com/showthread.php?3063-Did-you-push-back-at-EA-at-all-over-this-Quest-content-gated-by-online-pass.&s=2ba8c3194088140ce6161b0c374691f5&p=52812&viewfull=1#post52812" title="Curt Schilling's post on the Kingdoms of Amalur online pass.">on the Kingdoms of Amalur forum.</a>  I think Curt&rsquo;s position is reasonable and I am sympathetic to the frustration he&rsquo;s clearly feeling; he believes that he&rsquo;s trying to protect his business interests and in the process rewarding loyal fans with free bonus content, and receiving nothing but scorn in return.</p>
-
-<p>I don&rsquo;t think <em>Kingdoms of Amalur</em>&rsquo;s online pass is an egregious abuse by any means, but in general,  I do count myself among those who see online passes as an unsettling trend.  I think consumers have good reason to be suspicious of companies that choose to use online passes.  There are good arguments for and against online passes, but the most popular arguments in favor of online passes often seem to rely on strawmen and dubious assumptions with no supporting data.  Jerry Holkins (Tycho) of Penny Arcade <a href="http://penny-arcade.com/2012/01/30/plurality" title="Plurality - Penny Arcade">writes:</a></p>
-
-<blockquote>I&#8217;ve been reading a lot his weekend about Fat Cats and how fat they are and how they want your money, but the only choice you get in this matter (aside from the wholly valid &#8220;not buying it&#8221; choice, of course) is which supposed Fat Cat to enrich.  You can enrich the people who made the game you are enjoying, or you can enrich people who had nothing to do with the game.  Policies like this are designed to incentivize new purchases: that is to say, sales.  We call those sales.</blockquote>
-
-
-<p>In other words, you&rsquo;re either supporting the developers who produce the games you love, or you&rsquo;re supporting retailers like Gamestop.  Naturally most consumers would prefer the former, all else being equal; developers are creative entities, focused&mdash;or so we can hope&mdash;on artistic expression before profit.  Retailers, by contrast, are often viewed as greedy and incidental vestiges of the rapidly dying era of physical media.  Their services are at best unnecessary, and at worst <a href="http://www.joystiq.com/2011/08/24/gamestop-intentionally-removing-deus-ex-onlive-coupons-from-reta/" title="Gamestop intentionally removing Deus Ex OnLive coupons from retail PC copies - Joystiq">abusive of their customers to an extent that would make an ardent objectivist blush.</a></p>
-
-<p>This is a false dichotomy for two reasons.  First, traditional retailers are not the only avenues for the trading and selling of used games.  One could trade games directly with friends or colleagues, or buy and sell them at garage sales and flea markets.  There are even a number of online services that have been created for the explicit purpose of allowing consumers to trade and sell used games at reasonable prices.  (Of course, those services take a cut too, but I think it&rsquo;s safe to assume that their margins are nothing like Gamestop&rsquo;s, and they are much more consumer-centric in general.)</p>
-
-<p>More importantly, there is an implicit assumption in Holkins&#8217; argument that each used sale deprives the publisher of a new sale.  This is the same false equivalency that the <acronym title="Motion Picture Association of America">MPAA</acronym> and <acronym title="Recording Industry Association of America">RIAA</acronym> have been using for years to <a href="http://www.pcworld.com/article/223431/riaa_thinks_limewire_owes_75_trillion_in_damages.html" title="RIAA thinks Limewire owes $75 trillion in damages" target="_blank">overstate the negative effects of piracy</a>, and it is no less pernicious when applied to secondhand markets.  To the best of my knowledge there is absolutely no data to support this assertion, and it doesn&rsquo;t really hold up to logical scrutiny.  Sure, a sale of a used game does not directly support the game&rsquo;s publisher and developer, but there&rsquo;s no guarantee that the buyer would otherwise have bought the game new.  More importantly, the person who traded in that game for store credit is likely to use that credit toward the purchase of a new game.</p>
-
-<p>&ldquo;Triple-A&rdquo; retail games cost $60 in the US and Canada these days, and in countries like Australia prices can reach AUS $100 and above.  That is, frankly, an absurd amount of money and out of the reach of a great many people.  Without a healthy used market to mitigate these prices, many consumers would simply be forced to purchase fewer games.  Others would likely turn to piracy.  Nobody wins in that scenario; not developers, not publishers, and certainly not gamers.</p>
-
-<p>My arguments thus far have been based on assumptions and logic rather than empirical data, just as the arguments I am attacking are.  What I am postulating is that my analysis is at least as plausible as the alternative (in my opinion, moreso), and that in the absence of actual scientific data the sane solution for publishers is to try to compete with used sales by offering better service and pricing incentives rather than trying to find technological solutions which, even when well-meaning, embitter those who can&rsquo;t afford to buy every game they are interested in at $60 a pop.</p>
-
-<p>Now, you might be thinking that because I&rsquo;m not in the industry, my perspective is limited.  Maybe publishers <em>do</em> have data which support the conclusion that used game sales are a net loss.  It&rsquo;s possible; it certainly makes sense that entities which exist solely to maximize game sales would want to have that data.  That said, given the ineptitude displayed by media giants in fighting piracy, I am not convinced that it should be taken for granted that they take a scientific approach to <em>anything</em>.  Take this exchange between <a href="https://twitter.com/#!/kristen_">Kristen Bornemann</a> and I on Twitter:</p>
-
-<blockquote>
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
-href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> When people pick up used
-games it reduces the chance of publishers investing more money into the game
-(sequel, etc).<br />
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
-href="https://twitter.com/#!/cwgabriel">@cwgabriel</a> Therefore it directly
-hurts us as devs… especially 3rd party devs.<br />
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
-href="https://twitter.com/#!/kristen_">@kristen_</a> Do you have statistics that
-demonstrate that, or are you just assuming so by the false equivalency of 1 used
-sale = 1 lost sale?<br />
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a
-href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> I worked in publishing.
-The fact is if a publisher hears that used sales are high = death for game. They
-don&#8217;t care about stats.<br />
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
-href="https://twitter.com/#!/kristen_">@kristen_</a> Then perhaps the community
-should focus on fixing that, rather than limiting consumer choice? <br />
-<a href="https://twitter.com/#!/lindgrenM"><strong>@lindgrenM</strong></a>: <a
-href="https://twitter.com/#!/kristen_">@kristen_</a> Because if the publishers
-&#8220;don&#8217;t care about stats,&#8221; what are their business decisions based on?
-Vindictiveness? <br />
-<a href="https://twitter.com/#!/kristen_"><strong>@kristen_</strong></a>: <a href="https://twitter.com/#!/lindgrenM">@lindgrenM</a> hearsay and gut/instinct… why do you think I left? ;)
-</blockquote>
-
-
-<p>I&rsquo;m aware that this short Twitter exchange is by no means a definitive example of how every publisher everywhere conducts business.  Again, I&rsquo;m simply saying that until I see data which actually show a net loss for publishers and developers from used sales, I see no reason to take as gospel the assertion that they <em>are</em> a net loss.  That said, even if conclusive data were available, I still don&rsquo;t think I could support online passes at the conceptual level.  <em>Amalur</em> is innocuous, but it&rsquo;s the exception rather than the rule; most online passes lock used buyers out of multiplayer until they&rsquo;ve shelled out another ten to fifteen dollars.  That is blatantly vindictive anti-consumer behaviour on the part of publishers, and it epitomizes the troubling trend of media companies punishing legitimate consumers in a misguided attempt to artificially control the marketplace and perpetuate outdated business models.  For an example of exactly how far this thinking goes, consider <a href="http://altdevblogaday.com/2012/02/02/i-feel-used/" title="I Feel Used">this post</a> by Jameson Durall of Volition:</p>
-
-<blockquote>There’s another big rumor about the next Xbox console that could really start to shake things up…it won’t play used games at all!  Personally I think this would be a fantastic change for our business and even though the consumers would be up in arms about it at first…they will grow to understand why and that it won’t kill them.</blockquote>
-
-
-<p>To say that entirely removing the used market &ldquo;won&rsquo;t kill&rdquo; consumers strikes me as extremely ironic.  Used games have existed for as long as games have existed, and have evidently not killed the industry, and yet that is exactly what developers and publishers are complaining will happen if we continue with the status quo.  Durall himself says that used game sales are &ldquo;making it more and more difficult for us to continue making higher quality products.&rdquo;  My feeling is that the rhetoric is a lot more emotionally charged on the part of online pass supporters; there is a strong insinuation that used buyers are costing people their jobs and are in some sense morally inferior to those who have the luxury of being able to buy only new games.</p>
-
-<p>But I digress.  I don&rsquo;t give too much credence to the rumor Durall refers to, but the idea that anyone would consider it a good course of action is mind boggling to me.  It&rsquo;s another step in the march towards the complete erosion of consumer rights, and along the way the products we purchase are further crippled and devalued.  It hurts consumers and it hurts content producers because <em>this devaluation of legitimate products is what drives growth in piracy.</em></p>
-
-<p>I must clarify exactly what I mean when I say that product devaluation drives growth in piracy.  It is a popular belief among technology writers on the Internet that services which compete on convenience, such as iTunes and Steam, can actually reduce piracy.  The data that I have seen do not support that conclusion.  However, history has demonstrated that a legislative or technical solution is likely impossible because pirates will always find ways to break digital locks and make enforcement of anti-piracy legislation effectively impossible.  Any legislative solution broad enough to admit the possibility of significantly decreasing piracy by inconveniencing would-be pirates <a href="http://en.wikipedia.org/wiki/Stop_Online_Piracy_Act" title="Wikipedia: Stop Online Piracy Act">would likely have negative repercussions outweighing the benefits</a>, and the assumption that a nuking-the-anthill style solution &agrave; la <acronym title="Stop Online Piracy Act">SOPA</acronym> would be effective for more than a few weeks is <a href="https://chrome.google.com/webstore/detail/hnifiobpjihmmjgiokkaalgomddebhng/details">extremely dubious anyway.</a></p>
-
-<p>So what are content producers to do?  Pandora&rsquo;s Box has been opened and the clock cannot be turned back.  There will always be people with no compunction about downloading works without even attempting to compensate the artist, and dishearteningly, the research I have read indicates that once someone is turned on to piracy he is unlikely to stop&mdash;even if content producers then offer better incentives to compete with pirates.  It <a href="http://repository.cmu.edu/cgi/viewcontent.cgi?article=1056&context=heinzworks" title="Converting Pirates without Cannibalizing Purchasers:  The Impact of Digital Distribution on Physical Sales and Internet Piracy">has been demonstrated</a>, however, that removing options increases piracy.  Devaluing products and services with arbitrary restrictions and inconveniencing legitimate consumers will have the same effect.  <em>Copying is the fundamental operation on which the principle of computing is built.  It cannot be stopped.  The only thing content producers can do is to prevent people from turning to piracy in the first place by offering the best service possible.</em></p>
-
-<p>Returning to the topic at hand, online passes go hand in hand with the consumer-as-enemy mindset that plagues media giants.  They arise from the same attitude that justifies $30 BluRay movies with minutes and minutes of unskippable commercials, and <a href="http://www.destructoid.com/drm-fun-several-legit-ubisoft-games-will-break-next-week-220948.phtml" title="DRM Fun: Several legit Ubisoft games will break next week - Destructoid">always-on DRM which prevents legitimate purchasers from playing single-player games</a> when the publisher&rsquo;s servers are down.  Through legislation and technology, these companies are trying to make ownership rights exclusive to corporations and prevent consumers from interacting with the media they purchase in any manner that is not explicitly pre-approved.  They are declaring a war on their customers, and it is a war they cannot win.  Make no mistake, though: as these behemoths run themselves into the ground because they are incapable of adapting, there will be casualties among the artists, musicians and developers who create the works of culture we love.</p>
-
-<p>That is why I cannot support online passes.  I truly believe that in the long run they are detrimental to all involved.  I truly believe that the best way for a company to protect its interests is to do its utmost to reward its fans and give them the best experience possible&mdash;all of them, even those who do not <em>directly</em> contribute to the bottom line.</p>
-</div>
+<p>Most recently, there&rsquo;s been a bit of an uproar over the inclusion of an online pass in <em><a href="http://en.wikipedia.org/wiki/Kingdoms_of_Amalur:_Reckoning">Kingdoms of Amalur: Reckoning</a></em>, a single-player RPG with no online component.  The pass confers seven extra quests on those who purchase the game new, or deprives those who purchased used of them, depending on your perspective.</div>
     <footer>
-      <a rel="full-article" href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
-<div class="category-Personal">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/12/31/2010-and-2011-in-review/">2010 and 2011 in Review</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-31T15:59:00-08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you&rsquo;ll forgive me for &ldquo;metablogging,&rdquo; I&rsquo;ve been ruminating lately on the purpose of this website.  Up until now, I&rsquo;ve been trying to focus exclusively on technology, programming and game design, and to minimize the subjective aspects of my connection to those fields.  Put more simply, I&rsquo;ve been avoiding writing about who I am and what I do in favour of producing a series of mostly impersonal tutorials and critiques of technology.  There are a number of reasons for this—the word &ldquo;professionalism&rdquo; comes to mind as chief among them.  I&rsquo;d like this website to be my public face on the Internet, and as every saavy Internet denizen should know by now, there are certain risks associated with maintaining a public persona.  I greatly admire <a href="http://zedshaw.com/">Zed Shaw</a>, for his personality as well as his technical accomplishments, but I have no desire to make myself unemployable as he claims to have done (albeit temporarily).</p>
-
-<p>That said, trying to take a dry, detached and objective approach to creating a personal website presents a number of problems itself.  First and foremost, it&rsquo;s an inherent contradiction; if I don&rsquo;t write about myself in any meaningful capacity, then there is nothing aside from the superficial about this website which makes it mine.  I can&rsquo;t imagine it makes for a very interesting read, either.  Realistically, how many people will come here looking for <a title="How to link GLUT in Qt Creator on OS X" href="http://www.mlindgren.ca/archives/453">advice on how to link GLUT?</a>  Readership numbers are of little to no concern to me, mind you, but I can at least endeavour to give this website a purposeful existence.  To that end, I want to start writing more about personal topics, although for the sake of cohesiveness I&rsquo;m going to continue to focus primarily on those aspects of my life that will be of interest to a technically-minded audience.<!--more--></p>
-
-<p>As a start, I think that this is a good time to reflect on what I&rsquo;ve done since I started this blog in May of 2010.  Early in May, I moved to Calgary, Alberta, to start a sixteen-month internship with <a href="http://pason.com/">Pason Systems Corporation.</a>  Pason is the market-leading provider of oil rig instrumentation and service, with a wide variety of tools and technology available to facilitate safety and improve efficiency on oil rigs.  All of Pason&rsquo;s rig-site hardware and software is designed in house, but my work was on an internal web application designed to support Pason&rsquo;s most valuable employees: the field technicians who directly provide services and equipment to customers.</p>
-
-<p>For obvious reasons, I can&rsquo;t go into great detail about the work I did at Pason.  I will say, though, that it was extremely rewarding.  I had the opportunity to work alongside some of the smartest developers I&rsquo;ve ever met, and I was able to do work that I felt had a tangible, significant and lasting impact on my team&rsquo;s product. That&rsquo;s a rare honor for an intern!  From a technical perspective, I got to work with some interesting and unfamiliar technologies; I did extensive development in Python, created rich user experiences with HTML5 and JavaScript, and dabbled with C# when the need arose.  The whole experience was hugely instructive, and I will always fondly remember my time at Pason.  Of my entire education, my internship is without a doubt the part that I value most.</p>
-
-<p>In September of this year, I moved back to Edmonton to finish my Computing Science degree at the University of Alberta.  It being my final year and with most of my specific course requirements out of the way, I loaded up on computing science courses, which led to a fairly engaging but difficult semester.  Among the courses I took were Advanced Games Programming in C++, Compiler Design, and Introduction to Computer Graphics.</p>
-
-<p>As a term project for the Advanced Games Programming course, I undertook a modification of the <a href="http://skatgame.net/mburo/orts/" target="_blank">ORTS</a> game engine to allow user interface scripting with Lua, à la World of Warcraft.  I feel that the outcome of this project was a little underwhelming, as limited time and the complexity of ORTS forced me to settle for less comprehensive scripting capabilities than I would have liked.  Nevertheless, I learned a great deal about Lua and the process of interfacing with Lua from C++. I think I now have an inkling of what&rsquo;s involved in creating a robust client-side scripting system as in World of Warcraft, or even a custom development platform like <a title="Ansca Mobile Corona" href="http://www.anscamobile.com/corona/" target="_blank">Corona</a>.  Given the popularity of Lua as a scripting language in game development and my interest in developing games, I&rsquo;m sure it will be valuable experience.</p>
-
-<p>Although I believe I would be within my academic rights to do so, for the time being I don&rsquo;t foresee myself releasing the source code for my Advanced Games Programming project.  ORTS has not seen active development in a number of years, so it is outdated and difficult to compile and run, let alone modify.  Additionally, my own work—being a school project as it is—would probably not prove to be a good demonstration of Lua/C++ integration best practices, and I&rsquo;m always wary of releasing code from which others might learn the wrong way of doing things.  I do have a report on the project which I&rsquo;d like to reproduce here at some point, though.  </p>
-
-<p>For University of Alberta Computing Science students, I have some advice which I&rsquo;d like to share regarding the Advanced Games Programming course.  If you already know C++, as I did, I would have to recommend against taking it.  Much to my chagrin, the majority of the lectures were actually about C++ in and of itself, rather than algorithms and techniques relevant to games.  It certainly would be helpful for anyone who wants to pick up C++, but if you&rsquo;re looking for a thorough examination of game programming, look elsewhere.</p>
-
-<p>Compilers was perhaps my favorite course of the semester, although it was also by far the most difficult.  I would describe it as a strangely paradoxical course.  The theory behind formal languages, parsing and code generation is not extremely complex, but it can be initially hard to grasp, as it is very heavy on jargon and has numerous rules and axioms to memorize.  The process of building a <em>simple</em> compiler for a simple language is, in retrospect, fairly mechanical and manageable, but it seems anything but when approached without the benefit of hindsight.  Overall, the course is just a staggering amount of work, but it is also among the most rewarding courses I&rsquo;ve taken.</p>
-
-<p>Finally, Introduction to Computer Graphics, I got to expand upon the OpenGL knowledge I had built during the development of <a title="Puzzle Panel" href="http://www.mlindgren.ca/projects/puzzle-panel">my iOS game</a>, while also learning the fundamental aspects of computer graphics.  Like Compilers, Graphics is a challenging but rewarding course, one of the most difficult aspects of it being the time commitment required.  (Of course, it is also fairly math-heavy.)  As someone who appreciates the beauty of a well-designed, simple algorithm, I found that learning about such achievements as the <a title="Wikipedia: Midpoint circle algorithm" href="http://en.wikipedia.org/wiki/Midpoint_circle_algorithm" target="_blank">midpoint circle algorithm</a> was one of the most enjoyable aspects of the course.  I feel that there&rsquo;s an almost Zen-like quality to a clever but simple algorithm which strips away preconceptions of complexity to accomplish a task in the most efficient manner possible.  If you&rsquo;re of a similar mind, graphics is full of examples of such algorithms.  Of course, working in graphics is also rewarding for its ability to produce visually interesting results, which is a rare treat in academic computing science:</p>
-
-<div style="text-align: center; margin-left: auto; margin-right: auto;"><img style="display: block; margin-left: auto; margin-right: auto;" title="Shadow volumes" src="/images/shadowvolumes.jpg" alt="A demonstration of shadow volumes from an Introduction to Computer Graphics assignment" width="386" height="335" /><em><small>A demonstration of shadow volumes from an Introduction to Computer Graphics assignment.</small></em></div>
-
-
-<p>2010 and 2011 were exciting years for me, and although I&rsquo;m not ready to discuss it yet, I have something huge lined up for after I graduate in April of 2012. In the meantime, I&rsquo;ll continue to post here as often as I can manage. Thanks for reading, and happy new year!</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/12/31/2010-and-2011-in-review/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -500,6 +374,11 @@ Vindictiveness? <br />
     
       
       <li class="post             category-Personal            ">
+        <a href="/entry/2013/07/30/road-trip/">Road Trip! Part I</a>
+      </li>
+    
+      
+      <li class="post             category-Personal            ">
         <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
       </li>
     
@@ -516,11 +395,6 @@ Vindictiveness? <br />
       
       <li class="post             category-Technology            ">
         <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
       </li>
     
   </ul>

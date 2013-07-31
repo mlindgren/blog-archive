@@ -9,9 +9,10 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="Blog Archive 2013 The Subaru Saga
+  <meta name="description" content="Blog Archive 2013 Road Trip! Part I
+Jul 30 2013 posted in Personal The Subaru Saga
 Jun 09 2013 posted in Personal 2012 Photo App Progress Update
-Nov 14 2012 posted in Coding Why Mozilla Persona Is &hellip;">
+Nov &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,7 +88,16 @@ type="text/javascript"></script>
 <script language="Javascript" type="text/javascript">
 // ender.js gobbles jQuery's ready event: Use ender.js $ instead
 $(document).ready(function() {
-    jQuery(".fancybox").fancybox();
+    jQuery(".fancybox").fancybox(
+    {
+      helpers:
+      {
+        overlay:
+        {
+          locked: false
+        }
+      }
+    });
 });
 </script>
 
@@ -143,6 +153,22 @@ $(document).ready(function() {
 
   
   <h2>2013</h2>
+
+<article>
+  
+
+<h1 class="category-Personal">
+<a href="/entry/2013/07/30/road-trip/">Road Trip! Part I</a></h1>
+<time datetime="2013-07-30T02:58:00-07:00" pubdate><span class='month'>Jul</span> <span class='day'>30</span> <span class='year'>2013</span></time>
+
+<footer>
+  <span class="categories category-Personal">posted in <a class='category' href='/categories/personal/'>Personal</a></span>
+</footer>
+
+
+</article>
+
+
 
 <article>
   
@@ -624,6 +650,11 @@ $(document).ready(function() {
     
       
       <li class="post             category-Personal            ">
+        <a href="/entry/2013/07/30/road-trip/">Road Trip! Part I</a>
+      </li>
+    
+      
+      <li class="post             category-Personal            ">
         <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
       </li>
     
@@ -640,11 +671,6 @@ $(document).ready(function() {
       
       <li class="post             category-Technology            ">
         <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
       </li>
     
   </ul>

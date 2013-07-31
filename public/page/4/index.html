@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought &hellip;">
+  <meta name="description" content="With the phenomenal and growing successes of the iPhone App Store, the Android Market, and the Xbox Live Indie Games marketplace, gamers have seen an &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,7 +85,16 @@ type="text/javascript"></script>
 <script language="Javascript" type="text/javascript">
 // ender.js gobbles jQuery's ready event: Use ender.js $ instead
 $(document).ready(function() {
-    jQuery(".fancybox").fancybox();
+    jQuery(".fancybox").fancybox(
+    {
+      helpers:
+      {
+        overlay:
+        {
+          locked: false
+        }
+      }
+    });
 });
 </script>
 
@@ -134,6 +143,46 @@ $(document).ready(function() {
     <article>
       
 
+<div class="category-Gaming">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2011/07/14/in-defense-of-clones/">In Defense of Clones</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-14T22:23:00-07:00" pubdate data-updated="true">Jul 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>With the phenomenal and growing successes of the iPhone App Store, the Android Market, and the Xbox Live Indie Games marketplace, gamers have seen an unprecedented number of titles which could be described as &#8220;clones&#8221; of more successful games&mdash;or rip-offs, if you&#8217;re feeling less kind.  Along with these titles has come a veritable tsunami of hatred for their developers, from game critics and anonymous Internet commenters alike.  The commercial success of some of these titles, such as <em>Angry Birds</em>,<sup>1</sup> has shown that average gamers are happy to patronize any developer who can provide a fun experience, regardless of originality.  However, any mention of a new clone on a gaming blog or podcast inevitably brings about a stunning amount of vitriol from gamers who, presumably, are upset that their favorite megacorporations aren&#8217;t getting their due.</div>
+    <footer>
+      <a rel="full-article" href="/entry/2011/07/14/in-defense-of-clones/">Continue Reading &rarr;</a>
+    </footer>
+
+</div>
+
+    </article>
+  
+  
+    <article>
+      
+
 <div class="category-Coding">
 
   <header>
@@ -161,58 +210,9 @@ $(document).ready(function() {
   </header>
 
 
-  <div class="entry-content"><p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.<!--more--></p>
-
-<p>I think the best way to explain lambdas is with a simple example. Say you want a switch statement. Python doesn’t have them, but what you can do is set up a dictionary and get a value out of it, which is sort of like a switch. However, you can&rsquo;t do this&hellip;</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>            <span class="mi">1</span> <span class="p">:</span> <span class="n">my_func1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
-</span><span class='line'>            <span class="mi">2</span> <span class="p">:</span> <span class="n">my_func2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
-</span><span class='line'>          <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>&hellip;because the functions will be evaluated when the dictionary is initialized, so if they modify any state (or if they just take a while to execute) you’ll get bad behaviour. Functions are first class objects in Python, so you could insert the functions into the dictionary like so…</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>            <span class="mi">1</span> <span class="p">:</span> <span class="n">my_func1</span><span class="p">,</span>
-</span><span class='line'>            <span class="mi">2</span> <span class="p">:</span> <span class="n">my_func2</span>
-</span><span class='line'>          <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>&hellip;but that doesn&rsquo;t work either, because you don’t know how many (or which) arguments you need to pass to the function when you pull it out of the dictionary. So, what to do?</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>            <span class="mi">1</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">my_func1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
-</span><span class='line'>            <span class="mi">2</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">my_func2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
-</span><span class='line'>          <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Lambdas solve the problem because they&rsquo;re evaluated lazily. By being wrapped in
-a lambda, the functions won’t be evaluated until the lambda itself is called.
-Furthermore, you can use the lambda to normalize the parameters of each
-function, so that you can always call it using <code>my_dict[my_var](x, y, z)</code>, even though the first function being called doesn’t actually make use of the z parameter. There is no other way to accomplish this in Python, besides a big long ugly list of ifs. (Obviously you’d normally reserve this technique for situations where you have more than two options.)</p>
-
-<p>You can also use the laziness aspect of lambdas to refer to variables which haven&rsquo;t been declared yet, although I&rsquo;d recommend against that because it can become quite confusing. Anything within the lambda is evaluated only when the lambda is called.</p>
-
-<p>And there you have it! Those are the basics of lambdas in Python. Of course, the above is only a trivial example of what can be accomplished with lambdas.  If you&rsquo;d like to learn more, there&rsquo;s a great write-up available <a title="Lambda functions in Python" href="http://www.secnetix.de/olli/Python/lambda_functions.hawk">here.</a></p>
-</div>
+  <div class="entry-content"><p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.</div>
     <footer>
-      <a rel="full-article" href="/entry/2011/06/29/what-are-lambdas-good-for-anyway/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2011/06/29/what-are-lambdas-good-for-anyway/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -258,92 +258,9 @@ function, so that you can always call it using <code>my_dict[my_var](x, y, z)</c
 <p><em>I really want to like the Android platform, and writing this gave me no joy.  There are two reasons I&#8217;m posting it here, though.  The first is simply that the purpose of this website is for me to post about my programming and my experiences with technology (as well as whatever else catches my fancy.)  The second is that I hope that sharing my honest opinion about Android might be helpful to anyone considering a phone purchase.</em></p>
 
 
-<!--more-->
-
-
-
-
-<p>As mentioned on Twitter, my number one complaint is having to use custom ROMs.  <em>There are always problems</em> with custom ROMs.  <a href="http://www.cyanogenmod.com/">CyanogenMod 7</a> caused my phone to reboot at random.  I also had problems with the Contacts app crashing.  All of these issues persisted throughout multiple versions of CM7 up to and including final.</p>
-
-
-
-
-<ul>
-    <li>With the ROM I&#8217;m using now (a custom Sense ROM, can&#8217;t remember the exact name), I can&#8217;t set the SSID/password on my WiFi hotspot because Settings crashes when I try to.  I seriously haven&#8217;t used a single custom ROM that hasn&#8217;t had some issues with it.</li>
-    <li>You mentioned that Google is promising quicker updates, but I&#8217;ll believe it when I see it.  Are they actually forcing manufacturers to do this in order to use Android branding or get Google apps, or are they just asking nicely?  The latter won&#8217;t work.  And as far as I know, all that the Android update committee has promised is 18 months of updates following the launch of a new device.  So does that mean if I release a device and then push a point release to consumers 17 months later, I&#8217;ve fulfilled that? All I see here is flowery language, and frankly I don&#8217;t think anything is going to improve.<br /><br />
-
-The fact is that it&#8217;s not profitable for these manufacturers to update existing devices when they could spend the same development effort on releasing another six phones, so unless Google does something to change that, nothing will happen.</li>
-</ul>
-
-
-
-
-<p>The rest are in no particular order:</p>
-
-
-
-
-<ul>
-    <li>No good Exchange client available.  Even Touchdown, which is expensive, is pretty bad.  The HTC client is okay, but it <del datetime="2011-06-12T02:36:52+00:00">doesn&#8217;t support important features like threading.</del> [I later realized that this is untrue; the HTC client does support threading.  I still find it cumbersome to use, and I&#8217;ve previously had problems with it failing to send messages without any notification of the failure.  That&#8217;s a pretty big problem when you&#8217;re using it for work e-mail.]</li>
-    <li>Launcher redraw, agghhhhhh.  Sense is horrendous for this, but I much prefer the built-in Sense apps to their Google alternatives, so I feel like I&#8217;m stuck using it.  Even on stock Android, it seems like I can&#8217;t really use live wallpapers or I have to wait for the launcher to reload all the time.</li>
-    <li>It&#8217;s annoying that when I read an e-mail in Gmail on my computer, the notification for it stays in my notification bar.  Also, my Gmail push seems to have stopped working of late.  To be fair, it remains to be seen how the new iPhone notification system handles these things.</li>
-    <li>I&#8217;ve noticed that with multiple IM clients (specifically, AIM and eBuddy) if I leave them running in the background while I&#8217;m doing other things like browsing the Internet, I&#8217;ll eventually get signed out or the app will close.  I don&#8217;t know if this is just because they&#8217;re not written correctly, but it&#8217;s annoying; IM is the only thing I really use background applications for and it doesn&#8217;t seem to work consistently.</li>
-    <li>I often have trouble sending/receiving MMS.  It&#8217;s frustrating when someone sends me an MMS and I have to ask them to e-mail it to me instead because it won&#8217;t download.</li>
-    <li>Camera quality on the Desire Z is pretty bad.  I&#8217;m certain the iPhone 4 is better in this department.  I feel like my Desire Z&#8217;s camera is actually worse than my Desire&#8217;s camera for still photos (although it&#8217;s better for video.)  This isn&#8217;t a strike against Android in particular, but the problem of lower-quality hardware is endemic to the platform in a certain sense.</li>
-    <li>A lot of apps in the Android market are just very poor quality. The iPhone app store has its fair share of bad apps, but I still feel like the average quality is much higher there.  In particular, any app that&#8217;s available for both platforms is almost always better on iPhone.  A prime example is Facebook.  The Android client was horribly broken for several weeks, and regardless of that, it just doesn&#8217;t support the same feature set as the iPhone version (e.g. watching videos.)</li>
-    <li>I complained about this even before I bought an Android phone, but the Android operating system is sometimes just not very responsive.  Scrolling is sometimes smooth, but rarely as smooth as on iPhone/Windows Phone 7.  Minor annoyance, but an annoyance nonetheless.</li>
-    <li>I&#8217;m not sure if you&#8217;re familiar with the life cycle of an app in Android, but basically every different screen you can go to in an app is a separate &#8220;activity&#8221;&mdash;essentially a separate application.  <em>What were they thinking</em> in designing it like this? It causes so many problems.  Any time the &#8220;state&#8221; of the phone changes (e.g. you rotate the device, the phone leaves/enters roaming, etc.) the activity is destroyed and re-created unless developers manually override this behavior.  This is why, for instance, the keyboard often disappears if you have it open and then rotate the phone.  (Highly polished apps like Twitter handle rotation properly, but don&#8217;t be fooled; it&#8217;s not the default behavior.  Many other apps do not handle rotation very well.)  Other examples of activity recreation problems include pop-up dialog boxes disappearing and fields losing focus.</li>
-    <li>Editing text sucks; I find that my phone never seems to do what I want it to when I&#8217;m trying to highlight or copy and paste some text.</li>
-    <li>I&#8217;ve had problems on both of my Android phones with the music player pausing in the middle of a song at random.  This has happened in multiple different media players.  It&#8217;s as though the phone thinks the headphones are being removed when they are in fact still in place.</li>
-    <li>I like being able to set alarm/ringer/media volume separately (although the iPhone can also do this), but I don&#8217;t like that the defaults on Android aren&#8217;t very sensible.  For instance, if I have my ringer silenced, it probably means that I also want my media silenced.  But that&#8217;s not what happens if I just use the volume button; I have to actually go into settings and change the media volume separately.</li>
-    <li>Sometimes Google Talk just flat out refuses to start for me until I reboot my phone.  This happened on multiple ROMs.  On the Desire I noticed that it seemed to refuse to start when I was low on internal storage.  I&#8217;m not sure why it does it on my Desire Z.  This should be a core platform feature on par with BBM, but it seems to be very poorly supported.</li>
-    <li>From a developer perspective, I hate paying a development fee to Apple to be able to install my apps on a non-jailbroken device.  I hate that once you&#8217;ve written an iPhone app, they basically blackmail you into continuing to pay them because otherwise they take down your app, which means that it may not be accessible to paying customers if they need to wipe their phone and re-install their apps.  I hate their greedy policies with regards to content subscriptions.  I hate their underhanded payment system which is, as a matter of statistical certainty, allowing them to make interest on millions of dollars that are nominally owed to developers but will never actually be paid.  In general, I hate that they treat their developers like serfs just because they can, even though those same developers made their platform what it is today.<br /><br />
-
-I hope that properly illustrates how much I hate Apple&#8217;s policies, and I hope that it underscores the significance of what I&#8217;m about to say: from a pragmatic perspective, I&#8217;d <em>still</em> rather be developing for iOS because Google&#8217;s development tools are <em>complete garbage.</em> I write all my code in vim, so I&#8217;m really not that picky, but I can only take so much of using Eclipse and having it literally <em>delete</em> my art assets from the file system.  (Not just removing them from the project - it literally deletes the files, seemingly at random.  I&#8217;ve never lost any work because of this, but it&#8217;s extremely frustrating nevertheless.)  Not to mention the Android emulator: it&#8217;s practically unusable for regular apps, and for games, forget about it.  You&#8217;re lucky if you get 5 FPS.<br /><br />
-
-Even if I buy an iPhone, I do still want to finish my game for Android.  The code is cross-platform, so if I could compile and test it using Xcode in the meantime&#8230; even just using the iPhone simulator, since it can actually run games at a reasonable framerate&#8230; it would save me a lot of headaches.  Either way I&#8217;ll have to compile my app for Windows or iOS to do any marketing; taking screenshots of an Android app is difficult, and taking video is, as far as I can tell, impossible unless you have a phone with HDMI out and a capture card.  Ridiculous.</li>
-
-    <li>The behavior of the back button is inconsistent, and developers use it as
-    a crutch rather than thinking about and carefully designing a proper workflow
-    through their applications.  I was arguing about this behavior with someone on
-    Reddit a while ago, and I found a good comment on Hacker News about it:
-    <br/><br />
-
-<blockquote>I just got an Android with that great Virgin Mobile deal, and I was surprised
-at just how much the Back button is used in almost all contexts. It&#8217;s severely
-overloaded: want to get out of an on-screen keyboard? Back. Want to move back
-a screen? Back, except when it&#8217;s Google Reader that opened a Browser window,
-in which case it takes you back to the previous page that Browser had. Back
-through a menu? Back. Back to a previous page in Browser? Back.
-
-It&#8217;s as if people just substituted the button for any instance in human language
-where &#8220;back&#8221; was used.&#8221;</blockquote>
-
-&#8230;(and another)&#8230;<br /><br />
-
-<blockquote>&#8220;Back&#8221; to some random place most of the time.<br />
-1. receive email notification for two messages.<br />
-2. click notification bar<br />
-3. go to gmail app.<br />
-4. open first message and click a link.<br />
-5. you are now in the browser. (clicking back will close the window, but you want to read it later!)<br />
-6. you long press HOME button (hoping to select gmail and read the other message)<br />
-7. gmail is not in the open app list (WTH?!)\<br />
-8. you curse, click home, find the gmail app, click it.<br />
-9. now you are on the message with the link<br />
-10. press BACK<br />
-11. now you are on the message list (aha! not you home screen you came from!)<br />
-12. click the 2nd message and read it
-</blockquote>
-
-In fairness, I&#8217;m of two minds about this because the back button does save a lot of screen real-estate by removing the necessity for on-screen navigation controls.  However, I&#8217;m not sure how much of an advantage that is in the face of the confusion it sometimes causes.</li>
-
-<li>[This wasn&#8217;t included in my e-mail to my friend, because I didn&#8217;t know about it at the time.  I&#8217;m adding it now because it&#8217;s fairly important.] Android can actually <em><a href="http://forum.xda-developers.com/showthread.php?p=12765846">lose SMS messages.</a></em>  That&#8217;s completely unacceptable on a phone.</li>
-</ul>
-
 </div>
     <footer>
-      <a rel="full-article" href="/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -381,21 +298,9 @@ In fairness, I&#8217;m of two minds about this because the back button does save
   </header>
 
 
-  <div class="entry-content"><p>The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">&ldquo;Android Gripes.&rdquo;</a> The name is perhaps a bit misleading, as it&rsquo;s not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he&rsquo;s recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of&hellip; well, complaining about Android.<!--more--></p>
-
-<p>That might be a little unfair.  Perhaps I should let the author speak for himself:</p>
-
-<blockquote>I have constantly heard many gripes about Android. Recently I happened to have access to some Android phones and use them in a daily base. The more I use Android, the more I feel that Android is indeed a half-baked OS, its UX/UI is horrible and various hardwares are poorly designed. It’s true that those phones are working like smartphones, better than feature phones from old school, but they ignore a lot of the details. Just for Google’s own benefit, they helped handset manufactures brutally dumped a huge amount of unpolished devices to the market. They made people think this is how smartphones should work. This is so unfair to consumers. <strong>IMHO, it is no different from committing a crime.</strong> That’s why I made the cartoon of &#8220;Android Gripes&#8221; as a Monopoly &#8220;Go Directly To Jail&#8221; card showing an Android on it.
-
-As much as I believe in Apple, I think everybody deserves great user experience, especially when it comes to phones. I think it is my mission to let more people know that Android does not provide you that. Android only provides inferior user experience. You either admit it and bear with it, or go for better alternatives. That’s why I started writing this blog.</blockquote>
-
-
-<p>(Emphasis added.)  English is not the author&rsquo;s native language, so you&rsquo;ll have to excuse the occasionally odd grammar.  It&rsquo;s immediately apparent that the author&rsquo;s stated opinion of Android is patently absurd; bad UI/UX can have many negative consequences, but it is certainly not criminal.  Redditors have also <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/">pointed out</a> that a number of comparisons the Android Gripes author makes are somewhat unfair.  For instance, he <a href="http://android-gripes.tumblr.com/post/4409289546/why-do-apps-from-the-same-company-look-worse-on-android">compares old, oudated Android apps</a> against apps which were recently updated on iOS, and misleadingly remarks on &ldquo;extra&rdquo; (meaning blank) space in the Facebook app.  The blank space in question <em>does</em> contain content when one is signed into a legitimate profile.</p>
-
-<p>With all of that said, I&rsquo;m not writing this post to refute the Android Gripes author.  I actually agree with an unfortunate number of his points.  While there&rsquo;s a lot that can be said about where the iPhone&rsquo;s UI/UX fails (I&rsquo;ve <a href="http://www.mlindgren.ca/archives/151">previously mentioned</a> their complete lack of a workable notification system), excuses and rationalizations won&rsquo;t do anything to improve the state of Android apps.  Even if you believe that Android&rsquo;s UI/UX is better than Apple&rsquo;s (and I do feel that that&rsquo;s a hard case to make), I think it&rsquo;s undeniable that there&rsquo;s room for improvement.  It&rsquo;s certainly worth mentioning that some of the Android Gripe&rsquo;s authors examples are misleading, but what&rsquo;s more important is that we—that is to say, Android developers—ask ourselves where we&rsquo;re failing users, why it&rsquo;s happening, and what we can do to improve the platform.  In a future post, I&rsquo;ll offer my perspective on where Android could be improved.</p>
-</div>
+  <div class="entry-content"><p>The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">&ldquo;Android Gripes.&rdquo;</a> The name is perhaps a bit misleading, as it&rsquo;s not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he&rsquo;s recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of&hellip; well, complaining about Android.</div>
     <footer>
-      <a rel="full-article" href="/entry/2011/04/16/android-uiux-gripes/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2011/04/16/android-uiux-gripes/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -433,76 +338,9 @@ As much as I believe in Apple, I think everybody deserves great user experience,
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&rsquo;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &ldquo;performance-critical&rdquo; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&rsquo;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&rsquo;t imagine it&rsquo;s too difficult, but I haven&rsquo;t spent much time on it—I&rsquo;ve not needed to do much debugging yet.)<!--more--></p>
-
-<p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it&rsquo;s a bit of a pain to use.  To that end, I&rsquo;ve put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you&rsquo;d like to do something similar on Windows, I&rsquo;m sure it won&rsquo;t be hard, but you&rsquo;re on your own.  Here&rsquo;s how to use it:</p>
-
-<ol>
-    <li>Create a folder in your project called &#8220;debug&#8221; (or whatever name you&#8217;d like)</li>
-    <li>Create a file called <code>debug.sh</code>, consisting of the following:
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/usr/bin/env bash</span>
-</span><span class='line'>NDK_ROOT/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-objdump -S PATH_TO_SOLIB &gt; SOLIB_NAME.arm
-</span><span class='line'>adb logcat -d &gt; logcat.txt
-</span><span class='line'>python parse_stack.py SOLIB_NAME.arm logcat.txt
-</span></code></pre></td></tr></table></div></figure>
-
-    <li><code>chmod +x debug.sh</code> so that it&#8217;s executable</li>
-        <li>Run the script with <code>./debug.sh</code> each time you need to see a stack trace</li>
-</ol>
-
-
-<p>Obviously there are a few things you&rsquo;ll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
-
-<p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don&rsquo;t change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you&rsquo;ll need to dump them again to get accurate results.</p>
-</div>
+  <div class="entry-content"><p>I&rsquo;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&rsquo;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &ldquo;performance-critical&rdquo; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&rsquo;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&rsquo;t imagine it&rsquo;s too difficult, but I haven&rsquo;t spent much time on it—I&rsquo;ve not needed to do much debugging yet.)</div>
     <footer>
-      <a rel="full-article" href="/entry/2011/04/09/android-ndk-stack-trace-script/#comments">Comments &rarr;</a>
-    </footer>
-
-</div>
-
-    </article>
-  
-  
-    <article>
-      
-
-<div class="category-Links">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/02/03/non-myths-about-programming/">Non-Myths About Programming</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-03T20:53:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Whilst browsing <a href="http://reddit.com" target="_blank">Reddit</a> today, I came across a short essay by <a href="http://stwww.weizmann.ac.il/g-cs/benari/" target="_blank">Mordechai Ben-Ari</a> titled &ldquo;<a title="PDF: Non-Myths About Programming" href="http://stwww.weizmann.ac.il/G-CS/BENARI/articles/nonmyths.pdf" target="_blank">Non-Myths About Programming</a>&rdquo; (PDF warning).  It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.  I would urge anyone considering a career in computer science to read it.  Given its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother summarizing the article—instead, I&rsquo;ll merely say that you should click the link and check it out for yourself.</p>
-</div>
-    <footer>
-      <a rel="full-article" href="/entry/2011/02/03/non-myths-about-programming/#comments">Comments &rarr;</a>
+      <a rel="full-article" href="/entry/2011/04/09/android-ndk-stack-trace-script/">Continue Reading &rarr;</a>
     </footer>
 
 </div>
@@ -537,6 +375,11 @@ As much as I believe in Apple, I think everybody deserves great user experience,
     
       
       <li class="post             category-Personal            ">
+        <a href="/entry/2013/07/30/road-trip/">Road Trip! Part I</a>
+      </li>
+    
+      
+      <li class="post             category-Personal            ">
         <a href="/entry/2013/06/09/the-subaru-saga/">The Subaru Saga</a>
       </li>
     
@@ -553,11 +396,6 @@ As much as I believe in Apple, I think everybody deserves great user experience,
       
       <li class="post             category-Technology            ">
         <a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
-      </li>
-    
-      
-      <li class="post             category-Coding            ">
-        <a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
       </li>
     
   </ul>
