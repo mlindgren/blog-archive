@@ -4,7 +4,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2013-07-30T22:23:00-07:00</updated>
+  <updated>2013-08-19T01:11:01-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -1752,17 +1752,6 @@ Vindictiveness? <br />
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Dark Souls is the best game I've ever played]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played/"/>
-    <updated>2012-01-09T13:44:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/01/09/Dark-Souls-is-the-best-game-Ive-ever-played</id>
-    <content type="html"><![CDATA[<p>Due to school and other commitments, I&rsquo;m a bit behind the curve on writing about <em>Dark Souls</em>.  I purchased it when it was first released, but I was too busy to commit much time to it, and the release of <em>Skyrim</em> in November relegated it to the back burner.  I&rsquo;ve recently had some more time to play it, and although I&rsquo;m only about 32 hours in and perhaps half finished, I&rsquo;m ready to make proclamation: <span style="background-color: #ff0;"><strong><em>Dark Souls</em> is the best game I&rsquo;ve ever played,</strong> and to whatever extent art can be judged objectively, I think there&rsquo;s a strong argument to be made that it&rsquo;s objectively one of the best games ever created from an artistic standpoint.</span></p>
-
-<p>Whether or not you&rsquo;ve played it, if you&rsquo;re a gamer you&rsquo;ve likely heard of <em>Dark Souls</em>: besides the critical acclaim it has received, it&rsquo;s lauded as being <a href="http://blogs.wsj.com/speakeasy/2011/10/05/is-dark-souls-the-hardest-videogame-ever/" title="Is Dark Souls the hardest videogame ever?">arguably one of the most difficult games ever made</a>.  Its difficulty sets Dark Souls apart and makes successfully completing it a badge of merit among &ldquo;hardcore&rdquo; gamers.  More importantly, though, Dark Souls&#8217; relentless challenge and stubborn defiance of the precepts of modern game design allow it to achieve a level of artistic purity that other games can&rsquo;t even begin to approach.</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[2010 and 2011 in Review]]></title>
     <link href="http://blog.mlindgren.ca/entry/2011/12/31/2010-and-2011-in-review/"/>
     <updated>2011-12-31T15:59:00-08:00</updated>
@@ -2151,6 +2140,40 @@ As much as I believe in Apple, I think everybody deserves great user experience,
 <p>(Emphasis added.)  English is not the author&rsquo;s native language, so you&rsquo;ll have to excuse the occasionally odd grammar.  It&rsquo;s immediately apparent that the author&rsquo;s stated opinion of Android is patently absurd; bad UI/UX can have many negative consequences, but it is certainly not criminal.  Redditors have also <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/">pointed out</a> that a number of comparisons the Android Gripes author makes are somewhat unfair.  For instance, he <a href="http://android-gripes.tumblr.com/post/4409289546/why-do-apps-from-the-same-company-look-worse-on-android">compares old, oudated Android apps</a> against apps which were recently updated on iOS, and misleadingly remarks on &ldquo;extra&rdquo; (meaning blank) space in the Facebook app.  The blank space in question <em>does</em> contain content when one is signed into a legitimate profile.</p>
 
 <p>With all of that said, I&rsquo;m not writing this post to refute the Android Gripes author.  I actually agree with an unfortunate number of his points.  While there&rsquo;s a lot that can be said about where the iPhone&rsquo;s UI/UX fails (I&rsquo;ve <a href="http://www.mlindgren.ca/archives/151">previously mentioned</a> their complete lack of a workable notification system), excuses and rationalizations won&rsquo;t do anything to improve the state of Android apps.  Even if you believe that Android&rsquo;s UI/UX is better than Apple&rsquo;s (and I do feel that that&rsquo;s a hard case to make), I think it&rsquo;s undeniable that there&rsquo;s room for improvement.  It&rsquo;s certainly worth mentioning that some of the Android Gripe&rsquo;s authors examples are misleading, but what&rsquo;s more important is that we—that is to say, Android developers—ask ourselves where we&rsquo;re failing users, why it&rsquo;s happening, and what we can do to improve the platform.  In a future post, I&rsquo;ll offer my perspective on where Android could be improved.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android NDK Stack Trace Script]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2011/04/09/android-ndk-stack-trace-script/"/>
+    <updated>2011-04-09T16:30:00-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2011/04/09/android-ndk-stack-trace-script</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&rsquo;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &ldquo;performance-critical&rdquo; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&rsquo;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&rsquo;t imagine it&rsquo;s too difficult, but I haven&rsquo;t spent much time on it—I&rsquo;ve not needed to do much debugging yet.)<!-- more --></p>
+
+<p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it&rsquo;s a bit of a pain to use.  To that end, I&rsquo;ve put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you&rsquo;d like to do something similar on Windows, I&rsquo;m sure it won&rsquo;t be hard, but you&rsquo;re on your own.  Here&rsquo;s how to use it:</p>
+
+<ol>
+    <li>Create a folder in your project called &#8220;debug&#8221; (or whatever name you&#8217;d like)</li>
+    <li>Create a file called <code>debug.sh</code>, consisting of the following:
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/usr/bin/env bash</span>
+</span><span class='line'>NDK_ROOT/toolchains/arm-eabi-4.4.0/prebuilt/linux-x86/bin/arm-eabi-objdump -S PATH_TO_SOLIB &gt; SOLIB_NAME.arm
+</span><span class='line'>adb logcat -d &gt; logcat.txt
+</span><span class='line'>python parse_stack.py SOLIB_NAME.arm logcat.txt
+</span></code></pre></td></tr></table></div></figure>
+
+    <li><code>chmod +x debug.sh</code> so that it&#8217;s executable</li>
+        <li>Run the script with <code>./debug.sh</code> each time you need to see a stack trace</li>
+</ol>
+
+
+<p>Obviously there are a few things you&rsquo;ll need to replace in the above code.  <code>NDK_ROOT</code> should be the path to your Android NDK installation.  <code>PATH_TO_SOLIB</code> should be the path to your compiled shared object library.  Usually this will be in your project folder under <code>obj/local/armeabi</code>.  <code>SOLIB_NAME</code> can really be whatever name you want, but I liked to name the <code>.arm</code> file after the corresponding <code>.so</code> file for consistency.</p>
+
+<p>You should repeat line 2 for each shared object library you need to debug in your project, and repeat line 4 for each corresponding <code>.arm</code> file.  However, note that the <code>arm-eabi-objdump</code> process is quite slow, so if you have any large <code>.so</code> files which don&rsquo;t change frequently, you can skip dumping them to improve speed.  Just remember that if they do change, you&rsquo;ll need to dump them again to get accurate results.</p>
 ]]></content>
   </entry>
   
