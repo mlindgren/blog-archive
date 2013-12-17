@@ -94,13 +94,15 @@ reminiscent of the descent into Yosemite valley, but with towering walls of red
 sandstone instead of granite. As impressive as the drive is, though, it doesn't
 even pass through Zion Canyon proper.
 
-I checked into my campground, set up my tent, and formulated a plan to hike up to
-Angel's Landing. It was still early in the afternoon, and far too hot for a
-5 mile (8km) hike with around 1500 feet (460m) of elevation gain. Luckily, my
-campground was also an RV park and inn, so it had amenities such as a pool and
-showers. I lounged around the pool until later in the afternoon when the
-temperature started to drop, and then, carrying my tripod, camera, and an ample
-supply of water, hopped on the canyon bus.
+I checked into my campground, set up my tent, and formulated a plan to hike up
+to
+[Angels Landing](http://en.wikipedia.org/wiki/Angels_Landing).
+It was still early in the afternoon, and far too hot for a 5 mile (8km) hike
+with around 1500 feet (460m) of elevation gain. Luckily, my campground was also
+an RV park and inn, so it had amenities such as a pool and showers. I lounged
+around the pool until later in the afternoon when the temperature started to
+drop, and then, carrying my tripod, camera, and an ample supply of water, hopped
+on the canyon bus.
 
 Due to the limited area of the canyon, and to reduce environmental impact,
 visitors aren't allowed to drive or park in Zion Canyon itself. Instead, the
@@ -112,7 +114,7 @@ subjected to it daily. On the first bus I took, a woman who I assumed to be an
 off-duty park employee entertained us by reciting, word for word, several
 minutes of the narration.
 
-The climb up to Angel's Landing starts off with a deceptively gentle walk along
+The climb up to Angels Landing starts off with a deceptively gentle walk along
 the river at the bottom of the canyon, but then quickly climbs upward along a
 series of increasingly steep switchbacks. It was still hot enough out to make
 the upward trek thoroughly exhausting. Thankfully, the aptly named Refrigerator
@@ -123,16 +125,16 @@ temperatures.
 At the end of Refrigerator Canyon, the trail ascends
 [Walter's Wiggles](http://www.zionnational-park.com/images/album2/pages/angels-landing-ef_jpg.htm),
 a set long set of tight, steep switchbacks, and then emerges atop a spine of
-cliff that culminates in Angel's Landing itself. This is where the trail
-really gets fun&mdash;or terrifying, depending on whom you ask. I don't consider
-myself to be particularly afraid of heights, but the view down to the valley
-floor is truly dizzying, even before one reaches the top of Angel's Landing. And
-between the the top of the of the Wiggles and the Landing, there are still
-hundreds of vertical feet to climb along a twisting, rocky, extremely narrow
-trail where a slip to either side means certain death. So steep is this section
-of trail that much of it is spent pulling oneself upward along sections of chain
-that the National Park Service has anchored into the rock. It's remarkable that
-[only a handful of people have died at Angel's Landing](http://www.nps.gov/zion/frequently-asked-questions-about-zions-hiking-trails.htm).
+cliff that culminates in Angels Landing itself. This is where the trail really
+gets fun&mdash;or terrifying, depending on whom you ask. I don't consider myself
+to be particularly afraid of heights, but the view down to the valley floor is
+truly dizzying, even before one reaches the top of Angels Landing. And between
+the the top of the of the Wiggles and the Landing, there are still hundreds of
+vertical feet to climb along a twisting, rocky, extremely narrow trail where a
+slip to either side means certain death. So steep is this section of trail that
+much of it is spent pulling oneself upward along sections of chain that the
+National Park Service has anchored into the rock. It's remarkable that
+[only a handful of people have died at Angels Landing](http://www.nps.gov/zion/frequently-asked-questions-about-zions-hiking-trails.htm).
 Did I mention that I was carrying a tripod and several pounds of camera
 equipment the whole way up?
 
@@ -145,33 +147,33 @@ frankly, neither can my photography.
 {% gallery %}
 /images/utah/utah-part2-album-24.jpg[/images/utah/utah-part2-thumb-24.jpg]: Zion Canyon
 /images/utah/utah-part2-album-25.jpg[/images/utah/utah-part2-thumb-25.jpg]: Zion Canyon
-/images/utah/utah-part2-album-26.jpg[/images/utah/utah-part2-thumb-26.jpg]: Zion Canyon from low on the Angel's Landing trail
-/images/utah/utah-part2-album-27.jpg[/images/utah/utah-part2-thumb-27.jpg]: Switchbacks along the lower part of the Angel's Landing trail, before Refigerator Canyon
-/images/utah/utah-part2-album-28.jpg[/images/utah/utah-part2-thumb-28.jpg]: An overhang along the Angel's Landing trail
+/images/utah/utah-part2-album-26.jpg[/images/utah/utah-part2-thumb-26.jpg]: Zion Canyon from low on the Angels Landing trail
+/images/utah/utah-part2-album-27.jpg[/images/utah/utah-part2-thumb-27.jpg]: Switchbacks along the lower part of the Angels Landing trail, before Refigerator Canyon
+/images/utah/utah-part2-album-28.jpg[/images/utah/utah-part2-thumb-28.jpg]: An overhang along the Angels Landing trail
 /images/utah/utah-part2-album-29.jpg[/images/utah/utah-part2-thumb-29.jpg]: The trail through Refrigerator Canyon, from inside a small fissure in the rock
 /images/utah/utah-part2-album-30.jpg[/images/utah/utah-part2-thumb-30.jpg]: I can't read this, or even figure out what language it is (obvious guesses seem to result in gibberish when machine-translated), but I assume it's in memory of someone who fell from here and died.
-/images/utah/utah-part2-album-34.jpg[/images/utah/utah-part2-thumb-34.jpg]: Another memorial, again presumably for someone who died at Angel's Landing
+/images/utah/utah-part2-album-34.jpg[/images/utah/utah-part2-thumb-34.jpg]: Another memorial, again presumably for someone who died at Angels Landing
 /images/utah/utah-part2-album-31.jpg[/images/utah/utah-part2-thumb-31.jpg]: The view east from above Walter's Wiggles
-/images/utah/utah-part2-album-32.jpg[/images/utah/utah-part2-thumb-32.jpg]: Looking south toward Angel's Landing. This angle obscures how steep it really is.
+/images/utah/utah-part2-album-32.jpg[/images/utah/utah-part2-thumb-32.jpg]: Looking south toward Angels Landing. This angle obscures how steep it really is.
 /images/utah/utah-part2-album-33.jpg[/images/utah/utah-part2-thumb-33.jpg]: Further along the trail, looking back to the north
 /images/utah/utah-part2-album-35.jpg[/images/utah/utah-part2-thumb-35.jpg]: Looking east at the valley floor
-/images/utah/utah-part2-album-36.jpg[/images/utah/utah-part2-thumb-36.jpg]: Me atop Angel's Landing
-/images/utah/utah-part2-album-37.jpg[/images/utah/utah-part2-thumb-37.jpg]: Zion Canyon, looking south from Angel's Landing
-/images/utah/utah-part2-album-38.jpg[/images/utah/utah-part2-thumb-38.jpg]: Zion Canyon, looking north from Angel's Landing
+/images/utah/utah-part2-album-36.jpg[/images/utah/utah-part2-thumb-36.jpg]: Me atop Angels Landing
+/images/utah/utah-part2-album-37.jpg[/images/utah/utah-part2-thumb-37.jpg]: Zion Canyon, looking south from Angels Landing
+/images/utah/utah-part2-album-38.jpg[/images/utah/utah-part2-thumb-38.jpg]: Zion Canyon, looking north from Angels Landing
 /images/utah/utah-part2-album-39.jpg[/images/utah/utah-part2-thumb-39.jpg]: Zion Canyon, looking north
 /images/utah/utah-part2-album-40.jpg[/images/utah/utah-part2-thumb-40.jpg]: Zion Canyon, looking south
 /images/utah/utah-part2-album-41.jpg[/images/utah/utah-part2-thumb-41.jpg]: Looking further down the canyon. It was a bit hazy.
-/images/utah/utah-part2-album-42.jpg[/images/utah/utah-part2-thumb-42.jpg]: A telephoto image of the valley floor from Angel's Landing. I've never been to Australia, but the red stone and foliage made me feel very much as though I was there. Even the asphalt in the road is red.
+/images/utah/utah-part2-album-42.jpg[/images/utah/utah-part2-thumb-42.jpg]: A telephoto image of the valley floor from Angels Landing. I've never been to Australia, but the red stone and foliage made me feel very much as though I was there. Even the asphalt in the road is red.
 /images/utah/utah-part2-album-43.jpg[/images/utah/utah-part2-thumb-43.jpg]: Looking north at the Temple of Sinawava
 /images/utah/utah-part2-album-44.jpg[/images/utah/utah-part2-thumb-44.jpg]: Looking north
 /images/utah/utah-part2-album-45.jpg[/images/utah/utah-part2-thumb-45.jpg]: Another shot of the Temple of Sinawava
-/images/utah/utah-part2-album-46.jpg[/images/utah/utah-part2-thumb-46.jpg]: Looking back at the trail to Angel's Landing. This gives a better idea of how treacherous it can be.
-/images/utah/utah-part2-album-47.jpg[/images/utah/utah-part2-thumb-47.jpg]: Looking back at the trail to Angel's Landing.
-/images/utah/utah-part2-album-48.jpg[/images/utah/utah-part2-thumb-48.jpg]: Zion Canyon, from where the trail finally emerges at the top of Angel's Landing.
+/images/utah/utah-part2-album-46.jpg[/images/utah/utah-part2-thumb-46.jpg]: Looking back at the trail to Angels Landing. This gives a better idea of how treacherous it can be.
+/images/utah/utah-part2-album-47.jpg[/images/utah/utah-part2-thumb-47.jpg]: Looking back at the trail to Angels Landing.
+/images/utah/utah-part2-album-48.jpg[/images/utah/utah-part2-thumb-48.jpg]: Zion Canyon, from where the trail finally emerges at the top of Angels Landing.
 /images/utah/utah-part2-album-49.jpg[/images/utah/utah-part2-thumb-49.jpg]: Zion Canyon, looking north, with the trail in the lower left.
 /images/utah/utah-part2-album-50.jpg[/images/utah/utah-part2-thumb-50.jpg]: A wider shot of the trail.
 /images/utah/utah-part2-album-51.jpg[/images/utah/utah-part2-thumb-51.jpg]: Another wide shot of the trail. Again, this gives an idea of how steep and narrow it is.
-/images/utah/utah-part2-album-52.jpg[/images/utah/utah-part2-thumb-52.jpg]: A panorama of Zion Canyon from the end of the Angel's Landing trail.
+/images/utah/utah-part2-album-52.jpg[/images/utah/utah-part2-thumb-52.jpg]: A panorama of Zion Canyon from the end of the Angels Landing trail.
 /images/utah/utah-part2-album-53.jpg[/images/utah/utah-part2-thumb-53.jpg]: Looking down at one of the shuttle stops. It's a long drop!
 /images/utah/utah-part2-album-54.jpg[/images/utah/utah-part2-thumb-54.jpg]: It's even steeper than it looks.
 /images/utah/utah-part2-album-55.jpg[/images/utah/utah-part2-thumb-55.jpg]: A vertical panorama of the trail.
@@ -196,5 +198,52 @@ scorpion!
 /images/utah/utah-part2-album-66.jpg[/images/utah/utah-part2-thumb-66.jpg]: A rather disappointing photo of the stars above Zion.
 /images/utah/utah-part2-album-67.jpg[/images/utah/utah-part2-thumb-67.jpg]: A rather disappointing photo of the stars above Zion.
 {% endgallery %}
+
+The next day, I set off to hike
+[The Narrows](http://www.nps.gov/zion/planyourvisit/thenarrows.htm), a 16-mile
+long, 20-30 foot wide, 2000 foot-deep gorge carved by the Virgin River. What
+makes The Narrows unique is that there is no hiking trail at all: the hike
+actually takes place _in the river_. As such, it can vary greatly in difficulty
+depending on the season; during months where the water level is high, it can be
+all but impassable, whereas in the summer it tends to be relatively easy with
+water ranging from ankle-deep to waist-deep. Because I don't typically plan
+ahead at all for my vacations, I hadn't planned ahead to visit The Narrows, per
+se&mdash;in fact, I hadn't really been aware of their existence prior to my
+arrival at the park. It was pure luck, then, that I ended up visiting Zion
+during the summer when water levels were low.
+
+Even when the water is low, such an atypical hike requires extra preparation, so
+I walked across the road from my campground to the
+[Zion Adventure Company](http://www.zionadventures.com/) and picked up the
+required gear.  This consisted of a pair of canyoneering shoes and neoprene
+socks, a walking stick, and a waterproof bag for my camera equipment. I ended up
+finding the walking stick to be more of a burden than a boon, and the waterproof
+bag wasn't really necessary either given the low water levels, but it's better
+to be safe than sorry with expensive camera equipment.
+
+A word of advice for anyone planning to hike The Narrows, though: if you rent
+canyoneering shoes, make sure they fit _with plenty of room to spare._ They'll
+shrink in the water, so shoes that are a comfortable fit at the beginning of the
+day can become very, very uncomfortable after several hours in the river. I
+learned this the hard way: by the end of my hike, I could barely walk, and much
+of the toenail on my big toe on my left foot ended up turning black and falling
+off. Four months later, it's finally _almost_ completely grown back.
+
+Aside from that slightly painful mistake on my part, though, The Narrows proved
+to be a truly amazing hike, unlike anything I've ever done before. Looking
+thousands of feet up the sheer canyon wall offers a new perspective on the
+enormity of Zion Canyon, and there's something new to see in every corner of the
+canyon: foliage sprouting out of the ancient stone, birds circling overhead,
+gurgling springs pouring from cracks in the walls, and all around, the
+ever-changing Virgin River.
+
+There are two ways to hike The Narrows. Starting from the top down, it's a
+16-mile hike, which the National Park Service estimates will take about 12
+hours. Unfortunately, this route requires two permits, one of which I gather is
+very sought-after and therefore difficult to get. Not having either permit, I
+was left with the bottom-up hike, which is a 10-mile round trip if you go all
+the way to the mandatory turn-around point at Big Spring, which I did. I also
+took the optional side-trip into Orderville Canyon, which added another mile to
+the hike for a total of around 11 miles.
 
 
