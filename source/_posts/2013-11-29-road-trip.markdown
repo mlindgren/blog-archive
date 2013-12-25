@@ -1,33 +1,34 @@
 ---
 layout: post
 title: "Road Trip! Part II"
-date: 2013-11-29 21:21
+date: 2013-12-24 22:07
 comments: true
 categories: Personal
 ---
 
-I [left off](/entry/2013/07/30/road-trip/) (four months ago) having just left
-Canyonlands National Park, heading further south to visit Bryce Canyon and Zion
-National Parks. I had booked a motel for the evening in Panguitch, Utah, which
-is a three or four hour drive from Moab. The drive there was uneventful,
-with relatively little in the way of scenery. The route leaves the interstate
-about an hour outside of Panguitch and follows route 89 through several very
-small towns.
+Five months ago, I [left off my last post](/entry/2013/07/30/road-trip/) having
+just left Canyonlands National Park, heading further south to visit Bryce Canyon
+and Zion National Parks. I had booked a motel for the evening in Panguitch,
+Utah, which is a three or four hour drive from Moab. The drive there was
+uneventful, with relatively little in the way of scenery. I mostly followed the
+interstate, until about an hour outside of Panguitch, where I exited onto state
+route 89.
 
-I arrived in Panguitch and discovered that it, too, is very small. In contrast
-to Moab, though, it didn't seem to have much of a tourist draw despite its
-proximity to Bryce Canyon. As a foreigner, I have to admit that I felt some
-apprehension at this. Although everyone I'd met in Utah so far had been very
-friendly and welcoming, a small, isolated town like Panguitch is the kind of
-place where I imagined that something like
-[this](http://www.youtube.com/watch?v=pKcJ-0bAHB4) might happen. Granted, I
-wasn't driving around with a purposefully offensive slogan on my car, nor do I
-really have a discernible accent, but I still felt like a pretty obvious
-outsider with my Washington plates and conspicuous blue car and absurd spoiler.
-I was relieved, then, when I arrived at the New Western Motel to check in to my
-room and was greeted at the front desk by an older Indian man (who I presume is
-also the owner); it was good to see that the population of Panguitch isn't
-completely homogenous.
+Route 89 winds through scrub desert, farmland, and several very small towns
+nestled between modest mountains. I arrived in Panguitch and discovered that it,
+too, is very small. In contrast to Moab, though, it didn't seem to have much of
+a tourist draw despite its proximity to Bryce Canyon. As a foreigner, I have to
+admit that I felt some apprehension at this. Although everyone I'd met in Utah
+so far had been very friendly and welcoming, a small, isolated town like
+Panguitch is the kind of place where I imagined that I could encounter a
+[Top Gear-esque redneck mob](http://www.youtube.com/watch?v=pKcJ-0bAHB4).
+Granted, I wasn't driving around with a purposefully offensive slogan on my car,
+nor do I really have a discernible accent, but I still felt like a pretty
+obvious outsider with my Washington plates and conspicuous blue car with absurd
+spoiler.  I was relieved, then, when I checked in at the New Western Motel and
+was greeted at the front desk by an older Indian man (who I presume is also the
+owner); it was good to see that the population of Panguitch isn't completely
+homogeneous.
 
 If you read the previous post you might recall that I had only slept for a few
 hours the previous night, as I was up around 3:30am to get pictures of Delicate
@@ -54,48 +55,48 @@ but ultimately opted to leave for Zion National Park the next morning so that
 I'd have more time there.<!-- more -->
 
 {% gallery %}
-/images/utah/utah-part2-album-1.jpg[/images/utah/utah-part2-thumb-1.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-2.jpg[/images/utah/utah-part2-thumb-2.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-3.jpg[/images/utah/utah-part2-thumb-3.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-4.jpg[/images/utah/utah-part2-thumb-4.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-5.jpg[/images/utah/utah-part2-thumb-5.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-6.jpg[/images/utah/utah-part2-thumb-6.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-7.jpg[/images/utah/utah-part2-thumb-7.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-8.jpg[/images/utah/utah-part2-thumb-8.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-9.jpg[/images/utah/utah-part2-thumb-9.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-10.jpg[/images/utah/utah-part2-thumb-10.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-11.jpg[/images/utah/utah-part2-thumb-11.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-12.jpg[/images/utah/utah-part2-thumb-12.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-13.jpg[/images/utah/utah-part2-thumb-13.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-14.jpg[/images/utah/utah-part2-thumb-14.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-15.jpg[/images/utah/utah-part2-thumb-15.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-16.jpg[/images/utah/utah-part2-thumb-16.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-17.jpg[/images/utah/utah-part2-thumb-17.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-18.jpg[/images/utah/utah-part2-thumb-18.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-19.jpg[/images/utah/utah-part2-thumb-19.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-20.jpg[/images/utah/utah-part2-thumb-20.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-21.jpg[/images/utah/utah-part2-thumb-21.jpg]: Bryce Amphitheater, Bryce Canyon, UT
-/images/utah/utah-part2-album-22.jpg[/images/utah/utah-part2-thumb-22.jpg]: Bryce Amphitheater, Bryce Canyon, UT
+/images/utah/utah-part2-album-1.jpg[/images/utah/utah-part2-thumb-1.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-2.jpg[/images/utah/utah-part2-thumb-2.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-3.jpg[/images/utah/utah-part2-thumb-3.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-4.jpg[/images/utah/utah-part2-thumb-4.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-5.jpg[/images/utah/utah-part2-thumb-5.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-6.jpg[/images/utah/utah-part2-thumb-6.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-7.jpg[/images/utah/utah-part2-thumb-7.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-8.jpg[/images/utah/utah-part2-thumb-8.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-9.jpg[/images/utah/utah-part2-thumb-9.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-10.jpg[/images/utah/utah-part2-thumb-10.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-11.jpg[/images/utah/utah-part2-thumb-11.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-12.jpg[/images/utah/utah-part2-thumb-12.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-13.jpg[/images/utah/utah-part2-thumb-13.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-14.jpg[/images/utah/utah-part2-thumb-14.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-15.jpg[/images/utah/utah-part2-thumb-15.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-16.jpg[/images/utah/utah-part2-thumb-16.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-17.jpg[/images/utah/utah-part2-thumb-17.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-18.jpg[/images/utah/utah-part2-thumb-18.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-19.jpg[/images/utah/utah-part2-thumb-19.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-20.jpg[/images/utah/utah-part2-thumb-20.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-21.jpg[/images/utah/utah-part2-thumb-21.jpg]: Bryce Amphitheater
+/images/utah/utah-part2-album-22.jpg[/images/utah/utah-part2-thumb-22.jpg]: Bryce Amphitheater
 /images/utah/utah-part2-album-23.jpg[/images/utah/utah-part2-thumb-23.jpg]: The sun sets behind the trees on the Rim Trail in Byrce Canyon
  {% endgallery %}
 
-The next morning I made the 70-mile drive to Zion National Park, and when I
-arrived I immediately knew that I'd made the right choice in prioritizing it
+The next morning I made the 70-mile drive to Zion National Park. When I
+arrived, I immediately knew that I'd made the right choice in prioritizing Zion
 over another day at Bryce Canyon. The descent into the canyon from the eastern
 entrance is nothing short of spectacular. The Checkerboard Mesa is the first
 sight to greet visitors entering from the east, and it alone is a pretty
-remarkable formation, but it offers only the faintest hint at what awaits. Walls
-of red stone rise up on either side as the road continues its descent into the
-Zion-Mt. Carmel tunnel. The long, narrow tunnel was carved right into the side
-of the canyon between during the years of 1927 to 1930. Ocassional openings in
-the side of the tunnel offer glimpses of the valley below, but the sight when
-one finally emerges on the other side is truly breathtaking. To me, it felt very
-reminiscent of the descent into Yosemite valley, but with towering walls of red
-sandstone instead of granite. As impressive as the drive is, though, it doesn't
-even pass through Zion Canyon proper.
+remarkable formation, but it offers only the faintest hint at what awaits.
 
-I checked into my campground, set up my tent, and formulated a plan to hike up
-to
+Walls of red stone rise up on either side as the road continues its descent into
+the Zion-Mt. Carmel tunnel. The long, narrow tunnel was carved right into the
+side of the canyon between during the years of 1927 to 1930. Occasional openings
+in the side of the tunnel offer glimpses of the valley below, but the sight when
+one finally emerges on the other side is truly breathtaking. It reminded me of
+the descent into Yosemite Valley, but with towering walls of red sandstone
+instead of granite. As impressive as the drive is, though, it doesn't even pass
+through Zion Canyon proper.
+
+I checked into my campground, set up my tent, and planned for my first hike:
 [Angels Landing](http://en.wikipedia.org/wiki/Angels_Landing).
 It was still early in the afternoon, and far too hot for a 5 mile (8km) hike
 with around 1500 feet (460m) of elevation gain. Luckily, my campground was also
@@ -111,44 +112,44 @@ describing the history of the canyon and the significance of each of location it
 stops at. While informative, the narration gets a bit tiring after the third or
 fourth time you hear it, which makes one feel sorry for the park staff who are
 subjected to it daily. On the first bus I took, a woman who I assumed to be an
-off-duty park employee entertained us by reciting, word for word, several
-minutes of the narration.
+off-duty park employee entertained us by reciting word for word, but in a very
+sarcastic tone, several minutes of the narration.
 
 The climb up to Angels Landing starts off with a deceptively gentle walk along
-the river at the bottom of the canyon, but then quickly climbs upward along a
-series of increasingly steep switchbacks. It was still hot enough out to make
-the upward trek thoroughly exhausting. Thankfully, the aptly named Refrigerator
-Canyon offered some respite. Encountered about half way through the hike, the
-small box canyon is consistently several degrees cooler than ambient
+the Virgin River at the bottom of the canyon, but then quickly climbs upward
+along a series of increasingly steep switchbacks. It was still hot enough out to
+make the upward trek thoroughly exhausting. Thankfully, the aptly named
+Refrigerator Canyon offered some respite. Encountered about half way through the
+hike, the small box canyon is consistently several degrees cooler than ambient
 temperatures.
 
 At the end of Refrigerator Canyon, the trail ascends
 [Walter's Wiggles](http://www.zionnational-park.com/images/album2/pages/angels-landing-ef_jpg.htm),
-a set long set of tight, steep switchbacks, and then emerges atop a spine of
+a long set of tight, steep switchbacks, and then emerges atop a spine of
 cliff that culminates in Angels Landing itself. This is where the trail really
-gets fun&mdash;or terrifying, depending on whom you ask. I don't consider myself
-to be particularly afraid of heights, but the view down to the valley floor is
-truly dizzying, even before one reaches the top of Angels Landing. And between
-the the top of the of the Wiggles and the Landing, there are still hundreds of
-vertical feet to climb along a twisting, rocky, extremely narrow trail where a
-slip to either side means certain death. So steep is this section of trail that
-much of it is spent pulling oneself upward along sections of chain that the
+gets fun&mdash;or terrifying, depending on your perspective. I don't consider
+myself to be particularly afraid of heights, but the view down to the valley
+floor is truly dizzying, even before one reaches the top of Angels Landing. And
+between the top of the of the Wiggles and the Landing, there are still hundreds
+of vertical feet to climb along a twisting, rocky, extremely narrow trail where
+a slip to either side means certain death. So steep is this section of trail
+that much of it is spent pulling oneself upward along sections of chain that the
 National Park Service has anchored into the rock. It's remarkable that
 [only a handful of people have died at Angels Landing](http://www.nps.gov/zion/frequently-asked-questions-about-zions-hiking-trails.htm).
 Did I mention that I was carrying a tripod and several pounds of camera
 equipment the whole way up?
 
-Arriving at the summit, though, the perilious hike proved to be more than
+Arriving at the summit, though, the perilous hike proved to be more than
 worthwhile as I was afforded a beautiful view of Zion Canyon. The brilliant
 green foliage along the valley floor gives way to majestic orange cliffs, which
 turn fiery red as the sun sinks in the distance. Words can't do it justice, and
-frankly, neither can my photography.
+frankly, neither can my photography, but I tried nevertheless:
 
 {% gallery %}
 /images/utah/utah-part2-album-24.jpg[/images/utah/utah-part2-thumb-24.jpg]: Zion Canyon
 /images/utah/utah-part2-album-25.jpg[/images/utah/utah-part2-thumb-25.jpg]: Zion Canyon
 /images/utah/utah-part2-album-26.jpg[/images/utah/utah-part2-thumb-26.jpg]: Zion Canyon from low on the Angels Landing trail
-/images/utah/utah-part2-album-27.jpg[/images/utah/utah-part2-thumb-27.jpg]: Switchbacks along the lower part of the Angels Landing trail, before Refigerator Canyon
+/images/utah/utah-part2-album-27.jpg[/images/utah/utah-part2-thumb-27.jpg]: Switchbacks along the lower part of the Angels Landing trail, before Refrigerator Canyon
 /images/utah/utah-part2-album-28.jpg[/images/utah/utah-part2-thumb-28.jpg]: An overhang along the Angels Landing trail
 /images/utah/utah-part2-album-29.jpg[/images/utah/utah-part2-thumb-29.jpg]: The trail through Refrigerator Canyon, from inside a small fissure in the rock
 /images/utah/utah-part2-album-30.jpg[/images/utah/utah-part2-thumb-30.jpg]: I can't read this, or even figure out what language it is (obvious guesses seem to result in gibberish when machine-translated), but I assume it's in memory of someone who fell from here and died.
@@ -201,19 +202,16 @@ scorpion!
 
 The next day, I set off to hike
 [The Narrows](http://www.nps.gov/zion/planyourvisit/thenarrows.htm), a 16-mile
-long, 20-30 foot wide, 2000 foot-deep gorge carved by the Virgin River. What
-makes The Narrows unique is that there is no hiking trail at all: the hike
-actually takes place _in the river_. As such, it can vary greatly in difficulty
-depending on the season; during months where the water level is high, it can be
-all but impassable, whereas in the summer it tends to be relatively easy with
-water ranging from ankle-deep to waist-deep. Because I don't typically plan
-ahead at all for my vacations, I hadn't planned ahead to visit The Narrows, per
-se&mdash;in fact, I hadn't really been aware of their existence prior to my
-arrival at the park. It was pure luck, then, that I ended up visiting Zion
-during the summer when water levels were low.
+(25km) long, 20-30 foot (6-9m) wide, 2000 foot (610m) deep gorge carved by the
+Virgin River.  What makes The Narrows unique is that there is no hiking trail at
+all: the hike is actually undertaken _in the river_. As such, it can vary
+greatly in difficulty depending on the season; during months where the water
+level is high, it can be all but impassable, whereas in the summer it tends to
+be relatively easy with water ranging from ankle-deep to waist-deep. As I was in
+Zion during July, the water level was quite low.
 
-Even when the water is low, such an atypical hike requires extra preparation, so
-I walked across the road from my campground to the
+Even so, such an atypical hike requires extra preparation, so I walked across
+the road from my campground to the
 [Zion Adventure Company](http://www.zionadventures.com/) and picked up the
 required gear.  This consisted of a pair of canyoneering shoes and neoprene
 socks, a walking stick, and a waterproof bag for my camera equipment. I ended up
@@ -227,7 +225,7 @@ shrink in the water, so shoes that are a comfortable fit at the beginning of the
 day can become very, very uncomfortable after several hours in the river. I
 learned this the hard way: by the end of my hike, I could barely walk, and much
 of the toenail on my big toe on my left foot ended up turning black and falling
-off. Four months later, it's finally _almost_ completely grown back.
+off. Five months later, it's finally _almost_ completely grown back.
 
 Aside from that slightly painful mistake on my part, though, The Narrows proved
 to be a truly amazing hike, unlike anything I've ever done before. Looking
@@ -239,11 +237,124 @@ ever-changing Virgin River.
 
 There are two ways to hike The Narrows. Starting from the top down, it's a
 16-mile hike, which the National Park Service estimates will take about 12
-hours. Unfortunately, this route requires two permits, one of which I gather is
-very sought-after and therefore difficult to get. Not having either permit, I
-was left with the bottom-up hike, which is a 10-mile round trip if you go all
+hours. Unfortunately, this route requires two permits, one of which is very
+sought-after and therefore difficult to get. Not having either permit, I was
+left with the bottom-up hike, which is a 10-mile (16km) round trip if you go all
 the way to the mandatory turn-around point at Big Spring, which I did. I also
 took the optional side-trip into Orderville Canyon, which added another mile to
-the hike for a total of around 11 miles.
+the hike for a total of around 11 miles (18km).
 
+The first few miles of the hike were very busy, probably owing both to how
+spectacular the views on the hike are, and how refreshing the cool waters of the
+Virgin River are on hot days in Zion. Luckily, most people seem to stop and turn
+back around Orderville Canyon, which is about 2.5 miles into the hike. After the
+Orderville fork, the main canyon becomes very narrow in spots&mdash;hence the
+name. Of course, this also means that the river is much deeper in a few areas.
+Even with the low water levels, I had to wade through several waist-deep pools
+with my camera bag held above my head.  There was even one pool deep enough that
+I would have had to swim across it, but I managed to find an alternate route by
+sneaking behind a colossal boulder in the river.
 
+After five miles of walking upstream, I reached Big Spring, which is exactly
+what it sounds like: a large spring pouring into the river from the canyon wall.
+With the water low, it's also a perfect spot to stop and relax. There's a nice
+sandbar to sit on, and the canyon is wide enough that the afternoon sun bakes
+the sandbar to a pleasantly warm temperature. There's also a fairly deep pool
+in the river opposite the sandbar, adjacent to the spring itself; this I found
+to be perfect for diving and swimming, and a nice way to cool off when the sun
+became too warm.
+
+I met a group of students and their football coach from a Mormon school in Provo
+(if I recall correctly) at the spring. They were all very friendly, and I
+encountered them again several times on my way back down the canyon, so we ended
+up chatting about various subjects. Learning that I'm from Canada but working in
+the US, they were interested to hear how Canadians can acquire US work visas.
+This is something I've been asked about several times; it seems that some
+aspects of the US immigration system are almost universally unknown. I don't
+mean that to sound judgmental, though&mdash;it's merely an (I think) interesting
+observation. Most people have little reason to know, and I can't claim to
+understand in detail how immigration works in Canada.
+
+They also mentioned that they knew someone who was currently on a mission in
+Edmonton, which is where I went to school. I was a little surprised to learn
+that Mormons from the US actually go on missions in Canada; I guess I had
+pictured missions primarily taking place in poorer countries where the
+missionaries can help the locals with construction, education, health care, and
+so forth, in addition to their evangelism. I didn't really ask about it, though;
+mostly we talked about how mind-numbingly cold winters in Edmonton can be.
+
+On my way back down the river, I stopped briefly in Orderville Canyon. It's a
+short detour, and well worth it. Orderville is narrower than the main canyon,
+and a bit more challenging to hike in some spots. After one of the first several
+bends, there's a long straight stretch with a clear view to a jutting peak above
+the canyon, which offers a phenomenal sense of the scale of the stone around
+you. Unfortunately, I couldn't effectively photograph this. At the turn-around
+point, Orderville rewards those who take the time to hike it with a small
+waterfall.
+
+{% gallery %}
+/images/utah/utah-part2-album-68.jpg[/images/utah/utah-part2-thumb-68.jpg]: The Narrows
+/images/utah/utah-part2-album-69.jpg[/images/utah/utah-part2-thumb-69.jpg]: Big Spring
+/images/utah/utah-part2-album-70.jpg[/images/utah/utah-part2-thumb-70.jpg]: Sitting atop Big Spring
+/images/utah/utah-part2-album-71.jpg[/images/utah/utah-part2-thumb-71.jpg]: The sandbar at Big Spring
+/images/utah/utah-part2-album-72.jpg[/images/utah/utah-part2-thumb-72.jpg]: Big Spring
+/images/utah/utah-part2-album-73.jpg[/images/utah/utah-part2-thumb-73.jpg]: Emerald waters at Big Spring
+/images/utah/utah-part2-album-74.jpg[/images/utah/utah-part2-thumb-74.jpg]: Emerald waters at Big Spring
+/images/utah/utah-part2-album-75.jpg[/images/utah/utah-part2-thumb-75.jpg]: Emerald waters at Big Spring
+/images/utah/utah-part2-album-76.jpg[/images/utah/utah-part2-thumb-76.jpg]: Emerald waters at Big Spring
+/images/utah/utah-part2-album-77.jpg[/images/utah/utah-part2-thumb-77.jpg]: The Narrows
+/images/utah/utah-part2-album-78.jpg[/images/utah/utah-part2-thumb-78.jpg]: The Narrows
+/images/utah/utah-part2-album-79.jpg[/images/utah/utah-part2-thumb-79.jpg]: The Narrows
+/images/utah/utah-part2-album-80.jpg[/images/utah/utah-part2-thumb-80.jpg]: The Narrows
+/images/utah/utah-part2-album-81.jpg[/images/utah/utah-part2-thumb-81.jpg]: The Narrows
+/images/utah/utah-part2-album-82.jpg[/images/utah/utah-part2-thumb-82.jpg]: The Narrows
+/images/utah/utah-part2-album-83.jpg[/images/utah/utah-part2-thumb-83.jpg]: The Narrows
+/images/utah/utah-part2-album-84.jpg[/images/utah/utah-part2-thumb-84.jpg]: The Narrows
+/images/utah/utah-part2-album-85.jpg[/images/utah/utah-part2-thumb-85.jpg]: The Narrows
+/images/utah/utah-part2-album-86.jpg[/images/utah/utah-part2-thumb-86.jpg]: Waterfall in Orderville Canyon
+/images/utah/utah-part2-album-87.jpg[/images/utah/utah-part2-thumb-87.jpg]: Waterfall in Orderville Canyon
+{% endgallery %}
+
+Sadly, I only had a couple days to spend in Zion, so the next day I packed up my
+tent and started the long drive back to Redmond. The fastest route would have
+been to back north through Idaho, essentially following the same route I'd
+arrived on. I wanted the drive to be interesting, though, so instead I headed
+southwest to St. George, Utah, then through the northwest corner of Arizona and
+on to Las Vegas.
+([There's a map in my first post.](/entry/2013/07/30/road-trip/)) From there, I
+drove northwest along the California-Nevada border. The GPS in my car can be
+extremely uncooperative at times, particularly where seasonal roads are
+involved, so I ended up following an unnecessarily circuitous route, crossing
+the state border no fewer than 5 times. I did find some beautiful roads, though;
+in particular, the Robert M. Jackson Memorial Highway (California State Route
+89) near Leviathan Peak. I reached the peak just as the sun was setting, and the
+view was gorgeous.
+
+I stayed the night in South Lake Tahoe. It was already night when I arrived, and
+I didn't have much time to explore the next day given how much driving I still
+had left to do. Still, driving around the lake re-emphasized the beauty of the
+area; Lake Tahoe now has a high spot on my list of places that I have to visit.
+
+From Tahoe, I made another detour back into Nevada, through Carson City, and
+then back through California up to Oregon. Northern California reminds me quite
+a bit of the southern interior of British Columbia, but other than that, there
+wasn't much to see. As for the drive through Oregon, the only thing I want to
+say about it is that south-central Oregon doesn't seem to be very interesting
+(except for Crater Lake, which I didn't get a chance to stop at), and that speed
+limits in the state are far too low. 55mph on the interstate makes for a long,
+boring drive.
+
+{% gallery %}
+/images/utah/utah-part2-album-88.jpg[/images/utah/utah-part2-thumb-88.jpg]: Somewhere outside the lonely Esmerelda County line / The question of my heart came to my mind - The Killers
+/images/utah/utah-part2-album-89.jpg[/images/utah/utah-part2-thumb-89.jpg]: Somewhere east of the Sierra Nevada range
+/images/utah/utah-part2-album-90.jpg[/images/utah/utah-part2-thumb-90.jpg]: Somewhere east of the Sierra Nevada range
+/images/utah/utah-part2-album-91.jpg[/images/utah/utah-part2-thumb-91.jpg]: Sunset on Leviathan Peak
+/images/utah/utah-part2-album-92.jpg[/images/utah/utah-part2-thumb-92.jpg]: Sunset on Leviathan Peak
+/images/utah/utah-part2-album-93.jpg[/images/utah/utah-part2-thumb-93.jpg]: Sunset on Leviathan Peak
+/images/utah/utah-part2-album-94.jpg[/images/utah/utah-part2-thumb-94.jpg]: Sunset on Leviathan Peak
+/images/utah/utah-part2-album-95.jpg[/images/utah/utah-part2-thumb-95.jpg]: Sunset on Leviathan Peak
+{% endgallery %}
+
+So, that's it! I hope you've enjoyed reading about my adventures. I try to do at
+least one long road trip each year, so if you have suggestions about where I
+should go next year, let me know.
