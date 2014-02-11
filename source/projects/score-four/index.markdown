@@ -14,7 +14,8 @@ published: true
 <p>To ensure that our project stood out, I decided to challenge myself and create a 3D user interface using the Java3D API. This allowed me to make a simple game much more visually interesting than it otherwise might have been.</p>
 
 <h2 style="text-align: left;">Get the game</h2>
-<p style="text-align: left;">You can download the game from <a title="Scorefour game ZIP" href="http://www.mlindgren.ca/files/team3-scorefour.zip" target="_blank">here</a>.  To run it, simply extract both files to the same folder and double-click the JNLP file.  You'll need Java installed, of course.  If you don't have JNLP files associated with Java WebStart, you can start the game by running <code>javaws team3-scorefour.jnlp</code> in a terminal.</p>
+<p style="text-align: left;">You can download the game from <a title="Scorefour
+game ZIP" href="http://files.mlindgren.ca/team3-scorefour.zip" target="_blank">here</a>.  To run it, simply extract both files to the same folder and double-click the JNLP file.  You'll need Java installed, of course.  If you don't have JNLP files associated with Java WebStart, you can start the game by running <code>javaws team3-scorefour.jnlp</code> in a terminal.</p>
 
 <p><strong>The game does not run on Mac OS X</strong>. To the best of my knowledge this is caused by an incompatibility in the OS X Java3D binaries.  If you find a way around this, please leave a comment and let me know.</p>
 
