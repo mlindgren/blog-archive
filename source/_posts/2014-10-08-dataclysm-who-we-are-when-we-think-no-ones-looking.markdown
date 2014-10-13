@@ -10,7 +10,7 @@ If you've ever read OkCupid's popular [OkTrends](http://blog.okcupid.com/) blog,
 you're already familiar with the work of Christian Rudder. As OkCupid's resident
 mathematician and one of its founders, he has been writing for years about
 statistical trends related to dating and attraction, leveraging OkCupid's
-vast database of traits about and interactions between its millions and millions
+vast database of traits about, and interactions between, its millions and millions
 of users. OkTrends produced numerous interesting and surprising results, and it
 developed a significant following before going quiet for the better part of
 three years beginning in 2011.
@@ -20,7 +20,7 @@ Now, Rudder is back with
 which expands on OkTrends by drawing from a wider variety of sources (including
 Facebook, Google, and Twitter, in addition to OkCupid and other dating sites)
 and discussing a more diverse set of topics.  Organized into three themed
-sections which focus on, respectively, unity, division and individuality, the
+sections which focus on, respectively, unity, division, and individuality, the
 book explores what data can tell us about gender, sexuality, race, identity,
 community, and other sociopolitical questions.  The discussion is consistently
 balanced and neutral, which is important when dealing with such potentially
@@ -83,7 +83,7 @@ it also seems like a bit of a cop out based stereotypical beliefs about gender
 differences. I'd like to see data about how straight men and women rate the
 attractiveness of people of their own gender&mdash;although not directly
 analogous since it would be divorced from sexual desire, I suspect that the
-results might raise questions Rudder's hypothesis here.
+results might raise questions about Rudder's hypothesis here.
 
 In the interest of fairness, I must restate that his discussion takes place in
 the book's introduction, so it's not representative of the length at which other
@@ -105,7 +105,7 @@ eyes, the colors overlap too much to make a meaningful distinction; this
 really just looks like a population map. What's more, it appears to include
 Canadian responses even though I can only assume that Rudder is referring the US
 when he writes "_a_ nation," singular. And again, there is no discussion of
-important methodological questions and possible confounding factors, such as
+important methodological questions or possible confounding factors, such as
 whether OkCupid's user base is disproportionately urban (which doesn't seem
 unlikely to me), and whether or not that was corrected for if so.
 
@@ -131,7 +131,7 @@ studies supporting them.
 
 All of this criticism notwithstanding, I really enjoyed reading _Dataclysm_, and
 I would heartily recommend it to anyone interested in gaining insight into the
-social and political identities of (primarily) American Internet users. Anyone
+social and political identities of (primarily American) Internet users. Anyone
 interested in the burgeoning field of data science would also likely enjoy this
 book. It's just worth noting that some of Rudder's conclusions should be taken
 with a healthy dose of skepticism until they can be replicated with rigor that
