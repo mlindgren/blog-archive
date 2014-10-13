@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Personal | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/personal/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2014-05-19T23:11:07-07:00</updated>
+  <updated>2014-10-12T20:09:23-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -12,6 +12,154 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Book Review: Dataclysm]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking/"/>
+    <updated>2014-10-08T22:51:00-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;ve ever read OkCupid&rsquo;s popular <a href="http://blog.okcupid.com/">OkTrends</a> blog,
+you&rsquo;re already familiar with the work of Christian Rudder. As OkCupid&rsquo;s resident
+mathematician and one of its founders, he has been writing for years about
+statistical trends related to dating and attraction, leveraging OkCupid&rsquo;s
+vast database of traits about and interactions between its millions and millions
+of users. OkTrends produced numerous interesting and surprising results, and it
+developed a significant following before going quiet for the better part of
+three years beginning in 2011.</p>
+
+<p>Now, Rudder is back with
+<a href="http://dataclysm.org/"><em>Dataclysm: Who We Are When We Think No One&rsquo;s Looking</em></a>,
+which expands on OkTrends by drawing from a wider variety of sources (including
+Facebook, Google, and Twitter, in addition to OkCupid and other dating sites)
+and discussing a more diverse set of topics.  Organized into three themed
+sections which focus on, respectively, unity, division and individuality, the
+book explores what data can tell us about gender, sexuality, race, identity,
+community, and other sociopolitical questions.  The discussion is consistently
+balanced and neutral, which is important when dealing with such potentially
+charged subjects, but Rudder also manages to inject enough of his personality
+and characteristic style to keep the book enjoyable throughout.</p>
+
+<!-- more -->
+
+
+<p>Indeed, the OkTrends blog was popular not only for the fascinating observations
+it produced, but also for Rudder&rsquo;s accessible and entertaining writing style,
+and he continues this to great effect in Dataclysm. No mathematical or
+statistical knowledge whatsoever is required to understand the topics discussed
+in the book; data are presented in the form of simple graphs and explained using
+plain English with a minimum of jargon.</p>
+
+<p>Unfortunately, this focus on accessibility also gives rise to my biggest
+criticism of the book: on the spectrum of &ldquo;pop science&rdquo; writing, <em>Dataclysm</em> is
+decidedly more pop than science. In and of itself, that isn&rsquo;t a problem per se,
+but in many instances I felt that a more methodical approach could have led to a
+broader and more productive discussion.  Rudder is not nearly thorough enough in
+describing the methodology by which he arrived at his conclusions, nor in
+presenting (or at least making available) salient facts about the data he used,
+nor in exploring alternative hypotheses.</p>
+
+<p>For example, consider the following graph of the &ldquo;perception of male vs. female
+attractiveness&rdquo; from the introduction. On the x-axis is the average of all
+ratings (on a 1-5 star scale) received by a user, and on the y-axis is the
+percentage of all users that received that average rating:</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="http://blog.mlindgren.ca/images/men_women_attractiveness.png" alt="Attractiveness of women as
+rated by men and vice versa"/><br />
+<small>Copyright 2014 Christian Rudder. Used under Fair Use.</small>
+</div>
+
+
+<br />
+
+
+<p>Rudder explains:</p>
+
+<blockquote><p>Our real-world data [of women&rsquo;s attractiveness as rated by men] diverges only
+slightly (6 percent) from this formulaic ideal [of a symmetric beta
+distribution] &hellip; it implies that the individual men who did the scoring are
+likewise predictable, centered, and above all, unbiased&hellip; It&rsquo;s practically
+common sense that men should have unrealistic expectations of women&rsquo;s looks,
+and yet here we see it&rsquo;s just not true.</p>
+
+<p>The red chart [of men&rsquo;s attractiveness as rated by women] is cenetered barely
+a quarter of the way up the scale; only one in six guys is &ldquo;above average&rdquo; in
+an absolute sense&hellip; [as an analogy,] translate this plot to IQ, and you have
+a world where women think 58% of men are brain damaged.</p></blockquote>
+
+<p>This is certainly interesting data in its own right, but I don&rsquo;t think Rudder
+goes far enough in exploring what it means or why it might be the case. By
+comparing against a similar random sample from a social network, he determines
+that it is <em>not</em> because men on OkCupid are unusually ugly&mdash;this pattern
+persists beyond dating sites. His hypothesis is simply that &ldquo;men and women
+perform a different sexual calculus,&rdquo; and, quoting <em>Harper&rsquo;s Magazine</em>, he notes
+that &ldquo;women are inclinded to regret the sex they had, and men the sex they
+didn&rsquo;t.&rdquo;</p>
+
+<p>This is certainly a plausible explanation, and it&rsquo;s intuitively appealing, but
+it also seems like a bit of a cop out based stereotypical beliefs about gender
+differences. I&rsquo;d like to see data about how straight men and women rate the
+attractiveness of people of their own gender&mdash;although not directly
+analogous since it would be divorced from sexual desire, I suspect that the
+results might raise questions Rudder&rsquo;s hypothesis here.</p>
+
+<p>In the interest of fairness, I must restate that his discussion takes place in
+the book&rsquo;s introduction, so it&rsquo;s not representative of the length at which other
+findings in the book are discussed. Most likely, it&rsquo;s just meant to pique the
+reader&rsquo;s interest and serve as an example of the kind of data the book will
+examine. Nevertheless, similar issues persist in later chapters of the book.
+Consider this map of responses to the question &ldquo;Should flag burning be illegal?&rdquo;
+among OkCupid users:</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="http://blog.mlindgren.ca/images/dataclysm_flag_burning.png" alt="Map of answers to the
+question: Should flag burning be illegal?"/><br />
+<small>Copyright 2014 Christian Rudder. Used under Fair Use.</small>
+</div>
+
+
+<br />
+
+
+<p>Rudder claims that this map demonstrates that &ldquo;this is truly a nation defined by
+its principles, or, as you can see, <em>two</em> nations: Urban and Rural.&rdquo; But to my
+eyes, the colors overlap too much to make a meaningful distinction; this
+really just looks like a population map. What&rsquo;s more, it appears to include
+Canadian responses even though I can only assume that Rudder is referring the US
+when he writes &ldquo;<em>a</em> nation,&rdquo; singular. And again, there is no discussion of
+important methodological questions and possible confounding factors, such as
+whether OkCupid&rsquo;s user base is disproportionately urban (which doesn&rsquo;t seem
+unlikely to me), and whether or not that was corrected for if so.</p>
+
+<p>Rudder anticipates criticism of his decision to eschew &ldquo;statistical esoterica,&rdquo;
+and defends it as follows:</p>
+
+<blockquote><p>I don&rsquo;t mention confidence intervals, sample sizes, p values, and similar
+devices in <em>Dataclysm</em> because the book is above all a popularization of data
+and data science&hellip; But like the spars and crossbeams of a house, the rigor is
+no less present for being unseen. Many of the findings of the book are drawn
+from academic, peer-reviewed sources. I applied the same standards to the
+research I did myself&hellip;</p></blockquote>
+
+<p>I fully accept that there is a place for and a value to &ldquo;popularization&rdquo; of
+scientific fields, and that it&rsquo;s sensible to exclude complex statistical
+measures which would be meaningless to most readers&hellip; <em>from the main body of
+the text</em>. But I don&rsquo;t see why Rudder didn&rsquo;t even see fit to include these as
+footnotes or endnotes, which the book does have. And with respect to the
+academic research used, Rudder relegates all of his citations to endnotes, which
+usually link back to the text referring to them, but are not linked to <em>from</em>
+that text, which can make it very hard to match up specific statements with the
+studies supporting them.</p>
+
+<p>All of this criticism notwithstanding, I really enjoyed reading <em>Dataclysm</em>, and
+I would heartily recommend it to anyone interested in gaining insight into the
+social and political identities of (primarily) American Internet users. Anyone
+interested in the burgeoning field of data science would also likely enjoy this
+book. It&rsquo;s just worth noting that some of Rudder&rsquo;s conclusions should be taken
+with a healthy dose of skepticism until they can be replicated with rigor that
+<em>is</em> seen.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Road Trip! Part II]]></title>
@@ -1348,38 +1496,6 @@ you go away.</li>
     <content type="html"><![CDATA[<p>It feels like a bit of a cop out to post this after having not written anything
 for five months, but I&rsquo;ve decided to switch from shared hosting to a <acronym
 title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress out of the www root directory.  The transition was surprisingly easy, but it&rsquo;s possible that some pages may contain dead links or missing images.  If you see any, please leave a comment and let me know!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[2010 and 2011 in Review]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/12/31/2010-and-2011-in-review/"/>
-    <updated>2011-12-31T15:59:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/12/31/2010-and-2011-in-review</id>
-    <content type="html"><![CDATA[<p>If you&rsquo;ll forgive me for &ldquo;metablogging,&rdquo; I&rsquo;ve been ruminating lately on the purpose of this website.  Up until now, I&rsquo;ve been trying to focus exclusively on technology, programming and game design, and to minimize the subjective aspects of my connection to those fields.  Put more simply, I&rsquo;ve been avoiding writing about who I am and what I do in favour of producing a series of mostly impersonal tutorials and critiques of technology.  There are a number of reasons for this—the word &ldquo;professionalism&rdquo; comes to mind as chief among them.  I&rsquo;d like this website to be my public face on the Internet, and as every saavy Internet denizen should know by now, there are certain risks associated with maintaining a public persona.  I greatly admire <a href="http://zedshaw.com/">Zed Shaw</a>, for his personality as well as his technical accomplishments, but I have no desire to make myself unemployable as he claims to have done (albeit temporarily).</p>
-
-<p>That said, trying to take a dry, detached and objective approach to creating a personal website presents a number of problems itself.  First and foremost, it&rsquo;s an inherent contradiction; if I don&rsquo;t write about myself in any meaningful capacity, then there is nothing aside from the superficial about this website which makes it mine.  I can&rsquo;t imagine it makes for a very interesting read, either.  Realistically, how many people will come here looking for <a title="How to link GLUT in Qt Creator on OS X" href="http://www.mlindgren.ca/archives/453">advice on how to link GLUT?</a>  Readership numbers are of little to no concern to me, mind you, but I can at least endeavour to give this website a purposeful existence.  To that end, I want to start writing more about personal topics, although for the sake of cohesiveness I&rsquo;m going to continue to focus primarily on those aspects of my life that will be of interest to a technically-minded audience.<!-- more --></p>
-
-<p>As a start, I think that this is a good time to reflect on what I&rsquo;ve done since I started this blog in May of 2010.  Early in May, I moved to Calgary, Alberta, to start a sixteen-month internship with <a href="http://pason.com/">Pason Systems Corporation.</a>  Pason is the market-leading provider of oil rig instrumentation and service, with a wide variety of tools and technology available to facilitate safety and improve efficiency on oil rigs.  All of Pason&rsquo;s rig-site hardware and software is designed in house, but my work was on an internal web application designed to support Pason&rsquo;s most valuable employees: the field technicians who directly provide services and equipment to customers.</p>
-
-<p>For obvious reasons, I can&rsquo;t go into great detail about the work I did at Pason.  I will say, though, that it was extremely rewarding.  I had the opportunity to work alongside some of the smartest developers I&rsquo;ve ever met, and I was able to do work that I felt had a tangible, significant and lasting impact on my team&rsquo;s product. That&rsquo;s a rare honor for an intern!  From a technical perspective, I got to work with some interesting and unfamiliar technologies; I did extensive development in Python, created rich user experiences with HTML5 and JavaScript, and dabbled with C# when the need arose.  The whole experience was hugely instructive, and I will always fondly remember my time at Pason.  Of my entire education, my internship is without a doubt the part that I value most.</p>
-
-<p>In September of this year, I moved back to Edmonton to finish my Computing Science degree at the University of Alberta.  It being my final year and with most of my specific course requirements out of the way, I loaded up on computing science courses, which led to a fairly engaging but difficult semester.  Among the courses I took were Advanced Games Programming in C++, Compiler Design, and Introduction to Computer Graphics.</p>
-
-<p>As a term project for the Advanced Games Programming course, I undertook a modification of the <a href="http://skatgame.net/mburo/orts/" target="_blank">ORTS</a> game engine to allow user interface scripting with Lua, à la World of Warcraft.  I feel that the outcome of this project was a little underwhelming, as limited time and the complexity of ORTS forced me to settle for less comprehensive scripting capabilities than I would have liked.  Nevertheless, I learned a great deal about Lua and the process of interfacing with Lua from C++. I think I now have an inkling of what&rsquo;s involved in creating a robust client-side scripting system as in World of Warcraft, or even a custom development platform like <a title="Ansca Mobile Corona" href="http://www.anscamobile.com/corona/" target="_blank">Corona</a>.  Given the popularity of Lua as a scripting language in game development and my interest in developing games, I&rsquo;m sure it will be valuable experience.</p>
-
-<p>Although I believe I would be within my academic rights to do so, for the time being I don&rsquo;t foresee myself releasing the source code for my Advanced Games Programming project.  ORTS has not seen active development in a number of years, so it is outdated and difficult to compile and run, let alone modify.  Additionally, my own work—being a school project as it is—would probably not prove to be a good demonstration of Lua/C++ integration best practices, and I&rsquo;m always wary of releasing code from which others might learn the wrong way of doing things.  I do have a report on the project which I&rsquo;d like to reproduce here at some point, though.  </p>
-
-<p>For University of Alberta Computing Science students, I have some advice which I&rsquo;d like to share regarding the Advanced Games Programming course.  If you already know C++, as I did, I would have to recommend against taking it.  Much to my chagrin, the majority of the lectures were actually about C++ in and of itself, rather than algorithms and techniques relevant to games.  It certainly would be helpful for anyone who wants to pick up C++, but if you&rsquo;re looking for a thorough examination of game programming, look elsewhere.</p>
-
-<p>Compilers was perhaps my favorite course of the semester, although it was also by far the most difficult.  I would describe it as a strangely paradoxical course.  The theory behind formal languages, parsing and code generation is not extremely complex, but it can be initially hard to grasp, as it is very heavy on jargon and has numerous rules and axioms to memorize.  The process of building a <em>simple</em> compiler for a simple language is, in retrospect, fairly mechanical and manageable, but it seems anything but when approached without the benefit of hindsight.  Overall, the course is just a staggering amount of work, but it is also among the most rewarding courses I&rsquo;ve taken.</p>
-
-<p>Finally, Introduction to Computer Graphics, I got to expand upon the OpenGL knowledge I had built during the development of <a title="Puzzle Panel" href="http://www.mlindgren.ca/projects/puzzle-panel">my iOS game</a>, while also learning the fundamental aspects of computer graphics.  Like Compilers, Graphics is a challenging but rewarding course, one of the most difficult aspects of it being the time commitment required.  (Of course, it is also fairly math-heavy.)  As someone who appreciates the beauty of a well-designed, simple algorithm, I found that learning about such achievements as the <a title="Wikipedia: Midpoint circle algorithm" href="http://en.wikipedia.org/wiki/Midpoint_circle_algorithm" target="_blank">midpoint circle algorithm</a> was one of the most enjoyable aspects of the course.  I feel that there&rsquo;s an almost Zen-like quality to a clever but simple algorithm which strips away preconceptions of complexity to accomplish a task in the most efficient manner possible.  If you&rsquo;re of a similar mind, graphics is full of examples of such algorithms.  Of course, working in graphics is also rewarding for its ability to produce visually interesting results, which is a rare treat in academic computing science:</p>
-
-<div style="text-align: center; margin-left: auto; margin-right: auto;"><img style="display: block; margin-left: auto; margin-right: auto;" title="Shadow volumes" src="http://blog.mlindgren.ca/images/shadowvolumes.jpg" alt="A demonstration of shadow volumes from an Introduction to Computer Graphics assignment" width="386" height="335" /><em><small>A demonstration of shadow volumes from an Introduction to Computer Graphics assignment.</small></em></div>
-
-
-<p>2010 and 2011 were exciting years for me, and although I&rsquo;m not ready to discuss it yet, I have something huge lined up for after I graduate in April of 2012. In the meantime, I&rsquo;ll continue to post here as often as I can manage. Thanks for reading, and happy new year!</p>
 ]]></content>
   </entry>
   

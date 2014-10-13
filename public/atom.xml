@@ -4,7 +4,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2014-05-19T23:11:07-07:00</updated>
+  <updated>2014-10-12T20:09:23-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -12,6 +12,154 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Book Review: Dataclysm]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking/"/>
+    <updated>2014-10-08T22:51:00-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;ve ever read OkCupid&rsquo;s popular <a href="http://blog.okcupid.com/">OkTrends</a> blog,
+you&rsquo;re already familiar with the work of Christian Rudder. As OkCupid&rsquo;s resident
+mathematician and one of its founders, he has been writing for years about
+statistical trends related to dating and attraction, leveraging OkCupid&rsquo;s
+vast database of traits about and interactions between its millions and millions
+of users. OkTrends produced numerous interesting and surprising results, and it
+developed a significant following before going quiet for the better part of
+three years beginning in 2011.</p>
+
+<p>Now, Rudder is back with
+<a href="http://dataclysm.org/"><em>Dataclysm: Who We Are When We Think No One&rsquo;s Looking</em></a>,
+which expands on OkTrends by drawing from a wider variety of sources (including
+Facebook, Google, and Twitter, in addition to OkCupid and other dating sites)
+and discussing a more diverse set of topics.  Organized into three themed
+sections which focus on, respectively, unity, division and individuality, the
+book explores what data can tell us about gender, sexuality, race, identity,
+community, and other sociopolitical questions.  The discussion is consistently
+balanced and neutral, which is important when dealing with such potentially
+charged subjects, but Rudder also manages to inject enough of his personality
+and characteristic style to keep the book enjoyable throughout.</p>
+
+<!-- more -->
+
+
+<p>Indeed, the OkTrends blog was popular not only for the fascinating observations
+it produced, but also for Rudder&rsquo;s accessible and entertaining writing style,
+and he continues this to great effect in Dataclysm. No mathematical or
+statistical knowledge whatsoever is required to understand the topics discussed
+in the book; data are presented in the form of simple graphs and explained using
+plain English with a minimum of jargon.</p>
+
+<p>Unfortunately, this focus on accessibility also gives rise to my biggest
+criticism of the book: on the spectrum of &ldquo;pop science&rdquo; writing, <em>Dataclysm</em> is
+decidedly more pop than science. In and of itself, that isn&rsquo;t a problem per se,
+but in many instances I felt that a more methodical approach could have led to a
+broader and more productive discussion.  Rudder is not nearly thorough enough in
+describing the methodology by which he arrived at his conclusions, nor in
+presenting (or at least making available) salient facts about the data he used,
+nor in exploring alternative hypotheses.</p>
+
+<p>For example, consider the following graph of the &ldquo;perception of male vs. female
+attractiveness&rdquo; from the introduction. On the x-axis is the average of all
+ratings (on a 1-5 star scale) received by a user, and on the y-axis is the
+percentage of all users that received that average rating:</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="http://blog.mlindgren.ca/images/men_women_attractiveness.png" alt="Attractiveness of women as
+rated by men and vice versa"/><br />
+<small>Copyright 2014 Christian Rudder. Used under Fair Use.</small>
+</div>
+
+
+<br />
+
+
+<p>Rudder explains:</p>
+
+<blockquote><p>Our real-world data [of women&rsquo;s attractiveness as rated by men] diverges only
+slightly (6 percent) from this formulaic ideal [of a symmetric beta
+distribution] &hellip; it implies that the individual men who did the scoring are
+likewise predictable, centered, and above all, unbiased&hellip; It&rsquo;s practically
+common sense that men should have unrealistic expectations of women&rsquo;s looks,
+and yet here we see it&rsquo;s just not true.</p>
+
+<p>The red chart [of men&rsquo;s attractiveness as rated by women] is cenetered barely
+a quarter of the way up the scale; only one in six guys is &ldquo;above average&rdquo; in
+an absolute sense&hellip; [as an analogy,] translate this plot to IQ, and you have
+a world where women think 58% of men are brain damaged.</p></blockquote>
+
+<p>This is certainly interesting data in its own right, but I don&rsquo;t think Rudder
+goes far enough in exploring what it means or why it might be the case. By
+comparing against a similar random sample from a social network, he determines
+that it is <em>not</em> because men on OkCupid are unusually ugly&mdash;this pattern
+persists beyond dating sites. His hypothesis is simply that &ldquo;men and women
+perform a different sexual calculus,&rdquo; and, quoting <em>Harper&rsquo;s Magazine</em>, he notes
+that &ldquo;women are inclinded to regret the sex they had, and men the sex they
+didn&rsquo;t.&rdquo;</p>
+
+<p>This is certainly a plausible explanation, and it&rsquo;s intuitively appealing, but
+it also seems like a bit of a cop out based stereotypical beliefs about gender
+differences. I&rsquo;d like to see data about how straight men and women rate the
+attractiveness of people of their own gender&mdash;although not directly
+analogous since it would be divorced from sexual desire, I suspect that the
+results might raise questions Rudder&rsquo;s hypothesis here.</p>
+
+<p>In the interest of fairness, I must restate that his discussion takes place in
+the book&rsquo;s introduction, so it&rsquo;s not representative of the length at which other
+findings in the book are discussed. Most likely, it&rsquo;s just meant to pique the
+reader&rsquo;s interest and serve as an example of the kind of data the book will
+examine. Nevertheless, similar issues persist in later chapters of the book.
+Consider this map of responses to the question &ldquo;Should flag burning be illegal?&rdquo;
+among OkCupid users:</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="http://blog.mlindgren.ca/images/dataclysm_flag_burning.png" alt="Map of answers to the
+question: Should flag burning be illegal?"/><br />
+<small>Copyright 2014 Christian Rudder. Used under Fair Use.</small>
+</div>
+
+
+<br />
+
+
+<p>Rudder claims that this map demonstrates that &ldquo;this is truly a nation defined by
+its principles, or, as you can see, <em>two</em> nations: Urban and Rural.&rdquo; But to my
+eyes, the colors overlap too much to make a meaningful distinction; this
+really just looks like a population map. What&rsquo;s more, it appears to include
+Canadian responses even though I can only assume that Rudder is referring the US
+when he writes &ldquo;<em>a</em> nation,&rdquo; singular. And again, there is no discussion of
+important methodological questions and possible confounding factors, such as
+whether OkCupid&rsquo;s user base is disproportionately urban (which doesn&rsquo;t seem
+unlikely to me), and whether or not that was corrected for if so.</p>
+
+<p>Rudder anticipates criticism of his decision to eschew &ldquo;statistical esoterica,&rdquo;
+and defends it as follows:</p>
+
+<blockquote><p>I don&rsquo;t mention confidence intervals, sample sizes, p values, and similar
+devices in <em>Dataclysm</em> because the book is above all a popularization of data
+and data science&hellip; But like the spars and crossbeams of a house, the rigor is
+no less present for being unseen. Many of the findings of the book are drawn
+from academic, peer-reviewed sources. I applied the same standards to the
+research I did myself&hellip;</p></blockquote>
+
+<p>I fully accept that there is a place for and a value to &ldquo;popularization&rdquo; of
+scientific fields, and that it&rsquo;s sensible to exclude complex statistical
+measures which would be meaningless to most readers&hellip; <em>from the main body of
+the text</em>. But I don&rsquo;t see why Rudder didn&rsquo;t even see fit to include these as
+footnotes or endnotes, which the book does have. And with respect to the
+academic research used, Rudder relegates all of his citations to endnotes, which
+usually link back to the text referring to them, but are not linked to <em>from</em>
+that text, which can make it very hard to match up specific statements with the
+studies supporting them.</p>
+
+<p>All of this criticism notwithstanding, I really enjoyed reading <em>Dataclysm</em>, and
+I would heartily recommend it to anyone interested in gaining insight into the
+social and political identities of (primarily) American Internet users. Anyone
+interested in the burgeoning field of data science would also likely enjoy this
+book. It&rsquo;s just worth noting that some of Rudder&rsquo;s conclusions should be taken
+with a healthy dose of skepticism until they can be replicated with rigor that
+<em>is</em> seen.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Elder Scrolls Online]]></title>
@@ -2543,105 +2691,6 @@ function, so that you can always call it using <code>my_dict[my_var](x, y, z)</c
 <p>You can also use the laziness aspect of lambdas to refer to variables which haven&rsquo;t been declared yet, although I&rsquo;d recommend against that because it can become quite confusing. Anything within the lambda is evaluated only when the lambda is called.</p>
 
 <p>And there you have it! Those are the basics of lambdas in Python. Of course, the above is only a trivial example of what can be accomplished with lambdas.  If you&rsquo;d like to learn more, there&rsquo;s a great write-up available <a title="Lambda functions in Python" href="http://www.secnetix.de/olli/Python/lambda_functions.hawk">here.</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[I'm considering switching back to iOS. Here's why.]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/"/>
-    <updated>2011-06-12T22:13:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why</id>
-    <content type="html"><![CDATA[<p><em>In September of last year I ditched my iPhone 3G and switched to the Android-powered HTC Desire (which I later sold in order to purchase a Desire Z, which sports a physical keyboard.)  I&#8217;m sad to report that I&#8217;m now considering switching back to iOS, after less than a year on the Android platform.  The following is an excerpt from an e-mail I wrote to a friend of mine whom I&#8217;d describe as a fervent Android evangelist, detailing some of the frustrations I have with the operating system and why I feel that I might be better served by iOS.  I&#8217;ve edited it slightly to make it more readable for anyone who might come across this blog.</em></p>
-
-
-
-
-<p><em>I really want to like the Android platform, and writing this gave me no joy.  There are two reasons I&#8217;m posting it here, though.  The first is simply that the purpose of this website is for me to post about my programming and my experiences with technology (as well as whatever else catches my fancy.)  The second is that I hope that sharing my honest opinion about Android might be helpful to anyone considering a phone purchase.</em></p>
-
-
-<!-- more -->
-
-
-
-
-<p>As mentioned on Twitter, my number one complaint is having to use custom ROMs.  <em>There are always problems</em> with custom ROMs.  <a href="http://www.cyanogenmod.com/">CyanogenMod 7</a> caused my phone to reboot at random.  I also had problems with the Contacts app crashing.  All of these issues persisted throughout multiple versions of CM7 up to and including final.</p>
-
-
-
-
-<ul>
-    <li>With the ROM I&#8217;m using now (a custom Sense ROM, can&#8217;t remember the exact name), I can&#8217;t set the SSID/password on my WiFi hotspot because Settings crashes when I try to.  I seriously haven&#8217;t used a single custom ROM that hasn&#8217;t had some issues with it.</li>
-    <li>You mentioned that Google is promising quicker updates, but I&#8217;ll believe it when I see it.  Are they actually forcing manufacturers to do this in order to use Android branding or get Google apps, or are they just asking nicely?  The latter won&#8217;t work.  And as far as I know, all that the Android update committee has promised is 18 months of updates following the launch of a new device.  So does that mean if I release a device and then push a point release to consumers 17 months later, I&#8217;ve fulfilled that? All I see here is flowery language, and frankly I don&#8217;t think anything is going to improve.<br /><br />
-
-The fact is that it&#8217;s not profitable for these manufacturers to update existing devices when they could spend the same development effort on releasing another six phones, so unless Google does something to change that, nothing will happen.</li>
-</ul>
-
-
-
-
-<p>The rest are in no particular order:</p>
-
-
-
-
-<ul>
-    <li>No good Exchange client available.  Even Touchdown, which is expensive, is pretty bad.  The HTC client is okay, but it <del datetime="2011-06-12T02:36:52+00:00">doesn&#8217;t support important features like threading.</del> [I later realized that this is untrue; the HTC client does support threading.  I still find it cumbersome to use, and I&#8217;ve previously had problems with it failing to send messages without any notification of the failure.  That&#8217;s a pretty big problem when you&#8217;re using it for work e-mail.]</li>
-    <li>Launcher redraw, agghhhhhh.  Sense is horrendous for this, but I much prefer the built-in Sense apps to their Google alternatives, so I feel like I&#8217;m stuck using it.  Even on stock Android, it seems like I can&#8217;t really use live wallpapers or I have to wait for the launcher to reload all the time.</li>
-    <li>It&#8217;s annoying that when I read an e-mail in Gmail on my computer, the notification for it stays in my notification bar.  Also, my Gmail push seems to have stopped working of late.  To be fair, it remains to be seen how the new iPhone notification system handles these things.</li>
-    <li>I&#8217;ve noticed that with multiple IM clients (specifically, AIM and eBuddy) if I leave them running in the background while I&#8217;m doing other things like browsing the Internet, I&#8217;ll eventually get signed out or the app will close.  I don&#8217;t know if this is just because they&#8217;re not written correctly, but it&#8217;s annoying; IM is the only thing I really use background applications for and it doesn&#8217;t seem to work consistently.</li>
-    <li>I often have trouble sending/receiving MMS.  It&#8217;s frustrating when someone sends me an MMS and I have to ask them to e-mail it to me instead because it won&#8217;t download.</li>
-    <li>Camera quality on the Desire Z is pretty bad.  I&#8217;m certain the iPhone 4 is better in this department.  I feel like my Desire Z&#8217;s camera is actually worse than my Desire&#8217;s camera for still photos (although it&#8217;s better for video.)  This isn&#8217;t a strike against Android in particular, but the problem of lower-quality hardware is endemic to the platform in a certain sense.</li>
-    <li>A lot of apps in the Android market are just very poor quality. The iPhone app store has its fair share of bad apps, but I still feel like the average quality is much higher there.  In particular, any app that&#8217;s available for both platforms is almost always better on iPhone.  A prime example is Facebook.  The Android client was horribly broken for several weeks, and regardless of that, it just doesn&#8217;t support the same feature set as the iPhone version (e.g. watching videos.)</li>
-    <li>I complained about this even before I bought an Android phone, but the Android operating system is sometimes just not very responsive.  Scrolling is sometimes smooth, but rarely as smooth as on iPhone/Windows Phone 7.  Minor annoyance, but an annoyance nonetheless.</li>
-    <li>I&#8217;m not sure if you&#8217;re familiar with the life cycle of an app in Android, but basically every different screen you can go to in an app is a separate &#8220;activity&#8221;&mdash;essentially a separate application.  <em>What were they thinking</em> in designing it like this? It causes so many problems.  Any time the &#8220;state&#8221; of the phone changes (e.g. you rotate the device, the phone leaves/enters roaming, etc.) the activity is destroyed and re-created unless developers manually override this behavior.  This is why, for instance, the keyboard often disappears if you have it open and then rotate the phone.  (Highly polished apps like Twitter handle rotation properly, but don&#8217;t be fooled; it&#8217;s not the default behavior.  Many other apps do not handle rotation very well.)  Other examples of activity recreation problems include pop-up dialog boxes disappearing and fields losing focus.</li>
-    <li>Editing text sucks; I find that my phone never seems to do what I want it to when I&#8217;m trying to highlight or copy and paste some text.</li>
-    <li>I&#8217;ve had problems on both of my Android phones with the music player pausing in the middle of a song at random.  This has happened in multiple different media players.  It&#8217;s as though the phone thinks the headphones are being removed when they are in fact still in place.</li>
-    <li>I like being able to set alarm/ringer/media volume separately (although the iPhone can also do this), but I don&#8217;t like that the defaults on Android aren&#8217;t very sensible.  For instance, if I have my ringer silenced, it probably means that I also want my media silenced.  But that&#8217;s not what happens if I just use the volume button; I have to actually go into settings and change the media volume separately.</li>
-    <li>Sometimes Google Talk just flat out refuses to start for me until I reboot my phone.  This happened on multiple ROMs.  On the Desire I noticed that it seemed to refuse to start when I was low on internal storage.  I&#8217;m not sure why it does it on my Desire Z.  This should be a core platform feature on par with BBM, but it seems to be very poorly supported.</li>
-    <li>From a developer perspective, I hate paying a development fee to Apple to be able to install my apps on a non-jailbroken device.  I hate that once you&#8217;ve written an iPhone app, they basically blackmail you into continuing to pay them because otherwise they take down your app, which means that it may not be accessible to paying customers if they need to wipe their phone and re-install their apps.  I hate their greedy policies with regards to content subscriptions.  I hate their underhanded payment system which is, as a matter of statistical certainty, allowing them to make interest on millions of dollars that are nominally owed to developers but will never actually be paid.  In general, I hate that they treat their developers like serfs just because they can, even though those same developers made their platform what it is today.<br /><br />
-
-I hope that properly illustrates how much I hate Apple&#8217;s policies, and I hope that it underscores the significance of what I&#8217;m about to say: from a pragmatic perspective, I&#8217;d <em>still</em> rather be developing for iOS because Google&#8217;s development tools are <em>complete garbage.</em> I write all my code in vim, so I&#8217;m really not that picky, but I can only take so much of using Eclipse and having it literally <em>delete</em> my art assets from the file system.  (Not just removing them from the project - it literally deletes the files, seemingly at random.  I&#8217;ve never lost any work because of this, but it&#8217;s extremely frustrating nevertheless.)  Not to mention the Android emulator: it&#8217;s practically unusable for regular apps, and for games, forget about it.  You&#8217;re lucky if you get 5 FPS.<br /><br />
-
-Even if I buy an iPhone, I do still want to finish my game for Android.  The code is cross-platform, so if I could compile and test it using Xcode in the meantime&#8230; even just using the iPhone simulator, since it can actually run games at a reasonable framerate&#8230; it would save me a lot of headaches.  Either way I&#8217;ll have to compile my app for Windows or iOS to do any marketing; taking screenshots of an Android app is difficult, and taking video is, as far as I can tell, impossible unless you have a phone with HDMI out and a capture card.  Ridiculous.</li>
-
-    <li>The behavior of the back button is inconsistent, and developers use it as
-    a crutch rather than thinking about and carefully designing a proper workflow
-    through their applications.  I was arguing about this behavior with someone on
-    Reddit a while ago, and I found a good comment on Hacker News about it:
-    <br/><br />
-
-<blockquote>I just got an Android with that great Virgin Mobile deal, and I was surprised
-at just how much the Back button is used in almost all contexts. It&#8217;s severely
-overloaded: want to get out of an on-screen keyboard? Back. Want to move back
-a screen? Back, except when it&#8217;s Google Reader that opened a Browser window,
-in which case it takes you back to the previous page that Browser had. Back
-through a menu? Back. Back to a previous page in Browser? Back.
-
-It&#8217;s as if people just substituted the button for any instance in human language
-where &#8220;back&#8221; was used.&#8221;</blockquote>
-
-&#8230;(and another)&#8230;<br /><br />
-
-<blockquote>&#8220;Back&#8221; to some random place most of the time.<br />
-1. receive email notification for two messages.<br />
-2. click notification bar<br />
-3. go to gmail app.<br />
-4. open first message and click a link.<br />
-5. you are now in the browser. (clicking back will close the window, but you want to read it later!)<br />
-6. you long press HOME button (hoping to select gmail and read the other message)<br />
-7. gmail is not in the open app list (WTH?!)\<br />
-8. you curse, click home, find the gmail app, click it.<br />
-9. now you are on the message with the link<br />
-10. press BACK<br />
-11. now you are on the message list (aha! not you home screen you came from!)<br />
-12. click the 2nd message and read it
-</blockquote>
-
-In fairness, I&#8217;m of two minds about this because the back button does save a lot of screen real-estate by removing the necessity for on-screen navigation controls.  However, I&#8217;m not sure how much of an advantage that is in the face of the confusion it sometimes causes.</li>
-
-<li>[This wasn&#8217;t included in my e-mail to my friend, because I didn&#8217;t know about it at the time.  I&#8217;m adding it now because it&#8217;s fairly important.] Android can actually <em><a href="http://forum.xda-developers.com/showthread.php?p=12765846">lose SMS messages.</a></em>  That&#8217;s completely unacceptable on a phone.</li>
-</ul>
-
 ]]></content>
   </entry>
   
