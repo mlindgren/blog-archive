@@ -17,7 +17,7 @@ eyebrows of some readers. In fact, earlier this year, it met with a prickly
 reception from fellow "horseman" and philosophy professor Dan Dennett.
 <!-- more -->
 
-<div style="float: right;">
+<div style="float: right; max-width: 30%;">
 <a href="http://www.samharris.org/free-will">
 <img src="/images/SamHarrisFreeWill.jpg"
 style="max-height: 300px"
