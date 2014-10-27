@@ -14,7 +14,7 @@ willfully (and sometimes maybe even _gleefully_) misinterpret him.  Although
 _[Free Will](http://www.samharris.org/free-will),_ published in 2012, courts
 less political controversy than Harris' other works, it too will raise the
 eyebrows of some readers. In fact, earlier this year, it met with a prickly
-reception from fellow "horseman" and professional philosopher Dan Dennett.
+reception from fellow "horseman" and philosophy professor Dan Dennett.
 <!-- more -->
 
 <div style="float: right;">
@@ -73,7 +73,7 @@ has been ongoing for centuries, and it seems unlikely to me that Harris' short
 book (at less than 100 pages long) contains any truly novel philosophical
 arguments. Even so, I'm not sure the discussion of these studies will actually
 work to Harris' advantage.  The core of his argument _is_ philosophical, but
-some readers are certain to get caught up in overthinking the scientific claims
+some readers are certain to get caught up in overthinking the scientific claims,
 even though, as Harris himself states, nothing actually depends on them.
 
 In fact, Harris goes so far as to say that even if one believes that
