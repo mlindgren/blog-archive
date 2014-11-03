@@ -28,6 +28,11 @@ article blockquote
   font-size: 1.0em !important;
 }
 
+blockquote em
+{
+  font-style: normal;
+}
+
 #main li
 {
   margin-bottom: 1em;

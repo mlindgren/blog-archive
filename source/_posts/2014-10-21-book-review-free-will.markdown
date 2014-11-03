@@ -21,7 +21,7 @@ reception from fellow "horseman" and philosophy professor Dan Dennett.
 <a href="http://www.samharris.org/free-will">
 <img src="/images/SamHarrisFreeWill.jpg"
 style="max-height: 300px"
-alt="Free Will by Sam Harris" />
+alt="Free Will by Sam Harris. Image copyright Sam Harris, used under fair use" />
 </a>
 </div>
 
