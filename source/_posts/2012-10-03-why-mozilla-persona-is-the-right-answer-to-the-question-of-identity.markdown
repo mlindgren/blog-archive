@@ -9,7 +9,7 @@ external-url: http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-
 
 _[Updated December 24th, 2014: I'm leaving this post here for historical
 purposes, but I no longer endorse Mozilla Persona. There are a number of reasons
-for this, but one of the primary ones is that the project does not seem to have
+for this, but one of the primary one is that the project does not seem to have
 gained any momentum in the two years since I wrote this post. At this point I am
 skeptical that it ever will gain that momentum.]_
 
