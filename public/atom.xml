@@ -4,7 +4,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2014-12-24T02:13:51-08:00</updated>
+  <updated>2014-12-24T02:22:38-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -2417,7 +2417,13 @@ this finished. It&rsquo;s just a matter of when.</p>
     <link href="http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/"/>
     <updated>2012-10-03T20:37:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity</id>
-    <content type="html"><![CDATA[<p>David Somers presents an
+    <content type="html"><![CDATA[<p><em>[Updated December 24th, 2014: I&rsquo;m leaving this post here for historical
+purposes, but I no longer endorse Mozilla Persona. There are a number of reasons
+for this, but one of the primary ones is that the project does not seem to have
+gained any momentum in the two years since I wrote this post. At this point I am
+skeptical that it ever will gain that momentum.]</em></p>
+
+<p>David Somers presents an
 <a href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">excellent rundown</a>
 of what
 <a href="http://www.mozilla.org/en-US/persona/">Mozilla Persona</a> is and why it&rsquo;s
