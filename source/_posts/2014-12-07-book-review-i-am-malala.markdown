@@ -4,6 +4,7 @@ title: "Book Review: I Am Malala"
 date: 2014-12-07 22:07
 comments: true
 categories: [Personal]
+published: false
 ---
 
 I expect most of you will be familiar with Malala Yousafzai, but if you're not,
@@ -89,4 +90,63 @@ then. The city _I_ grew up in has less than half that population today. Thus, my
 perception as I read the book was clearly skewed, in this respect.
 
 The pace of the book picks up as the Talibanization of the Swat Valley begins in
-2007, when Malala is ten years old.
+2007, when Malala is ten years old. It started with a radio station run by
+<a href="http://en.wikipedia.org/wiki/Fazlullah_(militant_leader)">Maulana
+Fuzlullah</a>, now a highly ranked militant leader in the Pakistani Taliban
+(though as-yet unconfirmed reports indicate that he
+[may have been killed](http://www.oneindia.com/international/ttp-chief-fazlullah-killed-pakistan-media-peshawar-siege-1598251.html)
+in an airstrike <span style="background-color: yellow;">only four days
+ago</span> as of this writing). Fazlullah's broadcasts started innocently
+enough:
+
+> He used his station to encourage people to adopt good habits and abandon
+> practices he said were bad. He said men should keep their beards but give up
+> smoking and using the tobacco they liked to chew. He said people should
+> stop using heroin, and _chars_, which is our word for hashish.
+
+Over time, though, Fazlullah became increasingly radical and fundamentalist,
+claiming that sinful actions such as "listening to music, watching movies and
+dancing" had caused a recent earthquake, instructing women to never leave their
+homes except in emergencies, and to always be veiled while in public, and
+referring to the Pakistani government as infidels, stating that "his men would
+'enforce [Sharia law] and tear [government officials] to pieces." On the 12th of
+July 2007, following the
+[Red Mosque siege](http://en.wikipedia.org/wiki/Siege_of_Lal_Masjid), Fazlullah
+declared war on the Pakistani government.
+
+The Taliban continued to spread throughout the Swat valley. By 2009, the
+Talibanization had become so widespread that even local politicians, including
+the area's deputy commissioner, were involved: "When the highest authority in
+your district joins the Taliban, then Talibanization becomes normal." As they
+gained more and more political power, they also began enforcing their strict
+interpretation of Islamic doctrine through threats and outright violence. They
+issued an edict banning the education of girls, and meted out brutal punishments
+for "immoral" acts such as dancing or wearing clothes in correctly. There were
+bombings, executions, and public whippings.
+
+It was during this time that Yousafzai began writing, at the behest of the BBC,
+"a diary about life under the Taliban." This diary was
+[published online](http://news.bbc.co.uk/2/hi/south_asia/7834402.stm) as part of
+the BBC's coverage of the situation in Swat, but Malala used the pseudonym "Gul
+Makai" due to the great danger inherent in criticizing the Taliban. This only
+lasted until a few months, though. The Pakistani militarty had been trying,
+noncommittally and mostly ineffectively, to push back the the Taliban, but after
+a brief ceasefire, in May of 2009 the military launched a full-scale operation,
+"Operation True Path, to drive the Taliban out of Swat." This resulted in an
+exodus of civilians from the valley, and thus Malala and her family became
+"Internally Displaced Persons," forced to leave their home for nearly three
+months while the army effected its campaign to take back Swat. But, of course,
+the end of the military campaign in Swat in July of 2009 did not truly mean that
+the valley was free of Taliban.
+
+> In Swat we began to see more signs that the Taliban had never really left. Two
+> more schools were blown up and three foreign aid workers from a Christian
+> group were kidnapped as they returned to their base in Mingora and then
+> murdered. We received other shocking news. My father's friend Dr. Mohammad
+> Farooq, the vice chancellor of Swat University, had been killed by two gunmen
+> who burst into his office. Dr. Farooq was an Islamic scholar and former member
+> of the Jamaat-e-Islami party, and as one of the biggest voices against
+> Talibanization he had even issued a fatwa against suicide attacks.
+
+and here we come to the
+part of Malala's story that most readers will already be familiar with. 
