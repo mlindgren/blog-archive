@@ -2,7 +2,7 @@
 layout: post
 title: "Review Link: In Real Life"
 date: 2014-12-24 02:00
-comments: true
+comments: false
 categories: [Links]
 ---
 
@@ -14,6 +14,7 @@ and Jen Wang's _In Real Life_, written by [my wife](http://shayshortt.com).
 I'm not going to make a habit of linking to every one of her reviews (especially
 given that she writes them far more frequently than I update this site), but
 having also read _In Real Life_ (on her recommendation), I wholeheartedly agree
-with her assessment and have little to add.
+with her assessment and have little to add. Any comments should be directed to
+her post.
 
 My next review should be posted soon.
