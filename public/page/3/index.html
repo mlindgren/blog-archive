@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I don&rsquo;t discuss politics on this site, but today warrants an exception. Canada has suffered a terrible loss with the death of Jack Layton, the &hellip;">
+  <meta name="description" content="My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -148,6 +148,63 @@ $(document).ready(function() {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Technology">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">How to reinstall OS X from a disc image using only one computer</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-21T00:17:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
+
+<p>Unfortunately, however, the Snow Leopard disc image is large enough that it can only be burned to a dual-layer DVD. I don&rsquo;t tend to keep writeable dual-layer DVDs lying around, so I needed a solution which required only the disc image itself. There are a number of methods available for installing OS X over the network, but none of them seemed to work for me—perhaps owing to the fact that I had only one Mac. Luckily, I discovered that you can install OS X from a separate partition on the same disk. Here&rsquo;s how:</p>
+
+<ol>
+    <li>First, you&#8217;ll need to re-partition your disk. Open Disk Utility and select the disk you want to use. Be sure to select the disk itself, rather than one of its partitions, which are indented beneath the disk.</li>
+    <li>Click the + button to add a new partition, and drag the new partition&#8217;s section in the disk layout graph upwards until it&#8217;s large enough to store your operating system disc image. Apply the changes. It may take some time for the disk to be re-partitioned.</li>
+    <li>Now, select the new partition from the list on the left. Go to the Restore tab, and restore your operating system disc image to the new partition.</li>
+    <li>Once the restore is complete, restart your computer, holding Option (Alt) at start-up. This should bring up a list of available start-up disks. Choose your new partition.</li>
+    <li>You should now be at the installer, and you can re-install to your primary partition. Once the installation is complete, delete your installation disc partition to and resize the primary partition to reclaim the extra space.</li>
+</ol>
+
+
+<p>That&rsquo;s it! In retrospect, it&rsquo;s completely obvious, but I haven&rsquo;t seen these instructions anywhere else on the web. This technique might be particularly useful for owners of Macs without disc drives.</p>
+</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">Comments &rarr;</a>
+      </footer>
+    
+
+</div>
+
+    </article>
   
   
     <article>
@@ -571,49 +628,6 @@ sudo chmod 755 /Volumes/Mount_Name
 
     </article>
   
-  
-    <article>
-      
-
-<div class="category-Technology">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/09/06/android-first-impressions/">Android First Impressions</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-06T20:19:00-07:00" pubdate data-updated="true">Sep 6<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Like a number of disgruntled users and developers, I recently decided to trade my iPhone in for an Android device.  My distaste for Apple&rsquo;s app store policies, design philosophy and corporate culture had been pushing me in that direction for some time.  The final straw, though, was iOS 4, which rendered my iPhone 3G almost unusably slow while failing to grant <em>any </em>of the most noteworthy<a title="new features." href="http://www.apple.com/iphone/ios4/" target="_blank"> new features.</a> The <a title="My iPhone Debacle" href="http://www.mlindgren.ca/archives/79">inordinate difficulty</a> of downgrading iOS exacerbates the problem for users who are still stuck with the iPhone 3G.  To be fair to Apple, Wednesday will see iOS 4.1 released, and they&rsquo;ve claimed that it will fix the iPhone 3G performance issues.  For me, though, 4.1 is too little, too late.</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2010/09/06/android-first-impressions/">More &rarr;</a>
-      </footer>
-    
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/4/">&larr; Older</a>
@@ -641,6 +655,11 @@ sudo chmod 755 /Volumes/Mount_Name
   <ul id="recent_posts">
     
       
+      <li class="post             category-Personal            ">
+        <a href="/entry/2014/12/26/book-review-i-am-malala/">Book Review: I Am Malala</a>
+      </li>
+    
+      
       <li class="post             category-Links            ">
         <a href="/entry/2014/12/24/review-link-in-real-life/">Review Link: In Real Life</a>
       </li>
@@ -658,11 +677,6 @@ sudo chmod 755 /Volumes/Mount_Name
       
       <li class="post             category-Personal            ">
         <a href="/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking/">Book Review: Dataclysm</a>
-      </li>
-    
-      
-      <li class="post             category-Gaming            ">
-        <a href="/entry/2014/05/18/the-elder-scrolls-online/">The Elder Scrolls Online</a>
       </li>
     
   </ul>

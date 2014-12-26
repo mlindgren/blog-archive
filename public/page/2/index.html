@@ -9,8 +9,8 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
-better part of a decade now. By most metrics, it&rsquo;s &hellip;">
+  <meta name="description" content="[Updated December 24th, 2014: I&rsquo;m leaving this post here for historical
+purposes, but I no longer endorse Mozilla Persona. There are a number &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -149,6 +149,85 @@ $(document).ready(function() {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+<div class="category-Links">
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-03T20:37:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>[Updated December 24th, 2014: I&rsquo;m leaving this post here for historical
+purposes, but I no longer endorse Mozilla Persona. There are a number of reasons
+for this, but one of the primary ones is that the project does not seem to have
+gained any momentum in the two years since I wrote this post. At this point I am
+skeptical that it ever will gain that momentum.]</em></p>
+
+<p>David Somers presents an
+<a href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">excellent rundown</a>
+of what
+<a href="http://www.mozilla.org/en-US/persona/">Mozilla Persona</a> is and why it&rsquo;s
+currently the best option for identity and authentication for web services. I&rsquo;ve
+implemented authentication using Persona in the
+<a href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/">photo album app</a>
+I&rsquo;m working on, and I found it remarkably easy to integrate with my app. And, as
+David explains, Persona is also much easier for users to understand than
+competing platforms like OpenID. If you&rsquo;re a web developer, you really need to
+add Persona support to your application as soon as
+possible. It can be done in literally a matter of minutes, and if Persona takes
+off the benefit to identity management on the Internet could be huge.</p>
+
+<p>Perhaps my favourite thing about Persona is that it gives me the opportunity to
+<a href="https://developer.mozilla.org/en-US/docs/Persona/Implementing_a_Persona_IdP">implement my own identity provider</a>,
+which means I can have <em>complete</em> control over how I authenticate to any
+Persona-consuming service. I could have <em>n</em>-factor authentication, with no limit
+on the complexity or specificity of the factors besides my own imagination. For
+example, I could generate SSL client certificates for each of my machines and
+hardcode their thumbprints into my identity provider to ensure that it wouldn&rsquo;t
+even service requests from machines I haven&rsquo;t explicitly added.  Or if I wanted
+to get creative, I could have my identity provider generate a random temporary
+key which I would have to retrieve via SSH (but this is less convenient and
+probably also less secure than doing SSL client authentication.) The
+possibilities are endless.</p>
+
+<p>Perhaps an end is finally in sight to the frustration of having dozens upon
+dozens of different accounts and passwords for various services,
+<a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/">each with its own uniquely nonsensical password composition policy</a>.  Everyone needs to implement Persona&mdash;preferably yesterday.</p>
+</div>
+    
+    
+      <footer>
+        <a rel="full-article" href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Comments &rarr;</a>
+      </footer>
+    
+
+</div>
+
+    </article>
   
   
     <article>
@@ -670,63 +749,6 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 
     </article>
   
-  
-    <article>
-      
-
-<div class="category-Technology">
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">How to reinstall OS X from a disc image using only one computer</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-21T00:17:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
-
-<p>Unfortunately, however, the Snow Leopard disc image is large enough that it can only be burned to a dual-layer DVD. I don&rsquo;t tend to keep writeable dual-layer DVDs lying around, so I needed a solution which required only the disc image itself. There are a number of methods available for installing OS X over the network, but none of them seemed to work for me—perhaps owing to the fact that I had only one Mac. Luckily, I discovered that you can install OS X from a separate partition on the same disk. Here&rsquo;s how:</p>
-
-<ol>
-    <li>First, you&#8217;ll need to re-partition your disk. Open Disk Utility and select the disk you want to use. Be sure to select the disk itself, rather than one of its partitions, which are indented beneath the disk.</li>
-    <li>Click the + button to add a new partition, and drag the new partition&#8217;s section in the disk layout graph upwards until it&#8217;s large enough to store your operating system disc image. Apply the changes. It may take some time for the disk to be re-partitioned.</li>
-    <li>Now, select the new partition from the list on the left. Go to the Restore tab, and restore your operating system disc image to the new partition.</li>
-    <li>Once the restore is complete, restart your computer, holding Option (Alt) at start-up. This should bring up a list of available start-up disks. Choose your new partition.</li>
-    <li>You should now be at the installer, and you can re-install to your primary partition. Once the installation is complete, delete your installation disc partition to and resize the primary partition to reclaim the extra space.</li>
-</ol>
-
-
-<p>That&rsquo;s it! In retrospect, it&rsquo;s completely obvious, but I haven&rsquo;t seen these instructions anywhere else on the web. This technique might be particularly useful for owners of Macs without disc drives.</p>
-</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">Comments &rarr;</a>
-      </footer>
-    
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page/3/">&larr; Older</a>
@@ -754,6 +776,11 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
   <ul id="recent_posts">
     
       
+      <li class="post             category-Personal            ">
+        <a href="/entry/2014/12/26/book-review-i-am-malala/">Book Review: I Am Malala</a>
+      </li>
+    
+      
       <li class="post             category-Links            ">
         <a href="/entry/2014/12/24/review-link-in-real-life/">Review Link: In Real Life</a>
       </li>
@@ -771,11 +798,6 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
       
       <li class="post             category-Personal            ">
         <a href="/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking/">Book Review: Dataclysm</a>
-      </li>
-    
-      
-      <li class="post             category-Gaming            ">
-        <a href="/entry/2014/05/18/the-elder-scrolls-online/">The Elder Scrolls Online</a>
       </li>
     
   </ul>
