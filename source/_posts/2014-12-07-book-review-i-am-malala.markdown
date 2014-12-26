@@ -1,54 +1,57 @@
 ---
 layout: post
 title: "Book Review: I Am Malala"
-date: 2014-12-07 22:07
+date: 2014-12-25 17:33
 comments: true
 categories: [Personal]
 published: false
 ---
 
-I expect most of you will be familiar with Malala Yousafzai, but if you're not,
-she is a Pakistani education activist who, at the age of 15, was shot in the
-head by the Taliban for her outspoken support for the education of women and
-girls. Miraculously, she survived the assassination attempt, and following her
-recovery, redoubled her campaign in support of education. Now, at age 17, she
-has an impressive list of accomplishments and accolades to her name, including
-most recently becoming the youngest Nobel laureate in history after jointly
-winning the 2014 Peace Prize with Kailash Satyarthi, another activist for
-children's rights.
+I expect most people will already have some familiarity with Malala Yousafzai.
+In case you've been living under a rock, though, Malala is a young Pakistani
+woman who, at the age of 15, was shot in the head by the Taliban for her
+outspoken support of the right to education of women and girls. Miraculously,
+she survived the assassination attempt, and following her recovery, has
+continued to campaign in support of education. Now, at age 17, she has an
+impressive list of accomplishments and accolades to her name, including most
+recently becoming the youngest Nobel laureate in history after jointly winning
+the 2014 Peace Prize with Kailash Satyarthi, another activist for children's
+rights.
 
 _I Am Malala: The Girl Who Stood Up for Education and Was Shot by the Taliban_,
 written jointly with award-winning foreign correspondent Christina Lamb, is
-Yousafzai's autobiography. It chronicles her experience growing up in Pakistan's
+Malala's autobiography. It chronicles her experience growing up in Pakistan's
 Swat Valley, the invasion of the Taliban into the area and her life under their
-rule, and their attempted assassination of her for outspoken support of the
-right to education of all children, including girls.
+rule, their attempt on her life, and her recovery and continuing efforts in
+support of education.<!-- more -->
 
-Reviews always contain elements of subjectivity, and there's nothing wrong with
-that per se: art, after all, is in the eye of the beholder. But a reviewer must
-endeavor to keep his own biases in check, and in particular, to separate his
-opinion of the creator from his judgment of the creation. In that respect, this
-review is difficult for me to write. I think that Malala Yousafzai is the
-bravest and most heroic person alive today, and potentially also one of the most
-important people to the future of civilization. The emancipation and education
-of oppressed, powerless and impoverished women and girls in developing countries
-is vitally important to <span style="background-color: yellow;">global
-progress</span>, and Malala has become not only a global symbol of this
-struggle, but also, through [her foundation](http://www.malala.org/) and her
-outreach, one of the foremost <span style="background-color:
-yellow;">individuals</span> in effecting a solution.
+Before I continue, a caveat about this review: reviews always contain elements
+of subjectivity, and there's nothing wrong with that per se: art, after all, is
+in the eye of the beholder. But a reviewer must endeavor to keep his own biases
+in check, and in particular, to separate his opinion of the creator from his
+judgment of the creation. In that respect, this review is difficult to write. I
+believe that Malala Yousafzai is the most courageous and heroic person alive
+today, and that her campaign has the potential to be among the most important
+activist movements of the 21st century. The emancipation and education of
+oppressed, powerless and impoverished women and girls in developing countries is
+vitally important to global stability and progress, and Malala has become not
+only an internationally-recognized figurehead for this struggle, but also,
+through [her foundation](http://www.malala.org/) and her speeches, one of the
+most important leaders in effecting a solution.
 
 Naturally, then, I find I have a hard time criticizing Malala's work, and you
-should bear that in mind as you read this review. Try as I might to maintain
-objectivity, I will likely be more forgiving to this book than I would to a book
-written by someone for whom I did not have such great respect. It is a bit
-troubling, then, that I have to admit that this book took me almost a year to
-read, and not due to its length: even including a short glossary and timeline,
-it's barely more than 300 pages. The problem was that I just didn't find the
-first third of the book very interesting, so I started reading it very slowly,
-and then eventually put it down for a long time, only returning to it recently.
+should bear that in mind as you read this review. Despite any effort to the
+contrary, I will likely be more forgiving to this book than I would to a book
+written by someone for whom I did not have such great respect.
 
-The first chapters of _I Am Malala_ seem to mainly serve as context for the rest
+It is unfortunate, then, that I must admit that this book took me almost a year
+to read, and not due to its length: even including a short glossary and
+timeline, it's barely more than 300 pages. The problem was that I just didn't
+find the first third of the book very interesting, so I started reading it very
+slowly, and then eventually put it down for a long time, only returning to it
+recently.
+
+The first chapters of _I Am Malala_ mainly serve as context for the rest
 of the book. Malala first describes the history of Pakistan and of her family.
 Her father is shown even before her birth to be an ambitious and courageous
 person in his own right: as a young college graduate, he quickly progressed from
@@ -147,6 +150,87 @@ the valley was free of Taliban.
 > who burst into his office. Dr. Farooq was an Islamic scholar and former member
 > of the Jamaat-e-Islami party, and as one of the biggest voices against
 > Talibanization he had even issued a fatwa against suicide attacks.
+>
+> ...
+>
+> Once again people started worrying that the Taliban were creeping back. But
+> whereas in 2008-9 there were many threats to all sorts of people, this time
+> the threats were specific to those who spoke against militants or the
+> high-handed behavior of the army.
+>
+> "The Taliban is not an organized force like we imagine," said my father's
+> friend Hidayatullah when they discussed it. "It's a mentality, and this
+> mentality is everywhere in Pakistan. Someone who is against America, against
+> the Pakistan establishment, against English law, he has been infected by the
+> Taliban."
 
-and here we come to the
-part of Malala's story that most readers will already be familiar with. 
+Despite this, Malala continued speaking at events in support of education and
+peace, and continued to gain national and international attention, including
+winning Pakistan's National Peace Prize&mdash;a brand new award for which Malala
+was the first recipient ever. But, of course, this stubborn refusal to be
+silenced would come at great cost to Malala.
+
+On Tuesday, October 9th, 2012, Malala was shot in the head by
+<span style="background-color: yellow;">a young Taliban gunman</span>
+as she rode the school bus home. This chapter, in contrast to the terrible event
+it describes, is probably the best written in the book. Malala describes
+every minute detail of the moments leading up to the assassination attempt: the
+sounds from the shops along the road, the smell of the air, and then the sudden,
+ominous absence of people in the street. Even though this is the part of
+Malala's story that everyone already knows, it's pulse-quickening to read in her
+own words, and at this point the book becomes very hard to put down.
+
+The rest of the book, which comprises about a fifth of its total length,
+describes Malala's treatment and recovery, and briefly illustrates her new life
+in Birmingham, England. Living in England has given Malala the opportunity to
+return to school, and to continue to speak out in support of education for
+children, without being in constant danger. Nevertheless, she misses her home in
+Swat, and already has aspirations to return to Pakistan:
+
+> I know I will go back to Pakistan, but whenever I tell my father I want to go
+> home, he finds excuses. "No, [dear one], your treatment is not complete," he says,
+> or, "These schools are good. You should stay here and gather knowledge so you
+> can use your words powerfully."
+>
+> He is right. I want to learn and be trained well with the weapon of knowledge.
+> Then I will be able to fight more effectively for my cause.
+
+Here again, though, I wish _I Am Malala_ provided more detail. Malala's cause is
+clear, as is her fearless determination in pursuit of it. Still only seventeen
+years old, she already has the support and recognition of the international
+community, and a non-profit foundation in her name working towards her dream of
+safe, free education for all children. But achieving this will be no easy task,
+and I wish the book provided a more complete picture of Malala's vision. Besides
+the overt threat of terrorist groups such as the Taliban, Malala and her
+foundation will have to contend with poverty, war, cultural impediments to
+learning, suspicion of the west and its influence, and myriad other
+<span style="background-color: yellow;">
+[forces of Moloch](http://slatestarcodex.com/2014/07/30/meditations-on-moloch/).
+</span>. She has a long fight ahead of her. What is her plan?
+
+Perhaps this is a lot to expect from a seventeen-year-old. But then, Malala has
+very clearly demonstrated that she is no ordinary seventeen-year-old. I'm sure
+she has given some thought to these issues, and I wish her book had provided
+more insight in that respect. For instance, she brielfy mentions
+[a now-infamous letter](http://www.thedailybeast.com/articles/2013/07/17/the-taliban-s-letter-to-malalayousafzai.html)
+she received from Taliban commander Adnan Rashid, who claims she was shot for
+espousing what the Taliban view as a pro-Western, anti-Islamic ideology. She
+barely dedicates a paragraph in response to this, but even here in the west
+there are people who take Rashid's words at face value, as if he has a
+legitimate stance on the matter. This is a problem that Malala will likely
+have to contend with for as long as she continues to fight for her cause. I can
+only hope that details such as these will be the subject of another book.
+
+Much as I'd like to, I can't say that _I Am Malala_ is among the best books I've
+ever read. It is linear and factual to a fault, some of it written almost like a
+narrated <acronym title="curriculum vitae">CV</acronym>, and is at times
+ponderously paced. It seems to me to be more about what Malala has _done_ than
+who she _is_: for an autobiography, it seems curiously impersonal. That said,
+the latter two-thirds of the book are still an enjoyable read, at least for
+those who want to know Malala's story. Most importantly, whatever quibbles I
+have with the way _I Am Malala_ is written, it may well be one of the most
+_important_ books I've ever read, because like Malala herself, it is a testament
+to what can be accomplished through hope, dedication, and perseverance.
+
+I hope, and expect, that we will only hear more and more about Malala Yousafzai
+as the years go on.
