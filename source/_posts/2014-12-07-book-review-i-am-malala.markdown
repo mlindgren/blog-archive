@@ -217,9 +217,8 @@ safe, free education for all children. But achieving this will be no easy task,
 and I wish the book provided a more complete picture of Malala's vision. Besides
 the overt threat of terrorist groups such as the Taliban, Malala and her
 foundation will have to contend with poverty, war, cultural impediments to
-learning, suspicion of the West and its influence, and myriad other
-[forces of Moloch](http://slatestarcodex.com/2014/07/30/meditations-on-moloch/).
-She has a long fight ahead of her. What is her plan?
+learning, suspicion of the West and its influence, and innumerble other
+challenges.  She has a long fight ahead of her. What is her plan?
 
 Perhaps this is a lot to expect from a seventeen-year-old. But then, Malala has
 very clearly demonstrated that she is no ordinary seventeen-year-old. I'm sure
