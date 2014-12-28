@@ -39,7 +39,7 @@ rdiscount:
     - autolink
     - footnotes
     - smart
-pygments: false # default python pygments have been replaced by pygments.rb
+highlighter: pygments # default python pygments have been replaced by pygments.rb
 
 paginate: 10           # Posts per page on the blog index
 pagination_dir:       # Directory base for pagination URLs eg. /blog/page/2/
@@ -52,7 +52,6 @@ linklog_marker: "&#x2911;"
 linklog_marker_position: after
 linklog_marker_position_feed: after
 standard_post_marker:
-
 titlecase: false       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
