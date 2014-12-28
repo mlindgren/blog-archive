@@ -98,8 +98,7 @@ struggling to get through this section.
 
 And yet, peculiarly, this section also seems to be short on some basic factual
 details; for instance, until I looked it up for this review, I had pictured
-Mingora (based on the book's description as much as my own ignorance) as a
-small, rural city. In fact, though, its population was 175,000 in
+Mingora as a small, rural city. In fact, though, its population was 175,000 in
 1998&mdash;sixteen years ago, so it's likely grown considerably since then. The
 city _I_ grew up in has less than half that population today. Thus, my
 perception as I read the book was greatly skewed in this respect, but it needn't
@@ -122,9 +121,10 @@ claiming that sinful actions such as "listening to music, watching movies and
 dancing" had caused a recent earthquake; instructing women to never leave their
 homes except in emergencies, and to always be veiled while in public; and
 referring to the Pakistani government as infidels, stating that "his men would
-'enforce [Sharia law] and tear [government officials] to pieces." On the 12th of
-July 2007, following the
-[Red Mosque siege](http://en.wikipedia.org/wiki/Siege_of_Lal_Masjid), Fazlullah
+'enforce [Sharia law] and tear [government officials] to pieces.'" By 2007
+Fazlullah had become a powerful and influential figure within the Pakistani
+Taliban, and on the 12th of July, following the
+[Red Mosque siege](http://en.wikipedia.org/wiki/Siege_of_Lal_Masjid), he
 declared war on the Pakistani government.
 
 The Taliban continued to spread throughout the Swat valley. By 2009, the
@@ -134,7 +134,7 @@ your district joins the Taliban, then Talibanization becomes normal." As they
 gained more and more political power, they also began enforcing their strict
 interpretation of Islamic doctrine through threats and outright violence. They
 issued an edict banning the education of girls, and meted out brutal punishments
-for "immoral" acts such as dancing or wearing clothes in correctly. There were
+for "immoral" acts such as dancing or wearing clothes "incorrectly." There were
 bombings, executions, and public whippings.
 
 It was during this time that Malala began writing, at the behest of the BBC,
@@ -223,7 +223,7 @@ challenges.  She has a long fight ahead of her. What is her plan?
 Perhaps this is a lot to expect from a seventeen-year-old. But then, Malala has
 very clearly demonstrated that she is no ordinary seventeen-year-old. I'm sure
 she has given some thought to these issues, and I wish her book had provided
-more insight in that respect. For instance, she brielfy mentions
+more insight in that respect. For instance, she briefly mentions
 [a now-infamous letter](http://www.thedailybeast.com/articles/2013/07/17/the-taliban-s-letter-to-malalayousafzai.html)
 she received from Taliban commander Adnan Rashid, who claims she was shot for
 espousing what the Taliban view as a pro-Western, anti-Islamic ideology. She
@@ -238,12 +238,13 @@ Much as I'd like to, I can't say that _I Am Malala_ is among the best books I've
 ever read. It is linear and factual to a fault, some of it written almost like a
 narrated <acronym title="curriculum vitae">CV</acronym>, and is at times
 ponderously paced. It seems to me to be more about what Malala has _done_ than
-who she _is_: for an autobiography, it feels curiously impersonal. That said,
+who she _is_; for an autobiography, it feels curiously impersonal. That said,
 the latter two-thirds of the book are still an enjoyable read, at least for
-those who want to know Malala's story. Most importantly, whatever quibbles I
-have with the way _I Am Malala_ is written, it may well be one of the most
-_important_ books I've ever read, because like Malala herself, it is a testament
-to what can be accomplished through hope, dedication, and perseverance.
+those who want to know more of Malala's story. Most importantly, whatever
+quibbles I have with the way _I Am Malala_ is written, it may well be one of the
+most _important_ books I've ever read, because like Malala herself, it is a
+testament to what can be accomplished through hope, dedication, and
+perseverance.
 
 I hope, and expect, that we will only hear more and more about Malala Yousafzai
 as the years go on.
