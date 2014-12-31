@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/coding/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2014-12-27T19:43:07-08:00</updated>
+  <updated>2014-12-30T22:37:25-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -13,12 +13,18 @@
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
-  <entry>
-    <title type="html"><![CDATA[Photo App Progress Update]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/11/14/photo-app-progress-update/"/>
-    <updated>2012-11-14T22:58:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/11/14/photo-app-progress-update</id>
-    <content type="html"><![CDATA[<p>In September I <a href="/entry/2012/09/14/social-networks-and-content-ownership/">wrote about</a>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Photo App Progress Update]]></title>
+<link href="http://blog.mlindgren.ca/entry/2012/11/14/photo-app-progress-update/"/>
+<updated>2012-11-14T22:58:00-08:00</updated>
+<id>http://blog.mlindgren.ca/entry/2012/11/14/photo-app-progress-update</id>
+
+      <content type="html"><![CDATA[<p>In September I <a href="/entry/2012/09/14/social-networks-and-content-ownership/">wrote about</a>
 my intention to develop a web application to share my photos. I made good
 progress on it throughout September and early October, but for various reasons I
 haven&rsquo;t been able to work on it much in the past month or so. Last weekend,
@@ -188,16 +194,22 @@ planned, so to repeat myself again, there&rsquo;s a lot of work to do. But I&rsq
 happy with the progress I&rsquo;ve made so far, and I feel confident that I can get
 this finished. It&rsquo;s just a matter of when.</p>
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[strlen without conditionals]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals/"/>
-    <updated>2012-09-19T00:21:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.</p>
+    <entry>
+      
 
-<p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee&rsquo;s Twitter</a>: "<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>.&ldquo;  (The page contains solutions, so don&rsquo;t read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it&rsquo;s fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
+
+
+
+<title type="html"><![CDATA[strlen without conditionals]]></title>
+<link href="http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals/"/>
+<updated>2012-09-19T00:21:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals</id>
+
+      <content type="html"><![CDATA[<p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.</p>
+
+<p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee&rsquo;s Twitter</a>: &#8221;<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>.&ldquo;  (The page contains solutions, so don&rsquo;t read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it&rsquo;s fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
 
 <p>My solution is below, but I&rsquo;d recommend that you go give this a try yourself before you read on.</p>
 
@@ -218,30 +230,28 @@ this finished. It&rsquo;s just a matter of when.</p>
 
 <p>Alright, ready? Here&rsquo;s my solution:</p>
 
-<p>``` c</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
 
-<h1>include &lt;stdio.h></h1>
+int mystrlen(char *str, int count);
+int mystrlenret(char *str, int count);
 
-<p>int mystrlen(char <em>str, int count);
-int mystrlenret(char </em>str, int count);</p>
+int (*funcs[2])(char *, int) = {mystrlen, mystrlenret};
 
-<p>int (<em>funcs[2])(char </em>, int) = {mystrlen, mystrlenret};</p>
-
-<p>int mystrlen(char *str, int count)
+int mystrlen(char *str, int count)
 {
-  return funcs<a href="++str,%20++count">(int)(!*str)</a>;
-}</p>
-
-<p>int mystrlenret(char *str, int count)
-{
-  return count &ndash; 1;
-}</p>
-
-<p>int main(int argc, char *argv[])
-{
-  printf(&ldquo;%i\n&rdquo;, mystrlen(argv[argc &ndash; 1], 0));
+  return funcs[(int)(!*str)](++str, ++count);
 }
-```</p>
+
+int mystrlenret(char *str, int count)
+{
+  return count - 1;
+}
+
+int main(int argc, char *argv[])
+{
+  printf("%i\n", mystrlen(argv[argc - 1], 0));
+}
+</code></pre>
 
 <p>As you can see, the solution is actually very simple, but there are a couple of tricks necessary to make it work.  First of all, you obviously can&rsquo;t use a loop to count the characters because a loop requires a conditional jump to either terminate or continue.  You could still use a loop-like construct such as <code>goto</code>, but that only reframes the problem; you still need to make a decision about when to jump out.</p>
 
@@ -253,34 +263,29 @@ int mystrlenret(char </em>str, int count);</p>
 
 <p>Since my solution isn&rsquo;t significantly different from those presented in the original post, I wanted to go a bit further and take a look at the performance implications of not using conditionals.  Yeah, yeah, premature optimization is the root of all evil and all that&mdash;I&rsquo;m just doing this out of curiosity; regardless of the results, I would never go this far out of my way to avoid a conditional jump in a real program, nor would I recommend doing so to anyone else.    I decided to compare my solution above against a naïve implementation with a while loop; comparing it against <code>strlen()</code> from <code>string.h</code> would be pretty meaningless because it would be linked against a precompiled library which, for all I know, could be hand-optimized.  So here&rsquo;s the code I&rsquo;m using instead:</p>
 
-<p><code>c
-int mystrlen(char *c)
+<pre><code class="c">int mystrlen(char *c)
 {
   int len = 0;
   while(*c++ != 0) len++;
   return len;
 }
-</code></p>
+</code></pre>
 
 <p>And here&rsquo;s how I&rsquo;m timing the functions&hellip;</p>
 
-<p>``` c
-struct timeval start;
+<pre><code class="c">struct timeval start;
 struct timeval end;
-volatile int n;</p>
+volatile int n;
 
-<p>gettimeofday(&amp;start, NULL);
+gettimeofday(&amp;start, NULL);
 for(int i = 0; i &lt; 100000; ++i)
-  n = mystrlen(argv[argc &ndash; 1]);
-gettimeofday(&amp;end, NULL);</p>
+  n = mystrlen(argv[argc - 1]);
+gettimeofday(&amp;end, NULL);
 
-<p>printf(&ldquo;Elapsed: %ld sec %ld usec\n&rdquo;,</p>
-
-<pre><code>   (long) end.tv_sec - start.tv_sec,
-   (long) end.tv_usec - start.tv_usec);
+printf("Elapsed: %ld sec %ld usec\n",
+       (long) end.tv_sec - start.tv_sec,
+       (long) end.tv_usec - start.tv_usec);
 </code></pre>
-
-<p>```</p>
 
 <p>I&rsquo;m assigning the result to a volatile int to ensure that even when the code is optimized, the compiler won&rsquo;t completely optimize out the function call.  So, first, predictions: anyone who has taken a computer architecture course will tell you that conditional jumps can be very expensive because of the recovery the CPU has to do if the branch is mispredicted.  However, branch predictors typically have very high accuracy, and there&rsquo;s also a significant overhead involved in putting the parameters and return address on the stack when a function is called.  Therefore, I predict that in that with no compiler optimization, the while loop will be faster.</p>
 
@@ -290,24 +295,26 @@ gettimeofday(&amp;end, NULL);</p>
 
 <p>As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That&rsquo;s a significant improvement, but it&rsquo;s still slower than the unoptimized while loop, so it obviously won&rsquo;t beat that.  And indeed, the optimized while loop takes only 3,072 µsec.</p>
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[The state of Python imaging]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging/"/>
-    <updated>2012-09-14T03:36:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging</id>
-    <content type="html"><![CDATA[<p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[The state of Python imaging]]></title>
+<link href="http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging/"/>
+<updated>2012-09-14T03:36:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging</id>
+
+      <content type="html"><![CDATA[<p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
 
 <p>So, I&rsquo;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&rsquo;m using Python because, well, I love it.  I think it&rsquo;s the perfect language for web development; it&rsquo;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:</p>
 
-<p>``` python
-db_tags = dict([(tag.name, tag) for tag in</p>
-
-<pre><code>            db.session.query(db.MetadataTag).filter_by(source = 'exif')])
+<pre><code class="python">db_tags = dict([(tag.name, tag) for tag in
+                db.session.query(db.MetadataTag).filter_by(source = 'exif')])
 </code></pre>
-
-<p>```</p>
 
 <p>What I&rsquo;m doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag&rsquo;s name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn&rsquo;t particularly <em>difficult</em> to do in any other language; as I said, it&rsquo;s a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn&rsquo;t have list comprehensions.  I don&rsquo;t even want to think about how many lines of code this would take in Java; additionally, while I&rsquo;m unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup></p>
 
@@ -329,23 +336,29 @@ db_tags = dict([(tag.name, tag) for tag in</p>
 <p><sup>1</sup> <small>Okay, the <code>dict</code> function is perhaps not the most explicit. Check the docs once, though, and it&rsquo;s very easy to understand.</small><br/>
 <sup>2</sup> <small>Ruby would doubtless be similarly concise, and it seems like a nice language in my limited experience, but I find its syntax and distinction between &ldquo;symbols&rdquo; and strings to not be to my taste.</small></p>
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[How to link GLUT in Qt Creator on OS X]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/"/>
-    <updated>2011-09-21T00:34:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x</id>
-    <content type="html"><![CDATA[<p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&rsquo;m hoping that it will prove useful to someone. For one of my courses this term, we&rsquo;re building OpenGL apps using Nokia&rsquo;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&rsquo;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&rsquo;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&rsquo;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[How to link GLUT in Qt Creator on OS X]]></title>
+<link href="http://blog.mlindgren.ca/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/"/>
+<updated>2011-09-21T00:34:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x</id>
+
+      <content type="html"><![CDATA[<p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&rsquo;m hoping that it will prove useful to someone. For one of my courses this term, we&rsquo;re building OpenGL apps using Nokia&rsquo;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&rsquo;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&rsquo;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&rsquo;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
 
 <p>In particular, I found myself having difficulty linking the OpenGL Utility Toolkit (GLUT) with my project on Mac OS X. After much Googling and some frustration, I came up with the correct way to go about it, which is as follows:</p>
 
 <ol>
-    <li>In Qt Creator, open your project file (.pro) in the text editor.  Right click on the text editor pane and select "Add Library..."</li>
-    <li>Chose "System Library."</li>
-    <li>Locate the GLUT framework.  On my Mac, running Lion, I used <code>/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/GLUT.framework</code>. However, it seems there are multiple different copies on the disk that you could use.  If that path doesn't work for you, just search for <code>glut.h</code> in Finder and you'll find a copy of the framework.  The path you enter into Qt Creator should point to a <code>.framework</code> directory.</li>
+    <li>In Qt Creator, open your project file (.pro) in the text editor.  Right click on the text editor pane and select &#8220;Add Library&#8230;&#8221;</li>
+    <li>Chose &#8220;System Library.&#8221;</li>
+    <li>Locate the GLUT framework.  On my Mac, running Lion, I used <code>/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/GLUT.framework</code>. However, it seems there are multiple different copies on the disk that you could use.  If that path doesn&#8217;t work for you, just search for <code>glut.h</code> in Finder and you&#8217;ll find a copy of the framework.  The path you enter into Qt Creator should point to a <code>.framework</code> directory.</li>
     <li>Qt Creator will generate code in your project file which will link to the correct framework or library depending on which platform the code is being compiled on.</li>
-    <li>Finally, because Apple loves to be different, the glut.h header path is different on OS X.  <strong>You'll need to <code>#include &lt;GLUT/glut.h&gt;</code></strong>, instead of <code>&lt;gl/glut.h&gt;</code> is usually the case.  You can use preprocessor conditional statements to make this inclusion cross-platform:
+    <li>Finally, because Apple loves to be different, the glut.h header path is different on OS X.  <strong>You&#8217;ll need to <code>#include &lt;GLUT/glut.h&gt;</code></strong>, instead of <code>&lt;gl/glut.h&gt;</code> is usually the case.  You can use preprocessor conditional statements to make this inclusion cross-platform:
 <pre>#if defined(__APPLE__) || defined(MACOSX)
   #include &lt;GLUT/glut.h&gt;
 #else
@@ -357,50 +370,44 @@ db_tags = dict([(tag.name, tag) for tag in</p>
 
 <p>That&rsquo;s it! If you have any trouble, leave a comment.</p>
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[What are lambdas good for, anyway?]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway/"/>
-    <updated>2011-06-29T22:27:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway</id>
-    <content type="html"><![CDATA[<p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.<!-- more --></p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[What are lambdas good for, anyway?]]></title>
+<link href="http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway/"/>
+<updated>2011-06-29T22:27:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway</id>
+
+      <content type="html"><![CDATA[<p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.<!-- more --></p>
 
 <p>I think the best way to explain lambdas is with a simple example. Say you want a switch statement. Python doesn’t have them, but what you can do is set up a dictionary and get a value out of it, which is sort of like a switch. However, you can&rsquo;t do this&hellip;</p>
 
-<p>``` python
-my_dict = {</p>
-
-<pre><code>        1 : my_func1(x, y),
-        2 : my_func2(x, y, z)
-      }
+<pre><code class="python">my_dict = {
+            1 : my_func1(x, y),
+            2 : my_func2(x, y, z)
+          }
 </code></pre>
-
-<p>```</p>
 
 <p>&hellip;because the functions will be evaluated when the dictionary is initialized, so if they modify any state (or if they just take a while to execute) you’ll get bad behaviour. Functions are first class objects in Python, so you could insert the functions into the dictionary like so…</p>
 
-<p>``` python
-my_dict = {</p>
-
-<pre><code>        1 : my_func1,
-        2 : my_func2
-      }
+<pre><code class="python">my_dict = {
+            1 : my_func1,
+            2 : my_func2
+          }
 </code></pre>
-
-<p>```</p>
 
 <p>&hellip;but that doesn&rsquo;t work either, because you don’t know how many (or which) arguments you need to pass to the function when you pull it out of the dictionary. So, what to do?</p>
 
-<p>``` python
-my_dict = {</p>
-
-<pre><code>        1 : lambda x, y, z: my_func1(x, y),
-        2 : lambda x, y, z: my_func2(x, y, z)
-      }
+<pre><code class="python">my_dict = {
+            1 : lambda x, y, z: my_func1(x, y),
+            2 : lambda x, y, z: my_func2(x, y, z)
+          }
 </code></pre>
-
-<p>```</p>
 
 <p>Lambdas solve the problem because they&rsquo;re evaluated lazily. By being wrapped in
 a lambda, the functions won’t be evaluated until the lambda itself is called.
@@ -411,6 +418,7 @@ function, so that you can always call it using <code>my_dict[my_var](x, y, z)</c
 
 <p>And there you have it! Those are the basics of lambdas in Python. Of course, the above is only a trivial example of what can be accomplished with lambdas.  If you&rsquo;d like to learn more, there&rsquo;s a great write-up available <a title="Lambda functions in Python" href="http://www.secnetix.de/olli/Python/lambda_functions.hawk">here.</a></p>
 ]]></content>
-  </entry>
+    </entry>
   
 </feed>
+

@@ -10,11 +10,13 @@ single: true
 {% endcapture %}
 
 <div id="category-wrapper" class="{{ page_class | strip_newlines }}">
-<article class="hentry {{ category_class }}" role="article">
+{% include post/variables.html %}
+<article class="hentry {{ category_class }}" role="article" {% if linklog %}data-linklog{% endif %}>
   {% include article.html %}
   <footer>
     <p class="meta">
-      {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
+      {% include post/author.html %}
+      {% include post/date.html %}{{ time }}{% if updated %} {{ updated }}{% endif %}
       {% include post/categories.html %}
     </p>
     {% unless page.sharing == false %}
@@ -32,7 +34,7 @@ single: true
 </article>
 {% if site.disqus_short_name and page.comments == true %}
   <section>
-    <h1><a name="comments">Comments</a></h1>
+    <h1>Comments</h1>
     <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
   </section>
 {% endif %}
@@ -46,3 +48,4 @@ single: true
   {% endif %}
 </aside>
 {% endunless %}
+

@@ -19,13 +19,14 @@ purposes, but I no longer endorse Mozilla Persona. There are a number &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.mlindgren.ca/page/2/">
-  <link href="/favicon.ico" rel="icon">
+  <link rel="canonical" href="http://blog.mlindgren.ca/page2">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -101,13 +102,15 @@ $(document).ready(function() {
 
   
   <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-56108181-1']);
+    _gaq.push(['_trackPageview']);
 
-    ga('create', 'UA-56108181-1', 'auto');
-    ga('send', 'pageview');
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
 
 
@@ -134,7 +137,7 @@ $(document).ready(function() {
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:blog.mlindgren.ca" />
+    <input type="hidden" name="sitesearch" value="blog.mlindgren.ca">
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -149,17 +152,31 @@ $(document).ready(function() {
     <div id="content">
       <div class="blog-index">
   
+    
+    
+
+
+
   
-  
-    <article>
+
+
+
+
+
+
+
+    <article data-linklog>
       
 
-<div class="category-Links">
+<div class="category-links">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a>
+<span class='linklog-marker'>&#x2911;</span>
+</h1>
+
     
       <p class="meta">
         
@@ -167,18 +184,13 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T20:37:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
+<time class='entry-date' datetime='2012-10-03T20:37:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2012</span></span> <span class='time'>8:37 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p><em>[Updated December 24th, 2014: I&rsquo;m leaving this post here for historical
@@ -218,27 +230,34 @@ possibilities are endless.</p>
 dozens of different accounts and passwords for various services,
 <a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/">each with its own uniquely nonsensical password composition policy</a>.  Everyone needs to implement Persona&mdash;preferably yesterday.</p>
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Comments &rarr;</a>
-      </footer>
-    
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Technology">
+<div class="category-technology">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -246,18 +265,13 @@ dozens of different accounts and passwords for various services,
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2012-09-23T23:22:00-07:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
+<time class='entry-date' datetime='2012-09-23T23:22:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2012</span></span> <span class='time'>11:22 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2012/09/23/switching-to-octopress/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
@@ -343,27 +357,37 @@ say is that there are a lot of them.)</li>
 
 
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2012/09/23/switching-to-octopress/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2012/09/23/switching-to-octopress/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Coding">
+<div class="category-coding">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2012/09/19/strlen-without-conditionals/">strlen without conditionals</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -371,18 +395,13 @@ say is that there are a lot of them.)</li>
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2012-09-19T00:21:00-07:00" pubdate data-updated="true">Sep 19<span>th</span>, 2012</time>
+<time class='entry-date' datetime='2012-09-19T00:21:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:21 am</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2012/09/19/strlen-without-conditionals/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.</p>
@@ -392,27 +411,37 @@ say is that there are a lot of them.)</li>
 <p>My solution is below, but I&rsquo;d recommend that you go give this a try yourself before you read on.</p>
 
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2012/09/19/strlen-without-conditionals/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2012/09/19/strlen-without-conditionals/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Coding">
+<div class="category-coding">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -420,18 +449,13 @@ say is that there are a lot of them.)</li>
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2012-09-14T03:36:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+<time class='entry-date' datetime='2012-09-14T03:36:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>3:36 am</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2012/09/14/the-state-of-python-imaging/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
@@ -450,27 +474,37 @@ say is that there are a lot of them.)</li>
 <p>So, Python&rsquo;s pretty great. But like all languages, it does have a few problems. The one I have had the most difficulty with in my current project is that third party library support is somewhat lacking in some important areas; specifically, there aren&rsquo;t many good options for reading and manipulating images. The most popular library seems to be the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>, PIL. It&rsquo;s easy enough to install and provides a <em>passable</em> set of core features, but doesn&rsquo;t go much beyond that.  For instance, none of the various camera raw formats seem to be supported, which I consider a fairly important feature for my photo album; I&rsquo;d very much like be able to upload original raws and have the application automatically convert them to JPEGs for me.  Additionally, it doesn&rsquo;t provide much in the way of convenience methods for cropping and resizing images.  <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank">ImageMagick</a> has <a title="ImageMagick geometry" href="http://www.imagemagick.org/script/command-line-processing.php#geometry" target="_blank">a very nice means of specifying cropping and resizing geometry</a> with various aspect ratio-preserving (or not) behaviour, and I wanted to be able to leverage something similar for my app so that I could quickly prototype with various size options.</p>
 
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2012/09/14/the-state-of-python-imaging/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2012/09/14/the-state-of-python-imaging/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Technology">
+<div class="category-technology">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2012/09/14/social-networks-and-content-ownership/">Social networks and content ownership</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -478,42 +512,47 @@ say is that there are a lot of them.)</li>
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2012-09-14T00:45:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+<time class='entry-date' datetime='2012-09-14T00:45:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:45 am</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2012/09/14/social-networks-and-content-ownership/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>I&rsquo;m always wary about pre-announcing things I&rsquo;m working on; I have more ambition than spare time, which leads to a tendency to start projects and not finish them.  But if there&rsquo;s to be a point in maintaining this website, I need to actually <em>write things</em> once in a while, so I may as well write about what I&rsquo;ve been hacking on lately.  At the moment, I&rsquo;m building a web-based photo album in Python.  My primary reason for doing this is that I&rsquo;d like to own more of my information.  Apps and social networks have some significant advantages, particularly for the less technologically inclined, but I&rsquo;m ambivalent about the trend away from an open Internet and towards a set of non-interoperable, monolithic walled-garden services.</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2012/09/14/social-networks-and-content-ownership/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2012/09/14/social-networks-and-content-ownership/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Personal">
+<div class="category-personal">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">mlindgren.ca: now on an all-new server!</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -521,45 +560,47 @@ say is that there are a lot of them.)</li>
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2012-08-08T00:40:00-07:00" pubdate data-updated="true">Aug 8<span>th</span>, 2012</time>
+<time class='entry-date' datetime='2012-08-08T00:40:00-07:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>12:40 am</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>It feels like a bit of a cop out to post this after having not written anything
 for five months, but I&rsquo;ve decided to switch from shared hosting to a <acronym
 title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress out of the www root directory.  The transition was surprisingly easy, but it&rsquo;s possible that some pages may contain dead links or missing images.  If you see any, please leave a comment and let me know!</p>
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/">Comments &rarr;</a>
-      </footer>
-    
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Gaming">
+<div class="category-gaming">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">Some thoughts on used games and online passes</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -567,44 +608,49 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2012-02-03T23:37:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2012</time>
+<time class='entry-date' datetime='2012-02-03T23:37:00-08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2012</span></span> <span class='time'>11:37 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>Online passes are becoming more and more ubiquitous in the games industry.  For those who aren&rsquo;t familiar with the terminology, an online pass is essentially a form of digital rights management designed to discourage and devalue used game sales by tying some game content to unique, one-use codes packaged with new copies of games.  Online passes are a contentious issue.  Some feel that they&rsquo;re a perfectly legitimate way for developers and publishers to ensure that they get their cut of each sale, and to reward those who purchase games new.  Others see them as a violation of consumer rights or contend that they inconvenience customers who <em>do</em> buy new (by requiring them to type in long access codes on game controllers) while being of only dubious value to publishers and developers.</p>
 
 <p>Most recently, there&rsquo;s been a bit of an uproar over the inclusion of an online pass in <em><a href="http://en.wikipedia.org/wiki/Kingdoms_of_Amalur:_Reckoning">Kingdoms of Amalur: Reckoning</a></em>, a single-player RPG with no online component.  The pass confers seven extra quests on those who purchase the game new, or deprives those who purchased used of them, depending on your perspective.</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2012/02/03/some-thoughts-on-used-games-and-online-passes/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Personal">
+<div class="category-personal">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/12/31/2010-and-2011-in-review/">2010 and 2011 in Review</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/12/31/2010-and-2011-in-review/">2010 and 2011 in Review</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -612,44 +658,49 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-12-31T15:59:00-08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2011</time>
+<time class='entry-date' datetime='2011-12-31T15:59:00-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2011</span></span> <span class='time'>3:59 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/12/31/2010-and-2011-in-review/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>If you&rsquo;ll forgive me for &ldquo;metablogging,&rdquo; I&rsquo;ve been ruminating lately on the purpose of this website.  Up until now, I&rsquo;ve been trying to focus exclusively on technology, programming and game design, and to minimize the subjective aspects of my connection to those fields.  Put more simply, I&rsquo;ve been avoiding writing about who I am and what I do in favour of producing a series of mostly impersonal tutorials and critiques of technology.  There are a number of reasons for this—the word &ldquo;professionalism&rdquo; comes to mind as chief among them.  I&rsquo;d like this website to be my public face on the Internet, and as every saavy Internet denizen should know by now, there are certain risks associated with maintaining a public persona.  I greatly admire <a href="http://zedshaw.com/">Zed Shaw</a>, for his personality as well as his technical accomplishments, but I have no desire to make myself unemployable as he claims to have done (albeit temporarily).</p>
 
 <p>That said, trying to take a dry, detached and objective approach to creating a personal website presents a number of problems itself.  First and foremost, it&rsquo;s an inherent contradiction; if I don&rsquo;t write about myself in any meaningful capacity, then there is nothing aside from the superficial about this website which makes it mine.  I can&rsquo;t imagine it makes for a very interesting read, either.  Realistically, how many people will come here looking for <a title="How to link GLUT in Qt Creator on OS X" href="http://www.mlindgren.ca/archives/453">advice on how to link GLUT?</a>  Readership numbers are of little to no concern to me, mind you, but I can at least endeavour to give this website a purposeful existence.  To that end, I want to start writing more about personal topics, although for the sake of cohesiveness I&rsquo;m going to continue to focus primarily on those aspects of my life that will be of interest to a technically-minded audience.</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/12/31/2010-and-2011-in-review/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2011/12/31/2010-and-2011-in-review/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Links">
+<div class="category-links">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/12/30/ethical-game-design-from-gamasutra/">Ethical Game Design from Gamasutra</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/12/30/ethical-game-design-from-gamasutra/">Ethical Game Design from Gamasutra</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -657,45 +708,47 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-12-30T16:28:00-08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2011</time>
+<time class='entry-date' datetime='2011-12-30T16:28:00-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>4:28 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/12/30/ethical-game-design-from-gamasutra/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>I came across a couple excellent articles on Gamasutra which I want to share here. The first, &ldquo;<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>&rdquo; is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, &ldquo;deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice.&rdquo; I&rsquo;ll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the &ldquo;freemium&rdquo; model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam&rsquo;s thoughts on the subject are certainly worth reading.</p>
 
 <p>&ldquo;<a title="Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy" href="http://www.gamasutra.com/blogs/EvanJones/20110815/8195/Radical_Plagiarism_The_Ethical_Lessons_of_the_Gamenauts_Controversy.php" target="_blank">Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy</a>,&rdquo; by <a href="http://www.gamasutra.com/blogs/author/EvanJones/4235/">Evan Jones</a>, is equally thought-provoking. Evan recounts the cloning of the indie game <a href="http://www.bored.com/game/play/150995/Radical_Fishing.html"><em>Radical Fishing</em></a> by the more established indie studio <a href="http://gamenauts.com/">Gamenauts</a>, and adds his perspective on the cultural impact of the rampant cloning that takes place on mobile app stores. Returning readers may recall that I&rsquo;ve previously <a title="In Defense of Clones" href="http://www.mlindgren.ca/archives/318">defended the practice of cloning games</a>. My defense excluded the cloning of smaller titles by established studios, which I&rsquo;ve always viewed as morally questionable at best, but Evan&rsquo;s article nevertheless gave me pause. He provides a strong counterpoint to my own thinking on the matter, and while I&rsquo;m not yet ready to reverse my position, his argument has undeniable weight. If you&rsquo;re at all interested in game development, both articles are well worth your time.</p>
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/12/30/ethical-game-design-from-gamasutra/">Comments &rarr;</a>
-      </footer>
-    
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Coding">
+<div class="category-coding">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">How to link GLUT in Qt Creator on OS X</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">How to link GLUT in Qt Creator on OS X</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -703,18 +756,13 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-09-21T00:34:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
+<time class='entry-date' datetime='2011-09-21T00:34:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2011</span></span> <span class='time'>12:34 am</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&rsquo;m hoping that it will prove useful to someone. For one of my courses this term, we&rsquo;re building OpenGL apps using Nokia&rsquo;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&rsquo;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&rsquo;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&rsquo;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
@@ -738,12 +786,6 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 
 <p>That&rsquo;s it! If you have any trouble, leave a comment.</p>
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">Comments &rarr;</a>
-      </footer>
-    
 
 </div>
 
@@ -751,11 +793,11 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
   
   <div class="pagination">
     
-      <a class="prev" href="/page/3/">&larr; Older</a>
+      <a class="prev" href="/page3">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
-    <a class="next" href="/">Newer &rarr;</a>
+    <a class="next" href="/index.html">Newer &rarr;</a>
     
   </div>
 </div>
@@ -771,32 +813,33 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 </ul>
 
 </section>
+
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/12/26/book-review-i-am-malala/">Book Review: I Am Malala</a>
       </li>
     
       
-      <li class="post             category-Links            ">
+      <li class="post             category-links            ">
         <a href="/entry/2014/12/24/review-link-in-real-life/">Review Link: In Real Life</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/11/02/book-review-lying/">Book Review: Lying</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/10/26/book-review-free-will/">Book Review: Free Will</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking/">Book Review: Dataclysm</a>
       </li>
     
@@ -811,27 +854,27 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
   
   
     
-  <li class="category-aside category-Coding">
+  <li class="category-aside category-coding">
     <a href="/categories/coding">Coding</a>
   </li>
   
     
-  <li class="category-aside category-Gaming">
+  <li class="category-aside category-gaming">
     <a href="/categories/gaming">Gaming</a>
   </li>
   
     
-  <li class="category-aside category-Links">
+  <li class="category-aside category-links">
     <a href="/categories/links">Links</a>
   </li>
   
     
-  <li class="category-aside category-Personal">
+  <li class="category-aside category-personal">
     <a href="/categories/personal">Personal</a>
   </li>
   
     
-  <li class="category-aside category-Technology">
+  <li class="category-aside category-technology">
     <a href="/categories/technology">Technology</a>
   </li>
   
@@ -885,7 +928,7 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
   <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
         if (!window.jXHR){
             var jxhr = document.createElement('script');
             jxhr.type = 'text/javascript';
@@ -949,7 +992,7 @@ document.body.className += " " + navigator.platform;
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

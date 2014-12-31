@@ -18,7 +18,7 @@
   {% for item in (1..num_words) %}
     {% capture category %}{{ get_items | split:' ' |  sort | join:' ' | truncatewords:item | remove:'&hellip;' | split:' ' | last }}{% endcapture %}
   <li class="category-aside {{ category | prepend:'category-' }}">
-    <a href="/categories/{{ category | downcase }}">{{ category }}</a>
+    <a href="/categories/{{ category }}">{{ category | capitalize }}</a>
   </li>
   {% endfor %}
   </ul>

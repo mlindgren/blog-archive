@@ -4,6 +4,7 @@ title: "Review Link: In Real Life"
 date: 2014-12-24 02:00
 comments: false
 categories: [Links]
+external-url: http://shayshortt.com/2014/12/02/in-real-life/
 ---
 
 I'm in the process of writing another book review, but as usual, it's turning

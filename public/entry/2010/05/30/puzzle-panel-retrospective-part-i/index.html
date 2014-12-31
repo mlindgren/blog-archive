@@ -18,13 +18,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2010/05/30/puzzle-panel-retrospective-part-i/">
-  <link href="/favicon.ico" rel="icon">
+  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2010/05/30/puzzle-panel-retrospective-part-i">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -100,13 +101,15 @@ $(document).ready(function() {
 
   
   <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-56108181-1']);
+    _gaq.push(['_trackPageview']);
 
-    ga('create', 'UA-56108181-1', 'auto');
-    ga('send', 'pageview');
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
 
 
@@ -133,7 +136,7 @@ $(document).ready(function() {
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:blog.mlindgren.ca" />
+    <input type="hidden" name="sitesearch" value="blog.mlindgren.ca">
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -148,16 +151,29 @@ $(document).ready(function() {
     <div id="content">
       
 
-<div id="category-wrapper" class="category-Coding">
-<article class="hentry " role="article">
+<div id="category-wrapper" class="category-coding">
+
+
+
+
+
+
+
+
+
+
+<article class="hentry " role="article" >
   
 
-<div class="category-Coding">
+<div class="category-coding">
 
   <header>
-    
-      <h1 class="entry-title"><a href="#">Puzzle Panel Postmortem: Introduction</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/">Puzzle Panel Postmortem: Introduction</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -165,21 +181,16 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2010-05-30T01:26:00-07:00" pubdate data-updated="true">May 30<span>th</span>, 2010</time>
+<time class='entry-date' datetime='2010-05-30T01:26:00-07:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>1:26 am</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2010/05/30/puzzle-panel-retrospective-part-i/">&infin;</a>
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Welcome, dear reader!</p>
+
+  <div class="entry-content"><p>Welcome, dear reader!</p>
 
 <p>Although this is the inaugural post for this website, I won&rsquo;t bother with any introduction here.  If that sort of thing interests you, I refer you to the <a title="About" href="http://www.mlindgren.ca/about" target="_self">&ldquo;about&rdquo; page.</a> For this entry, I&rsquo;d like to dive right into the sort of content that this site is to be host to.  My iPhone developer program membership expires today, and I won&rsquo;t be renewing it—not immediately, at least.  That being the case, I think that this is a good time to reflect on my year as a so-called &ldquo;iPhone developer.&rdquo;<!-- more --></p>
 
@@ -189,7 +200,7 @@ $(document).ready(function() {
 
 <p>Anyway, returning to the topic at hand, I purchased my iPhone with the specific intent to develop an app.  The iPhone is often cited as a great gaming device, and I think that <em>would be</em> true if not for the lack of physical input options: the phone&rsquo;s hardware is powerful and its operating system is pleasantly efficient, but the touch screen just doesn&rsquo;t work for most games.  For puzzle games, though, it works pretty well; the tap-and-swipe paradigm of the iPhone lends itself naturally to puzzle-style gameplay.  (The good ol&#8217; D-pad is still faster and more accurate, though.)  Hence, Puzzle Panel.</p>
 
-<p>The game was developed over five months.  I don&rsquo;t have a good sense of how many hours it actually took, but if I&rsquo;d estimate somewhere between 200 and 400.  I worked on it in the evenings after work and on my days off &ndash; sometimes obsessively, devoting all of my free time to it, sometimes barely touching it for weeks at a time.  Not including the frameworks and libraries I used, the game consists of roughly 8,500 lines of Objective C code across 40 or so classes.  The most time-consuming part of the project, though, was the artwork.  I&rsquo;m anything but a practised artist, so creating the game backgrounds and other art assets took dozens and dozens of hours.  While I was impressed at what my Wacom tablet allowed me to accomplish, I was never entirely satisfied with the results.  Still, I think doing the artwork myself was a wise decision.</p>
+<p>The game was developed over five months.  I don&rsquo;t have a good sense of how many hours it actually took, but if I&rsquo;d estimate somewhere between 200 and 400.  I worked on it in the evenings after work and on my days off - sometimes obsessively, devoting all of my free time to it, sometimes barely touching it for weeks at a time.  Not including the frameworks and libraries I used, the game consists of roughly 8,500 lines of Objective C code across 40 or so classes.  The most time-consuming part of the project, though, was the artwork.  I&rsquo;m anything but a practised artist, so creating the game backgrounds and other art assets took dozens and dozens of hours.  While I was impressed at what my Wacom tablet allowed me to accomplish, I was never entirely satisfied with the results.  Still, I think doing the artwork myself was a wise decision.</p>
 
 <p>That&rsquo;s the basic high-level project overview.  In the next post, I&rsquo;ll discuss the <a title="Cocos2D-iPhone" href="http://cocos2d-iphone.org/" target="_blank">Cocos2D-iPhone</a> framework and why I chose to use it, and then I&rsquo;ll go through a &ldquo;postmortem&rdquo; in subsequent posts.  I&rsquo;ll endeavour to include more technical information—code snippets and the like—in future posts.</p>
 </div>
@@ -199,18 +210,16 @@ $(document).ready(function() {
   <footer>
     <p class="meta">
       
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Mitch Lindgren</span></span>
 
-<time datetime="2010-05-30T01:26:00-07:00" pubdate data-updated="true">May 30<span>th</span>, 2010</time>
+      
+
+
+
+
+<time class='entry-date' datetime='2010-05-30T01:26:00-07:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>1:26 am</span></time>
       
 
 <span class="categories">
@@ -239,7 +248,7 @@ $(document).ready(function() {
 </article>
 
   <section>
-    <h1><a name="comments">Comments</a></h1>
+    <h1>Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
   </section>
@@ -258,32 +267,33 @@ $(document).ready(function() {
 </ul>
 
 </section>
+
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/12/26/book-review-i-am-malala/">Book Review: I Am Malala</a>
       </li>
     
       
-      <li class="post             category-Links            ">
+      <li class="post             category-links            ">
         <a href="/entry/2014/12/24/review-link-in-real-life/">Review Link: In Real Life</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/11/02/book-review-lying/">Book Review: Lying</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/10/26/book-review-free-will/">Book Review: Free Will</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking/">Book Review: Dataclysm</a>
       </li>
     
@@ -298,27 +308,27 @@ $(document).ready(function() {
   
   
     
-  <li class="category-aside category-Coding">
+  <li class="category-aside category-coding">
     <a href="/categories/coding">Coding</a>
   </li>
   
     
-  <li class="category-aside category-Gaming">
+  <li class="category-aside category-gaming">
     <a href="/categories/gaming">Gaming</a>
   </li>
   
     
-  <li class="category-aside category-Links">
+  <li class="category-aside category-links">
     <a href="/categories/links">Links</a>
   </li>
   
     
-  <li class="category-aside category-Personal">
+  <li class="category-aside category-personal">
     <a href="/categories/personal">Personal</a>
   </li>
   
     
-  <li class="category-aside category-Technology">
+  <li class="category-aside category-technology">
     <a href="/categories/technology">Technology</a>
   </li>
   
@@ -366,13 +376,13 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
         if (!window.jXHR){
             var jxhr = document.createElement('script');
             jxhr.type = 'text/javascript';
@@ -395,6 +405,7 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
 
   
 </aside>
+
 
 
     </div>
@@ -440,7 +451,7 @@ document.body.className += " " + navigator.platform;
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

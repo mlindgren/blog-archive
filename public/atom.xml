@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2014-12-27T19:43:07-08:00</updated>
+  <updated>2014-12-30T22:37:25-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -811,8 +810,7 @@ rated by men and vice versa"/><br />
 </div>
 
 
-<br />
-
+<p><br /></p>
 
 <p>Rudder explains:</p>
 
@@ -859,8 +857,7 @@ question: Should flag burning be illegal?"/><br />
 </div>
 
 
-<br />
-
+<p><br /></p>
 
 <p>Rudder claims that this map demonstrates that &ldquo;this is truly a nation defined by
 its principles, or, as you can see, <em>two</em> nations: Urban and Rural.&rdquo; But to my
@@ -1100,7 +1097,7 @@ for European players.</p>
 
 <p>PvP balance is another sore spot. Early on, the game was dominated by vampires,
 and although they&rsquo;ve now received a well-deserved nerf, I still feel that their
-balance could use more attention &ndash; not necessarily outright nerfs, but changes,
+balance could use more attention - not necessarily outright nerfs, but changes,
 at least. Werewolves, in contrast, are so weak as to be almost pointless. (Both
 lycanthropy and vampirism are &ldquo;diseases&rdquo; which any player can contract.) Class
 balance is also less than stellar, although I won&rsquo;t go into specifics on that,

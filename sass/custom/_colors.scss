@@ -42,9 +42,9 @@ $solarized: light;
 //$pre-border: darken($base02, 5);
 //$pre-color: $base1;
 
-.category-Coding a, .category-Coding a:visited,
-#blog-archives.category-Coding h1 a,
-li.post.category-Coding > a, li.post.category-Coding > a:visited
+.category-coding a, .category-coding a:visited,
+#blog-archives.category-coding h1 a,
+li.post.category-coding > a, li.post.category-coding > a:visited
 {
   color: #20bb20 !important;
   -webkit-transition-duration: 0.3s;
@@ -52,23 +52,23 @@ li.post.category-Coding > a, li.post.category-Coding > a:visited
   text-decoration: none;
 }
 
-.category-Coding a:hover,
-#blog-archives.category-Coding h1 a:hover,
-li.post.category-Coding > a:hover
+.category-coding a:hover,
+#blog-archives.category-coding h1 a:hover,
+li.post.category-coding > a:hover
 {
   color: #0A7A0A !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-Coding a[rel="full-article"]:hover
+#content .blog-index .category-coding a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #20bb20;
 }
 
-.category-Gaming a, .category-Gaming a:visited,
-#blog-archives.category-Gaming h1 a,
-li.post.category-Gaming > a, li.post.category-Gaming > a:visited
+.category-gaming a, .category-gaming a:visited,
+#blog-archives.category-gaming h1 a,
+li.post.category-gaming > a, li.post.category-gaming > a:visited
 {
   color: #c00 !important;
   -webkit-transition-duration: 0.3s;
@@ -76,24 +76,24 @@ li.post.category-Gaming > a, li.post.category-Gaming > a:visited
   text-decoration: none;
 }
 
-.category-Gaming a:hover,
-#blog-archives.category-Gaming h1 a:hover,
-li.post.category-Gaming > a:hover
+.category-gaming a:hover,
+#blog-archives.category-gaming h1 a:hover,
+li.post.category-gaming > a:hover
 
 {
   color: #850000 !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-Gaming a[rel="full-article"]:hover
+#content .blog-index .category-gaming a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #c00;
 }
 
-.category-Technology a, .category-Technology a:visited,
-#blog-archives.category-Technology h1 a,
-li.post.category-Technology > a, li.post.category-Technology > a:visited
+.category-technology a, .category-technology a:visited,
+#blog-archives.category-technology h1 a,
+li.post.category-technology > a, li.post.category-technology > a:visited
 
 {
   color: #e66f00 !important;
@@ -102,23 +102,23 @@ li.post.category-Technology > a, li.post.category-Technology > a:visited
   text-decoration: none;
 }
 
-.category-Technology a:hover,
-#blog-archives.category-Technology h1 a:hover,
-li.post.category-Technology > a:hover
+.category-technology a:hover,
+#blog-archives.category-technology h1 a:hover,
+li.post.category-technology > a:hover
 {
   color: #964800 !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-Technology a[rel="full-article"]:hover
+#content .blog-index .category-technology a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #e66f00;
 }
 
-.category-Personal a, .category-Personal a:visited,
-#blog-archives.category-Personal h1 a,
-li.post.category-Personal > a, li.post.category-Personal > a:visited
+.category-personal a, .category-personal a:visited,
+#blog-archives.category-personal h1 a,
+li.post.category-personal > a, li.post.category-personal > a:visited
 {
   color: #004DFF !important;
   -webkit-transition-duration: 0.3s;
@@ -126,23 +126,23 @@ li.post.category-Personal > a, li.post.category-Personal > a:visited
   text-decoration: none;
 }
 
-.category-Personal a:hover,
-#blog-archives.category-Personal h1 a:hover,
-li.post.category-Personal > a:hover
+.category-personal a:hover,
+#blog-archives.category-personal h1 a:hover,
+li.post.category-personal > a:hover
 {
   color: #0032A6 !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-Personal a[rel="full-article"]:hover
+#content .blog-index .category-personal a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #004DFF;
 }
 
-.category-Links a, .category-Links a:visited,
-#blog-archives.category-Links h1 a,
-li.post.category-Links > a, li.post.category-Links > a:visited
+.category-links a, .category-links a:visited,
+#blog-archives.category-links h1 a,
+li.post.category-links > a, li.post.category-links > a:visited
 
 {
   color: #a050bb !important;
@@ -151,15 +151,15 @@ li.post.category-Links > a, li.post.category-Links > a:visited
   text-decoration: none;
 }
 
-.category-Links a:hover,
-#blog-archives.category-Links h1 a:hover,
-li.post.category-Links > a:hover
+.category-links a:hover,
+#blog-archives.category-links h1 a:hover,
+li.post.category-links > a:hover
 {
   color: #621A7A !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-Links a[rel="full-article"]:hover
+#content .blog-index .category-links a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #a050bb;

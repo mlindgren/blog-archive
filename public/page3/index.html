@@ -18,13 +18,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.mlindgren.ca/page/3/">
-  <link href="/favicon.ico" rel="icon">
+  <link rel="canonical" href="http://blog.mlindgren.ca/page3">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -100,13 +101,15 @@ $(document).ready(function() {
 
   
   <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-56108181-1']);
+    _gaq.push(['_trackPageview']);
 
-    ga('create', 'UA-56108181-1', 'auto');
-    ga('send', 'pageview');
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
 
 
@@ -133,7 +136,7 @@ $(document).ready(function() {
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:blog.mlindgren.ca" />
+    <input type="hidden" name="sitesearch" value="blog.mlindgren.ca">
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -148,17 +151,29 @@ $(document).ready(function() {
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Technology">
+<div class="category-technology">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">How to reinstall OS X from a disc image using only one computer</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">How to reinstall OS X from a disc image using only one computer</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -166,18 +181,13 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-09-21T00:17:00-07:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
+<time class='entry-date' datetime='2011-09-21T00:17:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2011</span></span> <span class='time'>12:17 am</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
@@ -195,27 +205,34 @@ $(document).ready(function() {
 
 <p>That&rsquo;s it! In retrospect, it&rsquo;s completely obvious, but I haven&rsquo;t seen these instructions anywhere else on the web. This technique might be particularly useful for owners of Macs without disc drives.</p>
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/">Comments &rarr;</a>
-      </footer>
-    
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Personal">
+<div class="category-personal">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/08/22/rest-in-peace-jack-layton/">Rest in Peace, Jack Layton</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/08/22/rest-in-peace-jack-layton/">Rest in Peace, Jack Layton</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -223,18 +240,13 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-08-22T20:36:00-07:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2011</time>
+<time class='entry-date' datetime='2011-08-22T20:36:00-07:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2011</span></span> <span class='time'>8:36 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/08/22/rest-in-peace-jack-layton/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>I don&rsquo;t discuss politics on this site, but today warrants an exception. Canada has suffered a terrible loss with the death of Jack Layton, the leader of the federal New Democratic Party. He was an inspiring figure, hopeful and optimistic right to the end, and he devoted his life to the betterment of Canada and its citizens. He was taken from us far too soon, and will be sorely missed.</p>
@@ -244,27 +256,34 @@ $(document).ready(function() {
 
 <p>Rest in peace.</p>
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/08/22/rest-in-peace-jack-layton/">Comments &rarr;</a>
-      </footer>
-    
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Gaming">
+<div class="category-gaming">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/07/14/in-defense-of-clones/">In Defense of Clones</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/07/14/in-defense-of-clones/">In Defense of Clones</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -272,42 +291,47 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-07-14T22:23:00-07:00" pubdate data-updated="true">Jul 14<span>th</span>, 2011</time>
+<time class='entry-date' datetime='2011-07-14T22:23:00-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>10:23 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/07/14/in-defense-of-clones/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>With the phenomenal and growing successes of the iPhone App Store, the Android Market, and the Xbox Live Indie Games marketplace, gamers have seen an unprecedented number of titles which could be described as &#8220;clones&#8221; of more successful games&mdash;or rip-offs, if you&#8217;re feeling less kind.  Along with these titles has come a veritable tsunami of hatred for their developers, from game critics and anonymous Internet commenters alike.  The commercial success of some of these titles, such as <em>Angry Birds</em>,<sup>1</sup> has shown that average gamers are happy to patronize any developer who can provide a fun experience, regardless of originality.  However, any mention of a new clone on a gaming blog or podcast inevitably brings about a stunning amount of vitriol from gamers who, presumably, are upset that their favorite megacorporations aren&#8217;t getting their due.</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/07/14/in-defense-of-clones/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2011/07/14/in-defense-of-clones/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Coding">
+<div class="category-coding">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/06/29/what-are-lambdas-good-for-anyway/">What are lambdas good for, anyway?</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/06/29/what-are-lambdas-good-for-anyway/">What are lambdas good for, anyway?</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -315,42 +339,47 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-06-29T22:27:00-07:00" pubdate data-updated="true">Jun 29<span>th</span>, 2011</time>
+<time class='entry-date' datetime='2011-06-29T22:27:00-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>10:27 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/06/29/what-are-lambdas-good-for-anyway/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/06/29/what-are-lambdas-good-for-anyway/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2011/06/29/what-are-lambdas-good-for-anyway/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Technology">
+<div class="category-technology">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/">I&#8217;m considering switching back to iOS. Here&#8217;s why.</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/">I&#8217;m considering switching back to iOS. Here&#8217;s why.</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -358,18 +387,13 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-06-12T22:13:00-07:00" pubdate data-updated="true">Jun 12<span>th</span>, 2011</time>
+<time class='entry-date' datetime='2011-06-12T22:13:00-07:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>10:13 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p><em>In September of last year I ditched my iPhone 3G and switched to the Android-powered HTC Desire (which I later sold in order to purchase a Desire Z, which sports a physical keyboard.)  I&#8217;m sad to report that I&#8217;m now considering switching back to iOS, after less than a year on the Android platform.  The following is an excerpt from an e-mail I wrote to a friend of mine whom I&#8217;d describe as a fervent Android evangelist, detailing some of the frustrations I have with the operating system and why I feel that I might be better served by iOS.  I&#8217;ve edited it slightly to make it more readable for anyone who might come across this blog.</em></p>
@@ -381,27 +405,37 @@ $(document).ready(function() {
 
 
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Technology">
+<div class="category-technology">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/04/16/android-uiux-gripes/">Android UI/UX gripes</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/04/16/android-uiux-gripes/">Android UI/UX gripes</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -409,42 +443,47 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-04-16T22:08:00-07:00" pubdate data-updated="true">Apr 16<span>th</span>, 2011</time>
+<time class='entry-date' datetime='2011-04-16T22:08:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>10:08 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/04/16/android-uiux-gripes/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">&ldquo;Android Gripes.&rdquo;</a> The name is perhaps a bit misleading, as it&rsquo;s not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he&rsquo;s recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of&hellip; well, complaining about Android.</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/04/16/android-uiux-gripes/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2011/04/16/android-uiux-gripes/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Coding">
+<div class="category-coding">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/04/09/android-ndk-stack-trace-script/">Android NDK Stack Trace Script</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2011/04/09/android-ndk-stack-trace-script/">Android NDK Stack Trace Script</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -452,42 +491,49 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-04-09T16:30:00-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time>
+<time class='entry-date' datetime='2011-04-09T16:30:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>4:30 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/04/09/android-ndk-stack-trace-script/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>I&rsquo;ve finally started doing some Android development in earnest, and because I have a stubborn dislike of Java, I&rsquo;ve decided to use the <a href="http://developer.android.com/sdk/ndk/index.html">Native Development Kit</a>.  The native development kit allows you to write &ldquo;performance-critical&rdquo; parts of your application in C or C++ code, which is then compiled to platform-native ARM or MIPS instructions.  The NDK is something of an unfriendly beast; it makes interaction with most regular Android libraries very difficult, and debugging native code on Android is none too easy.  Although Google provides a script which can attach gdb to your native code, I&rsquo;ve not yet figured out how to use it properly; every time I execute it, gdb complains about missing debugging symbols and libraries and seems to be unable to do anything useful.  (I don&rsquo;t imagine it&rsquo;s too difficult, but I haven&rsquo;t spent much time on it—I&rsquo;ve not needed to do much debugging yet.)</div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/04/09/android-ndk-stack-trace-script/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2011/04/09/android-ndk-stack-trace-script/">More &rarr;</a>
+  </footer>
 
 </div>
 
     </article>
   
+    
+    
+
+
+
   
-    <article>
+
+
+
+
+
+
+
+    <article data-linklog>
       
 
-<div class="category-Links">
+<div class="category-links">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2011/02/03/non-myths-about-programming/">Non-Myths About Programming</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/assets/p35-ben-ari.pdf">Non-Myths About Programming</a>
+<span class='linklog-marker'>&#x2911;</span>
+</h1>
+
     
       <p class="meta">
         
@@ -495,43 +541,52 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-02-03T20:53:00-08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2011</time>
+<time class='entry-date' datetime='2011-02-03T20:53:00-08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2011</span></span> <span class='time'>8:53 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2011/02/03/non-myths-about-programming/">&infin;</a>
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Whilst browsing <a href="http://reddit.com" target="_blank">Reddit</a> today, I came across a short essay by <a href="http://stwww.weizmann.ac.il/g-cs/benari/" target="_blank">Mordechai Ben-Ari</a> titled &ldquo;<a title="PDF: Non-Myths About Programming" href="http://stwww.weizmann.ac.il/G-CS/BENARI/articles/nonmyths.pdf" target="_blank">Non-Myths About Programming</a>&rdquo; (PDF warning).  It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.  I would urge anyone considering a career in computer science to read it.  Given its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother summarizing the article—instead, I&rsquo;ll merely say that you should click the link and check it out for yourself.</p>
+
+  <div class="entry-content"><p>While browsing <a href="http://reddit.com">Reddit</a> today, I came across a short essay by
+<a href="http://stwww.weizmann.ac.il/g-cs/benari/">Mordechai Ben-Ari</a> titled
+<a href="/assets/p35-ben-ari.pdf">&ldquo;Non-Myths About Programming&rdquo;</a> (PDF warning).
+It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.
+I would urge anyone considering a career in computer science to read it. Given
+its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother
+summarizing the article—instead, I&rsquo;ll merely say that you should click the link
+and check it out for yourself.</p>
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2011/02/03/non-myths-about-programming/">Comments &rarr;</a>
-      </footer>
-    
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Technology">
+<div class="category-technology">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/10/03/194/">Making Samba shares accessible to Apache on OS X</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2010/10/03/194/">Making Samba shares accessible to Apache on OS X</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -539,18 +594,13 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2010-10-03T19:29:00-07:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2010</time>
+<time class='entry-date' datetime='2010-10-03T19:29:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2010</span></span> <span class='time'>7:29 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2010/10/03/194/">&infin;</a>
       </p>
     
   </header>
+
 
 
   <div class="entry-content"><p>As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts.  The basic idea is that authorized users can log in to a web interface and browse files in specific locations on my home network.  The Python script is accessed through Apache on my Mac Mini, but some of the files I need access to are on Windows boxes.  Unfortunately this presented something of a problem, as the Apache user on OS X (<code>_www</code> as of Snow Leopard) doesn&rsquo;t have permission to access Windows shares mounted by users.</p>
@@ -574,27 +624,34 @@ sudo chmod 755 /Volumes/Mount_Name
 
 <p>I doubt a great number of people will need this information as it&rsquo;s a strange sort of setup, but it&rsquo;s my hope that these instructions will save someone some time.</p>
 </div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2010/10/03/194/">Comments &rarr;</a>
-      </footer>
-    
 
 </div>
 
     </article>
   
-  
-    <article>
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
       
 
-<div class="category-Coding">
+<div class="category-coding">
 
   <header>
-    
-      <h1 class="entry-title"><a href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">Android Development Device Setup in Ubuntu 10.04</a></h1>
-    
+    <h1 class="entry-title">
+
+<a href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">Android Development Device Setup in Ubuntu 10.04</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -602,27 +659,19 @@ sudo chmod 755 /Volumes/Mount_Name
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2010-09-12T17:02:00-07:00" pubdate data-updated="true">Sep 12<span>th</span>, 2010</time>
+<time class='entry-date' datetime='2010-09-12T17:02:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>5:02 pm</span></time>
         
+         &bull; <a rel="bookmark" href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">&infin;</a>
       </p>
     
   </header>
 
 
+
   <div class="entry-content"><p>I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a lot of the information I came across seem to be outdated and didn&rsquo;t work for me.  Even the <a title="Android documentation for developing on a device" href="http://developer.android.com/guide/developing/device.html">official documentation</a> refers to a version of Ubuntu which is more than two years old.  I did eventually piece together the correct process for Ubuntu 10.04, so I&rsquo;m documenting that process here in the hope that it will help out other developers in the future.  This guide assumes that you&rsquo;ve already installed and configured the <a href="http://developer.android.com/sdk/index.html">Android SDK.</a></div>
-    
-    
-      <footer>
-        <a rel="full-article" href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">More &rarr;</a>
-      </footer>
-    
+  <footer>
+    <a rel="full-article" href="/entry/2010/09/12/android-development-device-setup-in-ubuntu-10-04/">More &rarr;</a>
+  </footer>
 
 </div>
 
@@ -630,11 +679,11 @@ sudo chmod 755 /Volumes/Mount_Name
   
   <div class="pagination">
     
-      <a class="prev" href="/page/4/">&larr; Older</a>
+      <a class="prev" href="/page4">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
-    <a class="next" href="/page/2/">Newer &rarr;</a>
+    <a class="next" href="/page2">Newer &rarr;</a>
     
   </div>
 </div>
@@ -650,32 +699,33 @@ sudo chmod 755 /Volumes/Mount_Name
 </ul>
 
 </section>
+
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/12/26/book-review-i-am-malala/">Book Review: I Am Malala</a>
       </li>
     
       
-      <li class="post             category-Links            ">
+      <li class="post             category-links            ">
         <a href="/entry/2014/12/24/review-link-in-real-life/">Review Link: In Real Life</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/11/02/book-review-lying/">Book Review: Lying</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/10/26/book-review-free-will/">Book Review: Free Will</a>
       </li>
     
       
-      <li class="post             category-Personal            ">
+      <li class="post             category-personal            ">
         <a href="/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking/">Book Review: Dataclysm</a>
       </li>
     
@@ -690,27 +740,27 @@ sudo chmod 755 /Volumes/Mount_Name
   
   
     
-  <li class="category-aside category-Coding">
+  <li class="category-aside category-coding">
     <a href="/categories/coding">Coding</a>
   </li>
   
     
-  <li class="category-aside category-Gaming">
+  <li class="category-aside category-gaming">
     <a href="/categories/gaming">Gaming</a>
   </li>
   
     
-  <li class="category-aside category-Links">
+  <li class="category-aside category-links">
     <a href="/categories/links">Links</a>
   </li>
   
     
-  <li class="category-aside category-Personal">
+  <li class="category-aside category-personal">
     <a href="/categories/personal">Personal</a>
   </li>
   
     
-  <li class="category-aside category-Technology">
+  <li class="category-aside category-technology">
     <a href="/categories/technology">Technology</a>
   </li>
   
@@ -764,7 +814,7 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
   <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
         if (!window.jXHR){
             var jxhr = document.createElement('script');
             jxhr.type = 'text/javascript';
@@ -828,7 +878,7 @@ document.body.className += " " + navigator.platform;
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

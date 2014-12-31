@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Links | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/links/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2014-12-27T19:43:07-08:00</updated>
+  <updated>2014-12-30T22:37:25-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -13,12 +13,18 @@
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
-  <entry>
-    <title type="html"><![CDATA[Review Link: In Real Life]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2014/12/24/review-link-in-real-life/"/>
-    <updated>2014-12-24T02:00:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2014/12/24/review-link-in-real-life</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m in the process of writing another book review, but as usual, it&rsquo;s turning
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Review Link: In Real Life &#x2911;]]></title>
+<link href="http://shayshortt.com/2014/12/02/in-real-life/"/>
+<updated>2014-12-24T02:00:00-08:00</updated>
+<id>http://blog.mlindgren.ca/entry/2014/12/24/review-link-in-real-life</id>
+
+      <content type="html"><![CDATA[<p>I&rsquo;m in the process of writing another book review, but as usual, it&rsquo;s turning
 out to be longer than I expected. In the meantime, I&rsquo;d like to direct all zero
 of you who are just <em>dying</em> to know my opinions on literature to
 <a href="http://shayshortt.com/2014/12/02/in-real-life/">this review</a> of Cory Doctorow
@@ -30,15 +36,24 @@ with her assessment and have little to add. Any comments should be directed to
 her post.</p>
 
 <p>My next review should be posted soon.</p>
+
+<p><a rel="bookmark" href="http://blog.mlindgren.ca/entry/2014/12/24/review-link-in-real-life/">&infin; Permalink</a></p>
+
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Why Mozilla Persona Is the Right Answer to the Question of Identity]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/"/>
-    <updated>2012-10-03T20:37:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity</id>
-    <content type="html"><![CDATA[<p><em>[Updated December 24th, 2014: I&rsquo;m leaving this post here for historical
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Why Mozilla Persona Is the Right Answer to the Question of Identity &#x2911;]]></title>
+<link href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/"/>
+<updated>2012-10-03T20:37:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity</id>
+
+      <content type="html"><![CDATA[<p><em>[Updated December 24th, 2014: I&rsquo;m leaving this post here for historical
 purposes, but I no longer endorse Mozilla Persona. There are a number of reasons
 for this, but one of the primary ones is that the project does not seem to have
 gained any momentum in the two years since I wrote this post. At this point I am
@@ -74,39 +89,78 @@ possibilities are endless.</p>
 <p>Perhaps an end is finally in sight to the frustration of having dozens upon
 dozens of different accounts and passwords for various services,
 <a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/">each with its own uniquely nonsensical password composition policy</a>.  Everyone needs to implement Persona&mdash;preferably yesterday.</p>
+
+<p><a rel="bookmark" href="http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">&infin; Permalink</a></p>
+
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Ethical Game Design from Gamasutra]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra/"/>
-    <updated>2011-12-30T16:28:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra</id>
-    <content type="html"><![CDATA[<p>I came across a couple excellent articles on Gamasutra which I want to share here. The first, &ldquo;<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>&rdquo; is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, &ldquo;deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice.&rdquo; I&rsquo;ll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the &ldquo;freemium&rdquo; model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam&rsquo;s thoughts on the subject are certainly worth reading.</p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Ethical Game Design from Gamasutra]]></title>
+<link href="http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra/"/>
+<updated>2011-12-30T16:28:00-08:00</updated>
+<id>http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra</id>
+
+      <content type="html"><![CDATA[<p>I came across a couple excellent articles on Gamasutra which I want to share here. The first, &ldquo;<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>&rdquo; is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, &ldquo;deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice.&rdquo; I&rsquo;ll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the &ldquo;freemium&rdquo; model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam&rsquo;s thoughts on the subject are certainly worth reading.</p>
 
 <p>&ldquo;<a title="Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy" href="http://www.gamasutra.com/blogs/EvanJones/20110815/8195/Radical_Plagiarism_The_Ethical_Lessons_of_the_Gamenauts_Controversy.php" target="_blank">Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy</a>,&rdquo; by <a href="http://www.gamasutra.com/blogs/author/EvanJones/4235/">Evan Jones</a>, is equally thought-provoking. Evan recounts the cloning of the indie game <a href="http://www.bored.com/game/play/150995/Radical_Fishing.html"><em>Radical Fishing</em></a> by the more established indie studio <a href="http://gamenauts.com/">Gamenauts</a>, and adds his perspective on the cultural impact of the rampant cloning that takes place on mobile app stores. Returning readers may recall that I&rsquo;ve previously <a title="In Defense of Clones" href="http://www.mlindgren.ca/archives/318">defended the practice of cloning games</a>. My defense excluded the cloning of smaller titles by established studios, which I&rsquo;ve always viewed as morally questionable at best, but Evan&rsquo;s article nevertheless gave me pause. He provides a strong counterpoint to my own thinking on the matter, and while I&rsquo;m not yet ready to reverse my position, his argument has undeniable weight. If you&rsquo;re at all interested in game development, both articles are well worth your time.</p>
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Non-Myths About Programming]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/02/03/non-myths-about-programming/"/>
-    <updated>2011-02-03T20:53:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/02/03/non-myths-about-programming</id>
-    <content type="html"><![CDATA[<p>Whilst browsing <a href="http://reddit.com" target="_blank">Reddit</a> today, I came across a short essay by <a href="http://stwww.weizmann.ac.il/g-cs/benari/" target="_blank">Mordechai Ben-Ari</a> titled &ldquo;<a title="PDF: Non-Myths About Programming" href="http://stwww.weizmann.ac.il/G-CS/BENARI/articles/nonmyths.pdf" target="_blank">Non-Myths About Programming</a>&rdquo; (PDF warning).  It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.  I would urge anyone considering a career in computer science to read it.  Given its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother summarizing the article—instead, I&rsquo;ll merely say that you should click the link and check it out for yourself.</p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Non-Myths About Programming &#x2911;]]></title>
+<link href="/assets/p35-ben-ari.pdf"/>
+<updated>2011-02-03T20:53:00-08:00</updated>
+<id>http://blog.mlindgren.ca/entry/2011/02/03/non-myths-about-programming</id>
+
+      <content type="html"><![CDATA[<p>While browsing <a href="http://reddit.com">Reddit</a> today, I came across a short essay by
+<a href="http://stwww.weizmann.ac.il/g-cs/benari/">Mordechai Ben-Ari</a> titled
+<a href="/assets/p35-ben-ari.pdf">&ldquo;Non-Myths About Programming&rdquo;</a> (PDF warning).
+It&rsquo;s only six pages long, and I found it refreshingly realistic and insightful.
+I would urge anyone considering a career in computer science to read it. Given
+its brevity (and the fact the title is reasonably descriptive), I won&rsquo;t bother
+summarizing the article—instead, I&rsquo;ll merely say that you should click the link
+and check it out for yourself.</p>
+
+<p><a rel="bookmark" href="http://blog.mlindgren.ca/entry/2011/02/03/non-myths-about-programming/">&infin; Permalink</a></p>
+
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Drive: The Surprising Truth About What Motivates Us]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/"/>
-    <updated>2010-06-15T23:19:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m a huge fan of TED Talks. This is a fascinating video in which Dan Pink summarizes some of his research into human motivation, which I found at <a title="Coding Horror" href="http://www.codinghorror.com/blog/" target="_blank">Coding Horror.</a></p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Drive: The Surprising Truth About What Motivates Us &#x2911;]]></title>
+<link href="https://www.youtube.com/watch?v=u6XAPnuFjJc"/>
+<updated>2010-06-15T23:19:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us</id>
+
+      <content type="html"><![CDATA[<p>There are a lot of really enjoyable TED Talks online. This one, for instance,
+in which Dan Pink summarizes some of his research into human
+motivation:</p>
 
 <object width="640" height="385" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowfullscreen" value="true" /><embed width="640" height="385" type="application/x-shockwave-flash" src="http://www.youtube.com/v/u6XAPnuFjJc&amp;hl=en_US&amp;fs=1&amp;" allowFullScreen="true" allowscriptaccess="always" allowfullscreen="true" /></object>
 
+
+<p>(Via <a href="http://www.codinghorror.com/blog/">Coding Horror</a>.)</p>
+
+<p><a rel="bookmark" href="http://blog.mlindgren.ca/entry/2010/06/15/drive-the-surprising-truth-about-what-motivates-us/">&infin; Permalink</a></p>
+
 ]]></content>
-  </entry>
+    </entry>
   
 </feed>
+

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Technology | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/technology/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2014-12-27T19:43:07-08:00</updated>
+  <updated>2014-12-30T22:37:25-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -13,12 +13,18 @@
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
-  <entry>
-    <title type="html"><![CDATA[Switching to Octopress]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress/"/>
-    <updated>2012-09-23T23:22:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Switching to Octopress]]></title>
+<link href="http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress/"/>
+<updated>2012-09-23T23:22:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress</id>
+
+      <content type="html"><![CDATA[<p>I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
 better part of a decade now. By most metrics, it&rsquo;s still very good blogging
 software; I&rsquo;m not aware of any self-hostable alternative that can match
 Wordpress in terms of the union of ease of use, feature set and flexibility that
@@ -34,7 +40,7 @@ which is used by
 But I&rsquo;ve had problems with the Wordpress converting some of the characters in
 my code to HTML entities (e.g. <code>&amp;amp;</code> for &amp; ) which are then printed
 literally by the plugin.</li>
-<li>I find that more often than not Wordpress' visual editor is
+<li>I find that more often than not Wordpress&#8217; visual editor is
 insufficient for the formatting I want in my posts. That forces me to use
 the raw HTML editor. That would be fine, except that Wordpress has a strange
 sort of off-spec way of storing post HTML. Paragraph and line break tags are
@@ -137,7 +143,7 @@ Octopress theme&mdash;meaning that the layout will resize to look beautiful at
 any screen resolution, including on mobile devices.</li>
 <li>Octopress has pretty nice built in Github and Twitter widgets.</li>
 <li>Comments are handled by <a href="http://disqus.com/">Disqus</a>, which provides a nicer
-comment system than Wordpress' built in comments.  I was using Disqus anyway
+comment system than Wordpress&#8217; built in comments.  I was using Disqus anyway
 via a plugin, but now I don&rsquo;t have to worry about keeping the Disqus comments
 synced with the Wordpress database. Incidentally, Disqus provides a very nice
 system to migrate comments to new URLs by uploading a
@@ -182,14 +188,20 @@ to ease the import process.</p>
 recently, I didn&rsquo;t. And here I thought all he did was play apologist for
 Apple.</small></p>
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Social networks and content ownership]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/"/>
-    <updated>2012-09-14T00:45:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m always wary about pre-announcing things I&rsquo;m working on; I have more ambition than spare time, which leads to a tendency to start projects and not finish them.  But if there&rsquo;s to be a point in maintaining this website, I need to actually <em>write things</em> once in a while, so I may as well write about what I&rsquo;ve been hacking on lately.  At the moment, I&rsquo;m building a web-based photo album in Python.  My primary reason for doing this is that I&rsquo;d like to own more of my information.  Apps and social networks have some significant advantages, particularly for the less technologically inclined, but I&rsquo;m ambivalent about the trend away from an open Internet and towards a set of non-interoperable, monolithic walled-garden services.<!-- more --></p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Social networks and content ownership]]></title>
+<link href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/"/>
+<updated>2012-09-14T00:45:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership</id>
+
+      <content type="html"><![CDATA[<p>I&rsquo;m always wary about pre-announcing things I&rsquo;m working on; I have more ambition than spare time, which leads to a tendency to start projects and not finish them.  But if there&rsquo;s to be a point in maintaining this website, I need to actually <em>write things</em> once in a while, so I may as well write about what I&rsquo;ve been hacking on lately.  At the moment, I&rsquo;m building a web-based photo album in Python.  My primary reason for doing this is that I&rsquo;d like to own more of my information.  Apps and social networks have some significant advantages, particularly for the less technologically inclined, but I&rsquo;m ambivalent about the trend away from an open Internet and towards a set of non-interoperable, monolithic walled-garden services.<!-- more --></p>
 
 <p>When Google+ debuted, my enthusiasm for the service followed a sort of bell curve.  I was already using Twitter and Facebook, and I didn&rsquo;t want to have to post everything to yet another service.  At the urging of friends, I joined anyway, and warmed to it considerably.  It was simply better software than Facebook; the interface was cleaner, the privacy controls more usable, the communication options more diverse, the means of sharing and interacting with media more engaging and deeply integrated.  Best of all, there wasn&rsquo;t nearly as much app spam.  Much of this is probably still true, although the impression I get from Google+ pages I&rsquo;ve stumbled across recently is that they&rsquo;ve been trying to make it look more like Facebook, to its detriment.</p>
 
@@ -203,20 +215,26 @@ Apple.</small></p>
 
 <p><sup>1</sup> <small>Both Facebook and Google+ provide a means of exporting the data you&rsquo;ve shared. I believe both will export everything belonging to you personally, but I don&rsquo;t think you necessarily get to keep all of the social data associated with your content, e.g. comments, nor the relationships between different pieces of content. Last I checked, the data was merely dumped into a bunch of flat files; nothing is kept in a structured format that makes it easy to work with, and even if it were, other privates services don&rsquo;t usually offer the option to import your data. While it may still not be easy, if you own your own data and manage it using open source tools, it&rsquo;s at least <em>possible</em> to migrate everything to another system with the greatest fidelity supported by that system.</small></p>
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[How to reinstall OS X from a disc image using only one computer]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/"/>
-    <updated>2011-09-21T00:17:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer</id>
-    <content type="html"><![CDATA[<p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[How to reinstall OS X from a disc image using only one computer]]></title>
+<link href="http://blog.mlindgren.ca/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/"/>
+<updated>2011-09-21T00:17:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer</id>
+
+      <content type="html"><![CDATA[<p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
 
 <p>Unfortunately, however, the Snow Leopard disc image is large enough that it can only be burned to a dual-layer DVD. I don&rsquo;t tend to keep writeable dual-layer DVDs lying around, so I needed a solution which required only the disc image itself. There are a number of methods available for installing OS X over the network, but none of them seemed to work for me—perhaps owing to the fact that I had only one Mac. Luckily, I discovered that you can install OS X from a separate partition on the same disk. Here&rsquo;s how:</p>
 
 <ol>
-    <li>First, you'll need to re-partition your disk. Open Disk Utility and select the disk you want to use. Be sure to select the disk itself, rather than one of its partitions, which are indented beneath the disk.</li>
-    <li>Click the + button to add a new partition, and drag the new partition's section in the disk layout graph upwards until it's large enough to store your operating system disc image. Apply the changes. It may take some time for the disk to be re-partitioned.</li>
+    <li>First, you&#8217;ll need to re-partition your disk. Open Disk Utility and select the disk you want to use. Be sure to select the disk itself, rather than one of its partitions, which are indented beneath the disk.</li>
+    <li>Click the + button to add a new partition, and drag the new partition&#8217;s section in the disk layout graph upwards until it&#8217;s large enough to store your operating system disc image. Apply the changes. It may take some time for the disk to be re-partitioned.</li>
     <li>Now, select the new partition from the list on the left. Go to the Restore tab, and restore your operating system disc image to the new partition.</li>
     <li>Once the restore is complete, restart your computer, holding Option (Alt) at start-up. This should bring up a list of available start-up disks. Choose your new partition.</li>
     <li>You should now be at the installer, and you can re-install to your primary partition. Once the installation is complete, delete your installation disc partition to and resize the primary partition to reclaim the extra space.</li>
@@ -225,19 +243,25 @@ Apple.</small></p>
 
 <p>That&rsquo;s it! In retrospect, it&rsquo;s completely obvious, but I haven&rsquo;t seen these instructions anywhere else on the web. This technique might be particularly useful for owners of Macs without disc drives.</p>
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[I'm considering switching back to iOS. Here's why.]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/"/>
-    <updated>2011-06-12T22:13:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why</id>
-    <content type="html"><![CDATA[<p><em>In September of last year I ditched my iPhone 3G and switched to the Android-powered HTC Desire (which I later sold in order to purchase a Desire Z, which sports a physical keyboard.)  I'm sad to report that I'm now considering switching back to iOS, after less than a year on the Android platform.  The following is an excerpt from an e-mail I wrote to a friend of mine whom I'd describe as a fervent Android evangelist, detailing some of the frustrations I have with the operating system and why I feel that I might be better served by iOS.  I've edited it slightly to make it more readable for anyone who might come across this blog.</em></p>
+    <entry>
+      
 
 
 
 
-<p><em>I really want to like the Android platform, and writing this gave me no joy.  There are two reasons I'm posting it here, though.  The first is simply that the purpose of this website is for me to post about my programming and my experiences with technology (as well as whatever else catches my fancy.)  The second is that I hope that sharing my honest opinion about Android might be helpful to anyone considering a phone purchase.</em></p>
+<title type="html"><![CDATA[I'm considering switching back to iOS. Here's why.]]></title>
+<link href="http://blog.mlindgren.ca/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why/"/>
+<updated>2011-06-12T22:13:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2011/06/12/im-considering-switching-back-to-ios-heres-why</id>
+
+      <content type="html"><![CDATA[<p><em>In September of last year I ditched my iPhone 3G and switched to the Android-powered HTC Desire (which I later sold in order to purchase a Desire Z, which sports a physical keyboard.)  I&#8217;m sad to report that I&#8217;m now considering switching back to iOS, after less than a year on the Android platform.  The following is an excerpt from an e-mail I wrote to a friend of mine whom I&#8217;d describe as a fervent Android evangelist, detailing some of the frustrations I have with the operating system and why I feel that I might be better served by iOS.  I&#8217;ve edited it slightly to make it more readable for anyone who might come across this blog.</em></p>
+
+
+
+
+<p><em>I really want to like the Android platform, and writing this gave me no joy.  There are two reasons I&#8217;m posting it here, though.  The first is simply that the purpose of this website is for me to post about my programming and my experiences with technology (as well as whatever else catches my fancy.)  The second is that I hope that sharing my honest opinion about Android might be helpful to anyone considering a phone purchase.</em></p>
 
 
 <!-- more -->
@@ -251,10 +275,10 @@ Apple.</small></p>
 
 
 <ul>
-    <li>With the ROM I'm using now (a custom Sense ROM, can't remember the exact name), I can't set the SSID/password on my WiFi hotspot because Settings crashes when I try to.  I seriously haven't used a single custom ROM that hasn't had some issues with it.</li>
-    <li>You mentioned that Google is promising quicker updates, but I'll believe it when I see it.  Are they actually forcing manufacturers to do this in order to use Android branding or get Google apps, or are they just asking nicely?  The latter won't work.  And as far as I know, all that the Android update committee has promised is 18 months of updates following the launch of a new device.  So does that mean if I release a device and then push a point release to consumers 17 months later, I've fulfilled that? All I see here is flowery language, and frankly I don't think anything is going to improve.<br /><br />
+    <li>With the ROM I&#8217;m using now (a custom Sense ROM, can&#8217;t remember the exact name), I can&#8217;t set the SSID/password on my WiFi hotspot because Settings crashes when I try to.  I seriously haven&#8217;t used a single custom ROM that hasn&#8217;t had some issues with it.</li>
+    <li>You mentioned that Google is promising quicker updates, but I&#8217;ll believe it when I see it.  Are they actually forcing manufacturers to do this in order to use Android branding or get Google apps, or are they just asking nicely?  The latter won&#8217;t work.  And as far as I know, all that the Android update committee has promised is 18 months of updates following the launch of a new device.  So does that mean if I release a device and then push a point release to consumers 17 months later, I&#8217;ve fulfilled that? All I see here is flowery language, and frankly I don&#8217;t think anything is going to improve.<br /><br />
 
-The fact is that it's not profitable for these manufacturers to update existing devices when they could spend the same development effort on releasing another six phones, so unless Google does something to change that, nothing will happen.</li>
+The fact is that it&#8217;s not profitable for these manufacturers to update existing devices when they could spend the same development effort on releasing another six phones, so unless Google does something to change that, nothing will happen.</li>
 </ul>
 
 
@@ -266,24 +290,24 @@ The fact is that it's not profitable for these manufacturers to update existing 
 
 
 <ul>
-    <li>No good Exchange client available.  Even Touchdown, which is expensive, is pretty bad.  The HTC client is okay, but it <del datetime="2011-06-12T02:36:52+00:00">doesn't support important features like threading.</del> [I later realized that this is untrue; the HTC client does support threading.  I still find it cumbersome to use, and I've previously had problems with it failing to send messages without any notification of the failure.  That's a pretty big problem when you're using it for work e-mail.]</li>
-    <li>Launcher redraw, agghhhhhh.  Sense is horrendous for this, but I much prefer the built-in Sense apps to their Google alternatives, so I feel like I'm stuck using it.  Even on stock Android, it seems like I can't really use live wallpapers or I have to wait for the launcher to reload all the time.</li>
-    <li>It's annoying that when I read an e-mail in Gmail on my computer, the notification for it stays in my notification bar.  Also, my Gmail push seems to have stopped working of late.  To be fair, it remains to be seen how the new iPhone notification system handles these things.</li>
-    <li>I've noticed that with multiple IM clients (specifically, AIM and eBuddy) if I leave them running in the background while I'm doing other things like browsing the Internet, I'll eventually get signed out or the app will close.  I don't know if this is just because they're not written correctly, but it's annoying; IM is the only thing I really use background applications for and it doesn't seem to work consistently.</li>
-    <li>I often have trouble sending/receiving MMS.  It's frustrating when someone sends me an MMS and I have to ask them to e-mail it to me instead because it won't download.</li>
-    <li>Camera quality on the Desire Z is pretty bad.  I'm certain the iPhone 4 is better in this department.  I feel like my Desire Z's camera is actually worse than my Desire's camera for still photos (although it's better for video.)  This isn't a strike against Android in particular, but the problem of lower-quality hardware is endemic to the platform in a certain sense.</li>
-    <li>A lot of apps in the Android market are just very poor quality. The iPhone app store has its fair share of bad apps, but I still feel like the average quality is much higher there.  In particular, any app that's available for both platforms is almost always better on iPhone.  A prime example is Facebook.  The Android client was horribly broken for several weeks, and regardless of that, it just doesn't support the same feature set as the iPhone version (e.g. watching videos.)</li>
+    <li>No good Exchange client available.  Even Touchdown, which is expensive, is pretty bad.  The HTC client is okay, but it <del datetime="2011-06-12T02:36:52+00:00">doesn&#8217;t support important features like threading.</del> [I later realized that this is untrue; the HTC client does support threading.  I still find it cumbersome to use, and I&#8217;ve previously had problems with it failing to send messages without any notification of the failure.  That&#8217;s a pretty big problem when you&#8217;re using it for work e-mail.]</li>
+    <li>Launcher redraw, agghhhhhh.  Sense is horrendous for this, but I much prefer the built-in Sense apps to their Google alternatives, so I feel like I&#8217;m stuck using it.  Even on stock Android, it seems like I can&#8217;t really use live wallpapers or I have to wait for the launcher to reload all the time.</li>
+    <li>It&#8217;s annoying that when I read an e-mail in Gmail on my computer, the notification for it stays in my notification bar.  Also, my Gmail push seems to have stopped working of late.  To be fair, it remains to be seen how the new iPhone notification system handles these things.</li>
+    <li>I&#8217;ve noticed that with multiple IM clients (specifically, AIM and eBuddy) if I leave them running in the background while I&#8217;m doing other things like browsing the Internet, I&#8217;ll eventually get signed out or the app will close.  I don&#8217;t know if this is just because they&#8217;re not written correctly, but it&#8217;s annoying; IM is the only thing I really use background applications for and it doesn&#8217;t seem to work consistently.</li>
+    <li>I often have trouble sending/receiving MMS.  It&#8217;s frustrating when someone sends me an MMS and I have to ask them to e-mail it to me instead because it won&#8217;t download.</li>
+    <li>Camera quality on the Desire Z is pretty bad.  I&#8217;m certain the iPhone 4 is better in this department.  I feel like my Desire Z&#8217;s camera is actually worse than my Desire&#8217;s camera for still photos (although it&#8217;s better for video.)  This isn&#8217;t a strike against Android in particular, but the problem of lower-quality hardware is endemic to the platform in a certain sense.</li>
+    <li>A lot of apps in the Android market are just very poor quality. The iPhone app store has its fair share of bad apps, but I still feel like the average quality is much higher there.  In particular, any app that&#8217;s available for both platforms is almost always better on iPhone.  A prime example is Facebook.  The Android client was horribly broken for several weeks, and regardless of that, it just doesn&#8217;t support the same feature set as the iPhone version (e.g. watching videos.)</li>
     <li>I complained about this even before I bought an Android phone, but the Android operating system is sometimes just not very responsive.  Scrolling is sometimes smooth, but rarely as smooth as on iPhone/Windows Phone 7.  Minor annoyance, but an annoyance nonetheless.</li>
-    <li>I'm not sure if you're familiar with the life cycle of an app in Android, but basically every different screen you can go to in an app is a separate "activity"&mdash;essentially a separate application.  <em>What were they thinking</em> in designing it like this? It causes so many problems.  Any time the "state" of the phone changes (e.g. you rotate the device, the phone leaves/enters roaming, etc.) the activity is destroyed and re-created unless developers manually override this behavior.  This is why, for instance, the keyboard often disappears if you have it open and then rotate the phone.  (Highly polished apps like Twitter handle rotation properly, but don't be fooled; it's not the default behavior.  Many other apps do not handle rotation very well.)  Other examples of activity recreation problems include pop-up dialog boxes disappearing and fields losing focus.</li>
-    <li>Editing text sucks; I find that my phone never seems to do what I want it to when I'm trying to highlight or copy and paste some text.</li>
-    <li>I've had problems on both of my Android phones with the music player pausing in the middle of a song at random.  This has happened in multiple different media players.  It's as though the phone thinks the headphones are being removed when they are in fact still in place.</li>
-    <li>I like being able to set alarm/ringer/media volume separately (although the iPhone can also do this), but I don't like that the defaults on Android aren't very sensible.  For instance, if I have my ringer silenced, it probably means that I also want my media silenced.  But that's not what happens if I just use the volume button; I have to actually go into settings and change the media volume separately.</li>
-    <li>Sometimes Google Talk just flat out refuses to start for me until I reboot my phone.  This happened on multiple ROMs.  On the Desire I noticed that it seemed to refuse to start when I was low on internal storage.  I'm not sure why it does it on my Desire Z.  This should be a core platform feature on par with BBM, but it seems to be very poorly supported.</li>
-    <li>From a developer perspective, I hate paying a development fee to Apple to be able to install my apps on a non-jailbroken device.  I hate that once you've written an iPhone app, they basically blackmail you into continuing to pay them because otherwise they take down your app, which means that it may not be accessible to paying customers if they need to wipe their phone and re-install their apps.  I hate their greedy policies with regards to content subscriptions.  I hate their underhanded payment system which is, as a matter of statistical certainty, allowing them to make interest on millions of dollars that are nominally owed to developers but will never actually be paid.  In general, I hate that they treat their developers like serfs just because they can, even though those same developers made their platform what it is today.<br /><br />
+    <li>I&#8217;m not sure if you&#8217;re familiar with the life cycle of an app in Android, but basically every different screen you can go to in an app is a separate &#8220;activity&#8221;&mdash;essentially a separate application.  <em>What were they thinking</em> in designing it like this? It causes so many problems.  Any time the &#8220;state&#8221; of the phone changes (e.g. you rotate the device, the phone leaves/enters roaming, etc.) the activity is destroyed and re-created unless developers manually override this behavior.  This is why, for instance, the keyboard often disappears if you have it open and then rotate the phone.  (Highly polished apps like Twitter handle rotation properly, but don&#8217;t be fooled; it&#8217;s not the default behavior.  Many other apps do not handle rotation very well.)  Other examples of activity recreation problems include pop-up dialog boxes disappearing and fields losing focus.</li>
+    <li>Editing text sucks; I find that my phone never seems to do what I want it to when I&#8217;m trying to highlight or copy and paste some text.</li>
+    <li>I&#8217;ve had problems on both of my Android phones with the music player pausing in the middle of a song at random.  This has happened in multiple different media players.  It&#8217;s as though the phone thinks the headphones are being removed when they are in fact still in place.</li>
+    <li>I like being able to set alarm/ringer/media volume separately (although the iPhone can also do this), but I don&#8217;t like that the defaults on Android aren&#8217;t very sensible.  For instance, if I have my ringer silenced, it probably means that I also want my media silenced.  But that&#8217;s not what happens if I just use the volume button; I have to actually go into settings and change the media volume separately.</li>
+    <li>Sometimes Google Talk just flat out refuses to start for me until I reboot my phone.  This happened on multiple ROMs.  On the Desire I noticed that it seemed to refuse to start when I was low on internal storage.  I&#8217;m not sure why it does it on my Desire Z.  This should be a core platform feature on par with BBM, but it seems to be very poorly supported.</li>
+    <li>From a developer perspective, I hate paying a development fee to Apple to be able to install my apps on a non-jailbroken device.  I hate that once you&#8217;ve written an iPhone app, they basically blackmail you into continuing to pay them because otherwise they take down your app, which means that it may not be accessible to paying customers if they need to wipe their phone and re-install their apps.  I hate their greedy policies with regards to content subscriptions.  I hate their underhanded payment system which is, as a matter of statistical certainty, allowing them to make interest on millions of dollars that are nominally owed to developers but will never actually be paid.  In general, I hate that they treat their developers like serfs just because they can, even though those same developers made their platform what it is today.<br /><br />
 
-I hope that properly illustrates how much I hate Apple's policies, and I hope that it underscores the significance of what I'm about to say: from a pragmatic perspective, I'd <em>still</em> rather be developing for iOS because Google's development tools are <em>complete garbage.</em> I write all my code in vim, so I'm really not that picky, but I can only take so much of using Eclipse and having it literally <em>delete</em> my art assets from the file system.  (Not just removing them from the project - it literally deletes the files, seemingly at random.  I've never lost any work because of this, but it's extremely frustrating nevertheless.)  Not to mention the Android emulator: it's practically unusable for regular apps, and for games, forget about it.  You're lucky if you get 5 FPS.<br /><br />
+I hope that properly illustrates how much I hate Apple&#8217;s policies, and I hope that it underscores the significance of what I&#8217;m about to say: from a pragmatic perspective, I&#8217;d <em>still</em> rather be developing for iOS because Google&#8217;s development tools are <em>complete garbage.</em> I write all my code in vim, so I&#8217;m really not that picky, but I can only take so much of using Eclipse and having it literally <em>delete</em> my art assets from the file system.  (Not just removing them from the project - it literally deletes the files, seemingly at random.  I&#8217;ve never lost any work because of this, but it&#8217;s extremely frustrating nevertheless.)  Not to mention the Android emulator: it&#8217;s practically unusable for regular apps, and for games, forget about it.  You&#8217;re lucky if you get 5 FPS.<br /><br />
 
-Even if I buy an iPhone, I do still want to finish my game for Android.  The code is cross-platform, so if I could compile and test it using Xcode in the meantime... even just using the iPhone simulator, since it can actually run games at a reasonable framerate... it would save me a lot of headaches.  Either way I'll have to compile my app for Windows or iOS to do any marketing; taking screenshots of an Android app is difficult, and taking video is, as far as I can tell, impossible unless you have a phone with HDMI out and a capture card.  Ridiculous.</li>
+Even if I buy an iPhone, I do still want to finish my game for Android.  The code is cross-platform, so if I could compile and test it using Xcode in the meantime&#8230; even just using the iPhone simulator, since it can actually run games at a reasonable framerate&#8230; it would save me a lot of headaches.  Either way I&#8217;ll have to compile my app for Windows or iOS to do any marketing; taking screenshots of an Android app is difficult, and taking video is, as far as I can tell, impossible unless you have a phone with HDMI out and a capture card.  Ridiculous.</li>
 
     <li>The behavior of the back button is inconsistent, and developers use it as
     a crutch rather than thinking about and carefully designing a proper workflow
@@ -292,18 +316,18 @@ Even if I buy an iPhone, I do still want to finish my game for Android.  The co
     <br/><br />
 
 <blockquote>I just got an Android with that great Virgin Mobile deal, and I was surprised
-at just how much the Back button is used in almost all contexts. It's severely
+at just how much the Back button is used in almost all contexts. It&#8217;s severely
 overloaded: want to get out of an on-screen keyboard? Back. Want to move back
-a screen? Back, except when it's Google Reader that opened a Browser window,
+a screen? Back, except when it&#8217;s Google Reader that opened a Browser window,
 in which case it takes you back to the previous page that Browser had. Back
 through a menu? Back. Back to a previous page in Browser? Back.
 
-It's as if people just substituted the button for any instance in human language
-where "back" was used."</blockquote>
+It&#8217;s as if people just substituted the button for any instance in human language
+where &#8220;back&#8221; was used.&#8221;</blockquote>
 
-...(and another)...<br /><br />
+&#8230;(and another)&#8230;<br /><br />
 
-<blockquote>"Back" to some random place most of the time.<br />
+<blockquote>&#8220;Back&#8221; to some random place most of the time.<br />
 1. receive email notification for two messages.<br />
 2. click notification bar<br />
 3. go to gmail app.<br />
@@ -318,24 +342,30 @@ where "back" was used."</blockquote>
 12. click the 2nd message and read it
 </blockquote>
 
-In fairness, I'm of two minds about this because the back button does save a lot of screen real-estate by removing the necessity for on-screen navigation controls.  However, I'm not sure how much of an advantage that is in the face of the confusion it sometimes causes.</li>
+In fairness, I&#8217;m of two minds about this because the back button does save a lot of screen real-estate by removing the necessity for on-screen navigation controls.  However, I&#8217;m not sure how much of an advantage that is in the face of the confusion it sometimes causes.</li>
 
-<li>[This wasn't included in my e-mail to my friend, because I didn't know about it at the time.  I'm adding it now because it's fairly important.] Android can actually <em><a href="http://forum.xda-developers.com/showthread.php?p=12765846">lose SMS messages.</a></em>  That's completely unacceptable on a phone.</li>
+<li>[This wasn&#8217;t included in my e-mail to my friend, because I didn&#8217;t know about it at the time.  I&#8217;m adding it now because it&#8217;s fairly important.] Android can actually <em><a href="http://forum.xda-developers.com/showthread.php?p=12765846">lose SMS messages.</a></em>  That&#8217;s completely unacceptable on a phone.</li>
 </ul>
 
 ]]></content>
-  </entry>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Android UI/UX gripes]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/04/16/android-uiux-gripes/"/>
-    <updated>2011-04-16T22:08:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/04/16/android-uiux-gripes</id>
-    <content type="html"><![CDATA[<p>The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">&ldquo;Android Gripes.&rdquo;</a> The name is perhaps a bit misleading, as it&rsquo;s not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he&rsquo;s recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of&hellip; well, complaining about Android.<!-- more --></p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Android UI/UX gripes]]></title>
+<link href="http://blog.mlindgren.ca/entry/2011/04/16/android-uiux-gripes/"/>
+<updated>2011-04-16T22:08:00-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2011/04/16/android-uiux-gripes</id>
+
+      <content type="html"><![CDATA[<p>The week before last, whilst browsing <a href="http://reddit.com">Reddit</a> I came across a blog by the name of <a href="http://android-gripes.tumblr.com/">&ldquo;Android Gripes.&rdquo;</a> The name is perhaps a bit misleading, as it&rsquo;s not actually a blog by an Android user hoping to spur Google into making UI improvements, as I would have expected.  It is, rather, a blog by a self-proclaimed Apple fanboy (though he&rsquo;s recently <a href="http://www.reddit.com/r/Android/comments/glbjz/android_gripes_why_do_apps_from_the_same_company/c1ogv3q">edited his about page to remove that admission</a>) complaining about Android for the sake of&hellip; well, complaining about Android.<!-- more --></p>
 
 <p>That might be a little unfair.  Perhaps I should let the author speak for himself:</p>
 
-<blockquote>I have constantly heard many gripes about Android. Recently I happened to have access to some Android phones and use them in a daily base. The more I use Android, the more I feel that Android is indeed a half-baked OS, its UX/UI is horrible and various hardwares are poorly designed. It’s true that those phones are working like smartphones, better than feature phones from old school, but they ignore a lot of the details. Just for Google’s own benefit, they helped handset manufactures brutally dumped a huge amount of unpolished devices to the market. They made people think this is how smartphones should work. This is so unfair to consumers. <strong>IMHO, it is no different from committing a crime.</strong> That’s why I made the cartoon of "Android Gripes" as a Monopoly "Go Directly To Jail" card showing an Android on it.
+<blockquote>I have constantly heard many gripes about Android. Recently I happened to have access to some Android phones and use them in a daily base. The more I use Android, the more I feel that Android is indeed a half-baked OS, its UX/UI is horrible and various hardwares are poorly designed. It’s true that those phones are working like smartphones, better than feature phones from old school, but they ignore a lot of the details. Just for Google’s own benefit, they helped handset manufactures brutally dumped a huge amount of unpolished devices to the market. They made people think this is how smartphones should work. This is so unfair to consumers. <strong>IMHO, it is no different from committing a crime.</strong> That’s why I made the cartoon of &#8220;Android Gripes&#8221; as a Monopoly &#8220;Go Directly To Jail&#8221; card showing an Android on it.
 
 As much as I believe in Apple, I think everybody deserves great user experience, especially when it comes to phones. I think it is my mission to let more people know that Android does not provide you that. Android only provides inferior user experience. You either admit it and bear with it, or go for better alternatives. That’s why I started writing this blog.</blockquote>
 
@@ -344,6 +374,7 @@ As much as I believe in Apple, I think everybody deserves great user experience,
 
 <p>With all of that said, I&rsquo;m not writing this post to refute the Android Gripes author.  I actually agree with an unfortunate number of his points.  While there&rsquo;s a lot that can be said about where the iPhone&rsquo;s UI/UX fails (I&rsquo;ve <a href="http://www.mlindgren.ca/archives/151">previously mentioned</a> their complete lack of a workable notification system), excuses and rationalizations won&rsquo;t do anything to improve the state of Android apps.  Even if you believe that Android&rsquo;s UI/UX is better than Apple&rsquo;s (and I do feel that that&rsquo;s a hard case to make), I think it&rsquo;s undeniable that there&rsquo;s room for improvement.  It&rsquo;s certainly worth mentioning that some of the Android Gripe&rsquo;s authors examples are misleading, but what&rsquo;s more important is that we—that is to say, Android developers—ask ourselves where we&rsquo;re failing users, why it&rsquo;s happening, and what we can do to improve the platform.  In a future post, I&rsquo;ll offer my perspective on where Android could be improved.</p>
 ]]></content>
-  </entry>
+    </entry>
   
 </feed>
+

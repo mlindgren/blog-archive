@@ -42,7 +42,8 @@ module Jekyll
       self.data['category']    = category
       # Set the title for this page.
       title_prefix             = site.config['category_title_prefix'] || 'Category: '
-      self.data['title']       = "#{title_prefix}#{category}"
+      capitalized_category     = category.capitalize
+      self.data['title']       = "#{title_prefix}#{capitalized_category}"
       # Set the meta-description for this page.
       meta_description_prefix  = site.config['category_meta_description_prefix'] || 'Category: '
       self.data['description'] = "#{meta_description_prefix}#{category}"
@@ -69,7 +70,8 @@ module Jekyll
       self.data['category']    = category
       # Set the title for this page.
       title_prefix             = site.config['category_title_prefix'] || 'Category: '
-      self.data['title']       = "#{title_prefix}#{category}"
+      capitalized_category     = category.capitalize
+      self.data['title']       = "#{title_prefix}#{capitalized_category}"
       # Set the meta-description for this page.
       meta_description_prefix  = site.config['category_meta_description_prefix'] || 'Category: '
       self.data['description'] = "#{meta_description_prefix}#{category}"
@@ -153,7 +155,7 @@ ERR
     # Returns string
     #
     def category_links(categories)
-      categories.sort.map { |c| category_link c }.join(', ')
+      categories.sort.map { |c| capitalize c }.map { |c| category_link c }.join(', ')
     end
 
     # Outputs a single category as an <a> link.

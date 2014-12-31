@@ -1,3 +1,4 @@
+
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
@@ -8,7 +9,7 @@
       {% endfor %}
       {% endcapture %}
       <li class="post {{ post_class | strip_newlines }}">
-        <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+        <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
       </li>
     {% endfor %}
   </ul>
