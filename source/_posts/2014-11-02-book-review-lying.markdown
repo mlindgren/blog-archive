@@ -3,7 +3,7 @@ layout: post
 title: "Book Review: Lying"
 date: 2014-11-02 18:09
 comments: true
-categories: [Personal]
+categories: [Reviews]
 ---
 
 Originally published as a

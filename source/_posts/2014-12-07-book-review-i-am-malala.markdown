@@ -3,7 +3,7 @@ layout: post
 title: "Book Review: I Am Malala"
 date: 2014-12-26 01:57
 comments: true
-categories: [Personal]
+categories: [Reviews]
 ---
 
 I expect most people will already have some familiarity with Malala Yousafzai.

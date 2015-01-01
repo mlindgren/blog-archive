@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "The Elder Scrolls Online"
+title: "Game Review: The Elder Scrolls Online"
 date: 2014-05-18 21:02
 comments: true
-categories: [Gaming] 
+categories: [Reviews] 
 ---
 
 It has been about a month and a half now since The Elder Scrolls Online was

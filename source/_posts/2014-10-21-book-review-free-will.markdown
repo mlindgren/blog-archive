@@ -3,7 +3,7 @@ layout: post
 title: "Book Review: Free Will"
 date: 2014-10-26 17:00
 comments: true
-categories: [Personal]
+categories: [Reviews]
 ---
 
 Sam Harris is a controversial figure, to say the least. Personally, I'm a fan of

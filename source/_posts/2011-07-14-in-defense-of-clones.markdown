@@ -4,7 +4,7 @@ title: "In Defense of Clones"
 date: 2011-07-14 22:23
 comments: true
 external-url:
-categories: [Gaming]
+categories: [Technology]
 published: true
 ---
 <p>With the phenomenal and growing successes of the iPhone App Store, the Android Market, and the Xbox Live Indie Games marketplace, gamers have seen an unprecedented number of titles which could be described as "clones" of more successful games&mdash;or rip-offs, if you're feeling less kind.  Along with these titles has come a veritable tsunami of hatred for their developers, from game critics and anonymous Internet commenters alike.  The commercial success of some of these titles, such as <em>Angry Birds</em>,<sup>1</sup> has shown that average gamers are happy to patronize any developer who can provide a fun experience, regardless of originality.  However, any mention of a new clone on a gaming blog or podcast inevitably brings about a stunning amount of vitriol from gamers who, presumably, are upset that their favorite megacorporations aren't getting their due.<!-- more --></p>

@@ -3,7 +3,7 @@ layout: post
 title: "Book Review: Dataclysm"
 date: 2014-10-08 22:51
 comments: true
-categories: [Personal]
+categories: [Reviews]
 ---
 
 If you've ever read OkCupid's popular [OkTrends](http://blog.okcupid.com/) blog,

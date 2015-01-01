@@ -66,9 +66,9 @@ li.post.category-coding > a:hover
   background-color: #20bb20;
 }
 
-.category-gaming a, .category-gaming a:visited,
-#blog-archives.category-gaming h1 a,
-li.post.category-gaming > a, li.post.category-gaming > a:visited
+.category-reviews a, .category-reviews a:visited,
+#blog-archives.category-reviews h1 a,
+li.post.category-reviews > a, li.post.category-reviews > a:visited
 {
   color: #c00 !important;
   -webkit-transition-duration: 0.3s;
@@ -76,16 +76,16 @@ li.post.category-gaming > a, li.post.category-gaming > a:visited
   text-decoration: none;
 }
 
-.category-gaming a:hover,
-#blog-archives.category-gaming h1 a:hover,
-li.post.category-gaming > a:hover
+.category-reviews a:hover,
+#blog-archives.category-reviews h1 a:hover,
+li.post.category-reviews > a:hover
 
 {
   color: #850000 !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-gaming a[rel="full-article"]:hover
+#content .blog-index .category-reviews a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #c00;
