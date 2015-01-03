@@ -66,9 +66,9 @@ li.post.category-coding > a:hover
   background-color: #20bb20;
 }
 
-.category-reviews a, .category-reviews a:visited,
-#blog-archives.category-reviews h1 a,
-li.post.category-reviews > a, li.post.category-reviews > a:visited
+.category-personal a, .category-reviews a:visited,
+#blog-archives.category-personal h1 a,
+li.post.category-personal > a, li.post.category-reviews > a:visited
 {
   color: #c00 !important;
   -webkit-transition-duration: 0.3s;
@@ -76,16 +76,16 @@ li.post.category-reviews > a, li.post.category-reviews > a:visited
   text-decoration: none;
 }
 
-.category-reviews a:hover,
-#blog-archives.category-reviews h1 a:hover,
-li.post.category-reviews > a:hover
+.category-personal a:hover,
+#blog-archives.category-personal h1 a:hover,
+li.post.category-personal > a:hover
 
 {
   color: #850000 !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-reviews a[rel="full-article"]:hover
+#content .blog-index .category-personal a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #c00;
@@ -116,9 +116,9 @@ li.post.category-technology > a:hover
   background-color: #e66f00;
 }
 
-.category-personal a, .category-personal a:visited,
-#blog-archives.category-personal h1 a,
-li.post.category-personal > a, li.post.category-personal > a:visited
+.category-reviews a, .category-reviews a:visited,
+#blog-archives.category-reviews h1 a,
+li.post.category-reviews > a, li.post.category-reviews > a:visited
 {
   color: #004DFF !important;
   -webkit-transition-duration: 0.3s;
@@ -126,15 +126,15 @@ li.post.category-personal > a, li.post.category-personal > a:visited
   text-decoration: none;
 }
 
-.category-personal a:hover,
-#blog-archives.category-personal h1 a:hover,
-li.post.category-personal > a:hover
+.category-reviews a:hover,
+#blog-archives.category-reviews h1 a:hover,
+li.post.category-reviews > a:hover
 {
   color: #0032A6 !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-personal a[rel="full-article"]:hover
+#content .blog-index .category-reviews a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #004DFF;

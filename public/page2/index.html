@@ -9,8 +9,9 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="[Updated December 24th, 2014: I&rsquo;m leaving this post here for historical
-purposes, but I no longer endorse Mozilla Persona. There are a number &hellip;">
+  <meta name="description" content="In September I wrote about
+my intention to develop a web application to share my photos. I made good
+progress on it throughout September and early &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -151,6 +152,74 @@ $(document).ready(function() {
   <div id="main">
     <div id="content">
       <div class="blog-index">
+  
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
+      
+
+<div class="category-coding">
+
+  <header>
+    <h1 class="entry-title">
+
+<a href="/entry/2012/11/14/photo-app-progress-update/">Photo App Progress Update</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-11-14T22:58:00-08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>10:58 pm</span></time>
+        
+         &bull; <a rel="bookmark" href="/entry/2012/11/14/photo-app-progress-update/">&infin;</a>
+      </p>
+    
+  </header>
+
+
+
+  <div class="entry-content"><p>In September I <a href="/entry/2012/09/14/social-networks-and-content-ownership/">wrote about</a>
+my intention to develop a web application to share my photos. I made good
+progress on it throughout September and early October, but for various reasons I
+haven&rsquo;t been able to work on it much in the past month or so. Last weekend,
+though, I was able to solve some blocking issues which were preventing me from
+doing an alpha release. Those being dealt with, I&rsquo;ve now got a few of my albums
+up at <a href="http://photos.mlindgren.ca/">photos.mlindgren.ca</a>; take a look and leave
+a comment if you have any feedback.</p>
+
+<p>I haven&rsquo;t released the source code yet as there&rsquo;s still a great deal of work to
+be done, and I&rsquo;m generally of the belief that dumping a bunch of unfinished,
+messy code on Github with the hope that the community will sort it out is of
+little benefit to anyone. My goal at this point is to do a beta release in a
+two to three months or so and release the code at that point. That timeline is
+anything but firm, though. This project is turning out to be much more work than
+I expected (as projects are wont to do), and I expect to be fairly busy over the
+next couple months.</p>
+
+<p>Anyway, with the alpha version up and running, this seems like a good
+opportunity to reflect on some of the issues I&rsquo;ve faced that complicated the
+project, and on what remains to be done. </div>
+  <footer>
+    <a rel="full-article" href="/entry/2012/11/14/photo-app-progress-update/">More &rarr;</a>
+  </footer>
+
+</div>
+
+    </article>
   
     
     
@@ -726,71 +795,6 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
 
     </article>
   
-    
-    
-
-
-
-
-
-
-
-
-
-    <article >
-      
-
-<div class="category-coding">
-
-  <header>
-    <h1 class="entry-title">
-
-<a href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">How to link GLUT in Qt Creator on OS X</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-09-21T00:34:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2011</span></span> <span class='time'>12:34 am</span></time>
-        
-         &bull; <a rel="bookmark" href="/entry/2011/09/21/how-to-link-glut-in-qt-creator-on-os-x/">&infin;</a>
-      </p>
-    
-  </header>
-
-
-
-  <div class="entry-content"><p>This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&rsquo;m hoping that it will prove useful to someone. For one of my courses this term, we&rsquo;re building OpenGL apps using Nokia&rsquo;s open source Qt framework. Qt provides some very nice scaffolding, and the Qt Creator IDE is among the best I&rsquo;ve used, although I imagine it lacks flexibility for general-purpose applications—that is, you probably wouldn&rsquo;t use it to build non-Qt applications. Qt also allows one to easily write cross-platform C++ GUI applications. That said, linking procedures can be a bit different on different platforms, and as a beginner it&rsquo;s not always immediately obvious how instructions for Windows development translate into other environments.</p>
-
-<p>In particular, I found myself having difficulty linking the OpenGL Utility Toolkit (GLUT) with my project on Mac OS X. After much Googling and some frustration, I came up with the correct way to go about it, which is as follows:</p>
-
-<ol>
-    <li>In Qt Creator, open your project file (.pro) in the text editor.  Right click on the text editor pane and select &#8220;Add Library&#8230;&#8221;</li>
-    <li>Chose &#8220;System Library.&#8221;</li>
-    <li>Locate the GLUT framework.  On my Mac, running Lion, I used <code>/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/GLUT.framework</code>. However, it seems there are multiple different copies on the disk that you could use.  If that path doesn&#8217;t work for you, just search for <code>glut.h</code> in Finder and you&#8217;ll find a copy of the framework.  The path you enter into Qt Creator should point to a <code>.framework</code> directory.</li>
-    <li>Qt Creator will generate code in your project file which will link to the correct framework or library depending on which platform the code is being compiled on.</li>
-    <li>Finally, because Apple loves to be different, the glut.h header path is different on OS X.  <strong>You&#8217;ll need to <code>#include &lt;GLUT/glut.h&gt;</code></strong>, instead of <code>&lt;gl/glut.h&gt;</code> is usually the case.  You can use preprocessor conditional statements to make this inclusion cross-platform:
-<pre>#if defined(__APPLE__) || defined(MACOSX)
-  #include &lt;GLUT/glut.h&gt;
-#else
-  #include &lt;gl/glut.h&gt;
-#endif</pre>
-</li>
-</ol>
-
-
-<p>That&rsquo;s it! If you have any trouble, leave a comment.</p>
-</div>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page3">&larr; Older</a>
@@ -820,6 +824,11 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
     
       
       <li class="post             category-reviews            ">
+        <a href="/entry/2015/01/02/book-highlights-halo-the-fall-of-reach/">Book Highlights: Halo: The Fall of Reach</a>
+      </li>
+    
+      
+      <li class="post             category-reviews            ">
         <a href="/entry/2014/12/26/book-review-i-am-malala/">Book Review: I Am Malala</a>
       </li>
     
@@ -836,11 +845,6 @@ title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress o
       
       <li class="post             category-reviews            ">
         <a href="/entry/2014/10/26/book-review-free-will/">Book Review: Free Will</a>
-      </li>
-    
-      
-      <li class="post             category-reviews            ">
-        <a href="/entry/2014/10/08/dataclysm-who-we-are-when-we-think-no-ones-looking/">Book Review: Dataclysm</a>
       </li>
     
   </ul>

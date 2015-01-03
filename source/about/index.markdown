@@ -24,7 +24,7 @@ projects and serve as the canonical source of my online identity.  The opinions
 expressed here are my own and do not represent the views of my employers or
 colleagues, past or present.
 
-Want to know more? You might be interested in...
+Want to know more? You might be interested in... <a id="review_policy">&nbsp;</a>
 
 ### Review Policy
 
