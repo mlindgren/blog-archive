@@ -18,7 +18,6 @@
     color: $text-color; margin-bottom: .3em;
     font-size: $h3;
     a {
-      @include hover-link;
       &:hover { color: $link-color-hover; }
       font-weight: normal;
       display: inline-block;
@@ -26,7 +25,6 @@
   }
   article[data-linklog] .entry-title {
     font-size: $h4;
-    a { text-decoration: underline; }
   }
   a.category, time {
     @extend .sans;

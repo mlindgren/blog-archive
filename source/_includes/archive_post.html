@@ -4,8 +4,8 @@
 {{ category | prepend:'category-' }}
 {% endfor %}
 {% endcapture %}
-<h1 class="{{ category_class | strip_newlines }}">
-<a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
+<div class="{{ category_class | strip_newlines }}">
+{% include post/title.html %}
 <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ post.date | date: "<span class='month'>%b</span> <span class='day'>%d</span> <span class='year'>%Y</span>"}}</time>
 <footer>
   {% if linklog %}
@@ -16,3 +16,4 @@
   <span class="categories">posted in {{ post.categories | category_links }}</span>
   {% endif %}
 </footer>
+</div>

@@ -28,7 +28,6 @@ article {
   .entry-title {
     margin: 0;
     a { text-decoration: none;
-      &:hover { text-decoration: underline; }
     }
     .blog-index & {
       font-size: $h1;
@@ -45,6 +44,14 @@ article {
   h2:first-child, header + h2 { background: none; }
 
   .entry-content & h2:first-child, header + h2 { padding-top: 0; }
+
+  &[data-linklog] {
+    .entry-title {
+      font-size: $h1;
+    }
+
+    .blog-index & .entry-title { font-size: $h2; }
+  }
 
   .linklog-marker {
     color: $text-color-light;
