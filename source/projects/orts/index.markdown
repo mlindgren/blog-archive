@@ -1,157 +1,180 @@
 ---
 layout: page
-title: "orts"
+title: "ORTS UI Customization with Lua"
 date: 2013-06-22 17:07
 comments: true
 sharing: true
 footer: true
+published: false
 ---
 
 ## Goal
-As described in the project proposal, the goal of this project was to modify
-the Open Real-Time Strategy game engine to allow for user interface
-customization through the use of the [Lua](http://www.lua.org)
-scripting language.
+The goal of this project was to modify the Open Real-Time Strategy game engine
+to allow for user interface (UI) customization through the use of the
+[Lua](http://www.lua.org) scripting language.
 
 ## Prior Work
 ### World of Warcraft
+
 The project itself was inspired by the user interface customization options
-available in World of Warcraft, hereafter referred to as WoW. Numerous game
-engines, including many predating WoW, provide scripting support in various
+available in _World of Warcraft_, hereafter referred to as _WoW_. Numerous game
+engines, including many predating _WoW_, provide scripting support in various
 ways. In most cases, though, these game engines used scripting only as a way to
-make development or game modification easier. By contrast, WoW provides
+make development or game modification easier. By contrast, _WoW_ provides
 user-centric scripting, encouraging users to customize their own game experience
-through Lua scripts. If it was not the first game to offer this mechanic, then
-it was certainly the first to bring it to prominence.
+through Lua scripts. _WoW_ was likely not the first game to include this
+mechanic, but it was certainly instrumental in bringing the mechanic to
+prominence; today, a scriptable user interface is a basic expectation for
+Massively Multiplayer Online games (MMOs).
 
-Figure 1: A "stock" World of Warcraft" user interface.
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/wow1.jpg" alt="A stock World of Warcraft user interface"/>
+<br />
+<small>
+Figure 1: A (mostly) "stock" World of Warcraft user interface. Copyright 
+unknown. Used under Fair Use.
+</small>
+</div><br />
 
-Figure 2: A heavily modified World of Warcraft" user interface.
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/wow2.jpg" alt="A heavily modified World of Warcraft user interface"/>
+<br />
+<small>
+Figure 2: A heavily modified World of Warcraft user interface. Copyright
+unknown. Used under Fair Use.
+</small>
+</div><br />
 
-In the above figures, the contrast between the "stock" World of Warcraft user
-interface is readily apparent. In addition to the obvious visual differences,
-experienced WoW players will notice that the player in the lower screenshot is
-using mods which provide him or her with extra information not easily attainable
-from the stock UI. For instance, the Grid UI script (lower right) shows
-important status information about other members of the player's raid group
-which the stock UI cannot show in a convenient manner. Although Blizzard
-Entertainment, the developer of WoW, has balanced scripting capabilities to
-ensure that they do not provide an unfair gameplay advantage[^advantage], many
-of the game's most competitive players find it hard to live without the extra
-information and input options they provide.
+In the above figures, the contrast between the "stock" _World of Warcraft_ user
+interface is and the modified interface is readily apparent. In addition to the
+obvious visual differences, experienced _WoW_ players will notice that the
+player in the lower screenshot is using mods which provide him or her with extra
+information not easily attainable from the stock UI. For instance, the
+[Grid](http://www.wowinterface.com/downloads/info5747-Grid.html) UI mod
+(lower right) shows important status information about other members of the
+player's raid group which the stock UI cannot show in a convenient manner.
+Although Blizzard Entertainment, the developer of WoW, has balanced scripting
+capabilities to ensure that they do not provide an unfair gameplay
+advantage[^advantage], many players find it hard to play without the extra
+information and input options provided by UI mods. Especially among highly
+skilled and competitive players, certain modifications are
+indispensable&mdash;again, Grid is a good example.
 
-The success of user interface scripting in WoW is such that it is fast becoming
-a standard feature among massively multiplayer online games (MMOs).  Developer
-Trion Worlds initially released the critically acclaimed MMO Rift without
-scripting support, but with a much more customizable stock interface than WoW
-has to this day. Nevertheless, after a huge demand from players, Trion added
-user interface scripting (with Lua) in a recent patch.
+The success of user interface scripting in _WoW_ is such that, as previously
+mentioned, it is now considered a standard feature of MMOs and is expected to be
+included at launch.  In 2011, developer Trion Worlds released the critically
+acclaimed MMO _Rift_ without scripting support, but with a much more
+customizable stock interface than _WoW_ has to this day. Nevertheless, after a
+huge demand from players, Trion did eventually add user interface scripting,
+also using Lua.
 
 ### ORTS Scripting
+
 Unbeknownst to me at the outset of the project, ORTS itself provides a robust
 scripting system for both gameplay and user interface scripting. The system uses
 a completely custom language designed and implemented by one of the project's
-original developers. While it is impressive that Tim designed and
-implemented a custom scripting environment, I feel that there are some
-significant shortcomings to his approach when considered from the perspective of
-a general game development project:
-Whereas there exists a large community of experienced Lua developers, including
-many who have prior experience with user interface scripting for video games,
-there are obviously no developers familiar with any custom "in-house" scripting
-system. This limits the accessibility of the scripting features.
-In addition to the above, a custom language means that the development team
-themselves will be unable to leverage existing skillsets.
-Developing and implementing a custom scripting system is a significant
-undertaking and potentially a source of many difficult-to-fix bugs.
-A custom scripting engine which is even moderately generalized is unlikely to be
-as efficient as a standalone scripting system.
-$
-established languages for in-game scripting support. Thus, although my project
-is something of a retread, it is not without merit, as it provides an
+original developers. While it is impressive that the small development team
+designed and implemented a custom scripting environment, I feel that there are
+some significant shortcomings to his approach when considered from the
+perspective of a general game development project:
+
+- Whereas there exists a large community of experienced Lua developers,
+  including many who have prior experience with user interface scripting for
+  video games, there are obviously no developers familiar with any custom
+  "in-house" scripting system. This limits the accessibility of the scripting
+  features.
+- In addition to the above, a custom language means that the development team
+  themselves will be unable to leverage existing skillsets.
+- Developing and implementing a custom scripting system is a significant
+  undertaking and potentially a source of many difficult-to-fix bugs.
+- A custom scripting engine which is even moderately generalized is unlikely to
+  be as efficient as a standalone scripting system.
+
+For these reasons, I believe that there is a trend in the industry to move
+towards established languages for in-game scripting support. Thus, although my
+project is something of a retread, it is not without merit, as it provides an
 opportunity to examine what I feel is a more modern approach to in-game
 scripting.
-Process
-$
-1. 2.
-3. 4.
+
+## Process
+
 At a broad level, I undertook the following four steps in implementing this
 project:
-Integrate the Lua runtime environment into the ORTS codebase.
-Expose new and existing ORTS functions to the Lua runtime, allowing it to query
-and in limited ways modify game state.
-Create Lua hooks for relevant game events such as frame redraw, allowing the Lua
-runtime to respond to such events.
-Design and implement a framework for the user interface in Lua, as well as
-sample UIs.
-•
-• • •
-For the above reasons, I believe that there is a trend in the industry to move
-towards
-Step One: Lua Integration
-$ The first step was also the easiest, as Lua was designed to be easily
+
+1. Integrate the Lua runtime environment into the ORTS codebase.
+1. Expose new and existing ORTS functions to the Lua runtime, allowing it to
+   query and in limited ways modify game state.
+1. Create Lua hooks for relevant game events such as frame redraw, allowing the
+   Lua runtime to respond to such events.
+1. Design and implement a framework for the user interface in Lua, as well as
+   sample UIs.
+
+### Step One: Lua Integration
+The first step was also the easiest, as Lua was designed to be easily
 embeddable. Integrating it with ORTS was a simple manner of downloading the Lua
 source code, putting it in a convenient directory, and integrating it with the
 ORTS makefiles. From there, any ORTS code needing access to Lua needed only to
 call a few simple C functions to set up a Lua state and start executing code.
-$ The most difficult part of this step was, surprisingly, finding a way to get
-Lua to build with ORTS. (It was not excessively difficult, just more difficult
-than the other parts.) I wanted the ORTS makefile to build Lua rather than
-requiring the user to manually install it
-￼on his or her system. However, ORTS Makefile expects a certain structure in the
-files that it builds, and this makes it poorly suited for integration with
-third-party libraries which have their own specific build requirements. In the
-end, I simply added a rule to the ORTS makefile which explicitly called make on
-the Lua makefile. This is a less-than-ideal solution since it circumvents the
-typical ORTS library build process in a sense, but there was no easier way to go
-about it without significant overall changes.
-Step Two: Exposing ORTS Functions to Lua
-$ This step was perhaps the most challenging as it required me to build an
+
+The most difficult part of this step was, surprisingly, finding a way to get Lua
+to build with ORTS. (It was not excessively difficult, just more difficult than
+the other parts.) I wanted the ORTS makefile to build Lua rather than requiring
+the user to manually install it on his or her system. However, ORTS Makefile
+expects a certain structure in the files that it builds, and this makes it
+poorly suited for integration with third-party libraries which have their own
+specific build requirements. In the end, I simply added a rule to the ORTS
+makefile which explicitly called make on the Lua makefile. This is a
+less-than-ideal solution since it circumvents the typical ORTS library build
+process in a sense, but there was no easier way to go about it without
+significant overall changes.
+
+### Step Two: Exposing ORTS Functions to Lua
+
+This step was perhaps the most challenging as it required me to develop an
 in-depth understanding of the system for calling C functions from within Lua.
 The Lua runtime uses a register-based virtual machine which operates in a manner
 that should be familiar to anyone with assembly language programming experience.
 Although the virtual machine is register-based, when interacting with Lua from C
 one is only concerned with the stack. The typical process for calling a C
 function from Lua is as follows:
-1. 2.
-3.
-4. 5.
-$
-of all, the astute reader will notice that I've been referring to "C" rather
-than "C++." Lua is written in C, and provides only a C API. This results in some
-challenges when interfacing with it using C++:
-• Functions exposed to Lua cannot be member functions. If you need to call a
-member function, you have to wrap it in a non-member function, and that function
-must have access to the object to call the member function on in one way or
-another.
-• Lua provides types for passing, retrieving and even interacting with C
-structures in the Lua VM, using pointers. However, as soon as you pass a pointer
-to Lua, type safety is lost.
-• Additionally, memory management is a concern with pointers passed to Lua.
-Although the Lua VM cannot deallocate your C/C++ objects, you must take care to
-ensure they are not deallocated while the Lua VM might be using them.
-• Like many other scripting languages, Lua's introspection features make it hard
-to "hide" data from the user. This means the user could modify any pointer
-passed to the
-Lua VM, which could result in crashes or exploits.
-Create a Lua wrapper for the function you wish to call. The wrapper must have a
-particular signature in order to be registrable with the Lua runtime.
-Within the wrapper, check the size of the Lua virtual machine (VM) stack to
-determine how many arguments were given. (If an unexpected number of arguments
-were present, the developer will have to determine how to handle the error.)
-Using functions provided by the Lua API, retrieve argument values from the Lua
-stack. The developer should check the arguments to ensure that they are valid
-for the C function to be called.
-Call the C function with the retrieved arguments.
-Report any errors and return the result to the Lua runtime by placing it on the
-stack.
+
+1. Create a Lua wrapper for the function you wish to call. The wrapper must have
+   a particular signature in order to be registrable with the Lua runtime.
+1. Within the wrapper, check the size of the Lua virtual machine (VM) stack to
+   determine how many arguments were given. (If an unexpected number of arguments
+   were present, the developer will have to determine how to handle the error.)
+1. Using functions provided by the Lua API, retrieve argument values from the
+   Lua stack. The developer should check the arguments to ensure that they are
+   valid for the C function to be called.
+1. Call the C function with the retrieved arguments.
+1. Report any errors and return the result to the Lua runtime by placing it on
+   the stack.
+
 The process is not complicated, but there are a number of important caveats.
-First
-￼• It is easy to write unsafe C/C++ code which can be called from the Lua VM and
-cause the host application to crash.
-• Additionally, if one is not careful to properly use protected calls when
-calling from C/C ++ to Lua, errors in the Lua code can crash the host
-application.
-$ Due to the limited time available for this project, I was not able to come up
+First of all, the astute reader will notice that I've been referring to C rather
+than C++. Lua is written in C, and provides only a C API. This results in some
+challenges when interfacing with it using C++:
+
+- Functions exposed to Lua cannot be member functions. If you need to call a
+   member function, you have to wrap it in a non-member function, and that
+   function must have access to the object to call the member function on in
+   one way or another.
+- Lua provides types for passing, retrieving and even interacting with C
+  structures in the Lua VM, using pointers. However, as soon as you pass a
+  pointer to Lua, type safety is lost.
+- Additionally, memory management is a concern with pointers passed to Lua.
+  Although the Lua VM cannot deallocate your C/C++ objects, you must take care
+  to ensure they are not deallocated while the Lua VM might be using them.
+- Like many other scripting languages, Lua's introspection features make it hard
+  to "hide" data from the user. This means the user could modify any pointer
+  passed to the Lua VM, which could result in crashes or exploits.
+- It is easy to write unsafe C/C++ code which can be called from the Lua VM and
+  cause the host application to crash.
+- Additionally, if one is not careful to properly use protected calls when
+  calling from C/C++ to Lua, errors in the Lua code can crash the host
+  application.
+
+Due to the limited time available for this project, I was not able to come up
 with a robust solution to the pointer modification problem; thus, in my ORTS
 code, there are certain pointers exposed in the Lua VM which an astute user
 could theoretically modify to exploit the game. (That said, the somewhat
@@ -159,31 +182,40 @@ atypical client-server architecture of ORTS probably severely limits any
 advantages the user could hope to give himself. A more likely scenario is that
 an unwitting user could accidentally modify the pointers and cause the
 application to crash.)
-$ In the interest of rapid development, my goal was to provide as few ORTS
+
+In the interest of rapid development, my goal was to provide as few ORTS
 functions to the Lua VM as possible, and to write all of the user interface code
 in Lua. I was largely successful in this endeavor, and in a few cases I managed
-to take advantage of some of Tim Furtak's existing UI scripting functions.
-$ One of the most challenging aspects of exposing ORTS functionality and game
+to take advantage of some of ORTS' existing UI scripting functions.
+
+One of the most challenging aspects of exposing ORTS functionality and game
 information to Lua came in the form of making my scripting system interact with
-Tim's existing system. In ORTS, game rules and unit attributes are defined in
-scripts. Thus, for my Lua scripts to be able to access game state, I had to
-figure out how to call the relevant functions which were designed for T im's
-scripting system.
-$ For some aspects of development this proved to be a minor inconvenience,
-whereas for others it became a major stumbling block. For instance, Tim's
+the existing scripting system. In ORTS, game rules and unit attributes are
+defined in scripts. Thus, for my Lua scripts to be able to access game state, I
+had to figure out how to call the relevant functions which were designed for the
+original scripting system.
+
+For some aspects of development this proved to be a minor inconvenience, whereas
+for others it became a major stumbling block. For instance, the original
 scripting system is by necessity tightly integrated with the "action" system for
 in game units. Each unit defines its actions and the buttons corresponding to
 those actions entirely in scripts. The complex manner in which these actions are
 defined and organized meant that I had to fall back on the existing UI for
-actions and action buttons.
-$ Needless to say, integrating the two scripting systems was a complicated
-process and resulted in some less-than-optimal code. If one were to pursue the
-idea of using Lua scripting in ORTS, ideally Tim's system would be replaced and
-all gameplay information would be defined in Lua scripts. Naturally, that would
-make it much easier for the user interface to interact with game state. That
-said, replacing Tim's scripting system entirely with Lua would probably be
-tantamount to a complete rewrite. Perhaps it's something to consider for ORTS 2.
-Step Three: Notify Lua of Game Events
+actions and action buttons, as I did not have time to reverse engineer all of
+the existing scripts and rewrite them in Lua.
+
+Needless to say, integrating the two scripting systems was a complicated process
+and resulted in some less-than-optimal code. If one were to pursue the idea of
+using Lua scripting in ORTS, ideally the original scripting system would be
+replaced and all gameplay information would be defined in Lua scripts.
+Naturally, that would make it much easier for the user interface to interact
+with game state. That said, replacing the original scripting system entirely
+with Lua would probably be tantamount to a complete rewrite, given how the tight
+integration between the scripting system and other game systems. This could be a
+potential consideration for the next major iteration of the ORTS project.
+
+### Step Three: Notify Lua of Game Events
+
 $ This step was relatively simple. Calling Lua code from C/C++ is a simple
 matter of using the Lua API to find the "index" of the relevant Lua function,
 pushing the arguments onto the stack, and then executing the function. Thus, I
