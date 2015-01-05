@@ -3,7 +3,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-01-02T20:03:47-08:00</updated>
+  <updated>2015-01-04T20:52:37-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -11,6 +11,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Be a Communications Consequentialist]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2015/01/04/be-a-communications-consequentialist/"/>
+    <updated>2015-01-04T20:41:51-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2015/01/04/be-a-communications-consequentialist</id>
+    <content type="html"><![CDATA[<p>Via <a href="http://slatestarcodex.com/2015/01/01/untitled/#comment-170665">a comment on Slate Star Codex</a>,
+<a href="http://measureofdoubt.com/">Measure of Doubt</a> discusses some strategies for
+effective written communication, using a &ldquo;consequentialist&rdquo; approach. This is
+probably the one I need to work on most:</p>
+
+<blockquote><p><strong>Shorten posts.</strong> Presenting readers with an epic saga and expecting them to read
+it all carefully is asking a lot. Ben Radford has an interesting post
+<a href="http://www.centerforinquiry.net/blogs/show/people_dont_read_and_why_it_matters/">bemoaning that people don&rsquo;t read</a>.
+It&rsquo;s 1,380 words – appropriate for some audiences, not for others. If my posts
+get over 1,000 words, I look for ways to trim them or break them into separate
+posts.</p></blockquote>
+
+<p>Good advice, although I think it does depend to an extent on the audience you&rsquo;re
+writing for&mdash;which is something you must always be mindful of. Personally,
+I quite enjoy the occasional 10,000 word epic.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Book Highlights: Halo: The Fall of Reach]]></title>
@@ -3302,17 +3325,6 @@ Vindictiveness? <br />
 
 
 <p>2010 and 2011 were exciting years for me, and although I&rsquo;m not ready to discuss it yet, I have something huge lined up for after I graduate in April of 2012. In the meantime, I&rsquo;ll continue to post here as often as I can manage. Thanks for reading, and happy new year!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ethical Game Design from Gamasutra]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra/"/>
-    <updated>2011-12-30T16:28:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra</id>
-    <content type="html"><![CDATA[<p>I came across a couple excellent articles on Gamasutra which I want to share here. The first, &ldquo;<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>&rdquo; is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, &ldquo;deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice.&rdquo; I&rsquo;ll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the &ldquo;freemium&rdquo; model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam&rsquo;s thoughts on the subject are certainly worth reading.</p>
-
-<p>&ldquo;<a title="Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy" href="http://www.gamasutra.com/blogs/EvanJones/20110815/8195/Radical_Plagiarism_The_Ethical_Lessons_of_the_Gamenauts_Controversy.php" target="_blank">Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy</a>,&rdquo; by <a href="http://www.gamasutra.com/blogs/author/EvanJones/4235/">Evan Jones</a>, is equally thought-provoking. Evan recounts the cloning of the indie game <a href="http://www.bored.com/game/play/150995/Radical_Fishing.html"><em>Radical Fishing</em></a> by the more established indie studio <a href="http://gamenauts.com/">Gamenauts</a>, and adds his perspective on the cultural impact of the rampant cloning that takes place on mobile app stores. Returning readers may recall that I&rsquo;ve previously <a title="In Defense of Clones" href="http://www.mlindgren.ca/archives/318">defended the practice of cloning games</a>. My defense excluded the cloning of smaller titles by established studios, which I&rsquo;ve always viewed as morally questionable at best, but Evan&rsquo;s article nevertheless gave me pause. He provides a strong counterpoint to my own thinking on the matter, and while I&rsquo;m not yet ready to reverse my position, his argument has undeniable weight. If you&rsquo;re at all interested in game development, both articles are well worth your time.</p>
 ]]></content>
   </entry>
   
