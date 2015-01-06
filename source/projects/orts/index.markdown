@@ -1,12 +1,18 @@
 ---
 layout: page
 title: "ORTS UI Customization with Lua"
-date: 2013-06-22 17:07
+date: 2015-01-05 23:00
 comments: true
 sharing: true
 footer: true
-published: false
 ---
+
+_[The following is a report for a project I did for the University of Alberta's
+[CMPUT 350](https://www.cs.ualberta.ca/undergraduate-students/course-directory/advanced-game-programming)
+course in the Fall 2011 semester. For this project, I modified the
+[Open Real Time Strategy (ORTS)](https://skatgame.net/mburo/orts/) game engine
+to integrate a Lua virtual machine, allowing scripting of user interface
+elements through Lua code. The source code for this project is not available.]_
 
 ## Goal
 The goal of this project was to modify the Open Real-Time Strategy game engine
@@ -31,7 +37,7 @@ Massively Multiplayer Online games (MMOs).
 <img src="/images/wow1.jpg" alt="A stock World of Warcraft user interface"/>
 <br />
 <small>
-Figure 1: A (mostly) "stock" World of Warcraft user interface. Copyright 
+Figure 1: A (mostly) "stock" World of Warcraft user interface. Copyright
 unknown. Used under Fair Use.
 </small>
 </div><br />
@@ -156,9 +162,9 @@ than C++. Lua is written in C, and provides only a C API. This results in some
 challenges when interfacing with it using C++:
 
 - Functions exposed to Lua cannot be member functions. If you need to call a
-   member function, you have to wrap it in a non-member function, and that
-   function must have access to the object to call the member function on in
-   one way or another.
+  member function, you have to wrap it in a non-member function, and that
+  function must have access to the object to call the member function on in
+  one way or another.
 - Lua provides types for passing, retrieving and even interacting with C
   structures in the Lua VM, using pointers. However, as soon as you pass a
   pointer to Lua, type safety is lost.
@@ -216,199 +222,240 @@ potential consideration for the next major iteration of the ORTS project.
 
 ### Step Three: Notify Lua of Game Events
 
-$ This step was relatively simple. Calling Lua code from C/C++ is a simple
+This step was relatively simple. Calling Lua code from C/C++ is a simple
 matter of using the Lua API to find the "index" of the relevant Lua function,
 pushing the arguments onto the stack, and then executing the function. Thus, I
 was able to notify Lua (by calling user-defined Lua functions) of the following
 events:
-￼• During frame redraw, Lua is notified after the 3D world is drawn. This allows
+
+- During frame redraw, Lua is notified after the 3D world is drawn. This allows
 Lua to draw the user interface on top of 3D world.
-• Lua is notified when the mouse is moved or a mouse button is pressed.
-• Lua is notified when a key is pressed.
-Step Four: Lua UI Framework
-$ For this step, I leveraged my experience in designing and implementing UI
-components for my iPhone game, Puzzle Panel. For simplicity, the UI framework
-uses a simple delegate model so that individual "widgets" can respond to events.
-$ The user creates a layout by adding widgets to the framework using a provided
+- Lua is notified when the mouse is moved or a mouse button is pressed.
+- Lua is notified when a key is pressed.
+
+### Step Four: Lua UI Framework
+For this step, I leveraged my experience in designing and implementing UI
+components for my iPhone game, [Puzzle Panel](/projects/puzzle-panel/). For
+simplicity, the UI framework uses a simple delegate model so that individual
+"widgets" can respond to events.
+
+The user creates a layout by adding widgets to the framework using a provided
 function. There is no pre-defined structure for a widget; it can be any Lua
-class2, so long as it provides all of the methods necessary to respond to
+class[^class], so long as it provides all of the methods necessary to respond to
 actions for which it has been marked a delegate. Naturally, all widgets are
 drawable, so each time the framework is notified by ORTS of a frame redraw, the
 draw method of each widget is called. Widgets are drawn in the order they were
 added to the scene.
-$ In addition to drawing, widgets can be registered as key listeners or mouse
+
+In addition to drawing, widgets can be registered as key listeners or mouse
 listeners. Key listeners are notified of key presses by the framework; mouse
 listeners are notified of mouse presses and movement. The notification occurs in
 order of priorities specified by the user, and any listener can choose to
-"consume" relevant events by returning true in its notification function. (Mouse
-movement cannot be consumed for obvious reasons.) Consumed events are not
-propagated to lower-priority listeners, and additionally, are not passed on to
-the native ORTS code. Thus, Lua scripts can override default ORTS behavior.
-$ Using the simple primitives I set up in steps two and three, I was able to
-build a fairly complex user interface system which could, with enough additional
-Lua code, provide most of the functionality expected of modern windowing
-systems. Although the time I had available for this project limited the number
-of widgets I was able to implement, many more widgets are theoretically
-possible.
-Challenges Encountered
-$ In addition to the challenges already discussed in the Process section, there
+"consume" relevant events by returning `true` in its notification function.
+Consumed events are not propagated to lower-priority listeners, and
+additionally, are not passed on to the native ORTS code. Thus, Lua scripts can
+override default ORTS behavior. (Mouse movement cannot be consumed, because
+otherwise the if any widget consumed mouse movement the user would no longer be
+able to interact with the game.)
+
+Using the simple primitives I set up in steps two and three, I was able to build
+a fairly complex user interface system which could, with enough additional Lua
+code, provide most of the functionality expected of modern windowing systems.
+Although the time I had available for this project limited the number of widgets
+I was able to implement, many more widgets are technically possible.
+
+### Challenges Encountered
+
+In addition to the challenges already discussed in the Process section, there
 were a number of general challenges which I had to overcome in undertaking this
 project. First and foremost was simply learning to work with ORTS itself.
 Although it is an impressive research project, ORTS has not seen serious
 development in a number of years, and it has a number of serious issues which
 impede further development efforts.
-• A large number of dependencies must be manually installed to compile and run
-ORTS (if one is working in an environment where those dependencies have not
-already been installed, i.e. other than the University of Alberta lab machines.)
-2 Strictly speaking, Lua is not object-oriented, but its built in structures
-provide a close approximation of object orientation. For simplicity, I use the
-world "class." The specifics of mimicking object orientation in Lua are
-remarkably complicated.
-￼￼
-￼Although it claims to be platform-independent, getting ORTS to build on modern
-Mac OS X is very difficult. Even after successfully compiling it, I was never
-able to get it to run properly; the ortsg window never appears, and both orts
-and ortsg crash on exit.
-I spent a great deal of time trying to find workarounds for these problems, but
-to no avail. I think it is likely that were they overcome, other problems would
-occur on Mac OS X as well. In addition, I have heard from other students that
-ortsg freezes after a matter of seconds when built and executed on Windows.
-The unmodified ortsg application suffers from seemingly random (and therefore
-not easily reproducible, and hence not easily debuggable) segmentation faults on
-the lab machines. Segmentation faults occasionally occur on startup, but more
-often . This remains a source of concern for me; it is difficult to guarantee
-that my own code does not cause segmentation faults when the existing code does
-at random.
-Many or perhaps all of the example games and applications included with the ORTS
-source code do not seem to build and run properly—at least, not without invoking
-some black magic compilation procedure which is not made clear by the sparse
-documentation, as far as I can tell.
-$
-not very easy to work with in some respects. The code suffers from a serious
-lack of comments in many places, which meant that figuring out which functions
-to call and where was largely a process of trial and error for me.
-$ The extent to which the code is modularized and the particular manner in which
+
+- A large number of dependencies must be manually installed to compile and run
+  ORTS (if one is working in an environment where those dependencies have not
+  already been installed, i.e. other than the University of Alberta lab
+  machines.)
+- Although it claims to be platform-independent, getting ORTS to build on modern
+  Mac OS X is very difficult. Even after successfully compiling it, I was never
+  able to get it to run properly; the `ortsg` window never appears, and both
+  orts and `ortsg` crash on exit.  I spent a great deal of time trying to find
+  workarounds for these problems, but to no avail. I think it is likely that
+  were they overcome, other problems would occur on Mac OS X as well. In
+  addition, I have heard from other students that `ortsg` freezes after a matter
+  of seconds when built and executed on Windows.
+- The _unmodified_ `ortsg` application suffers from seemingly random (and
+  therefore not easily reproducible, and hence not easily debuggable)
+  segmentation faults on the lab machines. Segmentation faults occasionally
+  occur on startup, but more often at random times during gameplay. Obviously,
+  it was difficult to guarantee that my own code did not cause segmentation
+  faults when the existing code already did at random.
+- Many or perhaps all of the example games and applications included with the
+  ORTS source code do not seem to build and run properly&mdash;at least, not
+  without invoking some black magic compilation procedure which is not made
+  clear by the sparse documentation.
+
+Compilation and segmentation fault issues notwithstanding, the ORTS code is not
+very easy to work with in some respects. The code suffers from a serious lack of
+comments in many places, which meant that figuring out which functions to call
+and where was largely a process of trial and error for me.
+
+The extent to which the code is modularized and the particular manner in which
 it is organized makes it difficult to quickly gain an understanding of. This
 problem is exacerbated by the occasional use of complicated preprocessor macros.
-To some extent I think these problems are endemic to large C++ projects in
+To some extent I suspect these problems are endemic to large projects in
 general, and with time the structure of the ORTS system as a whole would have
 likely become more familiar and made more sense to me.
-$ In the process section, I discussed in detail the challenges I encountered in
+
+In the process section, I discussed in detail the challenges I encountered in
 integrating Lua with the ORTS C++ code. Most of these challenges arose due to
 the fact that the Lua API is a C API. There are frameworks designed to ease the
-process of integrating Lua with C++; one such framework is Luabind. It likely
+process of integrating Lua with C++; one such framework is
+[Luabind](http://www.rasterbar.com/products/luabind.html). It likely
 would have been beneficial in this project. Unfortunately, Luabind requires the
-Boost.Jam build system. After some investigation, I decided that setting up
-Boost.Jam and, in particular, integrating it with the existing ORTS build
-process would take up too much time that I could otherwise spend on
-functionality, and decided to hand-write all of my Lua integration code. Of
-course, one advantage to not using Luabind is that I gained a greater
-understanding of the standard Lua API than I would have had I used it.
-•
-•
-•
-Compilation and segmentation fault issues not withstanding, the ORTS code itself
-is
-￼￼
-￼Results
-$ The following series of screenshots serve as an example of the basic
+[Boost.Jam](http://www.boost.org/build/doc/html/bbv2/jam.html) build system.
+After some investigation, I decided that setting up Boost.Jam and, in
+particular, integrating it with the existing ORTS build process would take up
+too much time that I could otherwise spend on functionality, and decided to
+hand-write all of my Lua integration code. Of course, one advantage to not using
+Luabind is that I gained a greater understanding of the standard Lua API than I
+would have had I used it.
+
+## Results
+
+The following series of screenshots serve as an example of the basic
 functionality that can be accomplished with my Lua UI modification system:
-￼Figure 3: The standard ortsg user interface.
-￼￼Figure 4: An ortsg interface modified with Lua, mimicking S tarCra" 2.
-￼￼Figure 5: A minimalist ortsg interface.
-$ While the changes may appear primarily cosmetic, a significant amount of work
-is taking place on the backend to relay information from the standard ORTS
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/orts1.png" alt="The standard ortsg user interface."/>
+<br />
+<small>
+Figure 3: The standard <code>ortsg</code> user interface.
+</small>
+</div><br />
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/orts2.png" alt="An ortsg interface modified with Lua, mimicking StarCraft 2."/>
+<br />
+<small>
+Figure 4: An <code>ortsg</code> interface modified with Lua, mimicking <em>StarCraft 2</em>.
+</small>
+</div><br />
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/orts3.png" alt="A minimalist orstg interface."/>
+<br />
+<small>
+Figure 5: A minimalist <code>ortsg</code> interface.
+</small>
+</div><br />
+
+While the changes may appear primarily cosmetic, a significant amount of work is
+taking place on the backend to relay information from the standard ORTS
 scripting environment to the Lua scripting environment. For instance, in order
 to simply draw the player's resource counts, the Lua script must be able to
 query the game state, find the scripted player object, access its resource count
 attributes by name, and retrieve the values. All of this is non-trivial.
-Possible Improvements
-• Scripted actions from the existing system could be exposed to Lua, which would
-allow for the interface to be design entirely in Lua. As mentioned in the
-process section, currently the Lua interface falls back on Tim's scripted
-interface for actions and action buttons due to complications in interfacing the
-two. This would be a significant undertaking.
-￼• A more robust way to provide access to C++ objects from Lua would be
-beneficial from a security and stability perspective. As previously mentioned,
-currently raw C++ pointers are exposed to Lua, which negates type safety and
-allows scriptwriters to perform unsafe operations.
-I suspect that the proper way to handle this is to give Lua access only to some
-sort of non-pointer identifier for objects it needs to know about. For instance,
-for C++ objects stored in a std::map<string, ?>, Lua could access the objects by
-their identifying strings. Unfortunately this requires an overall system
-architecture designed with special Lua identifiers in mind, which made it
-unfeasible for this project.
-• Currently modifications such as adding and removing widgets from the UI must
-be performed in Lua code, or in the Lua console widget (by executing Lua code.)
-It would be much more user-friendly to provide and in-game interface for adding,
-enabling and disabling UI scripts.
-Conclusion
-$ In the project proposal, I set out three metrics on which to determine the
+
+## Possible Improvements
+- Scripted actions from the existing system could be exposed to Lua, which would
+  allow for the interface to be design entirely in Lua. As mentioned in the
+  process section, currently the Lua interface falls back on the pre-existing
+  scripted interface for actions and action buttons due to complications in
+  interfacing the two. This would be a significant undertaking.
+- A more robust way to provide access to C++ objects from Lua would be
+  beneficial from a security and stability perspective. As previously mentioned,
+  currently raw C++ pointers are exposed to Lua, which negates type safety and
+  allows script-writers to perform unsafe operations.
+
+  I suspect that the proper way to handle this is to give Lua access only to
+  some sort of non-pointer identifier for objects it needs to know about. For
+  instance, for C++ objects stored in a `std::map<string, ?>`, Lua could access
+  the objects by their identifying strings. Unfortunately this requires an
+  overall system architecture designed with special Lua identifiers in mind,
+  which made it unfeasible for this project. An alternative would have been to
+  maintain a global table mapping some unique ID to a smart pointer to an
+  object, for each object that should be accessible by Lua. Unfortunately this
+  too was not feasible to implement within the project timeline.
+- Currently modifications such as adding and removing widgets from the UI must
+  be performed in Lua code, or in the Lua console widget (by executing Lua
+  code.) It would be much more user-friendly to provide and in-game interface
+  for adding, enabling and disabling UI scripts.
+
+## Conclusion
+
+In the project proposal, I set out three metrics on which to determine the
 success or failure of the project. The metrics were as follows:
-First Metric
-"ORTS users are able to customize their user interfaces through the use of Lua
-scripts."
-$ Obviously the project has been successful in this regard. I have successfully
+
+#### 1. "ORTS users are able to customize their user interfaces through the use of Lua scripts."
+
+Obviously the project has been successful in this regard. I have successfully
 integrated Lua and provided the means to build a completely custom UI. As
 previously mentioned, Lua provides the advantage of being a widely-used
 scripting language, so whereas there would be a significant learning curve to
-creating UI scripts with Tim's custom language, anyone with UI scripting
-experience in any of the triple-A games using Lua will be comfortable with my
-framework.
-Second Metric
-"The customization options are non-trivial."
-" In this regard I must confess that I did not accomplish as much as I had hoped
+creating UI scripts the custom language that the project used previously, anyone
+with UI scripting experience in any of the triple-A games using Lua will be
+comfortable with my framework.
+
+#### 2. "The customization options are non-trivial."
+
+In this regard I must confess that I did not accomplish as much as I had hoped
 to be able to, due to limited time and a heavy course load. I had to focus on
 reproducing standard UI functionality in my framework, and although the
 resulting system offers potentially unlimited cosmetic options, the ability to
 interact with game state from within Lua scripts is limited.
-$ Ideally, I would have liked to implement features allowing limited unit
-control via scripting. Although micromanagement of units is an important measure
-of skill for top-tier RTS players, as a player of (extremely) limited skill I've
+
+Ideally, I would have liked to implement features allowing limited unit control
+via scripting. Although micromanagement of units is an important measure of
+skill for top-tier RTS players, as a player of (extremely) limited skill I've
 always found it tedious to the point of interfering with my enjoyment of the
 games. To that end, I was planning to give players the option to write simple
 "AI scripts" which could be executed on command to make units perform certain
-actions; this would have provided a means of responding to varied
-￼situations at the "micro" level without requiring a high rate of
-actions-per-minute (APM). Unfortunately, I had to cut this feature due to time
-limitations.
-$ Nevertheless, my framework does offer players the opportunity to display game
+actions; this would have provided a means of responding to varied situations at
+the "micro" level without requiring a high rate of actions-per-minute (APM).
+Unfortunately, I had to cut this feature due to time limitations.
+
+Nevertheless, my framework does offer players the opportunity to display game
 information in whatever layout and format best suits their needs. Another
 problem I have with many RTS games is that the UIs tend to be large and
 cumbersome, obscuring a significant portion of the screen. Even without any of
 the functionality I described above as missing, my framework would certainly
 solve that properly when applied to a typical RTS.
-Third Metric
-"Customization is simple enough that anyone with a programming background
-can pick it up easily."
-" This is one area where I feel that my framework excels, particularly in
-comparison to the existing ORTS UI scripting system. Lua has more than a few
+
+#### 3. "Customization is simple enough that anyone with a programming background can pick it up easily."
+
+This is one area where I feel that my framework excels, particularly in
+comparison to the pre-existing ORTS UI scripting system. Lua has more than a few
 syntactic and design quirks, but for the most part it is similar enough to the
 most popular scripting languages (e.g. PHP, Python, Perl and Ruby) that anyone
 experienced in one of those languages should be able to grasp it very quickly.
 Indeed, prior to embarking on this project I had no experience whatsoever with
 Lua.
-$ By contrast, Tim's scripting language has a more verbose C-style syntax which
-is mixes in unusual syntax such as variable declarations which are not delimited
-by semicolons as other statements are. Semicolons seem to take the place of
-commas in some function calls but not others, and there appears to be a
+
+By contrast, the pre-existing scripting language has a more verbose C-style
+syntax which is mixes in unusual syntax such as variable declarations which are
+not delimited by semicolons as other statements are. Semicolons seem to take the
+place of commas in some function calls but not others, and there is a
 distinction between "classes" and "blueprints" which is anything but intuitive.
-As I mentioned previously, I think that Tim's custom scripting system is an
-impressive technical achievement, and I do not wish to disparage the work he put
-into it. After some time working with it, I imagine scripting in his language
-would become fairly natural. I merely highlight these peculiarities to reinforce
-my earlier assertion that an established scripting language is preferable to a
-custom language. Documentation alone makes it much easier for a new user to get
-up to speed with Lua than with Tim's language, as documentation for the latter
-is extremely limited.
-$ Besides the contrast between the languages themselves, I designed the
-framework in such a manner as to make interactions and patterns simple and
-obvious. The delegate model is used in a number of real-world user interface
-libraries including Apple's cocoa library, and although mine is obviously less
-polished, the presence of familiar conventions should make it easy for
-inexperienced users to add new widgets.
-Overall Conclusion
-$ On the whole I am satisfied with the outcome of the project. I have gained
+As I mentioned previously, I think that this custom scripting system is an
+impressive technical achievement, and I do not wish to disparage the work that
+was put into it. I merely highlight these peculiarities to reinforce my earlier
+assertion that an established scripting language is preferable to a custom
+language. Documentation alone makes it much easier for a new user to get up to
+speed with Lua than with ORTS' pre-existing scripting language, as documentation
+for the latter is extremely limited.
+
+Besides the contrast between the languages themselves, I designed the framework
+in such a manner as to make interactions and patterns simple and obvious. The
+delegate model is used in a number of real-world user interface libraries
+including Apple's Cocoa library, and although mine is obviously less polished,
+the presence of familiar conventions should make it easy for inexperienced users
+to add new widgets.
+
+## Conclusion
+
+On the whole I am satisfied with the outcome of the project. I have gained
 valuable experience in designing user-oriented scripting systems, and I am now
 aware of some of the challenges involved in providing client-side scripting in
 games. I now feel confident that I will be able to successfully integrate Lua
@@ -416,3 +463,5 @@ scripting into my personal projects in the future, which will no doubt be
 beneficial in a number of scenarios.
 
 [^advantage]: Despite Blizzard's best efforts, user interface customizations have caused balance issues in the past. For instance, early in WoW's history, a script called Cursive trivialized some boss fights by providing near- automatic removal of negative spell effects on party members. Obviously, any game developer providing public scripting capabilities must be wary of situations such as these.
+
+[^class]: Strictly speaking, Lua is not object-oriented, but its built in structures provide a close approximation of object orientation. For simplicity, I use the world "class." The specifics of mimicking object orientation in Lua are surprisingly complicated.

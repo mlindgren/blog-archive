@@ -20,4 +20,10 @@ Score Four</a>
 Puzzle Panel</a>
 </div>
 
+<div style="display: inline-block; margin: 10px;">
+<a class="projectslink" title="Puzzle Panel" href="/projects/orts" title="ORTS UI Customization with Lua">
+<img src="/images/ortsIcon.png" alt="Puzzle Panel Icon" />
+ORTS Lua Integration</a>
+</div>
+
 </div>
