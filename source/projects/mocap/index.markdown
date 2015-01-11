@@ -1,23 +1,22 @@
 ---
 layout: page
 title: "Realtime Blending of Raw Motion Captured Dance"
-date: 2015-01-06 23:00
+date: 2015-01-11 01:03
 comments: true
 sharing: true
 footer: true
-published: false
 ---
 
-_[The following is a slightly edited copy of a report for a project I did for
-the University of Alberta's
+_[The following is an edited copy of a report for a project I did for the
+University of Alberta's
 [CMPUT 414 - Introduction to Multimedia Technology](https://www.cs.ualberta.ca/undergraduate-students/course-directory/introduction-multimedia-technology)
 course in the Winter 2012 semester. I worked on this project with Teri Drummond,
 and with additional guidance from Dr. Anup Basu and Dr. Amirhossein Firouzmanesh
-(then a graduate student)of the University of Alberta. The source code for this
+(then a graduate student) of the University of Alberta. The source code for this
 project is available
-[on GitHub](https://github.com/mlindgren/CMPUT-414-MoCap-Project).  This project
-was also incorporated into the publication
-"[Efficient compression of rhythmic motion using spatial segmentation and temporal blending]"(http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6618261),
+[on GitHub](https://github.com/mlindgren/CMPUT-414-MoCap-Project).  Work from
+this project was also incorporated into the publication
+"[Efficient compression of rhythmic motion using spatial segmentation and temporal blending](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6618261),"
 by Dr. Amirhossein Firouzmanesh, myself, Teri Drummond, Dr. Irene Cheng, and Dr.
 Anup Basu.]_
 
@@ -37,10 +36,11 @@ explore Kristine Slot's paper on motion blending methods, as well as Pejsa and
 Pandzic's similar methods as applied to virtual characters directly conrolled by
 the user.
 
-Using these resources as a blueprint, we modify the existing Carnegie Mellon
-ASF/AMC Motion Capture Viewer source code, adding spherical linear
-interpolation of quaternions and distance mapping, among other techniques, to
-transition between AMC motion capture files of short dance moves.
+Using these resources as a blueprint, we modify the
+[ASF/AMC Motion Capture Viewer written by Jim McCann of Carnegie Mellon](http://www.cs.cmu.edu/~jmccann/),
+adding spherical linear interpolation of quaternions and distance mapping, among
+other techniques, to transition between AMC motion capture files of short dance
+moves.
 
 Finally, we review our results. Generally, our method is successful at smoothly
 and naturally interpolating joint positions between motions. However, it is
@@ -75,17 +75,17 @@ Our primary goals are as follows:
 
 ## Previous Work
 
-Computer generation of movement is common in the entertainment industry, can be
-used for simulations, and explores the capabilities and natural limitations of
-the human body.  Three overarching processes of movement generation exist: (Guo,
-2012)
+Computer generation of movement is common in the entertainment industry. It
+often incorporates research into the natural capabilities and limitations of the
+human body can be used for a variety of types of simulations.  Three overarching
+processes of movement generation exist: (Guo, 2012)
 
-- **Kinematics-based approaches** which depend on the artist to tune
+- **Kinematics-based approaches** which depend on an artist to tune
   a body's poses, and rely on constraints to control the motion of the
-  character. Closely tied to keyframe animation.
+  character. This is closely tied to keyframe animation.
 - **Dynamics-based approaches** which use physics to calculate
-  realistic motions in response to external forces upon an object or body.
-  Dependent on constraints of joint motion, and often used in simulations.
+  realistic motions in response to external forces upon an object or body.  This
+  is dependent on constraints of joint motion, and often used in simulations.
 - **Example-based approaches** drawing from motion captured databases to
   synthesize complex motions. Although the variety of possible motions is
   limited to the original set data, this method of motion generation often
@@ -100,8 +100,8 @@ approaches discussed.  Kristine Slot's "Motion Blending" and Pejsa and
 Pandzic's "State of the Art in Example-Based Motion Synthesis for Virtual
 Characters in Interactive Applications" provide methods which we adapt and use
 in our implementation. Other non-literary resources will also be used, including
-the CMU Graphics Lab Motion Capture Database and the current projects of
-[MotionSynthesis.org](http://motionsynthesis.org/).
+the [CMU Graphics Lab Motion Capture Database](http://mocap.cs.cmu.edu/) and the
+projects available at [MotionSynthesis.org](http://motionsynthesis.org/).
 
 ### Shiratori and Ikeuchi - Synthesis of Dance Performance
 
@@ -126,7 +126,7 @@ corresponding analysis and synthesis methods.
   the musical rhythm.
 - **Speed:** The authors observed that human dance motions change slightly when
   they have  to be synchronized to music played back at higher speed:
-  specifically, some detail is omitted so that theperformers can go through
+  specifically, some detail is omitted so that the performers can go through
   their movements quickly enough to stay in sync with the music.
 - **Mood:** To match the performance to the mood of the music, the authors
   designed an algorithm "to synthesize new dance performance by assuming these
@@ -136,17 +136,17 @@ corresponding analysis and synthesis methods.
 
 #### Keypose Extraction
 
-Human can be decomposed into motion primitives, which "denote fundamental
-elements of human motion, and ... are segmented by detecting instances when
-hands and feet stop their movements" (Shiratori and Ikeuchi, 2008).  The
-authors establish keyposes by analyzing motion to extract “stopping postures”
-and analyzing music to extract the rhythm.
+Human movement can be decomposed into motion primitives, which "denote
+fundamental elements of human motion, and ... are segmented by detecting
+instances when hands and feet stop their movements" (Shiratori and Ikeuchi,
+2008).  The authors establish keyposes by analyzing motion to extract “stopping
+postures” and analyzing music to extract the rhythm.
 
 The motion analysis step is "based on the speed of the performer’s hands, feet
 and center of mass".  Keyposes are extracted according to the following
 criteria:
 
-1. "Dancers clearly stop their movements" during a keypose."
+1. "Dancers clearly stop their movements" during a keypose.
 1. "Dancers clearly move their body parts during neighboring keyposes."
 
 Hand and center of mass keyposes occur when the speed of the area in question
@@ -244,8 +244,8 @@ techniques:
 Next, music information is used in conjunction with user-defined motion
 routines.  Five components come together to generate pleasing dance:
 
-- **Primitive Movements:** Sauer and Yang have implemented twenty
-  four primitive movements which can be combined to create complex, interesting
+- **Primitive Movements:** Sauer and Yang have implemented twenty-four
+  primitive movements which can be combined to create complex, interesting
   motions. These incluce heel clicks, hops, stamps, leg lifts, knee bends, and
   leg raises.
 - **Script File:** "Simple text files that list Celtic
@@ -287,8 +287,8 @@ their generated animation, alongside a variety of music files. The viewer
 specified whether they enjoyed the animation by submitting either a "yes" or a
 "no", and stating their reasons. It was found that the highest rated animation
 was played with Celtic music, whereas animations played with rap or orchestral
-music - "musical types that do not typically suit dancing" (Sauer and Yang,
-2009) &mdash;were rated lower.
+music&mdash;"musical types that do not typically suit dancing" (Sauer and Yang,
+2009)&mdash;were rated lower.
 
 ### Evaluating Shiratori and Ikeuchi, Sauer and Yang
 
@@ -300,7 +300,7 @@ applicability of each to our project.
 #### Limitations and Advantages of Shiratori and Ikeuchi
 
 Shiratori and Ikeuchi’s methods are specifically aimed at laying the groundwork
-for "a dancing entertainment robot"  (Shiratori and Ikeuchi, 2008) [^shira] which
+for "a dancing entertainment robot"  (Shiratori and Ikeuchi, 2008) which
 synthesizes its dance according to music.  Thus, much of their work is aimed at
 generating dance which is reproducible by a humanoid robot which may have an
 extremely limited range of motion, and may not be able to properly reproduce
@@ -348,15 +348,15 @@ Celtic dance, only the dancer’s legs move; their arms remain at their sides an
 their torso stays upright. Dancers do not interact or dance together, but
 usually execute their routines while standing in a line. Although Sauer and
 Yang’s system could be expanded to handle other varieties of dance primitives,
-such as those of ballroom dancing, the benefits to our project may be
-disproportional to the effort required to expand the current system. For
-example, in order to incorporate paired dancing, special attention would need to
-be given to each dancer’s partner; pairs of dancers would have to stay in sync,
-with each dancer also being able to move independently.
+such as those of ballroom dancing, the benefits to our project may be be
+insufficient relative to the effort that would be required to expand the current
+system. For example, in order to incorporate paired dancing, special attention
+would need to be given to each dancer’s partner; pairs of dancers would have to
+stay in sync, with each dancer also being able to move independently.
 
 Incorporating arm, torso, and full body movements further complicates the
 system.  Currently, the dance generation algorithm must only process foot and
-leg movements typical of Celtic dance; we need only ensure that each leg is
+leg movements typical of Celtic dance; it only needs to ensure that each leg is
 performing one action at a time, and track which foot is in front of the other
 when initializing motions relying on the current "leading foot".  Other forms of
 dance involve more complicated movements, such as:
@@ -365,9 +365,7 @@ dance involve more complicated movements, such as:
 - Movement of the dancer around the floor, rather than staying in place as
   typical of Celtic dance.
 - Arm positioning, whether in interaction with a partner or alone.
-- Full body and torso movements, when leaning or dipping.
-- The difficulty of combining primitives of multiple body parts into realistic,
-  pleasing dance.
+- Full body and torso movements, such as leaning or dipping.
 
 ### Slot - Motion Blending
 
@@ -492,7 +490,7 @@ more detail in the following discussion of Pejsa and Pandzic's paper.
 
 Alignment curves seek to solve the problem that when "Given a blending between
 two motions with a rotation, the linear blend fails once the angle between the
-motions are larger than 180 degrees. (Slot, 2007) Alignment curves give each
+motions are larger than 180 degrees." (Slot, 2007) Alignment curves give each
 motion a "vote" on the figure's orientation, and votes are taken into account
 alongside blend weights when determining the final motion. Since all bones
 branch from the root, the alignment change is only applied to the root.
@@ -661,9 +659,9 @@ motion data loaded from AMC files.  Therefore, we are able to blend individual
 frames by maintaining two Motion objects and two Pose objects - one of each for
 each of the first and second animations.  The Motions generate the poses, and
 then we can interpolate between the joint angles in each pose using the weighted
-linear blending technique described in Kristine Slot's paper and in &sect;2.4 of
-this paper.  All of this is handled by our LerpBlender class, which is located
-in <code>Library/LerpBlender.cpp</code> and the associated header file
+linear blending technique described in Kristine Slot's paper, which we
+previously discussed.  All of this is handled by our LerpBlender class, which is
+located in <code>Library/LerpBlender.cpp</code> and the associated header file
 <code>Library/LerpBlender.hpp</code>.
 
 Drawing from Pejsa and Pandzic's method, LerpBlender uses spherical linear
@@ -692,9 +690,9 @@ of interpolated frames.  The value is clamped to a maximum of 1, since it should
 range from 0 to 1, with 0 indicating that the blend consists entirely of data
 from the first animation, and 1 indicating that the blend consists entirely of
 data from the second animation. The exponential growth was chosen arbitrarily,
-but upon visual inspection seems to produce nicer results than when calculating
-the blending coefficient linearly according to the ratio of the current frame
-number and the total number of interpolated frames.
+but upon visual inspection seems to produce nicer results than calculating the
+blending coefficient linearly according to the ratio of the current frame number
+and the total number of interpolated frames.
 
 After the quaternions for each bone are interpolated, the orientation is
 interpolated using Slerp. Naïve blending of the root positions between
@@ -711,17 +709,17 @@ coefficient calculated previously.
 Kristine Slot's Timewarping method is roughly implemented in the DistanceMap
 class, located in <code>Library/DistanceMap.cpp</code> and
 <code>Library/DistanceMap.hpp</code>.  The DistanceMap class builds an
-_n&times;m_ map of distances between the frames in two animations, where _n_ is
+_n_ &times; _m_ map of distances between the frames in two animations, where _n_ is
 the number of frames in the starting animation, and _m_ the number of frames in
 the subsequent animation.  Distances between each pair of frames are calculated
 using Slot's Timewarping function (see equation 3) and stored in the map.
 Currently, distances are calculated on demand with the <code>getDistance</code>
 function; this was done for speed as the distances between non-examined nodes
 are not important when calculating the path, and calculating the distances for
-_n&times;m_ frames of two large animations can be very slow.  Our distance
+_n_ &times; _m_ frames of two large animations can be very slow.  Our distance
 calculation does not account for the weighting of bones.  Ideally, position
-weights would be based on bone length or density, or most logically weight (
-_volume &times; density_), so that distances between large bones are weighted
+weights would be based on bone length or density, or most logically weight
+(_volume_ &times; _density_), so that distances between large bones are weighted
 more strongly than distances between small bones when calculating the shortest
 path.
 
@@ -729,8 +727,8 @@ path.
 <img src="/images/distancemap1.png"
 alt="Figure 5: A distance map comparing two identical animations. Notice how the
 diagonal is completely black, indicating that the distance between positions at
-corresponding frames of the animations is zero. Generated in MATLAB using data
-from the DistanceMap class."/>
+corresponding frames of the animations is zero. The image was generated in
+MATLAB using data from the DistanceMap class."/>
 <br />
 <small>
 Figure 5: A distance map comparing two identical animations. Notice how the
@@ -746,17 +744,17 @@ alt="Figure 6: A distance map comparing two differing animations.
 calcShortestPath will attempt to draw a path from the start of the interpolation
 to the end, passing through frames which are most similar to each other (as
 indicated by darker shades of grey) without violating the slope limit.  Motion
-files used are all_data/05_01.amc and all_data/05_02.amc.  Generated in
-MATLAB using data from the DistanceMap class."/>
+files used to generate this data were all_data/05_01.amc and all_data/05_02.amc.
+The image was generated in MATLAB using data from the DistanceMap class."/>
 <br />
 <small>
 Figure 6: A distance map comparing two differing animations.
 <code>calcShortestPath</code> will attempt to draw a path from the start of the
 interpolation to the end, passing through frames which are most similar to each
 other (as indicated by darker shades of grey) without violating the slope limit.
-Motion files used are <code>all_data/05_01.amc</code> and
-<code>all_data/05_02.amc</code>.  Generated in MATLAB using data from the
-DistanceMap class.
+Motion files used to generate this data were <code>all_data/05_01.amc</code> and
+<code>all_data/05_02.amc</code>.  The image was enerated in MATLAB using data
+from the DistanceMap class.
 </small>
 </div><br />
 
@@ -767,27 +765,29 @@ animation and the end may be anywhere in the second (as long as rules about the
 maximum number of subsequent frames to use from one animation without moving to
 the next frame in the other are not violated).  This approach proved to not be
 very suitable for our purposes, as we are more concerned with smoothly
-transitioning between two animations.  Therefore, we perform blending only over
-a fixed number of frames relative to the animation size; currently we use one
-quarter of the frames in the shorter animation.  Ideally, this value would not
-be a constant defined in the code, but controllable by the user.  Our
-DistanceMap class, then, starts on the frame that LerpBlender starts blending,
-and from there calculates the shortest path from the start to the end, where the
-end cannot occur after the maximum number of blended frames.
+transitioning between two complete animations; i.e. we want to begin our
+transition near the end of the first animation and finish it near the start of
+the second animation.  Therefore, we perform blending only over a fixed number
+of frames relative to the animation size; currently we use one quarter of the
+frames in the shorter animation.  Ideally, this value would not be a constant
+defined in the code, but controllable by the user.  Our DistanceMap class, then,
+starts on the frame that LerpBlender starts blending, and from there calculates
+the shortest path from the start to the end, where the end cannot occur after
+the maximum number of blended frames.
 
 LerpBlender's interpolation uses DistanceMap's <code>calcShortestPath</code>
 function to find the best path between frames. The calculation uses a slope
 limit _L_ of 3, suggested by Slot as a sufficient constraint to prevent
-no path between positions from taking more than _L_ horizontal or
-vertical steps. Starting from the zero'th frame of the first animation,
-<code>calcShortestPath</code> pushes frame pairs onto the "shortest path" STL
-vector. The first element of the frame pair is the frame of the first animation
-to be blended, and the second element is the frame of the second animation.
-Until the frame at which interpolation should start is reached, only the frame
-in the first animation is incremented while the frame in the second animation
-stays at 0. Once interpolation starts, then pairs are chosen based on their
-distance, as calculated by the <code>getDistance</code> function, as long as their
-location in the distance map does not violate the slope limit.
+unnatural movements caused by skipping between "distant" frames. Starting from
+the zero'th frame of the first animation, <code>calcShortestPath</code> pushes
+frame pairs onto the "shortest path" STL vector. The first element of the frame
+pair is the frame of the first animation to be blended, and the second element
+is the frame of the second animation.  Until the frame at which interpolation
+should start is reached, only the frame in the first animation is incremented
+while the frame in the second animation stays at 0. Once interpolation starts,
+then pairs are chosen based on their distance, as calculated by the
+<code>getDistance</code> function, as long as their location in the distance map
+does not violate the slope limit.
 
 ### Blending Motionsin Series
 
@@ -839,9 +839,9 @@ transition between motion files can be deduced by attending to the first row of
 text information, which shows the file names being interpolated. When the file
 names change, a transition has been completed.
 
-### I
+### First Example
 
-{% video http://files.mlindgren.ca/videos/mocap1.mp4 %}
+{% video http://files.mlindgren.ca/videos/mocap1.mp4 798 597 http://blog.mlindgren.ca/images/mocap-banner.png %}
 
 The first recording demonstrates a simple combination of animation files,
 emulating what a choreographer might put together when designing a dance. The
@@ -860,16 +860,12 @@ It is worth noting that the briefly inhuman backwards knee-bend during the final
 leg raise is not a result of our interpolation, but rather an error in the
 original motion capture data.
 
-The data used for this recording were:
+The data used for this recording were <code>05\_01.amc</code>,
+<code>05\_02.amc</code>, <code>05\_03.amc</code>, and <code>05\_05.amc</code>.
 
-- <code>05_01.amc</code>
-- <code>05_02.amc</code>
-- <code>05_03.amc</code>
-- <code>05_05.amc</code>
+### Second Example
 
-### II
-
-{% video http://files.mlindgren.ca/videos/mocap2.mp4 %}
+{% video http://files.mlindgren.ca/videos/mocap2.mp4 798 597 http://blog.mlindgren.ca/images/mocap-banner.png %}
 
 The second recording tests interpolation between drastic changes in arm
 positions. The first motion ends with the figure's left arm raised, and the
@@ -883,32 +879,29 @@ beginning with arms up. This transition is again smooth and successful. Although
 the joint orientation blending is natural, the overall figure orientation is
 not; there is slight skating on the floor as the figure rotates in place.
 
-The data used for this recording were:
+The data used for this recording were <code>05\_02.amc</code>,
+<code>05\_04.amc</code> and <code>05\_11.amc</code>.
 
-- <code>05\_02.amc</code>
-- <code>05\_04.amc</code>
-- <code>05\_11.amc</code>
+### Third Example
 
-### III
-
-{% video http://files.mlindgren.ca/videos/mocap3.mp4 %}
+{% video http://files.mlindgren.ca/videos/mocap3.mp4 795 596 http://blog.mlindgren.ca/images/mocap-banner.png %}
 
 The third recording is a demonstration of how two motion files can be made to
 loop continuously.  Repeating the same motion in a loop has useful applications
 in dance training; a dancer could observe the motion repeatedly, and emulate it,
 as the animated figure danced perpetually.
 
-This file also demonstrates our reoccurring issue of rotation in place.  Please
-note that the jitteriness of the final jump is an unfortunate consequence of our
+This file also demonstrates our reoccurring issue of rotation in place.  Note,
+though, that the jitteriness of the final jump is again a consequence of our
 poor-quality recording software; the live jump was as smooth as the previous
 jumps.
 
-- <code>05\_18.amc</code>
-- <code>05\_20.amc</code>
+The data used for this recording were <code>05\_18.amc</code> and
+<code>05\_20.amc</code>.
 
-### IV
+### Fourth Example
 
-{% video http://files.mlindgren.ca/videos/mocap4.mp4 %}
+{% video http://files.mlindgren.ca/videos/mocap4.mp4 795 596 http://blog.mlindgren.ca/images/mocap-banner.png %}
 
 The fourth and final recording shows a figure covering a large distance during
 its dance.  Interpolations seem to successfully maintain the appearance of the
@@ -918,16 +911,14 @@ the final animation is quite successful. If this were not the case, as will be
 discussed in the Improvements section, the results would be far less natural
 given our current implementation.
 
-- <code>05\_01.amc</code>
-- <code>05\_08.amc</code>
-- <code>05\_13.amc</code>
-- <code>05\_18.amc</code>
+The data used in this recording were <code>05\_01.amc</code>,
+<code>05\_08.amc</code>, <code>05\_13.amc</code>, and <code>05\_18.amc</code>.
 
 ## Conclusions
 
 Overall, our implementation is successful. Pejsa and Pandzic's spherical linear
-interpolation of quaternions&mdash;integrating joint positions&mdash;is used in
-conjunction with Slot's distance mapping&mdash;finding the shortest path between
+interpolation of quaternions, integrating joint positions, is used in
+conjunction with Slot's distance mapping, finding the shortest path between
 frames for blending. With these two methods, we generally solve our primary
 problem of transitioning smoothly between motions with diverse figure positions.
 Because naïve blending was found to be ureliable in interpolating root
@@ -958,18 +949,18 @@ motions which were much easier to blend together.
 Presently, the DistanceMap class does not apply weights to each bone when
 calculating the distance between pairs of corresponding positions. Only raw
 distances are used.  Although Slot does not describe the weighting criteria for
-reach position, it seems intuitive that minor bones, such as fingers, should
+each position, it seems intuitive that minor bones, such as fingers, should
 carry less importance than larger bones, such as those representing the upper
 and lower legs and arms. In a future iteration of this project, the length,
-density, or most logically weight (_volume&times;density_) of each bone should
-be taken into account when summing distances.  Alternatively, the fact that
-minor bones tend to occur in the extremities, and thus do not tend to have many,
-if any, "child" bones, is worthy of consideration.  It is possible that a sort
-of "automatic weighting" occurs as a consequence of this assumption; any
+density, or most logically weight (_volume_ &times; _density_) of each bone
+should be taken into account when summing distances.  Alternatively, the fact
+that minor bones tend to occur in the extremities, and thus do not tend to have
+many, if any, "child" bones, is worthy of consideration.  It is possible that a
+sort of "automatic weighting" occurs as a consequence of this assumption; any
 differences in a large bone will likely be compounded by differences in its
-progressively smaller "child" bones, but differences in small bones will not
-affect their larger "parent" bones, nor will they have many of their own "child"
-bones.
+progressively smaller "child" bones, but differences in small bones will
+themselves be of smaller magnitudes, and thus will may significantly affect
+their larger "parent" bones, nor will they have many of their own "child" bones.
 
 One of the most noticeable shortcomings of our project is its difficulty in
 handling drastic changes in a figure's orientation between animations. A sample

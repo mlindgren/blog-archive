@@ -8,7 +8,7 @@ footer: true
 ---
 
 _[The following is a report for a project I did for the University of Alberta's
-[CMPUT 350](https://www.cs.ualberta.ca/undergraduate-students/course-directory/advanced-game-programming)
+[CMPUT 350 - Advanced Game Programming](https://www.cs.ualberta.ca/undergraduate-students/course-directory/advanced-game-programming)
 course in the Fall 2011 semester. For this project, I modified the
 [Open Real Time Strategy (ORTS)](https://skatgame.net/mburo/orts/) game engine
 to integrate a Lua virtual machine, allowing scripting of user interface

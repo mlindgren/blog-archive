@@ -1,0 +1,1486 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Realtime Blending of Raw Motion Captured Dance - mlindgren.ca</title>
+  <meta name="author" content="Mitch Lindgren">
+
+  
+  <meta name="description" content="Realtime Blending of Raw Motion Captured Dance Jan 11th, 2015 1:03 am [The following is an edited copy of a report for a project I did for the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.mlindgren.ca/projects/mocap">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+
+<!--
+/* @license
+* MyFonts Webfont Build ID 1737828, 2011-12-16T22:03:39-0500
+*
+* The fonts listed in this notice are subject to the End User License
+* Agreement(s) entered into by the website owner. All other parties are 
+* explicitly restricted from using the Licensed Webfonts(s).
+*
+* You may obtain a valid license at the URLs below.
+*
+* Webfont: Museo 700 by exljbris
+* URL: http://www.myfonts.com/fonts/exljbris/museo/700/
+* Copyright: Copyright (c) 2008 by Jos Buivenga/exljbris. All rights reserved.
+* Licensed pageviews: unlimited
+*
+*
+* License: http://www.myfonts.com/viewlicense?type=web&buildid=1737828
+*
+* © 2011 Bitstream Inc
+*/
+
+-->
+<link rel="stylesheet" type="text/css" href="/stylesheets/mlindgren_ca_museo700.css">
+
+<!-- Load jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery.noConflict(); // ender.js conflicts with jQuery
+</script>
+
+ <!-- Load FancyBox -->
+ <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" />
+ <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript">
+ </script>
+
+<!-- Fix FancyBox style for OctoPress -->
+<style type="text/css">
+  .fancybox-wrap { position: fixed !important; }
+  .fancybox-opened {
+    -webkit-border-radius: 4px !important;
+       -moz-border-radius: 4px !important;
+            border-radius: 4px !important;
+  }
+  .fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+</style>
+
+
+<!-- Custom Scripts -->
+<script language="Javascript" type="text/javascript">
+// ender.js gobbles jQuery's ready event: Use ender.js $ instead
+$(document).ready(function() {
+    jQuery(".fancybox").fancybox(
+    {
+      helpers:
+      {
+        overlay:
+        {
+          locked: false
+        }
+      }
+    });
+});
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-56108181-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">mlindgren.ca</a></h1>
+  
+</hgroup>
+<div id="header-outer-wrap">
+  <div id="header-wrap">
+    <div id="header-background">
+      <img src="/images/header.jpg" class="header-background-stretch" />
+    </div>
+  </div>
+</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="blog.mlindgren.ca">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <div>
+  <header>
+    <h1 class="entry-title">Realtime Blending of Raw Motion Captured Dance</h1>
+    <p class="meta">
+
+
+
+
+<time class='entry-date' datetime='2015-01-11T01:03:00-08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:03 am</span></time></p>
+  </header>
+  </div>
+  
+  <p><em>[The following is an edited copy of a report for a project I did for the
+University of Alberta&rsquo;s
+<a href="https://www.cs.ualberta.ca/undergraduate-students/course-directory/introduction-multimedia-technology">CMPUT 414 - Introduction to Multimedia Technology</a>
+course in the Winter 2012 semester. I worked on this project with Teri Drummond,
+and with additional guidance from Dr. Anup Basu and Dr. Amirhossein Firouzmanesh
+(then a graduate student) of the University of Alberta. The source code for this
+project is available
+<a href="https://github.com/mlindgren/CMPUT-414-MoCap-Project">on GitHub</a>.  Work from
+this project was also incorporated into the publication
+&ldquo;<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6618261">Efficient compression of rhythmic motion using spatial segmentation and temporal blending</a>,&rdquo;
+by Dr. Amirhossein Firouzmanesh, myself, Teri Drummond, Dr. Irene Cheng, and Dr.
+Anup Basu.]</em></p>
+
+<h2>Abstract</h2>
+
+<p>Fluid, complex, and precise movements come together in time to music to produce
+dance. When performed by a human, dancing appears smooth and natural.  Can a
+computer efficiently generate dance?  We aim to develop a means of creating and
+simulating complete dance compositions by smoothly blending small segments of
+motion captured dance.</p>
+
+<p>First, we evaluate the previous work of Shiratori and Ikeuchi, who synthesized
+robotic Japanese-style folk dance in time to music, and Sauer and Yang, who
+developed a model for synthesizing Celtic line dance from a set of simple motion
+primitives. We then focus our research to specific algorithms and methods, and
+explore Kristine Slot&rsquo;s paper on motion blending methods, as well as Pejsa and
+Pandzic&rsquo;s similar methods as applied to virtual characters directly conrolled by
+the user.</p>
+
+<p>Using these resources as a blueprint, we modify the
+<a href="http://www.cs.cmu.edu/~jmccann/">ASF/AMC Motion Capture Viewer written by Jim McCann of Carnegie Mellon</a>,
+adding spherical linear interpolation of quaternions and distance mapping, among
+other techniques, to transition between AMC motion capture files of short dance
+moves.</p>
+
+<p>Finally, we review our results. Generally, our method is successful at smoothly
+and naturally interpolating joint positions between motions. However, it is
+limited in its ability to orient the entire figure&rsquo;s facing-direction.  We
+assess the limitations and potential improvements of our method, and point to
+possible future work on our project.</p>
+
+<h2>Introduction</h2>
+
+<p>There are numerous potential practical applications for a robust dance
+composition system.   Choreographers could use such a system to quickly and
+cheaply prototype their dances before working with live dancers. The system
+could also be applied to other types of choreographed action such as fighting in
+movies, close-quarters battles in video games, or producing intricate dance
+scenes in computer-generated cartoons. With our project, we aim to explore the
+process of capturing, analyzing, and decomposing complex motion captured dance
+data, with the overall goal of computationally generating realistic,
+entertaining dance from a series of simple motion captured movements.</p>
+
+<p>Our primary goals are as follows:</p>
+
+<ul>
+<li>Compare and evaluate previous work in the vein of complex motion
+synthesis.</li>
+<li>Begin by collecting samples of motion captured dance from the Carnegie
+Mellon University Motion Capture Database.</li>
+<li>Examine the Carnegie Mellon ASF/AMC Motion Capture Viewer source
+code. By modifying the  source code and adding external scripts, alter the
+viewer to display smooth dance from a handful of input motion capture files.</li>
+<li>Allow the creation of compositions by stringing various motions together.</li>
+<li>Smoothly transition between motion files, giving the appearance of natural
+dance movement.</li>
+</ul>
+
+
+<h2>Previous Work</h2>
+
+<p>Computer generation of movement is common in the entertainment industry. It
+often incorporates research into the natural capabilities and limitations of the
+human body can be used for a variety of types of simulations.  Three overarching
+processes of movement generation exist: (Guo, 2012)</p>
+
+<ul>
+<li><strong>Kinematics-based approaches</strong> which depend on an artist to tune
+a body&rsquo;s poses, and rely on constraints to control the motion of the
+character. This is closely tied to keyframe animation.</li>
+<li><strong>Dynamics-based approaches</strong> which use physics to calculate
+realistic motions in response to external forces upon an object or body.  This
+is dependent on constraints of joint motion, and often used in simulations.</li>
+<li><strong>Example-based approaches</strong> drawing from motion captured databases to
+synthesize complex motions. Although the variety of possible motions is
+limited to the original set data, this method of motion generation often
+produces the most natural movement. (Guo, 2012)</li>
+</ul>
+
+
+<p>Our project aims to synthesize complex dance movements using an example-based
+approach.  In a similar vein to our proposed project are the papers we will
+initially discuss, &ldquo;Synthesis of Dance Performance&rdquo; by Shiratori and Ikeuchi,
+and &ldquo;Music-Driven Character Animation&rdquo; by Sauer and Yang. Papers which explore
+our problem in more depth will also be evaluated, and their algorithms and
+approaches discussed.  Kristine Slot&rsquo;s &ldquo;Motion Blending&rdquo; and Pejsa and
+Pandzic&rsquo;s &ldquo;State of the Art in Example-Based Motion Synthesis for Virtual
+Characters in Interactive Applications&rdquo; provide methods which we adapt and use
+in our implementation. Other non-literary resources will also be used, including
+the <a href="http://mocap.cs.cmu.edu/">CMU Graphics Lab Motion Capture Database</a> and the
+projects available at <a href="http://motionsynthesis.org/">MotionSynthesis.org</a>.</p>
+
+<h3>Shiratori and Ikeuchi - Synthesis of Dance Performance</h3>
+
+<p>In their study, Shiratori and Ikeuchi review three methods for automatically
+synthesizing dance movement based on music.  In brief, they describe the three
+methods as follows: &ldquo;The first study analyzes the relationship between motion
+and musical rhythm and extracts important features for imitating human dance
+motion.  The second study models modification of upper body motion based on the
+speed of the played music so that the humanoid robot dances to a faster musical
+speed.  The third study automatically synthesizes dance performance that
+reflects both rhythm and mood of input music&rdquo;. (Shiratori and Ikeuchi,
+2008)</p>
+
+<p>Shiratori and Ikeuchi focus on three key features of input music to try to
+generate representative dance sequences.  Those features are <em><strong>rhythm, speed</strong></em>
+and <em><strong>mood</strong></em>.  For each of the three key features, they have developed
+corresponding analysis and synthesis methods.</p>
+
+<ul>
+<li><strong>Rhythm:</strong> Based on observation of human dance, Shiratori and Ikeuchi
+theorize that the  correspondence between movement and rhythm is captured by
+keyposes: brief pauses in movement which synchronize the &ldquo;motion rhythm&rdquo; with
+the musical rhythm.</li>
+<li><strong>Speed:</strong> The authors observed that human dance motions change slightly when
+they have  to be synchronized to music played back at higher speed:
+specifically, some detail is omitted so that the performers can go through
+their movements quickly enough to stay in sync with the music.</li>
+<li><strong>Mood:</strong> To match the performance to the mood of the music, the authors
+designed an algorithm &ldquo;to synthesize new dance performance by assuming these
+relationship [sic] between motion and music rhythm mentioned in the first
+study, and the relationship between motion and music intensity&rdquo; (Shiratori
+and Ikeuchi, 2008)</li>
+</ul>
+
+
+<h4>Keypose Extraction</h4>
+
+<p>Human movement can be decomposed into motion primitives, which &ldquo;denote
+fundamental elements of human motion, and &hellip; are segmented by detecting
+instances when hands and feet stop their movements&rdquo; (Shiratori and Ikeuchi,
+2008).  The authors establish keyposes by analyzing motion to extract “stopping
+postures” and analyzing music to extract the rhythm.</p>
+
+<p>The motion analysis step is &ldquo;based on the speed of the performer’s hands, feet
+and center of mass&rdquo;.  Keyposes are extracted according to the following
+criteria:</p>
+
+<ol>
+<li>&ldquo;Dancers clearly stop their movements&rdquo; during a keypose.</li>
+<li>&ldquo;Dancers clearly move their body parts during neighboring keyposes.&rdquo;</li>
+</ol>
+
+
+<p>Hand and center of mass keyposes occur when the speed of the area in question
+reaches a local minimum which is below some global minimum speed threshold.
+Additionally, the local maximum between prospective keyposes must be greater
+than some global maximum speed threshold.  Similarly for foot motions, keyposes
+are extracted from periods of relative stillness between large leg motions.</p>
+
+<p>The authors compared their method with previous methods for keypose extraction
+using two types of traditional Japanese dance: <em>aizu-bandaisan</em> and
+<em>jongara-bushi</em>.  They concluded that their method &ldquo;was much more
+accurate than the previous method,&rdquo; and believed that the reason for the
+improved accuracy was that their method &ldquo;considers not only motion capture data
+but musical information, while the previous method considers only motion capture
+data.&rdquo; (Shiratori and Ikeuchi, 2008)</p>
+
+<h4>Mood-based Animation</h4>
+
+<p>Shiratori and Ikeuchi propose that when performers improvise dance motions based
+on music that they are listening to, they &ldquo;do not create these motions, but
+rather combine appropriate motion segments from their knowledge database with
+music as their key to perform their unique movements&rdquo; (Shiratori and Ikeuchi,
+2008).</p>
+
+<p>The authors describe a three-step process for synthesizing dance motions
+according to musical mood:</p>
+
+<ol>
+<li>Motion analysis, in which the &ldquo;rhythm and intensity features&rdquo; of
+motion-captured dance animations are extracted. A motion database is developed
+from this step.</li>
+<li>Music analysis, in which the &ldquo;structure of input music sequence&rdquo; is analyzed
+for &ldquo;musical rhythm and intensity features.&rdquo; A music segment database is
+developed based on this step.</li>
+<li>Synthesis, in which new motion is generated by &ldquo;interpolating between motion
+segments.&rdquo;</li>
+</ol>
+
+
+<p>Building on research by Laban, the authors develop a formula which relates &ldquo;the
+linear sum of approximated instantaneous momentum magnitude calculated from the
+link and body directions&rdquo; (Shiratori and Ikeuchi, 2008), called the
+&ldquo;weight effort,&rdquo; to the &ldquo;excitement of motion.&rdquo;  Motion rhythm is extracted from
+local minima in the weight effort, and intensity is determined according to
+&ldquo;momentum and forward translation.&rdquo;  As the details of music feature extraction
+are not applicable to our project, they will not be elaborated here.</p>
+
+<p>Finally, motion is synthesized by &ldquo;considering both the motion and music feature
+vectors.&rdquo; (Shiratori and Ikeuchi, 2008) First, rhythm is matched between
+the music and the motion segments.  For candidate matches, &ldquo;connectivity
+analysis&rdquo; is applied to check &ldquo;if synthesized transition motion between the
+neighboring motion segments looks natural.&rdquo; Finally, intensity matching is used
+to further refine the set of candidate matches. The algorithm is described
+pictorally in the following figure.</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/MoSynth.png" alt="A graphical representation of the motion synthesis algorithm"/>
+<br />
+<small>
+Figure 1: From Shiratori et al: A graphical representation of the motion
+synthesis algorithm.
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>The authors tested their methodology by synthesizing motion for Japanese
+<em>Kansho-odori</em> dance.  Regarding the results, they write: &ldquo;We can easily
+confirm that most of the musical rhythm is matched to the motion rhythm, and the
+distributions of the intensity components are quite similar.  Some artists
+working with the Japanese dance performance group <em>Warabi-za</em> told us
+that our technique was quite useful for a performance group such as theirs to
+compose new Japanese dances and this would be a new method for re-use of dance
+motion data.&rdquo; (Shiratori and Ikeuchi, 2008)</p>
+
+<h3>Sauer and Yang - Music Driven Character Animation</h3>
+
+<p>In their study, Sauer and Yang aim to create a system which builds a dance
+animation based on the attributes of a piece of music. &ldquo;Using a simple script
+that identifies the movements involved in the performance and their timing, the
+user can easily control the animation of characters,&rdquo; (Sauer and Yang,
+2009) creating dance animations that are found to be appealing to
+viewers.</p>
+
+<h4>Animation Generation from Music</h4>
+
+<p>First, information is extracted from a MIDI music file. Sauer and Yang use two
+techniques:</p>
+
+<ul>
+<li><strong>Beat Detection:</strong> Using onset detection, determine the tempo
+of a music file and the length of the interbeat-interval. The result is a
+vector of the actual beats during a song.</li>
+<li><strong>Dynamics Extraction:</strong> In a song, dynamics are the &ldquo;louds&rdquo; and &ldquo;softs&rdquo;, as
+well as  transitions between them, the crescendos and decrescendos. The music
+piece is processed by an  algorithm and the 50 highest and 50 lowest values
+are stored as dynamic positions, with crescendos and decrescendos interpolated
+between them. Dynamics information is useful in matching pleasing animation to
+the nature of a song.</li>
+</ul>
+
+
+<p>Next, music information is used in conjunction with user-defined motion
+routines.  Five components come together to generate pleasing dance:</p>
+
+<ul>
+<li><strong>Primitive Movements:</strong> Sauer and Yang have implemented twenty-four
+primitive movements which can be combined to create complex, interesting
+motions. These incluce heel clicks, hops, stamps, leg lifts, knee bends, and
+leg raises.</li>
+<li><strong>Script File:</strong> &ldquo;Simple text files that list Celtic
+primitives and routines that the user wants performed in the resulting
+animation.&rdquo; (Sauer and Yang, 2009) With the script system, Sauer and
+Yang aim to create a user friendly way to lay out dance routines to be
+performed by one or more characters, in or out of sync with each other.</li>
+<li><strong>Mappings:</strong> In generating the animation, an algorithm maps the primitives
+defined in the script file to the beats determined through beat detection.
+Two primitives are mapped to each beat &ldquo;because it provides a smoother motion
+and better transitions between primitives.&rdquo; Dynamics are also used to alter
+the movement of particular motions so that they correspond well with music;
+timid motions are used with softer music, while extreme motions are used with
+louder music.</li>
+<li><strong>Constraints:</strong> Ensure that &ldquo;a primitive or routine is being performed by the
+correct body part according to the rules of Celtic dance.&rdquo; Constraints keep
+track of foot positions and control body and movement order, producing
+realistic movement. Constraints are used in some primitive motions and all
+motion routines.</li>
+<li><strong>Routines:</strong> A series of movement primitives are combined to create a more
+complex set of motions called a routine. Complex movements used in Celtic
+dance are pre-programmed by Sauer and Yang as routines. The user can also
+implement their own routines by specifying an order of primitives, which can
+later be called throughout their own animations.</li>
+</ul>
+
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/AniSequence.png" alt="Sequential images displaying the different positions involved in the 'FrontClickJump' Celtic routine."/>
+<br />
+<small>
+Figure 2: From Sauer et al: Sequential images displaying the different positions
+involved in the &#8220;FrontClickJump&#8221; Celtic routine.
+</small>
+</div>
+
+
+<p><br /></p>
+
+<h4>Evaluation of Generated Celtic Dance</h4>
+
+<p>Sauer and Yang evaluated the success of their algorithm by presenting a video of
+their generated animation, alongside a variety of music files. The viewer
+specified whether they enjoyed the animation by submitting either a &ldquo;yes&rdquo; or a
+&ldquo;no&rdquo;, and stating their reasons. It was found that the highest rated animation
+was played with Celtic music, whereas animations played with rap or orchestral
+music&mdash;&ldquo;musical types that do not typically suit dancing&rdquo; (Sauer and Yang,
+2009)&mdash;were rated lower.</p>
+
+<h3>Evaluating Shiratori and Ikeuchi, Sauer and Yang</h3>
+
+<p>Given that neither of these studies provided source code or links to animated
+demonstrations, it is difficult to directly compare them. Instead, we will
+provide some general comments on their limitations and advantages, and the
+applicability of each to our project.</p>
+
+<h4>Limitations and Advantages of Shiratori and Ikeuchi</h4>
+
+<p>Shiratori and Ikeuchi’s methods are specifically aimed at laying the groundwork
+for &ldquo;a dancing entertainment robot&rdquo;  (Shiratori and Ikeuchi, 2008) which
+synthesizes its dance according to music.  Thus, much of their work is aimed at
+generating dance which is reproducible by a humanoid robot which may have an
+extremely limited range of motion, and may not be able to properly reproduce
+quick movements.  These constraints may therefore be unnecessary or even
+limiting given that we are working exclusively with 3D-animated performances.</p>
+
+<p>Additionally, although Shiratori and Ikeuchi claim that their method is
+&ldquo;applicable not only to Japanese folk dance but also to different styles of
+dance such as break dancing,&rdquo; they provide no empirical evidence of this in
+their paper; it appears that the only dance styles they have actually tested
+their methodology on are various forms of Japanese folk dance.  Thus, there is
+some concern that the specific techniques they use to quantify motion may not be
+applicable to faster and more high-energy forms of dance from which it may not
+be possible to reliably extract keyposes.</p>
+
+<p>In fact, Shiratori and Ikeuchi have done very little empirical testing to
+determine the overall perceptual quality of their results.  While they briefly
+mention some positive feedback they have received in limited testing, they later
+admit that they have not done any formal evaluation of the perceptual quality of
+their generated dance sequences.  Thus, it is difficult to determine from the
+paper alone how successful they truly were.</p>
+
+<p>One advantage to the work done by Shiratori and Ikeuchi is that it matches
+fairly closely with the goals of our project, as we too would like to split
+dance motion into short segments and then compose sequences from those
+primitives (starting with manual composition and then potentially working up to
+automatic synthesis if time allows).  That said, their primitives are based on
+the movements of individual body parts, which is probably a finer level of
+control than we can hope to achieve given our time constraints.</p>
+
+<h4>Limitations and Advantages of Sauer and Yang</h4>
+
+<p>Sauer and Yang&rsquo;s system is designed to &ldquo;[help] users of all experience levels to
+produce appealing animations based on input music of any type and primitive
+dance moves and routines.&rdquo; Its focus on user-friendly generation of dance based
+on primitives ties well with our proposed project.  Unfortunately, their paper
+does not specify the methods used in creating motion primitives in the first
+place. It is suggested that the Celtic dance primitives were programmed by Sauer
+and Yang, rather than extracted from a pre-existing motion captured dance.
+However, Sauer and Yang cite Shiratori et al.’s previous work in decomposing
+motion into primitives.</p>
+
+<p>Currently, Sauer and Yang’s system is limited to producing Celtic dance. In
+Celtic dance, only the dancer’s legs move; their arms remain at their sides and
+their torso stays upright. Dancers do not interact or dance together, but
+usually execute their routines while standing in a line. Although Sauer and
+Yang’s system could be expanded to handle other varieties of dance primitives,
+such as those of ballroom dancing, the benefits to our project may be be
+insufficient relative to the effort that would be required to expand the current
+system. For example, in order to incorporate paired dancing, special attention
+would need to be given to each dancer’s partner; pairs of dancers would have to
+stay in sync, with each dancer also being able to move independently.</p>
+
+<p>Incorporating arm, torso, and full body movements further complicates the
+system.  Currently, the dance generation algorithm must only process foot and
+leg movements typical of Celtic dance; it only needs to ensure that each leg is
+performing one action at a time, and track which foot is in front of the other
+when initializing motions relying on the current &ldquo;leading foot&rdquo;.  Other forms of
+dance involve more complicated movements, such as:</p>
+
+<ul>
+<li>Side-stepping foot movements in addition to forward and back steps.</li>
+<li>Movement of the dancer around the floor, rather than staying in place as
+typical of Celtic dance.</li>
+<li>Arm positioning, whether in interaction with a partner or alone.</li>
+<li>Full body and torso movements, such as leaning or dipping.</li>
+</ul>
+
+
+<h3>Slot - Motion Blending</h3>
+
+<p>Krinstine Slot outlines a generic approach to blending two motions in her paper
+&ldquo;Motion Blending,&rdquo; providing methods highly applicable to our project.  Slot
+outlines three components that create a linear blend between two motions:</p>
+
+<ul>
+<li><strong>Timewarping:</strong> Determine the optimal point to begin blending two motions,
+and &ldquo;performing the blend by timing the two animations so the frames being
+blended continues [sic] being good matches.&rdquo;</li>
+<li><strong>Alignment Curves:</strong> &ldquo;Considers the problems when blending two animations
+with  an angle larger than 180 degrees. If we use a normal linear blend, the
+blended animation will turn in an undesired direction once the angle passes
+180 degrees.&rdquo;</li>
+<li><strong>Constraint Matching:</strong> Because two frames are combined by computing the
+average between them, it is possible that some constraints of the moving body
+may be violated. Constraint matches are created for each motion, and are
+considered as blending takes place.</li>
+</ul>
+
+
+<p>Since the Constraint Matching aspect of this process is utilized in neither
+Slot&rsquo;s nor our project, it will not be elaborated on in this paper.</p>
+
+<p>Similarly to our project, Slot&rsquo;s motion blending concerns a simple character
+consisting of bones connected together by joints. Each joint has a parent, with
+the exception of the root joint, from which all joints branch in some
+configuration.  It is important to note that &ldquo;[s]ince every child moves
+according to its parent, a transformation of the root will lead to a
+transformation of the whole character.&rdquo; (Slot, 2007) Additionally, Slot
+distinguishes between motion <em>blending</em> - wherein corresponding joints&#8217;
+rotations and positions are combined using weights - and motion <em>transition</em> - a
+temporary motion blend intended to &ldquo;cross-fade&rdquo; from one motion to another. In
+motion transition, the start point of the transition from within one motion, the
+end point of the transition within the second motion, and the overall length of
+the transition, must all be considered.  For our project, we are primarily
+concerned with motion transition.</p>
+
+<h4>Linear Blending</h4>
+
+<p>Slot provides two functions for achieving a linear blend of two motions by
+combining the rotations and positions of corresponding joints.  &ldquo;If given two
+motions, <em>M<sub>i</sub></em> and <em>M<sub>j</sub></em>, which are to be
+blended, one with a weight <em>w<sub>i</sub></em> and the other with a weight
+<em>w<sub>j</sub></em>, then the blended position of the k&#8217;th joint of the two
+motions (<em>J<sub>ik</sub></em> and <em>J<sub>jk</sub></em>)&rdquo; are found by
+equation 1.</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/mocap_eqn1.png" alt="Equation 1"/>
+<br />
+<small>
+Equation 1
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>For N animations blended together, the position of the k&#8217;th joint can be found
+by equation 2.</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/mocap_eqn2.png" alt="Equation 2"/>
+<br />
+<small>
+Equation 2
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>A visual representation of this kind of linear blend can be seen in figure 3.</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/LinBlend.png" alt="A linear blend of two motions. The grey and red legs are the original motions, and the green legs are the blend between them."/>
+<br />
+<small>
+Figure 3: From Slot: &#8220;A linear blend of two motions. The grey and red legs are
+the original motions, and the green legs are the blend between them.&#8221;
+</small>
+</div>
+
+
+<p><br /></p>
+
+<h4>Timewarping</h4>
+
+<p>Slot notes that although the linear blending method succeeds in blending two
+motions, it does not do it smartly. In order to achieve realistic, &ldquo;more
+plausible&rdquo; motion, Slot introduces Kovar et al.&rsquo;s timewarp curve method.
+Ideally, two motions would be blended together at the frames where they match
+closely. To accomplish this, an N &times; M distance map is constructed,
+comparing the joint orientations of each possible pair of frames, where M is
+&ldquo;the number of frames in the source motion and N is the number of frames in the
+destination motion. For each cell (i,j) in the map, the difference between the
+i&#8217;th frame in the destination motion (F<sub><em>dst</em></sub>(i)) and the j&#8217;th
+frame of the source motion (F<sub><em>src</em></sub>(j)) are computed.&rdquo; (Slot,
+2007) The distance D between the i&#8217;th and j&#8217;th frames of source motion is
+determined by computing the distance between each of the joint positions in
+frame F<sub><em>dst</em></sub>(i) as compared to F<sub><em>src</em></sub>(j),
+and then finding the weighted sum of those distances. (See equation 3.)</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/mocap_eqn3.png" alt="Equation 3"/>
+<br />
+<small>
+Equation 3
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>Using this equation, we wish to minimize D, where p<sub><em>k,j</em></sub> is
+the k&#8217;th point of the j&#8217;th frame of the source animation.</p>
+
+<h4>Testing using Distance Mapping</h4>
+
+<p>A visualization of Slot&rsquo;s timewarping method is the Distance Map, a greyscale
+image representing the distance between two figures, each in a frame that must
+be blended.  An <em>equal motions</em> distance map represents a condition where the
+&ldquo;destination and source motions are the same&rdquo; (Slot, 2007); the diagonal of the
+distance mape should be zero, shown by complete black.  Similarly, a <em>non-equal
+motions</em> distance map represents the more complex condition wherein the start
+and end destinations of two motions differ. This could occur, for example,
+between motions moving the character at different velocities, such as a run
+being blended with a walk.</p>
+
+<p>Slot primarily uses the Distance Mapping technique for testing her Timewarping
+method. Distance Mapping is implemented in our program, and will be explained in
+more detail in the following discussion of Pejsa and Pandzic&rsquo;s paper.</p>
+
+<h4>Alignment Curves</h4>
+
+<p>Alignment curves seek to solve the problem that when &ldquo;Given a blending between
+two motions with a rotation, the linear blend fails once the angle between the
+motions are larger than 180 degrees.&rdquo; (Slot, 2007) Alignment curves give each
+motion a &ldquo;vote&rdquo; on the figure&rsquo;s orientation, and votes are taken into account
+alongside blend weights when determining the final motion. Since all bones
+branch from the root, the alignment change is only applied to the root.</p>
+
+<p>Slot explains the process of calculating the alignment curve as:</p>
+
+<blockquote><p>When calculating the timewarp curve, we found the angle <em>&theta;</em> that could
+be used for transforming the destination frames local coordinate system onto
+the source frames coordinate system. This value can be used here by using this
+as the weighted orientation for deciding the final orientation. In order to
+make sure no angle is above 180 degrees, we use the alignment constrain that
+<em>|&theta;<sub>i</sub> - &theta;<sub>i</sub> -1 &le; <em>&pi;</em>|</em>. To
+fulfill this we change <em>&theta;<sub>i</sub></em> for the i&#8217;th frame on the
+timewarp curve if this criteria does not hold. When an angle passes 180
+degrees <em>&theta;<sub>i</sub></em> changes sign, hence we continue counting
+in the same sign as <em>θ<sub>i-1</sub></em>, but adding the difference of
+<em>&theta;<sub>i-1</sub></em> and <em>-&theta;<sub>i</sub></em>.</p></blockquote>
+
+<h3>Pejsa and Pandzic - Example-Based Motion Synthesis</h3>
+
+<p>In their paper &ldquo;State of the Art in Example-Based Motion Synthesis for Virtual
+Characters in Interactive Applications,&rdquo; Pejsa and Pandzic explore motion
+synthesis as a solution to creating realistic, fluid movements in virtual
+characters.  Their problem is unique in that it applies to user-controlled
+animated characters, such as those found in games. &ldquo;In offline applications all
+movement scenarios are predefined and animators can plan every detail of the
+characters&#8217; motion in advance. In interactive applications this is impossible,
+because actions occur dynamically, depending on factors like user input and
+current state of the game world.&rdquo; (Pejsa and Pandzic, 2010)  The majority of
+game engines designed to produce realistic human movement draw from motion
+captured data, yet combining these motions is still a frustrating task.
+Hand-crafting motion transitions is tedious and time consuming, and many
+pre-existing automatic methods such as Procedural Translation disregard the
+natural constraints of the human body, creating jarring unrealistic movements.
+In response to this problem, Pejsa and Pandzic propose the motion blending
+algorithm <em>Slerp</em>.</p>
+
+<h4>Motion Blending with Slerp</h4>
+
+<p>Like Slot&rsquo;s approach, Pejsa and Pandzic are animating a figure composed of
+bones, each with a parent.  All bones branch down in some configuration from the
+root, which does not have a parent.  The root positions of each  motion can be
+blended thusly:</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/mocap_eqn4.png" alt="Equation 4"/>
+<br />
+<small>
+Equation 4
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>The position and velocities of each of these motion positions
+(<em>p<sub>i</sub></em>) are weighted (<em>w<sub>i</sub></em>) and summed.</p>
+
+<p>In this process, joint orientations of each position are represented as
+non-singular unit quaternions, &ldquo;that is, every unit quaternion <em>q</em>, along with
+its antipode <em>-q</em>, maps to exactly one orientation.&rdquo; (Pejsa and Pandzic, 2010)
+The name of Pejsa and Pandzic&rsquo;s algorithm, Slerp, refers to &ldquo;spherical linear
+interpretation&rdquo; of two quaternions, and is computed as:</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/mocap_eqn5.png" alt="Equation 5"/>
+<br />
+<small>
+Equation 5
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>&hellip;where <em>&theta; = arccos(q<sub>1</sub>q<sub>2</sub></em>) and <em>t</em> is
+the interpolation weight. (Pejsa and Pandzic, 2010)</p>
+
+<p>Pejsa and Pandzic also offer methods for the more complex process of blending
+<em>N</em> motions, but since our project is concerned only with producing a &ldquo;cross
+fade&rdquo; between two motions, they are not applicable to our implementation.</p>
+
+<h4>Distance Mapping</h4>
+
+<p>As mentioned in the discussion of Slot&rsquo;s Timewarping method, the most seamless
+way of blending two motions is to start and end the blend at a point where the
+animations to be combined are most similar. Pejsa and Pandzic propose the
+Distance Mapping method as a solution to this problem.</p>
+
+<p>To begin distance mapping, a motion graph must be constructed:</p>
+
+<blockquote><p>Motion graph is a directed graph where edges correspond to segments of motion,
+while nodes serve as choice points for connecting the segments, that is each
+outgoing edge is potentially the successor to any incoming edge. An edge is
+either a portion of one of the example clips from the motion dataset or a
+transition between two such clips. A node corresponds to a single frame in one
+of the example clips. A graph walk represents a possible motion sequence. In a
+well-connected graph it is possible to generate a graph walk between any two
+nodes.</p></blockquote>
+
+<p>(Pejsa and Pandzic, 2010).</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/motion_graph.png" alt="An example of a motion graph for about a minute of motion data."/>
+<br />
+<small>
+Figure 4: From Pejsa and Panzic: An example of a motion graph for about a minute
+of motion data.
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>Although our program does not draw from enough possible animations to require
+a motion graph, the subsequent process of distance mapping is applicable to
+our implementation.</p>
+
+<h2>Implementation</h2>
+
+<p>As a starting point, we chose to modify
+<a href="http://www.cs.cmu.edu/~jmccann/">Jim McCann&rsquo;s ASF/AMC viewer</a>.  McCann&rsquo;s
+ASF/AMC viewer was designed and tested to work with the ASF and AMC files
+available on the Carnegie Mellon University Motion Capture Database.  It is
+cross-platform and uses OpenGL, which we had prior experience with, to render
+the ASF/AMC motions.  It also has a number of convenience classes and functions
+which make it easy to work with the ASF/AMC data.  These features made it an
+ideal platform on which to build our project.</p>
+
+<h3>Python Script</h3>
+
+<p>As a first step, we created a Python script which performed extremely naïve
+linear interpolation between two AMC files; this script is included in the
+project source under <code>Scripts/interpolate.py</code>.  This script works by
+reading two AMC files.  For each positional component of each bone specified in
+the AMC files, it calculates the difference between the ending position in the
+first AMC file and the starting position in the second file.  The script has no
+knowledge of the skeleton specified by the ASF file; therefore, it does not
+distinguish between translational and rotational components.  All positional
+components are simply treated as raw numbers which are &ldquo;animated&rdquo; by linearly
+interpolating between the starting and ending number.</p>
+
+<p>The script outputs a new AMC file which contains the linear interpolation
+between the two specified animations. By playing the first file, then the newly
+created interpolation file, and then the second file in sequence, one arrives at
+a rough transition between the two original animations.  With a simple
+modification, we were able to make the ASF/AMC viewer automatically cycle
+through all of the animations in its data directory, advancing to the next
+animation as soon as the current animation finished.</p>
+
+<p>The Python script was a convenient way to rapidly prototype our ideas without
+going to the difficulty of understanding and modifying the ASF/AMC viewer&rsquo;s C++
+code, but it proved time-consuming to use as it required the user to manually
+run it on animation pairs and then properly order the three output animations by
+manually ensuring that they were named in alphabetical order (the ASF/AMC viewer
+loads and plays files in alphabetical order.)  More importantly, due to the
+extremely simple method used to create the interpolated animation, the results
+were very poor: the speed of the transition animation was always unnatural
+unless the user was able to guess the correct number of frames to interpolate
+based on the difference between the ending and starting positions of the two
+original animations, and naïve linear interpolation of root positions and
+orientations resulted in &ldquo;foot-skating,&rdquo; sliding, and strange rotations.</p>
+
+<h3>Real-time Blended Transitions in C++</h3>
+
+<p>Using Kristine Slot&rsquo;s paper as a blueprint, we moved on to implementing more
+robust real-time blended transitions by directly modifying the C++ source code
+of the ASF/AMC viewer.  The ASF/AMC viewer renders each frame of the motion from
+a Pose object containing positional data and joint angles, as well as a pointer
+to a Skeleton object, which in turn contains information about the length and
+girth of each of the bones in the skeleton, and their hierarchy.</p>
+
+<p>Poses are calculated on a per-frame basis from Motion objects, which contain
+motion data loaded from AMC files.  Therefore, we are able to blend individual
+frames by maintaining two Motion objects and two Pose objects - one of each for
+each of the first and second animations.  The Motions generate the poses, and
+then we can interpolate between the joint angles in each pose using the weighted
+linear blending technique described in Kristine Slot&rsquo;s paper, which we
+previously discussed.  All of this is handled by our LerpBlender class, which is
+located in <code>Library/LerpBlender.cpp</code> and the associated header file
+<code>Library/LerpBlender.hpp</code>.</p>
+
+<p>Drawing from Pejsa and Pandzic&rsquo;s method, LerpBlender uses spherical linear
+interpolation of quaternions to integrate joint positions. Our implementation of
+Slerp assumes that, given two motions, the figure in each animation will have
+the same number of bones. When looking at a pair of frames <em>from_pose</em>
+and <em>to_pose</em> to be blended, LerpBlender must interpolate a blended
+orientation of each bone in <em>from_pose</em> corresponding to its counterpart
+bone in <em>to_pose</em>.  LerpBlender loops through each pair of bones,
+passing their orientation quaterion into Slerp.  The resulting interpolated bone
+orientation replaces the original bone orientation in <em>from_pose</em>. The
+influence of each animation is determined by a blending coefficient which is
+defined as:</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/mocap_eqn6.png" alt="Equation 6"/>
+<br />
+<small>
+Equation 6
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>That is, the influence of the second animation grows exponentially as the frame
+number of the second animation in the current blend approaches the total number
+of interpolated frames.  The value is clamped to a maximum of 1, since it should
+range from 0 to 1, with 0 indicating that the blend consists entirely of data
+from the first animation, and 1 indicating that the blend consists entirely of
+data from the second animation. The exponential growth was chosen arbitrarily,
+but upon visual inspection seems to produce nicer results than calculating the
+blending coefficient linearly according to the ratio of the current frame number
+and the total number of interpolated frames.</p>
+
+<p>After the quaternions for each bone are interpolated, the orientation is
+interpolated using Slerp. Naïve blending of the root positions between
+animations is extremely unreliable, as it will result in sliding and foot
+skating, sometimes in the opposite direction of apparent motion (i.e. the
+character may be walking in what appears to be a forwards direction, but
+translating backwards.) Instead, the root position is modified according to the
+velocity between frames. The velocity is calculated for each of the two motions,
+and the two resulting velocities are then interpolated according to the blending
+coefficient calculated previously.</p>
+
+<h3>Distance Mapping</h3>
+
+<p>Kristine Slot&rsquo;s Timewarping method is roughly implemented in the DistanceMap
+class, located in <code>Library/DistanceMap.cpp</code> and
+<code>Library/DistanceMap.hpp</code>.  The DistanceMap class builds an
+<em>n</em> &times; <em>m</em> map of distances between the frames in two animations, where <em>n</em> is
+the number of frames in the starting animation, and <em>m</em> the number of frames in
+the subsequent animation.  Distances between each pair of frames are calculated
+using Slot&rsquo;s Timewarping function (see equation 3) and stored in the map.
+Currently, distances are calculated on demand with the <code>getDistance</code>
+function; this was done for speed as the distances between non-examined nodes
+are not important when calculating the path, and calculating the distances for
+<em>n</em> &times; <em>m</em> frames of two large animations can be very slow.  Our distance
+calculation does not account for the weighting of bones.  Ideally, position
+weights would be based on bone length or density, or most logically weight
+(<em>volume</em> &times; <em>density</em>), so that distances between large bones are weighted
+more strongly than distances between small bones when calculating the shortest
+path.</p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/distancemap1.png"
+alt="Figure 5: A distance map comparing two identical animations. Notice how the
+diagonal is completely black, indicating that the distance between positions at
+corresponding frames of the animations is zero. The image was generated in
+MATLAB using data from the DistanceMap class."/>
+<br />
+<small>
+Figure 5: A distance map comparing two identical animations. Notice how the
+diagonal is completely black, indicating that the distance between positions at
+corresponding frames of the animations is zero. Generated in MATLAB using data
+from the DistanceMap class.
+</small>
+</div>
+
+
+<p><br /></p>
+
+<div style="margin-left: auto; margin-right: auto; text-align: center;">
+<img src="/images/distancemap2.png"
+alt="Figure 6: A distance map comparing two differing animations.
+calcShortestPath will attempt to draw a path from the start of the interpolation
+to the end, passing through frames which are most similar to each other (as
+indicated by darker shades of grey) without violating the slope limit.  Motion
+files used to generate this data were all_data/05_01.amc and all_data/05_02.amc.
+The image was generated in MATLAB using data from the DistanceMap class."/>
+<br />
+<small>
+Figure 6: A distance map comparing two differing animations.
+<code>calcShortestPath</code> will attempt to draw a path from the start of the
+interpolation to the end, passing through frames which are most similar to each
+other (as indicated by darker shades of grey) without violating the slope limit.
+Motion files used to generate this data were <code>all_data/05_01.amc</code> and
+<code>all_data/05_02.amc</code>.  The image was enerated in MATLAB using data
+from the DistanceMap class.
+</small>
+</div>
+
+
+<p><br /></p>
+
+<p>As Kristine Slot&rsquo;s paper is primarily concerned with directly blending two
+animations, she uses the Timewarping method to find an ideal starting and
+finishing location for the blend, where the start may be anywhere in the first
+animation and the end may be anywhere in the second (as long as rules about the
+maximum number of subsequent frames to use from one animation without moving to
+the next frame in the other are not violated).  This approach proved to not be
+very suitable for our purposes, as we are more concerned with smoothly
+transitioning between two complete animations; i.e. we want to begin our
+transition near the end of the first animation and finish it near the start of
+the second animation.  Therefore, we perform blending only over a fixed number
+of frames relative to the animation size; currently we use one quarter of the
+frames in the shorter animation.  Ideally, this value would not be a constant
+defined in the code, but controllable by the user.  Our DistanceMap class, then,
+starts on the frame that LerpBlender starts blending, and from there calculates
+the shortest path from the start to the end, where the end cannot occur after
+the maximum number of blended frames.</p>
+
+<p>LerpBlender&rsquo;s interpolation uses DistanceMap&rsquo;s <code>calcShortestPath</code>
+function to find the best path between frames. The calculation uses a slope
+limit <em>L</em> of 3, suggested by Slot as a sufficient constraint to prevent
+unnatural movements caused by skipping between &ldquo;distant&rdquo; frames. Starting from
+the zero&#8217;th frame of the first animation, <code>calcShortestPath</code> pushes
+frame pairs onto the &ldquo;shortest path&rdquo; STL vector. The first element of the frame
+pair is the frame of the first animation to be blended, and the second element
+is the frame of the second animation.  Until the frame at which interpolation
+should start is reached, only the frame in the first animation is incremented
+while the frame in the second animation stays at 0. Once interpolation starts,
+then pairs are chosen based on their distance, as calculated by the
+<code>getDistance</code> function, as long as their location in the distance map
+does not violate the slope limit.</p>
+
+<h3>Blending Motionsin Series</h3>
+
+<p>Once two motions could be successfully blended using the above methods, the only
+problem remaining was to seamlessly blend a string of motions, making the end of
+each transition into to the beginning of the next. A  modification to the
+<code>update</code> and <code>switch_motion</code> functions of the BrowseMode
+class, located in <code>Browser/BrowseMode.cpp</code>, and associated header
+file <code>Browser/BrowseMode.hpp</code>, allows the viewer to cycle through all
+AMC files in the input directory, blending smoothly between animations.</p>
+
+<p>Initially, each motion file was displayed sequentially, in a location and
+orientation determined by the AMC file&rsquo;s data alone.  The resulting display of
+movement was jarring and hard to follow; when a transition between motions
+occurred, the figure would instantaneously jump across the floor to a different
+position and orientation.  The updated <code>switch_motion</code> function
+modifies the state of the figure in the upcoming motion according to the root
+position of the current pose. The X and Z coordinates of the figure are used to
+ensure that a motion begins at the same location as where the previous motion
+ended. The Y coordinate&mdash;the height of the root from the ground&mdash;is
+about halfway up the figure&rsquo;s body, and is not considered when modifying the
+figure&rsquo;s position; alterations to the Y coordinate could cause the figure to
+rise off the ground or sink below the floor during the animation.</p>
+
+<p>The <code>switch_motion</code> function updates the LerpBlender used to blend
+the first and second motion. Now, when the currently displayed frame is updated
+in the <code>update</code> function, and if the figure is transitioning between
+motions, the blender obtains the current, interpolated pose for display.  This
+process is repeated each time one motion comes to an end and another is
+beginning, allowing the AMC Viewer to display a continuous stream of motion
+captured files which transition and loop smoothly.</p>
+
+<h2>Results</h2>
+
+<p>Our project&rsquo;s success depends on the naturalness and fluidity of the resulting
+interpolations, and is difficult to measure quantitatively.  Ideally, our
+outcome would be compared to the motion interpolation work of others.
+Unfortunately, however, other similar projects, such as Shiratori and Ikeuchi&rsquo;s,
+and Sauer and Yang&rsquo;s, did not provide source code or recordings of their
+animation results.  We must instead judge the quality of our own animations as
+objectively as possible.  In this section we will provide a qualitative analysis
+of our results as demonstrated by four recordings of interpolated animation.</p>
+
+<p>It is important to note that the low framerate of our videos is a result of the
+low-quality freeware screen capture software used to record.  The live framerate
+is outputted to the top-left of the screen, and is generally at about 120fps,
+making the actual motion quite smooth.  Additionally, the exact times of
+transition between motion files can be deduced by attending to the first row of
+text information, which shows the file names being interpolated. When the file
+names change, a transition has been completed.</p>
+
+<h3>First Example</h3>
+
+<p><video width='798' height='597' preload='none' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap1.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+
+<p>The first recording demonstrates a simple combination of animation files,
+emulating what a choreographer might put together when designing a dance. The
+figure takes a few steps forward, and transitions into a twirl motion. During
+the transition, one can subtly see the limbs sliding into position in
+preparation for the twirl motion. After the second twirl, the figure&rsquo;s feet
+change position.  This interpolation is a successful example of correcting the
+position of large bones in a natural way; the figure&rsquo;s weight seems to shift to
+its right leg as the left leg comes forward. However, the following transition
+is less successful; the figure spins in place counter clockwise as a result of a
+drastic change in orientation between motions. Although the interpolation is
+correct in changing the figure&rsquo;s facing-direction along the shortest path, the
+result is not very natural.</p>
+
+<p>It is worth noting that the briefly inhuman backwards knee-bend during the final
+leg raise is not a result of our interpolation, but rather an error in the
+original motion capture data.</p>
+
+<p>The data used for this recording were <code>05_01.amc</code>,
+<code>05_02.amc</code>, <code>05_03.amc</code>, and <code>05_05.amc</code>.</p>
+
+<h3>Second Example</h3>
+
+<p><video width='798' height='597' preload='none' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap2.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+
+<p>The second recording tests interpolation between drastic changes in arm
+positions. The first motion ends with the figure&rsquo;s left arm raised, and the
+second motion begins with the figure&rsquo;s arms lowered.  The interpolation between
+motions successfully moves  the arms between positions in a natural, fluidic way
+(unfortunately, the capture skips a couple of frames in this instant, making it
+hard to see.  The motion can be recreated live using the files listed below).</p>
+
+<p>Later, interpolation occurs between a motion ending with arms down, and a motion
+beginning with arms up. This transition is again smooth and successful. Although
+the joint orientation blending is natural, the overall figure orientation is
+not; there is slight skating on the floor as the figure rotates in place.</p>
+
+<p>The data used for this recording were <code>05_02.amc</code>,
+<code>05_04.amc</code> and <code>05_11.amc</code>.</p>
+
+<h3>Third Example</h3>
+
+<p><video width='795' height='596' preload='none' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap3.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+
+<p>The third recording is a demonstration of how two motion files can be made to
+loop continuously.  Repeating the same motion in a loop has useful applications
+in dance training; a dancer could observe the motion repeatedly, and emulate it,
+as the animated figure danced perpetually.</p>
+
+<p>This file also demonstrates our reoccurring issue of rotation in place.  Note,
+though, that the jitteriness of the final jump is again a consequence of our
+poor-quality recording software; the live jump was as smooth as the previous
+jumps.</p>
+
+<p>The data used for this recording were <code>05_18.amc</code> and
+<code>05_20.amc</code>.</p>
+
+<h3>Fourth Example</h3>
+
+<p><video width='795' height='596' preload='none' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap4.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+
+<p>The fourth and final recording shows a figure covering a large distance during
+its dance.  Interpolations seem to successfully maintain the appearance of the
+figure&rsquo;s momentum as it travels.  In this case, the figure&rsquo;s overal direction of
+motion is the same between all of the walk and jump/spin raw motion files, so
+the final animation is quite successful. If this were not the case, as will be
+discussed in the Improvements section, the results would be far less natural
+given our current implementation.</p>
+
+<p>The data used in this recording were <code>05_01.amc</code>,
+<code>05_08.amc</code>, <code>05_13.amc</code>, and <code>05_18.amc</code>.</p>
+
+<h2>Conclusions</h2>
+
+<p>Overall, our implementation is successful. Pejsa and Pandzic&rsquo;s spherical linear
+interpolation of quaternions, integrating joint positions, is used in
+conjunction with Slot&rsquo;s distance mapping, finding the shortest path between
+frames for blending. With these two methods, we generally solve our primary
+problem of transitioning smoothly between motions with diverse figure positions.
+Because naïve blending was found to be ureliable in interpolating root
+positions, we instead reposition the root between transitions by accounting for
+changes in its X and Z coordinates, and recalculating based on the root&rsquo;s
+velocity from one motion to the next.  Prior to applying this improvement, the
+figure would jump sporadically between motion files. In our implementation, the
+figure&rsquo;s positioning seems much more natural between motions.</p>
+
+<p>Despite our general success, our program leaves room for improvement.
+Interpolation frequently becomes unnatural when a figure&rsquo;s facing-direction is
+drastically different at the end of one motion and the beginning of the next.
+Currently, our blender resolves this discrepancy by rotating the figure in
+place&mdash;a solution which could be improved, as discussed in the following
+subsection.</p>
+
+<p>The success of the Distance Map technique is, unfortunately, dubious. It is
+difficult to test whether DistanceMap significantly improves our interpolations;
+Slot&rsquo;s paper seems to only demonstrate the Distance Map on pairs of animations
+which are already similar, leading us to believe that she (and possible the
+original authors of this technique) may have only tested it on similar
+animations.  Since the animations we attempted to blend were diverse and
+dissimilar, it is difficult to relate our results to Slot&rsquo;s, when she used
+motions which were much easier to blend together.</p>
+
+<h3>Improvements</h3>
+
+<p>Presently, the DistanceMap class does not apply weights to each bone when
+calculating the distance between pairs of corresponding positions. Only raw
+distances are used.  Although Slot does not describe the weighting criteria for
+each position, it seems intuitive that minor bones, such as fingers, should
+carry less importance than larger bones, such as those representing the upper
+and lower legs and arms. In a future iteration of this project, the length,
+density, or most logically weight (<em>volume</em> &times; <em>density</em>) of each bone
+should be taken into account when summing distances.  Alternatively, the fact
+that minor bones tend to occur in the extremities, and thus do not tend to have
+many, if any, &ldquo;child&rdquo; bones, is worthy of consideration.  It is possible that a
+sort of &ldquo;automatic weighting&rdquo; occurs as a consequence of this assumption; any
+differences in a large bone will likely be compounded by differences in its
+progressively smaller &ldquo;child&rdquo; bones, but differences in small bones will
+themselves be of smaller magnitudes, and thus will may significantly affect
+their larger &ldquo;parent&rdquo; bones, nor will they have many of their own &ldquo;child&rdquo; bones.</p>
+
+<p>One of the most noticeable shortcomings of our project is its difficulty in
+handling drastic changes in a figure&rsquo;s orientation between animations. A sample
+of this problem can be seen in the third recording. After finishing a jump, the
+figure can be seen slowly rotating about 180&deg; in place. This unnatural
+movement is a consequence of our interpolation between an animation ending with
+the figure facing one way, transitioning into an animation with the figure
+facing the opposite direction.  The limitations of this problem become apparent
+when trying to compose a specific motion routine.  For example, if a user has
+two motion capture files, one of a walk, and the other of a run, and wants to
+create a blended animation of a figure walking, transitioning to a run, our
+program would be an ideal solution.  However, if the user&rsquo;s walking animation is
+at a completely different angle of motion than the running animation, our
+program would fail; rather than transitioning smoothly from a walk to a run in a
+straight trajectory, the figure&rsquo;s direction of travel would rotate drastically
+as it transitioned between animations.</p>
+
+<p>One potential solution to this problem would be the use of more standardized
+motion capture files.  Although useful in their diversity, the CMU Motion
+Capture Database dance files are frustratingly varied in their format;
+animations often have very different locations and orientations of root
+positions, making interpolating between them difficult. If each motion file was
+formatted to a standard starting location and orientation, a more successful and
+stable interpolation method could be devised.  An more robust solution could
+implement Slot&rsquo;s alignment curve method; an improved algorithm utilising this
+technique would align an entire animation so that its starting point is oriented
+similarly to the ending orientation of the previously played motion file.
+Unfortunately, due to time constraints, we could not apply alignment curves to
+the current iteration of this project.  An even more ambitious solution might
+allow the user to choose the desired orientation of each animation, providing
+more direct control of the figure&rsquo;s overall direction of motion.</p>
+
+<p>Other improvements to our implementation deal with improving the user&rsquo;s control
+over the resulting interpolated motion.  In some cases, a user may want to trim
+frames from the start and end of their motion captured file.  Some of our test
+AMC files from the CMU Motion Capture Database began with too-long pauses of the
+figure preparing to perform a dance move, and ended with the figure relaxing or
+stepping off to the side after finishing their movement.  Ideally, the user
+would have the ability to trim these unnecessary start and end frames in a more
+efficient manner than manually editing their motion capture files.</p>
+
+<h2>References</h2>
+
+<ul>
+<li><p>Shihui Guo. Open source program for character motion synthesis.
+<a href="http://www.motionsynthesis.org/methodologies.html">http://www.motionsynthesis.org/methodologies.html</a>,
+2012.</p></li>
+<li><p>Tomislav Pejsa and I.S. Pandzic. State of the art in example-based motion
+synthesis for virtual characters in interactive applications. <em>Computer
+Graphics forum</em>, 29(1):202–226, 2010.</p></li>
+<li><p>D. Sauer and Y-H. Yang. Music-driven character animation. <em>ACM Trans.
+Multimedia Comput. Commun.</em>, 5(4), October 2009.</p></li>
+<li><p>T. Shiratori and K. Ikeuchi. Synthesis of dance performance based on analyses
+of human motion and music. <em>IPSJ Online Transactions</em>, 1:80–93, July 2008.</p></li>
+<li><p>Kristine Slot. Motion blending. Copenhagen University, Department of Computer
+Science, February 2007.</p></li>
+</ul>
+
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-11T01:03:00-08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:03 am</span></time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<h1>Pages</h1>
+<ul id="pages-aside">
+<li><a href="/" title="Home">Home</a></li>
+<li><a href="/about" title="About">About</a></li>
+<li><a href="/blog/archives" title="Archives">Archives</a></li>
+<li><a href="/projects" title="Projects">Projects</a></li>
+</ul>
+
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      
+      <li class="post             category-links            ">
+        <a href="/entry/2015/01/04/be-a-communications-consequentialist/">Be a Communications Consequentialist</a>
+      </li>
+    
+      
+      <li class="post             category-reviews            ">
+        <a href="/entry/2015/01/02/book-highlights-halo-the-fall-of-reach/">Book Highlights: Halo: The Fall of Reach</a>
+      </li>
+    
+      
+      <li class="post             category-reviews            ">
+        <a href="/entry/2014/12/26/book-review-i-am-malala/">Book Review: I Am Malala</a>
+      </li>
+    
+      
+      <li class="post             category-links            ">
+        <a href="/entry/2014/12/24/review-link-in-real-life/">Review Link: In Real Life</a>
+      </li>
+    
+      
+      <li class="post             category-reviews            ">
+        <a href="/entry/2014/11/02/book-review-lying/">Book Review: Lying</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+<section>
+<h1>Categories</h1>
+  <ul id="categories-aside">
+  
+  
+    
+  <li class="category-aside category-coding">
+    <a href="/categories/coding">Coding</a>
+  </li>
+  
+    
+  <li class="category-aside category-links">
+    <a href="/categories/links">Links</a>
+  </li>
+  
+    
+  <li class="category-aside category-personal">
+    <a href="/categories/personal">Personal</a>
+  </li>
+  
+    
+  <li class="category-aside category-reviews">
+    <a href="/categories/reviews">Reviews</a>
+  </li>
+  
+    
+  <li class="category-aside category-technology">
+    <a href="/categories/technology">Technology</a>
+  </li>
+  
+  </ul>
+</section>
+<section>
+<h1>Social</h1>
+<ul id="social-aside">
+<li>
+<a rel="me" target="_blank" href="https://github.com/mlindgren"
+title="Visit my Github public repositories."><img src="/images/github.png"
+alt="Click to visit Github">&nbsp;Github</a></li>
+<li>
+<a rel="me" target="_blank"
+href="http://www.last.fm/user/lindgrenM" title="Visit my last.fm profile
+page."><img src="/images/last.fm.png" alt="Click to visit
+last.fm">&nbsp;last.fm</a>
+</li>
+<li>
+<a rel="me" target="_blank"
+href="http://stackoverflow.com/users/108340/mitch-lindgren" title="Visit my
+Stack Overflow profile."><img src="/images/stackoverflow.png" alt="Click to
+visit Stack Overflow">&nbsp;Stack Overflow</a>
+</li>
+<li>
+<a rel="me"
+target="_blank" href="https://twitter.com/0xde1e7ed" title="Follow me on
+Twitter"><img src="/images/twitter.png" alt="Click to visit
+Twitter">&nbsp;Twitter</a>
+</li>
+<li><a rel="me" target="_blank"
+href="http://mlindgren.yelp.ca/" title="Read my business reviews on Yelp."><img
+src="/images/yelp.png" alt="Click to visit Yelp">&nbsp;Yelp</a>
+</li>
+<li>
+<a
+rel="me" target="_blank" href="http://www.youtube.com/user/lindgrenMitch"
+title="Visit my YouTube channel."><img src="/images/yt.png"
+alt="Click to visit YouTube">&nbsp;YouTube</a>
+</li>
+</ul>
+
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mlindgren',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><ul class="subscription" data-subscription="rss"
+style="float: right; display: inline-block;">
+<li style="display: inline-block;"><a href="/atom.xml" rel="subscribe-rss"
+title="subscribe via RSS"
+style="font-size: 18px; width: 22px; height: 22px; display: inline-block;
+overflow: hidden">
+RSS</a>
+</li>
+</ul>
+
+<p>
+  Copyright &copy; 2010 - 2015 Mitch Lindgren
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img
+     alt="Creative Commons License" style="border-width:0"
+     src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a>
+
+  <span class="credit"
+        style="text-align: center; position: absolute; left: 50%">
+  Powered by <a href="http://octopress.org">Octopress</a>
+  </span>
+</p>
+
+<script type="text/javascript">
+document.body.className += " " + navigator.platform;
+</script>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mlindgrenca';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.mlindgren.ca/projects/mocap/index.html';
+        var disqus_url = 'http://blog.mlindgren.ca/projects/mocap/index.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
