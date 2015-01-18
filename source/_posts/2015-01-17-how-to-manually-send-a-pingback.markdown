@@ -26,7 +26,7 @@ variety of reasons which aren't relevant to this post.
 
 Before I proceed, I want to note that full credit for this information goes to
 [Aaron Parecki](http://aaronparecki.com/); he explains the technique in
-[this GitHub Gist](https://gist.github.com/aaronpk/5744879). The only reason I'm
+[this GitHub Gist](https://gist.github.com/aaronpk/5744879). The reason I'm
 reproducing it here is because it was surprisingly hard to find Aaron's Gist,
 or anything else of relevance, when I was searching for information on how to
 send a Pingback. Hopefully, by posting about it and adding some extra context, I
@@ -71,5 +71,5 @@ installed.  Just run:
 
 ...and that's it! cURL should print out an XML response from this server with a
 message indicating that your Pingback was registered. Of course, to be truly
-sure it worked, you should check the target URL and see if your Pingback has
-been added to the page. (Note that some sites disable Pingbacks.)
+sure it worked, you should check the target URL and see if your Pingback was
+added to the page. (Note that some sites disable Pingbacks.)
