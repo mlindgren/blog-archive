@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Where are all the Computer Scientists? - mlindgren.ca</title>
+  <title>How to manually send a Pingback - mlindgren.ca</title>
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="It&rsquo;s common knowledge that enrollment in computer science programs has declined significantly over the past decade. Although the trend seems to &hellip;">
+  <meta name="description" content="A couple years ago I stopped using WordPress and
+switched
+to Octopress, which is a derivative of
+Jekyll. I continue to be pretty happy with this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2010/08/27/misconceptions-about-computer-science">
+  <link rel="canonical" href="http://blog.mlindgren.ca/entry/2015/01/17/how-to-manually-send-a-pingback">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="mlindgren.ca" type="application/atom+xml">
@@ -150,7 +153,7 @@ $(document).ready(function() {
     <div id="content">
       
 
-<div id="category-wrapper" class="category-coding">
+<div id="category-wrapper" class="category-technology">
 
 
 
@@ -164,12 +167,12 @@ $(document).ready(function() {
 <article class="hentry " role="article" >
   
 
-<div class="category-coding">
+<div class="category-technology">
 
   <header>
     <h1 class="entry-title">
 
-<a href="/entry/2010/08/27/misconceptions-about-computer-science/">Where are all the Computer Scientists?</a>
+<a href="/entry/2015/01/17/how-to-manually-send-a-pingback/">How to manually send a Pingback</a>
 
 </h1>
 
@@ -180,37 +183,100 @@ $(document).ready(function() {
 
 
 
-<time class='entry-date' datetime='2010-08-27T19:01:00-07:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>7:01 pm</span></time>
+<time class='entry-date' datetime='2015-01-17T21:04:29-08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:04 pm</span></time>
         
-         &bull; <a rel="bookmark" href="/entry/2010/08/27/misconceptions-about-computer-science/">&infin;</a>
+         &bull; <a rel="bookmark" href="/entry/2015/01/17/how-to-manually-send-a-pingback/">&infin;</a>
       </p>
     
   </header>
 
 
 
-  <div class="entry-content"><p>It&rsquo;s common knowledge that enrollment in computer science programs has declined significantly over the past decade.  Although the trend seems to be reversing itself with enrollment <a href="http://arstechnica.com/science/news/2010/03/computer-science-enrollment-continues-growth-but-phds-down.ars">increasing over the past few years</a>, computer science educators shouldn&rsquo;t get complacent just yet.  There&rsquo;s still much work to be done in order to ensure that computer science departments continue to grow and are able to meet the increasing demand for technically skilled graduates.</p>
+  <div class="entry-content"><p>A couple years ago I stopped using WordPress and
+<a href="http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress/">switched</a>
+to <a href="http://octopress.org/">Octopress</a>, which is a derivative of
+<a href="http://jekyllrb.com/">Jekyll</a>. I continue to be pretty happy with this
+decision, but there are some downsides to using a static site generator. One
+issue is the lack of support for
+<a href="http://en.wikipedia.org/wiki/Pingback">Pingbacks</a>, which are a method supported
+by a number of dynamic blogging platforms to notify another blog when you link
+to its content. Pingbacks provide a good way to respond to blog posts using
+your own blog rather than via commenting; thus, they facilitate &ldquo;conversation&rdquo;
+between blogs. Unfortunately, if you&rsquo;re using Octopress or Jekyll or another
+framework to generate static HTML pages, you won&rsquo;t natively have the ability to
+send or receive Pingbacks.</p>
 
-<p>I&rsquo;ve always felt that a lack of exposure is one of the primary detriments to computer science enrollment.  While I don&rsquo;t have any hard data, my own experience combined with an informal surveyal of friends and colleagues leads me to believe that a large percentage of North American high schools—possibly even a majority—offer little in the way of comprehensive computing classes.  While I don&rsquo;t dispute the importance of math, English and science, I can&rsquo;t help but wonder why computing isn&rsquo;t given an equal footing in the educational sphere, given its ubiquity today.</p>
+<p>Luckily, Pingbacks can be sent manually with relative ease. Receiving Pingbacks
+still won&rsquo;t be possible, though; that&rsquo;s a much harder problem to solve, for a
+variety of reasons which aren&rsquo;t relevant to this post.</p>
 
-<p>I&rsquo;ve encountered a great number of intelligent and educated people who have <em>no idea whatsoever</em> about what the field of computer science is, or even how computers and software work.  I understand that most people don&rsquo;t necessarily need that information.  However, it&rsquo;s odd to me that basic computer literacy isn&rsquo;t required of college graduates (let alone high school students) in the same way that basic writing and math skills are.  In the interest of meeting ever-increasing economic demand for technically skilled graduates, shouldn&rsquo;t we do more to expose students to computing?<!-- more --></p>
+<p>Before I proceed, I want to note that full credit for this information goes to
+<a href="http://aaronparecki.com/">Aaron Parecki</a>; he explains the technique in
+<a href="https://gist.github.com/aaronpk/5744879">this GitHub Gist</a>. The only reason I&rsquo;m
+reproducing it here is because it was surprisingly hard to find Aaron&rsquo;s Gist,
+or anything else of relevance, when I was searching for information on how to
+send a Pingback. Hopefully, by posting about it and adding some extra context, I
+can make the information more searchable.</p>
 
-<p>To illustrate my point, here are a few examples:</p>
+<p>First, you&rsquo;ll need to create a copy of this XML file on your local machine:</p>
 
-<ul>
-    <li style="margin-bottom: 1em;">I used to work retail, and small-talk at the till would frequently turn to my university career.  Almost invariably when I told a customer that I was enrolled in a computer science program, he or she would reply &#8220;Oh, I always have so much trouble getting computers to work.  I think mine has a virus.&#8221;  This was usually followed by &#8220;But it&#8217;s good that you&#8217;re learning about them; we&#8217;ll always need people to fix them!&#8221;</li>
-    <li style="margin-bottom: 1em;">While discussing my current job with a friend of mine who is in the third year of her degree program, I described my workflow to her.  I told her that a bug report or feature request will come in from a customer, I&#8217;ll gather requirements and implement a solution, and then make adjustments as necessary until the customer is satisfied.  She asked, &#8220;How many do you get done in a day?&#8221;  I couldn&#8217;t help but laugh; there are very few tasks in client-focused software development which are both worth mentioning and completable in one day.  Perhaps I&#8217;m being unfair here, as that question probably seems reasonable to someone with little knowledge of software development.  However, no one would ask of a an architect, &#8220;How many buildings do you design in a day?&#8221;  Why is software different?  I&#8217;d argue that it&#8217;s because most people are never exposed to software development.</li>
-    <li style="margin-bottom: 1em;">In my third year of university I was required to take an English course to fulfill my breadth requirements.  While discussing one of my papers with her, the professor complimented me on my writing.  She said that I had a strong, persuasive style, and asked if I was a law student.  She was shocked when I told her that, as a matter of fact, I was in computer science.  She then told me that she was glad I&#8217;d taken her course (on Renaissance and early modern literature), as it would ensure that I was somewhat cultured and not simply a &#8220;computer nerd.&#8221;  I have a great deal of respect for that professor and I don&#8217;t believe that her comment had any ill intent, but it again illustrates the fact that computer science is frequently misunderstood and/or not taken seriously.</li>
-</ul>
+<figure class='code'><figcaption><span>pingback.xml </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;methodCall&gt;</span>
+</span><span class='line'><span class="nt">&lt;methodName&gt;</span>pingback.ping<span class="nt">&lt;/methodName&gt;</span>
+</span><span class='line'><span class="nt">&lt;params&gt;</span>
+</span><span class='line'> <span class="nt">&lt;param&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;value&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;string&gt;</span>http://source/url/here<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/value&gt;</span>
+</span><span class='line'> <span class="nt">&lt;/param&gt;</span>
+</span><span class='line'> <span class="nt">&lt;param&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;value&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;string&gt;</span>http://target/url/here<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/value&gt;</span>
+</span><span class='line'> <span class="nt">&lt;/param&gt;</span>
+</span><span class='line'><span class="nt">&lt;/params&gt;</span>
+</span><span class='line'><span class="nt">&lt;/methodCall&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>I&rsquo;m not entirely sure if these examples will properly communicate the point I&rsquo;d hoped they would. I wouldn&rsquo;t want anyone to misunderstand the purpose of this post, either; I don&rsquo;t mean to complain about how computer science is perceived.  I don&rsquo;t particularly care how people feel about my field of study.</p>
+<p>Replace the two URLs as appropriate - the first one is the source (i.e. your
+blog post), and the second is the target (the post you are linking to).</p>
 
-<p>My point is this: it seems to me that a large percentage of people, no matter how well educated they may otherwise be, have no idea how computers work or how software is developed.  I feel that the primary reason for this is, in most cases, that they were never exposed to computing in a serious way.  Until this is remedied, computer science enrollment will continue to be mediocre and the field of computer science will not reach its full potential.  After all, who wants to go into a field he or she knows nothing about?</p>
+<p>Now, you just need to <code>POST</code> the request to the target server. You&rsquo;ll need to
+know the target&rsquo;s XML-RPC endpoint URL for this.  Usually, it will be <code>/xmlrpc</code>,
+or for WordPress blogs, <code>/xmlrpc.php</code>. You can find out for sure by inspecting
+the site&rsquo;s source for a <code>&lt;link rel="pingback" href="..."/&gt;</code> tag.</p>
 
-<p>I&rsquo;ve mentioned that I&rsquo;m surprised at the lack of computer literacy I see in some college graduates.  Colleges are not my primary concern, though.  If computer science enrollment is to be increased, exposure to computing needs to start much earlier.  At the very least, I&rsquo;d like to see is comprehensive computing courses&mdash;which teach skills up to and including basic programming&mdash;made available in a majority of high schools.  Ideally, these classes should not simply be electives; one computing class should be a required part of any high school curriculum.  (I don&rsquo;t mean a course in touch typing.)  Of course, given the real-world economic and temporal constraints that educators face, I don&rsquo;t expect that any of these things will happen any time soon.  One can always hope, though!</p>
+<p>You can use cURL to post your request. It&rsquo;s built into most Unix-like operating
+systems, but Windows users will have to
+<a href="http://curl.haxx.se/dlwiz/?type=bin&amp;os=Win32&amp;flav=-&amp;ver=2000%2FXP">download it</a>,
+and if you&rsquo;re on Mac OS X you probably need to have Apple&rsquo;s developer tools
+installed.  Just run:</p>
 
-<p><span style="font-size: 0.8em;">On a related note, you may be amused to find out <a href="http://www.youtube.com/watch?v=o4MwTvtyrUQ" title="what a browser is">what a browser is.</a></span></p>
+<pre><code>curl -X POST -d @pingback.xml http://example.com/xmlrpc.php
+</code></pre>
+
+<p>&hellip;and that&rsquo;s it! cURL should print out an XML response from this server with a
+message indicating that your Pingback was registered. Of course, to be truly
+sure it worked, you should check the target URL and see if your Pingback has
+been added to the page. (Note that some sites disable Pingbacks.)</p>
 </div>
 
 </div>
@@ -227,12 +293,12 @@ $(document).ready(function() {
 
 
 
-<time class='entry-date' datetime='2010-08-27T19:01:00-07:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>7:01 pm</span></time>
+<time class='entry-date' datetime='2015-01-17T21:04:29-08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:04 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/categories/coding/'>Coding</a>
+    <a class='category' href='/categories/technology/'>Technology</a>
   
 </span>
 
@@ -248,10 +314,8 @@ $(document).ready(function() {
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/entry/2010/07/13/puzzle-panel-postmortem-the-good-framework/" title="Previous Post: Puzzle Panel Postmortem: Framework">&laquo; Puzzle Panel Postmortem: Framework</a>
+        <a class="basic-alignment left" href="/entry/2015/01/04/be-a-communications-consequentialist/" title="Previous Post: Be a Communications Consequentialist">&laquo; Be a Communications Consequentialist</a>
       
-      
-        <a class="basic-alignment right" href="/entry/2010/09/06/android-first-impressions/" title="Next Post: Android First Impressions">Android First Impressions &raquo;</a>
       
     </p>
   </footer>
@@ -455,8 +519,8 @@ document.body.className += " " + navigator.platform;
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.mlindgren.ca/entry/2010/08/27/misconceptions-about-computer-science/';
-        var disqus_url = 'http://blog.mlindgren.ca/entry/2010/08/27/misconceptions-about-computer-science/';
+        var disqus_identifier = 'http://blog.mlindgren.ca/entry/2015/01/17/how-to-manually-send-a-pingback/';
+        var disqus_url = 'http://blog.mlindgren.ca/entry/2015/01/17/how-to-manually-send-a-pingback/';
         var disqus_script = 'embed.js';
       
     (function () {

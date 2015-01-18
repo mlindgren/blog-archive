@@ -9,9 +9,10 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="Via a comment on Slate Star Codex,
-Measure of Doubt discusses some strategies for
-effective written communication, using a &ldquo;consequentialist& &hellip;">
+  <meta name="description" content="A couple years ago I stopped using WordPress and
+switched
+to Octopress, which is a derivative of
+Jekyll. I continue to be pretty happy with this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -151,6 +152,136 @@ $(document).ready(function() {
   <div id="main">
     <div id="content">
       <div class="blog-index">
+  
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
+      
+
+<div class="category-technology">
+
+  <header>
+    <h1 class="entry-title">
+
+<a href="/entry/2015/01/17/how-to-manually-send-a-pingback/">How to manually send a Pingback</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-17T21:04:29-08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:04 pm</span></time>
+        
+         &bull; <a rel="bookmark" href="/entry/2015/01/17/how-to-manually-send-a-pingback/">&infin;</a>
+      </p>
+    
+  </header>
+
+
+
+  <div class="entry-content"><p>A couple years ago I stopped using WordPress and
+<a href="http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress/">switched</a>
+to <a href="http://octopress.org/">Octopress</a>, which is a derivative of
+<a href="http://jekyllrb.com/">Jekyll</a>. I continue to be pretty happy with this
+decision, but there are some downsides to using a static site generator. One
+issue is the lack of support for
+<a href="http://en.wikipedia.org/wiki/Pingback">Pingbacks</a>, which are a method supported
+by a number of dynamic blogging platforms to notify another blog when you link
+to its content. Pingbacks provide a good way to respond to blog posts using
+your own blog rather than via commenting; thus, they facilitate &ldquo;conversation&rdquo;
+between blogs. Unfortunately, if you&rsquo;re using Octopress or Jekyll or another
+framework to generate static HTML pages, you won&rsquo;t natively have the ability to
+send or receive Pingbacks.</p>
+
+<p>Luckily, Pingbacks can be sent manually with relative ease. Receiving Pingbacks
+still won&rsquo;t be possible, though; that&rsquo;s a much harder problem to solve, for a
+variety of reasons which aren&rsquo;t relevant to this post.</p>
+
+<p>Before I proceed, I want to note that full credit for this information goes to
+<a href="http://aaronparecki.com/">Aaron Parecki</a>; he explains the technique in
+<a href="https://gist.github.com/aaronpk/5744879">this GitHub Gist</a>. The only reason I&rsquo;m
+reproducing it here is because it was surprisingly hard to find Aaron&rsquo;s Gist,
+or anything else of relevance, when I was searching for information on how to
+send a Pingback. Hopefully, by posting about it and adding some extra context, I
+can make the information more searchable.</p>
+
+<p>First, you&rsquo;ll need to create a copy of this XML file on your local machine:</p>
+
+<figure class='code'><figcaption><span>pingback.xml </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;methodCall&gt;</span>
+</span><span class='line'><span class="nt">&lt;methodName&gt;</span>pingback.ping<span class="nt">&lt;/methodName&gt;</span>
+</span><span class='line'><span class="nt">&lt;params&gt;</span>
+</span><span class='line'> <span class="nt">&lt;param&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;value&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;string&gt;</span>http://source/url/here<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/value&gt;</span>
+</span><span class='line'> <span class="nt">&lt;/param&gt;</span>
+</span><span class='line'> <span class="nt">&lt;param&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;value&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;string&gt;</span>http://target/url/here<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/value&gt;</span>
+</span><span class='line'> <span class="nt">&lt;/param&gt;</span>
+</span><span class='line'><span class="nt">&lt;/params&gt;</span>
+</span><span class='line'><span class="nt">&lt;/methodCall&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Replace the two URLs as appropriate - the first one is the source (i.e. your
+blog post), and the second is the target (the post you are linking to).</p>
+
+<p>Now, you just need to <code>POST</code> the request to the target server. You&rsquo;ll need to
+know the target&rsquo;s XML-RPC endpoint URL for this.  Usually, it will be <code>/xmlrpc</code>,
+or for WordPress blogs, <code>/xmlrpc.php</code>. You can find out for sure by inspecting
+the site&rsquo;s source for a <code>&lt;link rel="pingback" href="..."/&gt;</code> tag.</p>
+
+<p>You can use cURL to post your request. It&rsquo;s built into most Unix-like operating
+systems, but Windows users will have to
+<a href="http://curl.haxx.se/dlwiz/?type=bin&amp;os=Win32&amp;flav=-&amp;ver=2000%2FXP">download it</a>,
+and if you&rsquo;re on Mac OS X you probably need to have Apple&rsquo;s developer tools
+installed.  Just run:</p>
+
+<pre><code>curl -X POST -d @pingback.xml http://example.com/xmlrpc.php
+</code></pre>
+
+<p>&hellip;and that&rsquo;s it! cURL should print out an XML response from this server with a
+message indicating that your Pingback was registered. Of course, to be truly
+sure it worked, you should check the target URL and see if your Pingback has
+been added to the page. (Note that some sites disable Pingbacks.)</p>
+</div>
+
+</div>
+
+    </article>
   
     
     
@@ -779,75 +910,6 @@ I&rsquo;d have more time there.</div>
 
     </article>
   
-    
-    
-
-
-
-
-
-
-
-
-
-    <article >
-      
-
-<div class="category-personal">
-
-  <header>
-    <h1 class="entry-title">
-
-<a href="/entry/2013/07/30/road-trip/">Road Trip! Part I</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-07-30T02:58:00-07:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:58 am</span></time>
-        
-         &bull; <a rel="bookmark" href="/entry/2013/07/30/road-trip/">&infin;</a>
-      </p>
-    
-  </header>
-
-
-
-  <div class="entry-content"><p>I love visiting new places. I&rsquo;ve lived in the United States for just over a year
-now, and one of my favourite things about this country is how vast it is and how
-many opportunities it presents for exploration. Canada is just slightly larger
-than the United States, but it&rsquo;s also very sparsely populated north of, say,
-Edmonton, so practically speaking I think one can explore much more of the
-States while still maintaining access to the comforts of civilization.</p>
-
-<p>To that end, I try to go on at least one long road trip every year. I&rsquo;m also one
-of those people who actually enjoy driving, even for absurdly long stretches of
-time; anything up to 12 hours per day on the road is fairly comfortable for me,
-and even beyond that I don&rsquo;t find long trips all that tiring. I&rsquo;d much, much
-rather drive 12 hours in my car than take a two hour plane trip.</p>
-
-<p>My new car was also begging to be broken in on a long road trip. Although I had
-a bit of a <a href="/entry/2013/06/09/the-subaru-saga/">rocky start with it</a>, all of the
-issues have now been sorted out (or at least as sorted out as they&rsquo;ll ever be),
-so it offered another compelling reason to take a long trip. And so it was that
-I booked the 5th to 12th of July off of work and embarked on a 3,378 mile
-(5,436km) drive from Redmond, Washington through Oregon, Idaho, and Nevada to
-Utah, and then back home through Arizona, Nevada, California and Oregon.</p>
-
-</div>
-  <footer>
-    <a rel="full-article" href="/entry/2013/07/30/road-trip/">More &rarr;</a>
-  </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page2">&larr; Older</a>
@@ -874,6 +936,11 @@ Utah, and then back home through Arizona, Nevada, California and Oregon.</p>
   <ul id="recent_posts">
     
       
+      <li class="post             category-technology            ">
+        <a href="/entry/2015/01/17/how-to-manually-send-a-pingback/">How to manually send a Pingback</a>
+      </li>
+    
+      
       <li class="post             category-links            ">
         <a href="/entry/2015/01/04/be-a-communications-consequentialist/">Be a Communications Consequentialist</a>
       </li>
@@ -891,11 +958,6 @@ Utah, and then back home through Arizona, Nevada, California and Oregon.</p>
       
       <li class="post             category-links            ">
         <a href="/entry/2014/12/24/review-link-in-real-life/">Review Link: In Real Life</a>
-      </li>
-    
-      
-      <li class="post             category-reviews            ">
-        <a href="/entry/2014/11/02/book-review-lying/">Book Review: Lying</a>
       </li>
     
   </ul>

@@ -3,7 +3,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-01-11T21:31:05-08:00</updated>
+  <updated>2015-01-17T21:40:03-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -11,6 +11,99 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to manually send a Pingback]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2015/01/17/how-to-manually-send-a-pingback/"/>
+    <updated>2015-01-17T21:04:29-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2015/01/17/how-to-manually-send-a-pingback</id>
+    <content type="html"><![CDATA[<p>A couple years ago I stopped using WordPress and
+<a href="http://blog.mlindgren.ca/entry/2012/09/23/switching-to-octopress/">switched</a>
+to <a href="http://octopress.org/">Octopress</a>, which is a derivative of
+<a href="http://jekyllrb.com/">Jekyll</a>. I continue to be pretty happy with this
+decision, but there are some downsides to using a static site generator. One
+issue is the lack of support for
+<a href="http://en.wikipedia.org/wiki/Pingback">Pingbacks</a>, which are a method supported
+by a number of dynamic blogging platforms to notify another blog when you link
+to its content. Pingbacks provide a good way to respond to blog posts using
+your own blog rather than via commenting; thus, they facilitate &ldquo;conversation&rdquo;
+between blogs. Unfortunately, if you&rsquo;re using Octopress or Jekyll or another
+framework to generate static HTML pages, you won&rsquo;t natively have the ability to
+send or receive Pingbacks.</p>
+
+<p>Luckily, Pingbacks can be sent manually with relative ease. Receiving Pingbacks
+still won&rsquo;t be possible, though; that&rsquo;s a much harder problem to solve, for a
+variety of reasons which aren&rsquo;t relevant to this post.</p>
+
+<p>Before I proceed, I want to note that full credit for this information goes to
+<a href="http://aaronparecki.com/">Aaron Parecki</a>; he explains the technique in
+<a href="https://gist.github.com/aaronpk/5744879">this GitHub Gist</a>. The only reason I&rsquo;m
+reproducing it here is because it was surprisingly hard to find Aaron&rsquo;s Gist,
+or anything else of relevance, when I was searching for information on how to
+send a Pingback. Hopefully, by posting about it and adding some extra context, I
+can make the information more searchable.</p>
+
+<p>First, you&rsquo;ll need to create a copy of this XML file on your local machine:</p>
+
+<figure class='code'><figcaption><span>pingback.xml </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;methodCall&gt;</span>
+</span><span class='line'><span class="nt">&lt;methodName&gt;</span>pingback.ping<span class="nt">&lt;/methodName&gt;</span>
+</span><span class='line'><span class="nt">&lt;params&gt;</span>
+</span><span class='line'> <span class="nt">&lt;param&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;value&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;string&gt;</span>http://source/url/here<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/value&gt;</span>
+</span><span class='line'> <span class="nt">&lt;/param&gt;</span>
+</span><span class='line'> <span class="nt">&lt;param&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;value&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;string&gt;</span>http://target/url/here<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/value&gt;</span>
+</span><span class='line'> <span class="nt">&lt;/param&gt;</span>
+</span><span class='line'><span class="nt">&lt;/params&gt;</span>
+</span><span class='line'><span class="nt">&lt;/methodCall&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Replace the two URLs as appropriate - the first one is the source (i.e. your
+blog post), and the second is the target (the post you are linking to).</p>
+
+<p>Now, you just need to <code>POST</code> the request to the target server. You&rsquo;ll need to
+know the target&rsquo;s XML-RPC endpoint URL for this.  Usually, it will be <code>/xmlrpc</code>,
+or for WordPress blogs, <code>/xmlrpc.php</code>. You can find out for sure by inspecting
+the site&rsquo;s source for a <code>&lt;link rel="pingback" href="..."/&gt;</code> tag.</p>
+
+<p>You can use cURL to post your request. It&rsquo;s built into most Unix-like operating
+systems, but Windows users will have to
+<a href="http://curl.haxx.se/dlwiz/?type=bin&amp;os=Win32&amp;flav=-&amp;ver=2000%2FXP">download it</a>,
+and if you&rsquo;re on Mac OS X you probably need to have Apple&rsquo;s developer tools
+installed.  Just run:</p>
+
+<pre><code>curl -X POST -d @pingback.xml http://example.com/xmlrpc.php
+</code></pre>
+
+<p>&hellip;and that&rsquo;s it! cURL should print out an XML response from this server with a
+message indicating that your Pingback was registered. Of course, to be truly
+sure it worked, you should check the target URL and see if your Pingback has
+been added to the page. (Note that some sites disable Pingbacks.)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Be a Communications Consequentialist]]></title>
@@ -3293,38 +3386,6 @@ Vindictiveness? <br />
 <p>Returning to the topic at hand, online passes go hand in hand with the consumer-as-enemy mindset that plagues media giants.  They arise from the same attitude that justifies $30 BluRay movies with minutes and minutes of unskippable commercials, and <a href="http://www.destructoid.com/drm-fun-several-legit-ubisoft-games-will-break-next-week-220948.phtml" title="DRM Fun: Several legit Ubisoft games will break next week - Destructoid">always-on DRM which prevents legitimate purchasers from playing single-player games</a> when the publisher&rsquo;s servers are down.  Through legislation and technology, these companies are trying to make ownership rights exclusive to corporations and prevent consumers from interacting with the media they purchase in any manner that is not explicitly pre-approved.  They are declaring a war on their customers, and it is a war they cannot win.  Make no mistake, though: as these behemoths run themselves into the ground because they are incapable of adapting, there will be casualties among the artists, musicians and developers who create the works of culture we love.</p>
 
 <p>That is why I cannot support online passes.  I truly believe that in the long run they are detrimental to all involved.  I truly believe that the best way for a company to protect its interests is to do its utmost to reward its fans and give them the best experience possible&mdash;all of them, even those who do not <em>directly</em> contribute to the bottom line.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[2010 and 2011 in Review]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2011/12/31/2010-and-2011-in-review/"/>
-    <updated>2011-12-31T15:59:00-08:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2011/12/31/2010-and-2011-in-review</id>
-    <content type="html"><![CDATA[<p>If you&rsquo;ll forgive me for &ldquo;metablogging,&rdquo; I&rsquo;ve been ruminating lately on the purpose of this website.  Up until now, I&rsquo;ve been trying to focus exclusively on technology, programming and game design, and to minimize the subjective aspects of my connection to those fields.  Put more simply, I&rsquo;ve been avoiding writing about who I am and what I do in favour of producing a series of mostly impersonal tutorials and critiques of technology.  There are a number of reasons for this—the word &ldquo;professionalism&rdquo; comes to mind as chief among them.  I&rsquo;d like this website to be my public face on the Internet, and as every saavy Internet denizen should know by now, there are certain risks associated with maintaining a public persona.  I greatly admire <a href="http://zedshaw.com/">Zed Shaw</a>, for his personality as well as his technical accomplishments, but I have no desire to make myself unemployable as he claims to have done (albeit temporarily).</p>
-
-<p>That said, trying to take a dry, detached and objective approach to creating a personal website presents a number of problems itself.  First and foremost, it&rsquo;s an inherent contradiction; if I don&rsquo;t write about myself in any meaningful capacity, then there is nothing aside from the superficial about this website which makes it mine.  I can&rsquo;t imagine it makes for a very interesting read, either.  Realistically, how many people will come here looking for <a title="How to link GLUT in Qt Creator on OS X" href="http://www.mlindgren.ca/archives/453">advice on how to link GLUT?</a>  Readership numbers are of little to no concern to me, mind you, but I can at least endeavour to give this website a purposeful existence.  To that end, I want to start writing more about personal topics, although for the sake of cohesiveness I&rsquo;m going to continue to focus primarily on those aspects of my life that will be of interest to a technically-minded audience.<!-- more --></p>
-
-<p>As a start, I think that this is a good time to reflect on what I&rsquo;ve done since I started this blog in May of 2010.  Early in May, I moved to Calgary, Alberta, to start a sixteen-month internship with <a href="http://pason.com/">Pason Systems Corporation.</a>  Pason is the market-leading provider of oil rig instrumentation and service, with a wide variety of tools and technology available to facilitate safety and improve efficiency on oil rigs.  All of Pason&rsquo;s rig-site hardware and software is designed in house, but my work was on an internal web application designed to support Pason&rsquo;s most valuable employees: the field technicians who directly provide services and equipment to customers.</p>
-
-<p>For obvious reasons, I can&rsquo;t go into great detail about the work I did at Pason.  I will say, though, that it was extremely rewarding.  I had the opportunity to work alongside some of the smartest developers I&rsquo;ve ever met, and I was able to do work that I felt had a tangible, significant and lasting impact on my team&rsquo;s product. That&rsquo;s a rare honor for an intern!  From a technical perspective, I got to work with some interesting and unfamiliar technologies; I did extensive development in Python, created rich user experiences with HTML5 and JavaScript, and dabbled with C# when the need arose.  The whole experience was hugely instructive, and I will always fondly remember my time at Pason.  Of my entire education, my internship is without a doubt the part that I value most.</p>
-
-<p>In September of this year, I moved back to Edmonton to finish my Computing Science degree at the University of Alberta.  It being my final year and with most of my specific course requirements out of the way, I loaded up on computing science courses, which led to a fairly engaging but difficult semester.  Among the courses I took were Advanced Games Programming in C++, Compiler Design, and Introduction to Computer Graphics.</p>
-
-<p>As a term project for the Advanced Games Programming course, I undertook a modification of the <a href="http://skatgame.net/mburo/orts/" target="_blank">ORTS</a> game engine to allow user interface scripting with Lua, à la World of Warcraft.  I feel that the outcome of this project was a little underwhelming, as limited time and the complexity of ORTS forced me to settle for less comprehensive scripting capabilities than I would have liked.  Nevertheless, I learned a great deal about Lua and the process of interfacing with Lua from C++. I think I now have an inkling of what&rsquo;s involved in creating a robust client-side scripting system as in World of Warcraft, or even a custom development platform like <a title="Ansca Mobile Corona" href="http://www.anscamobile.com/corona/" target="_blank">Corona</a>.  Given the popularity of Lua as a scripting language in game development and my interest in developing games, I&rsquo;m sure it will be valuable experience.</p>
-
-<p>Although I believe I would be within my academic rights to do so, for the time being I don&rsquo;t foresee myself releasing the source code for my Advanced Games Programming project.  ORTS has not seen active development in a number of years, so it is outdated and difficult to compile and run, let alone modify.  Additionally, my own work—being a school project as it is—would probably not prove to be a good demonstration of Lua/C++ integration best practices, and I&rsquo;m always wary of releasing code from which others might learn the wrong way of doing things.  I do have a report on the project which I&rsquo;d like to reproduce here at some point, though.  </p>
-
-<p>For University of Alberta Computing Science students, I have some advice which I&rsquo;d like to share regarding the Advanced Games Programming course.  If you already know C++, as I did, I would have to recommend against taking it.  Much to my chagrin, the majority of the lectures were actually about C++ in and of itself, rather than algorithms and techniques relevant to games.  It certainly would be helpful for anyone who wants to pick up C++, but if you&rsquo;re looking for a thorough examination of game programming, look elsewhere.</p>
-
-<p>Compilers was perhaps my favorite course of the semester, although it was also by far the most difficult.  I would describe it as a strangely paradoxical course.  The theory behind formal languages, parsing and code generation is not extremely complex, but it can be initially hard to grasp, as it is very heavy on jargon and has numerous rules and axioms to memorize.  The process of building a <em>simple</em> compiler for a simple language is, in retrospect, fairly mechanical and manageable, but it seems anything but when approached without the benefit of hindsight.  Overall, the course is just a staggering amount of work, but it is also among the most rewarding courses I&rsquo;ve taken.</p>
-
-<p>Finally, Introduction to Computer Graphics, I got to expand upon the OpenGL knowledge I had built during the development of <a title="Puzzle Panel" href="http://www.mlindgren.ca/projects/puzzle-panel">my iOS game</a>, while also learning the fundamental aspects of computer graphics.  Like Compilers, Graphics is a challenging but rewarding course, one of the most difficult aspects of it being the time commitment required.  (Of course, it is also fairly math-heavy.)  As someone who appreciates the beauty of a well-designed, simple algorithm, I found that learning about such achievements as the <a title="Wikipedia: Midpoint circle algorithm" href="http://en.wikipedia.org/wiki/Midpoint_circle_algorithm" target="_blank">midpoint circle algorithm</a> was one of the most enjoyable aspects of the course.  I feel that there&rsquo;s an almost Zen-like quality to a clever but simple algorithm which strips away preconceptions of complexity to accomplish a task in the most efficient manner possible.  If you&rsquo;re of a similar mind, graphics is full of examples of such algorithms.  Of course, working in graphics is also rewarding for its ability to produce visually interesting results, which is a rare treat in academic computing science:</p>
-
-<div style="text-align: center; margin-left: auto; margin-right: auto;"><img style="display: block; margin-left: auto; margin-right: auto;" title="Shadow volumes" src="http://blog.mlindgren.ca/images/shadowvolumes.jpg" alt="A demonstration of shadow volumes from an Introduction to Computer Graphics assignment" width="386" height="335" /><em><small>A demonstration of shadow volumes from an Introduction to Computer Graphics assignment.</small></em></div>
-
-
-<p>2010 and 2011 were exciting years for me, and although I&rsquo;m not ready to discuss it yet, I have something huge lined up for after I graduate in April of 2012. In the meantime, I&rsquo;ll continue to post here as often as I can manage. Thanks for reading, and happy new year!</p>
 ]]></content>
   </entry>
   
