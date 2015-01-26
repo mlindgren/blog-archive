@@ -19,6 +19,6 @@ probably the one I need to work on most:
 > get over 1,000 words, I look for ways to trim them or break them into separate
 > posts.
 
-Good advice, although I think the point long posts may be more or less
+Good advice, although I think the point that long posts may be more or less
 appropriate for different audiences is underemphasized. Personally, I quite
 enjoy the occasional 10,000 word epic.
