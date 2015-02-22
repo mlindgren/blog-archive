@@ -3,7 +3,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-01-26T01:00:53-08:00</updated>
+  <updated>2015-02-21T21:04:03-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -11,6 +11,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Configuring DPI in Lubuntu/LXDE]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2015/02/21/configuring-dpi-in-lubuntu-slash-lxde/"/>
+    <updated>2015-02-21T20:36:28-08:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2015/02/21/configuring-dpi-in-lubuntu-slash-lxde</id>
+    <content type="html"><![CDATA[<p>If you&rsquo;ve tried to use <a href="http://lubuntu.net/">Lubuntu</a> (or
+<a href="http://www.lxde.org/">LXDE</a> on another distribution) with a high-DPI display,
+you&rsquo;ve probably noticed that fonts and other UI elements are so tiny as to be
+illegible without a magnifying glass.  You&rsquo;ve probably also noticed that there
+is no GUI with which to adjust the UI scaling factor. Happily, it is possible to
+change the DPI settings in LXDE, but this being Linux, it requires editing
+obscure configuration files. Here&rsquo;s what you&rsquo;ll need to do:</p>
+
+<ol>
+<li>In your home directory, create a new text file named <code>.Xresources</code></li>
+<li>In this file, enter your desired DPI in the following format: <code>Xft.dpi: 150</code></li>
+<li>Restart the X server. You can do this by pressing <code>Ctrl + Alt + F1</code> to enter
+single-user mode, then running <code>sudo service lightdm stop</code>, and then <code>sudo
+service lightdm start</code>. (Note that it may be a different service if you are not
+running Lubuntu. Alternatively, you can just reboot your machine.)</li>
+</ol>
+
+
+<p>This will scale UI elements in <em>most</em>, but not all, applications. For instance,
+it doesn&rsquo;t resize the desktop panel, so you&rsquo;ll likely want to do that as well.
+Luckily you can do so easily by right clicking on an empty space on the panel
+and selecting Panel Settings; from there, just change the height of the panel in
+pixels to a suitable value.</p>
+
+<p>This is yet another tip that I&rsquo;m posting mainly becuase it took me an inordinate
+amount of time to figure out how to do it. I found many suggestions on how to
+enable scaling, but none of them worked until I stumbled across the above
+instructions on the blog of <a href="http://bebabi34.altervista.org/index.php?action=viewnews&amp;news=1380636261">bebabi34</a>.
+His blog is in Italian, so naturally it&rsquo;s not very searchable for English
+speakers; hopefully by reproducing his instructions here, I can save others some
+time.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The care and feeding of software engineers]]></title>
@@ -3350,17 +3389,6 @@ Apple.</small></p>
 <p>I will do as much as is in my power to help services like Tent succeed, but for the time being, that is not much.  That kind of leaves me without a good means of pushing my content to the people who care about it.  Nevertheless, I can still take ownership of it by hosting it on my own server using my own tools.  That is the purpose of developing my own photo album software.  I&rsquo;m making good progress so far, and hopefully soon I&rsquo;ll have more to share; once the code is in a reasonably complete state with most of the major features I want for my own purposes, I intend to make the app open source and share the code on my <a title="mlindgren on Github" href="https://github.com/mlindgren" target="_blank">Github account.</a>  And now that I&rsquo;ve announced my intent publicly, I expect anyone who reads this to hold me to my plan to ensure that I get it finished!</p>
 
 <p><sup>1</sup> <small>Both Facebook and Google+ provide a means of exporting the data you&rsquo;ve shared. I believe both will export everything belonging to you personally, but I don&rsquo;t think you necessarily get to keep all of the social data associated with your content, e.g. comments, nor the relationships between different pieces of content. Last I checked, the data was merely dumped into a bunch of flat files; nothing is kept in a structured format that makes it easy to work with, and even if it were, other privates services don&rsquo;t usually offer the option to import your data. While it may still not be easy, if you own your own data and manage it using open source tools, it&rsquo;s at least <em>possible</em> to migrate everything to another system with the greatest fidelity supported by that system.</small></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[mlindgren.ca: now on an all-new server!]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server/"/>
-    <updated>2012-08-08T00:40:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/08/08/mlindgren-ca-now-on-an-all-new-server</id>
-    <content type="html"><![CDATA[<p>It feels like a bit of a cop out to post this after having not written anything
-for five months, but I&rsquo;ve decided to switch from shared hosting to a <acronym
-title="Virtual Private Server">VPS</acronym>.  I&rsquo;ve also moved WordPress out of the www root directory.  The transition was surprisingly easy, but it&rsquo;s possible that some pages may contain dead links or missing images.  If you see any, please leave a comment and let me know!</p>
 ]]></content>
   </entry>
   

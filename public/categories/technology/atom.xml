@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Technology | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/technology/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-01-26T01:00:53-08:00</updated>
+  <updated>2015-02-21T21:04:03-08:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Configuring DPI in Lubuntu/LXDE]]></title>
+<link href="http://blog.mlindgren.ca/entry/2015/02/21/configuring-dpi-in-lubuntu-slash-lxde/"/>
+<updated>2015-02-21T20:36:28-08:00</updated>
+<id>http://blog.mlindgren.ca/entry/2015/02/21/configuring-dpi-in-lubuntu-slash-lxde</id>
+
+      <content type="html"><![CDATA[<p>If you&rsquo;ve tried to use <a href="http://lubuntu.net/">Lubuntu</a> (or
+<a href="http://www.lxde.org/">LXDE</a> on another distribution) with a high-DPI display,
+you&rsquo;ve probably noticed that fonts and other UI elements are so tiny as to be
+illegible without a magnifying glass.  You&rsquo;ve probably also noticed that there
+is no GUI with which to adjust the UI scaling factor. Happily, it is possible to
+change the DPI settings in LXDE, but this being Linux, it requires editing
+obscure configuration files. Here&rsquo;s what you&rsquo;ll need to do:</p>
+
+<ol>
+<li>In your home directory, create a new text file named <code>.Xresources</code></li>
+<li>In this file, enter your desired DPI in the following format: <code>Xft.dpi: 150</code></li>
+<li>Restart the X server. You can do this by pressing <code>Ctrl + Alt + F1</code> to enter
+single-user mode, then running <code>sudo service lightdm stop</code>, and then <code>sudo
+service lightdm start</code>. (Note that it may be a different service if you are not
+running Lubuntu. Alternatively, you can just reboot your machine.)</li>
+</ol>
+
+
+<p>This will scale UI elements in <em>most</em>, but not all, applications. For instance,
+it doesn&rsquo;t resize the desktop panel, so you&rsquo;ll likely want to do that as well.
+Luckily you can do so easily by right clicking on an empty space on the panel
+and selecting Panel Settings; from there, just change the height of the panel in
+pixels to a suitable value.</p>
+
+<p>This is yet another tip that I&rsquo;m posting mainly becuase it took me an inordinate
+amount of time to figure out how to do it. I found many suggestions on how to
+enable scaling, but none of them worked until I stumbled across the above
+instructions on the blog of <a href="http://bebabi34.altervista.org/index.php?action=viewnews&amp;news=1380636261">bebabi34</a>.
+His blog is in Italian, so naturally it&rsquo;s not very searchable for English
+speakers; hopefully by reproducing his instructions here, I can save others some
+time.</p>
+]]></content>
+    </entry>
   
     <entry>
       
@@ -401,34 +446,6 @@ Vindictiveness? <br />
 <p>Returning to the topic at hand, online passes go hand in hand with the consumer-as-enemy mindset that plagues media giants.  They arise from the same attitude that justifies $30 BluRay movies with minutes and minutes of unskippable commercials, and <a href="http://www.destructoid.com/drm-fun-several-legit-ubisoft-games-will-break-next-week-220948.phtml" title="DRM Fun: Several legit Ubisoft games will break next week - Destructoid">always-on DRM which prevents legitimate purchasers from playing single-player games</a> when the publisher&rsquo;s servers are down.  Through legislation and technology, these companies are trying to make ownership rights exclusive to corporations and prevent consumers from interacting with the media they purchase in any manner that is not explicitly pre-approved.  They are declaring a war on their customers, and it is a war they cannot win.  Make no mistake, though: as these behemoths run themselves into the ground because they are incapable of adapting, there will be casualties among the artists, musicians and developers who create the works of culture we love.</p>
 
 <p>That is why I cannot support online passes.  I truly believe that in the long run they are detrimental to all involved.  I truly believe that the best way for a company to protect its interests is to do its utmost to reward its fans and give them the best experience possible&mdash;all of them, even those who do not <em>directly</em> contribute to the bottom line.</p>
-]]></content>
-    </entry>
-  
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[How to reinstall OS X from a disc image using only one computer]]></title>
-<link href="http://blog.mlindgren.ca/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer/"/>
-<updated>2011-09-21T00:17:00-07:00</updated>
-<id>http://blog.mlindgren.ca/entry/2011/09/21/how-to-reinstall-os-x-from-a-disc-image-using-only-one-computer</id>
-
-      <content type="html"><![CDATA[<p>My internship recently ended, and as such, I had to move from Calgary back to Edmonton, where I&rsquo;ll be completing the fourth year of my Computing Science degree at the University of Alberta. I hope to be able to write more about my internship later, but at the moment I want to share a handy trick I discovered for reinstalling OS X. The reason I bring up the move is that after I arrived in Edmonton, I found myself wanting to reformat my Mac Mini and re-install Snow Leopard, but my Snow Leopard disc was nowhere to be found. Luckily, as a semi-paranoid computer scientist with an abundance of disk space, I keep images of important discs on my network-attached storage device for just such occasions.</p>
-
-<p>Unfortunately, however, the Snow Leopard disc image is large enough that it can only be burned to a dual-layer DVD. I don&rsquo;t tend to keep writeable dual-layer DVDs lying around, so I needed a solution which required only the disc image itself. There are a number of methods available for installing OS X over the network, but none of them seemed to work for me—perhaps owing to the fact that I had only one Mac. Luckily, I discovered that you can install OS X from a separate partition on the same disk. Here&rsquo;s how:</p>
-
-<ol>
-    <li>First, you&#8217;ll need to re-partition your disk. Open Disk Utility and select the disk you want to use. Be sure to select the disk itself, rather than one of its partitions, which are indented beneath the disk.</li>
-    <li>Click the + button to add a new partition, and drag the new partition&#8217;s section in the disk layout graph upwards until it&#8217;s large enough to store your operating system disc image. Apply the changes. It may take some time for the disk to be re-partitioned.</li>
-    <li>Now, select the new partition from the list on the left. Go to the Restore tab, and restore your operating system disc image to the new partition.</li>
-    <li>Once the restore is complete, restart your computer, holding Option (Alt) at start-up. This should bring up a list of available start-up disks. Choose your new partition.</li>
-    <li>You should now be at the installer, and you can re-install to your primary partition. Once the installation is complete, delete your installation disc partition to and resize the primary partition to reclaim the extra space.</li>
-</ol>
-
-
-<p>That&rsquo;s it! In retrospect, it&rsquo;s completely obvious, but I haven&rsquo;t seen these instructions anywhere else on the web. This technique might be particularly useful for owners of Macs without disc drives.</p>
 ]]></content>
     </entry>
   
