@@ -3,7 +3,7 @@ layout: post
 title: "The Subaru Saga"
 date: 2013-06-09 22:22
 comments: true
-categories: Personal
+categories: [Other] 
 ---
 
 Or "buying used cars is the worst and I will never do it ever again."

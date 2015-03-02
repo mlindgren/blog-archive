@@ -4,6 +4,7 @@ title: "Book Review: The Innovators"
 date: 2015-02-24 23:16:06 -0800
 comments: true
 categories: [Reviews]
+published: false
 ---
 
 In October of 2011, Walter Isaacson released his

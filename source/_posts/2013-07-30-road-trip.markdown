@@ -3,7 +3,7 @@ layout: post
 title: "Road Trip! Part I"
 date: 2013-07-30 2:58
 comments: true
-categories: Personal
+categories: [Other]
 ---
 
 I love visiting new places. I've lived in the United States for just over a year

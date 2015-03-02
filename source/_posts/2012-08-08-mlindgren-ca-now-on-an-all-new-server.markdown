@@ -4,7 +4,7 @@ title: "mlindgren.ca: now on an all-new server!"
 date: 2012-08-08 00:40
 comments: true
 external-url:
-categories: [Personal]
+categories: [Other]
 published: true
 ---
 It feels like a bit of a cop out to post this after having not written anything

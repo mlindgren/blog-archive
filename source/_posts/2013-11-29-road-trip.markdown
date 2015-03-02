@@ -3,7 +3,7 @@ layout: post
 title: "Road Trip! Part II"
 date: 2013-12-24 22:07
 comments: true
-categories: Personal
+categories: [Other] 
 ---
 
 Five months ago, I [left off my last post](/entry/2013/07/30/road-trip/) having

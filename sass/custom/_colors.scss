@@ -66,9 +66,9 @@ li.post.category-coding > a:hover
   background-color: #20bb20;
 }
 
-.category-personal a, .category-reviews a:visited,
-#blog-archives.category-personal h1 a,
-li.post.category-personal > a, li.post.category-reviews > a:visited
+.category-other a, .category-reviews a:visited,
+#blog-archives.category-other h1 a,
+li.post.category-other > a, li.post.category-reviews > a:visited
 {
   color: #c00 !important;
   -webkit-transition-duration: 0.3s;
@@ -76,16 +76,16 @@ li.post.category-personal > a, li.post.category-reviews > a:visited
   text-decoration: none;
 }
 
-.category-personal a:hover,
-#blog-archives.category-personal h1 a:hover,
-li.post.category-personal > a:hover
+.category-other a:hover,
+#blog-archives.category-other h1 a:hover,
+li.post.category-other > a:hover
 
 {
   color: #850000 !important;
   text-decoration: none;
 }
 
-#content .blog-index .category-personal a[rel="full-article"]:hover
+#content .blog-index .category-other a[rel="full-article"]:hover
 {
   color: #fff !important;
   background-color: #c00;
