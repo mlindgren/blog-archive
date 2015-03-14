@@ -9,8 +9,8 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="If you&rsquo;ve ever read OkCupid&rsquo;s popular OkTrends blog,
-you&rsquo;re already familiar with the work of Christian Rudder. As OkCupid&rsquo;s &hellip;">
+  <meta name="description" content="Sam Harris is a controversial figure, to say the least. Personally, I&rsquo;m a fan of
+his work, but as one of the &ldquo;four horsemen&rdquo; of so- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -150,6 +150,64 @@ $(document).ready(function() {
   <div id="main">
     <div id="content">
       <div class="blog-index">
+  
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
+      
+
+<div class="category-reviews">
+
+  <header>
+    <h1 class="entry-title">
+
+<a href="/entry/2014/10/26/book-review-free-will/">Book Review: Free Will</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-26T17:00:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>5:00 pm</span></time>
+        
+         &bull; <a rel="bookmark" href="/entry/2014/10/26/book-review-free-will/">&infin;</a>
+      </p>
+    
+  </header>
+
+
+
+  <div class="entry-content"><p>Sam Harris is a controversial figure, to say the least. Personally, I&rsquo;m a fan of
+his work, but as one of the &ldquo;four horsemen&rdquo; of so-called New Atheism, he has
+met with much ire since the publication of his first book. This comes not only
+from religious adherents, but also from secular liberals, many of whom seem to
+willfully (and sometimes maybe even <em>gleefully</em>) misinterpret him.  Although
+<em><a href="http://www.samharris.org/free-will">Free Will</a>,</em> published in 2012, courts
+less political controversy than Harris&#8217; other works, it too will raise the
+eyebrows of some readers. In fact, earlier this year, it met with a prickly
+reception from fellow &ldquo;horseman&rdquo; and philosophy professor Dan Dennett.</p>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/entry/2014/10/26/book-review-free-will/">More &rarr;</a>
+  </footer>
+
+</div>
+
+    </article>
   
     
     
@@ -893,69 +951,6 @@ say is that there are a lot of them.)</li>
 
     </article>
   
-    
-    
-
-
-
-
-
-
-
-
-
-    <article >
-      
-
-<div class="category-coding">
-
-  <header>
-    <h1 class="entry-title">
-
-<a href="/entry/2012/09/14/the-state-of-python-imaging/">The state of Python imaging</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-09-14T03:36:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>3:36 am</span></time>
-        
-         &bull; <a rel="bookmark" href="/entry/2012/09/14/the-state-of-python-imaging/">&infin;</a>
-      </p>
-    
-  </header>
-
-
-
-  <div class="entry-content"><p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
-
-<p>So, I&rsquo;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&rsquo;m using Python because, well, I love it.  I think it&rsquo;s the perfect language for web development; it&rsquo;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">db_tags</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span>
-</span><span class='line'>                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">MetadataTag</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">source</span> <span class="o">=</span> <span class="s">&#39;exif&#39;</span><span class="p">)])</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>What I&rsquo;m doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag&rsquo;s name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn&rsquo;t particularly <em>difficult</em> to do in any other language; as I said, it&rsquo;s a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn&rsquo;t have list comprehensions.  I don&rsquo;t even want to think about how many lines of code this would take in Java; additionally, while I&rsquo;m unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup></p>
-
-<p>So, Python&rsquo;s pretty great. But like all languages, it does have a few problems. The one I have had the most difficulty with in my current project is that third party library support is somewhat lacking in some important areas; specifically, there aren&rsquo;t many good options for reading and manipulating images. The most popular library seems to be the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>, PIL. It&rsquo;s easy enough to install and provides a <em>passable</em> set of core features, but doesn&rsquo;t go much beyond that.  For instance, none of the various camera raw formats seem to be supported, which I consider a fairly important feature for my photo album; I&rsquo;d very much like be able to upload original raws and have the application automatically convert them to JPEGs for me.  Additionally, it doesn&rsquo;t provide much in the way of convenience methods for cropping and resizing images.  <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank">ImageMagick</a> has <a title="ImageMagick geometry" href="http://www.imagemagick.org/script/command-line-processing.php#geometry" target="_blank">a very nice means of specifying cropping and resizing geometry</a> with various aspect ratio-preserving (or not) behaviour, and I wanted to be able to leverage something similar for my app so that I could quickly prototype with various size options.</p>
-
-</div>
-  <footer>
-    <a rel="full-article" href="/entry/2012/09/14/the-state-of-python-imaging/">More &rarr;</a>
-  </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page3">&larr; Older</a>
@@ -984,6 +979,11 @@ say is that there are a lot of them.)</li>
   <ul id="recent_posts">
     
       
+      <li class="post             category-coding            ">
+        <a href="/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/">Fun with the Microsoft Band SDK Preview</a>
+      </li>
+    
+      
       <li class="post             category-other            ">
         <a href="/entry/2015/03/01/1989/">1989</a>
       </li>
@@ -1001,11 +1001,6 @@ say is that there are a lot of them.)</li>
       
       <li class="post             category-technology            ">
         <a href="/entry/2015/01/17/how-to-manually-send-a-pingback/">How to manually send a Pingback</a>
-      </li>
-    
-      
-      <li class="post             category-links            ">
-        <a href="/entry/2015/01/04/be-a-communications-consequentialist/">Be a Communications Consequentialist</a>
       </li>
     
   </ul>

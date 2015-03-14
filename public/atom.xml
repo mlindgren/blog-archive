@@ -3,7 +3,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-03-02T23:37:22-08:00</updated>
+  <updated>2015-03-14T03:37:11-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -11,6 +11,230 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fun with the Microsoft Band SDK Preview]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/"/>
+    <updated>2015-03-14T02:07:34-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview</id>
+    <content type="html"><![CDATA[<p>First of all, happy <a href="http://en.wikipedia.org/wiki/Pi_Day">Pi Day</a>! Using the standard United States
+date format, today is 3/14/15, which makes it the most significant Pi Day this century.</p>
+
+<p>Anyway, I&rsquo;ve spent the past few hours tinkering with the
+<a href="http://developer.microsoftband.com/">Microsoft Band SDK Preview</a>, and although I think it&rsquo;s
+unfortunate that there&rsquo;s no SDK for writing apps which actually run on the Band itself, you can
+still accomplish some pretty cool things with the phone SDK. Unfortunately, this being a preview
+release, the documentation is a bit sparse, and I had some trouble figuring out how to get things
+working. Thus, I wanted to share some of what I&rsquo;ve learned. If you prefer to dive right into the
+code, I&rsquo;ve got a small C# sample application <a href="https://github.com/mlindgren/BandDemo">on GitHub</a>.</p>
+
+<p>Standard disclaimer: although I am a Microsoft employee, everything I am posting here and on GitHub
+is my own personal work done on my own time. None of it should be considered as officially
+representative of Microsoft in any respect. While I will do my best to answer any questions I can
+related to the Band SDK Preview, I cannot provide official support for this or any other Microsoft
+product.</p>
+
+<p>Let&rsquo;s get started. If you&rsquo;re following
+<a href="http://developer.microsoftband.com/docs/MicrosoftBandSDKPreview.pdf">the documentation</a>, the first
+few steps describe how to connect to the Band, as one would expect. The sample code provided creates
+a connection within a <code>using</code> block. This ensures that the connection is disposed of as soon as
+control leaves the block, which is sensible since maintaing a connection to the Band, especially
+when subscribed to multiple sensors, can severely impact its battery life. However, this approach
+can also be a bit misleading, because if you <em>do</em> want to collect data from the Band over some
+interval of time, you will only be able to do so during the lifetime of the <code>IBandClient</code> object
+returned by <code>ConnectAsync</code>. As soon as the <code>IBandClient</code> object is disposed of, your connection will
+be closed and you will no longer receive sensor data.</p>
+
+<p>Since you&rsquo;ll typically only be connected to one Band at a time, the easiest way to solve this
+problem is to store the <code>IBandClient</code> object as a static member variable of your <code>Application</code>
+class. (Note: I don&rsquo;t guarantee that this is the <em>optimal</em> solution. I am by no means an expert
+here.) This also makes it easy to access your Band client from different pages within your
+application, and to unsubscribe from sensor data when you no longer need it so that you won&rsquo;t drain
+the Band&rsquo;s battery.<!-- more --></p>
+
+<figure class='code'><figcaption><span>App.xaml.cs </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Microsoft.Band</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">namespace</span> <span class="nn">BandDemo</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">sealed</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">App</span> <span class="p">:</span> <span class="n">Application</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="k">public</span> <span class="k">static</span> <span class="n">IBandClient</span> <span class="n">BandClient</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// ...</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">private</span> <span class="k">async</span> <span class="k">void</span> <span class="nf">OnSuspending</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">SuspendingEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="kt">var</span> <span class="n">deferral</span> <span class="p">=</span> <span class="n">e</span><span class="p">.</span><span class="n">SuspendingOperation</span><span class="p">.</span><span class="n">GetDeferral</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">App</span><span class="p">.</span><span class="n">BandClient</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="c1">// Unsubscribe from sensor data so that we don&#39;t drain the Band&#39;s battery when</span>
+</span><span class='line'>            <span class="c1">// the app is not in use.</span>
+</span><span class='line'>            <span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Accelerometer</span><span class="p">.</span><span class="n">StopReadingsAsync</span><span class="p">();</span>
+</span><span class='line'>            <span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Gyroscope</span><span class="p">.</span><span class="n">StopReadingsAsync</span><span class="p">();</span>
+</span><span class='line'>            <span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">HeartRate</span><span class="p">.</span><span class="n">StopReadingsAsync</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="c1">// Removing our reference to the IBandClient will cause it to be garbage collected,</span>
+</span><span class='line'>            <span class="c1">// thereby closing the connection.</span>
+</span><span class='line'>            <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">deferral</span><span class="p">.</span><span class="n">Complete</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>MainPage.xaml.cs </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Microsoft.Band</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Microsoft.Band.Sensors</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">namespace</span> <span class="nn">BandDemo</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">sealed</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainPage</span> <span class="p">:</span> <span class="n">Page</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// ...</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">protected</span> <span class="k">async</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnNavigatedTo</span><span class="p">(</span><span class="n">NavigationEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="n">IBandInfo</span><span class="p">[]</span> <span class="n">pairedBands</span> <span class="p">=</span> <span class="k">await</span> <span class="n">BandClientManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">GetBandsAsync</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">try</span>
+</span><span class='line'>      <span class="p">{</span>
+</span><span class='line'>          <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span> <span class="p">=</span> <span class="k">await</span> <span class="n">BandClientManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">ConnectAsync</span><span class="p">(</span><span class="n">pairedBands</span><span class="p">[</span><span class="m">0</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="c1">// Do work after successful connect</span>
+</span><span class='line'>          <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Debug</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Connected!&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">{</span>
+</span><span class='line'>        <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Debug</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Connection failed!&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The next thing you&rsquo;ll notice in the documentation is that it recommends that you query the device
+for available reporting intervals for each sensor. It&rsquo;s fairly easy to miss that setting the
+reporting interval is <em>completely optional</em>; you can feel free to skip this step unless you really
+need fine-grained control over how frequently you get updates.</p>
+
+<p>Finally, the documentation describes how to subscribe to sensor data by adding your callback to a
+sensor&rsquo;s <code>ReadingChanged</code> property. When your callback is executed, you might want to update your
+app&rsquo;s UI to indicate the new reading (indeed, the documentation itself suggests this). However, this
+is another gotcha because in Windows (Phone) Store apps, &ldquo;all UI components share the same [UI]
+thread,&rdquo; (<a href="https://msdn.microsoft.com/en-us/library/windows/apps/hh994635.aspx">reference</a>), and
+methods on this thread cannot be directly invoked by background threads. If you try to do so, an
+exception will be raised. This will of course be no surprise to those of you already familiar with
+Store apps (or even with .NET circa 2006), but for the rest of us, it can be a bit confusing.
+Luckily, the solution is simple: you just need to use <code>Dispatcher.RunAsync</code> to do your UI updates.
+So, putting it all together, here&rsquo;s how you subscribe to sensor data and update the UI when it
+changes:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Accelerometer</span><span class="p">.</span><span class="n">ReadingChanged</span> <span class="p">+=</span> <span class="k">async</span> <span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">await</span> <span class="n">Dispatcher</span><span class="p">.</span><span class="n">RunAsync</span><span class="p">(</span><span class="n">Windows</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Core</span><span class="p">.</span><span class="n">CoreDispatcherPriority</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">AccelerometerXValue</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">args</span><span class="p">.</span><span class="n">SensorReading</span><span class="p">.</span><span class="n">AccelerationX</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;###00.00&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">AccelerometerYValue</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">args</span><span class="p">.</span><span class="n">SensorReading</span><span class="p">.</span><span class="n">AccelerationY</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;###00.00&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">AccelerometerZValue</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">args</span><span class="p">.</span><span class="n">SensorReading</span><span class="p">.</span><span class="n">AccelerationZ</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;###00.00&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Debug</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Got accelerometer event!&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Accelerometer</span><span class="p">.</span><span class="n">StartReadingsAsync</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s it for now! If you have any questions, leave a comment and I&rsquo;ll do my best to answer them.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[1989]]></title>
@@ -3457,44 +3681,6 @@ Apple.</small></p>
 <p>But what if we let the compiler (llvm-gcc in this case) optimize it?  I don&rsquo;t know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don&rsquo;t know.</p>
 
 <p>As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That&rsquo;s a significant improvement, but it&rsquo;s still slower than the unoptimized while loop, so it obviously won&rsquo;t beat that.  And indeed, the optimized while loop takes only 3,072 µsec.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The state of Python imaging]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging/"/>
-    <updated>2012-09-14T03:36:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/09/14/the-state-of-python-imaging</id>
-    <content type="html"><![CDATA[<p>(<a title="The state of Python imaging - Eevee's Livejournal" href="http://eevee.livejournal.com/307299.html" target="_blank">With apologies to Eevee</a>, of whom I am a great fan.)</p>
-
-<p>So, I&rsquo;m <a title="Social networks and content ownership - mlindgren.ca" href="http://mlindgren.ca/blog/archives/597" target="_blank">working on a photo album app written in Python.</a>  I&rsquo;m using Python because, well, I love it.  I think it&rsquo;s the perfect language for web development; it&rsquo;s simple and very readable, and ample syntactic sugar and just the right mix of procedural and functional features almost completely eliminate tedious boilerplate.  As a trivial example for those who have never used Python, consider:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">db_tags</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">tag</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span> <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span>
-</span><span class='line'>                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">MetadataTag</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">source</span> <span class="o">=</span> <span class="s">&#39;exif&#39;</span><span class="p">)])</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>What I&rsquo;m doing here is grabbing all of the EXIF tags I know about out of my database with <a title="SQLAlchemy" href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a> (also awesome, by the way), and creating a dictionary which maps each tag&rsquo;s name to the corresponding <acronym title="Object-Relational Mapper">ORM</acronym> object; I can find the ORM object simply with <code>db_tags[tag_name]</code>, which lets me easily and efficiently insert new tag values as I read <acronym title="Exchangeable Image File Format">EXIF</acronym> data from a photo.  This isn&rsquo;t particularly <em>difficult</em> to do in any other language; as I said, it&rsquo;s a trivial example.  But consider how much more verbose the code would be: PHP, which is still the most popular language for web applications despite being an <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/" target="_blank">incorrigible pile of garbage</a>, doesn&rsquo;t have list comprehensions.  I don&rsquo;t even want to think about how many lines of code this would take in Java; additionally, while I&rsquo;m unfamiliar with them in general, I suspect Java ORMs require the use of generics to a painful extent (i.e. more than not at all).  In Python it only takes one <acronym title="Source Line Of Code">SLOC</acronym>, without sacrificing any readability.<sup>1, 2</sup></p>
-
-<p>So, Python&rsquo;s pretty great. But like all languages, it does have a few problems. The one I have had the most difficulty with in my current project is that third party library support is somewhat lacking in some important areas; specifically, there aren&rsquo;t many good options for reading and manipulating images. The most popular library seems to be the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>, PIL. It&rsquo;s easy enough to install and provides a <em>passable</em> set of core features, but doesn&rsquo;t go much beyond that.  For instance, none of the various camera raw formats seem to be supported, which I consider a fairly important feature for my photo album; I&rsquo;d very much like be able to upload original raws and have the application automatically convert them to JPEGs for me.  Additionally, it doesn&rsquo;t provide much in the way of convenience methods for cropping and resizing images.  <a title="ImageMagick" href="http://www.imagemagick.org/" target="_blank">ImageMagick</a> has <a title="ImageMagick geometry" href="http://www.imagemagick.org/script/command-line-processing.php#geometry" target="_blank">a very nice means of specifying cropping and resizing geometry</a> with various aspect ratio-preserving (or not) behaviour, and I wanted to be able to leverage something similar for my app so that I could quickly prototype with various size options.</p>
-
-<!-- more -->
-
-
-<p>Given that ImageMagick provides most of the functionality I want that PIL lacks, it seemed like a good option, but it&rsquo;s a C library and Python doesn&rsquo;t yet have mature bindings for it.  It&rsquo;s getting there, though!  I decided to go with <a title="Python Wand library" href="http://dahlia.kr/wand/index.html" target="_blank">Wand</a>, which is a fork of python-magickwand.  It has a nice high-level API, but also provides direct access to most of the low-level MagickWand APIs, making it fairly flexible.  When I first found it, it did not have support for the nice geometry specifications I wanted to use, but being an open source project I was able to patch that in.  <a title="Wand version 0.2.2" href="http://dahlia.kr/wand/changes.html#version-0-2-2" target="_blank">Version 0.2.2</a> will include my patch, which provides the <code>Image.transform</code> method for easy cropping and resizing.  Eevee is also <a title="Sanpera - Eevee's Github" href="https://github.com/eevee/sanpera" target="_blank">working on a Python imaging library</a>, which is promising, but it&rsquo;s still a work in progress.</p>
-
-<p>Unfortunately Wand doesn&rsquo;t yet support retrieving EXIF, <acronym title="International Press Telecommunications Council">IPTC</acronym> or <acronym title="Extensible Metadata Platform">XMP</acronym> metadata from images, which is another requirement for me.  ImageMagick does support EXIF at least, and that&rsquo;s on the roadmap for Wand, but implementing a high-level interface for EXIF tags is a bigger task than I have time for at the moment.  That meant that I had to turn to another library to retrieve metadata.  <a title="pyexiv2 library" href="http://tilloy.net/dev/pyexiv2/" target="_blank">pyexiv2</a>, a Python binding for the exiv2 C++ library, initially looked promising.  Unfortunately I discovered that it&rsquo;s not installable via any Python package manager; it must be built from source (via a build system I&rsquo;ve never even heard of, and I&rsquo;m familiar with more than a few build systems), unless a binary is provided for your platform by the project maintainers (i.e. you are on Debian, Ubuntu, Fedora or Windows).</p>
-
-<p>My project already has more dependencies than I&rsquo;m entirely comfortable with; one of the reasons that Python only has modest adoption as a web application platform despite being a great language for the task is that it doesn&rsquo;t have a kitchen sink-style standard library, and third-party libraries require separate installation.  In general I consider that a good thing; I&rsquo;d rather have a well-designed standard library than a <a title="PHP: A Fractal of Bad Design - Fuzzy Notepad" href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/#general" target="_blank">gigantic mishmash of inconsistently named global functions.</a>  However, it does make deployment a little more complex.  So far I&rsquo;ve managed to stick to libraries which can be installed in one step using well-known package managers, so the setup procedure for my app should not be too arduous.  Adding pyexiv2 as a dependency and thereby including an entirely different build system in the process would likely have complicated the installation procedure to the point that no actual ordinary humans would ever use my application.  That&rsquo;s something I want to avoid, if possible.</p>
-
-<p><del>For now I have settled for exif-py.</del>  It only handles EXIF tags, not IPTC or XMP, which is disappointing because I really wanted to support multiple metadata formats.  It&rsquo;s a pure Python library in a single file, though, so I can just include with my distribution.  It&rsquo;s easy to use and gets the job done, so it will have to do for now.  I&rsquo;m hoping that pyexiv2 will show up in pip (a Python package manager) at some point, though.  [<strong>Updated September 16, 2012: </strong>I&rsquo;ve discovered that exif-py is broken in at least a couple significant ways, so I&rsquo;m kind of back at square one for handling metadata.  exif-py seems to be unable to detect EXIF data in some files that have it.  Additionally, the strings that it translates orientation codes to are not consistent with each other, so they&rsquo;re basically wrong.  I&rsquo;ve informed the maintainers of these issues, but I don&rsquo;t have time to fix them myself.]</p>
-
-<p>The process of trying to find a good imaging package for Python and ultimately settling for two separate libraries which still don&rsquo;t quite do everything I want has made it clear to me that third party library support for Python still has a way to go.  Hopefully the situation will improve as adoption of the language increases.  I&rsquo;m happy to do my part, both through contributions to open source libraries such as Wand, and by building apps using Python to bolster the ecosystem.  I hope that by demonstrating what&rsquo;s possible with Python as a web application platform, I can help convince new web developers to build their applications using Python as well&hellip; which provides yet more reason for me to be diligent about finishing my photo album app!</p>
-
-<p><sup>1</sup> <small>Okay, the <code>dict</code> function is perhaps not the most explicit. Check the docs once, though, and it&rsquo;s very easy to understand.</small><br/>
-<sup>2</sup> <small>Ruby would doubtless be similarly concise, and it seems like a nice language in my limited experience, but I find its syntax and distinction between &ldquo;symbols&rdquo; and strings to not be to my taste.</small></p>
 ]]></content>
   </entry>
   

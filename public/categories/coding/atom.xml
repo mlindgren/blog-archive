@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/coding/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-03-02T23:37:22-08:00</updated>
+  <updated>2015-03-14T03:37:11-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -12,6 +12,243 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Fun with the Microsoft Band SDK Preview]]></title>
+<link href="http://blog.mlindgren.ca/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/"/>
+<updated>2015-03-14T02:07:34-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview</id>
+
+      <content type="html"><![CDATA[<p>First of all, happy <a href="http://en.wikipedia.org/wiki/Pi_Day">Pi Day</a>! Using the standard United States
+date format, today is 3/14/15, which makes it the most significant Pi Day this century.</p>
+
+<p>Anyway, I&rsquo;ve spent the past few hours tinkering with the
+<a href="http://developer.microsoftband.com/">Microsoft Band SDK Preview</a>, and although I think it&rsquo;s
+unfortunate that there&rsquo;s no SDK for writing apps which actually run on the Band itself, you can
+still accomplish some pretty cool things with the phone SDK. Unfortunately, this being a preview
+release, the documentation is a bit sparse, and I had some trouble figuring out how to get things
+working. Thus, I wanted to share some of what I&rsquo;ve learned. If you prefer to dive right into the
+code, I&rsquo;ve got a small C# sample application <a href="https://github.com/mlindgren/BandDemo">on GitHub</a>.</p>
+
+<p>Standard disclaimer: although I am a Microsoft employee, everything I am posting here and on GitHub
+is my own personal work done on my own time. None of it should be considered as officially
+representative of Microsoft in any respect. While I will do my best to answer any questions I can
+related to the Band SDK Preview, I cannot provide official support for this or any other Microsoft
+product.</p>
+
+<p>Let&rsquo;s get started. If you&rsquo;re following
+<a href="http://developer.microsoftband.com/docs/MicrosoftBandSDKPreview.pdf">the documentation</a>, the first
+few steps describe how to connect to the Band, as one would expect. The sample code provided creates
+a connection within a <code>using</code> block. This ensures that the connection is disposed of as soon as
+control leaves the block, which is sensible since maintaing a connection to the Band, especially
+when subscribed to multiple sensors, can severely impact its battery life. However, this approach
+can also be a bit misleading, because if you <em>do</em> want to collect data from the Band over some
+interval of time, you will only be able to do so during the lifetime of the <code>IBandClient</code> object
+returned by <code>ConnectAsync</code>. As soon as the <code>IBandClient</code> object is disposed of, your connection will
+be closed and you will no longer receive sensor data.</p>
+
+<p>Since you&rsquo;ll typically only be connected to one Band at a time, the easiest way to solve this
+problem is to store the <code>IBandClient</code> object as a static member variable of your <code>Application</code>
+class. (Note: I don&rsquo;t guarantee that this is the <em>optimal</em> solution. I am by no means an expert
+here.) This also makes it easy to access your Band client from different pages within your
+application, and to unsubscribe from sensor data when you no longer need it so that you won&rsquo;t drain
+the Band&rsquo;s battery.<!-- more --></p>
+
+<p><figure class='code'><figcaption><span>App.xaml.cs </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Microsoft.Band</span><span class="p">;&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="k">namespace</span> <span class="nn">BandDemo</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">sealed</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">App</span> <span class="p">:</span> <span class="n">Application</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="k">public</span> <span class="k">static</span> <span class="n">IBandClient</span> <span class="n">BandClient</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;</span><span class="c1">// ...</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">private</span> <span class="k">async</span> <span class="k">void</span> <span class="nf">OnSuspending</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">SuspendingEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">var</span> <span class="n">deferral</span> <span class="p">=</span> <span class="n">e</span><span class="p">.</span><span class="n">SuspendingOperation</span><span class="p">.</span><span class="n">GetDeferral</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">App</span><span class="p">.</span><span class="n">BandClient</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="c1">// Unsubscribe from sensor data so that we don&#39;t drain the Band&#39;s battery when</span>
+</span><span class='line'>        <span class="c1">// the app is not in use.</span>
+</span><span class='line'>        <span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Accelerometer</span><span class="p">.</span><span class="n">StopReadingsAsync</span><span class="p">();</span>
+</span><span class='line'>        <span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Gyroscope</span><span class="p">.</span><span class="n">StopReadingsAsync</span><span class="p">();</span>
+</span><span class='line'>        <span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">HeartRate</span><span class="p">.</span><span class="n">StopReadingsAsync</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// Removing our reference to the IBandClient will cause it to be garbage collected,</span>
+</span><span class='line'>        <span class="c1">// thereby closing the connection.</span>
+</span><span class='line'>        <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">deferral</span><span class="p">.</span><span class="n">Complete</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><figcaption><span>MainPage.xaml.cs </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Microsoft.Band</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Microsoft.Band.Sensors</span><span class="p">;&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="k">namespace</span> <span class="nn">BandDemo</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">sealed</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainPage</span> <span class="p">:</span> <span class="n">Page</span>
+</span><span class='line'>  <span class="p">{&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;</span><span class="c1">// ...</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">protected</span> <span class="k">async</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnNavigatedTo</span><span class="p">(</span><span class="n">NavigationEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">IBandInfo</span><span class="p">[]</span> <span class="n">pairedBands</span> <span class="p">=</span> <span class="k">await</span> <span class="n">BandClientManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">GetBandsAsync</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">try</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>      <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span> <span class="p">=</span> <span class="k">await</span> <span class="n">BandClientManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">ConnectAsync</span><span class="p">(</span><span class="n">pairedBands</span><span class="p">[</span><span class="m">0</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">// Do work after successful connect</span>
+</span><span class='line'>      <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Debug</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Connected!&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Debug</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Connection failed!&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>The next thing you&rsquo;ll notice in the documentation is that it recommends that you query the device
+for available reporting intervals for each sensor. It&rsquo;s fairly easy to miss that setting the
+reporting interval is <em>completely optional</em>; you can feel free to skip this step unless you really
+need fine-grained control over how frequently you get updates.</p>
+
+<p>Finally, the documentation describes how to subscribe to sensor data by adding your callback to a
+sensor&rsquo;s <code>ReadingChanged</code> property. When your callback is executed, you might want to update your
+app&rsquo;s UI to indicate the new reading (indeed, the documentation itself suggests this). However, this
+is another gotcha because in Windows (Phone) Store apps, &ldquo;all UI components share the same [UI]
+thread,&rdquo; (<a href="https://msdn.microsoft.com/en-us/library/windows/apps/hh994635.aspx">reference</a>), and
+methods on this thread cannot be directly invoked by background threads. If you try to do so, an
+exception will be raised. This will of course be no surprise to those of you already familiar with
+Store apps (or even with .NET circa 2006), but for the rest of us, it can be a bit confusing.
+Luckily, the solution is simple: you just need to use <code>Dispatcher.RunAsync</code> to do your UI updates.
+So, putting it all together, here&rsquo;s how you subscribe to sensor data and update the UI when it
+changes:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Accelerometer</span><span class="p">.</span><span class="n">ReadingChanged</span> <span class="p">+=</span> <span class="k">async</span> <span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">await</span> <span class="n">Dispatcher</span><span class="p">.</span><span class="n">RunAsync</span><span class="p">(</span><span class="n">Windows</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Core</span><span class="p">.</span><span class="n">CoreDispatcherPriority</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">AccelerometerXValue</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">args</span><span class="p">.</span><span class="n">SensorReading</span><span class="p">.</span><span class="n">AccelerationX</span><span class="p">.</span><span class="n">ToString</span><span class="p">(&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="err">###</span><span class="m">00.00</span><span class="p">&amp;</span><span class="n">rdquo</span><span class="p">;);</span>
+</span><span class='line'>    <span class="n">AccelerometerYValue</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">args</span><span class="p">.</span><span class="n">SensorReading</span><span class="p">.</span><span class="n">AccelerationY</span><span class="p">.</span><span class="n">ToString</span><span class="p">(&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="err">###</span><span class="m">00.00</span><span class="p">&amp;</span><span class="n">rdquo</span><span class="p">;);</span>
+</span><span class='line'>    <span class="n">AccelerometerZValue</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">args</span><span class="p">.</span><span class="n">SensorReading</span><span class="p">.</span><span class="n">AccelerationZ</span><span class="p">.</span><span class="n">ToString</span><span class="p">(&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="err">###</span><span class="m">00.00</span><span class="p">&amp;</span><span class="n">rdquo</span><span class="p">;);&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;</span><span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Debug</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Got accelerometer event!&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span>  <span class="p">});</span>
+</span><span class='line'><span class="p">};&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Accelerometer</span><span class="p">.</span><span class="n">StartReadingsAsync</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>That&rsquo;s it for now! If you have any questions, leave a comment and I&rsquo;ll do my best to answer them.</p>
+]]></content>
+    </entry>
   
     <entry>
       
@@ -369,54 +606,6 @@ printf("Elapsed: %ld sec %ld usec\n",
 
 
 <p>That&rsquo;s it! If you have any trouble, leave a comment.</p>
-]]></content>
-    </entry>
-  
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[What are lambdas good for, anyway?]]></title>
-<link href="http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway/"/>
-<updated>2011-06-29T22:27:00-07:00</updated>
-<id>http://blog.mlindgren.ca/entry/2011/06/29/what-are-lambdas-good-for-anyway</id>
-
-      <content type="html"><![CDATA[<p>I had a discussion today about what lambda functions are used for, how they differ from regular functions, and why they&rsquo;re important. I thought I&rsquo;d reproduce it here, as it seems that lambdas are often thought of as confusing and obscure. The truth is that they&rsquo;re very simple, and also quite powerful. While they can reduce readability if used incorrectly, they do serve an important purpose, and those who understand them should have nothing to fear from them. This discussion pertains specifically to lambda functions as they&rsquo;re implemented in Python, but they&rsquo;re very similar in other languages where they&rsquo;re available.<!-- more --></p>
-
-<p>I think the best way to explain lambdas is with a simple example. Say you want a switch statement. Python doesn’t have them, but what you can do is set up a dictionary and get a value out of it, which is sort of like a switch. However, you can&rsquo;t do this&hellip;</p>
-
-<pre><code class="python">my_dict = {
-            1 : my_func1(x, y),
-            2 : my_func2(x, y, z)
-          }
-</code></pre>
-
-<p>&hellip;because the functions will be evaluated when the dictionary is initialized, so if they modify any state (or if they just take a while to execute) you’ll get bad behaviour. Functions are first class objects in Python, so you could insert the functions into the dictionary like so…</p>
-
-<pre><code class="python">my_dict = {
-            1 : my_func1,
-            2 : my_func2
-          }
-</code></pre>
-
-<p>&hellip;but that doesn&rsquo;t work either, because you don’t know how many (or which) arguments you need to pass to the function when you pull it out of the dictionary. So, what to do?</p>
-
-<pre><code class="python">my_dict = {
-            1 : lambda x, y, z: my_func1(x, y),
-            2 : lambda x, y, z: my_func2(x, y, z)
-          }
-</code></pre>
-
-<p>Lambdas solve the problem because they&rsquo;re evaluated lazily. By being wrapped in
-a lambda, the functions won’t be evaluated until the lambda itself is called.
-Furthermore, you can use the lambda to normalize the parameters of each
-function, so that you can always call it using <code>my_dict[my_var](x, y, z)</code>, even though the first function being called doesn’t actually make use of the z parameter. There is no other way to accomplish this in Python, besides a big long ugly list of ifs. (Obviously you’d normally reserve this technique for situations where you have more than two options.)</p>
-
-<p>You can also use the laziness aspect of lambdas to refer to variables which haven&rsquo;t been declared yet, although I&rsquo;d recommend against that because it can become quite confusing. Anything within the lambda is evaluated only when the lambda is called.</p>
-
-<p>And there you have it! Those are the basics of lambdas in Python. Of course, the above is only a trivial example of what can be accomplished with lambdas.  If you&rsquo;d like to learn more, there&rsquo;s a great write-up available <a title="Lambda functions in Python" href="http://www.secnetix.de/olli/Python/lambda_functions.hawk">here.</a></p>
 ]]></content>
     </entry>
   

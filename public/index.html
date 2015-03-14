@@ -9,8 +9,8 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I&rsquo;ve been working on my next book review for a few days now, but I&rsquo;m finding
-that when I try to work on it, words don&rsquo;t come &hellip;">
+  <meta name="description" content="First of all, happy Pi Day! Using the standard United States
+date format, today is 3/14/15, which makes it the most significant Pi Day this century. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -150,6 +150,87 @@ $(document).ready(function() {
   <div id="main">
     <div id="content">
       <div class="blog-index">
+  
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
+      
+
+<div class="category-coding">
+
+  <header>
+    <h1 class="entry-title">
+
+<a href="/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/">Fun with the Microsoft Band SDK Preview</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-14T02:07:34-07:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:07 am</span></time>
+        
+         &bull; <a rel="bookmark" href="/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/">&infin;</a>
+      </p>
+    
+  </header>
+
+
+
+  <div class="entry-content"><p>First of all, happy <a href="http://en.wikipedia.org/wiki/Pi_Day">Pi Day</a>! Using the standard United States
+date format, today is 3/14/15, which makes it the most significant Pi Day this century.</p>
+
+<p>Anyway, I&rsquo;ve spent the past few hours tinkering with the
+<a href="http://developer.microsoftband.com/">Microsoft Band SDK Preview</a>, and although I think it&rsquo;s
+unfortunate that there&rsquo;s no SDK for writing apps which actually run on the Band itself, you can
+still accomplish some pretty cool things with the phone SDK. Unfortunately, this being a preview
+release, the documentation is a bit sparse, and I had some trouble figuring out how to get things
+working. Thus, I wanted to share some of what I&rsquo;ve learned. If you prefer to dive right into the
+code, I&rsquo;ve got a small C# sample application <a href="https://github.com/mlindgren/BandDemo">on GitHub</a>.</p>
+
+<p>Standard disclaimer: although I am a Microsoft employee, everything I am posting here and on GitHub
+is my own personal work done on my own time. None of it should be considered as officially
+representative of Microsoft in any respect. While I will do my best to answer any questions I can
+related to the Band SDK Preview, I cannot provide official support for this or any other Microsoft
+product.</p>
+
+<p>Let&rsquo;s get started. If you&rsquo;re following
+<a href="http://developer.microsoftband.com/docs/MicrosoftBandSDKPreview.pdf">the documentation</a>, the first
+few steps describe how to connect to the Band, as one would expect. The sample code provided creates
+a connection within a <code>using</code> block. This ensures that the connection is disposed of as soon as
+control leaves the block, which is sensible since maintaing a connection to the Band, especially
+when subscribed to multiple sensors, can severely impact its battery life. However, this approach
+can also be a bit misleading, because if you <em>do</em> want to collect data from the Band over some
+interval of time, you will only be able to do so during the lifetime of the <code>IBandClient</code> object
+returned by <code>ConnectAsync</code>. As soon as the <code>IBandClient</code> object is disposed of, your connection will
+be closed and you will no longer receive sensor data.</p>
+
+<p>Since you&rsquo;ll typically only be connected to one Band at a time, the easiest way to solve this
+problem is to store the <code>IBandClient</code> object as a static member variable of your <code>Application</code>
+class. (Note: I don&rsquo;t guarantee that this is the <em>optimal</em> solution. I am by no means an expert
+here.) This also makes it easy to access your Band client from different pages within your
+application, and to unsubscribe from sensor data when you no longer need it so that you won&rsquo;t drain
+the Band&rsquo;s battery.</div>
+  <footer>
+    <a rel="full-article" href="/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/">More &rarr;</a>
+  </footer>
+
+</div>
+
+    </article>
   
     
     
@@ -866,64 +947,6 @@ argues that the cost of these lies, in the long term, outweighs their benefit:</
 
     </article>
   
-    
-    
-
-
-
-
-
-
-
-
-
-    <article >
-      
-
-<div class="category-reviews">
-
-  <header>
-    <h1 class="entry-title">
-
-<a href="/entry/2014/10/26/book-review-free-will/">Book Review: Free Will</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-10-26T17:00:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>5:00 pm</span></time>
-        
-         &bull; <a rel="bookmark" href="/entry/2014/10/26/book-review-free-will/">&infin;</a>
-      </p>
-    
-  </header>
-
-
-
-  <div class="entry-content"><p>Sam Harris is a controversial figure, to say the least. Personally, I&rsquo;m a fan of
-his work, but as one of the &ldquo;four horsemen&rdquo; of so-called New Atheism, he has
-met with much ire since the publication of his first book. This comes not only
-from religious adherents, but also from secular liberals, many of whom seem to
-willfully (and sometimes maybe even <em>gleefully</em>) misinterpret him.  Although
-<em><a href="http://www.samharris.org/free-will">Free Will</a>,</em> published in 2012, courts
-less political controversy than Harris&#8217; other works, it too will raise the
-eyebrows of some readers. In fact, earlier this year, it met with a prickly
-reception from fellow &ldquo;horseman&rdquo; and philosophy professor Dan Dennett.</p>
-
-</div>
-  <footer>
-    <a rel="full-article" href="/entry/2014/10/26/book-review-free-will/">More &rarr;</a>
-  </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page2">&larr; Older</a>
@@ -950,6 +973,11 @@ reception from fellow &ldquo;horseman&rdquo; and philosophy professor Dan Dennet
   <ul id="recent_posts">
     
       
+      <li class="post             category-coding            ">
+        <a href="/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/">Fun with the Microsoft Band SDK Preview</a>
+      </li>
+    
+      
       <li class="post             category-other            ">
         <a href="/entry/2015/03/01/1989/">1989</a>
       </li>
@@ -967,11 +995,6 @@ reception from fellow &ldquo;horseman&rdquo; and philosophy professor Dan Dennet
       
       <li class="post             category-technology            ">
         <a href="/entry/2015/01/17/how-to-manually-send-a-pingback/">How to manually send a Pingback</a>
-      </li>
-    
-      
-      <li class="post             category-links            ">
-        <a href="/entry/2015/01/04/be-a-communications-consequentialist/">Be a Communications Consequentialist</a>
       </li>
     
   </ul>
