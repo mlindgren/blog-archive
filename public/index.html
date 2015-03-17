@@ -214,16 +214,16 @@ a connection within a <code>using</code> block. This ensures that the connection
 control leaves the block, which is sensible since maintaing a connection to the Band, especially
 when subscribed to multiple sensors, can severely impact its battery life. However, this approach
 can also be a bit misleading, because if you <em>do</em> want to collect data from the Band over some
-interval of time, you will only be able to do so during the lifetime of the <code>IBandClient</code> object
-returned by <code>ConnectAsync</code>. As soon as the <code>IBandClient</code> object is disposed of, your connection will
-be closed and you will no longer receive sensor data.</p>
+interval of time, you will only be able to do so during the lifetime of the <code>IBandClient</code> returned
+by <code>ConnectAsync</code>. As soon as the <code>IBandClient</code> is disposed of, your connection will be closed and
+you will no longer receive sensor data.</p>
 
 <p>Since you&rsquo;ll typically only be connected to one Band at a time, the easiest way to solve this
-problem is to store the <code>IBandClient</code> object as a static member variable of your <code>Application</code>
-class. (Note: I don&rsquo;t guarantee that this is the <em>optimal</em> solution. I am by no means an expert
-here.) This also makes it easy to access your Band client from different pages within your
-application, and to unsubscribe from sensor data when you no longer need it so that you won&rsquo;t drain
-the Band&rsquo;s battery.</div>
+problem is to store the <code>IBandClient</code> as a static member variable of your <code>Application</code> class.
+(Note: I don&rsquo;t guarantee that this is the <em>optimal</em> solution. I am by no means an expert here.) This
+also makes it easy to access your Band client from different pages within your application, and to
+unsubscribe from sensor data when you no longer need it so that you won&rsquo;t drain the Band&rsquo;s
+battery.</div>
   <footer>
     <a rel="full-article" href="/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/">More &rarr;</a>
   </footer>

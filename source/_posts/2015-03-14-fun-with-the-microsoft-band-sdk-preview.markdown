@@ -30,16 +30,25 @@ a connection within a `using` block. This ensures that the connection is dispose
 control leaves the block, which is sensible since maintaing a connection to the Band, especially
 when subscribed to multiple sensors, can severely impact its battery life. However, this approach
 can also be a bit misleading, because if you _do_ want to collect data from the Band over some
-interval of time, you will only be able to do so during the lifetime of the `IBandClient` object
-returned by `ConnectAsync`. As soon as the `IBandClient` object is disposed of, your connection will
-be closed and you will no longer receive sensor data.
+interval of time, you will only be able to do so during the lifetime of the `IBandClient` returned
+by `ConnectAsync`. As soon as the `IBandClient` is disposed of, your connection will be closed and
+you will no longer receive sensor data.
 
 Since you'll typically only be connected to one Band at a time, the easiest way to solve this
-problem is to store the `IBandClient` object as a static member variable of your `Application`
-class. (Note: I don't guarantee that this is the _optimal_ solution. I am by no means an expert
-here.) This also makes it easy to access your Band client from different pages within your
-application, and to unsubscribe from sensor data when you no longer need it so that you won't drain
-the Band's battery.<!-- more -->
+problem is to store the `IBandClient` as a static member variable of your `Application` class.
+(Note: I don't guarantee that this is the _optimal_ solution. I am by no means an expert here.) This
+also makes it easy to access your Band client from different pages within your application, and to
+unsubscribe from sensor data when you no longer need it so that you won't drain the Band's
+battery.<!-- more -->
+
+[**Updated March 17, 2015:** In my original post, I was missing a call to `Dispose()` before setting
+the `IBandClient` member to `null`. As Phil pointed out in the comments, this is a bad practice,
+because garbage collection of the `IBandClient` may not happen immediately, in which case the
+connection to the Band would be left open for some time. During that time, other applications would
+be prevented from connecting to the Band. I have corrected this error in my code below, and in my
+project on GitHub. If you are only connecting to the Band for a short time, you can use a `using`
+block instead, as discussed above, which will ensure that `Dispose()` is called for you. Thanks to
+Phil for the correction.]
 
 {% codeblock lang:csharp App.xaml.cs %}
 using Microsoft.Band;
@@ -67,8 +76,11 @@ namespace BandDemo
             await App.BandClient.SensorManager.Gyroscope.StopReadingsAsync();
             await App.BandClient.SensorManager.HeartRate.StopReadingsAsync();
 
-            // Removing our reference to the IBandClient will cause it to be garbage collected,
-            // thereby closing the connection.
+            // Call Dispose to close the connect to the Band
+            App.BandClient.Dispose();
+
+            // We are done with this client, so assign null to the member variable so the
+            // IBandClient can be garbage collected
             App.BandClient = null;
         }
 

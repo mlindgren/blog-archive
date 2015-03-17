@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/coding/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-03-14T03:37:11-07:00</updated>
+  <updated>2015-03-17T00:46:39-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -48,16 +48,25 @@ a connection within a <code>using</code> block. This ensures that the connection
 control leaves the block, which is sensible since maintaing a connection to the Band, especially
 when subscribed to multiple sensors, can severely impact its battery life. However, this approach
 can also be a bit misleading, because if you <em>do</em> want to collect data from the Band over some
-interval of time, you will only be able to do so during the lifetime of the <code>IBandClient</code> object
-returned by <code>ConnectAsync</code>. As soon as the <code>IBandClient</code> object is disposed of, your connection will
-be closed and you will no longer receive sensor data.</p>
+interval of time, you will only be able to do so during the lifetime of the <code>IBandClient</code> returned
+by <code>ConnectAsync</code>. As soon as the <code>IBandClient</code> is disposed of, your connection will be closed and
+you will no longer receive sensor data.</p>
 
 <p>Since you&rsquo;ll typically only be connected to one Band at a time, the easiest way to solve this
-problem is to store the <code>IBandClient</code> object as a static member variable of your <code>Application</code>
-class. (Note: I don&rsquo;t guarantee that this is the <em>optimal</em> solution. I am by no means an expert
-here.) This also makes it easy to access your Band client from different pages within your
-application, and to unsubscribe from sensor data when you no longer need it so that you won&rsquo;t drain
-the Band&rsquo;s battery.<!-- more --></p>
+problem is to store the <code>IBandClient</code> as a static member variable of your <code>Application</code> class.
+(Note: I don&rsquo;t guarantee that this is the <em>optimal</em> solution. I am by no means an expert here.) This
+also makes it easy to access your Band client from different pages within your application, and to
+unsubscribe from sensor data when you no longer need it so that you won&rsquo;t drain the Band&rsquo;s
+battery.<!-- more --></p>
+
+<p>[<strong>Updated March 17, 2015:</strong> In my original post, I was missing a call to <code>Dispose()</code> before setting
+the <code>IBandClient</code> member to <code>null</code>. As Phil pointed out in the comments, this is a bad practice,
+because garbage collection of the <code>IBandClient</code> may not happen immediately, in which case the
+connection to the Band would be left open for some time. During that time, other applications would
+be prevented from connecting to the Band. I have corrected this error in my code below, and in my
+project on GitHub. If you are only connecting to the Band for a short time, you can use a <code>using</code>
+block instead, as discussed above, which will ensure that <code>Dispose()</code> is called for you. Thanks to
+Phil for the correction.]</p>
 
 <p><figure class='code'><figcaption><span>App.xaml.cs </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -96,6 +105,9 @@ the Band&rsquo;s battery.<!-- more --></p>
 <span class='line-number'>34</span>
 <span class='line-number'>35</span>
 <span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
 </pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Microsoft.Band</span><span class="p">;&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="k">namespace</span> <span class="nn">BandDemo</span>
@@ -121,8 +133,11 @@ the Band&rsquo;s battery.<!-- more --></p>
 </span><span class='line'>        <span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">Gyroscope</span><span class="p">.</span><span class="n">StopReadingsAsync</span><span class="p">();</span>
 </span><span class='line'>        <span class="k">await</span> <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">SensorManager</span><span class="p">.</span><span class="n">HeartRate</span><span class="p">.</span><span class="n">StopReadingsAsync</span><span class="p">();</span>
 </span><span class='line'>
-</span><span class='line'>        <span class="c1">// Removing our reference to the IBandClient will cause it to be garbage collected,</span>
-</span><span class='line'>        <span class="c1">// thereby closing the connection.</span>
+</span><span class='line'>        <span class="c1">// Call Dispose to close the connect to the Band</span>
+</span><span class='line'>        <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// We are done with this client, so assign null to the member variable so the</span>
+</span><span class='line'>        <span class="c1">// IBandClient can be garbage collected</span>
 </span><span class='line'>        <span class="n">App</span><span class="p">.</span><span class="n">BandClient</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>
