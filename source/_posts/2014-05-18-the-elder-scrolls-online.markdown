@@ -3,8 +3,15 @@ layout: post
 title: "Game Review: The Elder Scrolls Online"
 date: 2014-05-18 21:02
 comments: true
-categories: [Reviews] 
+categories: [Reviews]
 ---
+
+[**Updated March 17, 2015:** The Elder Scrolls Online: Tamriel Unlimited was officially released
+today, meaning that ESO no longer requires a subscription fee to play. In addition, there have been
+six major content updates since the game's original release, with dozens upon dozens of
+improvements. I'd encourage you to [read my new post on the subject](/entry/2015/03/17/windows-hello/)
+or just go straight to Zenimax Online Studios'
+[own announcement](http://www.elderscrollsonline.com/en-us/news/post/2015/03/17/welcome-to-tamriel-unlimited).]
 
 It has been about a month and a half now since The Elder Scrolls Online was
 released, and it's received

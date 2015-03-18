@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Links | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/links/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-03-17T00:46:39-07:00</updated>
+  <updated>2015-03-17T23:37:17-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -12,6 +12,79 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Windows Hello, Microsoft Passport, and Tamriel Unlimited]]></title>
+<link href="http://blog.mlindgren.ca/entry/2015/03/17/windows-hello/"/>
+<updated>2015-03-17T23:28:10-07:00</updated>
+<id>http://blog.mlindgren.ca/entry/2015/03/17/windows-hello</id>
+
+      <content type="html"><![CDATA[<p>Lots of exciting news today! First off, Microsoft has made a couple exciting announcements about
+Windows 10. Full disclosure: I am a Microsoft employee, so I am posting these for self-interested
+reasons, but I&rsquo;m also genuinely really excited about what they mean for Windows.</p>
+
+<p>The two new features are called <a href="http://blogs.windows.com/bloggingwindows/2015/03/17/making-windows-10-more-personal-and-more-secure-with-windows-hello/">Windows Hello and Microsoft Passport</a>.
+Windows Hello is a software feature which, with supported hardware, offers &ldquo;biometric authentication
+which can provide instant access to your Windows 10 devices.&rdquo; But Windows Hello is not just the same
+old support for fingerprint readers that Windows has had for many years now; it &ldquo;enables you to
+authenticate applications, enterprise content, and even certain online experiences without a
+password being stored on your device or in a network server at all.&rdquo;</p>
+
+<p>To accomplish that, Windows Hello works in conjunction with Microsoft Passport, which enables you to
+&ldquo;securely authenticate to applications, websites and networks [&hellip;] without sending up a password.
+Thus, there is no shared password stored on their servers for a hacker to potentially compromise.&rdquo;
+You can read the linked article for the full details, but if you just want the overview, watch this
+video:</p>
+
+<div style="position: relative; height: 480px;">
+<iframe width="854" height="480" src="https://www.youtube.com/embed/1AsoSnOmhvU" frameborder="0"
+allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></iframe>
+</div>
+
+
+<p><br /></p>
+
+<p>Second, as of today, <a href="http://www.elderscrollsonline.com/en-us/news/post/2015/03/17/welcome-to-tamriel-unlimited">The Elder Scrolls Online: Tamriel Unlimited</a>
+has launched, meaning that ESO no longer requires a subscription to play. You&rsquo;ll still have to buy
+the base game, but after that, no subscription is required to log in. I
+<a href="/entry/2014/05/18/the-elder-scrolls-online/">previously wrote</a> a very favorable review of The
+Elder Scrolls Online, and while I haven&rsquo;t had much time to play it over the past few months, I do
+still log in occasionally, and I still enjoy the game. I&rsquo;m hoping this change to the payment model
+will bring in new players, because at this point the game&rsquo;s biggest problem seems to be long dungeon
+queue times; I can only assume this is due to a population that has dwindled since launch
+almost a year ago.</p>
+
+<p>Truth be told, I have mixed feelings about Tamriel Unlimited. I think there are significant merits
+to the subscription-based model that many players don&rsquo;t recognize, and the progress that Zenimax
+Online Studios has made since ESO&rsquo;s release is a testament to that: they&rsquo;ve released six significant
+content patches with features including a new zone, multiple new dungeons and Trials (think raids),
+new facial and combat animations, a new endgame character advancement system and drastic
+rebalancing, a justice system, and dozens more improvements. I worry that the focus will now shift
+from gameplay enhancements to purchasable cosmetic items, because the latter may be more of a cash
+cow for the company. I also have more general concerns about the continuing trend of people
+expecting everything on the Internet to be free&hellip; but that&rsquo;s a topic for another post.</p>
+
+<p>That said, I&rsquo;m willing to give Tamriel Unlimited the benefit of the doubt. It could be that this
+payment model change is just what the game needs to bring it the market success I&rsquo;ve always felt it
+deserved. If you played ESO previously but have since quit, it&rsquo;s well worth picking up again; if
+you&rsquo;ve never played before, I would sincerely urge you to give it a try. Either way, take a look at
+the launch trailer below, which shows off some of the enhancements that have been made since the
+game&rsquo;s release:</p>
+
+<div style="position: relative; height: 480px;">
+<iframe width="854" height="480" src="https://www.youtube.com/embed/D0c08A3vswQ" frameborder="0"
+allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></iframe>
+</div>
+
+
+<p><br /></p>
+]]></content>
+    </entry>
   
     <entry>
       
@@ -191,23 +264,6 @@ dozens of different accounts and passwords for various services,
 
 <p><a rel="bookmark" href="http://blog.mlindgren.ca/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">&infin; Permalink</a></p>
 
-]]></content>
-    </entry>
-  
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Ethical Game Design from Gamasutra]]></title>
-<link href="http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra/"/>
-<updated>2011-12-30T16:28:00-08:00</updated>
-<id>http://blog.mlindgren.ca/entry/2011/12/30/ethical-game-design-from-gamasutra</id>
-
-      <content type="html"><![CDATA[<p>I came across a couple excellent articles on Gamasutra which I want to share here. The first, &ldquo;<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>&rdquo; is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, &ldquo;deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice.&rdquo; I&rsquo;ll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the &ldquo;freemium&rdquo; model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam&rsquo;s thoughts on the subject are certainly worth reading.</p>
-
-<p>&ldquo;<a title="Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy" href="http://www.gamasutra.com/blogs/EvanJones/20110815/8195/Radical_Plagiarism_The_Ethical_Lessons_of_the_Gamenauts_Controversy.php" target="_blank">Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy</a>,&rdquo; by <a href="http://www.gamasutra.com/blogs/author/EvanJones/4235/">Evan Jones</a>, is equally thought-provoking. Evan recounts the cloning of the indie game <a href="http://www.bored.com/game/play/150995/Radical_Fishing.html"><em>Radical Fishing</em></a> by the more established indie studio <a href="http://gamenauts.com/">Gamenauts</a>, and adds his perspective on the cultural impact of the rampant cloning that takes place on mobile app stores. Returning readers may recall that I&rsquo;ve previously <a title="In Defense of Clones" href="http://www.mlindgren.ca/archives/318">defended the practice of cloning games</a>. My defense excluded the cloning of smaller titles by established studios, which I&rsquo;ve always viewed as morally questionable at best, but Evan&rsquo;s article nevertheless gave me pause. He provides a strong counterpoint to my own thinking on the matter, and while I&rsquo;m not yet ready to reverse my position, his argument has undeniable weight. If you&rsquo;re at all interested in game development, both articles are well worth your time.</p>
 ]]></content>
     </entry>
   

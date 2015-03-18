@@ -3,7 +3,7 @@
   <title><![CDATA[mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-03-17T00:46:39-07:00</updated>
+  <updated>2015-03-17T23:37:17-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -11,6 +11,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Windows Hello, Microsoft Passport, and Tamriel Unlimited]]></title>
+    <link href="http://blog.mlindgren.ca/entry/2015/03/17/windows-hello/"/>
+    <updated>2015-03-17T23:28:10-07:00</updated>
+    <id>http://blog.mlindgren.ca/entry/2015/03/17/windows-hello</id>
+    <content type="html"><![CDATA[<p>Lots of exciting news today! First off, Microsoft has made a couple exciting announcements about
+Windows 10. Full disclosure: I am a Microsoft employee, so I am posting these for self-interested
+reasons, but I&rsquo;m also genuinely really excited about what they mean for Windows.</p>
+
+<p>The two new features are called <a href="http://blogs.windows.com/bloggingwindows/2015/03/17/making-windows-10-more-personal-and-more-secure-with-windows-hello/">Windows Hello and Microsoft Passport</a>.
+Windows Hello is a software feature which, with supported hardware, offers &ldquo;biometric authentication
+which can provide instant access to your Windows 10 devices.&rdquo; But Windows Hello is not just the same
+old support for fingerprint readers that Windows has had for many years now; it &ldquo;enables you to
+authenticate applications, enterprise content, and even certain online experiences without a
+password being stored on your device or in a network server at all.&rdquo;</p>
+
+<p>To accomplish that, Windows Hello works in conjunction with Microsoft Passport, which enables you to
+&ldquo;securely authenticate to applications, websites and networks [&hellip;] without sending up a password.
+Thus, there is no shared password stored on their servers for a hacker to potentially compromise.&rdquo;
+You can read the linked article for the full details, but if you just want the overview, watch this
+video:</p>
+
+<div style="position: relative; height: 480px;">
+<iframe width="854" height="480" src="https://www.youtube.com/embed/1AsoSnOmhvU" frameborder="0"
+allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></iframe>
+</div>
+
+
+<p><br /></p>
+
+<p>Second, as of today, <a href="http://www.elderscrollsonline.com/en-us/news/post/2015/03/17/welcome-to-tamriel-unlimited">The Elder Scrolls Online: Tamriel Unlimited</a>
+has launched, meaning that ESO no longer requires a subscription to play. You&rsquo;ll still have to buy
+the base game, but after that, no subscription is required to log in. I
+<a href="http://blog.mlindgren.ca/entry/2014/05/18/the-elder-scrolls-online/">previously wrote</a> a very favorable review of The
+Elder Scrolls Online, and while I haven&rsquo;t had much time to play it over the past few months, I do
+still log in occasionally, and I still enjoy the game. I&rsquo;m hoping this change to the payment model
+will bring in new players, because at this point the game&rsquo;s biggest problem seems to be long dungeon
+queue times; I can only assume this is due to a population that has dwindled since launch
+almost a year ago.</p>
+
+<p>Truth be told, I have mixed feelings about Tamriel Unlimited. I think there are significant merits
+to the subscription-based model that many players don&rsquo;t recognize, and the progress that Zenimax
+Online Studios has made since ESO&rsquo;s release is a testament to that: they&rsquo;ve released six significant
+content patches with features including a new zone, multiple new dungeons and Trials (think raids),
+new facial and combat animations, a new endgame character advancement system and drastic
+rebalancing, a justice system, and dozens more improvements. I worry that the focus will now shift
+from gameplay enhancements to purchasable cosmetic items, because the latter may be more of a cash
+cow for the company. I also have more general concerns about the continuing trend of people
+expecting everything on the Internet to be free&hellip; but that&rsquo;s a topic for another post.</p>
+
+<p>That said, I&rsquo;m willing to give Tamriel Unlimited the benefit of the doubt. It could be that this
+payment model change is just what the game needs to bring it the market success I&rsquo;ve always felt it
+deserved. If you played ESO previously but have since quit, it&rsquo;s well worth picking up again; if
+you&rsquo;ve never played before, I would sincerely urge you to give it a try. Either way, take a look at
+the launch trailer below, which shows off some of the enhancements that have been made since the
+game&rsquo;s release:</p>
+
+<div style="position: relative; height: 480px;">
+<iframe width="854" height="480" src="https://www.youtube.com/embed/D0c08A3vswQ" frameborder="0"
+allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></iframe>
+</div>
+
+
+<p><br /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fun with the Microsoft Band SDK Preview]]></title>
@@ -1591,7 +1658,14 @@ with a healthy dose of skepticism until they can be replicated with rigor that
     <link href="http://blog.mlindgren.ca/entry/2014/05/18/the-elder-scrolls-online/"/>
     <updated>2014-05-18T21:02:00-07:00</updated>
     <id>http://blog.mlindgren.ca/entry/2014/05/18/the-elder-scrolls-online</id>
-    <content type="html"><![CDATA[<p>It has been about a month and a half now since The Elder Scrolls Online was
+    <content type="html"><![CDATA[<p>[<strong>Updated March 17, 2015:</strong> The Elder Scrolls Online: Tamriel Unlimited was officially released
+today, meaning that ESO no longer requires a subscription fee to play. In addition, there have been
+six major content updates since the game&rsquo;s original release, with dozens upon dozens of
+improvements. I&rsquo;d encourage you to <a href="http://blog.mlindgren.ca/entry/2015/03/17/windows-hello/">read my new post on the subject</a>
+or just go straight to Zenimax Online Studios&#8217;
+<a href="http://www.elderscrollsonline.com/en-us/news/post/2015/03/17/welcome-to-tamriel-unlimited">own announcement</a>.]</p>
+
+<p>It has been about a month and a half now since The Elder Scrolls Online was
 released, and it&rsquo;s received
 <a href="http://www.metacritic.com/game/pc/the-elder-scrolls-online">generally mixed reviews</a>.
 Despite some undeniable technical issues and a handful of design flaws, it&rsquo;s a
@@ -3559,143 +3633,6 @@ to ease the import process.</p>
 <p><sup>1</sup> <small>Did you know that Markdown was created by John Gruber? Until very
 recently, I didn&rsquo;t. And here I thought all he did was play apologist for
 Apple.</small></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[strlen without conditionals]]></title>
-    <link href="http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals/"/>
-    <updated>2012-09-19T00:21:00-07:00</updated>
-    <id>http://blog.mlindgren.ca/entry/2012/09/19/strlen-without-conditionals</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m not usually much enamoured with interview-style programming puzzles because I find that a lot of them are actually more akin to math problems, trivial to implement once you figure out the salient mathematical property.  I think I have a decent intuition for math, and I certainly took enough math courses in high school and college to give me a solid foundation in the fundamentals of algebra, geometry, statistics, calculus, etc., but I&rsquo;m not confident enough in my math skills to be entirely comfortable being judged by my ability to exercise them.</p>
-
-<p>There are some programming puzzles I really enjoy, though.  This evening I happened across one such puzzle, via <a title="@eevee on Twitter" href="https://twitter.com/eevee" target="_blank">Eevee&rsquo;s Twitter</a>: &#8221;<a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">implement a strlen() function in C that, when compiled, would not contain any conditional branches</a>.&ldquo;  (The page contains solutions, so don&rsquo;t read the orange text if you want to try this yourself.)  This is exactly the kind of puzzle I like; it&rsquo;s fun to think about, reasonably challenging, and requires knowledge of language features combined with creative thinking.</p>
-
-<p>My solution is below, but I&rsquo;d recommend that you go give this a try yourself before you read on.</p>
-
-<!-- more -->
-
-
-<p>&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br />
-&nbsp;<br /></p>
-
-<p>Alright, ready? Here&rsquo;s my solution:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="n">mystrlen</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">);</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">mystrlenret</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">funcs</span><span class="p">[</span><span class="mi">2</span><span class="p">])(</span><span class="kt">char</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="n">mystrlen</span><span class="p">,</span> <span class="n">mystrlenret</span><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">mystrlen</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">funcs</span><span class="p">[(</span><span class="kt">int</span><span class="p">)(</span><span class="o">!*</span><span class="n">str</span><span class="p">)](</span><span class="o">++</span><span class="n">str</span><span class="p">,</span> <span class="o">++</span><span class="n">count</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">mystrlenret</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">mystrlen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">));</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As you can see, the solution is actually very simple, but there are a couple of tricks necessary to make it work.  First of all, you obviously can&rsquo;t use a loop to count the characters because a loop requires a conditional jump to either terminate or continue.  You could still use a loop-like construct such as <code>goto</code>, but that only reframes the problem; you still need to make a decision about when to jump out.</p>
-
-<p>So, the problem can basically be reduced to this: how can you make a decision without using a conditional?  Well, you can index into an array of possibilities using some property that you can derive from your input.  In this case, the most important property is that the characters can be grouped into two sets: terminating characters (i.e. <code>&lsquo;\0&rsquo;</code>) and non-terminating characters (all others).  On that basis, our array of possibilites can consist of two function pointers, one which continues recursively and the other which terminates.</p>
-
-<p>The only problem remaining is how to group the characters, again without using conditionals.  My first thought here was actually to divide the character by itself, in which case all non-terminating characters would be 1, and the null terminator would be&hellip; oh, a divide-by-zero error. I quickly dismissed that thought and realized that binary not is a simpler way to map the characters.  However, Eevee came up with what I think is <a href="https://gist.github.com/3746130" title="Eevee's solution on Github" target="_blank">a very clever and quite unorthodox solution</a> involving division by handling the <code>SIGFPE</code> generated by the division by zero and using the handler to change an unconditional jump address.</p>
-
-<p>I&rsquo;d recommend also checking out the solutions provided in the <a title="Reversing the Interview Process - Exodus Intelligence" href="http://blog.exodusintel.com/2012/09/18/reversing-the-interview-process/" target="_blank">original post</a>; all three of them are a bit more elegant than mine, if perhaps a bit more difficult to understand.  (In particular, the count parameter that I use is superfluous, although I don&rsquo;t consider the difference particularly important since it can easily be hidden in my solution using a macro or helper function.)</p>
-
-<p>Since my solution isn&rsquo;t significantly different from those presented in the original post, I wanted to go a bit further and take a look at the performance implications of not using conditionals.  Yeah, yeah, premature optimization is the root of all evil and all that&mdash;I&rsquo;m just doing this out of curiosity; regardless of the results, I would never go this far out of my way to avoid a conditional jump in a real program, nor would I recommend doing so to anyone else.    I decided to compare my solution above against a naïve implementation with a while loop; comparing it against <code>strlen()</code> from <code>string.h</code> would be pretty meaningless because it would be linked against a precompiled library which, for all I know, could be hand-optimized.  So here&rsquo;s the code I&rsquo;m using instead:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">mystrlen</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">c</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="o">*</span><span class="n">c</span><span class="o">++</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">len</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">len</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And here&rsquo;s how I&rsquo;m timing the functions&hellip;</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">struct</span> <span class="n">timeval</span> <span class="n">start</span><span class="p">;</span>
-</span><span class='line'><span class="k">struct</span> <span class="n">timeval</span> <span class="n">end</span><span class="p">;</span>
-</span><span class='line'><span class="k">volatile</span> <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">gettimeofday</span><span class="p">(</span><span class="o">&amp;</span><span class="n">start</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-</span><span class='line'><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100000</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">n</span> <span class="o">=</span> <span class="n">mystrlen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
-</span><span class='line'><span class="n">gettimeofday</span><span class="p">(</span><span class="o">&amp;</span><span class="n">end</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Elapsed: %ld sec %ld usec</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-</span><span class='line'>       <span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n">end</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">-</span> <span class="n">start</span><span class="p">.</span><span class="n">tv_sec</span><span class="p">,</span>
-</span><span class='line'>       <span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n">end</span><span class="p">.</span><span class="n">tv_usec</span> <span class="o">-</span> <span class="n">start</span><span class="p">.</span><span class="n">tv_usec</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I&rsquo;m assigning the result to a volatile int to ensure that even when the code is optimized, the compiler won&rsquo;t completely optimize out the function call.  So, first, predictions: anyone who has taken a computer architecture course will tell you that conditional jumps can be very expensive because of the recovery the CPU has to do if the branch is mispredicted.  However, branch predictors typically have very high accuracy, and there&rsquo;s also a significant overhead involved in putting the parameters and return address on the stack when a function is called.  Therefore, I predict that in that with no compiler optimization, the while loop will be faster.</p>
-
-<p>&hellip;And, it is.  Running each function in a loop 100,000 times on a 23-character string, the average over five trials was 28,699 µsec for the non-conditional version and 9,012 µsec for the while loop.  Using a fixed string will cause the branch predictor to have near-perfect accuracy in the while loop version, so there might be a slight difference if I used a large array of strings of randomized lengths, but I doubt it would be significant.</p>
-
-<p>But what if we let the compiler (llvm-gcc in this case) optimize it?  I don&rsquo;t know enough about compiler optimization in general or llvm-gcc in particular to predict what will happen here.  The non-conditional <code>strlen()</code> is tail recursive so the compiler will optimize out the extra function calls at <code>-O2</code> and above, but what will be optimized beyond that I really don&rsquo;t know.</p>
-
-<p>As it turns out, compiling at <code>-O3</code> and running 100,000 times on the same 23-character string, the non-conditional function took an average of 11,182 µsec over five trials.  That&rsquo;s a significant improvement, but it&rsquo;s still slower than the unoptimized while loop, so it obviously won&rsquo;t beat that.  And indeed, the optimized while loop takes only 3,072 µsec.</p>
 ]]></content>
   </entry>
   
