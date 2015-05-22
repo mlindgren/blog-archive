@@ -9,10 +9,8 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="Originally published as a
-&ldquo;Kindle single&rdquo; in 2011, Sam
-Harris' Lying was republished in a revised
-and expanded format in 2013, but it &hellip;">
+  <meta name="description" content="I&rsquo;m in the process of writing another book review, but as usual, it&rsquo;s turning
+out to be longer than I expected. In the meantime, I&rsquo; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -152,6 +150,65 @@ $(document).ready(function() {
   <div id="main">
     <div id="content">
       <div class="blog-index">
+  
+    
+    
+
+
+
+  
+
+
+
+
+
+
+
+    <article data-linklog>
+      
+
+<div class="category-links">
+
+  <header>
+    <h1 class="entry-title">
+
+<a href="http://shayshortt.com/2014/12/02/in-real-life/">Review Link: In Real Life</a>
+<span class='linklog-marker'>&#x22EF;</span>
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-24T02:00:00-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>2:00 am</span></time>
+        
+         &bull; <a rel="bookmark" href="/entry/2014/12/24/review-link-in-real-life/">&infin;</a>
+      </p>
+    
+  </header>
+
+
+
+  <div class="entry-content"><p>I&rsquo;m in the process of writing another book review, but as usual, it&rsquo;s turning
+out to be longer than I expected. In the meantime, I&rsquo;d like to direct all zero
+of you who are just <em>dying</em> to know my opinions on literature to
+<a href="http://shayshortt.com/2014/12/02/in-real-life/">this review</a> of Cory Doctorow
+and Jen Wang&rsquo;s <em>In Real Life</em>, written by <a href="http://shayshortt.com">my wife</a>.
+I&rsquo;m not going to make a habit of linking to every one of her reviews (especially
+given that she writes them far more frequently than I update this site), but
+having also read <em>In Real Life</em> (on her recommendation), I wholeheartedly agree
+with her assessment and have little to add. Any comments should be directed to
+her post.</p>
+
+<p>My next review should be posted soon.</p>
+</div>
+
+</div>
+
+    </article>
   
     
     
@@ -846,136 +903,6 @@ dozens of different accounts and passwords for various services,
 
     </article>
   
-    
-    
-
-
-
-
-
-
-
-
-
-    <article >
-      
-
-<div class="category-technology">
-
-  <header>
-    <h1 class="entry-title">
-
-<a href="/entry/2012/09/23/switching-to-octopress/">Switching to Octopress</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-09-23T23:22:00-07:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2012</span></span> <span class='time'>11:22 pm</span></time>
-        
-         &bull; <a rel="bookmark" href="/entry/2012/09/23/switching-to-octopress/">&infin;</a>
-      </p>
-    
-  </header>
-
-
-
-  <div class="entry-content"><p>I&rsquo;ve been using Wordpress on various sites that I&rsquo;ve maintained for probably the
-better part of a decade now. By most metrics, it&rsquo;s still very good blogging
-software; I&rsquo;m not aware of any self-hostable alternative that can match
-Wordpress in terms of the union of ease of use, feature set and flexibility that
-it provides. That said, lately I&rsquo;ve been feeling that perhaps Wordpress is no
-longer the right choice for my specific needs. These are my problems with it:</p>
-
-<ul>
-<li>It&rsquo;s not very good for sharing source code. There are a multitude of plugins
-available for syntax highlighting; the best of them seems to be
-<a href="http://alexgorbatchev.com/SyntaxHighlighter/">Alex Gorbatchev&rsquo;s Syntax Highlighter</a>,
-which is used by
-<a href="http://wordpress.com">Wordpress.com</a> and is also what I was using on my blog.
-But I&rsquo;ve had problems with the Wordpress converting some of the characters in
-my code to HTML entities (e.g. <code>&amp;amp;</code> for &amp; ) which are then printed
-literally by the plugin.</li>
-<li>I find that more often than not Wordpress&#8217; visual editor is
-insufficient for the formatting I want in my posts. That forces me to use
-the raw HTML editor. That would be fine, except that Wordpress has a strange
-sort of off-spec way of storing post HTML. Paragraph and line break tags are
-omitted in the editor and the database, and are added when the page is
-actually rendered to the client. This is okay, I guess, and I <em>think</em>
-Wordpress is smart enough to not insert extra paragraph tags if you do wrap
-your own paragraphs with them. Still, it leads to some unpredictability with
-regard to how a post with hand-written HTML will actually be rendered.</li>
-<li>A similar but worse problem occurs when you try to insert extra line breaks.
-Even if you&rsquo;re using the raw HTML editor to insert <code>&lt;br /&gt;</code> tags, Wordpress
-will just get rid of them unless you insert additional non-breaking spaces
-(<code>&amp;nbsp;</code>) so that it thinks the lines are non-empty. But! If you switch back
-to the visual editor for any reason, even your <code>&amp;nbsp;&lt;br /&gt;</code> lines will be
-wiped out. Even for &ldquo;average&rdquo; users I can&rsquo;t think of any situation in which
-this &ldquo;feature&rdquo; would be desirable. If I put a bunch of extra newlines into
-something I&rsquo;m writing, it is because <em>I want exactly that many newlines.</em> I
-tend to not have much patience for software that thinks it&rsquo;s smarter than
-I am; that is why I still write most of my code in <a href="http://www.vim.org/">Vim</a>
-and use hand-written makefiles in an age of
-<acronym title="Integrated Development Environment">IDE</acronym>s.</li>
-<li>Never-ending updates. It seems like every time I log in there&rsquo;s a new update
-to download. Wordpress has updates down to a one-click install process, so
-this wouldn&rsquo;t be much of a problem except for the fact that
-every time I have to update Wordpress warns me that I should back up my
-database first. Why? Is there a significant possibility that the update might
-break everything? It&rsquo;s probably just a
-<acronym title="Cover Our Asses">COA</acronym>, and I back up my database
-daily anyway, but this whole aspect of Wordpress makes me uneasy and I don&rsquo;t
-want to have to deal with it any more. Even though I&rsquo;m covered for backups,
-recovering from a botched update would undoubtedly be a nightmare.</li>
-<li><a href="http://en.wikipedia.org/wiki/WordPress#Vulnerabilities">Vulnerabilities.</a> One
-of the big reasons that Wordpress is updated so frequently is that it has a
-long history of security vulnerabilities, and more are still being discovered
-and patched. This also means that if I don&rsquo;t log in frequently enough to
-download new security patches, I&rsquo;m at risk of having my site compromised,
-loaded up with malware and blacklisted by Google.</li>
-<li><p>It&rsquo;s written in PHP. <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP sucks.</a>
-(I can&rsquo;t link to that enough.) I don&rsquo;t want to be dogmatic about technology
-choices; good software is good software regardless of what language it&rsquo;s
-written in, and my primary desire is always to use whatever is best for the
-task at hand. But lately I&rsquo;ve been pretty vocal, both here and in person with
-friends and colleagues, about how bad PHP is. Continuing to rely on it
-undermines my credibility on the issue and makes me a bit of a hypocrite.</p>
-
-<p>And while this might seem trivial or pedantic, it&rsquo;s
-actually one of the root causes of almost all of the issues above; the weird
-HTML handling, inappropriate entity conversion, and security issues are all
-due, at least in part, to bad design patterns popularized and perpetuated by
-PHP. Wordpress still uses raw non-parameterized SQL queries; blogging software
-built on a modern web framework with a proper
-<acronym title="Object-Relational Mapping">ORM</acronym>
-would not be plagued by SQL
-injection exploits as Wordpress has been historically and probably continues
-to be.</p></li>
-<li>Wordpress supports themes so that you can customize the apperance of your
-site, but editing them kind of sucks, because they&rsquo;re all written in PHP
-instead of a proper templating language. Years ago I actually wrote a lot of
-PHP, but I still find Wordpress templates pretty ugly and difficult to
-understand; they seem more verbose than should really be necessary for what
-they accomplish, and have, on average, more <code>&lt;?php ?&gt;</code> sections than a
-keyboard has keys. (That analogy sucked. Sorry, it&rsquo;s late. What I&rsquo;m trying to
-say is that there are a lot of them.)</li>
-</ul>
-
-
-</div>
-  <footer>
-    <a rel="full-article" href="/entry/2012/09/23/switching-to-octopress/">More &rarr;</a>
-  </footer>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page3">&larr; Older</a>
@@ -1004,6 +931,11 @@ say is that there are a lot of them.)</li>
   <ul id="recent_posts">
     
       
+      <li class="post             category-reviews            ">
+        <a href="/entry/2015/05/22/game-review-bloodborne/">Game Review: Bloodborne</a>
+      </li>
+    
+      
       <li class="post             category-links            ">
         <a href="/entry/2015/03/17/windows-hello/">Windows Hello, Microsoft Passport, and Tamriel Unlimited</a>
       </li>
@@ -1021,11 +953,6 @@ say is that there are a lot of them.)</li>
       
       <li class="post             category-technology            ">
         <a href="/entry/2015/02/21/configuring-dpi-in-lubuntu-slash-lxde/">Configuring DPI in Lubuntu/LXDE</a>
-      </li>
-    
-      
-      <li class="post             category-links            ">
-        <a href="/entry/2015/01/26/the-care-and-feeding-of-software-engineers/">The care and feeding of software engineers</a>
       </li>
     
   </ul>
