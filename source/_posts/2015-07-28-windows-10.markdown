@@ -1,0 +1,41 @@
+---
+layout: post
+title: "Windows 10!"
+date: 2015-07-29 00:00:00 -0700
+comments: true
+categories: [Technology]
+---
+
+Windows 10 is out today! This is the first release of Windows that I have worked
+on as a developer , and I'm proud of what my team and Microsoft as a whole have
+accomplished in the past year-and-a-half or so. Several tech websites have
+already posted reviews, and so far the trend is very positive. A colleague of
+mine posted some excerpts, which I'm going to borrow:
+
+{% blockquote David Pierce http://www.wired.com/2015/07/windows-10-review/ Wired %}
+Windows 10 represents the obvious future of PC operating systems. It makes Mac OS X feel old-fashioned, stuck in a time where The Desktop was a thing that mattered and the only way to access the Internet was through a browser.
+{% endblockquote %}
+
+{% blockquote Brad Sams http://www.neowin.net/news/windows-10-review-microsoft-goes-back-to-the-future Neowin %}
+So the question finally presents itself: should you upgrade your machine to Windows 10? Yes, you should.
+{% endblockquote %}
+
+{% blockquote Tom Warren http://www.theverge.com/2015/7/28/9045331/microsoft-windows-10-review The Verge %}
+The best part of Windows 10 is that it ends the cycle of good and bad in favor of something great.
+{% endblockquote %}
+
+{% blockquote Devindra Hardawar http://www.engadget.com/2015/07/28/windows-10-review/ Engadget %}
+It's nice, for once, to be able to recommend a new version of Windows without any hesitation.
+{% endblockquote %}
+
+{% blockquote Alex Wilhelm http://techcrunch.com/2015/07/28/the-windows-10-era-is-now/ Techcrunch %}
+If you are on a PC at all, Windows 10 is where you want to go. That it is free&mdash;for now&mdash;only makes the point simpler.
+{% endblockquote %}
+
+If you haven't already done so, you can follow the instructions
+[here](https://www.microsoft.com/en-us/windows/windows-10-upgrade) to get your
+free upgrade.  It's very exciting to have played a role in the creation of the
+latest and truly greatest version of Windows; I think this is a huge
+achievement for Microsoft, and I'm happy to have been a part of it. The real
+reward, though, is seeing people use and enjoy Windows 10&mdash;and that starts
+today!

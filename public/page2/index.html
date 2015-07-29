@@ -9,8 +9,8 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I&rsquo;m in the process of writing another book review, but as usual, it&rsquo;s turning
-out to be longer than I expected. In the meantime, I&rsquo; &hellip;">
+  <meta name="description" content="I expect most people will already have some familiarity with Malala Yousafzai.
+In case you&rsquo;ve been living under a rock, though, Malala is a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -150,6 +150,70 @@ $(document).ready(function() {
   <div id="main">
     <div id="content">
       <div class="blog-index">
+  
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
+      
+
+<div class="category-reviews">
+
+  <header>
+    <h1 class="entry-title">
+
+<a href="/entry/2014/12/26/book-review-i-am-malala/">Book Review: I Am Malala</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-26T01:57:00-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>1:57 am</span></time>
+        
+         &bull; <a rel="bookmark" href="/entry/2014/12/26/book-review-i-am-malala/">&infin;</a>
+      </p>
+    
+  </header>
+
+
+
+  <div class="entry-content"><p>I expect most people will already have some familiarity with Malala Yousafzai.
+In case you&rsquo;ve been living under a rock, though, Malala is a young Pakistani
+woman who, at the age of 15, was shot in the head by the Taliban for her
+outspoken support of the right to education of children, including (especially)
+girls, who are often denied the right due to their gender. Miraculously, she
+survived the assassination attempt, and following her recovery, has continued to
+campaign in support of education. Now, at age 17, she has an impressive list of
+accomplishments and accolades to her name, including most recently becoming the
+youngest Nobel laureate in history after jointly winning the 2014 Peace Prize
+with Kailash Satyarthi, another activist for children&rsquo;s rights.</p>
+
+<p><em>I Am Malala: The Girl Who Stood Up for Education and Was Shot by the Taliban</em>,
+written jointly with award-winning foreign correspondent Christina Lamb, is
+Malala&rsquo;s autobiography. It chronicles her experience growing up in Pakistan&rsquo;s
+Swat Valley, the invasion of the Taliban into the area and her life under their
+rule, their attempt on her life, and her recovery and continuing efforts in
+support of education.</div>
+  <footer>
+    <a rel="full-article" href="/entry/2014/12/26/book-review-i-am-malala/">More &rarr;</a>
+  </footer>
+
+</div>
+
+    </article>
   
     
     
@@ -820,89 +884,6 @@ project, and on what remains to be done. </div>
 
     </article>
   
-    
-    
-
-
-
-  
-
-
-
-
-
-
-
-    <article data-linklog>
-      
-
-<div class="category-links">
-
-  <header>
-    <h1 class="entry-title">
-
-<a href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Why Mozilla Persona Is the Right Answer to the Question of Identity</a>
-<span class='linklog-marker'>&#x22EF;</span>
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-10-03T20:37:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2012</span></span> <span class='time'>8:37 pm</span></time>
-        
-         &bull; <a rel="bookmark" href="/entry/2012/10/03/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">&infin;</a>
-      </p>
-    
-  </header>
-
-
-
-  <div class="entry-content"><p><em>[Updated December 24th, 2014: I&rsquo;m leaving this post here for historical
-purposes, but I no longer endorse Mozilla Persona. There are a number of reasons
-for this, but one of the primary ones is that the project does not seem to have
-gained any momentum in the two years since I wrote this post. At this point I am
-skeptical that it ever will gain that momentum.]</em></p>
-
-<p>David Somers presents an
-<a href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">excellent rundown</a>
-of what
-<a href="http://www.mozilla.org/en-US/persona/">Mozilla Persona</a> is and why it&rsquo;s
-currently the best option for identity and authentication for web services. I&rsquo;ve
-implemented authentication using Persona in the
-<a href="http://blog.mlindgren.ca/entry/2012/09/14/social-networks-and-content-ownership/">photo album app</a>
-I&rsquo;m working on, and I found it remarkably easy to integrate with my app. And, as
-David explains, Persona is also much easier for users to understand than
-competing platforms like OpenID. If you&rsquo;re a web developer, you really need to
-add Persona support to your application as soon as
-possible. It can be done in literally a matter of minutes, and if Persona takes
-off the benefit to identity management on the Internet could be huge.</p>
-
-<p>Perhaps my favourite thing about Persona is that it gives me the opportunity to
-<a href="https://developer.mozilla.org/en-US/docs/Persona/Implementing_a_Persona_IdP">implement my own identity provider</a>,
-which means I can have <em>complete</em> control over how I authenticate to any
-Persona-consuming service. I could have <em>n</em>-factor authentication, with no limit
-on the complexity or specificity of the factors besides my own imagination. For
-example, I could generate SSL client certificates for each of my machines and
-hardcode their thumbprints into my identity provider to ensure that it wouldn&rsquo;t
-even service requests from machines I haven&rsquo;t explicitly added.  Or if I wanted
-to get creative, I could have my identity provider generate a random temporary
-key which I would have to retrieve via SSH (but this is less convenient and
-probably also less secure than doing SSL client authentication.) The
-possibilities are endless.</p>
-
-<p>Perhaps an end is finally in sight to the frustration of having dozens upon
-dozens of different accounts and passwords for various services,
-<a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/">each with its own uniquely nonsensical password composition policy</a>.  Everyone needs to implement Persona&mdash;preferably yesterday.</p>
-</div>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page3">&larr; Older</a>
@@ -931,6 +912,11 @@ dozens of different accounts and passwords for various services,
   <ul id="recent_posts">
     
       
+      <li class="post             category-technology            ">
+        <a href="/entry/2015/07/29/windows-10/">Windows 10!</a>
+      </li>
+    
+      
       <li class="post             category-reviews            ">
         <a href="/entry/2015/05/22/game-review-bloodborne/">Game Review: Bloodborne</a>
       </li>
@@ -948,11 +934,6 @@ dozens of different accounts and passwords for various services,
       
       <li class="post             category-other            ">
         <a href="/entry/2015/03/01/1989/">1989</a>
-      </li>
-    
-      
-      <li class="post             category-technology            ">
-        <a href="/entry/2015/02/21/configuring-dpi-in-lubuntu-slash-lxde/">Configuring DPI in Lubuntu/LXDE</a>
       </li>
     
   </ul>
