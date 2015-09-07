@@ -30,7 +30,7 @@ at that point, I didn't really expect to live in the States for more than a year
 primarily to get a "marquee company" on my resume (a piece of advice a friend and former colleague
 gave me) and then use that as a bargaining chip to get a better job back home. But now it's been more
 than three years, and not only am I still here, but I no longer have plans to leave in the
-foreseeable future.
+foreseeable future.<!-- more -->
 
 #### Immigration
 I guess it would make sense for me to start with immigration. This could easily be the subject of
