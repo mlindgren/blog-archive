@@ -86,7 +86,7 @@ I want to make sure I'm clear here, though: I'm still not endorsing privatized h
 are always more important than personal perception, and the data here are very clear. Other
 developed countries have
 [similar or better outcomes](http://theincidentaleconomist.com/wordpress/how-do-we-rate-the-quality-of-the-us-health-care-system-introduction/)
-and are able to do
+and are able to achieve those outcomes
 [for less money](http://theincidentaleconomist.com/wordpress/what-makes-the-us-health-care-system-so-expensive-introduction/).
 Still, my experience with the American system has been very good so far.
 
@@ -155,8 +155,11 @@ local elections. By contrast, this year's Canadian election campaign, which star
 and is expected to run until mid-October, will be [the longest campaign since 1872](http://www.cbc.ca/news/politics/canada-election-2015-stephen-harper-confirms-start-of-11-week-federal-campaign-1.3175136).
 
 The candidates for the 2016 presidential election don't inspire confidence. Things could still
-change before the election is held, but right now it looks like it's going to be [one war-loving, civil liberties-hating neo-con](http://www.huffingtonpost.com/h-a-goodman/president-hillary-clinton_b_5525235.html)
-versus whoever ends up winning the Republican nomination. (I'm not even going to mention you-know-who.) It
+change before the election is held, but right now it looks like it's going to be one war-loving,
+civil liberties-hating neo-con
+([Hillary](http://www.huffingtonpost.com/h-a-goodman/president-hillary-clinton_b_5525235.html))
+versus another (whoever ends up winning the Republican nomination). I'm not even going to mention
+you-know-who. It
 [seems to be a common sentiment](http://www.gallup.com/poll/183593/confidence-institutions-below-historical-norms.aspx)
 among Americans that government in the country is badly broken. This is not new, but even so, I
 suspect the current election cycle is profoundly embarrassing to liberals, moderates, and sensible
@@ -175,7 +178,7 @@ Conservatives win again.
 There are also certain aspects of the American political and legal system that I prefer. I like the
 idea of states as "laboratories of democracy" with broader control over local legislation.  There
 are downsides to this as well&mdash;it can lead to negative outcomes vis-à-vis civil rights, and when
-state and federal laws contradict each other is can result in confusing and volatile situations.
+state and federal laws contradict each other it can result in confusing and volatile situations.
 Nevertheless, I think it's generally a good thing that states have some ability to catalyze progress
 in the country by demonstrating the viability of legislative changes that the rest of the country
 isn't yet on board with.
@@ -225,7 +228,8 @@ preached, often hypocritically, with a callous disregard for the immense inertia
 have to overcome to be successful. Nevertheless, I'm glad the ideal exists. Other countries often go
 too far in trying to protect citizens from everything that could possibly harm them, regardless of
 whether or not anyone consents to the "protection." The United States has its own overreaches of
-this sort, of course, but it's still better than most. For instance, it would be almost unthinkable
+this sort, of course, but it's still better than most. For instance, it would be
+<span style="text-decoration: line-through">almost unthinkable</span> difficult and unpopular[^censorship]
 to censor broad swaths of the Internet here,
 [as is done in the UK](https://en.wikipedia.org/wiki/Internet_censorship_in_the_United_Kingdom).
 I also think the American attitude toward individual freedoms (along with the autonomy of states
@@ -253,3 +257,5 @@ It took me a long time to get around to writing this post, so now I'm already a 
 into my fourth year in the States.  The US isn't perfect, but I've been incredibly fortunate to have
 had the opportunities I've been given, and I'm grateful to the country and particularly to my
 friends and colleagues in Redmond for making me feel welcome here. I'm happy to be here.
+
+[^censorship]: I originally wrote that it would be "almost unthinkable" to censor the Internet in the US, but a friend pointed out that continuous attempts to pass legislation like [SOPA](https://en.wikipedia.org/wiki/Stop_Online_Piracy_Act) contradicts this. Copyright and patent laws are one of my _least_ favorite things about the US, and one of the spheres in which I think the US has a significant negative influence on other countries. That's a subject for another post, though.
