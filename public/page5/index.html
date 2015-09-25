@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="I spent part of last night setting up my HTC Desire as a development device on my Ubuntu laptop.  This was a somewhat frustrating process, because a &hellip;">
+  <meta name="description" content="As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts. The basic idea is that authorized &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -149,6 +149,71 @@ $(document).ready(function() {
   <div id="main">
     <div id="content">
       <div class="blog-index">
+  
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
+      
+
+<div class="category-technology">
+
+  <header>
+    <h1 class="entry-title">
+
+<a href="/entry/2010/10/03/194/">Making Samba shares accessible to Apache on OS X</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-10-03T19:29:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2010</span></span> <span class='time'>7:29 pm</span></time>
+        
+         &bull; <a rel="bookmark" href="/entry/2010/10/03/194/">&infin;</a>
+      </p>
+    
+  </header>
+
+
+
+  <div class="entry-content"><p>As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts.  The basic idea is that authorized users can log in to a web interface and browse files in specific locations on my home network.  The Python script is accessed through Apache on my Mac Mini, but some of the files I need access to are on Windows boxes.  Unfortunately this presented something of a problem, as the Apache user on OS X (<code>_www</code> as of Snow Leopard) doesn&rsquo;t have permission to access Windows shares mounted by users.</p>
+
+<p>Sounds simple enough, right?  Just <code>chmod</code> or <code>chown</code> the Windows share and go to town.  Unfortunately, this doesn&rsquo;t seem to work; neither <code>chown</code> or <code>chmod</code> have any effect on mounted Windows shares.  Oddly, they don&rsquo;t output any errors; they just don&rsquo;t <em>do anything.</em> The only way around this seems to be to mount the shares <em>as</em> the Apache user (or whichever user you need to have access).  Here&rsquo;s how to do so in Snow Leopard, with instructions modified slightly from a <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a> <a title="Stack Overflow: mount a windows smb share on OS X as so it can be accessed by 'www' user" href="http://stackoverflow.com/questions/324171/mount-a-windows-smb-share-on-os-x-as-so-it-can-be-accessed-by-www-user" target="_blank">question on the subject</a>:</p>
+
+<ol>
+    <li>Create the mountpoint<br />
+        <code>mkdir /Volumes/Mount_Name</code></li>
+    <li>Set the permissions on the mount point
+<pre><code>sudo chown _www:_www /Volumes/Mount_Name
+sudo chmod 755 /Volumes/Mount_Name
+</code></pre>
+</li>
+    <li>If necessary, make a symlink from your Apache documents folder to the mount point<br />
+         <code>ln -s /Volumes/Mount_Name /Library/WebServer/Documents/Mount_Name</code></li>
+    <li>Mount the share <strong>as the Apache user</strong><br />
+        <code>sudo -u _www mount_smbfs //DOMAIN;User:Password@Host/Share /Volumes/Mount_Name</code></li>
+</ol>
+
+
+<p>I doubt a great number of people will need this information as it&rsquo;s a strange sort of setup, but it&rsquo;s my hope that these instructions will save someone some time.</p>
+</div>
+
+</div>
+
+    </article>
   
     
     
@@ -532,6 +597,11 @@ motivation:</p>
   <ul id="recent_posts">
     
       
+      <li class="post             category-reviews            ">
+        <a href="/entry/2015/09/21/tv-series-review-mr-robot/">TV Series Review: Mr. Robot, Season One</a>
+      </li>
+    
+      
       <li class="post             category-other            ">
         <a href="/entry/2015/09/07/observations-from-three-years-in-america/">Observations from Three Years in America</a>
       </li>
@@ -549,11 +619,6 @@ motivation:</p>
       
       <li class="post             category-links            ">
         <a href="/entry/2015/03/17/windows-hello/">Windows Hello, Microsoft Passport, and Tamriel Unlimited</a>
-      </li>
-    
-      
-      <li class="post             category-coding            ">
-        <a href="/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/">Fun with the Microsoft Band SDK Preview</a>
       </li>
     
   </ul>

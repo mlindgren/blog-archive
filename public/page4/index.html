@@ -9,7 +9,7 @@
   <meta name="author" content="Mitch Lindgren">
 
   
-  <meta name="description" content="This tutorial is for an extremely specific and possibly unusual set of circumstances, but I&rsquo;m hoping that it will prove useful to someone. For &hellip;">
+  <meta name="description" content="I came across a couple excellent articles on Gamasutra which I want to share here. The first, &ldquo;Contrivance and Extortion: In-App Purchases &amp &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -149,6 +149,54 @@ $(document).ready(function() {
   <div id="main">
     <div id="content">
       <div class="blog-index">
+  
+    
+    
+
+
+
+
+
+
+
+
+
+    <article >
+      
+
+<div class="category-links">
+
+  <header>
+    <h1 class="entry-title">
+
+<a href="/entry/2011/12/30/ethical-game-design-from-gamasutra/">Ethical Game Design from Gamasutra</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-12-30T16:28:00-08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>4:28 pm</span></time>
+        
+         &bull; <a rel="bookmark" href="/entry/2011/12/30/ethical-game-design-from-gamasutra/">&infin;</a>
+      </p>
+    
+  </header>
+
+
+
+  <div class="entry-content"><p>I came across a couple excellent articles on Gamasutra which I want to share here. The first, &ldquo;<a title="Contrivance and Extortion: In-App Purchases &amp; Microtransactions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111018/8685/Contrivance_and_Extortion_InApp_Purchases__Microtransactions.php">Contrivance and Extortion: In-App Purchases &amp; Microtransactions</a>&rdquo; is by <a href="http://adamatomic.com/" target="_blank">Adam Saltsman</a>, creator of Canabalt, among other games. He argues that in-app purchases and so-called microtransactions are being abused by some game developers, &ldquo;deliberately contriving their designs in the worst way in order to extort money from players, which is unethical and unacceptable design practice.&rdquo; I&rsquo;ll lay my cards on the table and say that I am in complete agreement with Adam.  As he does in his <a title="Contrivance and Extortion II: Clarifications, Feedback &amp; Suggestions" href="http://www.gamasutra.com/blogs/AdamSaltsman/20111020/8703/Contrivance_and_Extortion_II_Clarifications_Feedback__Suggestions.php">explanatory follow-up</a>, I acknowledge that there are benefits to the &ldquo;freemium&rdquo; model, but the techniques commonly associated with that model are often used in a cynical, manipulative and profit-driven manner which I feel is harmful to consumers and the industry. Whether or not you agree, Adam&rsquo;s thoughts on the subject are certainly worth reading.</p>
+
+<p>&ldquo;<a title="Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy" href="http://www.gamasutra.com/blogs/EvanJones/20110815/8195/Radical_Plagiarism_The_Ethical_Lessons_of_the_Gamenauts_Controversy.php" target="_blank">Radical Plagiarism: The Ethical Lessons of the Gamenauts Controversy</a>,&rdquo; by <a href="http://www.gamasutra.com/blogs/author/EvanJones/4235/">Evan Jones</a>, is equally thought-provoking. Evan recounts the cloning of the indie game <a href="http://www.bored.com/game/play/150995/Radical_Fishing.html"><em>Radical Fishing</em></a> by the more established indie studio <a href="http://gamenauts.com/">Gamenauts</a>, and adds his perspective on the cultural impact of the rampant cloning that takes place on mobile app stores. Returning readers may recall that I&rsquo;ve previously <a title="In Defense of Clones" href="http://www.mlindgren.ca/archives/318">defended the practice of cloning games</a>. My defense excluded the cloning of smaller titles by established studios, which I&rsquo;ve always viewed as morally questionable at best, but Evan&rsquo;s article nevertheless gave me pause. He provides a strong counterpoint to my own thinking on the matter, and while I&rsquo;m not yet ready to reverse my position, his argument has undeniable weight. If you&rsquo;re at all interested in game development, both articles are well worth your time.</p>
+</div>
+
+</div>
+
+    </article>
   
     
     
@@ -628,71 +676,6 @@ and check it out for yourself.</p>
 
     </article>
   
-    
-    
-
-
-
-
-
-
-
-
-
-    <article >
-      
-
-<div class="category-technology">
-
-  <header>
-    <h1 class="entry-title">
-
-<a href="/entry/2010/10/03/194/">Making Samba shares accessible to Apache on OS X</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-10-03T19:29:00-07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2010</span></span> <span class='time'>7:29 pm</span></time>
-        
-         &bull; <a rel="bookmark" href="/entry/2010/10/03/194/">&infin;</a>
-      </p>
-    
-  </header>
-
-
-
-  <div class="entry-content"><p>As a small weekend project, I&rsquo;ve been working on a simple Python HTTP &ldquo;file server&rdquo; of sorts.  The basic idea is that authorized users can log in to a web interface and browse files in specific locations on my home network.  The Python script is accessed through Apache on my Mac Mini, but some of the files I need access to are on Windows boxes.  Unfortunately this presented something of a problem, as the Apache user on OS X (<code>_www</code> as of Snow Leopard) doesn&rsquo;t have permission to access Windows shares mounted by users.</p>
-
-<p>Sounds simple enough, right?  Just <code>chmod</code> or <code>chown</code> the Windows share and go to town.  Unfortunately, this doesn&rsquo;t seem to work; neither <code>chown</code> or <code>chmod</code> have any effect on mounted Windows shares.  Oddly, they don&rsquo;t output any errors; they just don&rsquo;t <em>do anything.</em> The only way around this seems to be to mount the shares <em>as</em> the Apache user (or whichever user you need to have access).  Here&rsquo;s how to do so in Snow Leopard, with instructions modified slightly from a <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a> <a title="Stack Overflow: mount a windows smb share on OS X as so it can be accessed by 'www' user" href="http://stackoverflow.com/questions/324171/mount-a-windows-smb-share-on-os-x-as-so-it-can-be-accessed-by-www-user" target="_blank">question on the subject</a>:</p>
-
-<ol>
-    <li>Create the mountpoint<br />
-        <code>mkdir /Volumes/Mount_Name</code></li>
-    <li>Set the permissions on the mount point
-<pre><code>sudo chown _www:_www /Volumes/Mount_Name
-sudo chmod 755 /Volumes/Mount_Name
-</code></pre>
-</li>
-    <li>If necessary, make a symlink from your Apache documents folder to the mount point<br />
-         <code>ln -s /Volumes/Mount_Name /Library/WebServer/Documents/Mount_Name</code></li>
-    <li>Mount the share <strong>as the Apache user</strong><br />
-        <code>sudo -u _www mount_smbfs //DOMAIN;User:Password@Host/Share /Volumes/Mount_Name</code></li>
-</ol>
-
-
-<p>I doubt a great number of people will need this information as it&rsquo;s a strange sort of setup, but it&rsquo;s my hope that these instructions will save someone some time.</p>
-</div>
-
-</div>
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/page5">&larr; Older</a>
@@ -721,6 +704,11 @@ sudo chmod 755 /Volumes/Mount_Name
   <ul id="recent_posts">
     
       
+      <li class="post             category-reviews            ">
+        <a href="/entry/2015/09/21/tv-series-review-mr-robot/">TV Series Review: Mr. Robot, Season One</a>
+      </li>
+    
+      
       <li class="post             category-other            ">
         <a href="/entry/2015/09/07/observations-from-three-years-in-america/">Observations from Three Years in America</a>
       </li>
@@ -738,11 +726,6 @@ sudo chmod 755 /Volumes/Mount_Name
       
       <li class="post             category-links            ">
         <a href="/entry/2015/03/17/windows-hello/">Windows Hello, Microsoft Passport, and Tamriel Unlimited</a>
-      </li>
-    
-      
-      <li class="post             category-coding            ">
-        <a href="/entry/2015/03/14/fun-with-the-microsoft-band-sdk-preview/">Fun with the Microsoft Band SDK Preview</a>
       </li>
     
   </ul>
