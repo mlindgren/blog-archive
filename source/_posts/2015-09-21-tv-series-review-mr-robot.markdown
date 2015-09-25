@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TV Series Review: Mr. Robot, Season One"
-date: 2015-09-21 21:21:59 -0700
+date: 2015-09-25 01:19:00 -0700
 comments: true
 categories: [Reviews]
 ---
