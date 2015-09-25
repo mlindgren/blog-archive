@@ -456,7 +456,7 @@ later be called throughout their own animations.</li>
 <br />
 <small>
 Figure 2: From Sauer et al: Sequential images displaying the different positions
-involved in the &#8220;FrontClickJump&#8221; Celtic routine.
+involved in the "FrontClickJump" Celtic routine.
 </small>
 </div>
 
@@ -583,7 +583,7 @@ the exception of the root joint, from which all joints branch in some
 configuration.  It is important to note that &ldquo;[s]ince every child moves
 according to its parent, a transformation of the root will lead to a
 transformation of the whole character.&rdquo; (Slot, 2007) Additionally, Slot
-distinguishes between motion <em>blending</em> - wherein corresponding joints&#8217;
+distinguishes between motion <em>blending</em> - wherein corresponding joints'
 rotations and positions are combined using weights - and motion <em>transition</em> - a
 temporary motion blend intended to &ldquo;cross-fade&rdquo; from one motion to another. In
 motion transition, the start point of the transition from within one motion, the
@@ -597,7 +597,7 @@ concerned with motion transition.</p>
 combining the rotations and positions of corresponding joints.  &ldquo;If given two
 motions, <em>M<sub>i</sub></em> and <em>M<sub>j</sub></em>, which are to be
 blended, one with a weight <em>w<sub>i</sub></em> and the other with a weight
-<em>w<sub>j</sub></em>, then the blended position of the k&#8217;th joint of the two
+<em>w<sub>j</sub></em>, then the blended position of the k'th joint of the two
 motions (<em>J<sub>ik</sub></em> and <em>J<sub>jk</sub></em>)&rdquo; are found by
 equation 1.</p>
 
@@ -612,7 +612,7 @@ Equation 1
 
 <p><br /></p>
 
-<p>For N animations blended together, the position of the k&#8217;th joint can be found
+<p>For N animations blended together, the position of the k'th joint can be found
 by equation 2.</p>
 
 <div style="margin-left: auto; margin-right: auto; text-align: center;">
@@ -632,8 +632,8 @@ Equation 2
 <img src="/images/LinBlend.png" alt="A linear blend of two motions. The grey and red legs are the original motions, and the green legs are the blend between them."/>
 <br />
 <small>
-Figure 3: From Slot: &#8220;A linear blend of two motions. The grey and red legs are
-the original motions, and the green legs are the blend between them.&#8221;
+Figure 3: From Slot: "A linear blend of two motions. The grey and red legs are
+the original motions, and the green legs are the blend between them."
 </small>
 </div>
 
@@ -650,9 +650,9 @@ closely. To accomplish this, an N &times; M distance map is constructed,
 comparing the joint orientations of each possible pair of frames, where M is
 &ldquo;the number of frames in the source motion and N is the number of frames in the
 destination motion. For each cell (i,j) in the map, the difference between the
-i&#8217;th frame in the destination motion (F<sub><em>dst</em></sub>(i)) and the j&#8217;th
+i'th frame in the destination motion (F<sub><em>dst</em></sub>(i)) and the j'th
 frame of the source motion (F<sub><em>src</em></sub>(j)) are computed.&rdquo; (Slot,
-2007) The distance D between the i&#8217;th and j&#8217;th frames of source motion is
+2007) The distance D between the i'th and j'th frames of source motion is
 determined by computing the distance between each of the joint positions in
 frame F<sub><em>dst</em></sub>(i) as compared to F<sub><em>src</em></sub>(j),
 and then finding the weighted sum of those distances. (See equation 3.)</p>
@@ -669,7 +669,7 @@ Equation 3
 <p><br /></p>
 
 <p>Using this equation, we wish to minimize D, where p<sub><em>k,j</em></sub> is
-the k&#8217;th point of the j&#8217;th frame of the source animation.</p>
+the k'th point of the j'th frame of the source animation.</p>
 
 <h4>Testing using Distance Mapping</h4>
 
@@ -704,7 +704,7 @@ the source frames coordinate system. This value can be used here by using this
 as the weighted orientation for deciding the final orientation. In order to
 make sure no angle is above 180 degrees, we use the alignment constrain that
 <em>|&theta;<sub>i</sub> - &theta;<sub>i</sub> -1 &le; <em>&pi;</em>|</em>. To
-fulfill this we change <em>&theta;<sub>i</sub></em> for the i&#8217;th frame on the
+fulfill this we change <em>&theta;<sub>i</sub></em> for the i'th frame on the
 timewarp curve if this criteria does not hold. When an angle passes 180
 degrees <em>&theta;<sub>i</sub></em> changes sign, hence we continue counting
 in the same sign as <em>θ<sub>i-1</sub></em>, but adding the difference of
@@ -718,7 +718,7 @@ synthesis as a solution to creating realistic, fluid movements in virtual
 characters.  Their problem is unique in that it applies to user-controlled
 animated characters, such as those found in games. &ldquo;In offline applications all
 movement scenarios are predefined and animators can plan every detail of the
-characters&#8217; motion in advance. In interactive applications this is impossible,
+characters' motion in advance. In interactive applications this is impossible,
 because actions occur dynamically, depending on factors like user input and
 current state of the game world.&rdquo; (Pejsa and Pandzic, 2010)  The majority of
 game engines designed to produce realistic human movement draw from motion
@@ -998,7 +998,7 @@ the maximum number of blended frames.</p>
 function to find the best path between frames. The calculation uses a slope
 limit <em>L</em> of 3, suggested by Slot as a sufficient constraint to prevent
 unnatural movements caused by skipping between &ldquo;distant&rdquo; frames. Starting from
-the zero&#8217;th frame of the first animation, <code>calcShortestPath</code> pushes
+the zero'th frame of the first animation, <code>calcShortestPath</code> pushes
 frame pairs onto the &ldquo;shortest path&rdquo; STL vector. The first element of the frame
 pair is the frame of the first animation to be blended, and the second element
 is the frame of the second animation.  Until the frame at which interpolation
@@ -1060,7 +1060,7 @@ names change, a transition has been completed.</p>
 
 <h3>First Example</h3>
 
-<p><video width='798' height='597' preload='none' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap1.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+<p><video width='798' height='597' preload='metadata' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap1.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
 
 <p>The first recording demonstrates a simple combination of animation files,
 emulating what a choreographer might put together when designing a dance. The
@@ -1084,7 +1084,7 @@ original motion capture data.</p>
 
 <h3>Second Example</h3>
 
-<p><video width='798' height='597' preload='none' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap2.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+<p><video width='798' height='597' preload='metadata' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap2.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
 
 <p>The second recording tests interpolation between drastic changes in arm
 positions. The first motion ends with the figure&rsquo;s left arm raised, and the
@@ -1103,7 +1103,7 @@ not; there is slight skating on the floor as the figure rotates in place.</p>
 
 <h3>Third Example</h3>
 
-<p><video width='795' height='596' preload='none' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap3.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+<p><video width='795' height='596' preload='metadata' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap3.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
 
 <p>The third recording is a demonstration of how two motion files can be made to
 loop continuously.  Repeating the same motion in a loop has useful applications
@@ -1120,7 +1120,7 @@ jumps.</p>
 
 <h3>Fourth Example</h3>
 
-<p><video width='795' height='596' preload='none' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap4.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+<p><video width='795' height='596' preload='metadata' controls poster='http://blog.mlindgren.ca/images/mocap-banner.png'><source src='http://files.mlindgren.ca/videos/mocap4.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
 
 <p>The fourth and final recording shows a figure covering a large distance during
 its dance.  Interpolations seem to successfully maintain the appearance of the
@@ -1392,7 +1392,7 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub

@@ -194,7 +194,7 @@ $(document).ready(function() {
 <p>When your native code crashes due to a segmentation fault or some other similar problem, though, you do get a nice stack trace in the Android debugging log, which you can view with <code>adb logcat</code>.  Unfortunately, the stack trace only gives you memory addresses, and you need to use another script to convert those memory addresses to lines of code.  That script is already included with the NDK, but it&rsquo;s a bit of a pain to use.  To that end, I&rsquo;ve put together a simple shell script which glues everything together. I should mention that this is designed to be used with Linux or Mac OS X; if you&rsquo;d like to do something similar on Windows, I&rsquo;m sure it won&rsquo;t be hard, but you&rsquo;re on your own.  Here&rsquo;s how to use it:</p>
 
 <ol>
-    <li>Create a folder in your project called &#8220;debug&#8221; (or whatever name you&#8217;d like)</li>
+    <li>Create a folder in your project called "debug" (or whatever name you'd like)</li>
     <li>Create a file called <code>debug.sh</code>, consisting of the following:
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -207,7 +207,7 @@ $(document).ready(function() {
 </span><span class='line'>python parse_stack.py SOLIB_NAME.arm logcat.txt
 </span></code></pre></td></tr></table></div></figure>
 
-    <li><code>chmod +x debug.sh</code> so that it&#8217;s executable</li>
+    <li><code>chmod +x debug.sh</code> so that it's executable</li>
         <li>Run the script with <code>./debug.sh</code> each time you need to see a stack trace</li>
 </ol>
 
@@ -390,7 +390,7 @@ alt="Click to visit YouTube">&nbsp;YouTube</a>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/mlindgren">@mlindgren</a> on GitHub

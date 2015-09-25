@@ -60,8 +60,8 @@ often consisting of long stretches of thought punctuated by short bursts of
 activity.  In other words, they're boring to watch, and sometimes to undertake,
 too.  _Mr. Robot_ strips that away, but it keeps the interesting aspects intact
 without insulting the audience's intelligence with impossible technology,
-meaningless invented jargon, or awful 3D <acronym title="Graphical User
-Interface">GUI</acronym>s.
+meaningless invented jargon, or awful 3D
+<acronym title="Graphical User Interface">GUI</acronym>s.
 
 <!-- more -->
 

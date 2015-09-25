@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Technology | mlindgren.ca]]></title>
   <link href="http://blog.mlindgren.ca/categories/technology/atom.xml" rel="self"/>
   <link href="http://blog.mlindgren.ca/"/>
-  <updated>2015-09-25T01:08:25-07:00</updated>
+  <updated>2015-09-25T01:14:50-07:00</updated>
   <id>http://blog.mlindgren.ca/</id>
   <author>
     <name><![CDATA[Mitch Lindgren]]></name>
@@ -220,7 +220,7 @@ which is used by
 But I&rsquo;ve had problems with the Wordpress converting some of the characters in
 my code to HTML entities (e.g. <code>&amp;amp;</code> for &amp; ) which are then printed
 literally by the plugin.</li>
-<li>I find that more often than not Wordpress&#8217; visual editor is
+<li>I find that more often than not Wordpress' visual editor is
 insufficient for the formatting I want in my posts. That forces me to use
 the raw HTML editor. That would be fine, except that Wordpress has a strange
 sort of off-spec way of storing post HTML. Paragraph and line break tags are
@@ -323,7 +323,7 @@ Octopress theme&mdash;meaning that the layout will resize to look beautiful at
 any screen resolution, including on mobile devices.</li>
 <li>Octopress has pretty nice built in Github and Twitter widgets.</li>
 <li>Comments are handled by <a href="http://disqus.com/">Disqus</a>, which provides a nicer
-comment system than Wordpress&#8217; built in comments.  I was using Disqus anyway
+comment system than Wordpress' built in comments.  I was using Disqus anyway
 via a plugin, but now I don&rsquo;t have to worry about keeping the Disqus comments
 synced with the Wordpress database. Incidentally, Disqus provides a very nice
 system to migrate comments to new URLs by uploading a
